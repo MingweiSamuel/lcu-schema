@@ -3,14 +3,17 @@ $LOCK_FILE = "$LEAGUE_DIR\lockfile"
 $YAML_FILE = "$LEAGUE_DIR\Config\lcu-schema\system.yaml"
 $RIOT_USERNAME = "riot"
 
+Write-Output "Creating alternate system.yaml."
 New-Item -Path "$LEAGUE_DIR\Config\lcu-schema\system.yaml" -Force | Out-Null
 $systemYaml  = Get-Content "$LEAGUE_DIR\system.yaml"
 $systemYaml  = $systemYaml[0..($systemYaml.count - 4)]
 $systemYaml += ("enable_swagger: true")
 $systemYaml | Out-File "$YAML_FILE" -Encoding ascii
 
+Write-Output "Starting LeagueClient.exe."
 & "$LEAGUE_DIR\LeagueClient.exe" "--system-yaml-override=$LEAGUE_DIR\Config\lcu-schema\system.yaml"
 
+Write-Output "Waiting for lockfile."
 $attempt = 10
 while (!(Test-Path "$LOCK_FILE")) {
     Start-Sleep 1
@@ -27,12 +30,10 @@ $pass = $lockContent[3];
 
 $userpass = "${RIOT_USERNAME}:$pass"
 $userpass = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($userpass))
-
-Write-Output $userpass
-
+Write-Output "Lockfile parsed, userpass64: '$userpass'.".
 
 # IGNORE SSL ERRORS.
-add-type @"
+Add-Type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     public class TrustAllCertsPolicy : ICertificatePolicy {
@@ -45,7 +46,7 @@ add-type @"
 "@
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
-
+Write-Output "Sending request for spec."
 $attempt = 20
 $success = $false
 while ($attempt -gt 0 -and -not $success) {
@@ -58,12 +59,10 @@ while ($attempt -gt 0 -and -not $success) {
   }
 }
 
-Write-Output $response
+Write-Output "Writing spce."
+$response.Content | Out-File "openapi.json" -Encoding UTF8
 
-$response.Content > openapi.json
-
-
-Stop-Process -Name "LeagueClientUx"
 Stop-Process -Name "LeagueClient"
-
 Remove-Item "$LOCK_FILE"
+
+Write-Output "Done."
