@@ -43,7 +43,8 @@ $success = $false
 while (-not $success) {
   Start-Sleep 1
   try {
-    $response = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json" -Headers @{'Authorization' = "Basic $userpass" }
+    $specResponse = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json" -Headers @{ 'Authorization' = "Basic $userpass" }
+    $helpResponse = Invoke-WebRequest "https://127.0.0.1:$port/help"                    -Headers @{ 'Authorization' = "Basic $userpass" }
     $success = $true
   } catch {
     $attempt--
@@ -60,8 +61,10 @@ Write-Output "Writing spec."
 Stop-Process -Name "LeagueClient"
 Remove-Item "$LOCK_FILE"
 
-$specObject = $response.Content | ConvertFrom-Json
+$specObject = $specResponse.Content | ConvertFrom-Json
 $specObject | ConvertTo-Json -Depth 100 | Format-Json | Out-File "openapi.json" -Encoding UTF8
 $specObject | ConvertTo-Json -Depth 100 -COmpress | Out-File "openapi.min.json" -Encoding UTF8
+
+$helpResponse.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100 | Format-Json | Out-File "help.json" -Encoding UTF8
 
 Write-Output "Success."
