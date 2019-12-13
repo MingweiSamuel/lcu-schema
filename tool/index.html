@@ -49,8 +49,14 @@
         plugins: [
           SwaggerUIBundle.plugins.DownloadUrl
         ],
-        layout: "StandaloneLayout"
-      })
+        layout: "StandaloneLayout",
+        // Added:
+        deepLinking: true,
+        displayOperationId: true,
+        docExpansion: "none",
+        filter: true,
+        supportedSubmitMethods: [] // Disable "Try it out".
+      });
       // End Swagger UI call region
 
       window.ui = ui
