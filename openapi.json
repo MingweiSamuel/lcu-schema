@@ -13516,6 +13516,10 @@
           "owned": {
             "type": "boolean"
           },
+          "rarityValue": {
+            "format": "int32",
+            "type": "integer"
+          },
           "selected": {
             "type": "boolean"
           }
@@ -22947,7 +22951,7 @@
       "LolLobbyTeamBuilderTeambuilderLeagueEdgeResponse": {
         "properties": {
           "payload": {
-            "type": "string"
+            "$ref": "#/components/schemas/LolLobbyTeamBuilderTbLobbyStateResource"
           },
           "status": {
             "type": "string"
@@ -34764,6 +34768,9 @@
           "isFavorite": {
             "type": "boolean"
           },
+          "isRetired": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string"
           },
@@ -36625,8 +36632,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -37441,114 +37448,6 @@
               "$ref": "#/components/schemas/MultipleReplayMetadataResponseItemV2"
             },
             "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkTestingGameLatencyExperimentResult": {
-        "properties": {
-          "latency": {
-            "format": "double",
-            "type": "number"
-          },
-          "server": {
-            "type": "string"
-          },
-          "size": {
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkTestingGameLatencyExperimentResults": {
-        "properties": {
-          "results": {
-            "items": {
-              "$ref": "#/components/schemas/NetworkTestingGameLatencyExperimentResult"
-            },
-            "type": "array"
-          },
-          "timestamp": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkTestingNetworkExperimentResource": {
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/NetworkTestingNetworkExperimentStatus"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkTestingNetworkExperimentStatus": {
-        "enum": [
-          "Disabled",
-          "Skipped",
-          "InProgress",
-          "Completed"
-        ],
-        "type": "string"
-      },
-      "NetworkTestingNetworkExperimentsResource": {
-        "properties": {
-          "experiments": {
-            "additionalProperties": {
-              "$ref": "#/components/schemas/NetworkTestingNetworkExperimentResource"
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "NetworkTestingNetworkTestingDynamicConfig": {
-        "properties": {
-          "GameLatencyProbability": {
-            "format": "double",
-            "type": "number"
-          },
-          "GameLatencyProbeCount": {
-            "type": "integer"
-          },
-          "GameLatencyProbePort": {
-            "type": "integer"
-          },
-          "GameLatencyProbeServers": {
-            "type": "string"
-          },
-          "GameLatencyProbeSize": {
-            "type": "integer"
-          },
-          "GameLatencyTimeoutSecs": {
-            "format": "double",
-            "type": "number"
-          },
-          "IPv4OptionsProbability": {
-            "format": "double",
-            "type": "number"
-          },
-          "IPv4OptionsProbeCount": {
-            "type": "integer"
-          },
-          "IPv4OptionsProbePort": {
-            "type": "integer"
-          },
-          "IPv4OptionsProbeServers": {
-            "type": "string"
-          },
-          "IPv6SupportProbability": {
-            "format": "double",
-            "type": "number"
-          },
-          "IPv6SupportProbeCount": {
-            "type": "integer"
-          },
-          "IPv6SupportProbePort": {
-            "type": "integer"
-          },
-          "IPv6SupportProbeServers": {
-            "type": "string"
           }
         },
         "type": "object"
@@ -38902,12 +38801,6 @@
             },
             "type": "array"
           },
-          "dynLibFileName": {
-            "type": "string"
-          },
-          "dynLibPath": {
-            "type": "string"
-          },
           "feature": {
             "type": "string"
           },
@@ -38920,25 +38813,11 @@
             },
             "type": "array"
           },
-          "isDynamicLibraryInited": {
-            "type": "boolean"
-          },
-          "isDynamicLibraryLoaded": {
-            "type": "boolean"
-          },
           "mountedAssetBundles": {
             "additionalProperties": {
               "type": "string"
             },
             "type": "object"
-          },
-          "orderDynamicLibraryInited": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "orderDynamicLibraryLoaded": {
-            "format": "int32",
-            "type": "integer"
           },
           "orderWADFileMounted": {
             "format": "int32",
@@ -38949,9 +38828,6 @@
           },
           "shortName": {
             "type": "string"
-          },
-          "standalone": {
-            "type": "boolean"
           },
           "subtype": {
             "type": "string"
@@ -42593,7 +42469,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "Http2AsyncDelete",
+        "operationId": "HttpAsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -68896,6 +68772,74 @@
         ]
       }
     },
+    "/lol-summoner/v2/summoners/puuid": {
+      "post": {
+        "operationId": "PostLolSummonerV2SummonersPuuid",
+        "parameters": [
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolSummonerSummoner"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
+    "/lol-summoner/v2/summoners/puuid/{puuid}": {
+      "get": {
+        "operationId": "GetLolSummonerV2SummonersPuuidByPuuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolSummonerSummoner"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
     "/lol-tencent-qt/v1/ui-states": {
       "get": {
         "operationId": "GetLolTencentQtV1UiStates",
@@ -69180,71 +69124,6 @@
         "tags": [
           "Plugins",
           "Plugin lol-trophies"
-        ]
-      }
-    },
-    "/network-testing/v1/experiments": {
-      "get": {
-        "operationId": "GetNetworkTestingV1Experiments",
-        "parameters": [
-          
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NetworkTestingNetworkExperimentsResource"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin network-testing"
-        ]
-      }
-    },
-    "/network-testing/v1/game-latency": {
-      "get": {
-        "operationId": "GetNetworkTestingV1GameLatency",
-        "parameters": [
-          
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NetworkTestingGameLatencyExperimentResults"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin network-testing"
-        ]
-      }
-    },
-    "/network-testing/v1/game-latency/results": {
-      "delete": {
-        "operationId": "DeleteNetworkTestingV1GameLatencyResults",
-        "parameters": [
-          
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin network-testing"
         ]
       }
     },
@@ -72672,7 +72551,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [
           
         ],
@@ -72735,7 +72614,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [
           
         ],
