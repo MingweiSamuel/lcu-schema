@@ -38,18 +38,19 @@ $userpass = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetByt
 Write-Output "Lockfile parsed, userpass64: '$userpass'.".
 
 Write-Output "Sending request for spec."
-$attempt = 20
+$attempt = 10
 $success = $false
 while (-not $success) {
   Start-Sleep 1
   try {
-    $specResponse = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json" -Headers @{ 'Authorization' = "Basic $userpass" }
-    $helpResponse = Invoke-WebRequest "https://127.0.0.1:$port/help"                    -Headers @{ 'Authorization' = "Basic $userpass" }
+    $specResponse = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json" -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
+    $helpResponse = Invoke-WebRequest "https://127.0.0.1:$port/help"                    -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
     $success = $true
   } catch {
     $attempt--
     if ($attempt -le 0) {
-      Write-Output "Failed to connect to LCU."
+      Write-Output "Failed to connect to LCU with exception:"
+      Write-Host $_
       Stop-Process -Name "LeagueClient"
       Remove-Item "$LOCK_FILE"
       Exit
