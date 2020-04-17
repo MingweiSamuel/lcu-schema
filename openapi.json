@@ -880,6 +880,10 @@
           "rewardType": {
             "type": "string"
           },
+          "rosterId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "seasonId": {
             "format": "int32",
             "type": "integer"
@@ -891,6 +895,9 @@
             "type": "string"
           },
           "teamName": {
+            "type": "string"
+          },
+          "teamShortName": {
             "type": "string"
           },
           "theme": {
@@ -4825,6 +4832,9 @@
       },
       "LolCatalogCatalogPluginItem": {
         "properties": {
+          "active": {
+            "type": "boolean"
+          },
           "description": {
             "type": "string"
           },
@@ -7443,6 +7453,10 @@
           "gameTag": {
             "type": "string"
           },
+          "icon": {
+            "format": "int32",
+            "type": "integer"
+          },
           "id": {
             "type": "string"
           },
@@ -7450,6 +7464,9 @@
             "type": "string"
           },
           "pid": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "summonerId": {
@@ -8258,6 +8275,10 @@
           "gameTag": {
             "type": "string"
           },
+          "icon": {
+            "format": "int32",
+            "type": "integer"
+          },
           "id": {
             "type": "string"
           },
@@ -8268,6 +8289,9 @@
             "type": "string"
           },
           "pid": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "summonerId": {
@@ -8340,6 +8364,9 @@
             "type": "string"
           },
           "productName": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "statusMessage": {
@@ -8844,6 +8871,12 @@
             },
             "type": "array"
           },
+          "content_paths": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
           "id": {
             "type": "string"
           },
@@ -9260,6 +9293,9 @@
             "type": "string"
           },
           "productName": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "statusMessage": {
@@ -10765,6 +10801,7 @@
           "BANNED_SMURF_OPPONENT",
           "TICKET_CHARGED",
           "TICKET_REFUNDED",
+          "TICKET_COULD_NOT_BE_CHARGED",
           "SUB_INVITE_SELF",
           "GAME_START_RETRY",
           "GAME_START_RETRY_SUMMONERS",
@@ -11362,6 +11399,7 @@
       },
       "LolClashTournamentState": {
         "enum": [
+          "UPCOMING",
           "IDLE",
           "LOCK_IN",
           "SCOUTING",
@@ -13779,6 +13817,9 @@
             "format": "int32",
             "type": "integer"
           },
+          "groupName": {
+            "type": "string"
+          },
           "itemId": {
             "format": "int32",
             "type": "integer"
@@ -13826,6 +13867,9 @@
           "groupId": {
             "format": "int32",
             "type": "integer"
+          },
+          "groupName": {
+            "type": "string"
           },
           "itemId": {
             "format": "int32",
@@ -13996,6 +14040,13 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "groupId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "groupName": {
             "type": "string"
           },
           "itemId": {
@@ -31159,6 +31210,9 @@
       },
       "LolPurchaseWidgetCatalogPluginItem": {
         "properties": {
+          "active": {
+            "type": "boolean"
+          },
           "description": {
             "type": "string"
           },
@@ -36695,25 +36749,6 @@
         ],
         "type": "string"
       },
-      "LolTencentQtTencentQTNotification": {
-        "properties": {
-          "data": {
-            "additionalProperties": true,
-            "type": "object"
-          },
-          "state": {
-            "type": "string"
-          },
-          "timestamp": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "updatedBy": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "LolTrophiesCapClashTrophyEntitlementPayload": {
         "properties": {
           "rewardSpec": {
@@ -37080,8 +37115,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "UNLOCKED",
-          "LOCKED"
+          "LOCKED",
+          "UNLOCKED"
         ],
         "type": "string"
       },
@@ -67861,6 +67896,48 @@
         ]
       }
     },
+    "/lol-store/v1/catalog/{inventoryType}": {
+      "get": {
+        "operationId": "GetLolStoreV1CatalogByInventoryType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "inventoryType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "items": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "name": "itemIds",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolStoreCatalogItem"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-store"
+        ]
+      }
+    },
     "/lol-store/v1/catalogByInstanceIds": {
       "get": {
         "operationId": "GetLolStoreV1CatalogByInstanceIds",
@@ -69096,99 +69173,6 @@
         "tags": [
           "Plugins",
           "Plugin lol-summoner"
-        ]
-      }
-    },
-    "/lol-tencent-qt/v1/ui-states": {
-      "get": {
-        "operationId": "GetLolTencentQtV1UiStates",
-        "parameters": [
-          
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": {
-                    "$ref": "#/components/schemas/LolTencentQtTencentQTNotification"
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-tencent-qt"
-        ]
-      }
-    },
-    "/lol-tencent-qt/v1/ui-states/{feature}": {
-      "get": {
-        "operationId": "GetLolTencentQtV1UiStatesByFeature",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "feature",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LolTencentQtTencentQTNotification"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-tencent-qt"
-        ]
-      },
-      "post": {
-        "operationId": "PostLolTencentQtV1UiStatesByFeature",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "feature",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LolTencentQtTencentQTNotification"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-tencent-qt"
         ]
       }
     },
@@ -72621,7 +72605,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
