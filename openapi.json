@@ -5340,7 +5340,7 @@
             "type": "string"
           },
           "fullPrice": {
-            "format": "int32",
+            "format": "int64",
             "type": "integer"
           },
           "item": {
@@ -17880,6 +17880,265 @@
           "gameId": {
             "format": "int64",
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardChatSession": {
+        "properties": {
+          "sessionState": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardContentCookies": {
+        "properties": {
+          "content_id": {
+            "type": "string"
+          },
+          "content_path": {
+            "type": "string"
+          },
+          "cookies": {
+            "items": {
+              "$ref": "#/components/schemas/LolHovercardcookie"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardFriendResult": {
+        "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "availability": {
+            "type": "string"
+          },
+          "gameName": {
+            "type": "string"
+          },
+          "gameTag": {
+            "type": "string"
+          },
+          "icon": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "patchline": {
+            "type": "string"
+          },
+          "platformId": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "score": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "statusMessage": {
+            "type": "string"
+          },
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardHovercardUserInfo": {
+        "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "availability": {
+            "type": "string"
+          },
+          "gameName": {
+            "type": "string"
+          },
+          "gameTag": {
+            "type": "string"
+          },
+          "icon": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "patchline": {
+            "type": "string"
+          },
+          "platformId": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "remotePlatform": {
+            "type": "boolean"
+          },
+          "remoteProduct": {
+            "type": "boolean"
+          },
+          "remoteProductBackdropUrl": {
+            "type": "string"
+          },
+          "remoteProductIconUrl": {
+            "type": "string"
+          },
+          "score": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "statusMessage": {
+            "type": "string"
+          },
+          "summonerIcon": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "summonerLevel": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardPatchlineMetadata": {
+        "properties": {
+          "content_cookies": {
+            "items": {
+              "$ref": "#/components/schemas/LolHovercardContentCookies"
+            },
+            "type": "array"
+          },
+          "content_paths": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "id": {
+            "type": "string"
+          },
+          "product_id": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardProductMetadata": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "patchlines": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/LolHovercardPatchlineMetadata"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardProductMetadataMap": {
+        "properties": {
+          "products": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/LolHovercardProductMetadata"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardSummoner": {
+        "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "summonerLevel": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardSummonerIdAndIcon": {
+        "properties": {
+          "profileIconId": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardTopChampionMastery": {
+        "properties": {
+          "score": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardcookie": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -37115,8 +37374,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -42835,7 +43094,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -55729,6 +55988,35 @@
         ]
       }
     },
+    "/lol-hovercard/v1/friend-info/{puuid}": {
+      "get": {
+        "operationId": "GetLolHovercardV1FriendInfoByPuuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolHovercardHovercardUserInfo"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-hovercard"
+        ]
+      }
+    },
     "/lol-inventory/v1/champSelectInventory": {
       "get": {
         "operationId": "GetLolInventoryV1ChampSelectInventory",
@@ -60422,59 +60710,6 @@
         ]
       }
     },
-    "/lol-login/v1/service-proxy-method-requests": {
-      "post": {
-        "operationId": "PostLolLoginV1ServiceProxyMethodRequests",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "serviceName",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "methodName",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "responseMethodName",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "responseErrorName",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "format": "int32",
-            "in": "query",
-            "name": "pluginId",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "in": "query",
-            "name": "payload",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-login"
-        ]
-      }
-    },
     "/lol-login/v1/service-proxy-uuid-requests": {
       "post": {
         "operationId": "PostLolLoginV1ServiceProxyUuidRequests",
@@ -60495,6 +60730,13 @@
             "format": "int32",
             "in": "query",
             "name": "pluginId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "format": "int64",
+            "in": "query",
+            "name": "timeoutMillis",
             "required": true,
             "type": "integer"
           },
@@ -69108,6 +69350,45 @@
         ]
       }
     },
+    "/lol-summoner/v2/summoners/names": {
+      "post": {
+        "operationId": "PostLolSummonerV2SummonersNames",
+        "parameters": [
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolSummonerSummoner"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
     "/lol-summoner/v2/summoners/puuid": {
       "post": {
         "operationId": "PostLolSummonerV2SummonersPuuid",
@@ -72643,7 +72924,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [
           
         ],
@@ -72668,7 +72949,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "HttpApiDocsV3",
+        "operationId": "Http2ApiDocsV3",
         "parameters": [
           
         ],
