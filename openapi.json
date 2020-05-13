@@ -5640,9 +5640,6 @@
           "entitledFeatureType": {
             "type": "string"
           },
-          "playerType": {
-            "type": "string"
-          },
           "selectedSkinId": {
             "format": "int32",
             "type": "integer"
@@ -5885,10 +5882,6 @@
             "format": "int64",
             "type": "integer"
           },
-          "adjustedTimeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
-          },
           "internalNowInEpochMs": {
             "format": "int64",
             "type": "integer"
@@ -5898,14 +5891,6 @@
           },
           "phase": {
             "type": "string"
-          },
-          "timeLeftInPhase": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "timeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
           },
           "totalTimeInPhase": {
             "format": "int64",
@@ -6317,10 +6302,6 @@
             "format": "int64",
             "type": "integer"
           },
-          "adjustedTimeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
-          },
           "internalNowInEpochMs": {
             "format": "int64",
             "type": "integer"
@@ -6330,14 +6311,6 @@
           },
           "phase": {
             "type": "string"
-          },
-          "timeLeftInPhase": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "timeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
           },
           "totalTimeInPhase": {
             "format": "int64",
@@ -18805,6 +18778,28 @@
         ],
         "type": "string"
       },
+      "LolItemSetsNameCheckPayload": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolItemSetsNameCheckResponse": {
+        "properties": {
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "LolItemSetsPreferredItemSlot": {
         "properties": {
           "id": {
@@ -18812,6 +18807,25 @@
           },
           "preferredItemSlot": {
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolItemSetsValidateItemSetNameInput": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolItemSetsValidateItemSetNameResponse": {
+        "properties": {
+          "nameCheckResponse": {
+            "$ref": "#/components/schemas/LolItemSetsNameCheckResponse"
+          },
+          "success": {
+            "type": "boolean"
           }
         },
         "type": "object"
@@ -22480,10 +22494,6 @@
             "format": "int64",
             "type": "integer"
           },
-          "adjustedTimeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
-          },
           "internalNowInEpochMs": {
             "format": "int64",
             "type": "integer"
@@ -22493,14 +22503,6 @@
           },
           "phase": {
             "type": "string"
-          },
-          "timeLeftInPhase": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "timeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
           },
           "totalTimeInPhase": {
             "format": "int64",
@@ -24224,6 +24226,18 @@
         },
         "type": "object"
       },
+      "LolLootCollectionsStatstone": {
+        "properties": {
+          "itemId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "ownershipType": {
+            "$ref": "#/components/schemas/LolLootInventoryOwnership"
+          }
+        },
+        "type": "object"
+      },
       "LolLootCollectionsSummonerIcons": {
         "properties": {
           "icons": {
@@ -24732,7 +24746,9 @@
           "SummonerIcon",
           "Companion",
           "Egg",
-          "Egg_Color"
+          "Egg_Color",
+          "Statstone",
+          "Statstone_Shard"
         ],
         "type": "string"
       },
@@ -28566,9 +28582,6 @@
             "format": "int32",
             "type": "integer"
           },
-          "playerType": {
-            "type": "string"
-          },
           "selectedSkinId": {
             "format": "int32",
             "type": "integer"
@@ -28648,10 +28661,6 @@
             "format": "int64",
             "type": "integer"
           },
-          "adjustedTimeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
-          },
           "internalNowInEpochMs": {
             "format": "int64",
             "type": "integer"
@@ -28661,14 +28670,6 @@
           },
           "phase": {
             "type": "string"
-          },
-          "timeLeftInPhase": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "timeLeftInPhaseInSec": {
-            "format": "int32",
-            "type": "integer"
           },
           "totalTimeInPhase": {
             "format": "int64",
@@ -28861,6 +28862,28 @@
           "ERROR"
         ],
         "type": "string"
+      },
+      "LolPerksNameCheckPayload": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPerksNameCheckReponse": {
+        "properties": {
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
       },
       "LolPerksPerkBook": {
         "properties": {
@@ -29396,6 +29419,29 @@
           "targetPageId": {
             "format": "int32",
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolPerksValidatePageNameData": {
+        "properties": {
+          "id": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPerksValidatePageNameResponse": {
+        "properties": {
+          "nameCheckResponse": {
+            "$ref": "#/components/schemas/LolPerksNameCheckReponse"
+          },
+          "success": {
+            "type": "boolean"
           }
         },
         "type": "object"
@@ -56622,6 +56668,45 @@
         ]
       }
     },
+    "/lol-item-sets/v1/item-sets/{summonerId}/validate": {
+      "post": {
+        "operationId": "PostLolItemSetsV1ItemSetsBySummonerIdValidate",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "summonerId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LolItemSetsValidateItemSetNameInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolItemSetsValidateItemSetNameResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-item-sets"
+        ]
+      }
+    },
     "/lol-kickout/v1/notification": {
       "get": {
         "operationId": "GetLolKickoutV1Notification",
@@ -63305,6 +63390,39 @@
         ]
       }
     },
+    "/lol-perks/v1/pages/validate": {
+      "put": {
+        "operationId": "PutLolPerksV1PagesValidate",
+        "parameters": [
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LolPerksValidatePageNameData"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolPerksValidatePageNameResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-perks"
+        ]
+      }
+    },
     "/lol-perks/v1/pages/{id}": {
       "delete": {
         "operationId": "DeleteLolPerksV1PagesById",
@@ -67927,6 +68045,35 @@
                     "$ref": "#/components/schemas/LolStatstonesProfileStatstoneSummary"
                   },
                   "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-statstones"
+        ]
+      }
+    },
+    "/lol-statstones/v1/statstone/{contentId}/owned": {
+      "get": {
+        "operationId": "GetLolStatstonesV1StatstoneByContentIdOwned",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "contentId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
                 }
               }
             },
@@ -72886,7 +73033,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -72924,7 +73071,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "Http2ApiDocsV2",
+        "operationId": "HttpApiDocsV2",
         "parameters": [
           
         ],
@@ -72949,7 +73096,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [
           
         ],
