@@ -633,6 +633,7 @@
     "GetLolHonorV2V1TeamChoices": "",
     "GetLolHonorV2V1VoteCompletion": "",
     "GetLolHovercardV1FriendInfoByPuuid": "",
+    "GetLolHovercardV1FriendInfoBySummonerBySummonerId": "",
     "GetLolInventoryV1ChampSelectInventory": "",
     "GetLolInventoryV1InitialConfigurationComplete": "",
     "GetLolInventoryV1Inventory": "",

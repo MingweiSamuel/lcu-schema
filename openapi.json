@@ -17904,6 +17904,12 @@
           "id": {
             "type": "string"
           },
+          "lol": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
           "name": {
             "type": "string"
           },
@@ -17960,6 +17966,12 @@
           },
           "id": {
             "type": "string"
+          },
+          "lol": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
           },
           "name": {
             "type": "string"
@@ -18074,6 +18086,9 @@
             "type": "integer"
           },
           "displayName": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "summonerId": {
@@ -36944,6 +36959,9 @@
       },
       "LolSummonerSummonerIcon": {
         "properties": {
+          "inventoryToken": {
+            "type": "string"
+          },
           "profileIconId": {
             "format": "int32",
             "type": "integer"
@@ -37420,8 +37438,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "UNLOCKED",
-          "LOCKED"
+          "LOCKED",
+          "UNLOCKED"
         ],
         "type": "string"
       },
@@ -39266,6 +39284,9 @@
           "sequence": {
             "format": "int32",
             "type": "integer"
+          },
+          "smallIconUrl": {
+            "type": "string"
           },
           "uniqueName": {
             "type": "string"
@@ -43140,7 +43161,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "Http2AsyncDelete",
+        "operationId": "HttpAsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -56031,6 +56052,36 @@
         "tags": [
           "Plugins",
           "Plugin lol-honor-v2"
+        ]
+      }
+    },
+    "/lol-hovercard/v1/friend-info-by-summoner/{summonerId}": {
+      "get": {
+        "operationId": "GetLolHovercardV1FriendInfoBySummonerBySummonerId",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "summonerId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolHovercardHovercardUserInfo"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-hovercard"
         ]
       }
     },
@@ -73008,7 +73059,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [
           
         ],
