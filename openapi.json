@@ -8062,6 +8062,12 @@
           },
           "pid": {
             "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -8720,6 +8726,12 @@
           "product": {
             "type": "string"
           },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
           "resource": {
             "type": "string"
           },
@@ -8816,10 +8828,19 @@
           "game_tag": {
             "type": "string"
           },
+          "muted": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string"
           },
           "pid": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
             "type": "string"
           }
         },
@@ -23632,6 +23653,10 @@
             "format": "int32",
             "type": "integer"
           },
+          "gameId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "matchmakingState": {
             "$ref": "#/components/schemas/LolLobbyTeamBuilderTBDMatchmakingState"
           },
@@ -23999,6 +24024,9 @@
       },
       "LolLoginLoginConnectionState": {
         "properties": {
+          "isPartnerRiotClient": {
+            "type": "boolean"
+          },
           "isUsingDeveloperAuthToken": {
             "type": "boolean"
           },
@@ -28203,10 +28231,16 @@
         ],
         "type": "string"
       },
-      "LolPatchEntitlementsTokens": {
+      "LolPatchEntitlementsTokenResource": {
         "properties": {
           "accessToken": {
             "type": "string"
+          },
+          "entitlements": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           },
           "token": {
             "type": "string"
@@ -28490,6 +28524,31 @@
           },
           "willRestartOnSelfUpdate": {
             "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "LolPatchSupportedGameRelease": {
+        "properties": {
+          "artifact_id": {
+            "type": "string"
+          },
+          "download": {
+            "$ref": "#/components/schemas/LolPatchPatchSieveDownload"
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "LolPatchSupportedGameReleases": {
+        "properties": {
+          "supported_game_releases": {
+            "items": {
+              "$ref": "#/components/schemas/LolPatchSupportedGameRelease"
+            },
+            "type": "array"
           }
         },
         "type": "object"
@@ -37438,8 +37497,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -39229,6 +39288,12 @@
           "progress": {
             "$ref": "#/components/schemas/MissionProgressDTO"
           },
+          "requirements": {
+            "items": {
+              "$ref": "#/components/schemas/MissionRequirementDTO"
+            },
+            "type": "array"
+          },
           "rewardGroups": {
             "items": {
               "type": "string"
@@ -39238,6 +39303,9 @@
           "sequence": {
             "format": "int32",
             "type": "integer"
+          },
+          "status": {
+            "type": "string"
           },
           "type": {
             "type": "string"
@@ -43161,7 +43229,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -62931,6 +62999,30 @@
         ]
       }
     },
+    "/lol-patch/v1/checking-enabled": {
+      "get": {
+        "operationId": "GetLolPatchV1CheckingEnabled",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-patch"
+        ]
+      }
+    },
     "/lol-patch/v1/environment": {
       "get": {
         "operationId": "GetLolPatchV1Environment",
@@ -62947,6 +63039,28 @@
               }
             },
             "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-patch"
+        ]
+      }
+    },
+    "/lol-patch/v1/game-patch-url": {
+      "put": {
+        "operationId": "PutLolPatchV1GamePatchUrl",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "url",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
           }
         },
         "tags": [
@@ -63175,6 +63289,30 @@
         "responses": {
           "204": {
             "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-patch"
+        ]
+      }
+    },
+    "/lol-patch/v1/products/league_of_legends/supported-game-releases": {
+      "get": {
+        "operationId": "GetLolPatchV1ProductsLeagueOfLegendsSupportedGameReleases",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolPatchSupportedGameReleases"
+                }
+              }
+            },
+            "description": "Successful response"
           }
         },
         "tags": [
@@ -73059,7 +73197,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "Http2ApiDocsV1",
+        "operationId": "HttpApiDocsV1",
         "parameters": [
           
         ],
