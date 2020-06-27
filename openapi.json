@@ -5718,6 +5718,10 @@
           "entitledFeatureState": {
             "$ref": "#/components/schemas/LolChampSelectEntitledFeatureState"
           },
+          "gameId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "hasSimultaneousBans": {
             "type": "boolean"
           },
@@ -5840,6 +5844,9 @@
             "type": "boolean"
           },
           "shouldShowSpells": {
+            "type": "boolean"
+          },
+          "showMuted": {
             "type": "boolean"
           },
           "showTrades": {
@@ -6607,6 +6614,18 @@
       },
       "LolChampSelectLoginSession": {
         "properties": {
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolChampSelectMutedPlayerInfo": {
+        "properties": {
+          "puuid": {
+            "type": "string"
+          },
           "summonerId": {
             "format": "int64",
             "type": "integer"
@@ -8198,6 +8217,12 @@
           "pid": {
             "type": "string"
           },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
           "subscription": {
             "$ref": "#/components/schemas/LolChatFriendSubscriptionType"
           }
@@ -8219,6 +8244,12 @@
             "type": "string"
           },
           "pid": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
             "type": "string"
           }
         },
@@ -8805,6 +8836,18 @@
           },
           "state": {
             "$ref": "#/components/schemas/LolChatAccountState"
+          }
+        },
+        "type": "object"
+      },
+      "LolChatMutedPlayerInfo": {
+        "properties": {
+          "puuid": {
+            "type": "string"
+          },
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -15977,6 +16020,18 @@
         },
         "type": "object"
       },
+      "LolGameClientChatMutedPlayerInfo": {
+        "properties": {
+          "puuid": {
+            "type": "string"
+          },
+          "summonerId": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "LolGameQueuesLoginDataPacket": {
         "properties": {
           "gameTypeConfigs": {
@@ -22428,6 +22483,29 @@
         },
         "type": "object"
       },
+      "LolLobbyTeamBuilderChampSelectReport": {
+        "properties": {
+          "categories": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "match_token": {
+            "type": "string"
+          },
+          "offender_puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolLobbyTeamBuilderChampSelectSession": {
         "properties": {
           "actions": {
@@ -22475,6 +22553,10 @@
           },
           "entitledFeatureState": {
             "$ref": "#/components/schemas/LolLobbyTeamBuilderEntitledFeatureState"
+          },
+          "gameId": {
+            "format": "int64",
+            "type": "integer"
           },
           "hasSimultaneousBans": {
             "type": "boolean"
@@ -26862,6 +26944,16 @@
         },
         "type": "object"
       },
+      "LolMissionsGrantStatus": {
+        "enum": [
+          "PENDING_FULFILLMENT",
+          "PENDING_SELECTION",
+          "PENDING_CHILD_FULILLMENT",
+          "FULFILLED",
+          "FAILED"
+        ],
+        "type": "string"
+      },
       "LolMissionsInventoryItemWithPayload": {
         "properties": {
           "itemId": {
@@ -26998,6 +27090,90 @@
         },
         "type": "object"
       },
+      "LolMissionsRewardGrant": {
+        "properties": {
+          "info": {
+            "$ref": "#/components/schemas/LolMissionsRewardGrantInfo"
+          },
+          "rewardGroup": {
+            "$ref": "#/components/schemas/LolMissionsRewardGroup"
+          }
+        },
+        "type": "object"
+      },
+      "LolMissionsRewardGrantInfo": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "parentGrantId": {
+            "type": "string"
+          },
+          "recipientId": {
+            "type": "string"
+          },
+          "recipientTypeId": {
+            "type": "string"
+          },
+          "rewardGroupId": {
+            "type": "string"
+          },
+          "rewardStatuses": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/LolMissionsGrantStatus"
+            },
+            "type": "object"
+          },
+          "selectedIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "$ref": "#/components/schemas/LolMissionsGrantStatus"
+          },
+          "viewed": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "LolMissionsRewardGroup": {
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "internalName": {
+            "type": "string"
+          },
+          "localizations": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "media": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "rewards": {
+            "items": {
+              "$ref": "#/components/schemas/LolMissionsSvcReward"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "LolMissionsRewardGroupsSelection": {
         "properties": {
           "rewardGroups": {
@@ -27016,6 +27192,36 @@
           },
           "seriesId": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolMissionsSvcReward": {
+        "properties": {
+          "fulfillmentSource": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "itemId": {
+            "type": "string"
+          },
+          "localizations": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "media": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "quantity": {
+            "format": "int32",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -37497,8 +37703,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "UNLOCKED",
-          "LOCKED"
+          "LOCKED",
+          "UNLOCKED"
         ],
         "type": "string"
       },
@@ -39290,7 +39496,7 @@
           },
           "requirements": {
             "items": {
-              "$ref": "#/components/schemas/MissionRequirementDTO"
+              "type": "string"
             },
             "type": "array"
           },
@@ -42299,6 +42505,14 @@
         },
         "type": "object"
       },
+      "VoiceChatConfigReadinessEnum": {
+        "enum": [
+          "NotReady",
+          "Ready",
+          "Disabled"
+        ],
+        "type": "string"
+      },
       "VoiceChatConfigResource": {
         "properties": {
           "accessTokenUri": {
@@ -42334,6 +42548,21 @@
           }
         },
         "type": "object"
+      },
+      "VoiceChatConfigStatus": {
+        "properties": {
+          "readiness": {
+            "$ref": "#/components/schemas/VoiceChatConfigReadinessEnum"
+          }
+        },
+        "type": "object"
+      },
+      "VoiceChatConfigType": {
+        "enum": [
+          "public",
+          "player"
+        ],
+        "type": "string"
       },
       "VoiceChatDeviceResource": {
         "properties": {
@@ -46799,6 +47028,33 @@
         ]
       }
     },
+    "/lol-champ-select/v1/muted-players": {
+      "get": {
+        "operationId": "GetLolChampSelectV1MutedPlayers",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolChampSelectMutedPlayerInfo"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-champ-select"
+        ]
+      }
+    },
     "/lol-champ-select/v1/pickable-champion-ids": {
       "get": {
         "operationId": "GetLolChampSelectV1PickableChampionIds",
@@ -47065,6 +47321,42 @@
         "operationId": "PostLolChampSelectV1SessionMySelectionReroll",
         "parameters": [
           
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-champ-select"
+        ]
+      }
+    },
+    "/lol-champ-select/v1/session/report-player/{id}/{category}": {
+      "post": {
+        "operationId": "PostLolChampSelectV1SessionReportPlayerByIdByCategory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "200": {
@@ -47438,6 +47730,40 @@
             "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-champ-select"
+        ]
+      }
+    },
+    "/lol-champ-select/v1/toggle-player-muted": {
+      "post": {
+        "operationId": "PostLolChampSelectV1TogglePlayerMuted",
+        "parameters": [
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LolChampSelectMutedPlayerInfo"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "content": {
@@ -53709,26 +54035,6 @@
       }
     },
     "/lol-game-client-chat/v1/ignored-summoners": {
-      "delete": {
-        "operationId": "DeleteLolGameClientChatV1IgnoredSummoners",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "summonerName",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-game-client-chat"
-        ]
-      },
       "get": {
         "operationId": "GetLolGameClientChatV1IgnoredSummoners",
         "parameters": [
@@ -53748,26 +54054,6 @@
               }
             },
             "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-game-client-chat"
-        ]
-      },
-      "post": {
-        "operationId": "PostLolGameClientChatV1IgnoredSummoners",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "summonerName",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
           }
         },
         "tags": [
@@ -53796,6 +54082,34 @@
         "responses": {
           "204": {
             "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-game-client-chat"
+        ]
+      }
+    },
+    "/lol-game-client-chat/v1/muted-summoners": {
+      "get": {
+        "operationId": "GetLolGameClientChatV1MutedSummoners",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "format": "int64",
+                    "type": "integer"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
           }
         },
         "tags": [
@@ -57756,6 +58070,42 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LolLobbyTeamBuilderChampionSelectPreferences"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-lobby-team-builder"
+        ]
+      }
+    },
+    "/lol-lobby-team-builder/champ-select/v1/report-player/{id}/{category}": {
+      "post": {
+        "operationId": "PostLolLobbyTeamBuilderChampSelectV1ReportPlayerByIdByCategory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
                 }
               }
             },
@@ -62575,6 +62925,55 @@
         "operationId": "PostLolMissionsV1Force",
         "parameters": [
           
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-missions"
+        ]
+      }
+    },
+    "/lol-missions/v1/grants": {
+      "get": {
+        "operationId": "GetLolMissionsV1Grants",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolMissionsRewardGrant"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-missions"
+        ]
+      }
+    },
+    "/lol-missions/v1/grants/{grantId}/viewed": {
+      "patch": {
+        "operationId": "PatchLolMissionsV1GrantsByGrantIdViewed",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "grantId",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
           "204": {
@@ -73197,7 +73596,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [
           
         ],
@@ -73222,7 +73621,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
