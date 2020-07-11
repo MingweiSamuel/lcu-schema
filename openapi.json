@@ -3492,6 +3492,9 @@
             "format": "int32",
             "type": "integer"
           },
+          "gameVersion": {
+            "type": "string"
+          },
           "maxNumPlayers": {
             "format": "int32",
             "type": "integer"
@@ -10001,7 +10004,10 @@
           "ACCEPT_TICKET",
           "REWARD_GRANT_FAILED",
           "REWARD_GRANT_RETRY",
-          "REVERTED_REGISTRATION"
+          "REVERTED_REGISTRATION",
+          "BAN",
+          "UNBAN",
+          "MEMBER_BAN"
         ],
         "type": "string"
       },
@@ -10219,6 +10225,17 @@
           },
           "state": {
             "$ref": "#/components/schemas/LolClashPlayerState"
+          }
+        },
+        "type": "object"
+      },
+      "LolClashPlayerUpdateNotification": {
+        "properties": {
+          "notifyReason": {
+            "$ref": "#/components/schemas/LolClashNotifyReason"
+          },
+          "player": {
+            "$ref": "#/components/schemas/PlayerDTO"
           }
         },
         "type": "object"
@@ -24866,6 +24883,7 @@
           "Chest",
           "Currency",
           "Material",
+          "WardSkin",
           "Skin",
           "Skin_Rental",
           "SummonerIcon",
@@ -28719,6 +28737,38 @@
           }
         },
         "type": "object"
+      },
+      "LolPatchScdCookie": {
+        "properties": {
+          "cookie": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPatchScdCookies": {
+        "properties": {
+          "cookies": {
+            "items": {
+              "$ref": "#/components/schemas/LolPatchScdCookie"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "LolPatchScdEnabled": {
+        "enum": [
+          "Off",
+          "On"
+        ],
+        "type": "string"
       },
       "LolPatchStatus": {
         "properties": {
@@ -37319,6 +37369,19 @@
         },
         "type": "object"
       },
+      "LolTastesDataModelResponse": {
+        "properties": {
+          "modelData": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "responseCode": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "LolTencentAntiaddictionAntiAddictionState": {
         "properties": {
           "localizationKey": {
@@ -43458,7 +43521,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -70192,6 +70255,54 @@
         ]
       }
     },
+    "/lol-tastes/v1/ready": {
+      "get": {
+        "operationId": "GetLolTastesV1Ready",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-tastes"
+        ]
+      }
+    },
+    "/lol-tastes/v1/skins-model": {
+      "get": {
+        "operationId": "GetLolTastesV1SkinsModel",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolTastesDataModelResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-tastes"
+        ]
+      }
+    },
     "/lol-tft/v2/tft/battlepass": {
       "get": {
         "operationId": "GetLolTftV2TftBattlepass",
@@ -73621,7 +73732,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
