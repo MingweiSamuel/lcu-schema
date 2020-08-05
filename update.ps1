@@ -35,7 +35,7 @@ $pass = $lockContent[3];
 
 $userpass = "${RIOT_USERNAME}:$pass"
 $userpass = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($userpass))
-Write-Output "Lockfile parsed, userpass64: '$userpass'.".
+Write-Output "Lockfile parsed, port: '$port', userpass64: '$userpass'.".
 
 Write-Output "Sending request for spec."
 $attempt = 10
@@ -43,9 +43,11 @@ $success = $false
 while (-not $success) {
   Start-Sleep 1
   try {
-    $specResponse = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json" -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
-    $helpResponse = Invoke-WebRequest "https://127.0.0.1:$port/help"                    -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
+    $specResponse  = Invoke-WebRequest "https://127.0.0.1:$port/swagger/v3/openapi.json"   -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
+    $helpResponse  = Invoke-WebRequest "https://127.0.0.1:$port/help"                      -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
+    # $queueResponse = Invoke-WebRequest "https://127.0.0.1:$port/lol-game-queues/v1/queues" -Headers @{ 'Authorization' = "Basic $userpass" } -UseBasicParsing
     $success = $true
+    Exit
   } catch {
     $attempt--
     if ($attempt -le 0) {
@@ -66,6 +68,7 @@ $specObject = $specResponse.Content | ConvertFrom-Json
 [IO.File]::WriteAllLines("openapi.json", $($specObject | ConvertTo-Json -Depth 100 | Format-Json))
 [IO.File]::WriteAllLines("openapi.min.json", $($specObject | ConvertTo-Json -Depth 100 -Compress))
 
-$helpResponse.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100 | Format-Json | Out-File "help.json" -Encoding UTF8
+$helpResponse.Content  | ConvertFrom-Json | ConvertTo-Json -Depth 100 | Format-Json | Out-File -Encoding UTF8 "help.json"
+# $queueResponse.Content | ConvertFrom-Json | ConvertTo-Json -Depth 100 | Format-Json | Out-File -Encoding UTF8 "queues.json"
 
 Write-Output "Success."

@@ -1328,6 +1328,7 @@
     "PostRiotclientSetRegionLocale": "Update the region and locale.",
     "PostRiotclientShowSwagger": "Open swagger in the default browser.",
     "PostRiotclientUnload": "Unloads the UX process",
+    "PostRiotclientUxAllowForeground": "Allows the background process to launch the game into the foregound.",
     "PostRiotclientUxFlash": "Flash the ux process\u0027 main window and the taskbar/dock icon, if they exist.",
     "PostRiotclientUxMinimize": "Minimize the ux process and all its windows if it exists. This does not kill the ux.",
     "PostRiotclientUxShow": "Shows the ux process if it exists; create and show if it does not.",
