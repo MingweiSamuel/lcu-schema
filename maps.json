@@ -1,289 +1,288 @@
-﻿{
-    "value": [
-        {
-            "assets": {
-                "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
-                "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-active.png",
-                "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-active.webm",
-                "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-default.png",
-                "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-disabled.png",
-                "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-hover.png",
-                "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-intro.webm",
-                "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
-                "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
-                "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-defeat.png",
-                "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-empty.png",
-                "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-victory.png",
-                "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/sound/music-inqueue-loop-teamfighttactics.ogg",
-                "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/parties-background-temp-short.jpg",
-                "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
-                "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/ready-check-background.jpg",
-                "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg"
-            },
-            "categorizedContentBundles": {
-
-            },
-            "description": "Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.",
-            "gameMode": "TFT",
-            "gameModeDescription": "Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.",
-            "gameModeName": "Teamfight Tactics",
-            "gameModeShortName": "",
-            "gameMutator": "",
-            "id": 22,
-            "isDefault": true,
-            "isRGM": false,
-            "mapStringId": "TFT",
-            "name": "Teamfight Tactics",
-            "platformId": "",
-            "platformName": "",
-            "properties": {
-                "suppressRunesMasteriesPerks": true
-            },
-            "tutorialCards": [{
-                    "description": "Choose a champion from the store and recruit them with gold. Then, drag them from the bench to the battlefield to deploy them.\u003cbr\u003e\u003cbr\u003eCombine three of the same champion to create a stronger, two-star version of that champion.",
-                    "footer": "",
-                    "header": "Recruit.",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_1.png"
-                },
-                {
-                    "description": "Champions have traits and earn bonuses when deployed with other champs that share those traits.\u003cbr\u003e\u003cbr\u003ePositioning matters! Experiment with different layouts to find the best results.",
-                    "footer": "",
-                    "header": "Deploy.",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_2.png"
-                },
-                {
-                    "description": "Each round, your team teleports to an enemy\u0027s arena (or vice-versa). Champions fight automatically, and if your team is defeated, your Little Legend takes damage.\u003cbr\u003e\u003cbr\u003eWhen your Little Legend\u0027s health reaches 0, you\u0027re out of the game.",
-                    "footer": "",
-                    "header": "Battle.",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_3.png"
-                }
-            ]
+﻿[
+  {
+    "assets": {
+      "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
+      "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-active.png",
+      "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-active.webm",
+      "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-default.png",
+      "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-disabled.png",
+      "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-hover.png",
+      "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-intro.webm",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
+      "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
+      "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-defeat.png",
+      "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-empty.png",
+      "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-victory.png",
+      "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/sound/music-inqueue-loop-teamfighttactics.ogg",
+      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/parties-background-temp-short.jpg",
+      "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
+      "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/ready-check-background.jpg",
+      "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg"
+    },
+    "categorizedContentBundles": {
+      
+    },
+    "description": "Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.",
+    "gameMode": "TFT",
+    "gameModeDescription": "Assemble a squad of champions that battle on your behalf. Outlast all seven of your opponents and become the last person standing.",
+    "gameModeName": "Teamfight Tactics",
+    "gameModeShortName": "",
+    "gameMutator": "",
+    "id": 22,
+    "isDefault": true,
+    "isRGM": false,
+    "mapStringId": "TFT",
+    "name": "Teamfight Tactics",
+    "platformId": "",
+    "platformName": "",
+    "properties": {
+      "suppressRunesMasteriesPerks": true
+    },
+    "tutorialCards": [
+      {
+        "description": "Choose a champion from the store and recruit them with gold. Then, drag them from the bench to the battlefield to deploy them.\u003cbr\u003e\u003cbr\u003eCombine three of the same champion to create a stronger, two-star version of that champion.",
+        "footer": "",
+        "header": "Recruit.",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_1.png"
+      },
+      {
+        "description": "Champions have traits and earn bonuses when deployed with other champs that share those traits.\u003cbr\u003e\u003cbr\u003ePositioning matters! Experiment with different layouts to find the best results.",
+        "footer": "",
+        "header": "Deploy.",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_2.png"
+      },
+      {
+        "description": "Each round, your team teleports to an enemy\u0027s arena (or vice-versa). Champions fight automatically, and if your team is defeated, your Little Legend takes damage.\u003cbr\u003e\u003cbr\u003eWhen your Little Legend\u0027s health reaches 0, you\u0027re out of the game.",
+        "footer": "",
+        "header": "Battle.",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/TFT/TFT_Tutorial_Lobby_3.png"
+      }
+    ]
+  },
+  {
+    "assets": {
+      "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/music-cs-blindpick-default.ogg",
+      "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/champ-select-flyout-background.jpg",
+      "champ-select-planning-intro": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/champ-select-planning-intro.jpg",
+      "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-active.png",
+      "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/game-select-icon-active.webm",
+      "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-default.png",
+      "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-disabled.png",
+      "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-hover.png",
+      "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/game-select-icon-intro.webm",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/gameflow-background.jpg",
+      "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
+      "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-defeat.png",
+      "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/icon-defeat.webm",
+      "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-empty.png",
+      "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-hover.png",
+      "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-leaver.png",
+      "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-victory.png",
+      "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/icon-victory.webm",
+      "map-north": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/map-north.png",
+      "map-south": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/map-south.png",
+      "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/music-inqueue-loop-summonersrift.ogg",
+      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/parties-background.jpg",
+      "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
+      "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/ready-check-background.png",
+      "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-readycheck-sr-portal.ogg",
+      "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
+      "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/social-icon-leaver.png",
+      "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/social-icon-victory.png"
+    },
+    "categorizedContentBundles": {
+      
+    },
+    "description": "The newest and most venerated battleground is known as Summoner\u0027s Rift. Traverse down one of three different paths in order to attack your enemy at their weakest point. Work with your allies to siege the enemy base and destroy their Nexus!",
+    "gameMode": "CLASSIC",
+    "gameModeDescription": "Crush your lane, dive into epic five-on-five team fights, and destroy the enemy nexus in League\u0027s premier competitive mode.",
+    "gameModeName": "Summoner\u0027s Rift",
+    "gameModeShortName": "Summoner\u0027s Rift",
+    "gameMutator": "",
+    "id": 11,
+    "isDefault": true,
+    "isRGM": false,
+    "mapStringId": "SR",
+    "name": "Summoner\u0027s Rift",
+    "platformId": "",
+    "platformName": "",
+    "properties": {
+      "suppressRunesMasteriesPerks": false
+    },
+    "tutorialCards": [
+      
+    ]
+  },
+  {
+    "assets": {
+      "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-cs-allrandom-howlingabyss.ogg",
+      "champ-select-banphase-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-cs-allrandom-banphase-howlingabyss.ogg",
+      "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/champ-select-flyout-background.png",
+      "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-active.png",
+      "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/game-select-icon-active.webm",
+      "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-default.png",
+      "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-disabled.png",
+      "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-hover.png",
+      "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/game-select-icon-intro.webm",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/gameflow-background.jpg",
+      "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
+      "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-defeat.png",
+      "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/icon-defeat.webm",
+      "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-empty.png",
+      "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-hover.png",
+      "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-leaver.png",
+      "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-victory.png",
+      "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/icon-victory.webm",
+      "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-inqueue-loop-howlingabyss.ogg",
+      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/parties-background.jpg",
+      "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-ambience-loop-howlingabyss.ogg",
+      "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/ready-check-background.png",
+      "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-readycheck-ha-portal.ogg",
+      "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-ambience-loop-howlingabyss.ogg",
+      "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/social-icon-leaver.png",
+      "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/social-icon-victory.png"
+    },
+    "categorizedContentBundles": {
+      
+    },
+    "description": "The Howling Abyss is a bottomless crevasse located in the coldest, cruelest, part of the Freljord. Legends say that, long ago, a great battle took place here on the narrow bridge spanning this chasm. No one remembers who fought here, or why, but it is said that if you listen carefully to the wind you can still hear the cries of the vanquished tossed howling into the Abyss.",
+    "gameMode": "ARAM",
+    "gameModeDescription": "Ten randomly-selected champions assemble on a narrow bridge in a frozen land. Cross to the other side and destroy everything in your path.",
+    "gameModeName": "ARAM",
+    "gameModeShortName": "ARAM",
+    "gameMutator": "",
+    "id": 12,
+    "isDefault": true,
+    "isRGM": false,
+    "mapStringId": "HA",
+    "name": "Howling Abyss",
+    "platformId": "",
+    "platformName": "",
+    "properties": {
+      "suppressRunesMasteriesPerks": false
+    },
+    "tutorialCards": [
+      
+    ]
+  },
+  {
+    "assets": {
+      "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/music-cs-blindpick-default.ogg",
+      "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/champ-select-flyout-background.jpg",
+      "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-active.png",
+      "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/game-select-icon-rgm-active.webm",
+      "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-empty.png",
+      "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-disabled.png",
+      "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-hover.png",
+      "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/game-select-icon-rgm-intro.webm",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/gameflow-background.jpg",
+      "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
+      "generic-event-icon": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/event.png",
+      "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-defeat.png",
+      "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/icon-rgm-defeat.webm",
+      "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-empty.png",
+      "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-hover.png",
+      "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-leaver.png",
+      "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-victory.png",
+      "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/icon-rgm-victory.webm",
+      "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/music-inqueue-loop-summonersrift.ogg",
+      "notification-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/notification-background.jpg",
+      "notification-icon": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-active.png",
+      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/parties-background.jpg",
+      "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
+      "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/ready-check-background.png",
+      "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-readycheck-sr-portal.ogg",
+      "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
+      "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/social-icon-leaver.png",
+      "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/social-icon-victory.png"
+    },
+    "categorizedContentBundles": {
+      "GameEventInfoCards": {
+        "0": {
+          "body": "Race your Scuttlecrab to the finish line!",
+          "footer": "Race your Scuttlecrab to the finish line!",
+          "header": "SCUTTLE RACING",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Scuttle-Race.png"
         },
-        {
-            "assets": {
-                "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/music-cs-blindpick-default.ogg",
-                "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/champ-select-flyout-background.jpg",
-                "champ-select-planning-intro": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/champ-select-planning-intro.jpg",
-                "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-active.png",
-                "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/game-select-icon-active.webm",
-                "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-default.png",
-                "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-disabled.png",
-                "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/game-select-icon-hover.png",
-                "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/game-select-icon-intro.webm",
-                "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/gameflow-background.jpg",
-                "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
-                "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-defeat.png",
-                "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/icon-defeat.webm",
-                "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-empty.png",
-                "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-hover.png",
-                "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-leaver.png",
-                "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/icon-victory.png",
-                "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/video/icon-victory.webm",
-                "map-north": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/map-north.png",
-                "map-south": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/map-south.png",
-                "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/music-inqueue-loop-summonersrift.ogg",
-                "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/parties-background.jpg",
-                "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
-                "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/ready-check-background.png",
-                "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-readycheck-sr-portal.ogg",
-                "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
-                "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/social-icon-leaver.png",
-                "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/img/social-icon-victory.png"
-            },
-            "categorizedContentBundles": {
-
-            },
-            "description": "The newest and most venerated battleground is known as Summoner\u0027s Rift. Traverse down one of three different paths in order to attack your enemy at their weakest point. Work with your allies to siege the enemy base and destroy their Nexus!",
-            "gameMode": "CLASSIC",
-            "gameModeDescription": "Crush your lane, dive into epic five-on-five team fights, and destroy the enemy nexus in League\u0027s premier competitive mode.",
-            "gameModeName": "Summoner\u0027s Rift",
-            "gameModeShortName": "Summoner\u0027s Rift",
-            "gameMutator": "",
-            "id": 11,
-            "isDefault": true,
-            "isRGM": false,
-            "mapStringId": "SR",
-            "name": "Summoner\u0027s Rift",
-            "platformId": "",
-            "platformName": "",
-            "properties": {
-                "suppressRunesMasteriesPerks": false
-            },
-            "tutorialCards": [
-
-            ]
+        "1": {
+          "body": "Face off the enemy team in a series of duels!",
+          "footer": "Face off the enemy team in a series of duels!",
+          "header": "PRIZE FIGHT",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Prize-Fight.png"
         },
-        {
-            "assets": {
-                "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-cs-allrandom-howlingabyss.ogg",
-                "champ-select-banphase-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-cs-allrandom-banphase-howlingabyss.ogg",
-                "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/champ-select-flyout-background.png",
-                "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-active.png",
-                "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/game-select-icon-active.webm",
-                "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-default.png",
-                "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-disabled.png",
-                "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/game-select-icon-hover.png",
-                "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/game-select-icon-intro.webm",
-                "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/gameflow-background.jpg",
-                "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
-                "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-defeat.png",
-                "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/icon-defeat.webm",
-                "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-empty.png",
-                "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-hover.png",
-                "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-leaver.png",
-                "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/icon-victory.png",
-                "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/video/icon-victory.webm",
-                "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/music-inqueue-loop-howlingabyss.ogg",
-                "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/parties-background.jpg",
-                "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-ambience-loop-howlingabyss.ogg",
-                "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/ready-check-background.png",
-                "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-readycheck-ha-portal.ogg",
-                "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/sound/sfx-ambience-loop-howlingabyss.ogg",
-                "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/social-icon-leaver.png",
-                "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/ARAM/img/social-icon-victory.png"
-            },
-            "categorizedContentBundles": {
-
-            },
-            "description": "The Howling Abyss is a bottomless crevasse located in the coldest, cruelest, part of the Freljord. Legends say that, long ago, a great battle took place here on the narrow bridge spanning this chasm. No one remembers who fought here, or why, but it is said that if you listen carefully to the wind you can still hear the cries of the vanquished tossed howling into the Abyss.",
-            "gameMode": "ARAM",
-            "gameModeDescription": "Ten randomly-selected champions assemble on a narrow bridge in a frozen land. Cross to the other side and destroy everything in your path.",
-            "gameModeName": "ARAM",
-            "gameModeShortName": "ARAM",
-            "gameMutator": "",
-            "id": 12,
-            "isDefault": true,
-            "isRGM": false,
-            "mapStringId": "HA",
-            "name": "Howling Abyss",
-            "platformId": "",
-            "platformName": "",
-            "properties": {
-                "suppressRunesMasteriesPerks": false
-            },
-            "tutorialCards": [
-
-            ]
+        "2": {
+          "body": "Take the enemy team\u0027s lives before they take yours!",
+          "footer": "Take the enemy team\u0027s lives before they take yours!",
+          "header": "URF DEATHMATCH",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Urf-Deathmatch.png"
         },
-        {
-            "assets": {
-                "champ-select-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/music-cs-blindpick-default.ogg",
-                "champ-select-flyout-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/champ-select-flyout-background.jpg",
-                "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-active.png",
-                "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/game-select-icon-rgm-active.webm",
-                "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-empty.png",
-                "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-disabled.png",
-                "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-hover.png",
-                "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/game-select-icon-rgm-intro.webm",
-                "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/gameflow-background.jpg",
-                "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
-                "generic-event-icon": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/event.png",
-                "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-defeat.png",
-                "icon-defeat-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/icon-rgm-defeat.webm",
-                "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-empty.png",
-                "icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-hover.png",
-                "icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-leaver.png",
-                "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-victory.png",
-                "icon-victory-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/video/icon-rgm-victory.webm",
-                "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/music-inqueue-loop-summonersrift.ogg",
-                "notification-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/notification-background.jpg",
-                "notification-icon": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/img/icon-rgm-active.png",
-                "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/parties-background.jpg",
-                "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
-                "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/ready-check-background.png",
-                "ready-check-background-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-readycheck-sr-portal.ogg",
-                "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
-                "social-icon-leaver": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/social-icon-leaver.png",
-                "social-icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/social-icon-victory.png"
-            },
-            "categorizedContentBundles": {
-                "GameEventInfoCards": {
-                    "0": {
-                        "body": "Race your Scuttlecrab to the finish line!",
-                        "footer": "Race your Scuttlecrab to the finish line!",
-                        "header": "SCUTTLE RACING",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Scuttle-Race.png"
-                    },
-                    "1": {
-                        "body": "Face off the enemy team in a series of duels!",
-                        "footer": "Face off the enemy team in a series of duels!",
-                        "header": "PRIZE FIGHT",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Prize-Fight.png"
-                    },
-                    "2": {
-                        "body": "Take the enemy team\u0027s lives before they take yours!",
-                        "footer": "Take the enemy team\u0027s lives before they take yours!",
-                        "header": "URF DEATHMATCH",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Urf-Deathmatch.png"
-                    },
-                    "3": {
-                        "body": "Fight for survival in a random Bardle Royale event!",
-                        "footer": "Fight for survival in a random Bardle Royale event!",
-                        "header": "BARDLE ROULETTE",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Bardle-Royale.png"
-                    },
-                    "4": {
-                        "body": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
-                        "footer": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
-                        "header": "PROTECT THE SORAKA",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Protect-Soraka.png"
-                    },
-                    "5": {
-                        "body": "Do more damage to the Target Dummy than your opponents can!",
-                        "footer": "Do more damage to the Target Dummy than your opponents can!",
-                        "header": "DPS Check",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/DPS-Rush.png"
-                    },
-                    "6": {
-                        "body": "Kill Loot Teemo for his bounty!",
-                        "footer": "Kill Loot Teemo for his bounty!",
-                        "header": "LOOT TEEMO",
-                        "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Loot-Event.png"
-                    },
-                    "IconSubtext": {
-                        "body": "First Event",
-                        "footer": "First Event",
-                        "header": "First Event",
-                        "imagePath": "lol-game-data/assets/"
-                    }
-                }
-            },
-            "description": "Nexus Blitz",
-            "gameMode": "NEXUSBLITZ",
-            "gameModeDescription": "Venture to a long forgotten Ionian temple and destroy the enemy Nexus while completing a set of outrageous challengesâwin the fight quickly, or the Nexus will do it for you!",
-            "gameModeName": "Nexus Blitz",
-            "gameModeShortName": "Nexus Blitz",
-            "gameMutator": "",
-            "id": 21,
-            "isDefault": true,
-            "isRGM": true,
-            "mapStringId": "NB",
-            "name": "Nexus Blitz",
-            "platformId": "",
-            "platformName": "",
-            "properties": {
-                "suppressRunesMasteriesPerks": false
-            },
-            "tutorialCards": [{
-                    "description": "Fights constantly break out on a compact map with special events and rewards adding a touch of chaos.",
-                    "footer": "Estimated game time: 15 minutes",
-                    "header": "This is Nexus Blitz",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-1.png"
-                },
-                {
-                    "description": "Roam as two junglers to share gold, XP, and buffs when clearing camps together.",
-                    "footer": "",
-                    "header": "Join up in the jungle",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-2.png"
-                },
-                {
-                    "description": "Kill and assist hotstreaks set you on fire, making you much strongerâbut also easier to kill.",
-                    "footer": "",
-                    "header": "Get good, go on fire",
-                    "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-3.png"
-                }
-            ]
+        "3": {
+          "body": "Fight for survival in a random Bardle Royale event!",
+          "footer": "Fight for survival in a random Bardle Royale event!",
+          "header": "BARDLE ROULETTE",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Bardle-Royale.png"
+        },
+        "4": {
+          "body": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
+          "footer": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
+          "header": "PROTECT THE SORAKA",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Protect-Soraka.png"
+        },
+        "5": {
+          "body": "Do more damage to the Target Dummy than your opponents can!",
+          "footer": "Do more damage to the Target Dummy than your opponents can!",
+          "header": "DPS Check",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/DPS-Rush.png"
+        },
+        "6": {
+          "body": "Kill Loot Teemo for his bounty!",
+          "footer": "Kill Loot Teemo for his bounty!",
+          "header": "LOOT TEEMO",
+          "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Loot-Event.png"
+        },
+        "IconSubtext": {
+          "body": "First Event",
+          "footer": "First Event",
+          "header": "First Event",
+          "imagePath": "lol-game-data/assets/"
         }
-    ],
-    "Count": 4
-}
+      }
+    },
+    "description": "Nexus Blitz",
+    "gameMode": "NEXUSBLITZ",
+    "gameModeDescription": "Venture to a long forgotten Ionian temple and destroy the enemy Nexus while completing a set of outrageous challengesâwin the fight quickly, or the Nexus will do it for you!",
+    "gameModeName": "Nexus Blitz",
+    "gameModeShortName": "Nexus Blitz",
+    "gameMutator": "",
+    "id": 21,
+    "isDefault": true,
+    "isRGM": true,
+    "mapStringId": "NB",
+    "name": "Nexus Blitz",
+    "platformId": "",
+    "platformName": "",
+    "properties": {
+      "suppressRunesMasteriesPerks": false
+    },
+    "tutorialCards": [
+      {
+        "description": "Fights constantly break out on a compact map with special events and rewards adding a touch of chaos.",
+        "footer": "Estimated game time: 15 minutes",
+        "header": "This is Nexus Blitz",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-1.png"
+      },
+      {
+        "description": "Roam as two junglers to share gold, XP, and buffs when clearing camps together.",
+        "footer": "",
+        "header": "Join up in the jungle",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-2.png"
+      },
+      {
+        "description": "Kill and assist hotstreaks set you on fire, making you much strongerâbut also easier to kill.",
+        "footer": "",
+        "header": "Get good, go on fire",
+        "imagePath": "lol-game-data/assets/ASSETS/LeagueClient/GameModeAssets/GameModeX/tutorial-gamemodex-card-3.png"
+      }
+    ]
+  }
+]

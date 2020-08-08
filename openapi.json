@@ -4881,6 +4881,9 @@
             "format": "int64",
             "type": "integer"
           },
+          "sale": {
+            "$ref": "#/components/schemas/LolCatalogSale"
+          },
           "subInventoryType": {
             "type": "string"
           },
@@ -4974,12 +4977,12 @@
             "type": "string"
           },
           "sale": {
-            "$ref": "#/components/schemas/LolCatalogCatalogPluginSale"
+            "$ref": "#/components/schemas/LolCatalogCatalogPluginRetailDiscount"
           }
         },
         "type": "object"
       },
-      "LolCatalogCatalogPluginSale": {
+      "LolCatalogCatalogPluginRetailDiscount": {
         "properties": {
           "cost": {
             "format": "int64",
@@ -9913,6 +9916,34 @@
         },
         "type": "object"
       },
+      "LolClashMemberBanUnbanNotification": {
+        "properties": {
+          "notifyPlayerId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "notifyPuuid": {
+            "type": "string"
+          },
+          "notifyReason": {
+            "$ref": "#/components/schemas/LolClashNotifyReason"
+          },
+          "playerId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "tournaments": {
+            "items": {
+              "$ref": "#/components/schemas/MemberBanUnbanTournament"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "LolClashNoShowPingDTO": {
         "properties": {
           "dodgeTime": {
@@ -13709,6 +13740,62 @@
         },
         "type": "object"
       },
+      "LolCosmeticsCapOffer": {
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "merchantId": {
+            "type": "string"
+          },
+          "payload": {
+            "items": {
+              "$ref": "#/components/schemas/LolCosmeticsCapOfferPayloadEntry"
+            },
+            "type": "array"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "typeId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolCosmeticsCapOfferPayloadEntry": {
+        "properties": {
+          "fulfillmentTypeId": {
+            "type": "string"
+          },
+          "inventoryTypeUUID": {
+            "type": "string"
+          },
+          "itemInstanceId": {
+            "type": "string"
+          },
+          "itemPriceMap": {
+            "additionalProperties": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
       "LolCosmeticsCompanionsGroupViewModel": {
         "properties": {
           "groupId": {
@@ -13737,6 +13824,10 @@
       },
       "LolCosmeticsCompanionsGroupedViewModel": {
         "properties": {
+          "balance": {
+            "format": "int32",
+            "type": "integer"
+          },
           "defaultItemId": {
             "format": "int32",
             "type": "integer"
@@ -13787,6 +13878,9 @@
           },
           "owned": {
             "type": "boolean"
+          },
+          "purchaseDate": {
+            "type": "string"
           },
           "rarityValue": {
             "format": "int32",
@@ -13839,8 +13933,14 @@
           "name": {
             "type": "string"
           },
+          "offerData": {
+            "$ref": "#/components/schemas/LolCosmeticsCapOffer"
+          },
           "owned": {
             "type": "boolean"
+          },
+          "purchaseDate": {
+            "type": "string"
           },
           "rarityValue": {
             "format": "int32",
@@ -13896,6 +13996,9 @@
           "owned": {
             "type": "boolean"
           },
+          "purchaseDate": {
+            "type": "string"
+          },
           "rarityValue": {
             "format": "int32",
             "type": "integer"
@@ -13947,6 +14050,9 @@
           "owned": {
             "type": "boolean"
           },
+          "purchaseDate": {
+            "type": "string"
+          },
           "rarityValue": {
             "format": "int32",
             "type": "integer"
@@ -13994,6 +14100,9 @@
           "owned": {
             "type": "boolean"
           },
+          "purchaseDate": {
+            "type": "string"
+          },
           "rarityValue": {
             "format": "int32",
             "type": "integer"
@@ -14034,6 +14143,9 @@
           },
           "owned": {
             "type": "boolean"
+          },
+          "purchaseDate": {
+            "type": "string"
           },
           "rarityValue": {
             "format": "int32",
@@ -14236,6 +14348,10 @@
       },
       "LolCosmeticsTFTDamageSkinGroupedViewModel": {
         "properties": {
+          "balance": {
+            "format": "int32",
+            "type": "integer"
+          },
           "defaultItemId": {
             "format": "int32",
             "type": "integer"
@@ -14280,6 +14396,10 @@
       },
       "LolCosmeticsTFTMapSkinGroupedViewModel": {
         "properties": {
+          "balance": {
+            "format": "int32",
+            "type": "integer"
+          },
           "defaultItemId": {
             "format": "int32",
             "type": "integer"
@@ -15279,6 +15399,23 @@
           },
           "type": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolEndOfGameSummoner": {
+        "properties": {
+          "summonerLevel": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "xpSinceLastLevel": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "xpUntilNextLevel": {
+            "format": "int64",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -18074,6 +18211,12 @@
           "note": {
             "type": "string"
           },
+          "partySummoners": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
           "patchline": {
             "type": "string"
           },
@@ -18119,6 +18262,18 @@
           "summonerLevel": {
             "format": "int32",
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardPartyInfo": {
+        "properties": {
+          "summoners": {
+            "items": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "type": "array"
           }
         },
         "type": "object"
@@ -18201,6 +18356,18 @@
         "properties": {
           "profileIconId": {
             "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolHovercardSummonerIdAndName": {
+        "properties": {
+          "displayName": {
+            "type": "string"
+          },
+          "summonerId": {
+            "format": "int64",
             "type": "integer"
           }
         },
@@ -24269,9 +24436,6 @@
       "LolLoginRegionStatus": {
         "properties": {
           "enabled": {
-            "type": "boolean"
-          },
-          "isLQFallbackAllowed": {
             "type": "boolean"
           },
           "isUserInfoEnabled": {
@@ -30902,9 +31066,16 @@
       },
       "LolPlayerBehaviorReporterFeedback": {
         "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "id": {
             "format": "int64",
             "type": "integer"
+          },
+          "messageId": {
+            "type": "string"
           },
           "type": {
             "type": "string"
@@ -31074,16 +31245,12 @@
         },
         "type": "object"
       },
-      "LolPlayerMessagingAllSummonerData": {
-        "properties": {
-          "summoner": {
-            "$ref": "#/components/schemas/LolPlayerMessagingSummoner"
-          }
-        },
-        "type": "object"
-      },
       "LolPlayerMessagingDynamicCelebrationMessagingNotificationResource": {
         "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "celebrationBody": {
             "type": "string"
           },
@@ -31121,9 +31288,6 @@
       },
       "LolPlayerMessagingLoginDataPacket": {
         "properties": {
-          "allSummonerData": {
-            "$ref": "#/components/schemas/LolPlayerMessagingAllSummonerData"
-          },
           "simpleMessages": {
             "items": {
               "$ref": "#/components/schemas/LolPlayerMessagingSimpleMessage"
@@ -31135,6 +31299,10 @@
       },
       "LolPlayerMessagingPlayerMessagingNotificationResource": {
         "properties": {
+          "accountId": {
+            "format": "int64",
+            "type": "integer"
+          },
           "body": {
             "type": "string"
           },
@@ -31178,19 +31346,6 @@
           },
           "type": {
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "LolPlayerMessagingSummoner": {
-        "properties": {
-          "acctId": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "sumId": {
-            "format": "int64",
-            "type": "integer"
           }
         },
         "type": "object"
@@ -36231,6 +36386,62 @@
         },
         "type": "object"
       },
+      "LolStoreCapOffer": {
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "merchantId": {
+            "type": "string"
+          },
+          "payload": {
+            "items": {
+              "$ref": "#/components/schemas/LolStoreCapOfferPayloadEntry"
+            },
+            "type": "array"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "typeId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolStoreCapOfferPayloadEntry": {
+        "properties": {
+          "fulfillmentTypeId": {
+            "type": "string"
+          },
+          "inventoryTypeUUID": {
+            "type": "string"
+          },
+          "itemInstanceId": {
+            "type": "string"
+          },
+          "itemPriceMap": {
+            "additionalProperties": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
       "LolStoreCatalogInstanceToItemKeyMap": {
         "properties": {
           "platformIds": {
@@ -36447,6 +36658,24 @@
           },
           "name": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolStoreItemSale": {
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "id": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "item": {
+            "$ref": "#/components/schemas/LolStoreItemKey"
+          },
+          "sale": {
+            "$ref": "#/components/schemas/LolStoreSale"
           }
         },
         "type": "object"
@@ -38256,6 +38485,25 @@
           "sumId": {
             "format": "int64",
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "MemberBanUnbanTournament": {
+        "properties": {
+          "tournamentId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "tournamentPhaseLockInTime": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "tournamentnameLocKey": {
+            "type": "string"
+          },
+          "tournamentnameLocKeySecondary": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -43484,7 +43732,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -43524,7 +43772,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "Http2AsyncDelete",
+        "operationId": "HttpAsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -48895,6 +49143,36 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LolChatFriendCountsResource"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-chat"
+        ]
+      }
+    },
+    "/lol-chat/v1/friend-exists/{summonerId}": {
+      "get": {
+        "operationId": "GetLolChatV1FriendExistsBySummonerId",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "summonerId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
                 }
               }
             },
@@ -60957,40 +61235,6 @@
         ]
       }
     },
-    "/lol-login/v1/access-token": {
-      "post": {
-        "operationId": "PostLolLoginV1AccessToken",
-        "parameters": [
-          
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LolLoginAccessToken"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-login"
-        ]
-      }
-    },
     "/lol-login/v1/account-state": {
       "get": {
         "operationId": "GetLolLoginV1AccountState",
@@ -68939,6 +69183,33 @@
         ]
       }
     },
+    "/lol-store/v1/catalog/sales": {
+      "get": {
+        "operationId": "GetLolStoreV1CatalogSales",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolStoreItemSale"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-store"
+        ]
+      }
+    },
     "/lol-store/v1/catalog/{inventoryType}": {
       "get": {
         "operationId": "GetLolStoreV1CatalogByInventoryType",
@@ -69172,6 +69443,41 @@
                 "schema": {
                   "additionalProperties": true,
                   "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-store"
+        ]
+      }
+    },
+    "/lol-store/v1/offers": {
+      "get": {
+        "operationId": "GetLolStoreV1Offers",
+        "parameters": [
+          {
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "inventoryTypeUUIDs",
+            "required": false,
+            "type": "array"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LolStoreCapOffer"
+                  },
+                  "type": "array"
                 }
               }
             },
@@ -73752,7 +74058,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
