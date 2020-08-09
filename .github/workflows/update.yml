@@ -12,49 +12,46 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install League of Legends
-        run: choco install -y leagueoflegends
-
-      - name: Run LCU To Update
-        run: |
-          & 'C:\Riot Games\League of Legends\LeagueClient.exe'
-          Start-Sleep 180
-
-      - name: Write LoL Login
-        env:
-          LOLLOGIN: ${{ secrets.lollogin }}
-        run: $env:LOLLOGIN | Out-File -Encoding UTF8 'lollogin.json'
+        with:
+          submodules: true
 
       - name: Setup gh-pages output folder
         shell: bash
         run: |
           git clone --single-branch -b gh-pages "$(git remote get-url origin)" out
-          cd out
-          git rm -rf --ignore-unmatch .
-          git clean -fxd
-
-      - name: Run update.ps1
-        run: .\update.ps1
-        shell: powershell # Use powershell 5 (not 7)
-
-      - name: Copy swagger-ui to output folder
-        shell: bash
-        run: |
+          git -C out config credential.helper "$(git config credential.helper)"
+          git -C out config 'http.https://github.com/.extraheader' "$(git config 'http.https://github.com/.extraheader')"
+          git -C out config core.autocrlf input
+          git -C out rm -rf --ignore-unmatch .
+          git -C out clean -fxd
           cp README.md out/
           cp -r swagger-ui/dist out/tool
           sed -i 's|"https://petstore.swagger.io/v2/swagger.json"|"../openapi.json"|' out/tool/index.html
 
+      - name: Install & Update League of Legends
+        run: |
+          choco install -y leagueoflegends
+          & 'C:\Riot Games\League of Legends\LeagueClient.exe'
+          Start-Sleep 180
+
+      - name: Run update.ps1
+        env:
+          LOLLOGIN: ${{ secrets.lollogin }}
+        run: |
+          $env:LOLLOGIN | Out-File -Encoding UTF8 'lollogin.json'
+          .\update.ps1
+        shell: powershell # Use powershell 5 (not 7)
+
       - name: Push changes in output folder
         shell: bash
         run: |
-          cd out
-          git config user.name 'Github Actions'
-          git config user.email "$(git show -s --format='%ae' HEAD)"
-          git add .
-          changes=$(git diff --cached -U0 | grep '^[+-][^+-]' |
-            grep -v 'Http' | grep -v 'LOCKED"' | wc -l)
-          if [ $changes -gt 0 ]; then
-            git commit -m "Update $(date -u -Is), script $(git log --pretty=format:%h -n 1)"
-            git push
+          git -C out add .
+          changes=$(git -C out diff --cached -U0 | grep '^[+-][^+-]' |
+              grep -v 'Http' | grep -v 'LOCKED"' |
+              grep -v '"requirement_owned"' | wc -l)
+          echo "Changes: $changes"
+          if [ $changes -gt 10 ]; then
+            git -C out -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+                commit -m "Update $(date -u -Is), script $(git log --pretty=format:%h -n 1)"
+            git -C out push
           fi
