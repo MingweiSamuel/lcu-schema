@@ -20,5 +20,5 @@ Data:
 ## Updating
 
 To update, call `.\update.ps1` with the League client closed. To get
-information requiring log-in, add a file `userpass.json` with `"username"` and
+information requiring log-in, add a file `lollogin.json` with `"username"` and
 `"password"` fields for your League of Legends account.
