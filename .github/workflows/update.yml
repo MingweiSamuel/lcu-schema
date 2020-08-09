@@ -26,7 +26,7 @@ jobs:
           git -C out clean -fxd
           cp README.md out/
           cp -r swagger-ui/dist out/tool
-          sed -i 's|"https://petstore.swagger.io/v2/swagger.json"|"../openapi.json"|' out/tool/index.html
+          git apply index.html.diff
 
       - name: Install & Update League of Legends
         run: |
@@ -50,7 +50,7 @@ jobs:
               grep -v 'Http' | grep -v 'LOCKED"' |
               grep -v '"requirement_owned"' | wc -l)
           echo "Changes: $changes"
-          if [ $changes -gt 10 ]; then
+          if [ $changes -gt 5 ]; then
             git -C out -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
                 commit -m "Update $(date -u -Is), script $(git log --pretty=format:%h -n 1)"
             git -C out push
