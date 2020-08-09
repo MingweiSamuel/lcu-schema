@@ -49,7 +49,12 @@
         plugins: [
           SwaggerUIBundle.plugins.DownloadUrl
         ],
-        layout: "StandaloneLayout"
+        layout: "StandaloneLayout",
+        // Added:
+        displayOperationId: true,
+        docExpansion: "none",
+        filter: true,
+        supportedSubmitMethods: [], // Disable "Try it out".
       })
       // End Swagger UI call region
 
