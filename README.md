@@ -8,9 +8,11 @@ A script to grab the LCU swagger/openapi spec and serve it on a gh-pages site.
 
 ### Static files
 
-OpenAPI spec:
-- [spec.json](http://www.mingweisamuel.com/lcu-schema/spec.json)
-- [spec.min.json](http://www.mingweisamuel.com/lcu-schema/spec.min.json)
+OpenAPI v3 spec:
+- [openapi.json](http://www.mingweisamuel.com/lcu-schema/openapi.json)
+
+Swagger v2 spec:
+- [swagger.json](http://www.mingweisamuel.com/lcu-schema/swagger.json)
 
 Data:
 - [maps.json](http://www.mingweisamuel.com/lcu-schema/maps.json)
