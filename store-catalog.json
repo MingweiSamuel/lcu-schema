@@ -42349,8 +42349,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -42387,8 +42386,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -42425,8 +42423,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -42462,8 +42459,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -42500,8 +42496,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -42538,8 +42533,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -42576,8 +42570,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -42651,8 +42644,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -42704,8 +42696,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -42741,8 +42732,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -42779,8 +42769,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -42817,8 +42806,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -42854,8 +42842,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -42892,8 +42879,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -42929,8 +42915,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -42967,8 +42952,7 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -43005,8 +42989,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -43080,8 +43063,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -43118,8 +43100,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -43155,8 +43136,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -43230,8 +43210,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -43268,8 +43247,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -43321,8 +43299,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -43358,8 +43335,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -43396,8 +43372,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -43469,8 +43444,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -43507,8 +43481,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -43547,8 +43520,7 @@
       "\u003c\u003ctag\u003e\u003e",
       "marksman",
       "marksmen",
-      "void",
-      "requirement_owned"
+      "void"
     ]
   },
   {
@@ -43621,8 +43593,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -43659,8 +43630,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -43770,8 +43740,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -43843,8 +43812,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -43918,8 +43886,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -43993,8 +43960,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -44067,8 +44033,7 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -44104,8 +44069,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -44215,8 +44179,7 @@
     "subInventoryType": null,
     "tags": [
       "marksman",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -44252,8 +44215,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -44290,8 +44252,7 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -44328,8 +44289,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44366,8 +44326,7 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -44403,8 +44362,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -44441,8 +44399,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44515,8 +44472,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44553,8 +44509,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44591,8 +44546,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44681,8 +44635,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -44719,8 +44672,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -44794,8 +44746,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -44832,8 +44783,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -44870,8 +44820,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -44945,8 +44894,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -45019,8 +44967,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -45094,8 +45041,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -45132,8 +45078,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -45170,8 +45115,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45332,8 +45276,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45370,8 +45313,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -45408,8 +45350,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -45482,8 +45423,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45520,8 +45460,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45594,8 +45533,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -45632,8 +45570,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -45669,8 +45606,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -45742,8 +45678,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -45780,8 +45715,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45817,8 +45751,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45855,8 +45788,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -45892,8 +45824,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -45930,8 +45861,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -45967,8 +45897,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -46004,8 +45933,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -46079,8 +46007,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -46189,8 +46116,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -46226,8 +46152,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -46300,8 +46225,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46338,8 +46262,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46487,8 +46410,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46525,8 +46447,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46563,8 +46484,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46601,8 +46521,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -46676,8 +46595,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -46714,8 +46632,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -46840,8 +46757,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -46878,8 +46794,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -46915,8 +46830,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -46953,8 +46867,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -46991,8 +46904,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -47029,8 +46941,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support",
-      "requirement_owned"
+      "support"
     ]
   },
   {
@@ -47104,8 +47015,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -47142,8 +47052,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -47217,8 +47126,7 @@
     "subInventoryType": null,
     "tags": [
       "tank",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -47255,8 +47163,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -47293,8 +47200,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -47331,8 +47237,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -47369,8 +47274,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -47407,8 +47311,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -47445,8 +47348,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -47519,8 +47421,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -47667,8 +47568,7 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -47742,8 +47642,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage",
-      "requirement_owned"
+      "mage"
     ]
   },
   {
@@ -47780,8 +47679,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -47818,8 +47716,7 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter",
-      "requirement_owned"
+      "fighter"
     ]
   },
   {
@@ -47856,8 +47753,7 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman",
-      "requirement_owned"
+      "marksman"
     ]
   },
   {
@@ -47894,8 +47790,7 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank",
-      "requirement_owned"
+      "tank"
     ]
   },
   {
@@ -48118,6 +48013,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_10",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -48355,6 +48251,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_1",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -48392,6 +48289,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_1",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -48429,6 +48327,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_1",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -48465,7 +48364,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48501,7 +48401,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48537,7 +48438,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48573,7 +48475,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48619,7 +48522,8 @@
     },
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48816,6 +48720,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_1",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49000,7 +48905,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_102"
+      "champions_102",
+      "requirement_owned"
     ]
   },
   {
@@ -49074,6 +48980,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49111,6 +49018,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49148,6 +49056,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49184,7 +49093,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -49220,8 +49131,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103",
-      "requirement_owned"
+      "champions_103"
     ]
   },
   {
@@ -49498,7 +49408,9 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
-      "legendary"
+      "legendary",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -49535,6 +49447,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49572,6 +49485,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -49890,6 +49804,7 @@
     "tags": [
       "champions_103",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -50046,7 +49961,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -50082,7 +49998,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -50118,7 +50036,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -50154,7 +50073,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -50430,7 +50351,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -50666,7 +50588,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -52161,8 +52085,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_107",
-      "requirement_owned"
+      "champions_107"
     ]
   },
   {
@@ -52709,8 +52632,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_110",
-      "requirement_owned"
+      "champions_110"
     ]
   },
   {
@@ -52858,6 +52780,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_11",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -53054,7 +52977,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53091,6 +53015,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_11",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -53128,6 +53053,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_11",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -53165,6 +53091,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_11",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -53323,6 +53250,7 @@
     "tags": [
       "champions_11",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -53949,8 +53877,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111",
-      "requirement_owned"
+      "champions_111"
     ]
   },
   {
@@ -53986,8 +53913,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111",
-      "requirement_owned"
+      "champions_111"
     ]
   },
   {
@@ -54060,8 +53986,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111",
-      "requirement_owned"
+      "champions_111"
     ]
   },
   {
@@ -54097,8 +54022,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111",
-      "requirement_owned"
+      "champions_111"
     ]
   },
   {
@@ -54208,8 +54132,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113",
-      "requirement_owned"
+      "champions_113"
     ]
   },
   {
@@ -54245,8 +54168,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113",
-      "requirement_owned"
+      "champions_113"
     ]
   },
   {
@@ -54282,8 +54204,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113",
-      "requirement_owned"
+      "champions_113"
     ]
   },
   {
@@ -54319,8 +54240,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113",
-      "requirement_owned"
+      "champions_113"
     ]
   },
   {
@@ -54393,8 +54313,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_114",
-      "requirement_owned"
+      "champions_114"
     ]
   },
   {
@@ -54824,7 +54743,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_114"
+      "champions_114",
+      "requirement_owned"
     ]
   },
   {
@@ -55174,7 +55094,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115"
+      "champions_115",
+      "requirement_owned"
     ]
   },
   {
@@ -55210,8 +55131,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115",
-      "requirement_owned"
+      "champions_115"
     ]
   },
   {
@@ -55247,7 +55167,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115"
+      "champions_115",
+      "requirement_owned"
     ]
   },
   {
@@ -55560,8 +55481,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_117",
-      "requirement_owned"
+      "champions_117"
     ]
   },
   {
@@ -55992,7 +55912,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_117"
+      "champions_117",
+      "requirement_owned"
     ]
   },
   {
@@ -56389,7 +56310,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -56425,7 +56347,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -56462,7 +56385,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_119",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -56498,7 +56422,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -56534,7 +56459,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -56570,7 +56496,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -56806,7 +56733,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -57002,7 +56930,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_120"
+      "champions_120",
+      "requirement_owned"
     ]
   },
   {
@@ -57308,6 +57237,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_12",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -57345,6 +57275,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_12",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -57382,6 +57313,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_12",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -57776,6 +57708,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_12",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -58012,7 +57945,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -58048,7 +57982,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -58084,7 +58019,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -58508,8 +58444,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_122",
-      "legendary",
-      "requirement_owned"
+      "legendary"
     ]
   },
   {
@@ -58891,8 +58826,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_122",
-      "legendary",
-      "requirement_owned"
+      "legendary"
     ]
   },
   {
@@ -59126,6 +59060,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_126",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59163,6 +59098,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_126",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59200,6 +59136,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_126",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59237,6 +59174,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_126",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59274,6 +59212,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_126",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59550,7 +59489,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_127"
+      "champions_127",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -59587,6 +59528,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_127",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59624,6 +59566,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_127",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -59660,7 +59603,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_127"
+      "champions_127",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -59974,6 +59919,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_13",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -60011,6 +59957,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_13",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -60048,6 +59995,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_13",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -60358,7 +60306,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -60674,7 +60623,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -61185,6 +61135,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_133",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61222,6 +61173,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_133",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61259,6 +61211,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_133",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61295,7 +61248,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_134"
+      "champions_134",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -61332,6 +61287,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_134",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61369,6 +61325,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_134",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61405,7 +61362,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_134"
+      "champions_134",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -61442,6 +61401,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_134",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -61794,7 +61754,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_136"
+      "champions_136",
+      "requirement_owned"
     ]
   },
   {
@@ -62854,7 +62815,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_141",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -62890,7 +62852,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -62926,7 +62889,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -63162,7 +63126,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -63476,6 +63441,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_143",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -63512,7 +63478,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -63548,7 +63516,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -63585,6 +63555,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_143",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -63621,7 +63592,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_145"
+      "champions_145",
+      "requirement_owned"
     ]
   },
   {
@@ -64251,8 +64223,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_150",
-      "requirement_owned"
+      "champions_150"
     ]
   },
   {
@@ -64563,6 +64534,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_15",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -65028,6 +65000,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_15",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -65683,8 +65656,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157",
-      "requirement_owned"
+      "champions_157"
     ]
   },
   {
@@ -66314,8 +66286,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157",
-      "requirement_owned"
+      "champions_157"
     ]
   },
   {
@@ -66791,8 +66762,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157",
-      "requirement_owned"
+      "champions_157"
     ]
   },
   {
@@ -67069,6 +67039,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_16",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67106,6 +67077,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_16",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67142,7 +67114,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_16"
+      "champions_16",
+      "requirement_owned"
     ]
   },
   {
@@ -67216,6 +67189,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_16",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67256,7 +67230,8 @@
       "skin_variant",
       "skin_variant_skin_16008",
       "skin_variant_bundle_91000005",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -67297,6 +67272,7 @@
       "skin_variant_skin_16007",
       "skin_variant_bundle_91000005",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67338,7 +67314,9 @@
       "skin_variant_skin_16016",
       "skin_variant_bundle_91000007",
       "paw_item_purchase_disabled",
-      "legendary"
+      "legendary",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -67380,6 +67358,7 @@
       "skin_variant_bundle_91000007",
       "paw_item_purchase_disabled",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67417,6 +67396,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_161",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67454,6 +67434,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_161",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -67528,6 +67509,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_161",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -68430,6 +68412,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_17",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -68467,6 +68450,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_17",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -68504,6 +68488,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_17",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -69176,6 +69161,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_17",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -69213,6 +69199,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_18",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -69408,6 +69395,7 @@
     "tags": [
       "champions_18",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -69444,7 +69432,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_18"
+      "champions_18",
+      "requirement_owned"
     ]
   },
   {
@@ -69881,6 +69870,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_18",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -70208,6 +70198,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_18",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -70444,7 +70435,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_19"
+      "champions_19",
+      "requirement_owned"
     ]
   },
   {
@@ -70518,6 +70510,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_19",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -70555,6 +70548,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_19",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -70592,6 +70586,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_19",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -71020,7 +71015,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_20"
+      "champions_20",
+      "requirement_owned"
     ]
   },
   {
@@ -71297,7 +71293,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_2",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -71333,7 +71330,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -71405,7 +71403,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -71601,8 +71600,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201",
-      "requirement_owned"
+      "champions_201"
     ]
   },
   {
@@ -71675,8 +71673,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201",
-      "requirement_owned"
+      "champions_201"
     ]
   },
   {
@@ -71952,8 +71949,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201",
-      "requirement_owned"
+      "champions_201"
     ]
   },
   {
@@ -72269,8 +72265,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201",
-      "requirement_owned"
+      "champions_201"
     ]
   },
   {
@@ -72706,7 +72701,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -72976,7 +72972,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_202"
+      "champions_202",
+      "requirement_owned"
     ]
   },
   {
@@ -73013,7 +73010,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_202",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -73486,7 +73484,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_203"
+      "champions_203",
+      "requirement_owned"
     ]
   },
   {
@@ -73522,7 +73521,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_203"
+      "champions_203",
+      "requirement_owned"
     ]
   },
   {
@@ -73873,6 +73873,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_21",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -73909,7 +73910,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -73983,6 +73986,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_21",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74224,6 +74228,7 @@
       "skin_variant_skin_21017",
       "skin_variant_bundle_91000004",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74303,6 +74308,7 @@
       "skin_variant_skin_21015",
       "skin_variant_bundle_91000004",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74340,6 +74346,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_22",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74413,7 +74420,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_22"
+      "champions_22",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -74450,6 +74459,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_22",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74488,6 +74498,7 @@
     "tags": [
       "champions_22",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74723,6 +74734,7 @@
     "tags": [
       "champions_22",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -74953,7 +74965,9 @@
     "subInventoryType": null,
     "tags": [
       "champions_222",
-      "legendary"
+      "legendary",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -75270,6 +75284,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_222",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -75507,6 +75522,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_222",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -75783,8 +75799,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_223",
-      "requirement_owned"
+      "champions_223"
     ]
   },
   {
@@ -75820,8 +75835,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_223",
-      "requirement_owned"
+      "champions_223"
     ]
   },
   {
@@ -75857,8 +75871,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23",
-      "requirement_owned"
+      "champions_23"
     ]
   },
   {
@@ -75932,8 +75945,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23",
-      "requirement_owned"
+      "champions_23"
     ]
   },
   {
@@ -76006,8 +76018,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23",
-      "requirement_owned"
+      "champions_23"
     ]
   },
   {
@@ -76752,6 +76763,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_236",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -76897,6 +76909,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_236",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -76935,6 +76948,7 @@
     "tags": [
       "champions_236",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -77208,7 +77222,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_236"
+      "champions_236",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -77404,7 +77420,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_238"
+      "champions_238",
+      "requirement_owned"
     ]
   },
   {
@@ -77440,7 +77457,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_238"
+      "champions_238",
+      "requirement_owned"
     ]
   },
   {
@@ -77717,7 +77735,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_238",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -78918,8 +78937,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_245",
-      "requirement_owned"
+      "champions_245"
     ]
   },
   {
@@ -79155,8 +79173,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_246",
-      "requirement_owned"
+      "champions_246"
     ]
   },
   {
@@ -79192,7 +79209,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_246"
+      "champions_246",
+      "requirement_owned"
     ]
   },
   {
@@ -79429,6 +79447,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_25",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -79848,6 +79867,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_25",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -80126,6 +80146,7 @@
     "tags": [
       "champions_25",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -80282,8 +80303,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254",
-      "requirement_owned"
+      "champions_254"
     ]
   },
   {
@@ -80319,8 +80339,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254",
-      "requirement_owned"
+      "champions_254"
     ]
   },
   {
@@ -80356,8 +80375,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254",
-      "requirement_owned"
+      "champions_254"
     ]
   },
   {
@@ -80666,7 +80684,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -80702,7 +80722,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -80738,7 +80760,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned"
     ]
   },
   {
@@ -80774,7 +80797,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -81083,8 +81108,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_266",
-      "requirement_owned"
+      "champions_266"
     ]
   },
   {
@@ -81384,6 +81408,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_267",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -81540,7 +81565,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -81577,6 +81603,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_267",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -81774,6 +81801,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_267",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82050,8 +82078,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_268",
-      "requirement_owned"
+      "champions_268"
     ]
   },
   {
@@ -82124,8 +82151,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_27",
-      "requirement_owned"
+      "champions_27"
     ]
   },
   {
@@ -82235,8 +82261,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_27",
-      "requirement_owned"
+      "champions_27"
     ]
   },
   {
@@ -82384,6 +82409,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_28",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82420,7 +82446,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -82457,6 +82485,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_28",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82664,6 +82693,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_29",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82701,6 +82731,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_29",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82738,6 +82769,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_29",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -82905,6 +82937,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_29",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -83221,7 +83254,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -83257,7 +83292,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -83293,7 +83330,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -83449,7 +83488,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -83522,7 +83563,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -83833,8 +83876,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3",
-      "requirement_owned"
+      "champions_3"
     ]
   },
   {
@@ -84147,8 +84189,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3",
-      "requirement_owned"
+      "champions_3"
     ]
   },
   {
@@ -84345,7 +84386,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_31",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -84381,7 +84423,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_31"
+      "champions_31",
+      "requirement_owned"
     ]
   },
   {
@@ -84418,7 +84461,9 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_31"
+      "champions_31",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -84454,7 +84499,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_31"
+      "champions_31",
+      "requirement_owned"
     ]
   },
   {
@@ -84841,8 +84887,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32",
-      "requirement_owned"
+      "champions_32"
     ]
   },
   {
@@ -85198,8 +85243,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32",
-      "requirement_owned"
+      "champions_32"
     ]
   },
   {
@@ -85355,7 +85399,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85391,7 +85437,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85427,7 +85475,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85463,7 +85513,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85499,7 +85551,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85536,7 +85590,9 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_34"
+      "champions_34",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85572,7 +85628,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -85608,7 +85665,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -85644,7 +85702,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -85921,6 +85981,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_350",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -86275,6 +86336,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_350",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -86552,6 +86614,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_35",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -86589,6 +86652,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_35",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -86626,6 +86690,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_35",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -86699,7 +86764,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -86896,6 +86963,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_35",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -87173,7 +87241,9 @@
     "subInventoryType": null,
     "tags": [
       "champions_36",
-      "legendary"
+      "legendary",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -87209,7 +87279,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_36"
+      "champions_36",
+      "requirement_owned"
     ]
   },
   {
@@ -87245,7 +87316,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_36"
+      "champions_36",
+      "requirement_owned"
     ]
   },
   {
@@ -87281,7 +87353,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_36"
+      "champions_36",
+      "requirement_owned"
     ]
   },
   {
@@ -87318,6 +87391,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_37",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -87392,6 +87466,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_37",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -87467,6 +87542,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_37",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -87703,7 +87779,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -87739,7 +87816,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -87775,7 +87853,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -87958,7 +88037,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_39"
+      "champions_39",
+      "requirement_owned"
     ]
   },
   {
@@ -88549,6 +88629,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_40",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -88587,6 +88668,7 @@
     "tags": [
       "legendary",
       "champions_40",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -88624,6 +88706,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_40",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -88661,6 +88744,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_40",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -88900,6 +88984,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_40",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -89173,8 +89258,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_4",
-      "requirement_owned"
+      "champions_4"
     ]
   },
   {
@@ -89321,8 +89405,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_4",
-      "requirement_owned"
+      "champions_4"
     ]
   },
   {
@@ -89396,6 +89479,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_41",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -89507,6 +89591,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_41",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -90017,8 +90102,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412",
-      "requirement_owned"
+      "champions_412"
     ]
   },
   {
@@ -90064,8 +90148,7 @@
     },
     "subInventoryType": null,
     "tags": [
-      "champions_412",
-      "requirement_owned"
+      "champions_412"
     ]
   },
   {
@@ -90102,8 +90185,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_412",
-      "legendary",
-      "requirement_owned"
+      "legendary"
     ]
   },
   {
@@ -90139,8 +90221,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412",
-      "requirement_owned"
+      "champions_412"
     ]
   },
   {
@@ -90336,8 +90417,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412",
-      "requirement_owned"
+      "champions_412"
     ]
   },
   {
@@ -90374,8 +90454,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_412",
-      "legendary",
-      "requirement_owned"
+      "legendary"
     ]
   },
   {
@@ -90651,7 +90730,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_420"
+      "champions_420",
+      "requirement_owned"
     ]
   },
   {
@@ -91014,7 +91094,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -91050,7 +91131,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -91086,7 +91168,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -91718,8 +91801,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_421",
-      "requirement_owned"
+      "champions_421"
     ]
   },
   {
@@ -91755,7 +91837,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_421"
+      "champions_421",
+      "requirement_owned"
     ]
   },
   {
@@ -92308,8 +92391,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_427",
-      "requirement_owned"
+      "champions_427"
     ]
   },
   {
@@ -92345,8 +92427,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_427",
-      "requirement_owned"
+      "champions_427"
     ]
   },
   {
@@ -92663,6 +92744,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_429",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -92747,6 +92829,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_43",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -92783,7 +92866,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_43"
+      "champions_43",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -93352,7 +93437,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_432"
+      "champions_432",
+      "requirement_owned"
     ]
   },
   {
@@ -94360,8 +94446,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45",
-      "requirement_owned"
+      "champions_45"
     ]
   },
   {
@@ -95191,7 +95276,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -95227,7 +95313,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -95299,7 +95386,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -95684,7 +95772,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_498"
+      "champions_498",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -95721,7 +95811,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_498",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -95837,8 +95928,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_50",
-      "requirement_owned"
+      "champions_50"
     ]
   },
   {
@@ -95874,8 +95964,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_50",
-      "requirement_owned"
+      "champions_50"
     ]
   },
   {
@@ -95948,8 +96037,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_50",
-      "requirement_owned"
+      "champions_50"
     ]
   },
   {
@@ -96185,7 +96273,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -96261,7 +96350,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -96573,7 +96663,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -96849,7 +96940,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -97120,6 +97212,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_51",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -97156,8 +97249,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51",
-      "requirement_owned"
+      "champions_51"
     ]
   },
   {
@@ -97302,7 +97394,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_51",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -97338,8 +97431,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51",
-      "requirement_owned"
+      "champions_51"
     ]
   },
   {
@@ -97536,6 +97628,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_51",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -97618,8 +97711,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_517",
-      "requirement_owned"
+      "champions_517"
     ]
   },
   {
@@ -97775,7 +97867,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_518"
+      "champions_518",
+      "requirement_owned"
     ]
   },
   {
@@ -97811,7 +97904,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_523"
+      "champions_523",
+      "requirement_owned"
     ]
   },
   {
@@ -98306,7 +98400,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -98662,7 +98757,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -98698,7 +98794,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -98735,6 +98832,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_54",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -98809,6 +98907,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_54",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -99165,7 +99264,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_54"
+      "champions_54",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -99402,6 +99503,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_54",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -99517,8 +99619,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55",
-      "requirement_owned"
+      "champions_55"
     ]
   },
   {
@@ -99554,8 +99655,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55",
-      "requirement_owned"
+      "champions_55"
     ]
   },
   {
@@ -99591,7 +99691,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -100181,8 +100282,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_555",
-      "requirement_owned"
+      "champions_555"
     ]
   },
   {
@@ -100498,8 +100598,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_555",
-      "requirement_owned"
+      "champions_555"
     ]
   },
   {
@@ -100736,7 +100835,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_555",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -101161,8 +101261,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_56",
-      "requirement_owned"
+      "champions_56"
     ]
   },
   {
@@ -101478,7 +101577,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -101514,7 +101615,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned"
     ]
   },
   {
@@ -101550,7 +101652,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -101906,7 +102010,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -102182,7 +102288,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102218,7 +102325,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102254,7 +102362,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102290,7 +102399,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102326,7 +102436,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102642,7 +102753,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -102918,7 +103030,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -102954,7 +103067,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -102990,7 +103104,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -103026,7 +103142,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -103062,7 +103180,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -103098,7 +103218,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -103451,7 +103573,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_60"
+      "champions_60",
+      "requirement_owned"
     ]
   },
   {
@@ -103487,8 +103610,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_60",
-      "requirement_owned"
+      "champions_60"
     ]
   },
   {
@@ -103524,8 +103646,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_6",
-      "requirement_owned"
+      "champions_6"
     ]
   },
   {
@@ -103797,8 +103918,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_6",
-      "requirement_owned"
+      "champions_6"
     ]
   },
   {
@@ -103994,8 +104114,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_6",
-      "requirement_owned"
+      "champions_6"
     ]
   },
   {
@@ -104271,7 +104390,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -104308,6 +104429,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_61",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -104345,6 +104467,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_61",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -104381,7 +104504,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -104418,6 +104543,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_61",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -104694,7 +104820,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -104730,7 +104857,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -104838,7 +104966,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -104874,7 +105003,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -104910,7 +105041,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -104946,7 +105079,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -104982,7 +105117,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -105018,7 +105155,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -105210,7 +105349,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105246,7 +105386,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105282,7 +105423,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105318,7 +105460,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105474,7 +105617,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105511,7 +105655,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_64",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -105707,7 +105852,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -105744,6 +105890,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_67",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -105781,6 +105928,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_67",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -105818,6 +105966,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_67",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -106013,6 +106162,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_67",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -106289,7 +106439,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_68"
+      "champions_68",
+      "requirement_owned"
     ]
   },
   {
@@ -106326,7 +106477,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_68",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -106372,7 +106524,8 @@
     },
     "subInventoryType": null,
     "tags": [
-      "champions_68"
+      "champions_68",
+      "requirement_owned"
     ]
   },
   {
@@ -106728,8 +106881,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_69",
-      "requirement_owned"
+      "champions_69"
     ]
   },
   {
@@ -107648,8 +107800,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_7",
-      "requirement_owned"
+      "champions_7"
     ]
   },
   {
@@ -108122,7 +108273,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_72"
+      "champions_72",
+      "requirement_owned"
     ]
   },
   {
@@ -108158,7 +108310,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_72"
+      "champions_72",
+      "requirement_owned"
     ]
   },
   {
@@ -108303,7 +108456,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_74"
+      "champions_74",
+      "requirement_owned"
     ]
   },
   {
@@ -108376,7 +108530,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_74",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -108412,7 +108567,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_74"
+      "champions_74",
+      "requirement_owned"
     ]
   },
   {
@@ -108689,6 +108845,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_75",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -108810,7 +108967,8 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_75"
+      "champions_75",
+      "requirement_owned"
     ]
   },
   {
@@ -108847,6 +109005,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_75",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -109004,6 +109163,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_75",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -109041,6 +109201,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_76",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -109078,6 +109239,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_76",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -109226,6 +109388,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_76",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -109422,8 +109585,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_77",
-      "requirement_owned"
+      "champions_77"
     ]
   },
   {
@@ -109460,8 +109622,7 @@
     "subInventoryType": null,
     "tags": [
       "ultimate",
-      "champions_77",
-      "requirement_owned"
+      "champions_77"
     ]
   },
   {
@@ -109895,7 +110056,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_78"
+      "champions_78",
+      "requirement_owned"
     ]
   },
   {
@@ -109931,7 +110093,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_78"
+      "champions_78",
+      "requirement_owned"
     ]
   },
   {
@@ -110480,7 +110643,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -110516,7 +110680,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -110552,7 +110717,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -110588,7 +110754,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -111174,7 +111341,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -111443,7 +111611,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -111715,7 +111884,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -111872,6 +112042,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_81",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -111910,7 +112081,8 @@
     "tags": [
       "theme",
       "ultimate",
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -111957,6 +112129,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_81",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -111994,6 +112167,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_81",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -112030,7 +112204,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -112391,6 +112566,7 @@
       "skin_variant_skin_81020",
       "skin_variant_bundle_91000001",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -112432,6 +112608,7 @@
       "skin_variant_skin_81018",
       "skin_variant_bundle_91000001",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -112469,7 +112646,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_81",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -112584,7 +112762,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_82"
+      "champions_82",
+      "requirement_owned"
     ]
   },
   {
@@ -112620,8 +112799,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_82",
-      "requirement_owned"
+      "champions_82"
     ]
   },
   {
@@ -112667,8 +112845,7 @@
     },
     "subInventoryType": null,
     "tags": [
-      "champions_82",
-      "requirement_owned"
+      "champions_82"
     ]
   },
   {
@@ -112861,7 +113038,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_83"
+      "champions_83",
+      "requirement_owned"
     ]
   },
   {
@@ -112897,8 +113075,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_83",
-      "requirement_owned"
+      "champions_83"
     ]
   },
   {
@@ -113222,6 +113399,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_84",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -113295,7 +113473,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -113368,7 +113547,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -113404,7 +113584,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -113593,6 +113775,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_84",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -113630,6 +113813,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_84",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114107,6 +114291,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_85",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114144,6 +114329,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_85",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114181,6 +114367,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_85",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114218,6 +114405,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_85",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114292,6 +114480,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_85",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114529,6 +114718,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114603,6 +114793,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114640,6 +114831,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -114785,6 +114977,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -115097,6 +115290,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -115607,8 +115801,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89",
-      "requirement_owned"
+      "champions_89"
     ]
   },
   {
@@ -115681,8 +115874,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89",
-      "requirement_owned"
+      "champions_89"
     ]
   },
   {
@@ -115838,8 +116030,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89",
-      "requirement_owned"
+      "champions_89"
     ]
   },
   {
@@ -115875,8 +116066,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89",
-      "requirement_owned"
+      "champions_89"
     ]
   },
   {
@@ -115917,7 +116107,8 @@
       "skin_variant",
       "skin_variant_skin_89011",
       "skin_variant_bundle_91000006",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -115958,8 +116149,7 @@
       "skin_variant_skin_89010",
       "skin_variant_bundle_91000006",
       "paw_item_purchase_disabled",
-      "legendary",
-      "requirement_owned"
+      "legendary"
     ]
   },
   {
@@ -115995,8 +116185,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89",
-      "requirement_owned"
+      "champions_89"
     ]
   },
   {
@@ -116272,7 +116461,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -116308,7 +116498,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -116344,7 +116535,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -116380,7 +116573,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -116416,7 +116610,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -116453,6 +116649,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_9",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -116807,7 +117004,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_9",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -116844,6 +117042,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_9",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -117588,8 +117787,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_91",
-      "requirement_owned"
+      "champions_91"
     ]
   },
   {
@@ -118460,6 +118658,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -118497,6 +118696,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -118571,6 +118771,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -118928,7 +119129,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -118965,6 +119167,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -119002,6 +119205,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -119039,6 +119243,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -119815,7 +120020,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -120131,7 +120337,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -120167,7 +120375,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -120203,7 +120413,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned"
     ]
   },
   {
@@ -120559,7 +120770,9 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -120595,7 +120808,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned"
     ]
   },
   {
@@ -120792,6 +121006,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_99",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -120829,6 +121044,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_99",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -120866,6 +121082,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_99",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -120903,6 +121120,7 @@
     "subInventoryType": null,
     "tags": [
       "champions_99",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -120943,7 +121161,9 @@
       "skin_variant",
       "skin_variant_skin_99014",
       "skin_variant_bundle_91000002",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -120980,7 +121200,9 @@
     "subInventoryType": null,
     "tags": [
       "champions_99",
-      "ultimate"
+      "ultimate",
+      "requirement_owned",
+      "requirement_owned"
     ]
   },
   {
@@ -121021,6 +121243,7 @@
       "skin_variant_skin_99006",
       "skin_variant_bundle_91000002",
       "paw_item_purchase_disabled",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -121057,8 +121280,7 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_99",
-      "requirement_owned"
+      "champions_99"
     ]
   },
   {
@@ -121100,6 +121322,7 @@
       "skin_variant_bundle_91000008",
       "paw_item_purchase_disabled",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
@@ -121142,6 +121365,7 @@
       "skin_variant_bundle_91000008",
       "paw_item_purchase_disabled",
       "legendary",
+      "requirement_owned",
       "requirement_owned"
     ]
   },
