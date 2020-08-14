@@ -269,7 +269,6 @@
     "OnJsonApiEvent_riotclient_pre-shutdown_begin": "",
     "OnJsonApiEvent_riotclient_region-locale": "",
     "OnJsonApiEvent_riotclient_region-locale_request": "",
-    "OnJsonApiEvent_riotclient_system-info_v1": "",
     "OnJsonApiEvent_riotclient_ux-crash-count": "",
     "OnJsonApiEvent_riotclient_ux-state_request": "",
     "OnJsonApiEvent_riotclient_v1_crash-reporting": "",
