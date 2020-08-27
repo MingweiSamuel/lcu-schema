@@ -43683,7 +43683,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "HttpAsyncResult",
+        "operationId": "Http2AsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -70129,7 +70129,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [
           
         ],
