@@ -22,6 +22,7 @@ jobs:
           git -C out config credential.helper "$(git config credential.helper)"
           git -C out config 'http.https://github.com/.extraheader' "$(git config 'http.https://github.com/.extraheader')"
           git -C out config core.autocrlf input
+          git -C out config core.safecrlf false
           git -C out rm -rf --ignore-unmatch .
           git -C out clean -fxd
           cp README.md out/
