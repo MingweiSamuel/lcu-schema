@@ -4753,7 +4753,7 @@
     "isTeamBuilderManaged": true,
     "isTeamOnly": false,
     "lastToggledOffTime": 1595966829942,
-    "lastToggledOnTime": 1585252801274,
+    "lastToggledOnTime": 1599163201076,
     "mapId": 11,
     "maxLevel": 0,
     "maxSummonerLevelForFirstWinOfTheDay": 0,
@@ -4762,7 +4762,7 @@
     "minimumParticipantListSize": 1,
     "name": "One For All",
     "numPlayersPerTeam": 5,
-    "queueAvailability": "PlatformDisabled",
+    "queueAvailability": "Available",
     "queueRewards": {
       "isChampionPointsEnabled": true,
       "isIpEnabled": true,
