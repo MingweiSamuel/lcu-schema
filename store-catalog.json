@@ -10186,7 +10186,7 @@
         {
           "discountPrices": [
             {
-              "cost": 880,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -11644,7 +11644,7 @@
         {
           "discountPrices": [
             {
-              "cost": 880,
+              "cost": 484,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -12970,7 +12970,7 @@
         {
           "discountPrices": [
             {
-              "cost": 352,
+              "cost": 880,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -14728,7 +14728,7 @@
         {
           "discountPrices": [
             {
-              "cost": 434,
+              "cost": 790,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -19297,7 +19297,7 @@
         {
           "discountPrices": [
             {
-              "cost": 810,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -21414,7 +21414,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 675,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -21672,7 +21672,7 @@
         {
           "discountPrices": [
             {
-              "cost": 352,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -22201,7 +22201,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 742,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -22808,7 +22808,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 742,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -22963,7 +22963,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 810,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -23247,7 +23247,7 @@
         {
           "discountPrices": [
             {
-              "cost": 286,
+              "cost": 520,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -24112,7 +24112,7 @@
         {
           "discountPrices": [
             {
-              "cost": 810,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -24409,7 +24409,7 @@
         {
           "discountPrices": [
             {
-              "cost": 352,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -26088,7 +26088,7 @@
         {
           "discountPrices": [
             {
-              "cost": 877,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -28657,7 +28657,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 1012,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -29457,7 +29457,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 944,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -32168,7 +32168,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -32865,7 +32865,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -33033,7 +33033,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -34092,7 +34092,7 @@
         {
           "discountPrices": [
             {
-              "cost": 352,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -34415,7 +34415,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 1820,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -36287,7 +36287,7 @@
         {
           "discountPrices": [
             {
-              "cost": 440,
+              "cost": 395,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -38883,7 +38883,7 @@
         {
           "discountPrices": [
             {
-              "cost": 438,
+              "cost": 487,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -43023,22 +43023,7 @@
       }
     ],
     "releaseDate": "2011-10-20T02:02:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 4800,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 352,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "marksman"
@@ -43340,7 +43325,22 @@
       }
     ],
     "releaseDate": "2012-01-16T00:02:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 352,
+          "currency": "RP",
+          "discount": 0.6000000238418579
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "fighter",
@@ -44698,22 +44698,7 @@
       }
     ],
     "releaseDate": "2015-10-14T10:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 6300,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 438,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "marksman",
@@ -45507,22 +45492,7 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 3150,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 434,
-          "currency": "RP",
-          "discount": 0.44999998807907107
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -46350,22 +46320,7 @@
       }
     ],
     "releaseDate": "2011-02-02T05:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 3150,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 395,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "mage",
@@ -46740,7 +46695,22 @@
       }
     ],
     "releaseDate": "2017-08-22T15:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 6300,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 438,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "tank"
@@ -47079,22 +47049,7 @@
       }
     ],
     "releaseDate": "2011-02-18T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 4800,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 352,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "mage",
@@ -47284,7 +47239,22 @@
       }
     ],
     "releaseDate": "2011-06-02T02:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 395,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "mage",
@@ -47511,7 +47481,22 @@
       }
     ],
     "releaseDate": "2010-12-15T05:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 440,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "mage"
@@ -48420,7 +48405,22 @@
       }
     ],
     "releaseDate": "2011-09-14T00:02:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 484,
+          "currency": "RP",
+          "discount": 0.4399999976158142
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -48572,17 +48572,7 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 286,
-          "currency": "RP",
-          "discount": 0.4399999976158142
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_10"
@@ -49544,7 +49534,17 @@
       }
     ],
     "releaseDate": "2012-05-28T10:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 487,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_102"
@@ -49840,7 +49840,17 @@
       }
     ],
     "releaseDate": "2016-08-25T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 607,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_103"
@@ -56611,7 +56621,17 @@
       }
     ],
     "releaseDate": "2012-11-13T11:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 675,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_117"
@@ -58837,17 +58857,7 @@
       }
     ],
     "releaseDate": "2020-03-05T21:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 975,
-          "currency": "RP",
-          "discount": 0.27000001072883608
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_12"
@@ -60372,17 +60382,7 @@
       }
     ],
     "releaseDate": "2019-05-15T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 810,
-          "currency": "RP",
-          "discount": 0.4000000059604645
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_126"
@@ -62951,17 +62951,7 @@
       }
     ],
     "releaseDate": "2018-08-16T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 810,
-          "currency": "RP",
-          "discount": 0.4000000059604645
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_136"
@@ -67560,7 +67550,17 @@
       }
     ],
     "releaseDate": "2019-11-10T12:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 1012,
+          "currency": "RP",
+          "discount": 0.25
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_157"
@@ -69392,7 +69392,17 @@
       }
     ],
     "releaseDate": "2018-11-27T19:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 742,
+          "currency": "RP",
+          "discount": 0.44999998807907107
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_164"
@@ -69749,17 +69759,7 @@
       }
     ],
     "releaseDate": "2011-10-10T17:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 390,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_17"
@@ -71915,17 +71915,7 @@
       }
     ],
     "releaseDate": "2019-08-01T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 877,
-          "currency": "RP",
-          "discount": 0.3499999940395355
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_19"
@@ -72361,7 +72351,17 @@
       }
     ],
     "releaseDate": "2019-02-21T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 810,
+          "currency": "RP",
+          "discount": 0.4000000059604645
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_20"
@@ -74323,7 +74323,17 @@
       }
     ],
     "releaseDate": "2017-02-09T19:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 675,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_202"
@@ -77407,7 +77417,17 @@
       }
     ],
     "releaseDate": "2015-06-08T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 300,
+          "currency": "RP",
+          "discount": 0.6000000238418579
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_23"
@@ -78204,17 +78224,7 @@
       }
     ],
     "releaseDate": "2013-08-21T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 438,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_236"
@@ -81659,17 +81669,7 @@
       }
     ],
     "releaseDate": "2020-04-16T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 1350,
-          "currency": "RP",
-          "discount": 0.25
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_25",
@@ -84063,17 +84063,7 @@
       }
     ],
     "releaseDate": "2016-05-05T18:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 375,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_27"
@@ -84332,7 +84322,17 @@
       }
     ],
     "releaseDate": "2019-12-17T21:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 944,
+          "currency": "RP",
+          "discount": 0.30000001192092898
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_28"
@@ -87566,7 +87566,17 @@
       }
     ],
     "releaseDate": "2019-02-21T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 742,
+          "currency": "RP",
+          "discount": 0.44999998807907107
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_34"
@@ -88530,7 +88540,17 @@
       }
     ],
     "releaseDate": "2011-11-07T17:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 633,
+          "currency": "RP",
+          "discount": 0.3499999940395355
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_35"
@@ -96191,17 +96211,7 @@
       }
     ],
     "releaseDate": "2020-03-19T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 975,
-          "currency": "RP",
-          "discount": 0.27000001072883608
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_44"
@@ -97597,17 +97607,7 @@
       }
     ],
     "releaseDate": "2010-12-01T05:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 412,
-          "currency": "RP",
-          "discount": 0.44999998807907107
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_48"
@@ -98701,7 +98701,17 @@
       }
     ],
     "releaseDate": "2015-03-16T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 487,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_5"
@@ -106004,17 +106014,7 @@
       }
     ],
     "releaseDate": "2015-01-05T19:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 390,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_60"
@@ -106888,7 +106888,17 @@
       }
     ],
     "releaseDate": "2011-06-02T02:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 233,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_61"
@@ -108433,7 +108443,17 @@
       }
     ],
     "releaseDate": "2015-04-21T18:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 633,
+          "currency": "RP",
+          "discount": 0.3499999940395355
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_67"
@@ -113345,17 +113365,7 @@
       }
     ],
     "releaseDate": "2011-08-01T18:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 390,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_80"
@@ -115264,17 +115274,7 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 208,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_82"
@@ -120987,17 +120987,7 @@
       }
     ],
     "releaseDate": "2020-03-19T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-07T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 975,
-          "currency": "RP",
-          "discount": 0.27000001072883608
-        }
-      ],
-      "startDate": "2020-08-31T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_91"
@@ -122266,7 +122256,17 @@
       }
     ],
     "releaseDate": "2012-03-23T10:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-14T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 390,
+          "currency": "RP",
+          "discount": 0.6000000238418579
+        }
+      ],
+      "startDate": "2020-09-07T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_96"
