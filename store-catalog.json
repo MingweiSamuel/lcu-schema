@@ -42453,7 +42453,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -42491,7 +42492,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -42529,7 +42531,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -42566,7 +42569,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -42604,7 +42608,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -42642,7 +42647,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -42756,7 +42762,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -42794,7 +42801,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -42831,7 +42839,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -42884,7 +42893,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -42922,7 +42932,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -42959,7 +42970,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43034,7 +43046,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -43072,7 +43085,8 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -43110,7 +43124,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -43148,7 +43163,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -43186,7 +43202,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -43224,7 +43241,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -43261,7 +43279,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43337,7 +43356,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43375,7 +43395,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -43413,7 +43434,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -43450,7 +43472,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43488,7 +43511,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -43525,7 +43549,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "jungler"
+      "jungler",
+      "requirement_owned"
     ]
   },
   {
@@ -43562,7 +43587,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43600,7 +43626,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -43640,7 +43667,8 @@
       "\u003c\u003ctag\u003e\u003e",
       "marksman",
       "marksmen",
-      "void"
+      "void",
+      "requirement_owned"
     ]
   },
   {
@@ -43677,7 +43705,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -43715,7 +43744,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -43753,7 +43783,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -43791,7 +43822,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -43866,7 +43898,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43903,7 +43936,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -43940,7 +43974,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -43978,7 +44013,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44016,7 +44052,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44092,7 +44129,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -44167,7 +44205,8 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -44204,7 +44243,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44242,7 +44282,8 @@
     "subInventoryType": null,
     "tags": [
       "marksman",
-      "assassin"
+      "assassin",
+      "requirement_owned"
     ]
   },
   {
@@ -44279,7 +44320,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44354,7 +44396,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44392,7 +44435,8 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -44468,7 +44512,8 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44505,7 +44550,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -44543,7 +44589,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44581,7 +44628,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44618,7 +44666,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44656,7 +44705,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44694,7 +44744,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44770,7 +44821,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -44808,7 +44860,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -44846,7 +44899,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -44884,7 +44938,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -44922,7 +44977,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -45074,7 +45130,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -45111,7 +45168,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -45149,7 +45207,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -45263,7 +45322,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45337,7 +45397,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45413,7 +45474,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45451,7 +45513,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -45489,7 +45552,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -45602,7 +45666,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45640,7 +45705,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45677,7 +45743,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -45715,7 +45782,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -45752,7 +45820,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -45789,7 +45858,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "jungler"
+      "jungler",
+      "requirement_owned"
     ]
   },
   {
@@ -45826,7 +45896,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -45864,7 +45935,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -45901,7 +45973,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -46014,7 +46087,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46051,7 +46125,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -46088,7 +46163,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -46126,7 +46202,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -46164,7 +46241,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -46253,7 +46331,8 @@
     },
     "subInventoryType": null,
     "tags": [
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46291,7 +46370,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -46328,7 +46408,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -46365,7 +46446,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -46403,7 +46485,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46517,7 +46600,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -46593,7 +46677,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46631,7 +46716,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46669,7 +46755,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46707,7 +46794,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -46745,7 +46833,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -46798,7 +46887,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -46836,7 +46926,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -46911,7 +47002,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -46949,7 +47041,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -46987,7 +47080,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47039,7 +47133,8 @@
     },
     "subInventoryType": null,
     "tags": [
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47115,7 +47210,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -47153,7 +47249,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
@@ -47229,7 +47326,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -47267,7 +47365,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -47305,7 +47404,8 @@
     "subInventoryType": null,
     "tags": [
       "Fighter",
-      "Assassin"
+      "Assassin",
+      "requirement_owned"
     ]
   },
   {
@@ -47381,7 +47481,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47457,7 +47558,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -47495,7 +47597,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -47571,7 +47674,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47646,7 +47750,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -47721,7 +47826,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -47759,7 +47865,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47797,7 +47904,8 @@
     "subInventoryType": null,
     "tags": [
       "support",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -47873,7 +47981,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "mage"
+      "mage",
+      "requirement_owned"
     ]
   },
   {
@@ -47911,7 +48020,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -47964,7 +48074,8 @@
     "subInventoryType": null,
     "tags": [
       "assassin",
-      "fighter"
+      "fighter",
+      "requirement_owned"
     ]
   },
   {
@@ -48002,7 +48113,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "marksman"
+      "marksman",
+      "requirement_owned"
     ]
   },
   {
@@ -48040,7 +48152,8 @@
     "subInventoryType": null,
     "tags": [
       "fighter",
-      "tank"
+      "tank",
+      "requirement_owned"
     ]
   },
   {
@@ -48078,7 +48191,8 @@
     "subInventoryType": null,
     "tags": [
       "mage",
-      "support"
+      "support",
+      "requirement_owned"
     ]
   },
   {
