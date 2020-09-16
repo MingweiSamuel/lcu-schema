@@ -7792,60 +7792,6 @@
         {
           "discountPrices": [
             {
-              "cost": 1295,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "EVENT_PASS",
-          "itemId": 4,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/69900237.png",
-    "inactiveDate": "2020-09-15T06:59:00.000+0000",
-    "inventoryType": "BUNDLES",
-    "itemId": 69900237,
-    "itemInstanceId": "3cb7f375-39eb-4a6a-8f11-3a5c6c29c307",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "Get the TFT Galaxies II Pass+ and upgrade your TFT pass for premium rewards! Unlock Little Legend Variants, Arena Skins and Booms for playing TFT during the Galaxies Set. Progress on the TFT Galaxies II Pass+ starts June 10th, 2020 at 11:00AM PT. \u003cbr /\u003e\u003cbr /\u003e The TFT Galaxies II Pass+ comes with a time-limited Star Guardian Sprite at purchase. \u003cbr /\u003e\u003cbr /\u003e TFT Galaxies II Pass+ holders can also unlock additional content by playing TFT during the Galaxies set and completing missions. Rewards include: \u003cbr /\u003eâ¢ 3 Little Legends Series 1-5 Eggs (contains 1 random Little Legend from Series 1-5) \u003cbr /\u003eâ¢ 4 Immortal Creatures Little Legend Eggs (contains 1 random Immortal Creatures Little Legend) \u003cbr /\u003eâ¢ 1 Guaranteed Series 1-6 Legendary Little Legend Egg (contains 1 random Legendary Little Legend from Series 1-6) \u003cbr /\u003eâ¢ Time-Limited Star Guardian Silverwing 1 and 2-Star Variants \u003cbr /\u003eâ¢ Spaceship Arena Skin \u003cbr /\u003eâ¢ Star Piercer Booms \u003cbr /\u003eâ¢ Burn Bright Starlight Booms \u003cbr /\u003eâ¢ Void Spikes Booms \u003cbr /\u003eâ¢ Super Mega Death Rock Booms \u003cbr /\u003e\u003cbr /\u003e Last day to earn progress on the TFT Galaxies II Pass+ is September 14th, 2020 at 11:59 p.m. PT.",
-        "language": "en_US",
-        "name": "TFT Galaxies II Pass+"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "2c5d33d5-d346-48d6-972f-2250bb6978cc",
-    "prices": [
-      
-    ],
-    "releaseDate": "2020-06-10T18:02:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "event_pass_bundle"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
               "cost": 250,
               "costType": "FLAT",
               "currency": "RP",
@@ -129484,6 +129430,36 @@
       }
     ],
     "releaseDate": "2020-06-18T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "emote_3515.png",
+    "inactiveDate": null,
+    "inventoryType": "EMOTE",
+    "itemId": 3515,
+    "itemInstanceId": "3c31f665-793e-454e-b7a2-6f7077b709dc",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Style Rank S"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "b79ff5eb-66ca-4c8e-850a-1094ffbc3ac8",
+    "prices": [
+      {
+        "cost": 0,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-10T06:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
