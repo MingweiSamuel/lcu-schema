@@ -1,14 +1,14 @@
 ﻿[
   {
     "assets": {
-      "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
+      "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background-fates1.jpg",
       "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-active.png",
       "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-active.webm",
       "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-default.png",
       "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-disabled.png",
       "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-hover.png",
       "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-intro.webm",
-      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background-fates1.jpg",
       "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
       "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-defeat.png",
       "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-empty.png",

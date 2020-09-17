@@ -83,17 +83,6 @@
       },
       "type": "object"
     },
-    "AllSummonerData": {
-      "properties": {
-        "summoner": {
-          "$ref": "#/definitions/PrivateSummonerDTO"
-        },
-        "summonerLevelAndPoints": {
-          "$ref": "#/definitions/SummonerLevelAndPoints"
-        }
-      },
-      "type": "object"
-    },
     "BannedChampion": {
       "properties": {
         "championId": {
@@ -5473,6 +5462,12 @@
     },
     "LolCatalogSkinLineInfo": {
       "properties": {
+        "collectionCardPath": {
+          "type": "string"
+        },
+        "collectionDescription": {
+          "type": "string"
+        },
         "descriptionInfo": {
           "items": {
             "$ref": "#/definitions/LolCatalogSkinLineDescriptionInfo"
@@ -5482,7 +5477,7 @@
         "name": {
           "type": "string"
         },
-        "splash": {
+        "splashPath": {
           "type": "string"
         },
         "tiers": {
@@ -5491,7 +5486,10 @@
           },
           "type": "array"
         },
-        "tileSplash": {
+        "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
           "type": "string"
         }
       },
@@ -6034,6 +6032,23 @@
       ],
       "type": "string"
     },
+    "LolChampSelectChampionQuestSkinInfo": {
+      "properties": {
+        "splashPath": {
+          "type": "string"
+        },
+        "tiers": {
+          "items": {
+            "$ref": "#/definitions/LolChampSelectCollectionsChampionQuestSkin"
+          },
+          "type": "array"
+        },
+        "tilePath": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolChampSelectChampionSelection": {
       "properties": {
         "banIntented": {
@@ -6159,6 +6174,50 @@
       },
       "type": "object"
     },
+    "LolChampSelectCollectionsChampionQuestSkin": {
+      "properties": {
+        "championId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "chromaPath": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isBase": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownership": {
+          "$ref": "#/definitions/LolChampSelectCollectionsOwnership"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "splashPath": {
+          "type": "string"
+        },
+        "stage": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "stillObtainable": {
+          "type": "boolean"
+        },
+        "tilePath": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolChampSelectCollectionsChampionSkin": {
       "properties": {
         "championId": {
@@ -6196,18 +6255,8 @@
         "ownership": {
           "$ref": "#/definitions/LolChampSelectCollectionsOwnership"
         },
-        "questSkinGroupSplashPath": {
-          "type": "string"
-        },
-        "questSkins": {
-          "items": {
-            "$ref": "#/definitions/LolChampSelectCollectionsChampionSkinMinimal"
-          },
-          "type": "array"
-        },
-        "questStage": {
-          "format": "int32",
-          "type": "integer"
+        "questSkinInfo": {
+          "$ref": "#/definitions/LolChampSelectChampionQuestSkinInfo"
         },
         "rarityGemPath": {
           "type": "string"
@@ -6287,13 +6336,6 @@
         },
         "ownership": {
           "$ref": "#/definitions/LolChampSelectCollectionsOwnership"
-        },
-        "questSkinGroupSplashPath": {
-          "type": "string"
-        },
-        "questStage": {
-          "format": "int32",
-          "type": "integer"
         },
         "splashPath": {
           "type": "string"
@@ -6959,6 +7001,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "shortName": {
+          "type": "string"
+        },
         "splashPath": {
           "type": "string"
         },
@@ -7097,6 +7142,41 @@
         },
         "unlocked": {
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LolChampionsChampionQuestSkinInfo": {
+      "properties": {
+        "collectionsCardPath": {
+          "type": "string"
+        },
+        "collectionsDescription": {
+          "type": "string"
+        },
+        "descriptionInfo": {
+          "items": {
+            "$ref": "#/definitions/LolChampionsQuestSkinDescriptionInfo"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "splashPath": {
+          "type": "string"
+        },
+        "tiers": {
+          "items": {
+            "$ref": "#/definitions/LolChampionsCollectionsChampionQuestSkin"
+          },
+          "type": "array"
+        },
+        "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -7305,6 +7385,62 @@
       },
       "type": "object"
     },
+    "LolChampionsCollectionsChampionQuestSkin": {
+      "properties": {
+        "championId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "chromaPath": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "isBase": {
+          "type": "boolean"
+        },
+        "lastSelected": {
+          "type": "boolean"
+        },
+        "loadScreenPath": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ownership": {
+          "$ref": "#/definitions/LolChampionsCollectionsOwnership"
+        },
+        "shortName": {
+          "type": "string"
+        },
+        "splashPath": {
+          "type": "string"
+        },
+        "stage": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "stillObtainable": {
+          "type": "boolean"
+        },
+        "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolChampionsCollectionsChampionSkin": {
       "properties": {
         "championId": {
@@ -7351,18 +7487,8 @@
         "ownership": {
           "$ref": "#/definitions/LolChampionsCollectionsOwnership"
         },
-        "questSkinGroupSplashPath": {
-          "type": "string"
-        },
-        "questSkins": {
-          "items": {
-            "$ref": "#/definitions/LolChampionsCollectionsChampionSkinMinimal"
-          },
-          "type": "array"
-        },
-        "questStage": {
-          "format": "int32",
-          "type": "integer"
+        "questSkinInfo": {
+          "$ref": "#/definitions/LolChampionsChampionQuestSkinInfo"
         },
         "rarityGemPath": {
           "type": "string"
@@ -7451,13 +7577,6 @@
         },
         "ownership": {
           "$ref": "#/definitions/LolChampionsCollectionsOwnership"
-        },
-        "questSkinGroupSplashPath": {
-          "type": "string"
-        },
-        "questStage": {
-          "format": "int32",
-          "type": "integer"
         },
         "splashPath": {
           "type": "string"
@@ -7606,11 +7725,20 @@
     },
     "LolChampionsGameDataChampionQuestSkin": {
       "properties": {
+        "description": {
+          "type": "string"
+        },
         "id": {
           "format": "int32",
           "type": "integer"
         },
+        "loadScreenPath": {
+          "type": "string"
+        },
         "name": {
+          "type": "string"
+        },
+        "shortName": {
           "type": "string"
         },
         "splashPath": {
@@ -7621,6 +7749,9 @@
           "type": "integer"
         },
         "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
           "type": "string"
         }
       },
@@ -7716,8 +7847,37 @@
       },
       "type": "object"
     },
+    "LolChampionsGameDataQuestSkinDescriptionInfo": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "iconPath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolChampionsGameDataQuestSkinInfo": {
       "properties": {
+        "collectionsCardPath": {
+          "type": "string"
+        },
+        "collectionsDescription": {
+          "type": "string"
+        },
+        "descriptionInfo": {
+          "items": {
+            "$ref": "#/definitions/LolChampionsGameDataQuestSkinDescriptionInfo"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
         "splash": {
           "type": "string"
         },
@@ -7728,6 +7888,9 @@
           "type": "array"
         },
         "tileSplash": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
           "type": "string"
         }
       },
@@ -7804,6 +7967,20 @@
           "type": "string"
         },
         "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChampionsQuestSkinDescriptionInfo": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "iconPath": {
+          "type": "string"
+        },
+        "title": {
           "type": "string"
         }
       },
@@ -25065,6 +25242,21 @@
       },
       "type": "object"
     },
+    "LolLoginSummonerSessionResource": {
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "isNewPlayer": {
+          "type": "boolean"
+        },
+        "summonerId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolLoginUsernameAndPassword": {
       "properties": {
         "password": {
@@ -31447,6 +31639,14 @@
       },
       "type": "object"
     },
+    "LolPlayerBehaviorCodeOfConductNotification": {
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolPlayerBehaviorGameflowPhase": {
       "enum": [
         "None",
@@ -31477,6 +31677,9 @@
     },
     "LolPlayerBehaviorPlayerBehaviorConfig": {
       "properties": {
+        "CodeOfConductEnabled": {
+          "type": "boolean"
+        },
         "IsLoaded": {
           "type": "boolean"
         },
@@ -31707,6 +31910,19 @@
         },
         "source": {
           "$ref": "#/definitions/LolPlayerBehaviorNotificationSource"
+        }
+      },
+      "type": "object"
+    },
+    "LolPlayerBehaviorSettingsResource": {
+      "properties": {
+        "data": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "schemaVersion": {
+          "format": "int64",
+          "type": "integer"
         }
       },
       "type": "object"
@@ -32576,6 +32792,14 @@
       },
       "type": "object"
     },
+    "LolPublishingContentRegionLocale": {
+      "properties": {
+        "locale": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolPurchaseWidgetBalance": {
       "properties": {
         "amount": {
@@ -32590,6 +32814,12 @@
     },
     "LolPurchaseWidgetBaseSkinLineDto": {
       "properties": {
+        "collectionCardPath": {
+          "type": "string"
+        },
+        "collectionDescription": {
+          "type": "string"
+        },
         "items": {
           "items": {
             "$ref": "#/definitions/LolPurchaseWidgetSkinLineItemDto"
@@ -32610,6 +32840,15 @@
             "$ref": "#/definitions/LolPurchaseWidgetSkinLineDescriptionDto"
           },
           "type": "array"
+        },
+        "splashPath": {
+          "type": "string"
+        },
+        "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -33434,6 +33673,12 @@
     },
     "LolPurchaseWidgetSkinLineInfo": {
       "properties": {
+        "collectionCardPath": {
+          "type": "string"
+        },
+        "collectionDescription": {
+          "type": "string"
+        },
         "descriptionInfo": {
           "items": {
             "$ref": "#/definitions/LolPurchaseWidgetSkinLineDescriptionInfo"
@@ -33443,7 +33688,7 @@
         "name": {
           "type": "string"
         },
-        "splash": {
+        "splashPath": {
           "type": "string"
         },
         "tiers": {
@@ -33452,7 +33697,10 @@
           },
           "type": "array"
         },
-        "tileSplash": {
+        "tilePath": {
+          "type": "string"
+        },
+        "uncenteredSplashPath": {
           "type": "string"
         }
       },
@@ -38176,32 +38424,6 @@
       },
       "type": "object"
     },
-    "LolSummonerInternalSummoner": {
-      "properties": {
-        "accountId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "displayName": {
-          "type": "string"
-        },
-        "internalName": {
-          "type": "string"
-        },
-        "nameChangeFlag": {
-          "type": "boolean"
-        },
-        "profileIconId": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "summonerId": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
     "LolSummonerLevelField": {
       "properties": {
         "finalLevel": {
@@ -38319,6 +38541,9 @@
         "internalName": {
           "type": "string"
         },
+        "nameChangeFlag": {
+          "type": "boolean"
+        },
         "percentCompleteForNextLevel": {
           "format": "int32",
           "type": "integer"
@@ -38340,6 +38565,9 @@
         "summonerLevel": {
           "format": "int32",
           "type": "integer"
+        },
+        "unnamed": {
+          "type": "boolean"
         },
         "xpSinceLastLevel": {
           "format": "int64",
@@ -38421,6 +38649,9 @@
         },
         "puuid": {
           "type": "string"
+        },
+        "unnamed": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -38505,6 +38736,21 @@
         },
         "pointsToReroll": {
           "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolSummonerSummonerSession": {
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "isNewPlayer": {
+          "type": "boolean"
+        },
+        "summonerId": {
+          "format": "int64",
           "type": "integer"
         }
       },
@@ -41224,32 +41470,6 @@
         "UNSELECTED"
       ],
       "type": "string"
-    },
-    "PrivateSummonerDTO": {
-      "properties": {
-        "acctId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "internalName": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "nameChangeFlag": {
-          "type": "boolean"
-        },
-        "profileIconId": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "sumId": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
     },
     "ProcessControlProcess": {
       "properties": {
@@ -44650,7 +44870,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -45480,31 +45700,6 @@
             "description": "Successful response",
             "schema": {
               "type": "boolean"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin gcloud-voice-chat"
-        ]
-      }
-    },
-    "/gcloud-voice-chat/v1/sessions/{id}": {
-      "post": {
-        "operationId": "PostGcloudVoiceChatV1SessionsById",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/GcloudVoiceChatSessionResource"
             }
           }
         },
@@ -60290,27 +60485,6 @@
         ]
       }
     },
-    "/lol-login/v1/new-player-flow-completed": {
-      "post": {
-        "operationId": "PostLolLoginV1NewPlayerFlowCompleted",
-        "parameters": [
-          
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-login"
-        ]
-      }
-    },
     "/lol-login/v1/service-proxy-async-requests/{serviceName}/{methodName}": {
       "delete": {
         "operationId": "DeleteLolLoginV1ServiceProxyAsyncRequestsByServiceNameByMethodName",
@@ -60569,16 +60743,16 @@
         ]
       }
     },
-    "/lol-login/v1/summoner-created": {
+    "/lol-login/v1/summoner-session": {
       "post": {
-        "operationId": "PostLolLoginV1SummonerCreated",
+        "operationId": "PostLolLoginV1SummonerSession",
         "parameters": [
           {
             "in": "body",
-            "name": "summonerId",
+            "name": "summonerSession",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/LolLoginSummonerCreatedResource"
+              "$ref": "#/definitions/LolLoginSummonerSessionResource"
             }
           }
         ],
@@ -63554,6 +63728,45 @@
         ]
       }
     },
+    "/lol-player-behavior/v1/code-of-conduct-notification": {
+      "delete": {
+        "operationId": "DeleteLolPlayerBehaviorV1CodeOfConductNotification",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-player-behavior"
+        ]
+      },
+      "get": {
+        "operationId": "GetLolPlayerBehaviorV1CodeOfConductNotification",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolPlayerBehaviorCodeOfConductNotification"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-player-behavior"
+        ]
+      }
+    },
     "/lol-player-behavior/v1/config": {
       "get": {
         "operationId": "GetLolPlayerBehaviorV1Config",
@@ -64619,6 +64832,47 @@
         "tags": [
           "Plugins",
           "Plugin lol-premade-voice"
+        ]
+      }
+    },
+    "/lol-publishing-content/v1/ready": {
+      "get": {
+        "operationId": "GetLolPublishingContentV1Ready",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-publishing-content"
+        ]
+      }
+    },
+    "/lol-publishing-content/v1/tft-hub-cards": {
+      "get": {
+        "operationId": "GetLolPublishingContentV1TftHubCards",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-publishing-content"
         ]
       }
     },
@@ -67796,6 +68050,27 @@
         ]
       }
     },
+    "/lol-summoner/v1/current-summoner/accountId": {
+      "get": {
+        "operationId": "GetLolSummonerV1CurrentSummonerAccountId",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
     "/lol-summoner/v1/current-summoner/autofill": {
       "get": {
         "operationId": "GetLolSummonerV1CurrentSummonerAutofill",
@@ -67837,6 +68112,27 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/LolSummonerSummoner"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
+    "/lol-summoner/v1/current-summoner/id": {
+      "get": {
+        "operationId": "GetLolSummonerV1CurrentSummonerId",
+        "parameters": [
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "format": "int64",
+              "type": "integer"
             }
           }
         },
@@ -68066,7 +68362,7 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/LolSummonerInternalSummoner"
+              "$ref": "#/definitions/LolSummonerSummoner"
             }
           }
         },
@@ -71418,7 +71714,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -72182,31 +72478,6 @@
             "description": "Successful response",
             "schema": {
               "type": "boolean"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin voice-chat"
-        ]
-      }
-    },
-    "/voice-chat/v1/sessions/{id}": {
-      "post": {
-        "operationId": "PostVoiceChatV1SessionsById",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/VoiceChatSessionResource"
             }
           }
         },

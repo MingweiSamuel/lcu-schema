@@ -2225,6 +2225,102 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/storeCards/Currency/3.png",
+    "inactiveDate": null,
+    "inventoryType": "CURRENCY",
+    "itemId": 3,
+    "itemInstanceId": "207181d5-862d-46db-be14-111c28927d75",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Use these Star Shards to star up your Little Legends! All Star Shards and their upgrade uses are non-refundable.",
+        "language": "en_US",
+        "name": "130 Star Shards"
+      }
+    },
+    "maxQuantity": -1,
+    "offerId": "d2e3cd44-43b9-4a91-9098-242e35737121",
+    "prices": [
+      {
+        "cost": 625,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "tft_star_fragments",
+    "tags": [
+      "tft"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/storeCards/Currency/6.png",
+    "inactiveDate": null,
+    "inventoryType": "CURRENCY",
+    "itemId": 6,
+    "itemInstanceId": "86d18a90-1e2a-416a-97a8-48be02ef1c12",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Use these Star Shards to star up your Little Legends! All Star Shards and their upgrade uses are non-refundable.",
+        "language": "en_US",
+        "name": "520 Star Shards + 55 Bonus Star Shards"
+      }
+    },
+    "maxQuantity": -1,
+    "offerId": "a25201e0-8eaa-4b8a-8093-a27ecda160f8",
+    "prices": [
+      {
+        "cost": 2500,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "tft_star_fragments",
+    "tags": [
+      "tft"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/storeCards/Currency/7.png",
+    "inactiveDate": null,
+    "inventoryType": "CURRENCY",
+    "itemId": 7,
+    "itemInstanceId": "cca3c7d9-7a18-4f00-ae8d-f99aa0502455",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Use these Star Shards to star up your Little Legends! All Star Shards and their upgrade uses are non-refundable.",
+        "language": "en_US",
+        "name": "1040 Star Shards + 160 Bonus Star Shards"
+      }
+    },
+    "maxQuantity": -1,
+    "offerId": "d13b2449-6ea6-48e7-bcd1-b9e31dafbaac",
+    "prices": [
+      {
+        "cost": 5000,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "tft_star_fragments",
+    "tags": [
+      "tft"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "trophy_301.png",
     "inactiveDate": null,
     "inventoryType": "TOURNAMENT_TROPHY",
@@ -5017,6 +5113,85 @@
         {
           "discountPrices": [
             {
+              "cost": 967,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.28999999165534975
+            }
+          ],
+          "inventoryType": "TFT_MAP_SKIN",
+          "itemId": 28,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 967,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.28999999165534975
+            }
+          ],
+          "inventoryType": "TFT_MAP_SKIN",
+          "itemId": 29,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 966,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.30000001192092898
+            }
+          ],
+          "inventoryType": "TFT_MAP_SKIN",
+          "itemId": 30,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33200003.png",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 33200003,
+    "itemInstanceId": "eb75da2e-97da-421d-bcfa-5c69e966c792",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Fates Arena Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "b9ebbde6-33c5-4c6c-a990-60b46a505010",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": [
+      "tft"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
               "cost": 490,
               "costType": "FLAT",
               "currency": "RP",
@@ -5159,528 +5334,6 @@
         {
           "discountPrices": [
             {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4211,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300003.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300003,
-    "itemInstanceId": "31c472ee-ba57-4588-810c-305ec8d312cb",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Shadow Isles Hauntling variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Shadow Isles Hauntling Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "64765c83-4efd-41b4-8ed8-270d6204a271",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4212,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300004.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300004,
-    "itemInstanceId": "15453d75-e6ea-49d9-868e-930042333b8f",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Demacian Silverwing variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Demacian Silverwing Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "06711035-4d91-4d81-af3b-135d8589a6fa",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4213,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300005.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300005,
-    "itemInstanceId": "072b789f-b43e-43e1-b540-8d20c91cfbaf",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Molten Furyhorn variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Molten Furyhorn Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "0c8c5e7b-8a4b-46cc-a6ec-01e10fff6423",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4214,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300006.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300006,
-    "itemInstanceId": "44540fb0-a62c-4742-8cdb-23f9194310e1",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Soft-nosed Molediver variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Soft-nosed Molediver Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "7127ac4d-ebca-4ff8-8cef-4aa2b3b1fd52",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4215,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300007.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300007,
-    "itemInstanceId": "2fe6084e-8265-48d9-a1e5-312a106ddb72",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Sentinel Runespirit variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Sentinel Runespirit Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "265f196d-4602-4419-ba81-a7e675232116",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4216,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "//d392eissrffsyf.cloudfront.net/storeImages/bundles/33300008.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300008,
-    "itemInstanceId": "4471b1cc-a44a-401d-a0e3-56108a3c5b18",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Pengu Featherknight variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Pengu Featherknight Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "1d5104ec-7086-486d-95b0-9968228f7f89",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-06-26T15:29:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4276,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300009.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300009,
-    "itemInstanceId": "455511cc-5cc8-458d-841b-08a13104230f",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Jeweled Protector variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Jeweled Protector Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "ce575708-e7bf-451c-a209-b877425127d8",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-08-15T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4278,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300010.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300010,
-    "itemInstanceId": "e176f6bc-1e56-4b67-88a2-bc82e947f51c",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Jade Paddlemar variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Jade Paddlemar Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "018fe1e2-30ad-4a7c-8272-ae57d8369ead",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-08-15T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4277,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300011.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300011,
-    "itemInstanceId": "3e2b73ca-12d4-41fe-ab92-2e4a11ecf7b5",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain the Moontipped Hushtail variant. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Moontipped Hushtail Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "e149cfe2-afc6-4672-ac07-c72d6b18515f",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-08-15T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
               "cost": 490,
               "costType": "FLAT",
               "currency": "RP",
@@ -5737,180 +5390,6 @@
       }
     ],
     "releaseDate": "2019-08-15T17:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4295,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300013.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300013,
-    "itemInstanceId": "01a589d1-920f-4866-b648-e96640da380b",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Dango. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Dango Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "8265d007-d760-49b9-ba8b-a6d69158b1bd",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-09-12T19:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4296,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300014.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300014,
-    "itemInstanceId": "73f9d4a3-01f6-4062-89b4-348e004e2b78",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Fuwa. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Fuwa Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "8aa72d9b-c58a-4e33-9821-a072003ef08a",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-09-12T19:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4297,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300015.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300015,
-    "itemInstanceId": "eb443d37-c7ae-4144-899f-c3a9b4d4fe97",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Shisa. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Shisa Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "de9fa384-9eb4-4212-8a7e-3f6028c76fd2",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-09-12T19:59:00.000+0000",
     "sale": null,
     "subInventoryType": "HEXTECH_BUNDLE",
     "tags": [
@@ -5997,180 +5476,6 @@
         {
           "discountPrices": [
             {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4400,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300017.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300017,
-    "itemInstanceId": "c05c29c9-030c-451c-a590-c2e94b0c5631",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Ossia. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Ossia Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "012bb65b-7f2d-4978-9ce1-b5df63af3606",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-11-10T12:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4402,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300018.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300018,
-    "itemInstanceId": "52c80b4b-502c-4948-8572-dba3dbff2e06",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain QiQi. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "QiQi Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "584df90c-57e7-4f92-bdc1-554e06a166fd",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-11-10T12:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4401,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300019.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300019,
-    "itemInstanceId": "61b089c0-cd32-48c7-b262-026dab4619d6",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Melisma. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Melisma Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "0dda668b-64cc-4571-a2ef-606b36c18f1f",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2019-11-10T12:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
               "cost": 490,
               "costType": "FLAT",
               "currency": "RP",
@@ -6227,180 +5532,6 @@
       }
     ],
     "releaseDate": "2019-11-10T12:01:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4487,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300021.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300021,
-    "itemInstanceId": "7fe98abe-0c9c-481a-9978-0fcb813bee00",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Tocker. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Tocker Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "413f1f36-2d35-461d-b197-75b0d94f1588",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-01-08T20:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4489,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300022.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300022,
-    "itemInstanceId": "32d792ff-6565-4a08-9a73-b678b07d4830",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Flutterbug. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Flutterbug Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "c6a12b5b-b625-46b0-98a9-6f9cc3ed824f",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-01-08T20:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4488,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300023.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300023,
-    "itemInstanceId": "8a2c80b5-5d2c-4314-95ba-76e78d0789bb",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Craggle. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Craggle Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "81653458-61e6-4d9c-9528-8bc4eff70de4",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-01-08T20:59:00.000+0000",
     "sale": null,
     "subInventoryType": "HEXTECH_BUNDLE",
     "tags": [
@@ -6545,180 +5676,6 @@
         {
           "discountPrices": [
             {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4515,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300026.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300026,
-    "itemInstanceId": "401ad2c8-3064-424c-9fd2-8ae6fe8ffb5c",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Squink. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Squink Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "41871cb1-bfe3-40bc-baeb-7a075d59c187",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-03-18T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4513,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300027.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300027,
-    "itemInstanceId": "f9df7dfd-c967-4493-aa76-7b93e114d38e",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Abyssia. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Abyssia Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "3e3b0922-f50d-4df8-80d2-97f9641e4015",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-03-18T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4514,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300028.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300028,
-    "itemInstanceId": "d59d663b-ae0e-4d51-babb-9f5c4cfff444",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Starmaw. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Starmaw Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "e7cfa454-34e9-48df-85d7-9b8272aaea6a",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-03-18T16:59:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
               "cost": 490,
               "costType": "FLAT",
               "currency": "RP",
@@ -6833,180 +5790,6 @@
       }
     ],
     "releaseDate": "2020-03-18T17:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4622,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300063.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300063,
-    "itemInstanceId": "0eb2d3c4-e3b1-45bd-8feb-7e4779c5ada0",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Lightcharger. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Lightcharger Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "2c9b2fe6-1c4f-4dee-bcd8-6ae7b456c5f6",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-06-10T18:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4623,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300064.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300064,
-    "itemInstanceId": "bf2fd4d1-4d4a-47b2-960d-2a6581f122f5",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Nixie. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Nixie Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "090f53c2-1f17-4059-bda5-c85653c13d21",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-06-10T18:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": "HEXTECH_BUNDLE",
-    "tags": [
-      "tft",
-      "tft-egg"
-    ]
-  },
-  {
-    "active": true,
-    "bundled": {
-      "flexible": true,
-      "items": [
-        {
-          "discountPrices": [
-            {
-              "cost": 750,
-              "costType": "FLAT",
-              "currency": "RP",
-              "discount": 0.0
-            }
-          ],
-          "inventoryType": "SUMMONER_ICON",
-          "itemId": 4624,
-          "quantity": 1
-        }
-      ],
-      "minimumPrices": [
-        {
-          "cost": 0,
-          "costType": "",
-          "currency": "RP",
-          "discount": 0.0
-        }
-      ]
-    },
-    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300065.png",
-    "inactiveDate": null,
-    "inventoryType": "BUNDLES",
-    "itemId": 33300065,
-    "itemInstanceId": "947e0df1-af5c-45fa-bcf9-cb4068eda693",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "A one-time purchase egg guaranteed to contain Bellswayer. Also contains a nifty summoner icon of your new little buddy. Little Legends are only usable in TFT and ARAM.",
-        "language": "en_US",
-        "name": "Bellswayer Egg + Icon"
-      }
-    },
-    "maxQuantity": 0,
-    "offerId": "eac2c016-de8b-4a95-8976-e3c571ecaaaf",
-    "prices": [
-      {
-        "cost": 750,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-06-10T18:00:00.000+0000",
     "sale": null,
     "subInventoryType": "HEXTECH_BUNDLE",
     "tags": [
@@ -7265,6 +6048,135 @@
       }
     ],
     "releaseDate": "2020-08-06T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "HEXTECH_BUNDLE",
+    "tags": [
+      "tft",
+      "tft-egg"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 490,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "HEXTECH_CRAFTING",
+          "itemId": 3330081,
+          "quantity": 5
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300071.png",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 33300071,
+    "itemInstanceId": "4d047ca5-1ce0-4587-ab4a-4be183fdf640",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "For the collector; eggs that\u0027ll hatch out Ao Shin, Umbra, or Choncc variants. Each egg will get you a new variant or will level up a variant you already own, until you\u0027ve collected them all! Little Legends are only usable in TFT and ARAM.",
+        "language": "en_US",
+        "name": "5 Heroic Hatchlings Eggs"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "fb6d5730-54a8-40aa-9b75-5e21b2640d40",
+    "prices": [
+      {
+        "cost": 2450,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "HEXTECH_BUNDLE",
+    "tags": [
+      "tft",
+      "tft-egg"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 490,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "HEXTECH_CRAFTING",
+          "itemId": 3330081,
+          "quantity": 10
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 0,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 1.0
+            }
+          ],
+          "inventoryType": "HEXTECH_CRAFTING",
+          "itemId": 3330082,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/33300072.png",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 33300072,
+    "itemInstanceId": "8775e8b5-3ce8-4e03-8d9a-0c95eabc37f3",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "For the collector; eggs that\u0027ll hatch out Ao Shin, Umbra, or Choncc variants. Each egg will get you a new variant or will level up a variant you already own, until you\u0027ve collected them all! Little Legends are only usable in TFT and ARAM.",
+        "language": "en_US",
+        "name": "10 + 1 Heroic Hatchlings Eggs"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "723cf1b4-8e32-41b4-b052-097e1032e8f6",
+    "prices": [
+      {
+        "cost": 4900,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
     "sale": null,
     "subInventoryType": "HEXTECH_BUNDLE",
     "tags": [
@@ -8235,6 +7147,60 @@
     "sale": null,
     "subInventoryType": "HEXTECH_BUNDLE",
     "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 1295,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "EVENT_PASS",
+          "itemId": 7,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/69900259.png",
+    "inactiveDate": "2021-01-19T07:59:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 69900259,
+    "itemInstanceId": "526ec2bd-a7a1-43c6-86b5-9241f9db06c6",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Get the TFT Fates Pass+ and upgrade your TFT pass for premium rewards! Unlock Little Legend Variants, Arena Skins, Star Shards and Booms for playing TFT during the Fates Set. Progress on the TFT Fates Pass+ starts September 16th, 2020 at 11:00AM PT. \u003cbr /\u003e\u003cbr /\u003e The TFT Fates Pass+ comes with a time-limited Jade Emperor Sprite at purchase. \u003cbr /\u003e\u003cbr /\u003e TFT Fates Pass+ holders can also unlock additional content by playing TFT during the Fates set and completing missions. Rewards include: \u003cbr /\u003eâ¢ 360 total Star Shards \u003cbr /\u003eâ¢ 1 Little Legends Series 1-6 Eggs (contains 1 random Little Legend from Series 1-6) \u003cbr /\u003eâ¢ 4 Heroic Hatchlings Little Legend Eggs (contains 1 random Heroic Hatchlings Little Legend) \u003cbr /\u003eâ¢ 1 Guaranteed Series 1-6 Legendary Little Legend Egg (contains 1 random Legendary Little Legend from Series 1-6) \u003cbr /\u003eâ¢ Time-Limited Lucky Fuwa 1 and 2-Star Variants \u003cbr /\u003eâ¢ Outset Arena Skin \u003cbr /\u003eâ¢ Path Arena Skin \u003cbr /\u003eâ¢ Curtain Call Booms \u003cbr /\u003eâ¢ Kanmei Burst Purify Booms \u003cbr /\u003eâ¢ Shadow Scrawl Booms \u003cbr /\u003eâ¢ Tidal Leaves Booms \u003cbr /\u003e\u003cbr /\u003e Last day to earn progress on the TFT Fates Pass+ is January 18th, 2021 at 11:59 p.m. PT.",
+        "language": "en_US",
+        "name": "TFT Fates Pass+"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "084416be-d5dc-4b42-b829-7429adfe4109",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "HEXTECH_BUNDLE",
+    "tags": [
+      "tft",
+      "event_pass_bundle"
+    ]
   },
   {
     "active": true,
@@ -130152,6 +129118,39 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/hextechCrafting/3330081.png",
+    "inactiveDate": null,
+    "inventoryType": "HEXTECH_CRAFTING",
+    "itemId": 3330081,
+    "itemInstanceId": "5091fbb2-2aae-4bc7-a02f-450cca50828d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Get yourself a Little Legend! An egg that\u0027ll hatch out an Ao Shin, Umbra, or Choncc variant. Each egg will get you a new variant or will level up a variant you already own, until you\u0027ve collected them all! Little Legends are only usable in TFT and ARAM.",
+        "language": "en_US",
+        "name": "Heroic Hatchlings Egg"
+      }
+    },
+    "maxQuantity": -1,
+    "offerId": "f6de833b-48e9-4890-8610-15291875169c",
+    "prices": [
+      {
+        "cost": 490,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHEST",
+    "tags": [
+      "tft",
+      "tft-egg"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/hextechCrafting/56600038.png",
     "inactiveDate": null,
     "inventoryType": "HEXTECH_CRAFTING",
@@ -138162,6 +137161,36 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "wardskin_203.jpg",
+    "inactiveDate": null,
+    "inventoryType": "WARD_SKIN",
+    "itemId": 203,
+    "itemInstanceId": "56c83ef6-4983-473e-acf2-310b57c34090",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Tellstones: King\u0027s Gambit Ward"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "892786e5-b298-4535-a26a-13181598f6d9",
+    "prices": [
+      {
+        "cost": 640,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "wardskin_21.jpg",
     "inactiveDate": null,
     "inventoryType": "WARD_SKIN",
@@ -139756,6 +138785,66 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "tft_map_skin_1.png",
+    "inactiveDate": null,
+    "inventoryType": "TFT_MAP_SKIN",
+    "itemId": 28,
+    "itemInstanceId": "26e204a0-78a8-4f91-8769-d8963777178f",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Travelers come from all over the world to experience the colorful festival lights illuminate the mountains at dusk.",
+        "language": "en_US",
+        "name": "Festival Arena"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "7f4bc5dd-ed47-48d4-8207-c2cab06d3505",
+    "prices": [
+      {
+        "cost": 1380,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "tft_map_skin_1.png",
+    "inactiveDate": null,
+    "inventoryType": "TFT_MAP_SKIN",
+    "itemId": 29,
+    "itemInstanceId": "f95ce352-2f8f-47cf-9553-7d3bd29a22b3",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "An overlook blessed by the gods. They say no other place in the region feels as tranquil and in harmony with nature.",
+        "language": "en_US",
+        "name": "Kanmei Arena"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "8e997aef-998f-4f61-934b-443bca160e9a",
+    "prices": [
+      {
+        "cost": 1380,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "tft_map_skin_3.png",
     "inactiveDate": null,
     "inventoryType": "TFT_MAP_SKIN",
@@ -139775,6 +138864,36 @@
       
     ],
     "releaseDate": "2019-04-25T06:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "tft_map_skin_1.png",
+    "inactiveDate": null,
+    "inventoryType": "TFT_MAP_SKIN",
+    "itemId": 30,
+    "itemInstanceId": "f1e468ab-854d-492a-a839-93d5bd6a6885",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Enjoy the moonlit peaks and wondrous glows of the night, but be careful treading into the realm of spirits.",
+        "language": "en_US",
+        "name": "Akana Arena"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d6e29019-4741-4a29-987e-6dd7dd994dea",
+    "prices": [
+      {
+        "cost": 1380,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140288,6 +139407,96 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_10001.jpg",
+    "inactiveDate": "2999-09-12T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 10001,
+    "itemInstanceId": "aafc3176-2027-4489-9c01-dfe08588b4ff",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Dango 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "5656c10e-8a32-4d0d-897c-688264808ca8",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-09-12T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_1001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 1001,
+    "itemInstanceId": "02eea988-663d-496b-b9b2-43a01b8a9e88",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Shadow Isles Hauntling 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "29d1b6dd-1e22-425e-82fc-df3b990ed1f5",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_11001.jpg",
+    "inactiveDate": "2999-09-12T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 11001,
+    "itemInstanceId": "0dff41e5-add1-40bb-b32d-9126599eaa4d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Fuwa 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "234faa8e-7617-4287-8899-d0837359119b",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-09-12T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_11013.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140318,6 +139527,96 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_12001.jpg",
+    "inactiveDate": "2999-09-12T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 12001,
+    "itemInstanceId": "574be1b1-5de3-4b95-9895-e31f3bb7ba33",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Shisa 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "56fe1cbf-9144-49c4-ad74-162768b699fd",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-09-12T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_13001.jpg",
+    "inactiveDate": "2999-11-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 13001,
+    "itemInstanceId": "3ae85287-a4c0-4076-be3b-5c76951b2790",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Ossia 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "f7b3c81a-1df8-46e2-be37-0fce3151ed71",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-11-10T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_14001.jpg",
+    "inactiveDate": "2999-11-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 14001,
+    "itemInstanceId": "b2200481-6c7e-49c9-b9fa-96136144c58d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "QiQi 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ead2a4e3-eeae-49ba-912d-4d9722538879",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-11-10T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_14013.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140341,6 +139640,36 @@
       }
     ],
     "releaseDate": "2020-09-03T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_15001.jpg",
+    "inactiveDate": "2999-11-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 15001,
+    "itemInstanceId": "8c304205-ce41-4fd6-ae94-8623e8961ee6",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Melisma 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "695c8caa-59bd-4533-a65e-0d2ce72c8e80",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-11-10T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140408,6 +139737,36 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_16001.jpg",
+    "inactiveDate": "2999-01-08T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 16001,
+    "itemInstanceId": "475d0dd2-9a6f-4c1e-8908-3c3a6d6af949",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Tocker 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "e9551015-6009-4d6d-abd1-45ff93fd5847",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-01-08T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_16013.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140431,6 +139790,36 @@
       }
     ],
     "releaseDate": "2020-09-03T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_17001.jpg",
+    "inactiveDate": "2999-01-08T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 17001,
+    "itemInstanceId": "ef7ae41c-4571-4add-b267-346e6303d528",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Flutterbug 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "017c3c94-47de-4064-85ea-0992aede45cc",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-01-08T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140468,6 +139857,36 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_18001.jpg",
+    "inactiveDate": "2999-01-08T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 18001,
+    "itemInstanceId": "528d126d-be6e-4bee-912c-edd4a5ee6ea9",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Craggle 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "a5cf7464-e2a7-469c-9268-187b85feece9",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-01-08T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_18010.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140491,6 +139910,696 @@
       }
     ],
     "releaseDate": "2020-09-03T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_19001.jpg",
+    "inactiveDate": "2999-03-18T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 19001,
+    "itemInstanceId": "bace5ee5-dcd8-49ec-aa67-bbe4bfbd0ec5",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Squink 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "bbe93b80-5b9b-4ea6-bb2d-61aa6854ddad",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-03-18T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_20001.jpg",
+    "inactiveDate": "2999-03-18T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 20001,
+    "itemInstanceId": "0f1856d9-7206-47b1-91f2-772529edfae3",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Abyssia 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "aae839ab-6694-4c61-8f1f-6dc75f41cea7",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-03-18T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_2001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 2001,
+    "itemInstanceId": "eb78f626-c11a-480e-adeb-ed68afec8f81",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Demacian Silverwing 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d7a95c28-952c-49d3-b180-f53411313dee",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_21001.jpg",
+    "inactiveDate": "2999-03-18T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 21001,
+    "itemInstanceId": "8ba9b10a-621d-42ad-8e9e-df259e8a4c30",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Starmaw 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "cf9f7e96-17af-4916-b95e-f83a0e14192c",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-03-18T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_22001.jpg",
+    "inactiveDate": "2999-06-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 22001,
+    "itemInstanceId": "24eaea9e-2b83-4dea-a49b-6fb4c8addb90",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Lightcharger 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d24fe941-e2ff-4895-88ff-b4c1d7615095",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-06-10T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_23001.jpg",
+    "inactiveDate": "2999-06-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 23001,
+    "itemInstanceId": "a79659ab-2edd-4414-88c5-715d36bdd339",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Nixie 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "8d1ec843-90d0-4b55-b011-5e0b00180ef4",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-06-10T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_24001.jpg",
+    "inactiveDate": "2999-06-10T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 24001,
+    "itemInstanceId": "2762bfb4-dba8-4b88-9b6b-41bfe44f40c0",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Bellswayer 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "c96b3303-e9d7-4512-91e0-c6b4e2390bdf",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-06-10T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_25001.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 25001,
+    "itemInstanceId": "c2cd13e6-72eb-4243-b506-7c2aa60ae128",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "A descendant of the Storm Dragon lineage, Ao Shin is a guardian of the storm, wielding the duality of gentle rains and the ferocity of lightning and thunder.",
+        "language": "en_US",
+        "name": "Ao Shin 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "03a24b95-7b8d-4150-8866-70f551c02c00",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_25004.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 25004,
+    "itemInstanceId": "12818d49-a7a2-4f49-a760-daeb8baae410",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "A descendant of the Storm Dragon lineage, Ao Shin is a guardian of the storm, wielding the duality of gentle rains and the ferocity of lightning and thunder.",
+        "language": "en_US",
+        "name": "Elder Ao Shin 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "be3e513c-0366-49e8-bef0-7dca8ea826d1",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_25007.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 25007,
+    "itemInstanceId": "a8ecaa17-1b36-427f-8732-4ee689b0b9a8",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "A descendant of the Storm Dragon lineage, Ao Shin is a guardian of the storm, wielding the duality of gentle rains and the ferocity of lightning and thunder.",
+        "language": "en_US",
+        "name": "Firecracker Ao Shin 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "acb47c40-6585-4f04-a10a-bde68f505a32",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_25010.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 25010,
+    "itemInstanceId": "db751b4c-5f60-40cc-95be-d0c534d39851",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "A descendant of the Storm Dragon lineage, Ao Shin is a guardian of the storm, wielding the duality of gentle rains and the ferocity of lightning and thunder.",
+        "language": "en_US",
+        "name": "Dark Star Ao Shin 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "30e4502e-d8c0-4bbb-88f9-e5f3b5e2fe1e",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_25013.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 25013,
+    "itemInstanceId": "82b6c3e4-cb58-4240-bc14-dabd14133af4",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "A descendant of the Storm Dragon lineage, Ao Shin is a guardian of the storm, wielding the duality of gentle rains and the ferocity of lightning and thunder.",
+        "language": "en_US",
+        "name": "Divine Ao Shin 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "6249357a-db4f-4b87-8c75-3bb17d0c99a8",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_26001.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 26001,
+    "itemInstanceId": "eb0e8b15-3dee-48bf-8895-b6d83fd6a2bf",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Umbra, a shadow dragon, appears guarded and reserved at first. However, once a mortal has earned their trust, they show sweet affection and fierce dedication, conjuring shadow and flame to defend their allies.",
+        "language": "en_US",
+        "name": "Umbra 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "f6bdf3d0-2b04-47c6-b112-b66409177f32",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_26004.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 26004,
+    "itemInstanceId": "7c203db9-92b9-4901-9968-53cb32934292",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Umbra, a shadow dragon, appears guarded and reserved at first. However, once a mortal has earned their trust, they show sweet affection and fierce dedication, conjuring shadow and flame to defend their allies.",
+        "language": "en_US",
+        "name": "Black Mist Umbra 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d8c716cb-ee57-4128-8a34-a766df959ccd",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_26007.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 26007,
+    "itemInstanceId": "ba6b06ee-7d6b-41fd-8757-b42a40dc1811",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Umbra, a shadow dragon, appears guarded and reserved at first. However, once a mortal has earned their trust, they show sweet affection and fierce dedication, conjuring shadow and flame to defend their allies.",
+        "language": "en_US",
+        "name": "Fruity-tooty Umbra 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "676261b6-5319-4739-907f-9c502bc0d28f",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_26010.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 26010,
+    "itemInstanceId": "58880d19-4f3a-4b5c-adc1-83742399a5a6",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Umbra, a shadow dragon, appears guarded and reserved at first. However, once a mortal has earned their trust, they show sweet affection and fierce dedication, conjuring shadow and flame to defend their allies.",
+        "language": "en_US",
+        "name": "Thunderbeast Umbra 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "6d838aec-aae7-400e-91b5-0b6552ba724c",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_26013.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 26013,
+    "itemInstanceId": "dba29582-b897-4bdb-a772-eb58e177f62a",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "Umbra, a shadow dragon, appears guarded and reserved at first. However, once a mortal has earned their trust, they show sweet affection and fierce dedication, conjuring shadow and flame to defend their allies.",
+        "language": "en_US",
+        "name": "Blood Moon Umbra 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d868873c-5989-4d5a-895e-fa750fa6c357",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_27001.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 27001,
+    "itemInstanceId": "f152e2a3-6751-42e5-a911-ef029d5a8bff",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "As a whelpling, Choncc is eternally hungry and perpetually sleepy. While favored for their mellow nature, Choncc can be roused to ferocious power if provokedâor cajoled into action with the right snacks.",
+        "language": "en_US",
+        "name": "Choncc 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "55e1c9c8-fd87-446f-9355-03bd7546e488",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_27004.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 27004,
+    "itemInstanceId": "b8a75caf-97f5-442f-ab0e-bd81e9c31f7a",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "As a whelpling, Choncc is eternally hungry and perpetually sleepy. While favored for their mellow nature, Choncc can be roused to ferocious power if provokedâor cajoled into action with the right snacks.",
+        "language": "en_US",
+        "name": "Atlantean Choncc 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "3687d89a-d1c4-4269-b94b-3e8908f0c05d",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_27007.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 27007,
+    "itemInstanceId": "879354f5-f2a9-41f6-b493-38287a0a7b0e",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "As a whelpling, Choncc is eternally hungry and perpetually sleepy. While favored for their mellow nature, Choncc can be roused to ferocious power if provokedâor cajoled into action with the right snacks.",
+        "language": "en_US",
+        "name": "Earth Titan Choncc 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "a7556760-be06-4fa5-9b1e-12fdb4a433ef",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_27010.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 27010,
+    "itemInstanceId": "4b345d8a-ae23-43f4-94ff-a6189ff14298",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "As a whelpling, Choncc is eternally hungry and perpetually sleepy. While favored for their mellow nature, Choncc can be roused to ferocious power if provokedâor cajoled into action with the right snacks.",
+        "language": "en_US",
+        "name": "Fireborn Choncc 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "10791752-d9c4-41e8-9595-7ffacc0b3a86",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_27013.jpg",
+    "inactiveDate": null,
+    "inventoryType": "COMPANION",
+    "itemId": 27013,
+    "itemInstanceId": "a4dcb411-39aa-40ae-a9f4-e06caa022549",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "As a whelpling, Choncc is eternally hungry and perpetually sleepy. While favored for their mellow nature, Choncc can be roused to ferocious power if provokedâor cajoled into action with the right snacks.",
+        "language": "en_US",
+        "name": "Precious Panda Choncc 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ac9929b8-ba6e-42e8-9b33-7741d4e55a5d",
+    "prices": [
+      {
+        "cost": 925,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-16T18:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_3001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 3001,
+    "itemInstanceId": "67a9dbd4-4ef7-41cf-ab16-e36baadbf33e",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Molten Furyhorn 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ab349d9b-699f-4881-843f-b32be0568c97",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140528,6 +140637,36 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_4001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 4001,
+    "itemInstanceId": "51308483-ce6c-49e7-9727-aa300827016f",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Soft-nosed Molediver 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "9ac5f316-4fa0-4f4f-b92f-fea812c5c0d6",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_4013.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140558,6 +140697,36 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "companion_5001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 5001,
+    "itemInstanceId": "a8cca427-0ee2-45e2-8b06-4019cdd0757d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Sentinel Runespirit 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "6a315144-30eb-44ca-807f-0e5d0e960277",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "companion_5016.jpg",
     "inactiveDate": "2020-09-17T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140581,6 +140750,36 @@
       }
     ],
     "releaseDate": "2020-09-03T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_6001.jpg",
+    "inactiveDate": "2999-06-26T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 6001,
+    "itemInstanceId": "17a6b1da-073f-4081-86fc-0828c14b0b1d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Pengu Featherknight 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "52e0ca16-4efd-4a73-a64a-dbc72afb0f57",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-06-26T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140641,6 +140840,96 @@
       }
     ],
     "releaseDate": "2020-08-06T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_7001.jpg",
+    "inactiveDate": "2999-08-15T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 7001,
+    "itemInstanceId": "c159fe8e-a7c6-4256-9397-d888e9504660",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Jeweled Protector 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "530e3c93-21f5-4cb4-8703-cfe28fae1561",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-08-15T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_8001.jpg",
+    "inactiveDate": "2999-08-15T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 8001,
+    "itemInstanceId": "71e77508-055b-43db-a6b0-d1aa469f47b4",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Jade Paddlemar 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "f72592a3-7d4c-4035-a552-b5a4d1726459",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-08-15T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "companion_9001.jpg",
+    "inactiveDate": "2999-08-15T20:00:00.000+0000",
+    "inventoryType": "COMPANION",
+    "itemId": 9001,
+    "itemInstanceId": "2a705022-688c-4405-bee4-3598b6441fc7",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Moontipped Hushtail 1 Star"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "37b8ebba-0562-40ce-a198-b521d05609ec",
+    "prices": [
+      {
+        "cost": 750,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2019-08-15T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
