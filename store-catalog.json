@@ -38265,6 +38265,613 @@
         {
           "discountPrices": [
             {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 555,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555025,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 290,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555026,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 185,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.36000001430511477
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555027,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 185,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.36000001430511477
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555028,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 185,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.36000001430511477
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555029,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 185,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.36000001430511477
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555031,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 185,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.36000001430511477
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555033,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/79900280.jpg",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 79900280,
+    "itemInstanceId": "6afdd459-b460-49f8-b907-ca6954f393c5",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke Chroma Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "34f26608-1096-4da5-9fbc-7a91f720261e",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHROMA_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 112,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112005,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 290,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112006,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112007,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112008,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112009,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112010,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112011,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112012,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/79900281.jpg",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 79900281,
+    "itemInstanceId": "c5c8e560-4f8e-488c-81af-70b2e2a96f95",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor Chroma Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "3bc9c2da-17f1-4adf-ad46-1769788d9333",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHROMA_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 238,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 290,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238017,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238016,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238018,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238020,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238021,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238022,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238023,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/79900282.jpg",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 79900282,
+    "itemInstanceId": "f3b7baa5-6d7a-4dfc-8fc0-201fa869509e",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed Chroma Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "ecf252e6-e027-476e-ae1f-33b2a24f6313",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHROMA_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 130,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 10,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 290,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10016,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10017,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10018,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10019,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10020,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10021,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10022,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/79900283.jpg",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 79900283,
+    "itemInstanceId": "849c349a-69c2-49a3-a2ab-c81db6334b0f",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle Chroma Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "36921c25-308d-49a8-aec6-63aa60f5350b",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHROMA_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
               "cost": 1350,
               "costType": "FLAT",
               "currency": "RP",
@@ -41253,6 +41860,366 @@
     "releaseDate": "2020-09-03T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 555,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555025,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4742,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901003.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901003,
+    "itemInstanceId": "166463e7-2a28-4fdc-b45e-db0f0ba7f36c",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke Border Set"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "e4415182-0508-499b-8f46-36a4349c9f78",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 112,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112005,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4743,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901004.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901004,
+    "itemInstanceId": "8dce95c8-b6c8-4a2f-9083-4cf6ebe142a1",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor Border Set"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "ece0c8d2-773c-4a6c-8f49-6ac62a38a93e",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 238,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4744,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901005.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901005,
+    "itemInstanceId": "d1377ffd-abe7-457c-8e2d-38b39692e041",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed Border Set"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "9025b3a3-4799-4194-adaa-bc7eace4afb6",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 130,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 10,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4682,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901006.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901006,
+    "itemInstanceId": "3a3e0090-a4d2-4feb-8ce5-1aa9b1da9952",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle Border Set"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "5e174168-04b3-4572-9a88-1a33b91b27bd",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
     "tags": null
   },
   {
@@ -47388,6 +48355,289 @@
       }
     ],
     "releaseDate": "2019-03-06T22:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10015.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10015,
+    "itemInstanceId": "e073a519-7e07-4a2d-8b90-dbe0c0d7c761",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "059046a6-6dd1-40db-ab86-1b86ddbf048f",
+    "prices": [
+      {
+        "cost": 1350,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10017.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10017,
+    "itemInstanceId": "62f058e7-2f11-4949-972f-209037168962",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Sandstone)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "acce1867-c5c4-4f74-95da-f8185f024afc",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10018.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10018,
+    "itemInstanceId": "7345f1de-8f5b-4c67-a20c-d5052147872b",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Turquoise)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "e78a2281-5a7d-48bf-8527-a379037fab21",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10019.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10019,
+    "itemInstanceId": "529ac27d-c7d6-4118-aab3-1ce4bffb6ae5",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Sapphire)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "aefd5dbb-abc8-4e1c-80ee-fc69dd36ef6c",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10020.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10020,
+    "itemInstanceId": "07b23bdc-4d5e-4db2-b45f-29256353f27a",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Rose Quartz)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d35d2d46-f6ba-4e55-bbcb-95dcd07fb27c",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10021.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10021,
+    "itemInstanceId": "b1c5e226-6ec5-46b6-a1a3-afcfbf26836a",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Emerald)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "b665e670-f26c-44c8-b2f8-38eb62ffd6a4",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_10"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_10022.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 10022,
+    "itemInstanceId": "0592d09c-be3a-4884-94cc-cba08db62e83",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 10
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 10015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Kayle (Tanzanite)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "5da0cc8e-4e7c-4170-86ef-b5d73345f997",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": "RECOLOR",
     "tags": [
@@ -53626,6 +54876,289 @@
     "releaseDate": "2013-10-01T11:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112005.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112005,
+    "itemInstanceId": "bf1310b9-5ff8-44ae-8385-ac260bc0d82d",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "1fe0a5e6-0f24-4a3b-b440-af3b1ce3cbcb",
+    "prices": [
+      {
+        "cost": 1350,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112007.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112007,
+    "itemInstanceId": "d58471c0-8832-4009-b709-8df6866cf6bf",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Sandstone)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "dd8df710-25f4-4cd8-9ddc-c63ae75c1d77",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112008.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112008,
+    "itemInstanceId": "8f7e0a47-8f21-49ac-9eb7-47f8a27be6e1",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Sapphire)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "978f4964-0fc1-40ce-be4a-de7df08b8a44",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112009.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112009,
+    "itemInstanceId": "a3ca6df5-b648-467c-8153-38f49218ee68",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Amethyst)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "5163e997-0fcd-4b77-9537-81baf7e29b68",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112010.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112010,
+    "itemInstanceId": "561c3929-f7f9-4d14-8bcc-0bc9b984e379",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Turquoise)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ca0defd1-7be9-4d2d-b29e-73969bbf90c4",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112011.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112011,
+    "itemInstanceId": "ee0cf4c8-94d2-4b7f-b775-d69778df6c40",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Obsidian)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "27ab84cb-7fa2-4f78-8b73-fefb12f04ebd",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_112"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_112012.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 112012,
+    "itemInstanceId": "7cbccb5e-fd22-4a9e-982b-7624e2fb0dbf",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 112
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 112005
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Viktor (Peridot)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "50d1e437-2a3d-4af1-8f20-72fc63504958",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
     "tags": [
       "champions_112"
     ]
@@ -77637,6 +79170,289 @@
     "tags": [
       "champions_238",
       "legendary"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238015.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238015,
+    "itemInstanceId": "0271ec5b-c102-41e9-8600-ae67b04336cc",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "dad71a6b-7ecf-40ed-8992-ae2bfaa47fc6",
+    "prices": [
+      {
+        "cost": 1350,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238016.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238016,
+    "itemInstanceId": "8812d1dd-4fe6-457b-8b21-a77f17e5a828",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Obsidian)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "33c4718c-d73f-406f-8fc6-ff332c19f1bc",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238018.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238018,
+    "itemInstanceId": "d6a566a5-494c-4dc4-b9f8-fe07fc6eb918",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Emerald)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "25e6ef99-513a-408f-b647-8b4f0f199700",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238020.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238020,
+    "itemInstanceId": "d15ca219-9f5e-4daf-a9c5-d6b5b9bba226",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Sandstone)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ce59e253-51a8-4787-86bc-28a8e4daf034",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238021.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238021,
+    "itemInstanceId": "bf2dff1f-ffd5-4510-afa9-a9cfcb930c62",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Sapphire)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "f357b881-b091-4933-bf14-4695fd210241",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238022.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238022,
+    "itemInstanceId": "015d5438-2143-4ba8-90d1-778e0aeed575",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Tanzanite)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "4b940fd8-2e5a-4de7-b036-e7db241bb707",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_238023.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 238023,
+    "itemInstanceId": "1263ad68-f256-4095-85b8-3a641c50fc1f",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 238
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 238015
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Zed (Turquoise)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "0359c2c0-b458-472c-8384-2a1d6f0eb338",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_238"
     ]
   },
   {
@@ -101903,6 +103719,248 @@
       }
     ],
     "releaseDate": "2019-08-01T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555025.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555025,
+    "itemInstanceId": "bf986e35-19f8-4e52-9011-7f2922381e7c",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "cd70187e-bcc1-4903-9b9c-32add6bdbf8d",
+    "prices": [
+      {
+        "cost": 1350,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555027.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555027,
+    "itemInstanceId": "c3d1af49-4123-4f7f-93ce-099bbdcb787a",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 555025
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke (Sandstone)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "0eccbb24-e965-490a-9362-5a045b7dfc15",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555028.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555028,
+    "itemInstanceId": "24226f91-8440-4a8d-8a58-bb9a4c848154",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 555025
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke (Sapphire)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d0c7a015-8779-44a9-91ed-29ce65a1ca7a",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555029.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555029,
+    "itemInstanceId": "9a36d3d5-50f1-4db6-b7cd-27142f7a4008",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 555025
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke (Tanzanite)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "3319e78d-b3cb-48c8-acc2-e747092716db",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555031.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555031,
+    "itemInstanceId": "10276ca4-a954-4677-8131-6d6becfcbcc9",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 555025
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke (Rose Quartz)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d3215f66-d882-470e-af61-e1c9b979f0ab",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_555"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_555033.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 555033,
+    "itemInstanceId": "32bbca41-29a8-406f-bc07-c63971107681",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 555
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 555025
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Pyke (Obsidian)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "2b47733f-bb83-468e-bc1c-248e68723779",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-17T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": "RECOLOR",
     "tags": [
@@ -139497,36 +141555,6 @@
   {
     "active": true,
     "bundled": null,
-    "iconUrl": "companion_11013.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 11013,
-    "itemInstanceId": "b93f1ae5-97b0-4194-bc0a-f212c7120543",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Firecracker Fuwa 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "f45b0ff9-55d3-441d-8f54-9b01fe7fdc0a",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
     "iconUrl": "companion_12001.jpg",
     "inactiveDate": "2999-09-12T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -139610,36 +141638,6 @@
       }
     ],
     "releaseDate": "2019-11-10T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
-    "iconUrl": "companion_14013.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 14013,
-    "itemInstanceId": "d50ab55c-e42f-4022-a556-f2f4644781f9",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Prodigy QiQi 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "0132f95b-883d-4130-8b18-66c3fe6e2bbb",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -139767,36 +141765,6 @@
   {
     "active": true,
     "bundled": null,
-    "iconUrl": "companion_16013.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 16013,
-    "itemInstanceId": "6570cfb2-8507-4cc7-a2e8-97e64802fd94",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Legionaire Tocker 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "00488aca-f76d-4a7b-905d-8fa14556cfc0",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
     "iconUrl": "companion_17001.jpg",
     "inactiveDate": "2999-01-08T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -139827,36 +141795,6 @@
   {
     "active": true,
     "bundled": null,
-    "iconUrl": "companion_17013.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 17013,
-    "itemInstanceId": "14c5e00e-14af-4300-aeaf-ac4cd5f7e3a8",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Ixtali Flutterbug 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "556ba50e-90f6-4f2d-a845-67aab9506cc8",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
     "iconUrl": "companion_18001.jpg",
     "inactiveDate": "2999-01-08T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -139880,36 +141818,6 @@
       }
     ],
     "releaseDate": "2020-01-08T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
-    "iconUrl": "companion_18010.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 18010,
-    "itemInstanceId": "2d5cc7fb-41eb-441c-a53a-00eb4ccd8215",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Black Mist Craggle 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "abca8859-f324-4cab-bdeb-e87bec670f28",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
@@ -140607,36 +142515,6 @@
   {
     "active": true,
     "bundled": null,
-    "iconUrl": "companion_3004.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 3004,
-    "itemInstanceId": "2915bce7-3ceb-4d54-aee9-76619e0adf8d",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Void-marked Furyhorn 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "e3df4988-6071-4922-8432-3493d8734713",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
     "iconUrl": "companion_4001.jpg",
     "inactiveDate": "2999-06-26T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140667,36 +142545,6 @@
   {
     "active": true,
     "bundled": null,
-    "iconUrl": "companion_4013.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 4013,
-    "itemInstanceId": "6921a827-770d-44f0-ba4f-9f171cee57ac",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Clumsy Molediver 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "d785c380-9755-482c-ba8c-313dc95a0214",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
     "iconUrl": "companion_5001.jpg",
     "inactiveDate": "2999-06-26T20:00:00.000+0000",
     "inventoryType": "COMPANION",
@@ -140720,36 +142568,6 @@
       }
     ],
     "releaseDate": "2019-06-26T20:00:00.000+0000",
-    "sale": null,
-    "subInventoryType": null,
-    "tags": null
-  },
-  {
-    "active": true,
-    "bundled": null,
-    "iconUrl": "companion_5016.jpg",
-    "inactiveDate": "2020-09-17T20:00:00.000+0000",
-    "inventoryType": "COMPANION",
-    "itemId": 5016,
-    "itemInstanceId": "9640c499-f35e-45a8-9abd-0afd6b58f96c",
-    "itemRequirements": null,
-    "localizations": {
-      "en_US": {
-        "description": "",
-        "language": "en_US",
-        "name": "Sakura Runespirit 1 Star"
-      }
-    },
-    "maxQuantity": 1,
-    "offerId": "a643f1c9-6ca2-440f-a0d9-abb125be1d9b",
-    "prices": [
-      {
-        "cost": 925,
-        "currency": "RP",
-        "discount": 0.0
-      }
-    ],
-    "releaseDate": "2020-09-03T20:00:00.000+0000",
     "sale": null,
     "subInventoryType": null,
     "tags": null
