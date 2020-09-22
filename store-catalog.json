@@ -7686,7 +7686,7 @@
         {
           "discountPrices": [
             {
-              "cost": 633,
+              "cost": 975,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -9476,7 +9476,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 438,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -10544,7 +10544,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 880,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -11125,7 +11125,7 @@
         {
           "discountPrices": [
             {
-              "cost": 790,
+              "cost": 355,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -14741,7 +14741,7 @@
         {
           "discountPrices": [
             {
-              "cost": 675,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -15064,7 +15064,7 @@
         {
           "discountPrices": [
             {
-              "cost": 438,
+              "cost": 975,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -17233,7 +17233,7 @@
         {
           "discountPrices": [
             {
-              "cost": 675,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -17504,7 +17504,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 675,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -18162,7 +18162,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 742,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -18304,7 +18304,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 880,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -20666,7 +20666,7 @@
         {
           "discountPrices": [
             {
-              "cost": 487,
+              "cost": 438,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -22551,7 +22551,7 @@
         {
           "discountPrices": [
             {
-              "cost": 440,
+              "cost": 395,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -22719,7 +22719,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 810,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -24243,7 +24243,7 @@
         {
           "discountPrices": [
             {
-              "cost": 810,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -28025,7 +28025,7 @@
         {
           "discountPrices": [
             {
-              "cost": 487,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -30762,7 +30762,7 @@
         {
           "discountPrices": [
             {
-              "cost": 975,
+              "cost": 1350,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -32376,7 +32376,7 @@
         {
           "discountPrices": [
             {
-              "cost": 440,
+              "cost": 352,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -32983,7 +32983,7 @@
         {
           "discountPrices": [
             {
-              "cost": 1350,
+              "cost": 975,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.0
@@ -33267,7 +33267,7 @@
         {
           "discountPrices": [
             {
-              "cost": 352,
+              "cost": 440,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -33422,7 +33422,7 @@
         {
           "discountPrices": [
             {
-              "cost": 395,
+              "cost": 355,
               "costType": "PERCENT",
               "currency": "RP",
               "discount": 0.5
@@ -38872,6 +38872,225 @@
         {
           "discountPrices": [
             {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 360,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360001,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 290,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360002,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360003,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360004,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360005,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360006,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360007,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 175,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.38999998569488528
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360009,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/79900284.jpg",
+    "inactiveDate": null,
+    "inventoryType": "BUNDLES",
+    "itemId": 79900284,
+    "itemInstanceId": "7916a5d3-4576-4c7f-b36f-c2c27d74f19b",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira Chroma Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "dc246f45-0425-4cb4-bca2-85f8b8bb4be4",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "CHROMA_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 360,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360001,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/89900028.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 89900028,
+    "itemInstanceId": "a2dade4f-2c48-4b81-816b-bb1862e6d513",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Desert Rose Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "c16acf2b-0302-49fd-a6f0-02f0f5f3e71a",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
               "cost": 1350,
               "costType": "FLAT",
               "currency": "RP",
@@ -42224,6 +42443,342 @@
   },
   {
     "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 360,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360001,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "FLAT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4681,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901007.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901007,
+    "itemInstanceId": "9227007b-0506-4578-baef-48ee9e841a84",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira Border Set"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "6b1dc205-3122-4006-9e16-0df588c828d1",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "SKIN_BUNDLE",
+    "tags": null
+  },
+  {
+    "active": true,
+    "bundled": {
+      "flexible": true,
+      "items": [
+        {
+          "discountPrices": [
+            {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 555,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 112,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 440,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 238,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 487,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 360,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 130,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "CHAMPION",
+          "itemId": 10,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 555025,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 112005,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 238015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 360001,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 1350,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "CHAMPION_SKIN",
+          "itemId": 10015,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 320,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.5
+            }
+          ],
+          "inventoryType": "WARD_SKIN",
+          "itemId": 204,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4742,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4743,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4744,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4681,
+          "quantity": 1
+        },
+        {
+          "discountPrices": [
+            {
+              "cost": 550,
+              "costType": "PERCENT",
+              "currency": "RP",
+              "discount": 0.0
+            }
+          ],
+          "inventoryType": "SUMMONER_ICON",
+          "itemId": 4682,
+          "quantity": 1
+        }
+      ],
+      "minimumPrices": [
+        {
+          "cost": 0,
+          "costType": "",
+          "currency": "RP",
+          "discount": 0.0
+        }
+      ]
+    },
+    "iconUrl": "https://d392eissrffsyf.cloudfront.net/storeImages/bundles/99901009.jpg",
+    "inactiveDate": "2020-09-30T20:00:00.000+0000",
+    "inventoryType": "BUNDLES",
+    "itemId": 99901009,
+    "itemInstanceId": "73b1243c-413a-4bc6-8995-f96ad2e1e8c3",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "Black Rose Bundle"
+      }
+    },
+    "maxQuantity": 0,
+    "offerId": "9468db7b-9095-4808-85e3-d75249bf4180",
+    "prices": [
+      
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": null
+  },
+  {
+    "active": true,
     "bundled": null,
     "iconUrl": "1_Web_0.jpg",
     "inactiveDate": null,
@@ -42366,7 +42921,22 @@
       }
     ],
     "releaseDate": "2011-11-02T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 3150,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 434,
+          "currency": "RP",
+          "discount": 0.44999998807907107
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "fighter",
@@ -42782,22 +43352,7 @@
       }
     ],
     "releaseDate": "2012-02-26T00:02:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 4800,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 352,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -43099,7 +43654,22 @@
       }
     ],
     "releaseDate": "2012-07-03T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 395,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "fighter",
@@ -43816,7 +44386,22 @@
       }
     ],
     "releaseDate": "2016-12-12T16:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 6300,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 438,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "fighter"
@@ -44031,12 +44616,12 @@
     "offerId": "a90298f7-352e-4521-8b81-e756ee9a3712",
     "prices": [
       {
-        "cost": 6300,
+        "cost": 4800,
         "currency": "IP",
         "discount": 0.0
       },
       {
-        "cost": 975,
+        "cost": 880,
         "currency": "RP",
         "discount": 0.0
       }
@@ -44305,22 +44890,7 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 1350,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 292,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -44812,22 +45382,7 @@
       }
     ],
     "releaseDate": "2014-09-16T08:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 6300,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 438,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "mage",
@@ -45168,22 +45723,7 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 3150,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 395,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "mage",
@@ -45300,6 +45840,43 @@
     "tags": [
       "fighter",
       "tank"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "360_Web_0.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION",
+    "itemId": 360,
+    "itemInstanceId": "a23babb4-f925-4634-b285-f1ef9f63a15d",
+    "itemRequirements": null,
+    "localizations": {
+      "en_US": {
+        "description": "the Desert Rose",
+        "language": "en_US",
+        "name": "Samira"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "27c02b7a-3a94-4970-be5d-3146e819ae76",
+    "prices": [
+      {
+        "cost": 7800,
+        "currency": "IP",
+        "discount": 0.0
+      },
+      {
+        "cost": 975,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "marksman"
     ]
   },
   {
@@ -45635,22 +46212,7 @@
       }
     ],
     "releaseDate": "2015-11-25T15:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 6300,
-          "currency": "IP",
-          "discount": 0.0
-        },
-        {
-          "cost": 438,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "fighter",
@@ -47347,7 +47909,22 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 3150,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 355,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -47763,7 +48340,22 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 4800,
+          "currency": "IP",
+          "discount": 0.0
+        },
+        {
+          "cost": 352,
+          "currency": "RP",
+          "discount": 0.6000000238418579
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "assassin",
@@ -47994,7 +48586,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48031,7 +48624,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48069,7 +48663,8 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48106,7 +48701,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48140,20 +48736,11 @@
       }
     ],
     "releaseDate": "2017-08-08T13:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 742,
-          "currency": "RP",
-          "discount": 0.44999998807907107
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48395,7 +48982,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_10"
+      "champions_10",
+      "requirement_owned"
     ]
   },
   {
@@ -48678,7 +49266,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_1"
+      "champions_1",
+      "requirement_owned"
     ]
   },
   {
@@ -48715,7 +49304,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_1"
+      "champions_1",
+      "requirement_owned"
     ]
   },
   {
@@ -48789,7 +49379,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48900,7 +49491,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -48937,7 +49529,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_101"
+      "champions_101",
+      "requirement_owned"
     ]
   },
   {
@@ -49138,7 +49731,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_1"
+      "champions_1",
+      "requirement_owned"
     ]
   },
   {
@@ -49175,7 +49769,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_102"
+      "champions_102",
+      "requirement_owned"
     ]
   },
   {
@@ -49212,7 +49807,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_102"
+      "champions_102",
+      "requirement_owned"
     ]
   },
   {
@@ -49323,7 +49919,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_102"
+      "champions_102",
+      "requirement_owned"
     ]
   },
   {
@@ -49360,7 +49957,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -49434,7 +50032,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -49471,7 +50070,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -49508,7 +50108,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -49545,7 +50146,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -49829,7 +50431,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -49903,7 +50506,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_103"
+      "champions_103",
+      "requirement_owned"
     ]
   },
   {
@@ -50228,7 +50832,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_103",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -50388,7 +50993,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -50499,7 +51105,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -50782,7 +51389,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -51024,7 +51632,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_104"
+      "champions_104",
+      "requirement_owned"
     ]
   },
   {
@@ -51307,7 +51916,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_105"
+      "champions_105",
+      "requirement_owned"
     ]
   },
   {
@@ -51344,7 +51954,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_105"
+      "champions_105",
+      "requirement_owned"
     ]
   },
   {
@@ -51566,7 +52177,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_105"
+      "champions_105",
+      "requirement_owned"
     ]
   },
   {
@@ -51603,7 +52215,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_105"
+      "champions_105",
+      "requirement_owned"
     ]
   },
   {
@@ -51800,7 +52413,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_105"
+      "champions_105",
+      "requirement_owned"
     ]
   },
   {
@@ -51911,7 +52525,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_106"
+      "champions_106",
+      "requirement_owned"
     ]
   },
   {
@@ -52059,7 +52674,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_107"
+      "champions_107",
+      "requirement_owned"
     ]
   },
   {
@@ -52257,20 +52873,11 @@
       }
     ],
     "releaseDate": "2017-11-09T19:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 675,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_107"
+      "champions_107",
+      "requirement_owned"
     ]
   },
   {
@@ -52553,7 +53160,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_107"
+      "champions_107",
+      "requirement_owned"
     ]
   },
   {
@@ -52795,7 +53403,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_107"
+      "champions_107",
+      "requirement_owned"
     ]
   },
   {
@@ -53074,7 +53683,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_110"
+      "champions_110",
+      "requirement_owned"
     ]
   },
   {
@@ -53111,7 +53721,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_110"
+      "champions_110",
+      "requirement_owned"
     ]
   },
   {
@@ -53185,7 +53796,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_110"
+      "champions_110",
+      "requirement_owned"
     ]
   },
   {
@@ -53259,7 +53871,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53460,7 +54073,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53497,7 +54111,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53571,7 +54186,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53732,7 +54348,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_11",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -53769,7 +54386,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -53806,7 +54424,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -54048,7 +54667,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -54372,7 +54992,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_11"
+      "champions_11",
+      "requirement_owned"
     ]
   },
   {
@@ -54655,7 +55276,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111"
+      "champions_111",
+      "requirement_owned"
     ]
   },
   {
@@ -54692,7 +55314,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111"
+      "champions_111",
+      "requirement_owned"
     ]
   },
   {
@@ -54766,7 +55389,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111"
+      "champions_111",
+      "requirement_owned"
     ]
   },
   {
@@ -54803,7 +55427,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_111"
+      "champions_111",
+      "requirement_owned"
     ]
   },
   {
@@ -54840,7 +55465,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_112"
+      "champions_112",
+      "requirement_owned"
     ]
   },
   {
@@ -54914,7 +55540,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_112"
+      "champions_112",
+      "requirement_owned"
     ]
   },
   {
@@ -55197,7 +55824,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113"
+      "champions_113",
+      "requirement_owned"
     ]
   },
   {
@@ -55234,7 +55862,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113"
+      "champions_113",
+      "requirement_owned"
     ]
   },
   {
@@ -55271,7 +55900,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113"
+      "champions_113",
+      "requirement_owned"
     ]
   },
   {
@@ -55308,7 +55938,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_113"
+      "champions_113",
+      "requirement_owned"
     ]
   },
   {
@@ -55382,7 +56013,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_114"
+      "champions_114",
+      "requirement_owned"
     ]
   },
   {
@@ -55858,7 +56490,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_114"
+      "champions_114",
+      "requirement_owned"
     ]
   },
   {
@@ -56215,7 +56848,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115"
+      "champions_115",
+      "requirement_owned"
     ]
   },
   {
@@ -56252,7 +56886,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115"
+      "champions_115",
+      "requirement_owned"
     ]
   },
   {
@@ -56289,7 +56924,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_115"
+      "champions_115",
+      "requirement_owned"
     ]
   },
   {
@@ -56572,7 +57208,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_117"
+      "champions_117",
+      "requirement_owned"
     ]
   },
   {
@@ -56609,7 +57246,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_117"
+      "champions_117",
+      "requirement_owned"
     ]
   },
   {
@@ -56687,7 +57325,8 @@
       "skin_variant",
       "skin_variant_skin_117015",
       "skin_variant_bundle_91000003",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -57008,10 +57647,21 @@
       }
     ],
     "releaseDate": "2018-08-21T15:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 742,
+          "currency": "RP",
+          "discount": 0.44999998807907107
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_117"
+      "champions_117",
+      "requirement_owned"
     ]
   },
   {
@@ -57052,7 +57702,8 @@
       "skin_variant",
       "skin_variant_skin_117006",
       "skin_variant_bundle_91000003",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -57417,7 +58068,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -57492,7 +58144,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_119",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -57566,7 +58219,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -57603,7 +58257,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -57845,7 +58500,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_119"
+      "champions_119",
+      "requirement_owned"
     ]
   },
   {
@@ -58083,7 +58739,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_120"
+      "champions_120",
+      "requirement_owned"
     ]
   },
   {
@@ -58120,7 +58777,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_120"
+      "champions_120",
+      "requirement_owned"
     ]
   },
   {
@@ -58194,7 +58852,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_120"
+      "champions_120",
+      "requirement_owned"
     ]
   },
   {
@@ -58396,7 +59055,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_12"
+      "champions_12",
+      "requirement_owned"
     ]
   },
   {
@@ -58433,7 +59093,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_12"
+      "champions_12",
+      "requirement_owned"
     ]
   },
   {
@@ -58835,7 +59496,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_12"
+      "champions_12",
+      "requirement_owned"
     ]
   },
   {
@@ -59077,7 +59739,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -59111,20 +59774,11 @@
       }
     ],
     "releaseDate": "2014-09-10T08:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 682,
-          "currency": "RP",
-          "discount": 0.30000001192092898
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -59161,7 +59815,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -59198,7 +59853,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_121"
+      "champions_121",
+      "requirement_owned"
     ]
   },
   {
@@ -59481,7 +60137,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_122"
+      "champions_122",
+      "requirement_owned"
     ]
   },
   {
@@ -59515,10 +60172,21 @@
       }
     ],
     "releaseDate": "2012-11-13T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 487,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_122"
+      "champions_122",
+      "requirement_owned"
     ]
   },
   {
@@ -59741,7 +60409,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_122"
+      "champions_122",
+      "requirement_owned"
     ]
   },
   {
@@ -59984,7 +60653,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_122",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -60222,7 +60892,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_126"
+      "champions_126",
+      "requirement_owned"
     ]
   },
   {
@@ -60259,7 +60930,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_126"
+      "champions_126",
+      "requirement_owned"
     ]
   },
   {
@@ -60296,7 +60968,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_126"
+      "champions_126",
+      "requirement_owned"
     ]
   },
   {
@@ -60333,7 +61006,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_126"
+      "champions_126",
+      "requirement_owned"
     ]
   },
   {
@@ -60370,7 +61044,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_126"
+      "champions_126",
+      "requirement_owned"
     ]
   },
   {
@@ -60653,7 +61328,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_127"
+      "champions_127",
+      "requirement_owned"
     ]
   },
   {
@@ -60727,7 +61403,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_127"
+      "champions_127",
+      "requirement_owned"
     ]
   },
   {
@@ -60764,7 +61441,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_127"
+      "champions_127",
+      "requirement_owned"
     ]
   },
   {
@@ -61047,7 +61725,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_13"
+      "champions_13",
+      "requirement_owned"
     ]
   },
   {
@@ -61084,7 +61763,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_13"
+      "champions_13",
+      "requirement_owned"
     ]
   },
   {
@@ -61121,7 +61801,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_13"
+      "champions_13",
+      "requirement_owned"
     ]
   },
   {
@@ -61158,7 +61839,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_13"
+      "champions_13",
+      "requirement_owned"
     ]
   },
   {
@@ -61400,7 +62082,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -61474,7 +62157,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -61798,7 +62482,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -61835,7 +62520,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_131"
+      "champions_131",
+      "requirement_owned"
     ]
   },
   {
@@ -62319,7 +63005,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_133"
+      "champions_133",
+      "requirement_owned"
     ]
   },
   {
@@ -62356,7 +63043,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_133"
+      "champions_133",
+      "requirement_owned"
     ]
   },
   {
@@ -62390,10 +63078,21 @@
       }
     ],
     "releaseDate": "2015-07-23T22:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 412,
+          "currency": "RP",
+          "discount": 0.44999998807907107
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_133"
+      "champions_133",
+      "requirement_owned"
     ]
   },
   {
@@ -62427,7 +63126,17 @@
       }
     ],
     "releaseDate": "2012-09-12T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 633,
+          "currency": "RP",
+          "discount": 0.3499999940395355
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_134"
@@ -62504,7 +63213,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_134"
+      "champions_134",
+      "requirement_owned"
     ]
   },
   {
@@ -62578,7 +63288,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_134"
+      "champions_134",
+      "requirement_owned"
     ]
   },
   {
@@ -62902,7 +63613,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_136"
+      "champions_136",
+      "requirement_owned"
     ]
   },
   {
@@ -63259,7 +63971,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_14"
+      "champions_14",
+      "requirement_owned"
     ]
   },
   {
@@ -63296,7 +64009,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_14"
+      "champions_14",
+      "requirement_owned"
     ]
   },
   {
@@ -63699,7 +64413,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_14"
+      "champions_14",
+      "requirement_owned"
     ]
   },
   {
@@ -64020,7 +64735,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_141",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -64057,7 +64773,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -64336,7 +65053,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -64619,7 +65337,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_142"
+      "champions_142",
+      "requirement_owned"
     ]
   },
   {
@@ -64656,7 +65375,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned"
     ]
   },
   {
@@ -64693,7 +65413,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned"
     ]
   },
   {
@@ -64730,7 +65451,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned"
     ]
   },
   {
@@ -64767,7 +65489,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_143"
+      "champions_143",
+      "requirement_owned"
     ]
   },
   {
@@ -64804,7 +65527,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_145"
+      "champions_145",
+      "requirement_owned"
     ]
   },
   {
@@ -65206,7 +65930,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_145"
+      "champions_145",
+      "requirement_owned"
     ]
   },
   {
@@ -65485,7 +66210,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_150"
+      "champions_150",
+      "requirement_owned"
     ]
   },
   {
@@ -65519,20 +66245,11 @@
       }
     ],
     "releaseDate": "2016-06-02T18:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 525,
-          "currency": "RP",
-          "discount": 0.30000001192092898
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_150"
+      "champions_150",
+      "requirement_owned"
     ]
   },
   {
@@ -65774,7 +66491,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_15"
+      "champions_15",
+      "requirement_owned"
     ]
   },
   {
@@ -65934,7 +66652,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_150"
+      "champions_150",
+      "requirement_owned"
     ]
   },
   {
@@ -66172,7 +66891,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_15"
+      "champions_15",
+      "requirement_owned"
     ]
   },
   {
@@ -66246,7 +66966,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_15"
+      "champions_15",
+      "requirement_owned"
     ]
   },
   {
@@ -66730,7 +67451,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_154"
+      "champions_154",
+      "requirement_owned"
     ]
   },
   {
@@ -66915,7 +67637,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157"
+      "champions_157",
+      "requirement_owned"
     ]
   },
   {
@@ -67269,7 +67992,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157"
+      "champions_157",
+      "requirement_owned"
     ]
   },
   {
@@ -67511,7 +68235,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157"
+      "champions_157",
+      "requirement_owned"
     ]
   },
   {
@@ -67548,7 +68273,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157"
+      "champions_157",
+      "requirement_owned"
     ]
   },
   {
@@ -68036,7 +68762,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_157"
+      "champions_157",
+      "requirement_owned"
     ]
   },
   {
@@ -68319,7 +69046,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_16"
+      "champions_16",
+      "requirement_owned"
     ]
   },
   {
@@ -68356,7 +69084,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_16"
+      "champions_16",
+      "requirement_owned"
     ]
   },
   {
@@ -68430,7 +69159,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_16"
+      "champions_16",
+      "requirement_owned"
     ]
   },
   {
@@ -68508,7 +69238,8 @@
       "skin_variant",
       "skin_variant_skin_16008",
       "skin_variant_bundle_91000005",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -68549,7 +69280,8 @@
       "skin_variant",
       "skin_variant_skin_16007",
       "skin_variant_bundle_91000005",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -68591,7 +69323,8 @@
       "skin_variant_skin_16016",
       "skin_variant_bundle_91000007",
       "paw_item_purchase_disabled",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -68707,7 +69440,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_161"
+      "champions_161",
+      "requirement_owned"
     ]
   },
   {
@@ -68744,7 +69478,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_161"
+      "champions_161",
+      "requirement_owned"
     ]
   },
   {
@@ -68781,7 +69516,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_161"
+      "champions_161",
+      "requirement_owned"
     ]
   },
   {
@@ -69023,7 +69759,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_163"
+      "champions_163",
+      "requirement_owned"
     ]
   },
   {
@@ -69060,7 +69797,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_163"
+      "champions_163",
+      "requirement_owned"
     ]
   },
   {
@@ -69340,10 +70078,21 @@
       }
     ],
     "releaseDate": "2016-12-12T16:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 675,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_164"
+      "champions_164",
+      "requirement_owned"
     ]
   },
   {
@@ -69774,7 +70523,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_17"
+      "champions_17",
+      "requirement_owned"
     ]
   },
   {
@@ -69812,7 +70562,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_17",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -70460,7 +71211,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_17"
+      "champions_17",
+      "requirement_owned"
     ]
   },
   {
@@ -70497,7 +71249,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_18"
+      "champions_18",
+      "requirement_owned"
     ]
   },
   {
@@ -70695,7 +71448,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_18",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -71179,7 +71933,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_18"
+      "champions_18",
+      "requirement_owned"
     ]
   },
   {
@@ -71782,7 +72537,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_19"
+      "champions_19",
+      "requirement_owned"
     ]
   },
   {
@@ -71856,7 +72612,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_19"
+      "champions_19",
+      "requirement_owned"
     ]
   },
   {
@@ -71893,7 +72650,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_19"
+      "champions_19",
+      "requirement_owned"
     ]
   },
   {
@@ -72292,7 +73050,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_20"
+      "champions_20",
+      "requirement_owned"
     ]
   },
   {
@@ -72329,7 +73088,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_20"
+      "champions_20",
+      "requirement_owned"
     ]
   },
   {
@@ -72650,7 +73410,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -72724,7 +73485,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -72925,7 +73687,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201"
+      "champions_201",
+      "requirement_owned"
     ]
   },
   {
@@ -73282,7 +74045,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201"
+      "champions_201",
+      "requirement_owned"
     ]
   },
   {
@@ -73606,7 +74370,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_201"
+      "champions_201",
+      "requirement_owned"
     ]
   },
   {
@@ -74053,7 +74818,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_2"
+      "champions_2",
+      "requirement_owned"
     ]
   },
   {
@@ -74254,7 +75020,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_202"
+      "champions_202",
+      "requirement_owned"
     ]
   },
   {
@@ -74328,7 +75095,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_202"
+      "champions_202",
+      "requirement_owned"
     ]
   },
   {
@@ -74366,7 +75134,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_202",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -74850,7 +75619,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_203"
+      "champions_203",
+      "requirement_owned"
     ]
   },
   {
@@ -74887,7 +75657,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_203"
+      "champions_203",
+      "requirement_owned"
     ]
   },
   {
@@ -75170,7 +75941,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75207,7 +75979,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75244,7 +76017,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75318,7 +76092,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75355,7 +76130,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75601,7 +76377,8 @@
       "skin_variant",
       "skin_variant_skin_21017",
       "skin_variant_bundle_91000004",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -75639,7 +76416,8 @@
     "subInventoryType": null,
     "tags": [
       "ultimate",
-      "champions_21"
+      "champions_21",
+      "requirement_owned"
     ]
   },
   {
@@ -75680,7 +76458,8 @@
       "skin_variant",
       "skin_variant_skin_21015",
       "skin_variant_bundle_91000004",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -75717,7 +76496,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_22"
+      "champions_22",
+      "requirement_owned"
     ]
   },
   {
@@ -75754,7 +76534,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_22"
+      "champions_22",
+      "requirement_owned"
     ]
   },
   {
@@ -75791,7 +76572,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_22"
+      "champions_22",
+      "requirement_owned"
     ]
   },
   {
@@ -75828,7 +76610,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_22"
+      "champions_22",
+      "requirement_owned"
     ]
   },
   {
@@ -75866,7 +76649,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_22",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -76105,7 +76889,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_22",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -76302,7 +77087,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_222"
+      "champions_222",
+      "requirement_owned"
     ]
   },
   {
@@ -76664,7 +77450,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_222"
+      "champions_222",
+      "requirement_owned"
     ]
   },
   {
@@ -76906,7 +77693,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_222"
+      "champions_222",
+      "requirement_owned"
     ]
   },
   {
@@ -77226,7 +78014,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_223"
+      "champions_223",
+      "requirement_owned"
     ]
   },
   {
@@ -77263,7 +78052,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23"
+      "champions_23",
+      "requirement_owned"
     ]
   },
   {
@@ -77301,7 +78091,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_23",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -77375,7 +78166,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23"
+      "champions_23",
+      "requirement_owned"
     ]
   },
   {
@@ -77412,7 +78204,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23"
+      "champions_23",
+      "requirement_owned"
     ]
   },
   {
@@ -77449,7 +78242,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23"
+      "champions_23",
+      "requirement_owned"
     ]
   },
   {
@@ -77486,7 +78280,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_23"
+      "champions_23",
+      "requirement_owned"
     ]
   },
   {
@@ -77728,7 +78523,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_235"
+      "champions_235",
+      "requirement_owned"
     ]
   },
   {
@@ -77971,7 +78767,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_235",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -78320,7 +79117,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_236"
+      "champions_236",
+      "requirement_owned"
     ]
   },
   {
@@ -78358,7 +79156,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_236",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -78392,20 +79191,11 @@
       }
     ],
     "releaseDate": "2019-07-18T20:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 810,
-          "currency": "RP",
-          "discount": 0.4000000059604645
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_236"
+      "champions_236",
+      "requirement_owned"
     ]
   },
   {
@@ -78647,7 +79437,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_236"
+      "champions_236",
+      "requirement_owned"
     ]
   },
   {
@@ -78845,10 +79636,21 @@
       }
     ],
     "releaseDate": "2012-11-13T11:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 438,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_238"
+      "champions_238",
+      "requirement_owned"
     ]
   },
   {
@@ -78885,7 +79687,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_238"
+      "champions_238",
+      "requirement_owned"
     ]
   },
   {
@@ -79169,7 +79972,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_238",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -79206,7 +80010,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_238"
+      "champions_238",
+      "requirement_owned"
     ]
   },
   {
@@ -79528,7 +80333,8 @@
     "tags": [
       "champions_24",
       "limited",
-      "availability"
+      "availability",
+      "requirement_owned"
     ]
   },
   {
@@ -79599,17 +80405,7 @@
       }
     ],
     "releaseDate": "2012-09-09T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 633,
-          "currency": "RP",
-          "discount": 0.3499999940395355
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_24"
@@ -79772,7 +80568,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_24"
+      "champions_24",
+      "requirement_owned"
     ]
   },
   {
@@ -79847,7 +80644,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_24",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -80044,7 +80842,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_245"
+      "champions_245",
+      "requirement_owned"
     ]
   },
   {
@@ -80078,20 +80877,11 @@
       }
     ],
     "releaseDate": "2016-08-02T15:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 742,
-          "currency": "RP",
-          "discount": 0.44999998807907107
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_245"
+      "champions_245",
+      "requirement_owned"
     ]
   },
   {
@@ -80416,7 +81206,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_245",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -80699,7 +81490,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_245"
+      "champions_245",
+      "requirement_owned"
     ]
   },
   {
@@ -80941,7 +81733,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_246"
+      "champions_246",
+      "requirement_owned"
     ]
   },
   {
@@ -81220,7 +82013,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_25"
+      "champions_25",
+      "requirement_owned"
     ]
   },
   {
@@ -81257,7 +82051,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_25"
+      "champions_25",
+      "requirement_owned"
     ]
   },
   {
@@ -81294,7 +82089,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_25"
+      "champions_25",
+      "requirement_owned"
     ]
   },
   {
@@ -81647,7 +82443,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_25"
+      "champions_25",
+      "requirement_owned"
     ]
   },
   {
@@ -81931,7 +82728,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_25",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -82088,10 +82886,21 @@
       }
     ],
     "releaseDate": "2012-12-17T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 438,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_254"
+      "champions_254",
+      "requirement_owned"
     ]
   },
   {
@@ -82202,7 +83011,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254"
+      "champions_254",
+      "requirement_owned"
     ]
   },
   {
@@ -82444,7 +83254,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254"
+      "champions_254",
+      "requirement_owned"
     ]
   },
   {
@@ -82481,7 +83292,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_254"
+      "champions_254",
+      "requirement_owned"
     ]
   },
   {
@@ -82764,7 +83576,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned"
     ]
   },
   {
@@ -82838,7 +83651,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_26"
+      "champions_26",
+      "requirement_owned"
     ]
   },
   {
@@ -83154,7 +83968,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_266"
+      "champions_266",
+      "requirement_owned"
     ]
   },
   {
@@ -83191,7 +84006,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_266"
+      "champions_266",
+      "requirement_owned"
     ]
   },
   {
@@ -83351,7 +84167,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_266"
+      "champions_266",
+      "requirement_owned"
     ]
   },
   {
@@ -83421,7 +84238,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -83458,7 +84276,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -83655,7 +84474,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -83692,7 +84512,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -83893,7 +84714,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_267"
+      "champions_267",
+      "requirement_owned"
     ]
   },
   {
@@ -84176,7 +84998,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_268"
+      "champions_268",
+      "requirement_owned"
     ]
   },
   {
@@ -84213,7 +85036,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_268"
+      "champions_268",
+      "requirement_owned"
     ]
   },
   {
@@ -84250,7 +85074,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_27"
+      "champions_27",
+      "requirement_owned"
     ]
   },
   {
@@ -84287,7 +85112,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_27"
+      "champions_27",
+      "requirement_owned"
     ]
   },
   {
@@ -84361,7 +85187,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_27"
+      "champions_27",
+      "requirement_owned"
     ]
   },
   {
@@ -84395,20 +85222,11 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 208,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned"
     ]
   },
   {
@@ -84482,7 +85300,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned"
     ]
   },
   {
@@ -84519,7 +85338,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned"
     ]
   },
   {
@@ -84556,7 +85376,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned"
     ]
   },
   {
@@ -84593,7 +85414,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_28"
+      "champions_28",
+      "requirement_owned"
     ]
   },
   {
@@ -84831,7 +85653,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_29"
+      "champions_29",
+      "requirement_owned"
     ]
   },
   {
@@ -85028,7 +85851,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_29"
+      "champions_29",
+      "requirement_owned"
     ]
   },
   {
@@ -85426,7 +86250,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned"
     ]
   },
   {
@@ -85586,7 +86411,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned"
     ]
   },
   {
@@ -85660,7 +86486,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_30"
+      "champions_30",
+      "requirement_owned"
     ]
   },
   {
@@ -85902,7 +86729,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3"
+      "champions_3",
+      "requirement_owned"
     ]
   },
   {
@@ -85940,7 +86768,8 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_3"
+      "champions_3",
+      "requirement_owned"
     ]
   },
   {
@@ -85977,7 +86806,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3"
+      "champions_3",
+      "requirement_owned"
     ]
   },
   {
@@ -86014,7 +86844,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3"
+      "champions_3",
+      "requirement_owned"
     ]
   },
   {
@@ -86297,7 +87128,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_3"
+      "champions_3",
+      "requirement_owned"
     ]
   },
   {
@@ -86499,7 +87331,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_31",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -86536,7 +87369,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_31"
+      "champions_31",
+      "requirement_owned"
     ]
   },
   {
@@ -86611,7 +87445,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_31"
+      "champions_31",
+      "requirement_owned"
     ]
   },
   {
@@ -86894,7 +87729,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32"
+      "champions_32",
+      "requirement_owned"
     ]
   },
   {
@@ -86931,7 +87767,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32"
+      "champions_32",
+      "requirement_owned"
     ]
   },
   {
@@ -86968,7 +87805,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32"
+      "champions_32",
+      "requirement_owned"
     ]
   },
   {
@@ -87370,7 +88208,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_32"
+      "champions_32",
+      "requirement_owned"
     ]
   },
   {
@@ -87530,7 +88369,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned"
     ]
   },
   {
@@ -87567,7 +88407,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned"
     ]
   },
   {
@@ -87604,7 +88445,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned"
     ]
   },
   {
@@ -87641,7 +88483,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_33"
+      "champions_33",
+      "requirement_owned"
     ]
   },
   {
@@ -87675,10 +88518,21 @@
       }
     ],
     "releaseDate": "2010-07-13T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 312,
+          "currency": "RP",
+          "discount": 0.4000000059604645
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -87716,7 +88570,8 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -87790,7 +88645,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -87827,7 +88683,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_34"
+      "champions_34",
+      "requirement_owned"
     ]
   },
   {
@@ -88110,7 +88967,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_350"
+      "champions_350",
+      "requirement_owned"
     ]
   },
   {
@@ -88434,7 +89292,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -88471,7 +89330,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_350"
+      "champions_350",
+      "requirement_owned"
     ]
   },
   {
@@ -88791,7 +89651,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -88828,7 +89689,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -88865,7 +89727,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -88902,7 +89765,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -89103,7 +89967,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_35"
+      "champions_35",
+      "requirement_owned"
     ]
   },
   {
@@ -89355,6 +90220,289 @@
   {
     "active": true,
     "bundled": null,
+    "iconUrl": "championsskin_360001.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360001,
+    "itemInstanceId": "2d8be64a-43a8-4179-813a-b18c9d1985c6",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "c1f393a2-3414-4f31-ba7b-3a41158cabfa",
+    "prices": [
+      {
+        "cost": 1350,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": null,
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360003.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360003,
+    "itemInstanceId": "9629316a-e60f-4932-a35b-da72296aea1c",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Sapphire)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "06c5e82e-8f0a-4b46-901e-1b7920e1b2b6",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360004.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360004,
+    "itemInstanceId": "77ff1e82-8181-41fe-8518-8226e9528cfe",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Catseye)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "45d0d109-a636-459d-940b-d199b7f8203d",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360005.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360005,
+    "itemInstanceId": "4b14f2cc-4f0e-43f1-bc44-7d5369d52db2",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Amethyst)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "ce4e926d-971f-4662-b7f8-dec81c2c6e47",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360006.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360006,
+    "itemInstanceId": "9c91739c-c7d1-4ae6-9314-72ac2cddb66d",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Rose Quartz)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "9867b2d6-f002-4352-b1d3-3d0c85500edf",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360007.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360007,
+    "itemInstanceId": "39f2c6d0-92a9-4db3-8454-449cda0b4d42",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Peridot)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "d6c5ca7f-fa60-4cca-a6d8-694d850446f2",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
+    "iconUrl": "championsskin_360009.jpg",
+    "inactiveDate": null,
+    "inventoryType": "CHAMPION_SKIN",
+    "itemId": 360009,
+    "itemInstanceId": "0594c374-6308-465d-bce7-7e022382c77b",
+    "itemRequirements": [
+      {
+        "inventoryType": "CHAMPION",
+        "itemId": 360
+      },
+      {
+        "inventoryType": "CHAMPION_SKIN",
+        "itemId": 360001
+      }
+    ],
+    "localizations": {
+      "en_US": {
+        "description": "",
+        "language": "en_US",
+        "name": "PsyOps Samira (Obsidian)"
+      }
+    },
+    "maxQuantity": 1,
+    "offerId": "e272cb83-8f49-4a7f-89f2-19f3933997bd",
+    "prices": [
+      {
+        "cost": 290,
+        "currency": "RP",
+        "discount": 0.0
+      }
+    ],
+    "releaseDate": "2020-09-21T20:00:00.000+0000",
+    "sale": null,
+    "subInventoryType": "RECOLOR",
+    "tags": [
+      "champions_360"
+    ]
+  },
+  {
+    "active": true,
+    "bundled": null,
     "iconUrl": "championsskin_36003.jpg",
     "inactiveDate": null,
     "inventoryType": "CHAMPION_SKIN",
@@ -89461,7 +90609,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_36"
+      "champions_36",
+      "requirement_owned"
     ]
   },
   {
@@ -89498,7 +90647,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_36"
+      "champions_36",
+      "requirement_owned"
     ]
   },
   {
@@ -89535,7 +90685,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_37"
+      "champions_37",
+      "requirement_owned"
     ]
   },
   {
@@ -89572,7 +90723,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_37"
+      "champions_37",
+      "requirement_owned"
     ]
   },
   {
@@ -89647,7 +90799,8 @@
     "subInventoryType": null,
     "tags": [
       "ultimate",
-      "champions_37"
+      "champions_37",
+      "requirement_owned"
     ]
   },
   {
@@ -89684,7 +90837,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_37"
+      "champions_37",
+      "requirement_owned"
     ]
   },
   {
@@ -89927,7 +91081,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_37",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -90210,7 +91365,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -90247,7 +91403,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -90284,7 +91441,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_38"
+      "champions_38",
+      "requirement_owned"
     ]
   },
   {
@@ -91072,7 +92230,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_40"
+      "champions_40",
+      "requirement_owned"
     ]
   },
   {
@@ -91110,7 +92269,8 @@
     "subInventoryType": null,
     "tags": [
       "legendary",
-      "champions_40"
+      "champions_40",
+      "requirement_owned"
     ]
   },
   {
@@ -91184,7 +92344,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_40"
+      "champions_40",
+      "requirement_owned"
     ]
   },
   {
@@ -91390,7 +92551,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_4"
+      "champions_4",
+      "requirement_owned"
     ]
   },
   {
@@ -91427,7 +92589,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_40"
+      "champions_40",
+      "requirement_owned"
     ]
   },
   {
@@ -91669,7 +92832,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_4"
+      "champions_4",
+      "requirement_owned"
     ]
   },
   {
@@ -91854,7 +93018,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_4"
+      "champions_4",
+      "requirement_owned"
     ]
   },
   {
@@ -92315,7 +93480,17 @@
       }
     ],
     "releaseDate": "2018-08-02T15:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 675,
+          "currency": "RP",
+          "discount": 0.5
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_41"
@@ -92560,7 +93735,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412"
+      "champions_412",
+      "requirement_owned"
     ]
   },
   {
@@ -92635,7 +93811,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_412",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -92672,7 +93849,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412"
+      "champions_412",
+      "requirement_owned"
     ]
   },
   {
@@ -92873,7 +94051,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_412"
+      "champions_412",
+      "requirement_owned"
     ]
   },
   {
@@ -92911,7 +94090,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_412",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -93194,7 +94374,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_420"
+      "champions_420",
+      "requirement_owned"
     ]
   },
   {
@@ -93555,7 +94736,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -93629,7 +94811,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -93994,7 +95177,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_42"
+      "champions_42",
+      "requirement_owned"
     ]
   },
   {
@@ -94277,7 +95461,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_421"
+      "champions_421",
+      "requirement_owned"
     ]
   },
   {
@@ -94314,7 +95499,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_421"
+      "champions_421",
+      "requirement_owned"
     ]
   },
   {
@@ -94917,7 +96103,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_427"
+      "champions_427",
+      "requirement_owned"
     ]
   },
   {
@@ -95278,7 +96465,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_43"
+      "champions_43",
+      "requirement_owned"
     ]
   },
   {
@@ -95352,7 +96540,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_43"
+      "champions_43",
+      "requirement_owned"
     ]
   },
   {
@@ -95389,7 +96578,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_43"
+      "champions_43",
+      "requirement_owned"
     ]
   },
   {
@@ -95713,7 +96903,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_432"
+      "champions_432",
+      "requirement_owned"
     ]
   },
   {
@@ -95861,7 +97052,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_432"
+      "champions_432",
+      "requirement_owned"
     ]
   },
   {
@@ -95898,7 +97090,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_432"
+      "champions_432",
+      "requirement_owned"
     ]
   },
   {
@@ -95935,7 +97128,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_432"
+      "champions_432",
+      "requirement_owned"
     ]
   },
   {
@@ -96177,7 +97371,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_44"
+      "champions_44",
+      "requirement_owned"
     ]
   },
   {
@@ -96251,7 +97446,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_44"
+      "champions_44",
+      "requirement_owned"
     ]
   },
   {
@@ -96452,7 +97648,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_44"
+      "champions_44",
+      "requirement_owned"
     ]
   },
   {
@@ -96776,7 +97973,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45"
+      "champions_45",
+      "requirement_owned"
     ]
   },
   {
@@ -96887,7 +98085,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45"
+      "champions_45",
+      "requirement_owned"
     ]
   },
   {
@@ -96962,7 +98161,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45"
+      "champions_45",
+      "requirement_owned"
     ]
   },
   {
@@ -97122,7 +98322,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45"
+      "champions_45",
+      "requirement_owned"
     ]
   },
   {
@@ -97487,7 +98688,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_45"
+      "champions_45",
+      "requirement_owned"
     ]
   },
   {
@@ -97848,7 +99050,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -97885,7 +99088,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -97922,7 +99126,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -97959,7 +99164,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_48"
+      "champions_48",
+      "requirement_owned"
     ]
   },
   {
@@ -98160,7 +99366,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_497"
+      "champions_497",
+      "requirement_owned"
     ]
   },
   {
@@ -98198,7 +99405,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_497",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -98317,7 +99525,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_498"
+      "champions_498",
+      "requirement_owned"
     ]
   },
   {
@@ -98355,7 +99564,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_498",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -98585,7 +99795,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_50"
+      "champions_50",
+      "requirement_owned"
     ]
   },
   {
@@ -98827,7 +100038,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -98905,7 +100117,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -98942,7 +100155,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -99225,7 +100439,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_5"
+      "champions_5",
+      "requirement_owned"
     ]
   },
   {
@@ -99709,7 +100924,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51"
+      "champions_51",
+      "requirement_owned"
     ]
   },
   {
@@ -99783,7 +100999,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51"
+      "champions_51",
+      "requirement_owned"
     ]
   },
   {
@@ -99820,7 +101037,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51"
+      "champions_51",
+      "requirement_owned"
     ]
   },
   {
@@ -99969,7 +101187,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_51",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -100003,17 +101222,7 @@
       }
     ],
     "releaseDate": "2018-08-02T15:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 675,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_51"
@@ -100217,7 +101426,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_51"
+      "champions_51",
+      "requirement_owned"
     ]
   },
   {
@@ -100291,7 +101501,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_517"
+      "champions_517",
+      "requirement_owned"
     ]
   },
   {
@@ -100451,7 +101662,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_518"
+      "champions_518",
+      "requirement_owned"
     ]
   },
   {
@@ -100488,7 +101700,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_523"
+      "champions_523",
+      "requirement_owned"
     ]
   },
   {
@@ -100730,7 +101943,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -100767,7 +101981,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -100848,7 +102063,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -100996,7 +102212,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -101361,7 +102578,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -101398,7 +102616,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_53"
+      "champions_53",
+      "requirement_owned"
     ]
   },
   {
@@ -101472,7 +102691,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_54"
+      "champions_54",
+      "requirement_owned"
     ]
   },
   {
@@ -101509,7 +102729,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_54"
+      "champions_54",
+      "requirement_owned"
     ]
   },
   {
@@ -101874,7 +103095,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_54"
+      "champions_54",
+      "requirement_owned"
     ]
   },
   {
@@ -102113,7 +103335,17 @@
       }
     ],
     "releaseDate": "2020-03-26T20:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 975,
+          "currency": "RP",
+          "discount": 0.27000001072883608
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_54"
@@ -102158,7 +103390,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102195,7 +103428,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102232,7 +103466,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102306,7 +103541,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102340,10 +103576,21 @@
       }
     ],
     "releaseDate": "2019-05-15T20:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 810,
+          "currency": "RP",
+          "discount": 0.4000000059604645
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102626,7 +103873,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_55"
+      "champions_55",
+      "requirement_owned"
     ]
   },
   {
@@ -102909,7 +104157,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_555"
+      "champions_555",
+      "requirement_owned"
     ]
   },
   {
@@ -103233,7 +104482,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_555"
+      "champions_555",
+      "requirement_owned"
     ]
   },
   {
@@ -103476,7 +104726,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_555",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -103759,7 +105010,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_555"
+      "champions_555",
+      "requirement_owned"
     ]
   },
   {
@@ -103998,20 +105250,11 @@
       }
     ],
     "releaseDate": "2011-03-16T05:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 390,
-          "currency": "RP",
-          "discount": 0.6000000238418579
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_56"
+      "champions_56",
+      "requirement_owned"
     ]
   },
   {
@@ -104048,7 +105291,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_56"
+      "champions_56",
+      "requirement_owned"
     ]
   },
   {
@@ -104123,7 +105367,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_56"
+      "champions_56",
+      "requirement_owned"
     ]
   },
   {
@@ -104160,7 +105405,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_56"
+      "champions_56",
+      "requirement_owned"
     ]
   },
   {
@@ -104484,7 +105730,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned"
     ]
   },
   {
@@ -104923,7 +106170,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_57"
+      "champions_57",
+      "requirement_owned"
     ]
   },
   {
@@ -105317,7 +106565,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -105675,20 +106924,11 @@
       }
     ],
     "releaseDate": "2020-03-05T21:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 975,
-          "currency": "RP",
-          "discount": 0.27000001072883608
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_58"
+      "champions_58",
+      "requirement_owned"
     ]
   },
   {
@@ -105971,7 +107211,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -106045,7 +107286,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -106082,7 +107324,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -106119,7 +107362,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -106156,7 +107400,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_59"
+      "champions_59",
+      "requirement_owned"
     ]
   },
   {
@@ -106554,7 +107799,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_60"
+      "champions_60",
+      "requirement_owned"
     ]
   },
   {
@@ -106870,7 +108116,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_6"
+      "champions_6",
+      "requirement_owned"
     ]
   },
   {
@@ -107071,7 +108318,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_6"
+      "champions_6",
+      "requirement_owned"
     ]
   },
   {
@@ -107351,20 +108599,11 @@
       }
     ],
     "releaseDate": "2011-06-02T02:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 233,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned"
     ]
   },
   {
@@ -107401,7 +108640,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned"
     ]
   },
   {
@@ -107435,10 +108675,21 @@
       }
     ],
     "releaseDate": "2012-02-26T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 390,
+          "currency": "RP",
+          "discount": 0.6000000238418579
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned"
     ]
   },
   {
@@ -107475,7 +108726,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned"
     ]
   },
   {
@@ -107512,7 +108764,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_61"
+      "champions_61",
+      "requirement_owned"
     ]
   },
   {
@@ -107795,7 +109048,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -107832,7 +109086,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -107906,7 +109161,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -107943,7 +109199,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_62"
+      "champions_62",
+      "requirement_owned"
     ]
   },
   {
@@ -107980,7 +109237,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned"
     ]
   },
   {
@@ -108054,7 +109312,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned"
     ]
   },
   {
@@ -108091,7 +109350,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned"
     ]
   },
   {
@@ -108128,7 +109388,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_63"
+      "champions_63",
+      "requirement_owned"
     ]
   },
   {
@@ -108288,7 +109549,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108325,7 +109587,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108362,7 +109625,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108436,7 +109700,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108596,7 +109861,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108634,7 +109900,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_64",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -108835,7 +110102,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_64"
+      "champions_64",
+      "requirement_owned"
     ]
   },
   {
@@ -108946,7 +110214,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_67"
+      "champions_67",
+      "requirement_owned"
     ]
   },
   {
@@ -109107,7 +110376,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_67",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -109144,7 +110414,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_67"
+      "champions_67",
+      "requirement_owned"
     ]
   },
   {
@@ -109465,7 +110736,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_68",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -109867,7 +111139,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_69"
+      "champions_69",
+      "requirement_owned"
     ]
   },
   {
@@ -110483,7 +111756,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_7"
+      "champions_7",
+      "requirement_owned"
     ]
   },
   {
@@ -110520,7 +111794,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_7"
+      "champions_7",
+      "requirement_owned"
     ]
   },
   {
@@ -110803,7 +112078,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_7"
+      "champions_7",
+      "requirement_owned"
     ]
   },
   {
@@ -111001,7 +112277,17 @@
       }
     ],
     "releaseDate": "2020-04-16T20:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 975,
+          "currency": "RP",
+          "discount": 0.27000001072883608
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_7"
@@ -111287,7 +112573,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_72"
+      "champions_72",
+      "requirement_owned"
     ]
   },
   {
@@ -111324,7 +112611,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_72"
+      "champions_72",
+      "requirement_owned"
     ]
   },
   {
@@ -111362,7 +112650,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_72",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -111399,7 +112688,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_72"
+      "champions_72",
+      "requirement_owned"
     ]
   },
   {
@@ -111470,17 +112760,7 @@
       }
     ],
     "releaseDate": "2010-11-22T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 438,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
       "champions_74"
@@ -111520,7 +112800,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_74"
+      "champions_74",
+      "requirement_owned"
     ]
   },
   {
@@ -111558,7 +112839,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_74",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -111595,7 +112877,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_74"
+      "champions_74",
+      "requirement_owned"
     ]
   },
   {
@@ -111915,7 +113198,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_75"
+      "champions_75",
+      "requirement_owned"
     ]
   },
   {
@@ -111952,7 +113236,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_75"
+      "champions_75",
+      "requirement_owned"
     ]
   },
   {
@@ -112187,7 +113472,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_75"
+      "champions_75",
+      "requirement_owned"
     ]
   },
   {
@@ -112224,7 +113510,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_76"
+      "champions_76",
+      "requirement_owned"
     ]
   },
   {
@@ -112261,7 +113548,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_76"
+      "champions_76",
+      "requirement_owned"
     ]
   },
   {
@@ -112372,7 +113660,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_76"
+      "champions_76",
+      "requirement_owned"
     ]
   },
   {
@@ -112409,7 +113698,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_76"
+      "champions_76",
+      "requirement_owned"
     ]
   },
   {
@@ -112610,7 +113900,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_77"
+      "champions_77",
+      "requirement_owned"
     ]
   },
   {
@@ -112648,7 +113939,8 @@
     "subInventoryType": null,
     "tags": [
       "ultimate",
-      "champions_77"
+      "champions_77",
+      "requirement_owned"
     ]
   },
   {
@@ -112759,7 +114051,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_777"
+      "champions_777",
+      "requirement_owned"
     ]
   },
   {
@@ -113042,7 +114335,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_78"
+      "champions_78",
+      "requirement_owned"
     ]
   },
   {
@@ -113079,7 +114373,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_78"
+      "champions_78",
+      "requirement_owned"
     ]
   },
   {
@@ -113399,7 +114694,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_78"
+      "champions_78",
+      "requirement_owned"
     ]
   },
   {
@@ -113641,7 +114937,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -113715,7 +115012,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -113752,7 +115050,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -113789,7 +115088,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_79"
+      "champions_79",
+      "requirement_owned"
     ]
   },
   {
@@ -113868,7 +115168,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_80"
+      "champions_80",
+      "requirement_owned"
     ]
   },
   {
@@ -113905,7 +115206,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_80"
+      "champions_80",
+      "requirement_owned"
     ]
   },
   {
@@ -113942,7 +115244,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_80"
+      "champions_80",
+      "requirement_owned"
     ]
   },
   {
@@ -114266,7 +115569,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_80"
+      "champions_80",
+      "requirement_owned"
     ]
   },
   {
@@ -114385,7 +115689,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -114661,7 +115966,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -114698,7 +116004,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_8"
+      "champions_8",
+      "requirement_owned"
     ]
   },
   {
@@ -115176,7 +116483,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -115213,7 +116521,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -115250,7 +116559,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -115619,7 +116929,8 @@
       "skin_variant",
       "skin_variant_skin_81020",
       "skin_variant_bundle_91000001",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -115698,7 +117009,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_81",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -115735,7 +117047,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_81"
+      "champions_81",
+      "requirement_owned"
     ]
   },
   {
@@ -115814,7 +117127,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_82"
+      "champions_82",
+      "requirement_owned"
     ]
   },
   {
@@ -115851,7 +117165,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_82"
+      "champions_82",
+      "requirement_owned"
     ]
   },
   {
@@ -115888,7 +117203,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_82"
+      "champions_82",
+      "requirement_owned"
     ]
   },
   {
@@ -116085,7 +117401,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_83"
+      "champions_83",
+      "requirement_owned"
     ]
   },
   {
@@ -116196,7 +117513,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_83"
+      "champions_83",
+      "requirement_owned"
     ]
   },
   {
@@ -116479,7 +117797,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116513,20 +117832,11 @@
       }
     ],
     "releaseDate": "2011-06-07T17:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 487,
-          "currency": "RP",
-          "discount": 0.5
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116563,7 +117873,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116600,7 +117911,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116637,7 +117949,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116674,7 +117987,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -116867,7 +118181,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_84"
+      "champions_84",
+      "requirement_owned"
     ]
   },
   {
@@ -117389,20 +118704,11 @@
       }
     ],
     "releaseDate": "2010-11-08T00:00:00.000+0000",
-    "sale": {
-      "endDate": "2020-09-21T17:00:00.000+0000",
-      "prices": [
-        {
-          "cost": 233,
-          "currency": "RP",
-          "discount": 0.550000011920929
-        }
-      ],
-      "startDate": "2020-09-14T17:00:00.000+0000"
-    },
+    "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_85"
+      "champions_85",
+      "requirement_owned"
     ]
   },
   {
@@ -117439,7 +118745,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_85"
+      "champions_85",
+      "requirement_owned"
     ]
   },
   {
@@ -117476,7 +118783,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_85"
+      "champions_85",
+      "requirement_owned"
     ]
   },
   {
@@ -117550,7 +118858,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_85"
+      "champions_85",
+      "requirement_owned"
     ]
   },
   {
@@ -117587,7 +118896,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_85"
+      "champions_85",
+      "requirement_owned"
     ]
   },
   {
@@ -117829,7 +119139,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_86"
+      "champions_86",
+      "requirement_owned"
     ]
   },
   {
@@ -117866,7 +119177,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_86"
+      "champions_86",
+      "requirement_owned"
     ]
   },
   {
@@ -117940,7 +119252,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_86"
+      "champions_86",
+      "requirement_owned"
     ]
   },
   {
@@ -118088,7 +119401,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_86"
+      "champions_86",
+      "requirement_owned"
     ]
   },
   {
@@ -118126,7 +119440,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_86",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -118163,7 +119478,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_86"
+      "champions_86",
+      "requirement_owned"
     ]
   },
   {
@@ -118643,7 +119959,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_876"
+      "champions_876",
+      "requirement_owned"
     ]
   },
   {
@@ -118926,7 +120243,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89"
+      "champions_89",
+      "requirement_owned"
     ]
   },
   {
@@ -118963,7 +120281,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89"
+      "champions_89",
+      "requirement_owned"
     ]
   },
   {
@@ -118997,7 +120316,17 @@
       }
     ],
     "releaseDate": "2013-09-10T00:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 438,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
       "champions_89"
@@ -119160,7 +120489,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89"
+      "champions_89",
+      "requirement_owned"
     ]
   },
   {
@@ -119197,7 +120527,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89"
+      "champions_89",
+      "requirement_owned"
     ]
   },
   {
@@ -119239,7 +120570,8 @@
       "skin_variant",
       "skin_variant_skin_89011",
       "skin_variant_bundle_91000006",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -119281,7 +120613,8 @@
       "skin_variant_skin_89010",
       "skin_variant_bundle_91000006",
       "paw_item_purchase_disabled",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -119318,7 +120651,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_89"
+      "champions_89",
+      "requirement_owned"
     ]
   },
   {
@@ -119601,7 +120935,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -119638,7 +120973,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -119675,7 +121011,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -119712,7 +121049,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -119749,7 +121087,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_90"
+      "champions_90",
+      "requirement_owned"
     ]
   },
   {
@@ -119786,7 +121125,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_9"
+      "champions_9",
+      "requirement_owned"
     ]
   },
   {
@@ -120148,7 +121488,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_9",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -120185,7 +121526,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_9"
+      "champions_9",
+      "requirement_owned"
     ]
   },
   {
@@ -120222,7 +121564,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_9"
+      "champions_9",
+      "requirement_owned"
     ]
   },
   {
@@ -120833,7 +122176,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_91"
+      "champions_91",
+      "requirement_owned"
     ]
   },
   {
@@ -120870,7 +122214,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_91"
+      "champions_91",
+      "requirement_owned"
     ]
   },
   {
@@ -121227,7 +122572,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_91"
+      "champions_91",
+      "requirement_owned"
     ]
   },
   {
@@ -121510,7 +122856,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_91"
+      "champions_91",
+      "requirement_owned"
     ]
   },
   {
@@ -121834,7 +123181,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_92"
+      "champions_92",
+      "requirement_owned"
     ]
   },
   {
@@ -121871,7 +123219,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_92"
+      "champions_92",
+      "requirement_owned"
     ]
   },
   {
@@ -122311,7 +123660,8 @@
     "subInventoryType": null,
     "tags": [
       "champions_92",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -122348,7 +123698,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_92"
+      "champions_92",
+      "requirement_owned"
     ]
   },
   {
@@ -122739,10 +124090,21 @@
       }
     ],
     "releaseDate": "2011-02-02T05:00:00.000+0000",
-    "sale": null,
+    "sale": {
+      "endDate": "2020-09-28T17:00:00.000+0000",
+      "prices": [
+        {
+          "cost": 607,
+          "currency": "RP",
+          "discount": 0.550000011920929
+        }
+      ],
+      "startDate": "2020-09-21T17:00:00.000+0000"
+    },
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -122779,7 +124141,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -122816,7 +124179,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -122853,7 +124217,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -123218,7 +124583,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_96"
+      "champions_96",
+      "requirement_owned"
     ]
   },
   {
@@ -123542,7 +124908,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned"
     ]
   },
   {
@@ -123579,7 +124946,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned"
     ]
   },
   {
@@ -124219,7 +125587,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_98"
+      "champions_98",
+      "requirement_owned"
     ]
   },
   {
@@ -124539,7 +125908,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_99"
+      "champions_99",
+      "requirement_owned"
     ]
   },
   {
@@ -124576,7 +125946,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_99"
+      "champions_99",
+      "requirement_owned"
     ]
   },
   {
@@ -124654,7 +126025,8 @@
       "skin_variant",
       "skin_variant_skin_99014",
       "skin_variant_bundle_91000002",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -124733,7 +126105,8 @@
       "skin_variant",
       "skin_variant_skin_99006",
       "skin_variant_bundle_91000002",
-      "paw_item_purchase_disabled"
+      "paw_item_purchase_disabled",
+      "requirement_owned"
     ]
   },
   {
@@ -124770,7 +126143,8 @@
     "sale": null,
     "subInventoryType": null,
     "tags": [
-      "champions_99"
+      "champions_99",
+      "requirement_owned"
     ]
   },
   {
@@ -124812,7 +126186,8 @@
       "skin_variant_skin_99018",
       "skin_variant_bundle_91000008",
       "paw_item_purchase_disabled",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
@@ -124854,7 +126229,8 @@
       "skin_variant_skin_99017",
       "skin_variant_bundle_91000008",
       "paw_item_purchase_disabled",
-      "legendary"
+      "legendary",
+      "requirement_owned"
     ]
   },
   {
