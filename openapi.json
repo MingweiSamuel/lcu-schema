@@ -4282,6 +4282,24 @@
         },
         "type": "object"
       },
+      "LolAntiAddictionAntiAddictionState": {
+        "properties": {
+          "localizationKey": {
+            "type": "string"
+          },
+          "policyType": {
+            "$ref": "#/components/schemas/LolAntiAddictionPolicyType"
+          }
+        },
+        "type": "object"
+      },
+      "LolAntiAddictionPolicyType": {
+        "enum": [
+          "antiAddictionWarning",
+          "antiAddictionShutdown"
+        ],
+        "type": "string"
+      },
       "LolBannersBannerFlag": {
         "properties": {
           "earnedDateIso8601": {
@@ -6196,6 +6214,9 @@
           "splashPath": {
             "type": "string"
           },
+          "splashVideoPath": {
+            "type": "string"
+          },
           "stage": {
             "format": "int32",
             "type": "integer"
@@ -6998,6 +7019,9 @@
           "splashPath": {
             "type": "string"
           },
+          "splashVideoPath": {
+            "type": "string"
+          },
           "stage": {
             "format": "int32",
             "type": "integer"
@@ -7385,6 +7409,9 @@
           "chromaPath": {
             "type": "string"
           },
+          "collectionSplashVideoPath": {
+            "type": "string"
+          },
           "description": {
             "type": "string"
           },
@@ -7414,6 +7441,9 @@
             "type": "string"
           },
           "splashPath": {
+            "type": "string"
+          },
+          "splashVideoPath": {
             "type": "string"
           },
           "stage": {
@@ -7446,6 +7476,9 @@
               "$ref": "#/components/schemas/LolChampionsCollectionsChampionChroma"
             },
             "type": "array"
+          },
+          "collectionSplashVideoPath": {
+            "type": "string"
           },
           "disabled": {
             "type": "boolean"
@@ -7716,6 +7749,9 @@
       },
       "LolChampionsGameDataChampionQuestSkin": {
         "properties": {
+          "collectionSplashVideoPath": {
+            "type": "string"
+          },
           "description": {
             "type": "string"
           },
@@ -7733,6 +7769,9 @@
             "type": "string"
           },
           "splashPath": {
+            "type": "string"
+          },
+          "splashVideoPath": {
             "type": "string"
           },
           "stage": {
@@ -7758,6 +7797,9 @@
               "$ref": "#/components/schemas/LolChampionsGameDataChampionChroma"
             },
             "type": "array"
+          },
+          "collectionSplashVideoPath": {
+            "type": "string"
           },
           "emblems": {
             "items": {
@@ -7869,7 +7911,7 @@
           "name": {
             "type": "string"
           },
-          "splash": {
+          "splashPath": {
             "type": "string"
           },
           "tiers": {
@@ -7878,7 +7920,7 @@
             },
             "type": "array"
           },
-          "tileSplash": {
+          "tilePath": {
             "type": "string"
           },
           "uncenteredSplashPath": {
@@ -12041,6 +12083,9 @@
           "lastThemeOfSeason": {
             "type": "boolean"
           },
+          "lft": {
+            "type": "boolean"
+          },
           "maxSubstitutes": {
             "format": "int32",
             "type": "integer"
@@ -14699,11 +14744,26 @@
           "species": {
             "type": "string"
           },
+          "starShardsPrice": {
+            "$ref": "#/components/schemas/LolCosmeticsCosmeticsOfferPrice"
+          },
           "upgrades": {
             "items": {
               "$ref": "#/components/schemas/LolCosmeticsCosmeticsCompanionViewModel"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "LolCosmeticsCosmeticsOfferPrice": {
+        "properties": {
+          "offerId": {
+            "type": "string"
+          },
+          "price": {
+            "format": "int32",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -32866,6 +32926,62 @@
         },
         "type": "object"
       },
+      "LolPurchaseWidgetCapOffer": {
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "merchantId": {
+            "type": "string"
+          },
+          "payload": {
+            "items": {
+              "$ref": "#/components/schemas/LolPurchaseWidgetCapOfferPayloadEntry"
+            },
+            "type": "array"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "typeId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPurchaseWidgetCapOfferPayloadEntry": {
+        "properties": {
+          "fulfillmentTypeId": {
+            "type": "string"
+          },
+          "inventoryTypeUUID": {
+            "type": "string"
+          },
+          "itemInstanceId": {
+            "type": "string"
+          },
+          "itemPriceMap": {
+            "additionalProperties": {
+              "format": "int32",
+              "type": "integer"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
       "LolPurchaseWidgetCapOrdersDataDto": {
         "properties": {
           "id": {
@@ -33761,6 +33877,36 @@
           },
           "transactionId": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPurchaseWidgetValidateOfferError": {
+        "properties": {
+          "errorKey": {
+            "type": "string"
+          },
+          "meta": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPurchaseWidgetValidateOfferRequestV3": {
+        "properties": {
+          "offerId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolPurchaseWidgetValidateOfferResponseV3": {
+        "properties": {
+          "validationErrors": {
+            "items": {
+              "$ref": "#/components/schemas/LolPurchaseWidgetValidateOfferError"
+            },
+            "type": "array"
           }
         },
         "type": "object"
@@ -38772,24 +38918,6 @@
         },
         "type": "object"
       },
-      "LolTencentAntiaddictionAntiAddictionState": {
-        "properties": {
-          "localizationKey": {
-            "type": "string"
-          },
-          "policyType": {
-            "$ref": "#/components/schemas/LolTencentAntiaddictionPolicyType"
-          }
-        },
-        "type": "object"
-      },
-      "LolTencentAntiaddictionPolicyType": {
-        "enum": [
-          "tencentWarning",
-          "tencentShutdown"
-        ],
-        "type": "string"
-      },
       "LolTrophiesCapClashTrophyEntitlementPayload": {
         "properties": {
           "rewardSpec": {
@@ -39991,6 +40119,28 @@
               "$ref": "#/components/schemas/MultipleReplayMetadataResponseItemV2"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "NonTimingEventV1": {
+        "properties": {
+          "eventName": {
+            "description": "event name",
+            "type": "string"
+          },
+          "unit": {
+            "description": "unit of measurement",
+            "type": "string"
+          },
+          "value": {
+            "description": "event value",
+            "type": "string"
+          },
+          "when": {
+            "description": "timestamp in microseconds of when the event occurred",
+            "format": "int64",
+            "type": "integer"
           }
         },
         "type": "object"
@@ -43444,6 +43594,9 @@
           "lastThemeOfSeason": {
             "type": "boolean"
           },
+          "lft": {
+            "type": "boolean"
+          },
           "maxSub": {
             "format": "int32",
             "type": "integer"
@@ -44890,8 +45043,8 @@
         "parameters": [
           {
             "enum": [
-              "tencentWarning",
-              "tencentShutdown"
+              "antiAddictionWarning",
+              "antiAddictionShutdown"
             ],
             "in": "path",
             "name": "policyType",
@@ -44904,7 +45057,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LolTencentAntiaddictionAntiAddictionState"
+                  "$ref": "#/components/schemas/LolAntiAddictionAntiAddictionState"
                 }
               }
             },
@@ -44913,13 +45066,13 @@
         },
         "tags": [
           "Plugins",
-          "Plugin lol-tencent-antiaddiction"
+          "Plugin lol-anti-addiction"
         ]
       }
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -44997,7 +45150,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -68116,74 +68269,6 @@
         ]
       }
     },
-    "/lol-purchase-widget/v1/purchaseItems": {
-      "post": {
-        "operationId": "PostLolPurchaseWidgetV1PurchaseItems",
-        "parameters": [
-          
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LolPurchaseWidgetPurchaseRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-purchase-widget"
-        ]
-      }
-    },
-    "/lol-purchase-widget/v1/validateItems": {
-      "post": {
-        "operationId": "PostLolPurchaseWidgetV1ValidateItems",
-        "parameters": [
-          
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LolPurchaseWidgetValidationRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-purchase-widget"
-        ]
-      }
-    },
     "/lol-purchase-widget/v2/purchaseItems": {
       "post": {
         "operationId": "PostLolPurchaseWidgetV2PurchaseItems",
@@ -68292,6 +68377,39 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LolPurchaseWidgetPurchaseOfferResponseV3"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-purchase-widget"
+        ]
+      }
+    },
+    "/lol-purchase-widget/v3/validateOffer": {
+      "post": {
+        "operationId": "PostLolPurchaseWidgetV3ValidateOffer",
+        "parameters": [
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LolPurchaseWidgetValidateOfferRequestV3"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolPurchaseWidgetValidateOfferResponseV3"
                 }
               }
             },
@@ -75751,7 +75869,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [
           
         ],
@@ -76184,6 +76302,53 @@
           }
         },
         "summary": "Record a module description.",
+        "tags": [
+          "Tracing"
+        ]
+      }
+    },
+    "/tracing/v1/trace/non-timing-event/{eventName}": {
+      "post": {
+        "operationId": "PostTracingV1TraceNonTimingEventByEventName",
+        "parameters": [
+          {
+            "description": "Name of the event",
+            "in": "path",
+            "name": "eventName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The value to be recorded",
+            "in": "query",
+            "name": "value",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The unit of measurement for the value",
+            "in": "query",
+            "name": "unit",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "format": "int64",
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Record a non timing telemetry event.",
         "tags": [
           "Tracing"
         ]
