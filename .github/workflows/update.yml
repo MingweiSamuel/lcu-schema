@@ -29,19 +29,13 @@ jobs:
           cp -r swagger-ui/dist out/tool
           git apply index.html.diff
 
-      - name: Install & Update League of Legends
-        run: |
-          choco install -y leagueoflegends
-          & 'C:\Riot Games\League of Legends\LeagueClient.exe'
-          Start-Sleep 180
-
       - name: Run update.ps1
         env:
           LOLLOGIN: ${{ secrets.lollogin }}
         run: |
           $env:LOLLOGIN | Out-File -Encoding UTF8 'lollogin.json'
           .\update.ps1
-        shell: powershell # Use powershell 5 (not 7)
+        shell: pwsh # Use powershell 7
 
       - name: Push changes in output folder
         shell: bash
