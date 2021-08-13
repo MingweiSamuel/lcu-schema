@@ -1,20 +1,20 @@
 ﻿[
   {
     "assets": {
-      "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background-fates1.jpg",
+      "champ-select-skip-bg": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
       "game-select-icon-active": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-active.png",
       "game-select-icon-active-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-active.webm",
       "game-select-icon-default": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-default.png",
       "game-select-icon-disabled": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-disabled.png",
       "game-select-icon-hover": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/game-select-icon-hover.png",
       "game-select-icon-intro-video": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/video/game-select-icon-intro.webm",
-      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background-fates1.jpg",
+      "gameflow-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/gameflow-background.jpg",
       "gameselect-button-hover-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Shared/sound/sfx-gameselect-button-hover.ogg",
       "icon-defeat": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-defeat.png",
       "icon-empty": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-empty.png",
       "icon-victory": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/icon-victory.png",
       "music-inqueue-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/sound/music-inqueue-loop-teamfighttactics.ogg",
-      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/parties-background-temp-short.jpg",
+      "parties-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/parties-background.jpg",
       "postgame-ambience-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg",
       "ready-check-background": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/TFT/img/ready-check-background.jpg",
       "sfx-ambience-pregame-loop-sound": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/Classic_SRU/sound/sfx-ambience-loop-summonersrift.ogg"
@@ -31,8 +31,18 @@
     "id": 22,
     "isDefault": true,
     "isRGM": false,
+    "locStrings": {
+      "tutorial_subheader": "Teamfight Tactics is a free-for-all drafting tactics game in which you recruit powerful champions, deploy them, and battle to become the last player standing. Here\u0027s a quick guide.",
+      "tutorial_title": "Welcome to Teamfight Tactics!"
+    },
     "mapStringId": "TFT",
     "name": "Teamfight Tactics",
+    "perPositionDisallowedSummonerSpells": {
+      
+    },
+    "perPositionRequiredSummonerSpells": {
+      
+    },
     "platformId": "",
     "platformName": "",
     "properties": {
@@ -102,8 +112,17 @@
     "id": 11,
     "isDefault": true,
     "isRGM": false,
+    "locStrings": {
+      
+    },
     "mapStringId": "SR",
     "name": "Summoner\u0027s Rift",
+    "perPositionDisallowedSummonerSpells": {
+      
+    },
+    "perPositionRequiredSummonerSpells": {
+      
+    },
     "platformId": "",
     "platformName": "",
     "properties": {
@@ -154,8 +173,17 @@
     "id": 12,
     "isDefault": true,
     "isRGM": false,
+    "locStrings": {
+      
+    },
     "mapStringId": "HA",
     "name": "Howling Abyss",
+    "perPositionDisallowedSummonerSpells": {
+      
+    },
+    "perPositionRequiredSummonerSpells": {
+      
+    },
     "platformId": "",
     "platformName": "",
     "properties": {
@@ -200,49 +228,49 @@
       "GameEventInfoCards": {
         "0": {
           "body": "Race your Scuttlecrab to the finish line!",
-          "footer": "Race your Scuttlecrab to the finish line!",
+          "footer": "",
           "header": "SCUTTLE RACING",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Scuttle-Race.png"
         },
         "1": {
           "body": "Face off the enemy team in a series of duels!",
-          "footer": "Face off the enemy team in a series of duels!",
+          "footer": "",
           "header": "PRIZE FIGHT",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Prize-Fight.png"
         },
         "2": {
           "body": "Take the enemy team\u0027s lives before they take yours!",
-          "footer": "Take the enemy team\u0027s lives before they take yours!",
+          "footer": "",
           "header": "URF DEATHMATCH",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Urf-Deathmatch.png"
         },
         "3": {
           "body": "Fight for survival in a random Bardle Royale event!",
-          "footer": "Fight for survival in a random Bardle Royale event!",
+          "footer": "",
           "header": "BARDLE ROULETTE",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Bardle-Royale.png"
         },
         "4": {
           "body": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
-          "footer": "Defeat the enemy team\u0027s Soraka before they defeat yours!",
+          "footer": "",
           "header": "PROTECT THE SORAKA",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Protect-Soraka.png"
         },
         "5": {
           "body": "Do more damage to the Target Dummy than your opponents can!",
-          "footer": "Do more damage to the Target Dummy than your opponents can!",
+          "footer": "",
           "header": "DPS Check",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/DPS-Rush.png"
         },
         "6": {
           "body": "Kill Loot Teemo for his bounty!",
-          "footer": "Kill Loot Teemo for his bounty!",
+          "footer": "",
           "header": "LOOT TEEMO",
           "imagePath": "lol-game-data/assets/content/src/LeagueClient/GameModeAssets/GameModeX/img/EventIcons/Loot-Event.png"
         },
         "IconSubtext": {
-          "body": "First Event",
-          "footer": "First Event",
+          "body": "",
+          "footer": "",
           "header": "First Event",
           "imagePath": "lol-game-data/assets/"
         }
@@ -257,8 +285,45 @@
     "id": 21,
     "isDefault": true,
     "isRGM": true,
+    "locStrings": {
+      
+    },
     "mapStringId": "NB",
     "name": "Nexus Blitz",
+    "perPositionDisallowedSummonerSpells": {
+      "bottom": {
+        "spells": [
+          11
+        ]
+      },
+      "lane": {
+        "spells": [
+          11
+        ]
+      },
+      "middle": {
+        "spells": [
+          11
+        ]
+      },
+      "top": {
+        "spells": [
+          11
+        ]
+      },
+      "utility": {
+        "spells": [
+          11
+        ]
+      }
+    },
+    "perPositionRequiredSummonerSpells": {
+      "jungle": {
+        "spells": [
+          11
+        ]
+      }
+    },
     "platformId": "",
     "platformName": "",
     "properties": {
