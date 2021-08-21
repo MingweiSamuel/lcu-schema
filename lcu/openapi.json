@@ -71616,7 +71616,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -71654,7 +71654,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "Http2ApiDocsV2",
+        "operationId": "HttpApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
