@@ -196,9 +196,35 @@
     },
     "AppCommandCommand": {
       "properties": {
-        "patchlineId": {
-          "type": "string"
+        "kind": {
+          "$ref": "#/definitions/AppCommandCommandKind",
+          "default": "Unknown"
         },
+        "payload": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "AppCommandCommandAuthV1": {
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "AppCommandCommandKind": {
+      "enum": [
+        "Unknown",
+        "AuthV1",
+        "Vng"
+      ],
+      "type": "string"
+    },
+    "AppCommandCommandVng": {
+      "properties": {
         "productId": {
           "type": "string"
         }
@@ -5673,6 +5699,20 @@
       },
       "type": "object"
     },
+    "MailboxPlayerAffinityShardInfo": {
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "shard": {
+          "type": "string"
+        },
+        "zone": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "MailboxPlayerAffinityToken": {
       "properties": {
         "affinity": {
@@ -8106,6 +8146,20 @@
           "type": "string"
         },
         "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerAffinityPlayerAffinityShardInfo": {
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "shard": {
+          "type": "string"
+        },
+        "zone": {
           "type": "string"
         }
       },
@@ -13740,6 +13794,31 @@
         ]
       }
     },
+    "/app-command/submit": {
+      "put": {
+        "operationId": "PutAppCommandSubmit",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "command",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AppCommandCommand"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Used to coerce an application to invoke a registered command.",
+        "tags": [
+          "Plugins",
+          "Plugin app-command"
+        ]
+      }
+    },
     "/app-command/v1/auth/status": {
       "delete": {
         "operationId": "DeleteAppCommandV1AuthStatus",
@@ -18488,6 +18567,63 @@
         ]
       }
     },
+    "/eula/v1/product-context": {
+      "delete": {
+        "operationId": "DeleteEulaV1ProductContext",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Resets the current product context.",
+        "tags": [
+          "Plugins",
+          "Plugin eula"
+        ]
+      },
+      "get": {
+        "operationId": "GetEulaV1ProductContext",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/EulaProductContext"
+            }
+          }
+        },
+        "summary": "Gets the current product context.",
+        "tags": [
+          "Plugins",
+          "Plugin eula",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "operationId": "PutEulaV1ProductContext",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "ProductContext",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EulaProductContext"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Set the current product context.",
+        "tags": [
+          "Plugins",
+          "Plugin eula"
+        ]
+      }
+    },
     "/friends/v1/add-friend-ui": {
       "post": {
         "description": "\n**Description**\n\nShows platform specific UI for adding platform friends. Must specify either a riotId or a platformId. PlatformId will be prioritized if provided otherwise RiotId will be converted to a platform specific ID.\n\n**Nintendo Switch**\n* Shows the native Nintendo Switch UI to send a Nintendo Switch friend request to the specified friend\n* **Will block until user input on native ui completes**\n* Must be exactly 1 opened user prior to calling add-friend-ui\n* platformId must be a Network Services Account ID\n* RiotId not yet supported. When supported will convert to Nintendo Network Services ID to add the user as a nintendo switch friend.\n",
@@ -21510,6 +21646,31 @@
         ]
       }
     },
+    "/player-affinity/shard": {
+      "put": {
+        "operationId": "PutPlayerAffinityShard",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "shard",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlayerAffinityPlayerAffinityShardInfo"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets the current",
+        "tags": [
+          "Plugins",
+          "Plugin player-affinity"
+        ]
+      }
+    },
     "/player-preferences/v1/data-json/{type}": {
       "get": {
         "operationId": "GetPlayerPreferencesV1DataJsonByType",
@@ -24381,6 +24542,7 @@
     },
     "/riotclient/command-line-args": {
       "get": {
+        "description": "Command line arguments are deprecated, and will be removed June 2022. Use configuration directly.",
         "operationId": "GetRiotclientCommandLineArgs",
         "parameters": [],
         "responses": {
@@ -24396,7 +24558,8 @@
         },
         "summary": "Get the command line parameters for the application",
         "tags": [
-          "riotclient"
+          "riotclient",
+          "Deprecated"
         ]
       }
     },
@@ -24479,6 +24642,7 @@
     },
     "/riotclient/new-args": {
       "post": {
+        "description": "This endpoint is deprecated, and will be removed June 2022, use direct events instead (e.g. `/player-affinity/shard`.",
         "operationId": "PostRiotclientNewArgs",
         "parameters": [
           {
@@ -24501,7 +24665,8 @@
         },
         "summary": "Endpoint for passing in new data.",
         "tags": [
-          "riotclient"
+          "riotclient",
+          "Deprecated"
         ]
       }
     },
@@ -24618,6 +24783,7 @@
     },
     "/riotclient/secondary-args": {
       "get": {
+        "description": "Command line arguments are deprecated, and will be removed June 2022. Use configuration directly.",
         "operationId": "GetRiotclientSecondaryArgs",
         "parameters": [],
         "responses": {
@@ -24633,7 +24799,8 @@
         },
         "summary": "Get the command line parameters that occur after the '--' delimiter",
         "tags": [
-          "riotclient"
+          "riotclient",
+          "Deprecated"
         ]
       }
     },
@@ -26775,33 +26942,6 @@
         ]
       }
     },
-    "/telemetry/v1/metrics/config": {
-      "put": {
-        "description": "**Body:**  Object containing metrics configuration fields. All are optional. If a field is ommitted, that configuration does not change.\n\n```\n{ \n    \"enabled\":      (bool) True to have metrics enabled for this session, if a collector is configured. False to forcibly disable metrics.\n    \"api_key\":      (string) API key to use for the public metrics telemetry collector.\n    \"send_retries\": (uint32) Number of times to retry sending metric samples to the public collector. Takes effect when application restarts.\n}\n```\n",
-        "operationId": "PutTelemetryV1MetricsConfig",
-        "parameters": [
-          {
-            "description": "Struct containing configuration fields. See 'Help' section for more details.",
-            "in": "body",
-            "name": "config",
-            "required": true,
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Updates the configuration for sending metrics to the public collectors.Values are persisted to install settings for this installation.",
-        "tags": [
-          "telemetry"
-        ]
-      }
-    },
     "/telemetry/v1/metrics/{name}": {
       "put": {
         "operationId": "PutTelemetryV1MetricsByName",
@@ -26920,34 +27060,6 @@
           }
         },
         "summary": "Handles a new structured log message for pushing to a public Collector-V1 endpoint. Structured log fields must be of the following types: bool, string, float, int, uint",
-        "tags": [
-          "telemetry"
-        ]
-      }
-    },
-    "/telemetry/v2/disabled-events": {
-      "put": {
-        "operationId": "PutTelemetryV2DisabledEvents",
-        "parameters": [
-          {
-            "description": "List of Analytics Platform Event IDs. ",
-            "in": "body",
-            "name": "eventIDs",
-            "required": true,
-            "schema": {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Receives a list of event IDs to disable. Disabled events recieved via `/telemetry/v2/events/{id}` will be dropped.",
         "tags": [
           "telemetry"
         ]
