@@ -97,6 +97,7 @@ If (-Not (Test-Path $LCU_EXE)) {
     Write-Host 'LoL installed successfully.'
     Start-Sleep 1
     Stop-RiotProcesses
+    Start-Sleep 5 # Wait for processes to settle.
 }
 Else {
     Write-Host 'LoL already installed.'
