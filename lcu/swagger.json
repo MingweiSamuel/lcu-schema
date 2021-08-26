@@ -13351,6 +13351,9 @@
     },
     "LolCosmeticsGameDataCompanion": {
       "properties": {
+        "TFTOnly": {
+          "type": "boolean"
+        },
         "colorName": {
           "type": "string"
         },
@@ -18480,7 +18483,9 @@
         "TaintedWarning",
         "PunishmentIncurred",
         "PunishedGamesRemaining",
-        "Reforming"
+        "Reforming",
+        "PreLockoutWarning",
+        "OnLockoutWarning"
       ],
       "type": "string"
     },
@@ -23865,12 +23870,12 @@
     },
     "LolLootGameDataSummonerIcon": {
       "properties": {
-        "iconPath": {
-          "type": "string"
-        },
         "id": {
           "format": "int32",
           "type": "integer"
+        },
+        "imagePath": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -24204,8 +24209,8 @@
     "LolLootLootMilestoneRepeat": {
       "properties": {
         "multiplier": {
-          "format": "int32",
-          "type": "integer"
+          "format": "float",
+          "type": "number"
         },
         "repeatCount": {
           "format": "int32",
@@ -24312,6 +24317,185 @@
           "type": "integer"
         },
         "lootMilestonesId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataGdsResource": {
+      "properties": {
+        "endDate": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "ledgerConfig": {
+          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigGdsResource"
+        },
+        "recipes": {
+          "items": {
+            "$ref": "#/definitions/LolLootLootMilestonesDataRecipeGdsResource"
+          },
+          "type": "array"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "storeGroupTitle": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigCounterGdsResource": {
+      "properties": {
+        "direction": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startValue": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigGdsResource": {
+      "properties": {
+        "counters": {
+          "items": {
+            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigCounterGdsResource"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "milestones": {
+          "items": {
+            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestoneGdsResource"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "repeat": {
+          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigRepeatGdsResource"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigGroupRepeatGdsResource": {
+      "properties": {
+        "Count": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Multiplier": {
+          "format": "float",
+          "type": "number"
+        },
+        "Scope": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigMilestoneGdsResource": {
+      "properties": {
+        "counter": {
+          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigCounterGdsResource"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "items": {
+            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesGdsResource"
+          },
+          "type": "array"
+        },
+        "triggerValue": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesGdsResource": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "rewardStrategy": {
+          "type": "string"
+        },
+        "rewards": {
+          "items": {
+            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardGdsResource"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardGdsResource": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "legacyLootItem": {
+          "type": "string"
+        },
+        "lootItemToGrant": {
+          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardLootItemGdsResource"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rewardType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardLootItemGdsResource": {
+      "properties": {
+        "internalName": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataLedgerConfigRepeatGdsResource": {
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigGroupRepeatGdsResource"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLootMilestonesDataRecipeGdsResource": {
+      "properties": {
+        "name": {
           "type": "string"
         }
       },
@@ -33947,6 +34131,53 @@
       ],
       "type": "string"
     },
+    "LolRankedSocialLeaderboardRankedQueueStats": {
+      "properties": {
+        "division": {
+          "$ref": "#/definitions/LolRankedLeagueDivision"
+        },
+        "isProvisional": {
+          "type": "boolean"
+        },
+        "leaguePoints": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "losses": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "miniSeriesProgress": {
+          "type": "string"
+        },
+        "provisionalGameThreshold": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "provisionalGamesRemaining": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "queueType": {
+          "$ref": "#/definitions/LolRankedLeagueQueueType"
+        },
+        "ratedRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ratedTier": {
+          "$ref": "#/definitions/LolRankedRatedTier"
+        },
+        "tier": {
+          "$ref": "#/definitions/LolRankedLeagueTier"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedSplitPointsNotification": {
       "properties": {
         "nextRewardId": {
@@ -38749,6 +38980,38 @@
       },
       "type": "object"
     },
+    "LootOddsDTO": {
+      "properties": {
+        "children": {
+          "items": {
+            "$ref": "#/definitions/LootOddsDTO"
+          },
+          "type": "array"
+        },
+        "dropRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        },
+        "lootId": {
+          "type": "string"
+        },
+        "lootOrder": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LootSimpleDialogMessageResponse": {
       "properties": {
         "accountId": {
@@ -42216,6 +42479,50 @@
       },
       "type": "object"
     },
+    "SocialLeaderboardRankedQueueStatsDTO": {
+      "properties": {
+        "leaguePoints": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "losses": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "miniSeriesProgress": {
+          "type": "string"
+        },
+        "provisionalGameThreshold": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "provisionalGamesRemaining": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "queueType": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "ratedRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ratedTier": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "SpectatorLcdsSpectateAvailabilityDto": {
       "properties": {
         "teamOrSummonerIds": {
@@ -42984,6 +43291,29 @@
         },
         "useQuickSearchMatchmaking": {
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "VerboseLootOddsDTO": {
+      "properties": {
+        "chanceToContain": {
+          "items": {
+            "$ref": "#/definitions/LootOddsDTO"
+          },
+          "type": "array"
+        },
+        "guaranteedToContain": {
+          "items": {
+            "$ref": "#/definitions/LootOddsDTO"
+          },
+          "type": "array"
+        },
+        "lastUpdated": {
+          "type": "string"
+        },
+        "recipeName": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -44096,7 +44426,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -56854,8 +57184,8 @@
       }
     },
     "/lol-lobby/v2/lobby/team/{team}": {
-      "put": {
-        "operationId": "PutLolLobbyV2LobbyTeamByTeam",
+      "post": {
+        "operationId": "PostLolLobbyV2LobbyTeamByTeam",
         "parameters": [
           {
             "in": "path",
@@ -57855,6 +58185,12 @@
             "name": "minimizeResponse",
             "required": true,
             "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "includeInactive",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -57895,6 +58231,27 @@
         ]
       }
     },
+    "/lol-loot/v1/milestones/items": {
+      "get": {
+        "operationId": "GetLolLootV1MilestonesItems",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-loot"
+        ]
+      }
+    },
     "/lol-loot/v1/milestones/{lootMilestonesId}": {
       "get": {
         "operationId": "GetLolLootV1MilestonesByLootMilestonesId",
@@ -57904,6 +58261,12 @@
             "name": "lootMilestonesId",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "includeInactive",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -58294,6 +58657,12 @@
             "name": "lootId",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "includeInactive",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -58320,6 +58689,12 @@
             "name": "lootId",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "includeInactive",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -62353,6 +62728,51 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/SignedRankedStatsDTO"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-ranked"
+        ]
+      }
+    },
+    "/lol-ranked/v1/social-leaderboard-ranked-queue-stats-for-puuids": {
+      "get": {
+        "operationId": "GetLolRankedV1SocialLeaderboardRankedQueueStatsForPuuids",
+        "parameters": [
+          {
+            "enum": [
+              "NONE",
+              "RANKED_SOLO_5x5",
+              "RANKED_FLEX_SR",
+              "RANKED_FLEX_TT",
+              "RANKED_TFT",
+              "RANKED_TFT_TURBO"
+            ],
+            "in": "query",
+            "name": "queueType",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "puuids",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": {
+                "$ref": "#/definitions/LolRankedSocialLeaderboardRankedQueueStats"
+              },
+              "type": "object"
             }
           }
         },
@@ -68099,7 +68519,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -68152,7 +68572,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
