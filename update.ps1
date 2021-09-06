@@ -77,7 +77,18 @@ New-Item -ItemType Directory -Force -Path $LCU_OUT_DIR | Out-Null
 If (-Not (Test-Path $LCU_EXE)) {
     Write-Host 'Installing LoL.'
 
-    Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
+    $attempts = 5
+    While ($True) {
+        If ($attempts -Le 0) {
+            Throw 'Failed to download installer.'
+        }
+        Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
+        If ($?) {
+            Break
+        }
+        $attempts--;
+        Start-Sleep 5
+    }
     .\install.na.exe --skip-to-install
 
     $attempts = 20
@@ -88,7 +99,7 @@ If (-Not (Test-Path $LCU_EXE)) {
         }
         Write-Host "Installing LoL: $($status.patch.progress.progress)%"
 
-        If ($attempts -le 0) {
+        If ($attempts -Le 0) {
             Throw 'Failed to install LoL.'
         }
         $attempts--
