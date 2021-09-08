@@ -2100,6 +2100,80 @@
       },
       "type": "object"
     },
+    "ChatProductLocTranslateReq": {
+      "properties": {
+        "blocking": {
+          "default": true,
+          "type": "boolean"
+        },
+        "keys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "patchline": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChatProductLocTranslateResp": {
+      "properties": {
+        "results": {
+          "items": {
+            "$ref": "#/definitions/ChatProductLocTranslateResult"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ChatProductLocTranslateResult": {
+      "properties": {
+        "found": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChatProductMetadata": {
+      "properties": {
+        "content_paths": {
+          "$ref": "#/definitions/ChatProductMetadataContentPaths"
+        }
+      },
+      "type": "object"
+    },
+    "ChatProductMetadataContentPaths": {
+      "properties": {
+        "loc": {
+          "type": "string"
+        },
+        "riotstatus": {
+          "type": "string"
+        },
+        "social": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "ChatProductSession": {
       "properties": {
         "patchlineFullName": {
@@ -2276,6 +2350,37 @@
             "$ref": "#/definitions/ChatProductSessionState"
           },
           "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "ChatSocialData": {
+      "properties": {
+        "hovercard_background_url": {
+          "type": "string"
+        },
+        "icon_url": {
+          "type": "string"
+        },
+        "product_folder_name": {
+          "type": "string"
+        },
+        "product_presence_name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ChatSocialDataReq": {
+      "properties": {
+        "locale": {
+          "type": "string"
+        },
+        "patchline": {
+          "type": "string"
+        },
+        "product": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -5121,116 +5226,6 @@
       },
       "type": "object"
     },
-    "LoyaltyLeagueSession": {
-      "properties": {
-        "product": {
-          "type": "string"
-        },
-        "region": {
-          "type": "string"
-        },
-        "serviceState": {
-          "type": "string"
-        },
-        "sessionId": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LoyaltyLoyaltyConfig": {
-      "properties": {
-        "backendUrl": {
-          "type": "string"
-        },
-        "enabled": {
-          "type": "boolean"
-        },
-        "enabledProductId": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "gapsMaintenancePatchlineId": {
-          "type": "string"
-        },
-        "heartbeatInterval": {
-          "format": "double",
-          "type": "number"
-        },
-        "maintenanceEnabled": {
-          "type": "boolean"
-        },
-        "telemetryEnabled": {
-          "type": "boolean"
-        },
-        "webRequestInitialRetryDelayInMilliSec": {
-          "default": 100,
-          "format": "int64",
-          "minimum": 0,
-          "type": "integer"
-        },
-        "webRequestMaxRetryDelayInMilliSec": {
-          "default": 1000,
-          "format": "int64",
-          "minimum": 0,
-          "type": "integer"
-        },
-        "webRequestRetryCount": {
-          "default": 3,
-          "format": "int64",
-          "minimum": 0,
-          "type": "integer"
-        },
-        "webRequestTimeoutInSec": {
-          "default": 5,
-          "format": "int32",
-          "maximum": 4294967295,
-          "minimum": 0,
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LoyaltyLoyaltyEventUrl": {
-      "properties": {
-        "loyaltyLoginEventUrl": {
-          "type": "string"
-        },
-        "loyaltyPlayerActivityEventUrl": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LoyaltyLoyaltyPluginUserState": {
-      "enum": [
-        "userLoggedOut",
-        "userLoggedIn"
-      ],
-      "type": "string"
-    },
-    "LoyaltyPCBangInfo": {
-      "properties": {
-        "pcbId": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LoyaltyProductSessionSession": {
-      "properties": {
-        "patchlineId": {
-          "type": "string"
-        },
-        "productId": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "LoyaltyV2ExternalProcess": {
       "properties": {
         "patchlineId": {
@@ -5285,6 +5280,15 @@
       },
       "type": "object"
     },
+    "LoyaltyV2PCBangInfo": {
+      "properties": {
+        "pcbId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LoyaltyV2Session": {
       "properties": {
         "product": {
@@ -5297,26 +5301,6 @@
           "type": "string"
         },
         "sessionId": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LoyaltyValorantSession": {
-      "properties": {
-        "clientID": {
-          "type": "string"
-        },
-        "cxnState": {
-          "type": "string"
-        },
-        "expiredTime": {
-          "type": "string"
-        },
-        "lastHeartbeatTime": {
-          "type": "string"
-        },
-        "subject": {
           "type": "string"
         }
       },
@@ -7231,6 +7215,107 @@
       },
       "type": "object"
     },
+    "PlatformUiAccessToken": {
+      "properties": {
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiAliasesV1Alias": {
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "created_datetime": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "game_name": {
+          "type": "string"
+        },
+        "summoner": {
+          "type": "boolean"
+        },
+        "tag_line": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiAliasesV1AliasInput": {
+      "properties": {
+        "gameName": {
+          "type": "string"
+        },
+        "tagLine": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiAliasesV1AliasList": {
+      "properties": {
+        "aliases": {
+          "items": {
+            "$ref": "#/definitions/PlatformUiAliasesV1Alias"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiAliasesV1AliasValidationReason": {
+      "enum": [
+        "no_error",
+        "name_change_forbidden",
+        "name_not_available",
+        "rate_limited"
+      ],
+      "type": "string"
+    },
+    "PlatformUiAliasesV1RequiredResponse": {
+      "properties": {
+        "isAliasChangeRequired": {
+          "type": "boolean"
+        },
+        "isAliasMissing": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiAliasesV1StatusResponse": {
+      "properties": {
+        "alias": {
+          "$ref": "#/definitions/PlatformUiAliasesV1Alias"
+        },
+        "errorCode": {
+          "$ref": "#/definitions/PlatformUiAliasesV1AliasValidationReason",
+          "default": "no_error"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "PlatformUiAuthenticateFacebookInput": {
       "properties": {
         "facebook": {
@@ -7282,6 +7367,24 @@
       },
       "type": "object"
     },
+    "PlatformUiEligibilityResponse": {
+      "properties": {
+        "errorCode": {
+          "$ref": "#/definitions/PlatformUiAliasesV1AliasValidationReason",
+          "default": "no_error"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "isTagLineCustomizable": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "PlatformUiFacebookInput": {
       "properties": {
         "accessToken": {
@@ -7291,6 +7394,32 @@
           "type": "string"
         },
         "idToken": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiGenerateTaglineInput": {
+      "properties": {
+        "game_name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiGenerateTaglineResponse": {
+      "properties": {
+        "errorCode": {
+          "$ref": "#/definitions/PlatformUiAliasesV1AliasValidationReason",
+          "default": "no_error"
+        },
+        "errorMessage": {
+          "type": "string"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "tag_line": {
           "type": "string"
         }
       },
@@ -7313,6 +7442,47 @@
         }
       },
       "type": "object"
+    },
+    "PlatformUiIdToken": {
+      "properties": {
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiInitiateLoginSessionRequest": {
+      "properties": {
+        "loginStrategy": {
+          "$ref": "#/definitions/PlatformUiLoginStrategyType"
+        },
+        "requireRiotID": {
+          "type": "boolean"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiLoginStrategyType": {
+      "enum": [
+        "riot_identity",
+        "google",
+        "game_center",
+        "facebook",
+        "apple",
+        "nintendo"
+      ],
+      "type": "string"
     },
     "PlatformUiNintendoInput": {
       "properties": {
@@ -7343,6 +7513,60 @@
       },
       "type": "object"
     },
+    "PlatformUiPlayerSessionState": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/PlatformUiAccessToken"
+        },
+        "actionRequired": {
+          "type": "boolean"
+        },
+        "config": {
+          "$ref": "#/definitions/PlatformUiInitiateLoginSessionRequest"
+        },
+        "idToken": {
+          "$ref": "#/definitions/PlatformUiIdToken"
+        },
+        "loginCountry": {
+          "type": "string"
+        },
+        "loginState": {
+          "$ref": "#/definitions/PlatformUiPlayerSessionStateType",
+          "default": "Initializing"
+        },
+        "suggestedActions": {
+          "items": {
+            "$ref": "#/definitions/PlatformUiSuggestedAction"
+          },
+          "type": "array"
+        },
+        "userInfo": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiPlayerSessionStateType": {
+      "enum": [
+        "PendingInitialization",
+        "Initializing",
+        "PendingClientId",
+        "PendingCreateAuthorization",
+        "PendingAuthentication",
+        "PendingSignup",
+        "PendingHealup",
+        "LoginTokenExchange",
+        "PendingForget",
+        "PendingConsent",
+        "PendingEulaData",
+        "PendingEulaAcceptance",
+        "PendingRiotID",
+        "Authorized",
+        "Error"
+      ],
+      "type": "string"
+    },
     "PlatformUiResponseType": {
       "enum": [
         "auth",
@@ -7353,10 +7577,36 @@
       ],
       "type": "string"
     },
+    "PlatformUiSignupCodeLinking": {
+      "properties": {
+        "direct_url": {
+          "type": "string"
+        },
+        "manual_url": {
+          "type": "string"
+        },
+        "short_code": {
+          "type": "string"
+        },
+        "short_url": {
+          "type": "string"
+        },
+        "status_url": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "PlatformUiSignupLinkDetails": {
       "properties": {
         "auth_method": {
           "type": "string"
+        },
+        "code_linking": {
+          "$ref": "#/definitions/PlatformUiSignupCodeLinking"
         },
         "options": {
           "items": {
@@ -7403,6 +7653,28 @@
           "type": "string"
         },
         "redirect_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiSuggestedAction": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiUserInfo": {
+      "properties": {
+        "userInfo": {
           "type": "string"
         }
       },
@@ -9252,6 +9524,38 @@
       ],
       "type": "string"
     },
+    "PrimeGamingPrimeGamingLoginResponse": {
+      "properties": {
+        "amazonAccessToken": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/PrimeGamingPrimeGamingLoginStatus"
+        }
+      },
+      "type": "object"
+    },
+    "PrimeGamingPrimeGamingLoginStatus": {
+      "enum": [
+        "logged_out",
+        "logging_in",
+        "logged_in",
+        "logging_out",
+        "error"
+      ],
+      "type": "string"
+    },
+    "PrimeGamingPrimeGamingSupportStatus": {
+      "properties": {
+        "details": {
+          "type": "string"
+        },
+        "supported": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "PrivacyPrivacySettings": {
       "properties": {
         "canRequestTrackingPermission": {
@@ -9676,6 +9980,17 @@
       },
       "type": "object"
     },
+    "ProductMetadataClientProductType": {
+      "enum": [
+        "riot_game",
+        "thunderdome",
+        "forge",
+        "third_party",
+        "special_event",
+        "hidden"
+      ],
+      "type": "string"
+    },
     "ProductMetadataConfigType": {
       "enum": [
         "public",
@@ -10023,6 +10338,10 @@
         },
         "bundles_url": {
           "type": "string"
+        },
+        "client_product_type": {
+          "$ref": "#/definitions/ProductMetadataClientProductType",
+          "default": "hidden"
         },
         "config_type": {
           "$ref": "#/definitions/ProductMetadataConfigType"
@@ -11135,17 +11454,6 @@
           "type": "string"
         },
         "token": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "RiotMessagingServicePluginRegionLocaleChangedEvent": {
-      "properties": {
-        "locale": {
-          "type": "string"
-        },
-        "region": {
           "type": "string"
         }
       },
@@ -12828,10 +13136,36 @@
       },
       "type": "object"
     },
+    "RsoAuthenticatorV1SignupCodeLinking": {
+      "properties": {
+        "direct_url": {
+          "type": "string"
+        },
+        "manual_url": {
+          "type": "string"
+        },
+        "short_code": {
+          "type": "string"
+        },
+        "short_url": {
+          "type": "string"
+        },
+        "status_url": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthenticatorV1SignupLinkDetails": {
       "properties": {
         "auth_method": {
           "type": "string"
+        },
+        "code_linking": {
+          "$ref": "#/definitions/RsoAuthenticatorV1SignupCodeLinking"
         },
         "options": {
           "items": {
@@ -12946,6 +13280,29 @@
         },
         "riot_theme": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1WebLinkingStatus": {
+      "enum": [
+        "NEW",
+        "PENDING",
+        "EXPIRED",
+        "COMPLETED"
+      ],
+      "type": "string"
+    },
+    "RsoAuthenticatorV1WebLinkingStatusResponse": {
+      "properties": {
+        "status": {
+          "$ref": "#/definitions/RsoAuthenticatorV1WebLinkingStatus"
+        },
+        "ttl": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -13123,6 +13480,14 @@
           "type": "boolean"
         },
         "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VoiceChatIdToken": {
+      "properties": {
+        "token": {
           "type": "string"
         }
       },
@@ -14211,6 +14576,34 @@
           }
         },
         "summary": "Update the account settings related to chat, complete overwrite",
+        "tags": [
+          "Plugins",
+          "Plugin chat"
+        ]
+      }
+    },
+    "/chat/v1/social": {
+      "post": {
+        "operationId": "PostChatV1Social",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "product",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ChatSocialDataReq"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ChatSocialData"
+            }
+          }
+        },
+        "summary": "Get game/product social data for building the friend list UI",
         "tags": [
           "Plugins",
           "Plugin chat"
@@ -19305,35 +19698,15 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/LoyaltyPCBangInfo"
+              "$ref": "#/definitions/LoyaltyV2PCBangInfo"
             }
           }
         },
         "summary": "Sets a loyalty resource for testing purposes - DEBUG ONLY",
         "tags": [
           "Plugins",
-          "Plugin loyalty",
+          "Plugin loyalty-v2",
           "Internal"
-        ]
-      }
-    },
-    "/loyalty/v1/loyalty-event-urls": {
-      "get": {
-        "operationId": "GetLoyaltyV1LoyaltyEventUrls",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/LoyaltyLoyaltyEventUrl"
-            }
-          }
-        },
-        "summary": "Returns the current LoyaltyPlugin login and loyalty session event url",
-        "tags": [
-          "Plugins",
-          "Plugin loyalty",
-          "Subscribable"
         ]
       }
     },
@@ -19345,34 +19718,14 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/LoyaltyPCBangInfo"
+              "$ref": "#/definitions/LoyaltyV2PCBangInfo"
             }
           }
         },
         "summary": "Returns loyalty resource including pcbId if player's playing from pcbang or not found exception",
         "tags": [
           "Plugins",
-          "Plugin loyalty",
-          "Subscribable"
-        ]
-      }
-    },
-    "/loyalty/v1/loyalty-users/state": {
-      "get": {
-        "operationId": "GetLoyaltyV1LoyaltyUsersState",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/LoyaltyLoyaltyPluginUserState"
-            }
-          }
-        },
-        "summary": "Returns the current LoyaltyPlugin user state about logged in or out",
-        "tags": [
-          "Plugins",
-          "Plugin loyalty",
+          "Plugin loyalty-v2",
           "Subscribable"
         ]
       }
@@ -21839,7 +22192,7 @@
     },
     "/player-reporting/v1/report": {
       "post": {
-        "description": "\n**Data**\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `comment`: Comment associated with this report.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `match_token`: The reporting player's match token, which is a signed JWT. See Platform docs for more info on match tokens.\n* `offender_puuid`: Whom the player is reporting.\n\n**Response**\n\nThis endpoint can return the following response codes:\n* `204`: Report successfully submitted. Note that in some cases it's intended UX that the submission is a \"success\" even if the report cannot be submitted.\n* `401`: Client is unable to retrieve current player's access token, which is required. Most common when trying to submit a report without having first logged in.\n\n\nEndpoint deleted June 2022; Please use '/player-reporting/v1/report'.",
+        "description": "\n**Data**\n* `categories`: List of category strings that player is reporting another player for. Different products use different categories.\n* `comment`: Comment associated with this report.\n* `location`: The location where the offending behavior occurred. Example: `in-game`.\n* `match_token`: The reporting player's match token, which is a signed JWT. See Platform docs for more info on match tokens.\n* `offender_puuid`: Whom the player is reporting.\n\n**Response**\n\nThis endpoint can return the following response codes:\n* `204`: Report successfully submitted. Note that in some cases it's intended UX that the submission is a \"success\" even if the report cannot be submitted.\n* `401`: Client is unable to retrieve current player's access token, which is required. Most common when trying to submit a report without having first logged in.\n\n\nEndpoint deleted June 2022; Please use '/player-reporting/v2/report'.",
         "operationId": "PostPlayerReportingV1Report",
         "parameters": [
           {
@@ -21865,7 +22218,7 @@
     },
     "/player-reporting/v1/reporter-feedback": {
       "get": {
-        "description": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n    \"locale\": \"en_US\",\n    \"category\": \"CHEATING\",\n    \"message\": \"Your report of cheating has been verified.\",\n    \"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* `category`: Category of the report--an internal string. Category keys to different localized messages. \n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
+        "description": "\n**Data**\n* Response is a JSON map of `id` --> individual reporter feedback messages. Example:\n```json\n{\n\"1\": {\n    \"locale\": \"en_US\",\n    \"category\": \"CHEATING\",\n    \"message\": \"Your report of cheating has been verified.\",\n    \"title\": \"Report Feedback\"\n}\n}\n```\n\n* `locale`: Detected locale of player and what locale the message was localized to.\n* `category`: Category of the report--an internal string. Category keys to different localized messages.\n* `message`: Localized message to display to player.\n* `title`: Localized message title to display to player.\n\nResponse will be an empty map `{}` if there are no reporter-feedback messages to display.\n",
         "operationId": "GetPlayerReportingV1ReporterFeedback",
         "parameters": [],
         "responses": {
@@ -22175,6 +22528,83 @@
           "Plugins",
           "Plugin Manager",
           "Plugin Manager Diagnostics"
+        ]
+      }
+    },
+    "/prime-gaming/v1/login": {
+      "delete": {
+        "description": "\n**PrimeGamingPrimeGamingLoginResponse**\nLoginStatus consisting of:\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.\n",
+        "operationId": "DeletePrimeGamingV1Login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PrimeGamingPrimeGamingLoginResponse"
+            }
+          }
+        },
+        "summary": "Logout from Amazon",
+        "tags": [
+          "Plugins",
+          "Plugin prime-gaming"
+        ]
+      },
+      "get": {
+        "description": "\n**PrimeGamingPrimeGamingLoginResponse**\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.\n",
+        "operationId": "GetPrimeGamingV1Login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PrimeGamingPrimeGamingLoginResponse"
+            }
+          }
+        },
+        "summary": "Get the Amazon login status",
+        "tags": [
+          "Plugins",
+          "Plugin prime-gaming",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "description": "\n**PrimeGamingPrimeGamingLoginResponse**\n* `status`: The current state of the login with Amazon. One of: `logged_out`, `logging_in`, `logged_in`, `logging_out`, `error` (PrimeGamingPrimeGamingLoginStatus enum)\n* `amazonAccessToken`: The access token of the Amazon login, or empty `\"\"` if none is present.",
+        "operationId": "PostPrimeGamingV1Login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PrimeGamingPrimeGamingLoginResponse"
+            }
+          }
+        },
+        "summary": "Initiate Login with Amazon to enable Prime Gaming",
+        "tags": [
+          "Plugins",
+          "Plugin prime-gaming"
+        ]
+      }
+    },
+    "/prime-gaming/v1/supported": {
+      "get": {
+        "description": "\n**PrimeGamingPrimeGamingSupportStatus**\n* `supported`: true if Prime Gaming is supported in this game, false otherwise\n* `details`: Description about why Prime Gaming may not be supported in this game. This is for debugging purposes only.\n",
+        "operationId": "GetPrimeGamingV1Supported",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PrimeGamingPrimeGamingSupportStatus"
+            }
+          }
+        },
+        "summary": "Check whether Prime Gaming is supported on the current platform",
+        "tags": [
+          "Plugins",
+          "Plugin prime-gaming"
         ]
       }
     },
@@ -26468,6 +26898,26 @@
         "tags": [
           "Plugins",
           "Plugin rso-authenticator"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/link/status": {
+      "get": {
+        "operationId": "GetRsoAuthenticatorV1AuthenticationLinkStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1WebLinkingStatusResponse"
+            }
+          }
+        },
+        "summary": "Get the current status of web linking.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator",
+          "Subscribable"
         ]
       }
     },
