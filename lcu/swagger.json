@@ -15212,6 +15212,7 @@
         "PlayerDodgeRestriction",
         "PlayerInGameRestriction",
         "PlayerLeaverBustedRestriction",
+        "PlayerLeaverQueueLockoutRestriction",
         "PlayerLeaverTaintedWarningRestriction",
         "PlayerMaxLevelRestriction",
         "PlayerMinLevelRestriction",
@@ -18471,6 +18472,10 @@
           "format": "int32",
           "type": "integer"
         },
+        "queueLockoutTimerExpiryUtcMillis": {
+          "format": "int32",
+          "type": "integer"
+        },
         "type": {
           "$ref": "#/definitions/LolLeaverBusterLeaverBusterNotificationType"
         }
@@ -19343,6 +19348,7 @@
         "PlayerDodgeRestriction",
         "PlayerInGameRestriction",
         "PlayerLeaverBustedRestriction",
+        "PlayerLeaverQueueLockoutRestriction",
         "PlayerLeaverTaintedWarningRestriction",
         "PlayerMaxLevelRestriction",
         "PlayerMinLevelRestriction",
@@ -21229,6 +21235,9 @@
     },
     "LolLobbyPremadePartyDto": {
       "properties": {
+        "commsEnabled": {
+          "type": "boolean"
+        },
         "partyId": {
           "type": "string"
         },
@@ -23628,6 +23637,14 @@
       },
       "type": "object"
     },
+    "LolLoginRSOConfigReadyState": {
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "LolLoginRSOPlayerCredentials": {
       "properties": {
         "password": {
@@ -25057,6 +25074,9 @@
             "$ref": "#/definitions/LolLootLootOddsResponse"
           },
           "type": "array"
+        },
+        "lootItem": {
+          "$ref": "#/definitions/LolLootPlayerLoot"
         },
         "recipeName": {
           "type": "string"
@@ -31750,6 +31770,9 @@
     },
     "LolPremadeVoicePartyDto": {
       "properties": {
+        "commsEnabled": {
+          "type": "boolean"
+        },
         "partyId": {
           "type": "string"
         },
@@ -35447,6 +35470,14 @@
         "always_verify"
       ],
       "type": "string"
+    },
+    "LolRsoAuthRSOConfigReadyState": {
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     },
     "LolRsoAuthRSOJWTConfig": {
       "properties": {
@@ -39481,6 +39512,10 @@
     },
     "MissionMetadata": {
       "properties": {
+        "level": {
+          "format": "int32",
+          "type": "integer"
+        },
         "npeRewardPack": {
           "$ref": "#/definitions/NpeRewardPackMetadata"
         },
@@ -44392,7 +44427,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -44426,7 +44461,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -54366,20 +54401,18 @@
             "type": "array"
           },
           {
-            "format": "int32",
-            "in": "query",
-            "name": "timeoutInSeconds",
-            "required": false,
-            "type": "integer"
-          },
-          {
             "additionalProperties": {
               "type": "string"
             },
             "in": "query",
-            "name": "queryParams",
+            "name": "timeoutInSeconds",
             "required": false,
             "type": "object"
+          },
+          {
+            "in": "query",
+            "name": "queryParams",
+            "required": true
           }
         ],
         "responses": {
@@ -63458,6 +63491,24 @@
         ]
       }
     },
+    "/lol-rso-auth/configuration/v3/ready-state": {
+      "get": {
+        "operationId": "GetLolRsoAuthConfigurationV3ReadyState",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolRsoAuthRSOConfigReadyState"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-rso-auth"
+        ]
+      }
+    },
     "/lol-rso-auth/v1/auth-hints/hint": {
       "delete": {
         "operationId": "DeleteLolRsoAuthV1AuthHintsHint",
@@ -68500,7 +68551,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "Http2ApiDocsV1",
+        "operationId": "HttpApiDocsV1",
         "parameters": [],
         "responses": {
           "200": {
