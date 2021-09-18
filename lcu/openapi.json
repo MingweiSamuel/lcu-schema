@@ -38776,8 +38776,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -72099,7 +72099,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
