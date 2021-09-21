@@ -247,6 +247,10 @@
             "description": "Player-visible name of the patchline",
             "type": "string"
           },
+          "publisher": {
+            "description": "Publisher for the current installation",
+            "type": "string"
+          },
           "sdkVersion": {
             "description": "Version of RiotGamesApi loaded by the host application",
             "type": "string"
@@ -4096,7 +4100,15 @@
         },
         "type": "object"
       },
-      "GameSessionAuthorizationCodeRequest": {
+      "GameSessionAuthorizationKey": {
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GameSessionAuthorizationKeyRequest": {
         "properties": {
           "client_id": {
             "type": "string"
@@ -4109,14 +4121,6 @@
               "type": "string"
             },
             "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "GameSessionAuthorizationKey": {
-        "properties": {
-          "key": {
-            "type": "string"
           }
         },
         "type": "object"
@@ -4698,6 +4702,22 @@
           },
           "method": {
             "$ref": "#/components/schemas/GameSessionMultifactorMethod"
+          },
+          "methods": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mfaVersion": {
+            "nullable": true,
+            "type": "string"
+          },
+          "multiFactorCodeLength": {
+            "format": "int64",
+            "minimum": 0,
+            "nullable": true,
+            "type": "integer"
           }
         },
         "type": "object"
@@ -4993,6 +5013,10 @@
           "persistLogin": {
             "type": "boolean"
           },
+          "securityProfile": {
+            "nullable": true,
+            "type": "string"
+          },
           "type": {
             "$ref": "#/components/schemas/GameSessionSessionResponseType"
           }
@@ -5187,6 +5211,62 @@
             "type": "string"
           },
           "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "InfoRadiatorVoiceChatHeartbeatMetrics": {
+        "properties": {
+          "productsUsingVoice": {
+            "items": {
+              "$ref": "#/components/schemas/InfoRadiatorVoiceChatHeartbeatMetrics_PerProductData"
+            },
+            "type": "array"
+          },
+          "providerData": {
+            "items": {
+              "$ref": "#/components/schemas/InfoRadiatorVoiceChatHeartbeatMetrics_PerProviderData"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "InfoRadiatorVoiceChatHeartbeatMetrics_PerProductData": {
+        "properties": {
+          "channelsInUse": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "providerName": {
+            "type": "string"
+          },
+          "target": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "InfoRadiatorVoiceChatHeartbeatMetrics_PerProviderData": {
+        "properties": {
+          "isLoggedIn": {
+            "type": "boolean"
+          },
+          "providerName": {
+            "type": "string"
+          },
+          "target": {
+            "nullable": true,
             "type": "string"
           }
         },
@@ -5538,6 +5618,10 @@
           "email_verified": {
             "type": "boolean"
           },
+          "lol": {
+            "$ref": "#/components/schemas/MailboxApiUserInfoLol",
+            "nullable": true
+          },
           "lol_account": {
             "$ref": "#/components/schemas/MailboxApiUserInfoSummoner",
             "nullable": true
@@ -5550,6 +5634,17 @@
             "type": "string"
           },
           "preferred_username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MailboxApiUserInfoLol": {
+        "properties": {
+          "cpid": {
+            "type": "string"
+          },
+          "ploc": {
             "type": "string"
           }
         },
@@ -6180,7 +6275,7 @@
             "default": "PendingVerify"
           },
           "storedDesiredComponentState": {
-            "$ref": "#/components/schemas/PatchDesiredComponentState",
+            "$ref": "#/components/schemas/PatchPatchSieveComponent",
             "nullable": true
           },
           "tags": {
@@ -6395,26 +6490,6 @@
           },
           "metadataPath": {
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchDesiredComponentState": {
-        "properties": {
-          "artifactId": {
-            "type": "string"
-          },
-          "artifactVersion": {
-            "type": "string"
-          },
-          "downloadUrl": {
-            "type": "string"
-          },
-          "releaseId": {
-            "type": "string"
-          },
-          "requiresScd": {
-            "type": "boolean"
           }
         },
         "type": "object"
@@ -6656,6 +6731,86 @@
           "components": {
             "items": {
               "$ref": "#/components/schemas/PatchPatchComponentMetadata"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchSieveComponent": {
+        "properties": {
+          "artifactId": {
+            "type": "string"
+          },
+          "artifactVersion": {
+            "type": "string"
+          },
+          "downloadUrl": {
+            "type": "string"
+          },
+          "releaseId": {
+            "type": "string"
+          },
+          "requiresScd": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchSieveComponentRequest": {
+        "properties": {
+          "artifactType": {
+            "nullable": true,
+            "type": "string"
+          },
+          "cpuArch": {
+            "nullable": true,
+            "type": "string"
+          },
+          "extraParams": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "fromArtifactType": {
+            "nullable": true,
+            "type": "string"
+          },
+          "fromArtifactVersion": {
+            "nullable": true,
+            "type": "string"
+          },
+          "fromCpuArch": {
+            "nullable": true,
+            "type": "string"
+          },
+          "fromPlatform": {
+            "nullable": true,
+            "type": "string"
+          },
+          "platform": {
+            "nullable": true,
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "published": {
+            "default": true,
+            "type": "boolean"
+          },
+          "versionSet": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchSieveComponents": {
+        "properties": {
+          "components": {
+            "items": {
+              "$ref": "#/components/schemas/PatchPatchSieveComponent"
             },
             "type": "array"
           }
@@ -9085,6 +9240,9 @@
             "$ref": "#/components/schemas/PlayerSessionLifecycleLoginStrategyType",
             "nullable": true
           },
+          "persistLogin": {
+            "type": "boolean"
+          },
           "requireRiotID": {
             "type": "boolean"
           },
@@ -11179,6 +11337,10 @@
           "email_verified": {
             "type": "boolean"
           },
+          "lol": {
+            "$ref": "#/components/schemas/RiotClientAuthApiUserInfoLol",
+            "nullable": true
+          },
           "lol_account": {
             "$ref": "#/components/schemas/RiotClientAuthApiUserInfoSummoner",
             "nullable": true
@@ -11191,6 +11353,17 @@
             "type": "string"
           },
           "preferred_username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RiotClientAuthApiUserInfoLol": {
+        "properties": {
+          "cpid": {
+            "type": "string"
+          },
+          "ploc": {
             "type": "string"
           }
         },
@@ -11841,17 +12014,6 @@
         },
         "type": "object"
       },
-      "RnetSanitizerRegionLocale": {
-        "properties": {
-          "locale": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "RnetSanitizerSanitizeRequest": {
         "properties": {
           "aggressiveScan": {
@@ -12032,7 +12194,15 @@
         },
         "type": "object"
       },
-      "RsoAuthAuthorizationCodeRequest": {
+      "RsoAuthAuthorizationKey": {
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthAuthorizationKeyRequest": {
         "properties": {
           "client_id": {
             "type": "string"
@@ -12045,14 +12215,6 @@
               "type": "string"
             },
             "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "RsoAuthAuthorizationKey": {
-        "properties": {
-          "key": {
-            "type": "string"
           }
         },
         "type": "object"
@@ -12389,6 +12551,22 @@
           },
           "method": {
             "$ref": "#/components/schemas/RsoAuthMultifactorMethod"
+          },
+          "methods": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mfaVersion": {
+            "nullable": true,
+            "type": "string"
+          },
+          "multiFactorCodeLength": {
+            "format": "int64",
+            "minimum": 0,
+            "nullable": true,
+            "type": "integer"
           }
         },
         "type": "object"
@@ -12655,6 +12833,10 @@
           },
           "persistLogin": {
             "type": "boolean"
+          },
+          "securityProfile": {
+            "nullable": true,
+            "type": "string"
           },
           "type": {
             "$ref": "#/components/schemas/RsoAuthSessionResponseType"
@@ -14093,6 +14275,279 @@
             "minimum": 0,
             "nullable": true,
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "VoiceChatVivoxCallStats": {
+        "properties": {
+          "call_id": {
+            "type": "string"
+          },
+          "capture_device_consecutively_read_count_0": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "capture_device_consecutively_read_count_1": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "capture_device_consecutively_read_count_2": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "capture_device_consecutively_read_count_3": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "capture_device_consecutively_read_count_4": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "codec_name": {
+            "type": "string"
+          },
+          "current_bars": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "current_opus_bandwidth": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "current_opus_bit_rate": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "current_opus_complexity": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "current_opus_max_packet_size": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "current_opus_vbr_mode": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "incoming_discarded": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "incoming_out_of_time": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "incoming_packetloss": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "incoming_received": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "last_latency_measured_ms": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_measurement_count": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "latency_packets_dropped": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_packets_lost": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_packets_malformed": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_packets_negative_latency": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_packets_sent": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "latency_sum_ms": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "max_latency_ms": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "min_latency_ms": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "outgoing_sent": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "plc_on": {
+            "type": "boolean"
+          },
+          "plc_synthetic_frames": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "r_factor": {
+            "format": "double",
+            "type": "number"
+          },
+          "render_device_errors": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "render_device_overruns": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "render_device_underruns": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "sample_interval_begin_ms": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "sample_interval_end_ms": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "VoiceChatVoiceChatHeartbeatMetrics": {
+        "properties": {
+          "productsUsingVoice": {
+            "items": {
+              "$ref": "#/components/schemas/VoiceChatVoiceChatHeartbeatMetrics_PerProductData"
+            },
+            "type": "array"
+          },
+          "providerData": {
+            "items": {
+              "$ref": "#/components/schemas/VoiceChatVoiceChatHeartbeatMetrics_PerProviderData"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "VoiceChatVoiceChatHeartbeatMetrics_PerProductData": {
+        "properties": {
+          "channelsInUse": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "providerName": {
+            "type": "string"
+          },
+          "target": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "VoiceChatVoiceChatHeartbeatMetrics_PerProviderData": {
+        "properties": {
+          "isLoggedIn": {
+            "type": "boolean"
+          },
+          "providerName": {
+            "type": "string"
+          },
+          "target": {
+            "nullable": true,
+            "type": "string"
           }
         },
         "type": "object"
@@ -21632,6 +22087,41 @@
         ]
       }
     },
+    "/patch/v2/components": {
+      "post": {
+        "operationId": "PostPatchV2Components",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchPatchSieveComponentRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchPatchSieveComponents"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Fetch component state from info",
+        "tags": [
+          "Plugins",
+          "Plugin patch"
+        ]
+      }
+    },
     "/patch/v2/configuration": {
       "get": {
         "operationId": "GetPatchV2Configuration",
@@ -26614,6 +27104,59 @@
         ]
       }
     },
+    "/riot-messaging-service/v1/user": {
+      "get": {
+        "operationId": "GetRiotMessagingServiceV1User",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Returns the PUUID that this plugin is currently authenticated for",
+        "tags": [
+          "Plugins",
+          "Plugin riot-messaging-service",
+          "Subscribable"
+        ]
+      }
+    },
+    "/riot-messaging-service/v2/simulate-message": {
+      "post": {
+        "operationId": "PostRiotMessagingServiceV2SimulateMessage",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RiotMessagingServiceMessage"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "message"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Simulate an RMS message. For debug purposes only.",
+        "tags": [
+          "Plugins",
+          "Plugin riot-messaging-service",
+          "Internal"
+        ]
+      }
+    },
     "/riot-status/v1/debug/set-riotclient-patchline/{patchlineId}": {
       "post": {
         "operationId": "PostRiotStatusV1DebugSetRiotclientPatchlineByPatchlineId",
@@ -27727,76 +28270,6 @@
         ]
       }
     },
-    "/rso-auth/v1/code": {
-      "post": {
-        "operationId": "PostRsoAuthV1Code",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RsoAuthAuthorizationCode"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "authorizationCode"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RsoAuthAuthorization"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Log the user in with the authorization code",
-        "tags": [
-          "Plugins",
-          "Plugin rso-auth"
-        ]
-      }
-    },
-    "/rso-auth/v1/code/request": {
-      "post": {
-        "operationId": "PostRsoAuthV1CodeRequest",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RsoAuthAuthorizationCodeRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "authorizationCodeRequest"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RsoAuthAuthorizationCode"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Generates an authorization code from an existing authorization",
-        "tags": [
-          "Plugins",
-          "Plugin rso-auth"
-        ]
-      }
-    },
     "/rso-auth/v1/device-id": {
       "post": {
         "description": "Provides client-side settings for collecting device ID information, including a session id, collector server and merchant id. The session ID is programmatically generated by the plugin at startup.\n\nThis endpoint is not available until the OpenID configuration is retrieved.",
@@ -27821,41 +28294,6 @@
         ]
       }
     },
-    "/rso-auth/v1/key": {
-      "post": {
-        "operationId": "PostRsoAuthV1Key",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RsoAuthAuthorizationKey"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "authorizationKey"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RsoAuthAuthorization"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Log the user in with the authorization key",
-        "tags": [
-          "Plugins",
-          "Plugin rso-auth"
-        ]
-      }
-    },
     "/rso-auth/v1/key/request": {
       "post": {
         "operationId": "PostRsoAuthV1KeyRequest",
@@ -27864,7 +28302,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RsoAuthAuthorizationCodeRequest"
+                "$ref": "#/components/schemas/RsoAuthAuthorizationKeyRequest"
               }
             }
           },
@@ -27884,7 +28322,7 @@
             "description": "Successful response"
           }
         },
-        "summary": "Generates an authorization key from an existing authorization",
+        "summary": "Generates an authorization key from an existing authorization. An 'authorization key' is a code and code verifier encoded together.",
         "tags": [
           "Plugins",
           "Plugin rso-auth"
@@ -28213,6 +28651,23 @@
         "tags": [
           "Plugins",
           "Plugin rso-auth"
+        ]
+      }
+    },
+    "/rso-auth/v1/userinfo/refresh": {
+      "post": {
+        "operationId": "PostRsoAuthV1UserinfoRefresh",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "This internal endpoint can be used to force a refresh of all current UserInfos.\nThis is an expensive operation and should be only used if necessary.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-auth",
+          "Internal"
         ]
       }
     },
@@ -30008,6 +30463,31 @@
           "Plugins",
           "Plugin voice-chat",
           "Subscribable"
+        ]
+      }
+    },
+    "/voice-chat/v1/heartbeat-metrics": {
+      "get": {
+        "description": "This endpoint retrieves metrics about active sessions and products that are currently using the voice-chat plugin. It is an internal endpoint, intended for use directly by the info-radiator plugin, which manages the heartbeat cadence of the SDK.",
+        "operationId": "GetVoiceChatV1HeartbeatMetrics",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VoiceChatVoiceChatHeartbeatMetrics"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieve a set of metrics about the voice chat plugin.",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat",
+          "Internal"
         ]
       }
     },
