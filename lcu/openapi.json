@@ -18463,8 +18463,8 @@
             "format": "int32",
             "type": "integer"
           },
-          "queueLockoutTimerExpiryUtcMillis": {
-            "format": "int32",
+          "queueLockoutTimerExpiryUtcMillisDiff": {
+            "format": "int64",
             "type": "integer"
           },
           "type": {
@@ -19278,6 +19278,64 @@
         },
         "type": "object"
       },
+      "LolLobbyCustomGameDto": {
+        "properties": {
+          "allowSpectators": {
+            "type": "string"
+          },
+          "gameType": {
+            "type": "string"
+          },
+          "lobbyName": {
+            "type": "string"
+          },
+          "mapId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "maxNumPlayers": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "ownerPuuid": {
+            "type": "string"
+          },
+          "partyId": {
+            "type": "string"
+          },
+          "privateGame": {
+            "type": "boolean"
+          },
+          "spectatorCount": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "team1Count": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "team2Count": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LolLobbyCustomGameSettingsDto": {
+        "properties": {
+          "gameId": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "lobbyName": {
+            "type": "string"
+          },
+          "lobbyPassword": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolLobbyEligibility": {
         "properties": {
           "eligible": {
@@ -19445,6 +19503,9 @@
           },
           "botDifficulty": {
             "type": "string"
+          },
+          "customsSettings": {
+            "$ref": "#/components/schemas/LolLobbyCustomGameSettingsDto"
           },
           "gameCustomization": {
             "additionalProperties": {
@@ -19975,6 +20036,9 @@
             "type": "integer"
           },
           "ownerSummonerName": {
+            "type": "string"
+          },
+          "partyId": {
             "type": "string"
           },
           "passbackUrl": {
@@ -33230,6 +33294,9 @@
       },
       "LolRankedEosNotificationResource": {
         "properties": {
+          "division": {
+            "type": "string"
+          },
           "notificationName": {
             "type": "string"
           },
@@ -33282,10 +33349,6 @@
             "type": "integer"
           },
           "offsetTime3": {
-            "format": "int64",
-            "type": "integer"
-          },
-          "seasonEndTime": {
             "format": "int64",
             "type": "integer"
           }
@@ -38776,8 +38839,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -44440,7 +44503,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -55963,14 +56026,9 @@
               "type": "string"
             },
             "in": "query",
-            "name": "timeoutInSeconds",
+            "name": "queryParams",
             "required": false,
             "type": "object"
-          },
-          {
-            "in": "query",
-            "name": "queryParams",
-            "required": true
           }
         ],
         "responses": {
@@ -72099,7 +72157,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -72137,7 +72195,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
