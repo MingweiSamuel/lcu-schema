@@ -43,7 +43,7 @@
     "isTeamBuilderManaged": true,
     "isTeamOnly": false,
     "lastToggledOffTime": 1615276741024,
-    "lastToggledOnTime": 1612472401465,
+    "lastToggledOnTime": 1632427200722,
     "mapId": 11,
     "maxDivisionForPremadeSize2": "",
     "maxLevel": 0,
@@ -54,7 +54,7 @@
     "minimumParticipantListSize": 1,
     "name": "Ultra Rapid Fire",
     "numPlayersPerTeam": 5,
-    "queueAvailability": "PlatformDisabled",
+    "queueAvailability": "Available",
     "queueRewards": {
       "isChampionPointsEnabled": true,
       "isIpEnabled": true,
