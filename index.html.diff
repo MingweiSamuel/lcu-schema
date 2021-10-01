@@ -22,6 +22,6 @@ index 32169e36..15193a59 100644
 +        docExpansion: "none",
 +        filter: true,
 +        supportedSubmitMethods: [], // Disable "Try it out".
-       })
+       });
        // End Swagger UI call region
  
