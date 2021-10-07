@@ -3521,6 +3521,9 @@
       },
       "LolAntiAddictionAntiAddictionState": {
         "properties": {
+          "antiAddictionToken": {
+            "type": "string"
+          },
           "localizationKey": {
             "type": "string"
           },
@@ -3530,10 +3533,19 @@
         },
         "type": "object"
       },
+      "LolAntiAddictionAntiAddictionToken": {
+        "properties": {
+          "antiAddictionToken": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolAntiAddictionPolicyType": {
         "enum": [
           "antiAddictionWarning",
-          "antiAddictionShutdown"
+          "antiAddictionShutdown",
+          "antiAddictionHeartbeat"
         ],
         "type": "string"
       },
@@ -18397,6 +18409,14 @@
         ],
         "type": "string"
       },
+      "LolLeagueSessionAntiAddictionTokenEnvelope": {
+        "properties": {
+          "antiAddictionToken": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolLeagueSessionLeagueSessionRMSNotification": {
         "properties": {
           "puuid": {
@@ -18420,7 +18440,8 @@
           "UNINITIALIZED",
           "INITIALIZED",
           "EXPIRED",
-          "DUPLICATED"
+          "DUPLICATED",
+          "ANTI_ADDICTION_EXPIRED"
         ],
         "type": "string"
       },
@@ -23543,7 +23564,8 @@
           "UNINITIALIZED",
           "INITIALIZED",
           "EXPIRED",
-          "DUPLICATED"
+          "DUPLICATED",
+          "ANTI_ADDICTION_EXPIRED"
         ],
         "type": "string"
       },
@@ -24053,8 +24075,22 @@
         },
         "type": "object"
       },
+      "LolLootLootBundleContentGdsResource": {
+        "properties": {
+          "localizedDescription": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolLootLootBundleGdsResource": {
         "properties": {
+          "contents": {
+            "items": {
+              "$ref": "#/components/schemas/LolLootLootBundleContentGdsResource"
+            },
+            "type": "array"
+          },
           "description": {
             "type": "string"
           },
@@ -24123,6 +24159,17 @@
             "type": "string"
           },
           "lootName": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "LolLootLootDropTableEntryGdsResource": {
+        "properties": {
+          "localizedDescription": {
+            "type": "string"
+          },
+          "lootId": {
             "type": "string"
           }
         },
@@ -24605,6 +24652,17 @@
         },
         "type": "object"
       },
+      "LolLootLootOutputGdsResource": {
+        "properties": {
+          "localizedDescription": {
+            "type": "string"
+          },
+          "lootId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "LolLootLootRarity": {
         "enum": [
           "Default",
@@ -24623,6 +24681,9 @@
           "description": {
             "type": "string"
           },
+          "hasVisibleLootOdds": {
+            "type": "boolean"
+          },
           "id": {
             "type": "string"
           },
@@ -24634,6 +24695,12 @@
           },
           "loopVideoPath": {
             "type": "string"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/components/schemas/LolLootLootOutputGdsResource"
+            },
+            "type": "array"
           },
           "outroVideoPath": {
             "type": "string"
@@ -24651,6 +24718,12 @@
           },
           "descriptionLong": {
             "type": "string"
+          },
+          "dropChance": {
+            "items": {
+              "$ref": "#/components/schemas/LolLootLootDropTableEntryGdsResource"
+            },
+            "type": "array"
           },
           "id": {
             "type": "string"
@@ -24674,7 +24747,8 @@
           "Egg",
           "Egg_Color",
           "Statstone",
-          "Statstone_Shard"
+          "Statstone_Shard",
+          "Boost"
         ],
         "type": "string"
       },
@@ -38839,8 +38913,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -44475,7 +44549,8 @@
           {
             "enum": [
               "antiAddictionWarning",
-              "antiAddictionShutdown"
+              "antiAddictionShutdown",
+              "antiAddictionHeartbeat"
             ],
             "in": "path",
             "name": "policyType",
@@ -44503,7 +44578,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -44581,7 +44656,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -44995,9 +45070,7 @@
           }
         },
         "summary": "Get all cookies.",
-        "tags": [
-          "cookie-jar"
-        ]
+        "tags": []
       },
       "post": {
         "operationId": "PostCookieJarV1Cookies",
@@ -45028,9 +45101,7 @@
           }
         },
         "summary": "Set a cookie.",
-        "tags": [
-          "cookie-jar"
-        ]
+        "tags": []
       }
     },
     "/crash-reporting/v1/crash-status": {
@@ -45050,9 +45121,7 @@
           }
         },
         "summary": "Returns whether or not the game or client have crashed",
-        "tags": [
-          "crash-reporting"
-        ]
+        "tags": []
       }
     },
     "/data-store/v1/install-dir": {
@@ -45072,9 +45141,7 @@
           }
         },
         "summary": "Gets the current install directory (used internally.)",
-        "tags": [
-          "data-store"
-        ]
+        "tags": []
       }
     },
     "/data-store/v1/install-settings/{path}": {
@@ -45103,9 +45170,7 @@
           }
         },
         "summary": "Get the data for the specified key from the install settings.",
-        "tags": [
-          "data-store"
-        ]
+        "tags": []
       },
       "post": {
         "operationId": "PostDataStoreV1InstallSettingsByPath",
@@ -45134,9 +45199,7 @@
           }
         },
         "summary": "Set the data for the specified key from the install settings.",
-        "tags": [
-          "data-store"
-        ]
+        "tags": []
       }
     },
     "/data-store/v1/system-settings/{path}": {
@@ -45165,9 +45228,7 @@
           }
         },
         "summary": "Get the setting for the specified key.",
-        "tags": [
-          "data-store"
-        ]
+        "tags": []
       }
     },
     "/entitlements/v1/token": {
@@ -45370,6 +45431,28 @@
         "tags": [
           "Plugins",
           "Plugin lol-active-boosts"
+        ]
+      }
+    },
+    "/lol-anti-addiction/v1/anti-addiction-token": {
+      "get": {
+        "operationId": "GetLolAntiAddictionV1AntiAddictionToken",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LolAntiAddictionAntiAddictionToken"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-anti-addiction"
         ]
       }
     },
@@ -60372,13 +60455,13 @@
         ]
       }
     },
-    "/lol-loot/v1/loot-odds/{lootId}": {
+    "/lol-loot/v1/loot-odds/{recipeName}": {
       "get": {
-        "operationId": "GetLolLootV1LootOddsByLootId",
+        "operationId": "GetLolLootV1LootOddsByRecipeName",
         "parameters": [
           {
             "in": "path",
-            "name": "lootId",
+            "name": "recipeName",
             "required": true,
             "type": "string"
           }
@@ -69479,9 +69562,7 @@
           }
         },
         "summary": "Returns whether or not the frontend processes are ready",
-        "tags": [
-          "memory"
-        ]
+        "tags": []
       }
     },
     "/memory/v1/notify-fe-processes-ready": {
@@ -69494,9 +69575,7 @@
           }
         },
         "summary": "Sends an event that the frontend processes are ready",
-        "tags": [
-          "memory"
-        ]
+        "tags": []
       }
     },
     "/memory/v1/snapshot": {
@@ -69529,9 +69608,7 @@
           }
         },
         "summary": "Sends current memory usage info to telemetry.",
-        "tags": [
-          "memory"
-        ]
+        "tags": []
       }
     },
     "/patcher/v1/notifications": {
@@ -70176,9 +70253,7 @@
           }
         },
         "summary": "Returns process memory status",
-        "tags": [
-          "performance"
-        ]
+        "tags": []
       }
     },
     "/performance/v1/process/{processId}": {
@@ -70301,9 +70376,7 @@
           }
         },
         "summary": "Returns hardware and software specs for the machine the client is running on.",
-        "tags": [
-          "performance"
-        ]
+        "tags": []
       }
     },
     "/player-notifications/v1/config": {
@@ -70716,9 +70789,7 @@
           }
         },
         "summary": "Returns information about the process-control.",
-        "tags": [
-          "process-control"
-        ]
+        "tags": []
       }
     },
     "/process-control/v1/process/quit": {
@@ -70731,9 +70802,7 @@
           }
         },
         "summary": "Quits the application.",
-        "tags": [
-          "process-control"
-        ]
+        "tags": []
       }
     },
     "/process-control/v1/process/restart": {
@@ -70761,9 +70830,7 @@
           }
         },
         "summary": "Restarts the application.  Does nothing if there is already a waiting delayed restart.  Optionally accepts specific version to restart.",
-        "tags": [
-          "process-control"
-        ]
+        "tags": []
       }
     },
     "/process-control/v1/process/restart-to-repair": {
@@ -70776,9 +70843,7 @@
           }
         },
         "summary": "Restarts the application in order to perform a full repair (including self repair).",
-        "tags": [
-          "process-control"
-        ]
+        "tags": []
       }
     },
     "/riot-messaging-service/v1/connect": {
@@ -71232,9 +71297,7 @@
           }
         },
         "summary": "Deletes the current runtime affinity of the application.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "get": {
         "operationId": "GetRiotclientAffinity",
@@ -71253,9 +71316,7 @@
           }
         },
         "summary": "Get the current runtime affinity of the application.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "post": {
         "operationId": "PostRiotclientAffinity",
@@ -71274,9 +71335,7 @@
           }
         },
         "summary": "Sets the current runtime affinity of the application.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/app-name": {
@@ -71296,9 +71355,7 @@
           }
         },
         "summary": "Application name without file extension",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/app-port": {
@@ -71318,9 +71375,7 @@
           }
         },
         "summary": "Get the TCP port number that the remoting server is listening on.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/auth-token": {
@@ -71340,9 +71395,7 @@
           }
         },
         "summary": "Return the auth token used by the remoting server",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/command-line-args": {
@@ -71365,9 +71418,7 @@
           }
         },
         "summary": "Get the command line parameters for the application",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/get_region_locale": {
@@ -71387,9 +71438,7 @@
           }
         },
         "summary": "Get the current region and locale.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/kill-and-restart-ux": {
@@ -71402,9 +71451,7 @@
           }
         },
         "summary": "Kills the ux process and restarts it. Used only when the ux process crashes.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/kill-ux": {
@@ -71417,9 +71464,7 @@
           }
         },
         "summary": "Kills the ux process.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/launch-ux": {
@@ -71432,9 +71477,7 @@
           }
         },
         "summary": "Launches the ux process.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/machine-id": {
@@ -71454,9 +71497,7 @@
           }
         },
         "summary": "Base64 encoded uuid identifying the user's machine",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/new-args": {
@@ -71474,9 +71515,7 @@
           }
         },
         "summary": "Endpoint for passing in new data.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/region-locale": {
@@ -71496,9 +71535,7 @@
           }
         },
         "summary": "Get the current region and locale.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "put": {
         "operationId": "PutRiotclientRegionLocale",
@@ -71518,9 +71555,7 @@
           }
         },
         "summary": "Update the region and locale.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/region-locale/ack": {
@@ -71543,9 +71578,7 @@
           }
         },
         "summary": "Ux acknowledges the update to the region and locale.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/set_region_locale": {
@@ -71573,9 +71606,7 @@
           }
         },
         "summary": "Update the region and locale.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/show-swagger": {
@@ -71588,9 +71619,7 @@
           }
         },
         "summary": "Open swagger in the default browser.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/splash": {
@@ -71603,9 +71632,7 @@
           }
         },
         "summary": "Hide the splash screen.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "put": {
         "operationId": "PutRiotclientSplash",
@@ -71616,9 +71643,7 @@
           }
         },
         "summary": "Show the splash screen.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/system-info/v1/basic-info": {
@@ -71638,9 +71663,7 @@
           }
         },
         "summary": "Get basic system information: OS, memory, processor speed, and number of physical cores",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/trace": {
@@ -71661,9 +71684,7 @@
           }
         },
         "summary": "Retrieves a completed scheduler trace.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/unload": {
@@ -71676,9 +71697,7 @@
           }
         },
         "summary": "Unloads the UX process",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-allow-foreground": {
@@ -71691,9 +71710,7 @@
           }
         },
         "summary": "Allows the background process to launch the game into the foregound.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-crash-count": {
@@ -71714,9 +71731,7 @@
           }
         },
         "summary": "Returns whether the ux has crashed or not",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-flash": {
@@ -71729,9 +71744,7 @@
           }
         },
         "summary": "Flash the ux process' main window and the taskbar/dock icon, if they exist.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-load-complete": {
@@ -71744,9 +71757,7 @@
           }
         },
         "summary": "Ux notification that it has completed loading the main window.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-minimize": {
@@ -71759,9 +71770,7 @@
           }
         },
         "summary": "Minimize the ux process and all its windows if it exists. This does not kill the ux.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-show": {
@@ -71774,9 +71783,7 @@
           }
         },
         "summary": "Shows the ux process if it exists; create and show if it does not.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-state": {
@@ -71796,9 +71803,7 @@
           }
         },
         "summary": "Get the current Ux state.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/ux-state/ack": {
@@ -71821,9 +71826,7 @@
           }
         },
         "summary": "Ux acknowledges the update to the Ux state.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/v1/auth-tokens/{authToken}": {
@@ -71851,9 +71854,7 @@
           }
         },
         "summary": "Unregister an existing auth token.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "put": {
         "operationId": "PutRiotclientV1AuthTokensByAuthToken",
@@ -71880,9 +71881,7 @@
           }
         },
         "summary": "Register an auth token.  This is any alpha-numeric string that will be used as a password with the `riot` user when making requests.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/v1/crash-reporting/environment": {
@@ -71902,9 +71901,7 @@
           }
         },
         "summary": "Get the crash reporting environment identifier.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "put": {
         "operationId": "PutRiotclientV1CrashReportingEnvironment",
@@ -71924,9 +71921,7 @@
           }
         },
         "summary": "Tags the crash with an environment so it can be filtered more easily.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/v1/crash-reporting/logs": {
@@ -71948,9 +71943,7 @@
           }
         },
         "summary": "Adds the enclosed log to the app's crash report.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/v1/elevation-requests": {
@@ -71971,9 +71964,7 @@
             "description": "No content"
           }
         },
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/v1/self-update-info": {
@@ -71998,9 +71989,7 @@
             "description": "No content"
           }
         },
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/riotclient/zoom-scale": {
@@ -72021,9 +72010,7 @@
           }
         },
         "summary": "Gets the last known posted zoom-scale value.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       },
       "post": {
         "operationId": "PostRiotclientZoomScale",
@@ -72043,9 +72030,7 @@
           }
         },
         "summary": "Handles changing the zoom scale value.",
-        "tags": [
-          "riotclient"
-        ]
+        "tags": []
       }
     },
     "/sanitizer/v1/containsSanitized": {
@@ -72157,7 +72142,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -72195,7 +72180,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
@@ -72256,9 +72241,7 @@
           }
         },
         "summary": "Information about the current artifacts that make up this build",
-        "tags": [
-          "system"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v1/application-start-time": {
@@ -72279,9 +72262,7 @@
           }
         },
         "summary": "Gets the millisecond UNIX timestamp of when the application was started.",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v1/common-data/{key}": {
@@ -72311,9 +72292,7 @@
           }
         },
         "summary": "Adds/updates a common data key and value to be sent with every subsequent event.",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v1/events-once/{eventType}": {
@@ -72354,9 +72333,7 @@
           }
         },
         "summary": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks that will be sent only once during this client executable run regardless of any javascript frontend restarts. All events will have their eventType prefixed with \"riot__rclient__\"",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v1/events-with-perf-info/{eventType}": {
@@ -72390,9 +72367,7 @@
           }
         },
         "summary": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks. This will include current performance information along with the passed in data. Each call will record the performance counters then reset them for use in the next call. All events will have their eventType prefixed with \"riot__rclient__\"",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v1/events/{eventType}": {
@@ -72426,9 +72401,7 @@
           }
         },
         "summary": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks. All events will have their eventType prefixed with \"riot__rclient__\"",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v3/events-once/{eventType}": {
@@ -72469,9 +72442,7 @@
           }
         },
         "summary": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks using the Riot Data API that will be sent only once during this client executable run regardless of any javascript frontend restarts. All events will have their eventType prefixed with \"riot__rclient__\"",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/telemetry/v3/events/{eventType}": {
@@ -72505,9 +72476,7 @@
           }
         },
         "summary": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks using the Riot Data API. All events will have their eventType prefixed with \"riot__rclient__\"",
-        "tags": [
-          "telemetry"
-        ]
+        "tags": []
       }
     },
     "/tracing/v1/performance/{name}": {
