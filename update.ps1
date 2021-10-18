@@ -152,11 +152,10 @@ Try {
     $attempts = 40
     While ($True) {
         $state = Invoke-RiotRequest $LCU_LOCKFILE '/lol-patch/v1/products/league_of_legends/state'
+        Write-Host "LCU updating: $($state.action)" # Not that useful.
         If ('Idle' -Eq $state.action) {
             Break
         }
-
-        Write-Host "LCU updating: $($state.action)" # Not that useful.
 
         If ($attempts -le 0) {
             Throw 'LCU failed to update.'
@@ -164,6 +163,7 @@ Try {
         $attempts--
         Start-Sleep 20
     }
+    Start-Sleep 10
 
     # LCU files.
     Write-Host 'Getting LCU queues, maps, catalog.'
