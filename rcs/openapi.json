@@ -3926,6 +3926,14 @@
         },
         "type": "object"
       },
+      "GaWarningGapsMailboxUpdated": {
+        "properties": {
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "GaWarningLocalizedWarningMessage": {
         "properties": {
           "acknowledgeText": {
@@ -3948,6 +3956,53 @@
           },
           "title": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningMail": {
+        "properties": {
+          "createdAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "mailId": {
+            "type": "string"
+          },
+          "mailType": {
+            "$ref": "#/components/schemas/GaWarningMailType"
+          },
+          "message": {
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/GaWarningMailState"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningMailState": {
+        "enum": [
+          "NEW",
+          "READ",
+          "ACKNOWLEDGED"
+        ],
+        "type": "string"
+      },
+      "GaWarningMailType": {
+        "enum": [
+          "STANDARD",
+          "ACK_REQUIRED"
+        ],
+        "type": "string"
+      },
+      "GaWarningMailboxStatusUpdated": {
+        "properties": {
+          "lastUpdateReceived": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
           }
         },
         "type": "object"
@@ -3991,9 +4046,105 @@
         },
         "type": "object"
       },
+      "GaWarningRequestMailParameters": {
+        "properties": {
+          "count": {
+            "default": 20,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "includedStates": {
+            "items": {
+              "$ref": "#/components/schemas/GaWarningMailState"
+            },
+            "type": "array"
+          },
+          "startIndex": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningUpdateMailStateRequest": {
+        "properties": {
+          "mailId": {
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/GaWarningMailState"
+          }
+        },
+        "type": "object"
+      },
       "GaWarningWarning": {
         "properties": {
           "category": {
+            "type": "string"
+          },
+          "messageId": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningWarningAcknowledgementEvent": {
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "transgressionCategory": {
+            "type": "string"
+          },
+          "warningId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningWarningDto": {
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GaWarningWarningFoundUnacknowledgedEvent": {
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "transgressionCategory": {
+            "type": "string"
+          },
+          "warningId": {
             "type": "string"
           }
         },
@@ -4725,7 +4876,7 @@
       "GameSessionMultifactorMethod": {
         "enum": [
           "method_not_set",
-          "email_verification",
+          "email",
           "authenticator",
           "sms",
           "push"
@@ -6275,7 +6426,7 @@
             "default": "PendingVerify"
           },
           "storedDesiredComponentState": {
-            "$ref": "#/components/schemas/PatchPatchSieveComponent",
+            "$ref": "#/components/schemas/PatchPatchsieveRelease",
             "nullable": true
           },
           "tags": {
@@ -6737,7 +6888,53 @@
         },
         "type": "object"
       },
-      "PatchPatchSieveComponent": {
+      "PatchPatchStatus": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/PatchError",
+            "nullable": true
+          },
+          "progress": {
+            "$ref": "#/components/schemas/PatchProgress"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PatchPatchStatusState"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchStatusState": {
+        "enum": [
+          "updating",
+          "out_of_date",
+          "up_to_date",
+          "not_installed",
+          "pending_verify",
+          "repairing"
+        ],
+        "type": "string"
+      },
+      "PatchPatchlineMetadata": {
+        "properties": {
+          "patching_metadata": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PatchPatchSetMetadata"
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchsieveRelease": {
         "properties": {
           "artifactId": {
             "type": "string"
@@ -6757,7 +6954,18 @@
         },
         "type": "object"
       },
-      "PatchPatchSieveComponentRequest": {
+      "PatchPatchsieveReleases": {
+        "properties": {
+          "releases": {
+            "items": {
+              "$ref": "#/components/schemas/PatchPatchsieveRelease"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PatchPatchsieveRequest": {
         "properties": {
           "artifactType": {
             "nullable": true,
@@ -6802,63 +7010,6 @@
           },
           "versionSet": {
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchSieveComponents": {
-        "properties": {
-          "components": {
-            "items": {
-              "$ref": "#/components/schemas/PatchPatchSieveComponent"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchStatus": {
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/PatchError",
-            "nullable": true
-          },
-          "progress": {
-            "$ref": "#/components/schemas/PatchProgress"
-          },
-          "state": {
-            "$ref": "#/components/schemas/PatchPatchStatusState"
-          },
-          "tags": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "url": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchStatusState": {
-        "enum": [
-          "updating",
-          "out_of_date",
-          "up_to_date",
-          "not_installed",
-          "pending_verify",
-          "repairing"
-        ],
-        "type": "string"
-      },
-      "PatchPatchlineMetadata": {
-        "properties": {
-          "patching_metadata": {
-            "additionalProperties": {
-              "$ref": "#/components/schemas/PatchPatchSetMetadata"
-            },
-            "type": "object"
           }
         },
         "type": "object"
@@ -7614,34 +7765,6 @@
         },
         "type": "object"
       },
-      "PlatformUiAuthenticateFacebookInput": {
-        "properties": {
-          "facebook": {
-            "$ref": "#/components/schemas/PlatformUiFacebookInput"
-          },
-          "language": {
-            "type": "string"
-          },
-          "remember": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiAuthenticateNintendoInput": {
-        "properties": {
-          "language": {
-            "type": "string"
-          },
-          "nintendo": {
-            "$ref": "#/components/schemas/PlatformUiNintendoInput"
-          },
-          "remember": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
       "PlatformUiAuthenticationResponse": {
         "properties": {
           "country": {
@@ -7652,6 +7775,9 @@
           },
           "healup": {
             "$ref": "#/components/schemas/PlatformUiHealupResponseDetails"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/PlatformUiMultifactorResponseDetails"
           },
           "signup": {
             "$ref": "#/components/schemas/PlatformUiSignupResponseDetails"
@@ -7679,23 +7805,6 @@
           },
           "isTagLineCustomizable": {
             "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiFacebookInput": {
-        "properties": {
-          "accessToken": {
-            "nullable": true,
-            "type": "string"
-          },
-          "appId": {
-            "nullable": true,
-            "type": "string"
-          },
-          "idToken": {
-            "nullable": true,
-            "type": "string"
           }
         },
         "type": "object"
@@ -7782,28 +7891,46 @@
           "game_center",
           "facebook",
           "apple",
-          "nintendo"
+          "nintendo",
+          "playstation"
         ],
         "type": "string"
       },
-      "PlatformUiNintendoInput": {
+      "PlatformUiMultifactorResponseDetails": {
         "properties": {
-          "authorization_code": {
+          "email": {
             "type": "string"
           },
-          "id_token": {
+          "method": {
             "type": "string"
           },
-          "nsa_token": {
+          "methods": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mode": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiPlatformUIError": {
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/PlatformUierrorState"
+          },
+          "recoverable": {
+            "type": "boolean"
           }
         },
         "type": "object"
       },
       "PlatformUiPlatformUIState": {
         "properties": {
-          "errorCode": {
-            "$ref": "#/components/schemas/PlatformUicode",
+          "error": {
+            "$ref": "#/components/schemas/PlatformUiPlatformUIError",
             "nullable": true
           },
           "status": {
@@ -7828,6 +7955,10 @@
           },
           "config": {
             "$ref": "#/components/schemas/PlatformUiInitiateLoginSessionRequest"
+          },
+          "errorCode": {
+            "nullable": true,
+            "type": "string"
           },
           "idToken": {
             "$ref": "#/components/schemas/PlatformUiIdToken",
@@ -7990,10 +8121,59 @@
         },
         "type": "object"
       },
+      "PlatformUiWebLinkingStatus": {
+        "enum": [
+          "NEW",
+          "PENDING",
+          "EXPIRED",
+          "COMPLETED"
+        ],
+        "type": "string"
+      },
+      "PlatformUiWebLinkingStatusResponse": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/PlatformUiWebLinkingStatus"
+          },
+          "ttl": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "PlatformUicode": {
         "enum": [
+          "RateLimited",
+          "FetchProductIdFailure",
+          "InvalidCDNPath",
+          "LoginStrategyMissing",
+          "ConfigAuthMethodMissing",
+          "ConfigAuthPayloadMissing",
+          "InvalidLoginState",
+          "CreateSessionFailure",
+          "AuthenticationFailure",
+          "FetchCurrentAuthenticationFailure",
+          "InvalidAuthenticationState",
+          "SignupFailure",
+          "TooYoung",
+          "AcceptEulaFailure",
+          "GenerateTaglineFailure",
+          "CreateRiotIDFailure",
+          "SingletonMissing"
+        ],
+        "type": "string"
+      },
+      "PlatformUierrorState": {
+        "enum": [
           "ConnectionTimeout",
+          "RateLimited",
           "RequirementsNotMet",
+          "UserCancelled",
+          "PendingConsent",
+          "PendingForget",
           "InternalError"
         ],
         "type": "string"
@@ -8862,6 +9042,14 @@
         },
         "type": "object"
       },
+      "PlayerReportingGapsMailboxUpdated": {
+        "properties": {
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerReportingLocalizedReporterFeedbackMessage": {
         "properties": {
           "category": {
@@ -8875,6 +9063,53 @@
           },
           "title": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerReportingMail": {
+        "properties": {
+          "createdAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "mailId": {
+            "type": "string"
+          },
+          "mailType": {
+            "$ref": "#/components/schemas/PlayerReportingMailType"
+          },
+          "message": {
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PlayerReportingMailState"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerReportingMailState": {
+        "enum": [
+          "NEW",
+          "READ",
+          "ACKNOWLEDGED"
+        ],
+        "type": "string"
+      },
+      "PlayerReportingMailType": {
+        "enum": [
+          "STANDARD",
+          "ACK_REQUIRED"
+        ],
+        "type": "string"
+      },
+      "PlayerReportingMailboxStatusUpdated": {
+        "properties": {
+          "lastUpdateReceived": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
           }
         },
         "type": "object"
@@ -8970,6 +9205,9 @@
         "properties": {
           "category": {
             "type": "string"
+          },
+          "messageId": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -8986,6 +9224,17 @@
             "type": "string"
           },
           "reportCategory": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerReportingReporterFeedbackDto": {
+        "properties": {
+          "category": {
             "type": "string"
           }
         },
@@ -9004,6 +9253,48 @@
           },
           "reportCategory": {
             "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerReportingRequestMailParameters": {
+        "properties": {
+          "count": {
+            "default": 20,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "includedStates": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerReportingMailState"
+            },
+            "type": "array"
+          },
+          "startIndex": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerReportingUpdateMailStateRequest": {
+        "properties": {
+          "mailId": {
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PlayerReportingMailState"
           }
         },
         "type": "object"
@@ -9063,6 +9354,34 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleAuthenticatePlaystationInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "playstation": {
+            "$ref": "#/components/schemas/PlayerSessionLifecyclePlaystationInput"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleAuthenticateXboxInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          },
+          "xbox": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleXboxInput"
+          }
+        },
+        "type": "object"
+      },
       "PlayerSessionLifecycleAuthenticationResponse": {
         "properties": {
           "country": {
@@ -9073,6 +9392,9 @@
           },
           "healup": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleHealupResponseDetails"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleMultifactorResponseDetails"
           },
           "signup": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleSignupResponseDetails"
@@ -9262,7 +9584,9 @@
           "game_center",
           "facebook",
           "apple",
-          "nintendo"
+          "nintendo",
+          "xbox",
+          "playstation"
         ],
         "type": "string"
       },
@@ -9280,9 +9604,32 @@
       "PlayerSessionLifecycleMultifactorMethod": {
         "enum": [
           "method_not_set",
-          "email_verification"
+          "email",
+          "authenticator",
+          "sms",
+          "push"
         ],
         "type": "string"
+      },
+      "PlayerSessionLifecycleMultifactorResponseDetails": {
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "methods": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mode": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "PlayerSessionLifecycleNintendoAccountAuthorization": {
         "properties": {
@@ -9366,6 +9713,25 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecyclePlayerSessionLifecycleError": {
+        "enum": [
+          "BadRequest",
+          "Unauthorized",
+          "AuthorizationFailure",
+          "UnknownAuthorizationResponse",
+          "AuthenticationFailure",
+          "AuthenticationResponseMissing",
+          "UnknownAuthenticationState",
+          "UpdateLoginTokenAuthFailure",
+          "ClientIdFetchFailure",
+          "TooYoung",
+          "NintendoAccountFetchTokenFailure",
+          "NintendoAccountFetchNSATokenFailure",
+          "NintendoAccountUnauthorized",
+          "PlaystationAccountFetchTokenFailure"
+        ],
+        "type": "string"
+      },
       "PlayerSessionLifecyclePlayerSessionState": {
         "properties": {
           "accessToken": {
@@ -9377,6 +9743,10 @@
           },
           "config": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleInitiateLoginSessionRequest"
+          },
+          "errorCode": {
+            "nullable": true,
+            "type": "string"
           },
           "idToken": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleIdToken",
@@ -9423,6 +9793,36 @@
           "Error"
         ],
         "type": "string"
+      },
+      "PlayerSessionLifecyclePlaystationAccountAuthorization": {
+        "properties": {
+          "authorization_code": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecyclePlaystationAccountAuthorizationParameters": {
+        "properties": {
+          "clientID": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "scopes": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecyclePlaystationInput": {
+        "properties": {
+          "authorization_code": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "PlayerSessionLifecycleRSOAuthorizationTrustLevel": {
         "enum": [
@@ -9584,6 +9984,60 @@
       "PlayerSessionLifecycleUserInfo": {
         "properties": {
           "userInfo": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleXboxAccountAuthorization": {
+        "properties": {
+          "user_hash": {
+            "nullable": true,
+            "type": "string"
+          },
+          "xsts_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleXboxAccountAuthorizationParameters": {
+        "properties": {
+          "scopes": {
+            "type": "string"
+          },
+          "showUserSelector": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleXboxInput": {
+        "properties": {
+          "user_hash": {
+            "nullable": true,
+            "type": "string"
+          },
+          "xsts_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlaystationAccountAuthorization": {
+        "properties": {
+          "authorization_code": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlaystationAccountAuthorizationParameters": {
+        "properties": {
+          "clientID": {
+            "type": "string"
+          },
+          "scopes": {
             "type": "string"
           }
         },
@@ -12574,7 +13028,7 @@
       "RsoAuthMultifactorMethod": {
         "enum": [
           "method_not_set",
-          "email_verification",
+          "email",
           "authenticator",
           "sms",
           "push"
@@ -13237,6 +13691,20 @@
         },
         "type": "object"
       },
+      "RsoAuthenticatorV1AuthenticatePlaystationInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "playstation": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1PlaystationInput"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
       "RsoAuthenticatorV1AuthenticateRiotIdentityInput": {
         "properties": {
           "language": {
@@ -13247,6 +13715,20 @@
           },
           "riot_identity": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1RiotIdentityInput"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1AuthenticateXboxInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          },
+          "xbox": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1XboxInput"
           }
         },
         "type": "object"
@@ -13302,6 +13784,10 @@
           "platform": {
             "type": "string"
           },
+          "playstation": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1PlaystationInput",
+            "nullable": true
+          },
           "remember": {
             "type": "boolean"
           },
@@ -13318,6 +13804,10 @@
           },
           "type": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1ResponseType"
+          },
+          "xbox": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1XboxInput",
+            "nullable": true
           }
         },
         "type": "object"
@@ -13332,6 +13822,9 @@
           },
           "healup": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1HealupResponseDetails"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1MultifactorResponseDetails"
           },
           "signup": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1SignupResponseDetails"
@@ -13490,7 +13983,7 @@
       "RsoAuthenticatorV1MultifactorResponseType": {
         "enum": [
           "method_not_set",
-          "email_verification",
+          "email",
           "authenticator",
           "sms",
           "push"
@@ -13514,6 +14007,14 @@
       "RsoAuthenticatorV1OpenIdConnectInput": {
         "properties": {
           "id_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1PlaystationInput": {
+        "properties": {
+          "authorization_code": {
             "type": "string"
           }
         },
@@ -13730,9 +14231,17 @@
           },
           "ttl": {
             "format": "int32",
-            "maximum": 4294967295,
-            "minimum": 0,
+            "maximum": 2147483647,
+            "minimum": -2147483648,
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1XboxInput": {
+        "properties": {
+          "xsts_token": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -14548,6 +15057,29 @@
           "target": {
             "nullable": true,
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "XboxAccountAuthorization": {
+        "properties": {
+          "user_hash": {
+            "nullable": true,
+            "type": "string"
+          },
+          "xsts_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "XboxAccountAuthorizationParameters": {
+        "properties": {
+          "scopes": {
+            "type": "string"
+          },
+          "showUserSelector": {
+            "type": "boolean"
           }
         },
         "type": "object"
@@ -15619,7 +16151,7 @@
             "description": "No content"
           }
         },
-        "summary": "Put/update a multi-game presence for a specific product",
+        "summary": "Put/update a multi-game presence for a specific product. This implicitly sets the product's chat session state to `active`.",
         "tags": [
           "Plugins",
           "Plugin chat",
@@ -16401,7 +16933,7 @@
             "description": "No content"
           }
         },
-        "summary": "Put/update a multi-game presence for a specific product",
+        "summary": "Put/update a multi-game presence for a specific product. This implicitly sets the product's chat session state to `active`.",
         "tags": [
           "Plugins",
           "Plugin chat"
@@ -21223,6 +21755,39 @@
         ]
       }
     },
+    "/mailbox/v1/check-new-product-mail/{productId}": {
+      "get": {
+        "description": "\n**Description**\n\nThis API is subscribable and for notifications that new mail is available. This is the internal implementation meant to be used by other plugins.\n\nRequired arguments:\n```\nproductId: A standard [product identifier](https://gh.riotgames.com/shared-static-data/rpg/tree/master/products)\n```\n",
+        "operationId": "GetMailboxV1CheckNewProductMailByProductId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MailboxMailboxStatusUpdated"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Returns if the mailbox has new mail",
+        "tags": [
+          "Plugins",
+          "Plugin mailbox",
+          "Subscribable",
+          "Internal"
+        ]
+      }
+    },
     "/mailbox/v1/debug/caller-id/mock-id": {
       "delete": {
         "description": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
@@ -22087,41 +22652,6 @@
         ]
       }
     },
-    "/patch/v2/components": {
-      "post": {
-        "operationId": "PostPatchV2Components",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchPatchSieveComponentRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "request"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchPatchSieveComponents"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Fetch component state from info",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
     "/patch/v2/configuration": {
       "get": {
         "operationId": "GetPatchV2Configuration",
@@ -22817,6 +23347,41 @@
           }
         },
         "summary": "Stop a verify operation.",
+        "tags": [
+          "Plugins",
+          "Plugin patch"
+        ]
+      }
+    },
+    "/patch/v2/patchsieve": {
+      "post": {
+        "operationId": "PostPatchV2Patchsieve",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchPatchsieveRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatchPatchsieveReleases"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Fetch component state from info",
         "tags": [
           "Plugins",
           "Plugin patch"
@@ -24325,6 +24890,41 @@
         "tags": [
           "Plugins",
           "Plugin player-session-lifecycle"
+        ]
+      }
+    },
+    "/playstation-account/v1/authorization": {
+      "post": {
+        "operationId": "PostPlaystationAccountV1Authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlaystationAccountAuthorizationParameters"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "AuthorizationParameters"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaystationAccountAuthorization"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Gets authorization from the Playstation Network Account of the player logged in the Playstation Network",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account"
         ]
       }
     },
@@ -29510,6 +30110,20 @@
       }
     },
     "/rso-authenticator/v1/authentication/link/status": {
+      "delete": {
+        "operationId": "DeleteRsoAuthenticatorV1AuthenticationLinkStatus",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete the current web linking code.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      },
       "get": {
         "operationId": "GetRsoAuthenticatorV1AuthenticationLinkStatus",
         "parameters": [],
@@ -29603,6 +30217,41 @@
         ]
       }
     },
+    "/rso-authenticator/v1/authentication/playstation": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationPlaystation",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticatePlaystationInput"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "id_token"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Authenticate a player with Playstation id token.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
     "/rso-authenticator/v1/authentication/redirect": {
       "post": {
         "operationId": "PostRsoAuthenticatorV1AuthenticationRedirect",
@@ -29667,6 +30316,41 @@
           }
         },
         "summary": "Create a new authentication with riot credentials.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/xbox": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationXbox",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticateXboxInput"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "xsts_token"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Authenticate a player with Xbox xsts token.",
         "tags": [
           "Plugins",
           "Plugin rso-authenticator"
@@ -31547,6 +32231,41 @@
         "tags": [
           "Plugins",
           "Plugin voice-chat"
+        ]
+      }
+    },
+    "/xbox-account/v1/authorization": {
+      "post": {
+        "operationId": "PostXboxAccountV1Authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/XboxAccountAuthorizationParameters"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "AuthorizationParameters"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/XboxAccountAuthorization"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Gets authorization from the Xbox Account of the player logged in the Xbox",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account"
         ]
       }
     }
