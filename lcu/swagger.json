@@ -24757,7 +24757,8 @@
         "Egg_Color",
         "Statstone",
         "Statstone_Shard",
-        "Boost"
+        "Boost",
+        "SkinBorder"
       ],
       "type": "string"
     },
@@ -27556,11 +27557,21 @@
         "info": {
           "$ref": "#/definitions/LolMissionsTftPaidBattlepassInfo"
         },
+        "lastViewedMilestone": {
+          "$ref": "#/definitions/LolMissionsTftPaidBattlepassMilestone"
+        },
+        "lastViewedProgress": {
+          "format": "int32",
+          "type": "integer"
+        },
         "milestones": {
           "items": {
             "$ref": "#/definitions/LolMissionsTftPaidBattlepassMilestone"
           },
           "type": "array"
+        },
+        "progressMissionId": {
+          "type": "string"
         },
         "totalPointsEarned": {
           "format": "int32",
@@ -33553,6 +33564,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "canDemoteFromTier": {
+          "type": "boolean"
+        },
         "changeReason": {
           "type": "string"
         },
@@ -33727,6 +33741,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "canDemoteFromTier": {
+          "type": "boolean"
+        },
         "changeReason": {
           "type": "string"
         },
@@ -33823,7 +33840,8 @@
         "RANKED_FLEX_SR",
         "RANKED_FLEX_TT",
         "RANKED_TFT",
-        "RANKED_TFT_TURBO"
+        "RANKED_TFT_TURBO",
+        "RANKED_TFT_PAIRS"
       ],
       "type": "string"
     },
@@ -34541,7 +34559,8 @@
         "RANKED_FLEX_SR",
         "RANKED_FLEX_TT",
         "RANKED_TFT",
-        "RANKED_TFT_TURBO"
+        "RANKED_TFT_TURBO",
+        "RANKED_TFT_PAIRS"
       ],
       "type": "string"
     },
@@ -36169,7 +36188,8 @@
         "RANKED_FLEX_SR",
         "RANKED_FLEX_TT",
         "RANKED_TFT",
-        "RANKED_TFT_TURBO"
+        "RANKED_TFT_TURBO",
+        "RANKED_TFT_PAIRS"
       ],
       "type": "string"
     },
@@ -38922,8 +38942,8 @@
     "LolWorldsTokenCardTokenUpsellLockedType": {
       "enum": [
         "UNASSIGNED",
-        "UNLOCKED",
-        "LOCKED"
+        "LOCKED",
+        "UNLOCKED"
       ],
       "type": "string"
     },
@@ -44599,7 +44619,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -62562,7 +62582,8 @@
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT",
               "RANKED_TFT",
-              "RANKED_TFT_TURBO"
+              "RANKED_TFT_TURBO",
+              "RANKED_TFT_PAIRS"
             ],
             "in": "path",
             "name": "queueType",
@@ -62867,7 +62888,8 @@
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT",
               "RANKED_TFT",
-              "RANKED_TFT_TURBO"
+              "RANKED_TFT_TURBO",
+              "RANKED_TFT_PAIRS"
             ],
             "in": "path",
             "name": "queueType",
@@ -62918,7 +62940,8 @@
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT",
               "RANKED_TFT",
-              "RANKED_TFT_TURBO"
+              "RANKED_TFT_TURBO",
+              "RANKED_TFT_PAIRS"
             ],
             "in": "query",
             "name": "queueType",
@@ -64468,7 +64491,8 @@
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT",
               "RANKED_TFT",
-              "RANKED_TFT_TURBO"
+              "RANKED_TFT_TURBO",
+              "RANKED_TFT_PAIRS"
             ],
             "in": "query",
             "name": "queueType",
@@ -64502,7 +64526,8 @@
               "RANKED_FLEX_SR",
               "RANKED_FLEX_TT",
               "RANKED_TFT",
-              "RANKED_TFT_TURBO"
+              "RANKED_TFT_TURBO",
+              "RANKED_TFT_PAIRS"
             ],
             "in": "query",
             "name": "queueType",
@@ -68609,7 +68634,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -68643,7 +68668,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "Http2ApiDocsV2",
+        "operationId": "HttpApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
@@ -68662,7 +68687,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
