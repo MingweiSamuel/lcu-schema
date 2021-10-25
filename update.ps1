@@ -82,16 +82,19 @@ If (-Not (Test-Path $LCU_EXE)) {
         If ($attempts -Le 0) {
             Throw 'Failed to download installer.'
         }
-        Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
-        If ($?) {
-            Break
+        Try {
+            Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
         }
-        $attempts--;
-        Start-Sleep 5
+        Catch {
+            $attempts--;
+            Start-Sleep 5
+            Continue
+        }
+        Break
     }
     .\install.na.exe --skip-to-install
 
-    $attempts = 20
+    $attempts = 5
     While ($True) {
         $status = Invoke-RiotRequest $RCS_LOCKFILE '/patch/v1/installs/league_of_legends.live/status'
         If ('up_to_date' -Eq $status.patch.state) {
@@ -163,7 +166,7 @@ Try {
         $attempts--
         Start-Sleep 20
     }
-    Start-Sleep 10
+    Start-Sleep 5
 
     # LCU files.
     Write-Host 'Getting LCU queues, maps, catalog.'
