@@ -9,10 +9,16 @@ $LOGIN_FILE = 'lollogin.json'
 $LOGIN = Get-Content $LOGIN_FILE | ConvertFrom-Json
 
 $RCS_LOCKFILE = "$env:LOCALAPPDATA\Riot Games\Riot Client\Config\lockfile"
+$RCS_DIR = "C:\Riot Games\Riot Client"
+$RCS_EXE = "$RCS_DIR\RiotClientServices.exe"
+$RCS_ARGS = '--launch-product=league_of_legends', '--launch-patchline=live'
+
 $LCU_DIR = 'C:\Riot Games\League of Legends'
 $LCU_LOCKFILE = "$LCU_DIR\lockfile"
 $LCU_SYSTEMYAML = "$LCU_DIR\system.yaml"
 $LCU_EXE = "$LCU_DIR\LeagueClient.exe"
+
+$LOL_INSTALL_ID = 'league_of_legends.live'
 
 If (-Not (Test-Path $LOGIN_FILE)) {
     Throw "Login not found: $LOGIN_FILE."
@@ -24,6 +30,7 @@ function Stop-RiotProcesses {
     Stop-Process -Name 'LeagueClient' -ErrorAction Ignore
     Remove-Item $RCS_LOCKFILE -Force -ErrorAction Ignore
     Remove-Item $LCU_LOCKFILE -Force -ErrorAction Ignore
+    Start-Sleep 5 # Wait for processes to settle.
 }
 
 function Invoke-RiotRequest {
@@ -94,9 +101,18 @@ If (-Not (Test-Path $LCU_EXE)) {
     }
     .\install.na.exe --skip-to-install
 
-    $attempts = 5
+    # RCS starts, but install of LoL hangs, possibly due to .NET Framework 3.5 missing.
+    # So we restart it and then it works.
+    Invoke-RiotRequest $RCS_LOCKFILE '/patch/v1/installs'
+    Stop-RiotProcesses
+
+    Write-Host 'Restarting RCS'
+    & $RCS_EXE $RCS_ARGS
+    Start-Sleep 5
+
+    $attempts = 15
     While ($True) {
-        $status = Invoke-RiotRequest $RCS_LOCKFILE '/patch/v1/installs/league_of_legends.live/status'
+        $status = Invoke-RiotRequest $RCS_LOCKFILE "/patch/v1/installs/$LOL_INSTALL_ID/status"
         If ('up_to_date' -Eq $status.patch.state) {
             Break
         }
@@ -111,16 +127,14 @@ If (-Not (Test-Path $LCU_EXE)) {
     Write-Host 'LoL installed successfully.'
     Start-Sleep 1
     Stop-RiotProcesses
-    Start-Sleep 5 # Wait for processes to settle.
 }
 Else {
     Write-Host 'LoL already installed.'
 }
 
 # Start RCS.
-Write-Host 'Starting RCS.'
+Write-Host 'Starting RCS (via LCU).'
 & $LCU_EXE
-
 Start-Sleep 5 # Wait for RCS to load so it doesn't overwrite system.yaml.
 
 # Setup system.yaml.
