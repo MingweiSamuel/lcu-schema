@@ -20214,6 +20214,7 @@
         "operationId": "GetDataStoreV1InstallSettingsByPath",
         "parameters": [
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20243,6 +20244,7 @@
         "operationId": "PostDataStoreV1InstallSettingsByPath",
         "parameters": [
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20301,6 +20303,7 @@
         "operationId": "GetDataStoreV1PrivateSettingsByPath",
         "parameters": [
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20330,6 +20333,7 @@
         "operationId": "PostDataStoreV1PrivateSettingsByPath",
         "parameters": [
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20459,6 +20463,7 @@
             "type": "string"
           },
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20502,6 +20507,7 @@
             "type": "string"
           },
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -20568,6 +20574,7 @@
         "operationId": "GetDataStoreV1SystemSettingsByPath",
         "parameters": [
           {
+            "allowReserved": true,
             "description": "The path to the settings key",
             "in": "path",
             "name": "path",
@@ -27263,6 +27270,7 @@
     },
     "/riot-messaging-service/v1/message/{a}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByA",
         "parameters": [
           {
@@ -27288,12 +27296,14 @@
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
     "/riot-messaging-service/v1/message/{a}/{b}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByAByB",
         "parameters": [
           {
@@ -27325,12 +27335,14 @@
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
     "/riot-messaging-service/v1/message/{a}/{b}/{c}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByAByBByC",
         "parameters": [
           {
@@ -27368,12 +27380,14 @@
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
     "/riot-messaging-service/v1/message/{a}/{b}/{c}/{d}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByAByBByCByD",
         "parameters": [
           {
@@ -27417,12 +27431,14 @@
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
     "/riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByAByBByCByDByE",
         "parameters": [
           {
@@ -27472,12 +27488,14 @@
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
     "/riot-messaging-service/v1/message/{a}/{b}/{c}/{d}/{e}/{f}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted October 2022.  Please use 'riot-messaging-service/v1/messages/{+path}'.",
         "operationId": "GetRiotMessagingServiceV1MessageByAByBByCByDByEByF",
         "parameters": [
           {
@@ -27530,6 +27548,40 @@
           }
         },
         "summary": "Util endpoint that responds with any cached messages for the aggregate resource based on components a:b:c:d:e:f",
+        "tags": [
+          "Plugins",
+          "Plugin riot-messaging-service",
+          "Subscribable",
+          "Deprecated"
+        ]
+      }
+    },
+    "/riot-messaging-service/v1/messages/{path}": {
+      "get": {
+        "description": "Subscriptions can be for a fully qualified path (mock/v1/resource), a wildcard (mock/v1/ *) or a recursive wildcard (mock/ **).\n\nNote that subscriptions for your application cannot overlap or conflict, such that a subscription for `mock/ **` cannot coincide with a subscription for `mock/v1/resource`.",
+        "operationId": "GetRiotMessagingServiceV1MessagesByPath",
+        "parameters": [
+          {
+            "allowReserved": true,
+            "in": "path",
+            "name": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RiotMessagingServiceMessage"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Subscription endpoint to receive async notifications of push messages with the given resource path.",
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
