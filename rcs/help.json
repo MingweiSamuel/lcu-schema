@@ -1,6 +1,7 @@
 {
   "events": {
     "AgentResourceEvent": "",
+    "OnClientFocus": "Fired when we need focus on mac riot client",
     "OnJsonApiEvent": "Fired when a resource is changed.",
     "OnJsonApiEvent_agent_v1_requests": "",
     "OnJsonApiEvent_agent_v1_session": "",
@@ -93,6 +94,7 @@
     "DeletePatchV1InstallsByInstallIdRequestsSeed": "Delete seed request for install",
     "DeletePlayerSessionLifecycleV1Session": "Delete the current lifecycle session",
     "DeletePrimeGamingV1Login": "Logout from Amazon",
+    "DeleteProcessControlV1ProcessClientRestarting": "Removes state that client is restarting - can quit now",
     "DeleteProductIntegrationDepsV1AppRepairApplyRequestsProductsByProductIdPatchlinesByPatchlineId": "Removes a apply request.",
     "DeleteProductIntegrationDepsV1AppUpdateApplyRequestsProductsByProductIdPatchlinesByPatchlineId": "Removes a apply request.",
     "DeleteProductIntegrationV1AppRepairApply": "Use this to cancel a game repair that was previously requested.",
@@ -279,6 +281,8 @@
     "GetPrimeGamingV1Supported": "Check whether Prime Gaming is supported on the current platform",
     "GetPrivacyV1Tracking": "Retrieves privacy tracking settings and state.",
     "GetProcessControlV1Process": "Returns information about the process-control.",
+    "GetProcessControlV1ProcessClientDidRestart": "return true if client has restarted",
+    "GetProcessControlV1ProcessClientRestarting": "Returns true if client is currently restarting, false otherwise",
     "GetProductIntegrationDepsV1AppRepairApplyRequestsProductsByProductIdPatchlinesByPatchlineId": "Returns the game repair request for the matching product/patchline",
     "GetProductIntegrationDepsV1AppUpdateApplyRequestsProductsByProductIdPatchlinesByPatchlineId": "Returns the game update request for the matching product/patchline",
     "GetProductIntegrationDepsV1AppUpdateStatusesProductsByProductIdPatchlinesByPatchlineId": "Get the current app update status for a given product and patchline",
@@ -554,6 +558,7 @@
     "PostPlaystationAccountV1Authorization": "Gets authorization from the Playstation Network Account of the player logged in the Playstation Network",
     "PostPrimeGamingV1Login": "Initiate Login with Amazon to enable Prime Gaming",
     "PostPrivacyV1TrackingRequestPermission": "Ask the player for permission to track them via telemetry",
+    "PostProcessControlV1ProcessClientRestarting": "Sets state that client is restarting - do not quit",
     "PostProcessControlV1ProcessQuit": "Quits the application.",
     "PostProcessControlV1ProcessRestart": "Restarts the application.  Does nothing if there is already a waiting delayed restart.  Optionally accepts specific version to restart.",
     "PostProductLauncherV1DefaultProduct": "Launches the default product. Returns the session ID.",
