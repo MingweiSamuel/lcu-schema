@@ -12561,6 +12561,10 @@
     },
     "LolContentTargetingGameflowGameData": {
       "properties": {
+        "gameId": {
+          "format": "int64",
+          "type": "integer"
+        },
         "queue": {
           "$ref": "#/definitions/LolContentTargetingQueue"
         }
@@ -12756,11 +12760,32 @@
     },
     "LolContentTargetingQueue": {
       "properties": {
+        "category": {
+          "$ref": "#/definitions/LolContentTargetingQueueGameCategory"
+        },
         "gameMode": {
           "type": "string"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "mapId": {
+          "format": "int32",
+          "type": "integer"
         }
       },
       "type": "object"
+    },
+    "LolContentTargetingQueueGameCategory": {
+      "enum": [
+        "None",
+        "Custom",
+        "PvP",
+        "VersusAi",
+        "Alpha"
+      ],
+      "type": "string"
     },
     "LolContentTargetingRankedDivision": {
       "enum": [
@@ -14728,6 +14753,9 @@
         },
         "isLocalPlayer": {
           "type": "boolean"
+        },
+        "partnerGroupId": {
+          "type": "integer"
         },
         "puuid": {
           "type": "string"
@@ -22139,6 +22167,32 @@
       },
       "type": "object"
     },
+    "LolLobbyTeamBuilderChampSelectReportV2": {
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "offenderId": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "tokenType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolLobbyTeamBuilderChampSelectSession": {
       "properties": {
         "actions": {
@@ -27616,6 +27670,9 @@
         "description": {
           "type": "string"
         },
+        "iconImageUrl": {
+          "type": "string"
+        },
         "iconNeedsFrame": {
           "type": "boolean"
         },
@@ -27633,9 +27690,6 @@
         },
         "isPaid": {
           "type": "boolean"
-        },
-        "largeIconImageUrl": {
-          "type": "string"
         },
         "level": {
           "format": "int32",
@@ -27657,9 +27711,6 @@
             "$ref": "#/definitions/PlayerMissionRewardDTO"
           },
           "type": "array"
-        },
-        "smallIconImageUrl": {
-          "type": "string"
         },
         "state": {
           "type": "string"
@@ -35069,6 +35120,17 @@
       ],
       "type": "string"
     },
+    "LolRewardsGrantorDescription": {
+      "properties": {
+        "appName": {
+          "type": "string"
+        },
+        "entityId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolRewardsRMSPayload": {
       "properties": {
         "affinities": {
@@ -35246,6 +35308,9 @@
         },
         "granteeId": {
           "type": "string"
+        },
+        "grantorDescription": {
+          "$ref": "#/definitions/LolRewardsGrantorDescription"
         },
         "id": {
           "type": "string"
@@ -37071,7 +37136,17 @@
     },
     "LolStatstonesStatstoneProgress": {
       "properties": {
+        "best": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
         "delta": {
+          "type": "string"
+        },
+        "description": {
           "type": "string"
         },
         "existingProgressPercent": {
@@ -37079,6 +37154,13 @@
         },
         "imageUrl": {
           "type": "string"
+        },
+        "isNewBest": {
+          "type": "boolean"
+        },
+        "level": {
+          "format": "int32",
+          "type": "integer"
         },
         "newMilestoneDifference": {
           "type": "string"
@@ -38588,6 +38670,23 @@
         "responseCode": {
           "format": "int64",
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolTftLolTftStorePromos": {
+      "properties": {
+        "storePromoOfferIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "tacticianPromoOfferIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -51808,6 +51907,34 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/LolContentTargetingContentTargetingFilterResponse"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-content-targeting"
+        ]
+      }
+    },
+    "/lol-content-targeting/v1/tft_experiment_bucket": {
+      "put": {
+        "operationId": "PutLolContentTargetingV1TftExperimentBucket",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "value",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
             }
           }
         },
@@ -66218,6 +66345,24 @@
         ]
       }
     },
+    "/lol-tft/v1/tft/storePromos": {
+      "get": {
+        "operationId": "GetLolTftV1TftStorePromos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolTftLolTftStorePromos"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-tft"
+        ]
+      }
+    },
     "/lol-tft/v2/tft/battlepass": {
       "get": {
         "operationId": "GetLolTftV2TftBattlepass",
@@ -68687,7 +68832,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
