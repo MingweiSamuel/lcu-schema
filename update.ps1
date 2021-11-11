@@ -86,18 +86,18 @@ If (-Not (Test-Path $LCU_EXE)) {
 
     $attempts = 5
     While ($True) {
-        If ($attempts -Le 0) {
-            Throw 'Failed to download installer.'
-        }
         Try {
             Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
+            Break
         }
         Catch {
             $attempts--;
+            If ($attempts -le 0) {
+                Write-Host "Failed download LoL installer."
+                Throw $_
+            }
             Start-Sleep 5
-            Continue
         }
-        Break
     }
     .\install.na.exe --skip-to-install
 
