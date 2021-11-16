@@ -90,7 +90,8 @@
           "type": "string"
         },
         "policyType": {
-          "$ref": "#/definitions/AntiAddictionPolicyType"
+          "$ref": "#/definitions/AntiAddictionPolicyType",
+          "default": "shutdown"
         },
         "triggerTimeInSec": {
           "format": "int64",
@@ -102,7 +103,8 @@
     "AntiAddictionAntiAddictionState": {
       "properties": {
         "displayType": {
-          "$ref": "#/definitions/AntiAddictionDisplayType"
+          "$ref": "#/definitions/AntiAddictionDisplayType",
+          "default": "MODAL_DIALOG"
         },
         "hopePayload": {
           "additionalProperties": {
@@ -123,7 +125,8 @@
           "type": "string"
         },
         "policyType": {
-          "$ref": "#/definitions/AntiAddictionPolicyType"
+          "$ref": "#/definitions/AntiAddictionPolicyType",
+          "default": "shutdown"
         }
       },
       "type": "object"
@@ -162,7 +165,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/AppCommandAuthStatusState"
+          "$ref": "#/definitions/AppCommandAuthStatusState",
+          "default": "Unknown"
         }
       },
       "type": "object"
@@ -879,7 +883,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1023,7 +1028,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/ChatChatSessionState"
+          "$ref": "#/definitions/ChatChatSessionState",
+          "default": "disconnected"
         }
       },
       "type": "object"
@@ -1123,7 +1129,8 @@
     "ChatConfigStatus": {
       "properties": {
         "readiness": {
-          "$ref": "#/definitions/ChatConfigReadinessEnum"
+          "$ref": "#/definitions/ChatConfigReadinessEnum",
+          "default": "NotReady"
         },
         "updateId": {
           "format": "int64",
@@ -1152,7 +1159,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1160,7 +1168,10 @@
     "ChatConversationCreateJoinFederated": {
       "properties": {
         "join": {
-          "$ref": "#/definitions/ChatConvoJoinFederated"
+          "$ref": "#/definitions/ChatConvoJoinFederated",
+          "default": {
+            "type": "chat"
+          }
         },
         "session": {
           "type": "string"
@@ -1203,7 +1214,8 @@
           "$ref": "#/definitions/ChatReadPoint"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1280,7 +1292,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1306,7 +1319,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1595,7 +1609,8 @@
           "type": "string"
         },
         "subscription": {
-          "$ref": "#/definitions/ChatFriendSubscriptionType"
+          "$ref": "#/definitions/ChatFriendSubscriptionType",
+          "default": "pending_out"
         }
       },
       "type": "object"
@@ -1677,7 +1692,8 @@
           "type": "string"
         },
         "subscription": {
-          "$ref": "#/definitions/ChatFriendSubscriptionType"
+          "$ref": "#/definitions/ChatFriendSubscriptionType",
+          "default": "pending_out"
         },
         "tagLine": {
           "type": "string"
@@ -1796,7 +1812,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1821,7 +1838,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1832,7 +1850,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -1906,7 +1925,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -2445,7 +2465,8 @@
           "type": "boolean"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         },
         "uiState": {
           "$ref": "#/definitions/ChatUIState"
@@ -2473,7 +2494,8 @@
           "type": "integer"
         },
         "type": {
-          "$ref": "#/definitions/ChatMessageType"
+          "$ref": "#/definitions/ChatMessageType",
+          "default": "chat"
         }
       },
       "type": "object"
@@ -2542,7 +2564,8 @@
           "default": "UNKNOWN"
         },
         "status": {
-          "$ref": "#/definitions/ChatXmppConnectionStatus"
+          "$ref": "#/definitions/ChatXmppConnectionStatus",
+          "default": "DISCONNECTED"
         }
       },
       "type": "object"
@@ -2721,10 +2744,12 @@
     "ChatXmppStatusCheckData": {
       "properties": {
         "maxNotAllowed": {
-          "$ref": "#/definitions/ChatXmppConnectionStatus"
+          "$ref": "#/definitions/ChatXmppConnectionStatus",
+          "default": "DISCONNECTED"
         },
         "minNotAllowed": {
-          "$ref": "#/definitions/ChatXmppConnectionStatus"
+          "$ref": "#/definitions/ChatXmppConnectionStatus",
+          "default": "DISCONNECTED"
         },
         "resource": {
           "type": "string"
@@ -2786,7 +2811,10 @@
           "type": "object"
         },
         "params": {
-          "$ref": "#/definitions/ClientConfigConfigParams"
+          "$ref": "#/definitions/ClientConfigConfigParams",
+          "default": {
+            "type": "public"
+          }
         },
         "updateTime": {
           "format": "int64",
@@ -2827,7 +2855,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/ClientConfigConfigType"
+          "$ref": "#/definitions/ClientConfigConfigType",
+          "default": "public"
         },
         "version": {
           "type": "string"
@@ -2846,7 +2875,8 @@
     "ClientConfigConfigStatus": {
       "properties": {
         "readiness": {
-          "$ref": "#/definitions/ClientConfigConfigReadinessEnum"
+          "$ref": "#/definitions/ClientConfigConfigReadinessEnum",
+          "default": "NotReady"
         },
         "updateId": {
           "format": "int64",
@@ -3009,7 +3039,8 @@
           "type": "object"
         },
         "updateType": {
-          "$ref": "#/definitions/ClientConfigDepInjectorUpdateType"
+          "$ref": "#/definitions/ClientConfigDepInjectorUpdateType",
+          "default": "Create"
         }
       },
       "type": "object"
@@ -3154,7 +3185,8 @@
           "type": "object"
         },
         "updateType": {
-          "$ref": "#/definitions/ClientConfigUpdateType"
+          "$ref": "#/definitions/ClientConfigUpdateType",
+          "default": "Create"
         }
       },
       "type": "object"
@@ -3340,7 +3372,8 @@
     "DisambiguationConfigStatus": {
       "properties": {
         "readiness": {
-          "$ref": "#/definitions/DisambiguationConfigReadinessEnum"
+          "$ref": "#/definitions/DisambiguationConfigReadinessEnum",
+          "default": "NotReady"
         }
       },
       "type": "object"
@@ -3515,7 +3548,8 @@
     "EulaAgreement": {
       "properties": {
         "acceptance": {
-          "$ref": "#/definitions/EulaAcceptance"
+          "$ref": "#/definitions/EulaAcceptance",
+          "default": "WaitingForAllServiceData"
         },
         "agreementURI": {
           "type": "string"
@@ -3782,7 +3816,8 @@
           "type": "string"
         },
         "presence": {
-          "$ref": "#/definitions/FriendsFriendsV1Presence"
+          "$ref": "#/definitions/FriendsFriendsV1Presence",
+          "default": "unknown"
         }
       },
       "type": "object"
@@ -3900,13 +3935,15 @@
           "type": "string"
         },
         "mailType": {
-          "$ref": "#/definitions/GaWarningMailType"
+          "$ref": "#/definitions/GaWarningMailType",
+          "default": "STANDARD"
         },
         "message": {
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/GaWarningMailState"
+          "$ref": "#/definitions/GaWarningMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -4009,7 +4046,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/GaWarningMailState"
+          "$ref": "#/definitions/GaWarningMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -4130,7 +4168,8 @@
           "type": "boolean"
         },
         "type": {
-          "$ref": "#/definitions/GameSessionAuthHintType"
+          "$ref": "#/definitions/GameSessionAuthHintType",
+          "default": "email_verification"
         }
       },
       "type": "object"
@@ -4493,7 +4532,8 @@
           "type": "string"
         },
         "errorId": {
-          "$ref": "#/definitions/GameSessionGameSessionV1GameSessionMessage"
+          "$ref": "#/definitions/GameSessionGameSessionV1GameSessionMessage",
+          "default": "no_error"
         },
         "errorMessage": {
           "type": "string"
@@ -4527,7 +4567,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/GameSessionGameSessionV1GameSessionState"
+          "$ref": "#/definitions/GameSessionGameSessionV1GameSessionState",
+          "default": "initializing"
         },
         "waitTime": {
           "format": "int64",
@@ -4778,7 +4819,8 @@
           "type": "string"
         },
         "method": {
-          "$ref": "#/definitions/GameSessionMultifactorMethod"
+          "$ref": "#/definitions/GameSessionMultifactorMethod",
+          "default": "method_not_set"
         },
         "methods": {
           "items": {
@@ -5070,7 +5112,10 @@
           "type": "string"
         },
         "multifactor": {
-          "$ref": "#/definitions/GameSessionMultifactorDetails"
+          "$ref": "#/definitions/GameSessionMultifactorDetails",
+          "default": {
+            "method": "method_not_set"
+          }
         },
         "persistLogin": {
           "type": "boolean"
@@ -5079,7 +5124,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/GameSessionSessionResponseType"
+          "$ref": "#/definitions/GameSessionSessionResponseType",
+          "default": "unknown_authentication_response"
         }
       },
       "type": "object"
@@ -5402,7 +5448,8 @@
           "type": "object"
         },
         "lifecycleEventType": {
-          "$ref": "#/definitions/LifecycleEventType"
+          "$ref": "#/definitions/LifecycleEventType",
+          "default": 0
         }
       },
       "type": "object"
@@ -5447,7 +5494,8 @@
       "description": "State of the login plugin.",
       "properties": {
         "phase": {
-          "$ref": "#/definitions/LoginPhase"
+          "$ref": "#/definitions/LoginPhase",
+          "default": "unknown"
         }
       },
       "type": "object"
@@ -5779,13 +5827,15 @@
           "type": "string"
         },
         "mailType": {
-          "$ref": "#/definitions/MailboxMailType"
+          "$ref": "#/definitions/MailboxMailType",
+          "default": "STANDARD"
         },
         "message": {
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/MailboxMailState"
+          "$ref": "#/definitions/MailboxMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -5959,7 +6009,8 @@
           "type": "string"
         },
         "source": {
-          "$ref": "#/definitions/MailboxPlayerAffinityDataSource"
+          "$ref": "#/definitions/MailboxPlayerAffinityDataSource",
+          "default": "localCache"
         },
         "token": {
           "type": "string"
@@ -5992,7 +6043,8 @@
           "type": "string"
         },
         "source": {
-          "$ref": "#/definitions/MailboxPlayerAffinityDataSource"
+          "$ref": "#/definitions/MailboxPlayerAffinityDataSource",
+          "default": "localCache"
         },
         "token": {
           "type": "string"
@@ -6124,7 +6176,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/MailboxRsoAuthAuthorizationResponseType"
+          "$ref": "#/definitions/MailboxRsoAuthAuthorizationResponseType",
+          "default": "unknown_authorization_response"
         }
       },
       "type": "object"
@@ -6209,7 +6262,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/MailboxMailState"
+          "$ref": "#/definitions/MailboxMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -6262,6 +6316,19 @@
         }
       },
       "type": "object"
+    },
+    "OnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
     },
     "PatchComponent": {
       "properties": {
@@ -6368,7 +6435,8 @@
           "type": "integer"
         },
         "phase": {
-          "$ref": "#/definitions/PatchComponentActionProgressPhase"
+          "$ref": "#/definitions/PatchComponentActionProgressPhase",
+          "default": "None"
         },
         "progress": {
           "format": "double",
@@ -6542,7 +6610,8 @@
     "PatchError": {
       "properties": {
         "code": {
-          "$ref": "#/definitions/PatchErrorCode"
+          "$ref": "#/definitions/PatchErrorCode",
+          "default": "Unspecified"
         },
         "locked_file_info": {
           "$ref": "#/definitions/PatchLockedFileInfo"
@@ -6775,10 +6844,14 @@
           "$ref": "#/definitions/PatchError"
         },
         "progress": {
-          "$ref": "#/definitions/PatchProgress"
+          "$ref": "#/definitions/PatchProgress",
+          "default": {
+            "phase": "None"
+          }
         },
         "state": {
-          "$ref": "#/definitions/PatchPatchStatusState"
+          "$ref": "#/definitions/PatchPatchStatusState",
+          "default": "updating"
         },
         "tags": {
           "items": {
@@ -6972,7 +7045,8 @@
           "$ref": "#/definitions/PatchError"
         },
         "state": {
-          "$ref": "#/definitions/PatchPreviewStatusState"
+          "$ref": "#/definitions/PatchPreviewStatusState",
+          "default": "pending"
         },
         "tags": {
           "items": {
@@ -7000,7 +7074,8 @@
           "$ref": "#/definitions/PatchManifestProgress"
         },
         "phase": {
-          "$ref": "#/definitions/PatchPhase"
+          "$ref": "#/definitions/PatchPhase",
+          "default": "None"
         },
         "progress": {
           "format": "double",
@@ -7121,7 +7196,8 @@
           "$ref": "#/definitions/PatchRepairProgress"
         },
         "state": {
-          "$ref": "#/definitions/PatchRepairStatusState"
+          "$ref": "#/definitions/PatchRepairStatusState",
+          "default": "pending"
         }
       },
       "type": "object"
@@ -7144,7 +7220,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/PatchRequestStatusState"
+          "$ref": "#/definitions/PatchRequestStatusState",
+          "default": "Queued"
         }
       },
       "type": "object"
@@ -7240,7 +7317,10 @@
           "$ref": "#/definitions/PatchError"
         },
         "progress": {
-          "$ref": "#/definitions/PatchProgress"
+          "$ref": "#/definitions/PatchProgress",
+          "default": {
+            "phase": "None"
+          }
         },
         "state": {
           "$ref": "#/definitions/PatchSeedStatusState",
@@ -7508,6 +7588,20 @@
       },
       "type": "object"
     },
+    "PlatformIdInfo": {
+      "properties": {
+        "id": {
+          "description": "Platform-specific identifier as a string",
+          "type": "string"
+        },
+        "platformName": {
+          "$ref": "#/definitions/OnlinePlatform",
+          "default": "unknown",
+          "description": "Canonical name of the online platform"
+        }
+      },
+      "type": "object"
+    },
     "PlatformUiAccessToken": {
       "properties": {
         "expiry": {
@@ -7630,7 +7724,8 @@
           "$ref": "#/definitions/PlatformUiSuccessResponseDetails"
         },
         "type": {
-          "$ref": "#/definitions/PlatformUiResponseType"
+          "$ref": "#/definitions/PlatformUiResponseType",
+          "default": "auth"
         }
       },
       "type": "object"
@@ -7735,6 +7830,7 @@
         "facebook",
         "apple",
         "nintendo",
+        "xbox",
         "playstation"
       ],
       "type": "string"
@@ -7762,7 +7858,8 @@
     "PlatformUiPlatformUIError": {
       "properties": {
         "code": {
-          "$ref": "#/definitions/PlatformUierrorState"
+          "$ref": "#/definitions/PlatformUierrorState",
+          "default": "ConnectionTimeout"
         },
         "recoverable": {
           "type": "boolean"
@@ -7828,6 +7925,7 @@
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
+        "PendingProviderCredentials",
         "PendingAuthentication",
         "PendingSignup",
         "PendingHealup",
@@ -7967,7 +8065,8 @@
     "PlatformUiWebLinkingStatusResponse": {
       "properties": {
         "status": {
-          "$ref": "#/definitions/PlatformUiWebLinkingStatus"
+          "$ref": "#/definitions/PlatformUiWebLinkingStatus",
+          "default": "NEW"
         },
         "ttl": {
           "format": "int32",
@@ -8136,7 +8235,8 @@
           "type": "boolean"
         },
         "type": {
-          "$ref": "#/definitions/PlayerAccountAuthHintType"
+          "$ref": "#/definitions/PlayerAccountAuthHintType",
+          "default": "email_verification"
         }
       },
       "type": "object"
@@ -8783,7 +8883,8 @@
           "type": "string"
         },
         "source": {
-          "$ref": "#/definitions/PlayerAffinityPlayerAffinityDataSource"
+          "$ref": "#/definitions/PlayerAffinityPlayerAffinityDataSource",
+          "default": "localCache"
         },
         "token": {
           "type": "string"
@@ -8816,7 +8917,8 @@
           "type": "string"
         },
         "source": {
-          "$ref": "#/definitions/PlayerAffinityPlayerAffinityDataSource"
+          "$ref": "#/definitions/PlayerAffinityPlayerAffinityDataSource",
+          "default": "localCache"
         },
         "token": {
           "type": "string"
@@ -8906,13 +9008,15 @@
           "type": "string"
         },
         "mailType": {
-          "$ref": "#/definitions/PlayerReportingMailType"
+          "$ref": "#/definitions/PlayerReportingMailType",
+          "default": "STANDARD"
         },
         "message": {
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/PlayerReportingMailState"
+          "$ref": "#/definitions/PlayerReportingMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -9122,7 +9226,8 @@
           "type": "string"
         },
         "state": {
-          "$ref": "#/definitions/PlayerReportingMailState"
+          "$ref": "#/definitions/PlayerReportingMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -9149,6 +9254,29 @@
           "type": "array"
         },
         "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerSessionLifecycleAuthMethodConfig": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
           "type": "string"
         }
       },
@@ -9231,7 +9359,8 @@
           "$ref": "#/definitions/PlayerSessionLifecycleSuccessResponseDetails"
         },
         "type": {
-          "$ref": "#/definitions/PlayerSessionLifecycleResponseType"
+          "$ref": "#/definitions/PlayerSessionLifecycleResponseType",
+          "default": "auth"
         }
       },
       "type": "object"
@@ -9285,7 +9414,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/PlayerSessionLifecycleAuthorizationResponseType"
+          "$ref": "#/definitions/PlayerSessionLifecycleAuthorizationResponseType",
+          "default": "unknown_authorization_response"
         }
       },
       "type": "object"
@@ -9422,7 +9552,8 @@
           "type": "string"
         },
         "method": {
-          "$ref": "#/definitions/PlayerSessionLifecycleMultifactorMethod"
+          "$ref": "#/definitions/PlayerSessionLifecycleMultifactorMethod",
+          "default": "method_not_set"
         }
       },
       "type": "object"
@@ -9550,11 +9681,14 @@
         "UnknownAuthenticationState",
         "UpdateLoginTokenAuthFailure",
         "ClientIdFetchFailure",
+        "AuthMethodConfigFetchFailure",
+        "ProviderTokensMissing",
         "TooYoung",
         "NintendoAccountFetchTokenFailure",
         "NintendoAccountFetchNSATokenFailure",
         "NintendoAccountUnauthorized",
-        "PlaystationAccountFetchTokenFailure"
+        "PlaystationAccountFetchTokenFailure",
+        "XboxAccountFetchTokenFailure"
       ],
       "type": "string"
     },
@@ -9601,6 +9735,7 @@
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
+        "PendingProviderCredentials",
         "PendingAuthentication",
         "PendingSignup",
         "PendingHealup",
@@ -9618,6 +9753,9 @@
     "PlayerSessionLifecyclePlaystationAccountAuthorization": {
       "properties": {
         "authorization_code": {
+          "type": "string"
+        },
+        "environment": {
           "type": "string"
         }
       },
@@ -9640,6 +9778,23 @@
     "PlayerSessionLifecyclePlaystationInput": {
       "properties": {
         "authorization_code": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerSessionLifecyclePluginConfigResponse": {
+      "properties": {
+        "methods": {
+          "items": {
+            "$ref": "#/definitions/PlayerSessionLifecycleAuthMethodConfig"
+          },
+          "type": "array"
+        },
+        "service_url": {
           "type": "string"
         }
       },
@@ -9697,7 +9852,10 @@
           "type": "string"
         },
         "multifactor": {
-          "$ref": "#/definitions/PlayerSessionLifecycleMultifactorDetails"
+          "$ref": "#/definitions/PlayerSessionLifecycleMultifactorDetails",
+          "default": {
+            "method": "method_not_set"
+          }
         },
         "persistLogin": {
           "type": "boolean"
@@ -9707,7 +9865,8 @@
           "default": "Destroyed"
         },
         "type": {
-          "$ref": "#/definitions/PlayerSessionLifecycleSessionResponseType"
+          "$ref": "#/definitions/PlayerSessionLifecycleSessionResponseType",
+          "default": "unknown_authentication_response"
         }
       },
       "type": "object"
@@ -9821,7 +9980,7 @@
     },
     "PlayerSessionLifecycleXboxAccountAuthorizationParameters": {
       "properties": {
-        "scopes": {
+        "authenticatorUrl": {
           "type": "string"
         },
         "showUserSelector": {
@@ -9844,6 +10003,9 @@
     "PlaystationAccountAuthorization": {
       "properties": {
         "authorization_code": {
+          "type": "string"
+        },
+        "environment": {
           "type": "string"
         }
       },
@@ -9921,7 +10083,8 @@
     "PluginManagerResource": {
       "properties": {
         "state": {
-          "$ref": "#/definitions/PluginManagerState"
+          "$ref": "#/definitions/PluginManagerState",
+          "default": "NotReady"
         }
       },
       "type": "object"
@@ -10074,7 +10237,8 @@
           "type": "object"
         },
         "eventType": {
-          "$ref": "#/definitions/PluginResourceEventType"
+          "$ref": "#/definitions/PluginResourceEventType",
+          "default": "Create"
         },
         "uri": {
           "type": "string"
@@ -10128,7 +10292,8 @@
           "type": "string"
         },
         "status": {
-          "$ref": "#/definitions/PrimeGamingPrimeGamingLoginStatus"
+          "$ref": "#/definitions/PrimeGamingPrimeGamingLoginStatus",
+          "default": "logged_out"
         }
       },
       "type": "object"
@@ -10163,7 +10328,8 @@
           "type": "boolean"
         },
         "state": {
-          "$ref": "#/definitions/PrivacyTrackingPermissionRequestState"
+          "$ref": "#/definitions/PrivacyTrackingPermissionRequestState",
+          "default": "Unrequested"
         }
       },
       "type": "object"
@@ -10173,6 +10339,19 @@
         "Unrequested",
         "Requesting",
         "Completed"
+      ],
+      "type": "string"
+    },
+    "PrivateSettingsOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
       ],
       "type": "string"
     },
@@ -10193,7 +10372,8 @@
     "ProductIntegrationAppRepairApplyRequest": {
       "properties": {
         "repairCode": {
-          "$ref": "#/definitions/ProductIntegrationRepairCode"
+          "$ref": "#/definitions/ProductIntegrationRepairCode",
+          "default": "default"
         },
         "sessionId": {
           "type": "string"
@@ -10254,7 +10434,8 @@
     "ProductIntegrationDepsAppRepairApplyRequest": {
       "properties": {
         "repairCode": {
-          "$ref": "#/definitions/ProductIntegrationDepsRepairCode"
+          "$ref": "#/definitions/ProductIntegrationDepsRepairCode",
+          "default": "default"
         },
         "sessionId": {
           "type": "string"
@@ -10311,7 +10492,8 @@
     "ProductIntegrationProductIntegrationAppRepairBody": {
       "properties": {
         "repairCode": {
-          "$ref": "#/definitions/ProductIntegrationRepairCode"
+          "$ref": "#/definitions/ProductIntegrationRepairCode",
+          "default": "default"
         }
       },
       "type": "object"
@@ -10409,7 +10591,8 @@
     "ProductLocalizationPatchlineMetadata": {
       "properties": {
         "config_type": {
-          "$ref": "#/definitions/ProductLocalizationConfigType"
+          "$ref": "#/definitions/ProductLocalizationConfigType",
+          "default": "public"
         },
         "content_cookies": {
           "items": {
@@ -10942,13 +11125,15 @@
           "default": "hidden"
         },
         "config_type": {
-          "$ref": "#/definitions/ProductMetadataConfigType"
+          "$ref": "#/definitions/ProductMetadataConfigType",
+          "default": "public"
         },
         "configuration": {
           "type": "string"
         },
         "configuration_status": {
-          "$ref": "#/definitions/ProductMetadataConfigurationStatus"
+          "$ref": "#/definitions/ProductMetadataConfigurationStatus",
+          "default": "unknown"
         },
         "content_cookies": {
           "items": {
@@ -11153,7 +11338,8 @@
           "type": "string"
         },
         "source": {
-          "$ref": "#/definitions/ProductMetadataPlayerAffinityDataSource"
+          "$ref": "#/definitions/ProductMetadataPlayerAffinityDataSource",
+          "default": "localCache"
         }
       },
       "type": "object"
@@ -11361,7 +11547,8 @@
     "ProductSessionHeartbeatInfo": {
       "properties": {
         "phase": {
-          "$ref": "#/definitions/ProductSessionProductPhase"
+          "$ref": "#/definitions/ProductSessionProductPhase",
+          "default": "None"
         },
         "sessionTTL": {
           "format": "int32",
@@ -11426,7 +11613,8 @@
           "type": "string"
         },
         "phase": {
-          "$ref": "#/definitions/ProductSessionProductPhase"
+          "$ref": "#/definitions/ProductSessionProductPhase",
+          "default": "None"
         },
         "productId": {
           "type": "string"
@@ -11687,7 +11875,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/RiotClientAuthRsoAuthAuthorizationResponseType"
+          "$ref": "#/definitions/RiotClientAuthRsoAuthAuthorizationResponseType",
+          "default": "unknown_authorization_response"
         }
       },
       "type": "object"
@@ -11828,10 +12017,15 @@
           "type": "boolean"
         },
         "loginType": {
-          "$ref": "#/definitions/RiotLoginLoginTypeEnum"
+          "$ref": "#/definitions/RiotLoginLoginTypeEnum",
+          "default": "Invalid"
         },
         "rsoSignOnAttemptEvent": {
-          "$ref": "#/definitions/RiotLoginRSOSignOnAttemptEvent"
+          "$ref": "#/definitions/RiotLoginRSOSignOnAttemptEvent",
+          "default": {
+            "outcome": "Success",
+            "storedSessionState": "Accepted"
+          }
         }
       },
       "type": "object"
@@ -11842,7 +12036,8 @@
           "type": "boolean"
         },
         "phase": {
-          "$ref": "#/definitions/RiotLoginLoginPhase"
+          "$ref": "#/definitions/RiotLoginLoginPhase",
+          "default": "unknown"
         }
       },
       "type": "object"
@@ -11905,7 +12100,8 @@
           "type": "string"
         },
         "outcome": {
-          "$ref": "#/definitions/RiotLoginOutcome"
+          "$ref": "#/definitions/RiotLoginOutcome",
+          "default": "Success"
         },
         "product": {
           "$ref": "#/definitions/RiotLoginProduct"
@@ -11917,7 +12113,8 @@
           "type": "integer"
         },
         "storedSessionState": {
-          "$ref": "#/definitions/RiotLoginStoredSessionState"
+          "$ref": "#/definitions/RiotLoginStoredSessionState",
+          "default": "Accepted"
         }
       },
       "type": "object"
@@ -11939,7 +12136,8 @@
           "type": "boolean"
         },
         "type": {
-          "$ref": "#/definitions/RiotLoginSessionResponseType"
+          "$ref": "#/definitions/RiotLoginSessionResponseType",
+          "default": "unknown_authentication_response"
         }
       },
       "type": "object"
@@ -12081,7 +12279,8 @@
           "type": "string"
         },
         "tokenType": {
-          "$ref": "#/definitions/RiotMessagingServiceTokenType"
+          "$ref": "#/definitions/RiotMessagingServiceTokenType",
+          "default": "Unavailable"
         }
       },
       "type": "object"
@@ -12152,7 +12351,8 @@
     "RiotStatusPatchlineMetadata": {
       "properties": {
         "config_type": {
-          "$ref": "#/definitions/RiotStatusConfigType"
+          "$ref": "#/definitions/RiotStatusConfigType",
+          "default": "public"
         },
         "content_paths": {
           "additionalProperties": {
@@ -12377,7 +12577,8 @@
           "type": "boolean"
         },
         "type": {
-          "$ref": "#/definitions/RsoAuthAuthHintType"
+          "$ref": "#/definitions/RsoAuthAuthHintType",
+          "default": "email_verification"
         }
       },
       "type": "object"
@@ -12782,7 +12983,8 @@
           "type": "string"
         },
         "method": {
-          "$ref": "#/definitions/RsoAuthMultifactorMethod"
+          "$ref": "#/definitions/RsoAuthMultifactorMethod",
+          "default": "method_not_set"
         },
         "methods": {
           "items": {
@@ -13046,7 +13248,10 @@
           "type": "string"
         },
         "multifactor": {
-          "$ref": "#/definitions/RsoAuthMultifactorDetails"
+          "$ref": "#/definitions/RsoAuthMultifactorDetails",
+          "default": {
+            "method": "method_not_set"
+          }
         },
         "persistLogin": {
           "type": "boolean"
@@ -13055,7 +13260,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/RsoAuthSessionResponseType"
+          "$ref": "#/definitions/RsoAuthSessionResponseType",
+          "default": "unknown_authentication_response"
         }
       },
       "type": "object"
@@ -13553,7 +13759,8 @@
           "type": "string"
         },
         "type": {
-          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType"
+          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType",
+          "default": "auth"
         },
         "xbox": {
           "$ref": "#/definitions/RsoAuthenticatorV1XboxInput"
@@ -13582,7 +13789,8 @@
           "$ref": "#/definitions/RsoAuthenticatorV1SuccessResponseDetails"
         },
         "type": {
-          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType"
+          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType",
+          "default": "auth"
         }
       },
       "type": "object"
@@ -13758,6 +13966,9 @@
       "properties": {
         "authorization_code": {
           "type": "string"
+        },
+        "environment": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -13869,7 +14080,8 @@
           "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentityInput"
         },
         "type": {
-          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType"
+          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType",
+          "default": "auth"
         }
       },
       "type": "object"
@@ -13924,13 +14136,15 @@
           "type": "string"
         },
         "display": {
-          "$ref": "#/definitions/RsoAuthenticatorV1DisplayMode"
+          "$ref": "#/definitions/RsoAuthenticatorV1DisplayMode",
+          "default": "page"
         },
         "locale": {
           "type": "string"
         },
         "method": {
-          "$ref": "#/definitions/RsoAuthenticatorV1WebAuthenticationMethod"
+          "$ref": "#/definitions/RsoAuthenticatorV1WebAuthenticationMethod",
+          "default": "none"
         },
         "product_id": {
           "type": "string"
@@ -13959,7 +14173,8 @@
     "RsoAuthenticatorV1WebLinkingStatusResponse": {
       "properties": {
         "status": {
-          "$ref": "#/definitions/RsoAuthenticatorV1WebLinkingStatus"
+          "$ref": "#/definitions/RsoAuthenticatorV1WebLinkingStatus",
+          "default": "NEW"
         },
         "ttl": {
           "format": "int32",
@@ -13972,6 +14187,9 @@
     },
     "RsoAuthenticatorV1XboxInput": {
       "properties": {
+        "user_hash": {
+          "type": "string"
+        },
         "xsts_token": {
           "type": "string"
         }
@@ -14057,7 +14275,8 @@
           "type": "string"
         },
         "severity": {
-          "$ref": "#/definitions/LogSeverityLevels"
+          "$ref": "#/definitions/LogSeverityLevels",
+          "default": "Okay"
         }
       },
       "type": "object"
@@ -14159,6 +14378,14 @@
     "VoiceChatIdToken": {
       "properties": {
         "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "VoiceChatJoinSession": {
+      "properties": {
+        "jwt": {
           "type": "string"
         }
       },
@@ -14276,7 +14503,8 @@
           "type": "array"
         },
         "mode": {
-          "$ref": "#/definitions/VoiceChatPTTMode"
+          "$ref": "#/definitions/VoiceChatPTTMode",
+          "default": "exclusive"
         }
       },
       "type": "object"
@@ -14312,7 +14540,8 @@
           "type": "string"
         },
         "status": {
-          "$ref": "#/definitions/VoiceChatSessionStatus"
+          "$ref": "#/definitions/VoiceChatSessionStatus",
+          "default": "active"
         },
         "volume": {
           "format": "int32",
@@ -14422,7 +14651,8 @@
           "type": "array"
         },
         "mode": {
-          "$ref": "#/definitions/VoiceChatPTTMode"
+          "$ref": "#/definitions/VoiceChatPTTMode",
+          "default": "exclusive"
         }
       },
       "type": "object"
@@ -14772,7 +15002,7 @@
     },
     "XboxAccountAuthorizationParameters": {
       "properties": {
-        "scopes": {
+        "authenticatorUrl": {
           "type": "string"
         },
         "showUserSelector": {
@@ -19211,56 +19441,6 @@
         ]
       }
     },
-    "/config/v1/config_name/{config_name}": {
-      "get": {
-        "operationId": "GetConfigV1ConfigNameByConfigName",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "config_name",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
-            }
-          }
-        },
-        "summary": "Get the config matching the ID exactly",
-        "tags": [
-          "Plugins",
-          "Plugin configuration",
-          "Subscribable",
-          "Internal"
-        ]
-      }
-    },
-    "/config/v1/debug/all": {
-      "get": {
-        "operationId": "GetConfigV1DebugAll",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
-            }
-          }
-        },
-        "summary": "Returns every config value attached to each of its sources.",
-        "tags": [
-          "Plugins",
-          "Plugin configuration",
-          "Internal"
-        ]
-      }
-    },
     "/cookie-jar/v1/cookies": {
       "delete": {
         "operationId": "DeleteCookieJarV1Cookies",
@@ -20920,6 +21100,27 @@
         ]
       }
     },
+    "/mailbox/v1/ready": {
+      "get": {
+        "description": "\n**Description**\n\nSubscribe to this endpoint to know when it is safe to call other mailbox APIs.\n\nThe result is `true` when all of the following are true: mailbox has been enabled by configuration, the cluster configuration is loaded, player affinity is available, and the player is logged in.\n\nIf the result is `false`, do not attempt to call mailbox APIs.\n\n",
+        "operationId": "GetMailboxV1Ready",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "summary": "Returns whether or not the mailbox feature is enabled and ready to use for this environment",
+        "tags": [
+          "Plugins",
+          "Plugin mailbox",
+          "Subscribable"
+        ]
+      }
+    },
     "/name-check/v1/validate": {
       "get": {
         "operationId": "GetNameCheckV1Validate",
@@ -20996,6 +21197,25 @@
           }
         },
         "summary": "Get the Network Service Account ID (NSA) for the player logged in the Nintendo Switch",
+        "tags": [
+          "Plugins",
+          "Plugin nintendo-account"
+        ]
+      }
+    },
+    "/nintendo-account/v1/player-nickname": {
+      "get": {
+        "operationId": "GetNintendoAccountV1PlayerNickname",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Gets the player nickname of the Nintendo Account for the player logged in the Nintendo Switch",
         "tags": [
           "Plugins",
           "Plugin nintendo-account"
@@ -23454,6 +23674,25 @@
         ]
       }
     },
+    "/playstation-account/v1/player-nickname": {
+      "get": {
+        "operationId": "GetPlaystationAccountV1PlayerNickname",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Gets the player nickname of the Playstation Account for the player logged in the Playstation device",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account"
+        ]
+      }
+    },
     "/plugin-manager/v1/status": {
       "get": {
         "operationId": "GetPluginManagerV1Status",
@@ -23687,6 +23926,199 @@
         "tags": [
           "Plugins",
           "Plugin privacy"
+        ]
+      }
+    },
+    "/private-settings/v1/settings/{platform}/{userid}/{key}": {
+      "get": {
+        "operationId": "GetPrivateSettingsV1SettingsByPlatformByUseridByKey",
+        "parameters": [
+          {
+            "enum": [
+              "absent",
+              "unknown",
+              "riot",
+              "tencent",
+              "garena",
+              "playstation",
+              "switch",
+              "xbox"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "summary": "For facilitating testing. Plugins should access private-settings via config key `private.user.<userid>.<key>`.",
+        "tags": [
+          "Plugins",
+          "Plugin private-settings",
+          "Internal"
+        ]
+      },
+      "put": {
+        "operationId": "PutPrivateSettingsV1SettingsByPlatformByUseridByKey",
+        "parameters": [
+          {
+            "enum": [
+              "absent",
+              "unknown",
+              "riot",
+              "tencent",
+              "garena",
+              "playstation",
+              "switch",
+              "xbox"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "value",
+            "required": true,
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update an individual private setting configuration. Upon success, configuration data within `private.user.<userid>.<key>` is updated and platform-specific settings 'save' systems are notified.",
+        "tags": [
+          "Plugins",
+          "Plugin private-settings",
+          "Internal"
+        ]
+      }
+    },
+    "/private-settings/v1/token/{platform}/{userid}": {
+      "get": {
+        "description": "API only enabled when `private-settings.multi-user-mode` is set to `true` (Consoles default `true`, else `false`).\n\n`token` refers to a compressed and url-safe base64 encoded token of private settings for the user.\n\n`userId` in this API refers to the platform-specific identifier for an active profile or user account.\n\n * xbox: XUID\n * playstation: Account ID\n * switch: NSA ID\n\nPlatforms not listed do not need to use this API, as private settings persistence is managed by this SDK.",
+        "operationId": "GetPrivateSettingsV1TokenByPlatformByUserid",
+        "parameters": [
+          {
+            "enum": [
+              "absent",
+              "unknown",
+              "riot",
+              "tencent",
+              "garena",
+              "playstation",
+              "switch",
+              "xbox"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Only valid after a token has been restored or reset via PUT. Subscribe (or call) to this endpoint to receive updates on modifications to the private-settings for the given `userId`. Host applications should include this token with platform-specific data saves for the `userId`.",
+        "tags": [
+          "Plugins",
+          "Plugin private-settings",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "description": "Only call once per user, per session.\n\nAPI only enabled when `private-settings.multi-user-mode` is set to `true` (Consoles default `true`, else `false`).\n\n`token` refers to a compressed and url-safe base64 encoded token of private settings for the user.\n\n`userId` in this API refers to the platform-specific identifier for an active profile or user account.\n\n * xbox: XUID\n * playstation: Account ID\n * switch: NSA ID\n\nPlatforms not listed do not need to use this API, as private settings persistence is managed by this SDK.",
+        "operationId": "PutPrivateSettingsV1TokenByPlatformByUserid",
+        "parameters": [
+          {
+            "enum": [
+              "absent",
+              "unknown",
+              "riot",
+              "tencent",
+              "garena",
+              "playstation",
+              "switch",
+              "xbox"
+            ],
+            "in": "path",
+            "name": "platform",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "userid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "token",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Submit settings token after loading last-known saved data for the current device user.\nIf no save data or token exists for user, submit an no token or an empty string to reset private-settings for user.",
+        "tags": [
+          "Plugins",
+          "Plugin private-settings"
         ]
       }
     },
@@ -26469,6 +26901,47 @@
         ]
       }
     },
+    "/riotclient/v1/platform-id": {
+      "get": {
+        "operationId": "GetRiotclientV1PlatformId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PlatformIdInfo"
+            }
+          }
+        },
+        "summary": "Information about the currently active platform user",
+        "tags": [
+          "riotclient"
+        ]
+      },
+      "put": {
+        "operationId": "PutRiotclientV1PlatformId",
+        "parameters": [
+          {
+            "description": "Platform identifier for the currently active user",
+            "in": "body",
+            "name": "platformId",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlatformIdInfo"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update the currently active platform user",
+        "tags": [
+          "riotclient"
+        ]
+      }
+    },
     "/rnet-sanitizer/v1/containsSanitized": {
       "post": {
         "operationId": "PostRnetSanitizerV1ContainsSanitized",
@@ -28146,7 +28619,7 @@
         "parameters": [
           {
             "in": "body",
-            "name": "xsts_token",
+            "name": "xbox",
             "required": true,
             "schema": {
               "$ref": "#/definitions/RsoAuthenticatorV1AuthenticateXboxInput"
@@ -28161,7 +28634,7 @@
             }
           }
         },
-        "summary": "Authenticate a player with Xbox xsts token.",
+        "summary": "Authenticate a player with Xbox xsts token and user hash",
         "tags": [
           "Plugins",
           "Plugin rso-authenticator"
@@ -29489,6 +29962,7 @@
     },
     "/voice-chat/v3/sessions/{productName}": {
       "delete": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "DeleteVoiceChatV3SessionsByProductName",
         "parameters": [
           {
@@ -29506,10 +29980,12 @@
         "summary": "Leave all joined sessions",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       },
       "get": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "GetVoiceChatV3SessionsByProductName",
         "parameters": [
           {
@@ -29534,10 +30010,12 @@
         "tags": [
           "Plugins",
           "Plugin voice-chat",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       },
       "post": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "PostVoiceChatV3SessionsByProductName",
         "parameters": [
           {
@@ -29564,11 +30042,12 @@
         "summary": "Join a session with game-specific JWT token",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       },
       "put": {
-        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n",
+        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n\n\nEndpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "PutVoiceChatV3SessionsByProductName",
         "parameters": [
           {
@@ -29594,12 +30073,14 @@
         "summary": "Update the properties for all sessions",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       }
     },
     "/voice-chat/v3/sessions/{productName}/{id}": {
       "delete": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "DeleteVoiceChatV3SessionsByProductNameById",
         "parameters": [
           {
@@ -29623,10 +30104,12 @@
         "summary": "Leave a session",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       },
       "get": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}/{id}",
         "operationId": "GetVoiceChatV3SessionsByProductNameById",
         "parameters": [
           {
@@ -29654,11 +30137,12 @@
         "tags": [
           "Plugins",
           "Plugin voice-chat",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       },
       "put": {
-        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n",
+        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n\n\nEndpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "PutVoiceChatV3SessionsByProductNameById",
         "parameters": [
           {
@@ -29690,12 +30174,14 @@
         "summary": "Update the properties for a session",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       }
     },
     "/voice-chat/v3/sessions/{productName}/{sessionId}/participants/{participantId}": {
       "get": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "GetVoiceChatV3SessionsByProductNameBySessionIdParticipantsByParticipantId",
         "parameters": [
           {
@@ -29729,10 +30215,12 @@
         "tags": [
           "Plugins",
           "Plugin voice-chat",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       },
       "put": {
+        "description": "Endpoint deprecated and will be deleted November 2022.  Please use /voice-chat/v4/sessions/{productName}",
         "operationId": "PutVoiceChatV3SessionsByProductNameBySessionIdParticipantsByParticipantId",
         "parameters": [
           {
@@ -29770,7 +30258,8 @@
         "summary": "Update local participant details",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Deprecated"
         ]
       }
     },
@@ -29824,6 +30313,295 @@
           }
         },
         "summary": "Update current voice chat settings",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      }
+    },
+    "/voice-chat/v4/sessions/{productName}": {
+      "delete": {
+        "operationId": "DeleteVoiceChatV4SessionsByProductName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Leave all joined sessions",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      },
+      "get": {
+        "operationId": "GetVoiceChatV4SessionsByProductName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/VoiceChatSessionResource"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "Get the list of all current voice sessions",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostVoiceChatV4SessionsByProductName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VoiceChatJoinSession"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/VoiceChatSessionResource"
+            }
+          }
+        },
+        "summary": "Join a session with game-specific JWT token",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      },
+      "put": {
+        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n",
+        "operationId": "PutVoiceChatV4SessionsByProductName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VoiceChatUpdateSessionResource"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update the properties for all sessions",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      }
+    },
+    "/voice-chat/v4/sessions/{productName}/{id}": {
+      "delete": {
+        "operationId": "DeleteVoiceChatV4SessionsByProductNameById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Leave a session",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      },
+      "get": {
+        "operationId": "GetVoiceChatV4SessionsByProductNameById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/VoiceChatSessionResource"
+            }
+          }
+        },
+        "summary": "Get session details",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "description": "volume: Controls the output volume for a room. Set to 0 to mute.\nisFocused: Toggles if a session gains volume priority, which dampens the volume of the other sessions.\nisTransmitEnabled: Toggles audio input for a session.\n",
+        "operationId": "PutVoiceChatV4SessionsByProductNameById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "details",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VoiceChatUpdateSessionResource"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update the properties for a session",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat"
+        ]
+      }
+    },
+    "/voice-chat/v4/sessions/{productName}/{sessionId}/participants/{participantId}": {
+      "get": {
+        "operationId": "GetVoiceChatV4SessionsByProductNameBySessionIdParticipantsByParticipantId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "participantId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/VoiceChatParticipantResource"
+            }
+          }
+        },
+        "summary": "Get participant details",
+        "tags": [
+          "Plugins",
+          "Plugin voice-chat",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "operationId": "PutVoiceChatV4SessionsByProductNameBySessionIdParticipantsByParticipantId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "participantId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "participant",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/VoiceChatUpdateParticipantResource"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update local participant details",
         "tags": [
           "Plugins",
           "Plugin voice-chat"
