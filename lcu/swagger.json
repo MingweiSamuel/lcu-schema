@@ -4825,6 +4825,626 @@
       },
       "type": "object"
     },
+    "LolChallengesChallengeData": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "currentLevel": {
+          "type": "string"
+        },
+        "currentLevelAchievedTime": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "currentThreshold": {
+          "format": "double",
+          "type": "number"
+        },
+        "currentValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "friendsAtLevels": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesFriendLevelsData"
+          },
+          "type": "array"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "initValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "legacy": {
+          "type": "boolean"
+        },
+        "newLevels": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nextLevel": {
+          "type": "string"
+        },
+        "nextThreshold": {
+          "format": "double",
+          "type": "number"
+        },
+        "percentile": {
+          "format": "double",
+          "type": "number"
+        },
+        "playersInLevel": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "position": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "previousLevel": {
+          "type": "string"
+        },
+        "previousThreshold": {
+          "format": "double",
+          "type": "number"
+        },
+        "previousValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "seasonId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "seasonal": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengeLevelData": {
+      "properties": {
+        "level": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengePlayerData": {
+      "properties": {
+        "apexLaderUpdateTime": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "categoryPoints": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolChallengesChallengePoints"
+          },
+          "type": "object"
+        },
+        "id": {
+          "type": "string"
+        },
+        "levelPoints": {
+          "additionalProperties": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "playerChallenges": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesChallengeData"
+          },
+          "type": "array"
+        },
+        "preferences": {
+          "$ref": "#/definitions/LolChallengesPlayerClientPreferences"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/definitions/LolChallengesSource"
+        },
+        "tags": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "totalPoints": {
+          "$ref": "#/definitions/LolChallengesChallengePoints"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengePoints": {
+      "properties": {
+        "current": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "level": {
+          "type": "string"
+        },
+        "max": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "percentile": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengeSignedUpdatePayload": {
+      "properties": {
+        "tokensByType": {
+          "additionalProperties": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengeThreshold": {
+      "properties": {
+        "rewardGroupId": {
+          "type": "string"
+        },
+        "rewards": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesChallengeThresholdReward"
+          },
+          "type": "array"
+        },
+        "value": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengeThresholdReward": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengesPlayerPreferences": {
+      "properties": {
+        "bannerAccent": {
+          "type": "string"
+        },
+        "challengeIds": {
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "signedJWTPayload": {
+          "$ref": "#/definitions/LolChallengesChallengeSignedUpdatePayload"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengesRMSNotification": {
+      "properties": {
+        "ackRequired": {
+          "type": "boolean"
+        },
+        "payload": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengesRMSPayload": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "playerKey": {
+          "$ref": "#/definitions/LolChallengesChallengesRMSPlayerKey"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesChallengesRMSPlayerKey": {
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesEndOfGameStats": {
+      "properties": {
+        "gameId": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesFriendLevelsData": {
+      "properties": {
+        "friends": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "level": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesFriendResource": {
+      "properties": {
+        "puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesGameDataChallengeConfig": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "descriptionShort": {
+          "type": "string"
+        },
+        "iconPath": {
+          "type": "string"
+        },
+        "levelToIconPath": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "tags": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "thresholds": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolChallengesChallengeThreshold"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesGameDataChallengeTitle": {
+      "properties": {
+        "itemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesGameDataChallengesData": {
+      "properties": {
+        "challenges": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolChallengesGameDataChallengeConfig"
+          },
+          "type": "object"
+        },
+        "titles": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolChallengesGameDataChallengeTitle"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesInventoryTypeAchievementTitle": {
+      "properties": {
+        "itemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesPlayerClientPreferences": {
+      "properties": {
+        "tabard": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "tokens": {
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesSource": {
+      "enum": [
+        "CHALLENGES",
+        "EOGD",
+        "CAP_INVENTORY",
+        "HONOR",
+        "CHAMPION_MASTERY",
+        "RANKED_LEAGUES",
+        "CLASH",
+        "LOOT",
+        "ETERNALS"
+      ],
+      "type": "string"
+    },
+    "LolChallengesUICategoryProgress": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "current": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "level": {
+          "type": "string"
+        },
+        "max": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "positionPercentile": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesUIChallenge": {
+      "properties": {
+        "capstoneGroupId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "capstoneGroupName": {
+          "type": "string"
+        },
+        "capstoneId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "currentLevel": {
+          "type": "string"
+        },
+        "currentLevelAchievedTime": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "currentThreshold": {
+          "format": "double",
+          "type": "number"
+        },
+        "currentValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        },
+        "descriptionShort": {
+          "type": "string"
+        },
+        "friendsAtLevels": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesFriendLevelsData"
+          },
+          "type": "array"
+        },
+        "iconPath": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "isApex": {
+          "type": "boolean"
+        },
+        "isCapstone": {
+          "type": "boolean"
+        },
+        "levelToIconPath": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nextLevel": {
+          "type": "string"
+        },
+        "nextLevelIconPath": {
+          "type": "string"
+        },
+        "nextThreshold": {
+          "format": "double",
+          "type": "number"
+        },
+        "percentile": {
+          "format": "double",
+          "type": "number"
+        },
+        "pointsAwarded": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "position": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "previousLevel": {
+          "type": "string"
+        },
+        "previousValue": {
+          "format": "double",
+          "type": "number"
+        },
+        "source": {
+          "type": "string"
+        },
+        "thresholds": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolChallengesUIChallengeThreshold"
+          },
+          "type": "object"
+        },
+        "valueMapping": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesUIChallengeReward": {
+      "properties": {
+        "asset": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "quantity": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesUIChallengeThreshold": {
+      "properties": {
+        "rewards": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesUIChallengeReward"
+          },
+          "type": "array"
+        },
+        "value": {
+          "format": "double",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesUIPlayerSummary": {
+      "properties": {
+        "apexLadderUpdateTime": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "categoryProgress": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesUICategoryProgress"
+          },
+          "type": "array"
+        },
+        "overallChallengeLevel": {
+          "type": "string"
+        },
+        "pointsUntilNextRank": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "positionPercentile": {
+          "format": "double",
+          "type": "number"
+        },
+        "title": {
+          "$ref": "#/definitions/LolChallengesUITitle"
+        },
+        "topChallenges": {
+          "items": {
+            "$ref": "#/definitions/LolChallengesUIChallenge"
+          },
+          "type": "array"
+        },
+        "totalChallengeScore": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesUITitle": {
+      "properties": {
+        "contentId": {
+          "type": "string"
+        },
+        "itemId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolChampSelectChampGridChampion": {
       "properties": {
         "disabled": {
@@ -25262,11 +25882,17 @@
           },
           "type": "array"
         },
+        "checksOwnership": {
+          "type": "boolean"
+        },
         "guaranteedToContain": {
           "items": {
             "$ref": "#/definitions/LolLootLootOddsResponse"
           },
           "type": "array"
+        },
+        "hasPityRules": {
+          "type": "boolean"
         },
         "lootItem": {
           "$ref": "#/definitions/LolLootPlayerLoot"
@@ -35116,7 +35742,8 @@
       "enum": [
         "PENDING_FULFILLMENT",
         "PENDING_SELECTION",
-        "FULFILLED"
+        "FULFILLED",
+        "FAILED"
       ],
       "type": "string"
     },
@@ -35171,6 +35798,17 @@
       "properties": {
         "transactionId": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolRewardsResponseDTO-SvcRewardGrant": {
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/LolRewardsSvcRewardGrant"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolRewardsResponseMetadataDTO"
         }
       },
       "type": "object"
@@ -35251,7 +35889,8 @@
     "LolRewardsRewardStatus": {
       "enum": [
         "PENDING",
-        "FULFILLED"
+        "FULFILLED",
+        "FAILED"
       ],
       "type": "string"
     },
@@ -38385,6 +39024,32 @@
       ],
       "type": "string"
     },
+    "LolSummonerProfilePrivacy": {
+      "properties": {
+        "enabledState": {
+          "$ref": "#/definitions/LolSummonerProfilePrivacyEnabledState"
+        },
+        "setting": {
+          "$ref": "#/definitions/LolSummonerProfilePrivacySetting"
+        }
+      },
+      "type": "object"
+    },
+    "LolSummonerProfilePrivacyEnabledState": {
+      "enum": [
+        "UNKNOWN",
+        "ENABLED",
+        "DISABLED"
+      ],
+      "type": "string"
+    },
+    "LolSummonerProfilePrivacySetting": {
+      "enum": [
+        "PRIVATE",
+        "PUBLIC"
+      ],
+      "type": "string"
+    },
     "LolSummonerRerollDataBagForClientV1": {
       "properties": {
         "maximumRerolls": {
@@ -38441,6 +39106,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "privacy": {
+          "$ref": "#/definitions/LolSummonerProfilePrivacySetting"
+        },
         "profileIconId": {
           "format": "int32",
           "type": "integer"
@@ -38475,6 +39143,9 @@
     },
     "LolSummonerSummonerCacheData": {
       "properties": {
+        "privacy": {
+          "$ref": "#/definitions/LolSummonerProfilePrivacySetting"
+        },
         "summoner": {
           "$ref": "#/definitions/LolSummonerSummoner"
         },
@@ -38535,6 +39206,9 @@
         },
         "partnerId": {
           "type": "string"
+        },
+        "privacy": {
+          "$ref": "#/definitions/LolSummonerProfilePrivacySetting"
         },
         "profileIconId": {
           "format": "int32",
@@ -38674,8 +39348,28 @@
       },
       "type": "object"
     },
+    "LolTftLolTftHubFooterColors": {
+      "properties": {
+        "bottomColor": {
+          "type": "string"
+        },
+        "lineColor": {
+          "type": "string"
+        },
+        "topColor": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolTftLolTftStorePromos": {
       "properties": {
+        "battlePassOfferIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "storePromoOfferIds": {
           "items": {
             "type": "string"
@@ -43594,11 +44288,17 @@
           },
           "type": "array"
         },
+        "checksOwnership": {
+          "type": "boolean"
+        },
         "guaranteedToContain": {
           "items": {
             "$ref": "#/definitions/LootOddsDTO"
           },
           "type": "array"
+        },
+        "hasPityRules": {
+          "type": "boolean"
         },
         "lastUpdated": {
           "type": "string"
@@ -44684,7 +45384,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -46305,6 +47005,318 @@
         "tags": [
           "Plugins",
           "Plugin lol-catalog"
+        ]
+      }
+    },
+    "/lol-challenges/v1/challenges/{product}/local-player": {
+      "get": {
+        "operationId": "GetLolChallengesV1ChallengesByProductLocalPlayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/LolChallengesUIChallenge"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/level-points": {
+      "get": {
+        "operationId": "GetLolChallengesV1LevelPoints",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/my-updated-challenges/{gameId}": {
+      "get": {
+        "operationId": "GetLolChallengesV1MyUpdatedChallengesByGameId",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "gameId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/LolChallengesUIChallenge"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/processGame/{product}/{gameId}": {
+      "post": {
+        "operationId": "PostLolChallengesV1ProcessGameByProductByGameId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "gameId",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/suggested-challenges/{product}/local-player": {
+      "get": {
+        "operationId": "GetLolChallengesV1SuggestedChallengesByProductLocalPlayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/LolChallengesUIChallenge"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/summary-player-data/{product}/local-player": {
+      "get": {
+        "operationId": "GetLolChallengesV1SummaryPlayerDataByProductLocalPlayer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolChallengesUIPlayerSummary"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/summary-player-data/{product}/player/{puuid}": {
+      "get": {
+        "operationId": "GetLolChallengesV1SummaryPlayerDataByProductPlayerByPuuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolChallengesUIPlayerSummary"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/summary-players-data/{product}/players": {
+      "get": {
+        "operationId": "GetLolChallengesV1SummaryPlayersDataByProductPlayers",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "puuids",
+            "required": true,
+            "type": "array"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": {
+                "$ref": "#/definitions/LolChallengesUIPlayerSummary"
+              },
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/titles/local-player": {
+      "get": {
+        "operationId": "GetLolChallengesV1TitlesLocalPlayer",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/LolChallengesUITitle"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/update-player-preferences/{product}": {
+      "post": {
+        "operationId": "PostLolChallengesV1UpdatePlayerPreferencesByProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "product",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "preferences",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LolChallengesChallengesPlayerPreferences"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
+    "/lol-challenges/v1/updated-challenge/{gameId}/{puuid}": {
+      "get": {
+        "operationId": "GetLolChallengesV1UpdatedChallengeByGameIdByPuuid",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "name": "gameId",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolChallengesUIChallenge"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
         ]
       }
     },
@@ -63619,7 +64631,8 @@
             "enum": [
               "PENDING_FULFILLMENT",
               "PENDING_SELECTION",
-              "FULFILLED"
+              "FULFILLED",
+              "FAILED"
             ],
             "in": "query",
             "name": "status",
@@ -65896,6 +66909,50 @@
         ]
       }
     },
+    "/lol-summoner/v1/current-summoner/profile-privacy": {
+      "get": {
+        "operationId": "GetLolSummonerV1CurrentSummonerProfilePrivacy",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolSummonerProfilePrivacy"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      },
+      "put": {
+        "operationId": "PutLolSummonerV1CurrentSummonerProfilePrivacy",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LolSummonerProfilePrivacySetting"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
     "/lol-summoner/v1/current-summoner/rerollPoints": {
       "get": {
         "operationId": "GetLolSummonerV1CurrentSummonerRerollPoints",
@@ -65950,6 +67007,24 @@
             "schema": {
               "additionalProperties": true,
               "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-summoner"
+        ]
+      }
+    },
+    "/lol-summoner/v1/profile-privacy-enabled": {
+      "get": {
+        "operationId": "GetLolSummonerV1ProfilePrivacyEnabled",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolSummonerProfilePrivacyEnabledState"
             }
           }
         },
@@ -66342,6 +67417,24 @@
         "tags": [
           "Plugins",
           "Plugin lol-tastes"
+        ]
+      }
+    },
+    "/lol-tft/v1/tft/hubFooterColors": {
+      "get": {
+        "operationId": "GetLolTftV1TftHubFooterColors",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/LolTftLolTftHubFooterColors"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-tft"
         ]
       }
     },
@@ -68779,7 +69872,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -68813,7 +69906,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "Http2ApiDocsV2",
+        "operationId": "HttpApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
@@ -68832,7 +69925,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "Http2ApiDocsV3",
+        "operationId": "HttpApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
