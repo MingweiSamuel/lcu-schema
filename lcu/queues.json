@@ -3079,7 +3079,7 @@
       8
     ],
     "areFreeChampionsAllowed": true,
-    "assetMutator": "",
+    "assetMutator": "TFTTURBO",
     "category": "PvP",
     "championsRequiredToPlay": 22,
     "description": "Hyper Roll",
@@ -3352,7 +3352,7 @@
       2
     ],
     "areFreeChampionsAllowed": true,
-    "assetMutator": "",
+    "assetMutator": "TFT_PAIRS",
     "category": "PvP",
     "championsRequiredToPlay": 22,
     "description": "Double Up (Beta)",
