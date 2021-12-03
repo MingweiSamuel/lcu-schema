@@ -45397,7 +45397,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "HttpAsyncResult",
+        "operationId": "Http2AsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -45437,7 +45437,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
