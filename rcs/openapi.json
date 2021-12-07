@@ -7749,7 +7749,7 @@
             "description": "Platform-specific identifier as a string",
             "type": "string"
           },
-          "platformName": {
+          "platform": {
             "$ref": "#/components/schemas/OnlinePlatform",
             "default": "unknown",
             "description": "Canonical name of the online platform"
@@ -9844,28 +9844,6 @@
         },
         "type": "object"
       },
-      "PlayerSessionLifecyclePlayerSessionLifecycleError": {
-        "enum": [
-          "BadRequest",
-          "Unauthorized",
-          "AuthorizationFailure",
-          "UnknownAuthorizationResponse",
-          "AuthenticationFailure",
-          "AuthenticationResponseMissing",
-          "UnknownAuthenticationState",
-          "UpdateLoginTokenAuthFailure",
-          "ClientIdFetchFailure",
-          "AuthMethodConfigFetchFailure",
-          "ProviderTokensMissing",
-          "TooYoung",
-          "NintendoAccountFetchTokenFailure",
-          "NintendoAccountFetchNSATokenFailure",
-          "NintendoAccountUnauthorized",
-          "PlaystationAccountFetchTokenFailure",
-          "XboxAccountFetchTokenFailure"
-        ],
-        "type": "string"
-      },
       "PlayerSessionLifecyclePlayerSessionState": {
         "properties": {
           "accessToken": {
@@ -10520,19 +10498,6 @@
           "Unrequested",
           "Requesting",
           "Completed"
-        ],
-        "type": "string"
-      },
-      "PrivateSettingsOnlinePlatform": {
-        "enum": [
-          "absent",
-          "unknown",
-          "riot",
-          "tencent",
-          "garena",
-          "playstation",
-          "switch",
-          "xbox"
         ],
         "type": "string"
       },
@@ -16217,7 +16182,7 @@
         ]
       },
       "post": {
-        "description": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be grandfathered in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be substituted in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
         "operationId": "PostChatV2Friendrequests",
         "parameters": [
           {
@@ -25451,26 +25416,10 @@
         ]
       }
     },
-    "/private-settings/v1/settings/{platform}/{userid}/{key}": {
+    "/private-settings/v1/settings/{userid}/{key}": {
       "get": {
-        "operationId": "GetPrivateSettingsV1SettingsByPlatformByUseridByKey",
+        "operationId": "GetPrivateSettingsV1SettingsByUseridByKey",
         "parameters": [
-          {
-            "enum": [
-              "absent",
-              "unknown",
-              "riot",
-              "tencent",
-              "garena",
-              "playstation",
-              "switch",
-              "xbox"
-            ],
-            "in": "path",
-            "name": "platform",
-            "required": true,
-            "type": "string"
-          },
           {
             "in": "path",
             "name": "userid",
@@ -25505,24 +25454,8 @@
         ]
       },
       "put": {
-        "operationId": "PutPrivateSettingsV1SettingsByPlatformByUseridByKey",
+        "operationId": "PutPrivateSettingsV1SettingsByUseridByKey",
         "parameters": [
-          {
-            "enum": [
-              "absent",
-              "unknown",
-              "riot",
-              "tencent",
-              "garena",
-              "playstation",
-              "switch",
-              "xbox"
-            ],
-            "in": "path",
-            "name": "platform",
-            "required": true,
-            "type": "string"
-          },
           {
             "in": "path",
             "name": "userid",
@@ -25562,27 +25495,11 @@
         ]
       }
     },
-    "/private-settings/v1/token/{platform}/{userid}": {
+    "/private-settings/v1/token/{userid}": {
       "get": {
         "description": "API only enabled when `private-settings.multi-user-mode` is set to `true` (Consoles default `true`, else `false`).\n\n`token` refers to a compressed and url-safe base64 encoded token of private settings for the user.\n\n`userId` in this API refers to the platform-specific identifier for an active profile or user account.\n\n * xbox: XUID\n * playstation: Account ID\n * switch: NSA ID\n\nPlatforms not listed do not need to use this API, as private settings persistence is managed by this SDK.",
-        "operationId": "GetPrivateSettingsV1TokenByPlatformByUserid",
+        "operationId": "GetPrivateSettingsV1TokenByUserid",
         "parameters": [
-          {
-            "enum": [
-              "absent",
-              "unknown",
-              "riot",
-              "tencent",
-              "garena",
-              "playstation",
-              "switch",
-              "xbox"
-            ],
-            "in": "path",
-            "name": "platform",
-            "required": true,
-            "type": "string"
-          },
           {
             "in": "path",
             "name": "userid",
@@ -25611,24 +25528,8 @@
       },
       "put": {
         "description": "Only call once per user, per session.\n\nAPI only enabled when `private-settings.multi-user-mode` is set to `true` (Consoles default `true`, else `false`).\n\n`token` refers to a compressed and url-safe base64 encoded token of private settings for the user.\n\n`userId` in this API refers to the platform-specific identifier for an active profile or user account.\n\n * xbox: XUID\n * playstation: Account ID\n * switch: NSA ID\n\nPlatforms not listed do not need to use this API, as private settings persistence is managed by this SDK.",
-        "operationId": "PutPrivateSettingsV1TokenByPlatformByUserid",
+        "operationId": "PutPrivateSettingsV1TokenByUserid",
         "parameters": [
-          {
-            "enum": [
-              "absent",
-              "unknown",
-              "riot",
-              "tencent",
-              "garena",
-              "playstation",
-              "switch",
-              "xbox"
-            ],
-            "in": "path",
-            "name": "platform",
-            "required": true,
-            "type": "string"
-          },
           {
             "in": "path",
             "name": "userid",
