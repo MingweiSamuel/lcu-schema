@@ -5126,6 +5126,9 @@
         "iconPath": {
           "type": "string"
         },
+        "leaderboard": {
+          "type": "boolean"
+        },
         "levelToIconPath": {
           "additionalProperties": {
             "type": "string"
@@ -5134,6 +5137,16 @@
         },
         "name": {
           "type": "string"
+        },
+        "queueIds": {
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "reverseDirection": {
+          "type": "boolean"
         },
         "source": {
           "type": "string"
@@ -5208,6 +5221,18 @@
             "type": "integer"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "LolChallengesQueue": {
+      "properties": {
+        "gameMode": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
         }
       },
       "type": "object"
@@ -5292,6 +5317,15 @@
           },
           "type": "array"
         },
+        "gameModes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "hasLeaderboard": {
+          "type": "boolean"
+        },
         "iconPath": {
           "type": "string"
         },
@@ -5303,6 +5337,9 @@
           "type": "boolean"
         },
         "isCapstone": {
+          "type": "boolean"
+        },
+        "isReverseDirection": {
           "type": "boolean"
         },
         "levelToIconPath": {
@@ -14606,6 +14643,24 @@
       },
       "type": "object"
     },
+    "LolEndOfGameEndOfGamePlayerReport": {
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "gameId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "offense": {
+          "type": "string"
+        },
+        "reportedPuuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolEndOfGameEndOfGamePoints": {
       "properties": {
         "pointChangeFromChampionsOwned": {
@@ -15219,6 +15274,14 @@
       },
       "type": "object"
     },
+    "LolEndOfGameReportRecipientMode": {
+      "enum": [
+        "Legacy",
+        "Game-Agnostic",
+        "Combined"
+      ],
+      "type": "string"
+    },
     "LolEndOfGameRerollDataBagForClientV1": {
       "properties": {
         "maximumRerolls": {
@@ -15271,6 +15334,9 @@
     },
     "LolEndOfGameSummoner": {
       "properties": {
+        "puuid": {
+          "type": "string"
+        },
         "summonerId": {
           "format": "int64",
           "type": "integer"
@@ -20014,6 +20080,17 @@
       },
       "type": "object"
     },
+    "LolLobbyCustomJoinOptionsDto": {
+      "properties": {
+        "lobbyPassword": {
+          "type": "string"
+        },
+        "team": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolLobbyEligibility": {
       "properties": {
         "eligible": {
@@ -24616,11 +24693,73 @@
       },
       "type": "object"
     },
+    "LolLootCounter": {
+      "properties": {
+        "direction": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startValue": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootCounterInstance": {
+      "properties": {
+        "counterId": {
+          "type": "string"
+        },
+        "counterValue": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolLootCurrencyConfiguration": {
       "properties": {
         "currenciesUsingCapWallets": {
           "items": {
             "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootEntityInstance": {
+      "properties": {
+        "counters": {
+          "items": {
+            "$ref": "#/definitions/LolLootCounterInstance"
+          },
+          "type": "array"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "milestones": {
+          "items": {
+            "$ref": "#/definitions/LolLootMilestoneInstance"
           },
           "type": "array"
         }
@@ -24684,6 +24823,55 @@
       },
       "type": "object"
     },
+    "LolLootGrantStatus": {
+      "enum": [
+        "PENDING_FULFILLMENT",
+        "PENDING_SELECTION",
+        "FULFILLED",
+        "FAILED"
+      ],
+      "type": "string"
+    },
+    "LolLootGrantorDescription": {
+      "properties": {
+        "appName": {
+          "type": "string"
+        },
+        "entityId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootGroup": {
+      "properties": {
+        "counters": {
+          "items": {
+            "$ref": "#/definitions/LolLootCounter"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "milestones": {
+          "items": {
+            "$ref": "#/definitions/LolLootMilestone"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "repeat": {
+          "$ref": "#/definitions/LolLootRepeat"
+        }
+      },
+      "type": "object"
+    },
     "LolLootInventoryOwnership": {
       "enum": [
         "OWNED",
@@ -24700,6 +24888,100 @@
         "OWNED"
       ],
       "type": "string"
+    },
+    "LolLootLedgerConfigGdsResource": {
+      "properties": {
+        "counters": {
+          "items": {
+            "$ref": "#/definitions/LolLootMilestonesLedgerCounterGdsResource"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "milestones": {
+          "items": {
+            "$ref": "#/definitions/LolLootLedgerConfigMilestoneGdsResource"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "repeat": {
+          "$ref": "#/definitions/LolLootMilestonesLedgerConfigRepeatGdsResource"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLedgerConfigMilestoneGdsResource": {
+      "properties": {
+        "counter": {
+          "$ref": "#/definitions/LolLootMilestonesLedgerCounterGdsResource"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "items": {
+            "$ref": "#/definitions/LolLootLedgerConfigMilestonePropertiesGdsResource"
+          },
+          "type": "array"
+        },
+        "triggerValue": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLedgerConfigMilestonePropertiesGdsResource": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "rewardStrategy": {
+          "type": "string"
+        },
+        "rewards": {
+          "items": {
+            "$ref": "#/definitions/LolLootLedgerConfigMilestoneRewardGdsResource"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootLedgerConfigMilestoneRewardGdsResource": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "legacyLootItem": {
+          "type": "string"
+        },
+        "lootItemToGrant": {
+          "$ref": "#/definitions/LolLootMilestoneLootItemRewardGdsResource"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rewardType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "LolLootLoginDataPacket": {
       "properties": {
@@ -25002,7 +25284,7 @@
           "type": "array"
         },
         "threshold": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         }
       },
@@ -25044,6 +25326,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "rewardGroupId": {
+          "type": "string"
+        },
         "rewardType": {
           "type": "string"
         }
@@ -25059,6 +25344,9 @@
           "type": "string"
         },
         "id": {
+          "type": "string"
+        },
+        "ledgerConfigId": {
           "type": "string"
         },
         "lootItems": {
@@ -25115,7 +25403,7 @@
           "type": "integer"
         },
         "counterValue": {
-          "format": "int32",
+          "format": "int64",
           "type": "integer"
         },
         "lootMilestonesId": {
@@ -25133,11 +25421,11 @@
           "type": "string"
         },
         "ledgerConfig": {
-          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigGdsResource"
+          "$ref": "#/definitions/LolLootLedgerConfigGdsResource"
         },
         "recipes": {
           "items": {
-            "$ref": "#/definitions/LolLootLootMilestonesDataRecipeGdsResource"
+            "$ref": "#/definitions/LolLootMilestonesRecipeGdsResource"
           },
           "type": "array"
         },
@@ -25145,159 +25433,6 @@
           "type": "string"
         },
         "storeGroupTitle": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigCounterGdsResource": {
-      "properties": {
-        "direction": {
-          "type": "string"
-        },
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "startValue": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigGdsResource": {
-      "properties": {
-        "counters": {
-          "items": {
-            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigCounterGdsResource"
-          },
-          "type": "array"
-        },
-        "id": {
-          "type": "string"
-        },
-        "milestones": {
-          "items": {
-            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestoneGdsResource"
-          },
-          "type": "array"
-        },
-        "name": {
-          "type": "string"
-        },
-        "repeat": {
-          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigRepeatGdsResource"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigGroupRepeatGdsResource": {
-      "properties": {
-        "Count": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "Multiplier": {
-          "format": "float",
-          "type": "number"
-        },
-        "Scope": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigMilestoneGdsResource": {
-      "properties": {
-        "counter": {
-          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigCounterGdsResource"
-        },
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "properties": {
-          "items": {
-            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesGdsResource"
-          },
-          "type": "array"
-        },
-        "triggerValue": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesGdsResource": {
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "rewardStrategy": {
-          "type": "string"
-        },
-        "rewards": {
-          "items": {
-            "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardGdsResource"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardGdsResource": {
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "legacyLootItem": {
-          "type": "string"
-        },
-        "lootItemToGrant": {
-          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardLootItemGdsResource"
-        },
-        "quantity": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "rewardType": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigMilestonePropertiesRewardLootItemGdsResource": {
-      "properties": {
-        "internalName": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataLedgerConfigRepeatGdsResource": {
-      "properties": {
-        "name": {
-          "$ref": "#/definitions/LolLootLootMilestonesDataLedgerConfigGroupRepeatGdsResource"
-        }
-      },
-      "type": "object"
-    },
-    "LolLootLootMilestonesDataRecipeGdsResource": {
-      "properties": {
-        "name": {
           "type": "string"
         }
       },
@@ -25435,6 +25570,123 @@
         "SkinBorder"
       ],
       "type": "string"
+    },
+    "LolLootMilestone": {
+      "properties": {
+        "counterId": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "properties": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "triggerValue": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestoneInstance": {
+      "properties": {
+        "counterId": {
+          "type": "string"
+        },
+        "groupId": {
+          "type": "string"
+        },
+        "milestoneId": {
+          "type": "string"
+        },
+        "ownerId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "repeatSequence": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "triggerValue": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "triggered": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestoneLootItemRewardGdsResource": {
+      "properties": {
+        "internalName": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestonesLedgerConfigRepeatGdsResource": {
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/LolLootMilestonesLedgerGroupRepeatGdsResource"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestonesLedgerCounterGdsResource": {
+      "properties": {
+        "direction": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startValue": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestonesLedgerGroupRepeatGdsResource": {
+      "properties": {
+        "Count": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Multiplier": {
+          "format": "float",
+          "type": "number"
+        },
+        "Scope": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootMilestonesRecipeGdsResource": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "LolLootPlayerLoot": {
       "properties": {
@@ -25614,6 +25866,20 @@
       },
       "type": "object"
     },
+    "LolLootRMSPayload": {
+      "properties": {
+        "affinities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "productId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolLootRecipeMenuConfig": {
       "properties": {
         "alwaysShowLootIds": {
@@ -25761,6 +26027,96 @@
       ],
       "type": "string"
     },
+    "LolLootRegionLocale": {
+      "properties": {
+        "locale": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootRepeat": {
+      "properties": {
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "multiplier": {
+          "format": "float",
+          "type": "number"
+        },
+        "scope": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootRequestDTO-SelectionRequestDTO": {
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/LolLootSelectionRequestDTO"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolLootRequestMetadataDTO"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootRequestMetadataDTO": {
+      "properties": {
+        "transactionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootResponseDTO-SvcRewardGrant": {
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/LolLootSvcRewardGrant"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolLootResponseMetadataDTO"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootResponseDTO-vector-SvcRewardGrant": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/LolLootSvcRewardGrant"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolLootResponseMetadataDTO"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootResponseDTO-vector-SvcRewardGroup": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/LolLootSvcRewardGroup"
+          },
+          "type": "array"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolLootResponseMetadataDTO"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootResponseMetadataDTO": {
+      "properties": {},
+      "type": "object"
+    },
     "LolLootReward": {
       "properties": {
         "fulfillmentSource": {
@@ -25791,6 +26147,25 @@
       },
       "type": "object"
     },
+    "LolLootRewardGrant": {
+      "properties": {
+        "info": {
+          "$ref": "#/definitions/LolLootSvcRewardGrant"
+        },
+        "rewardGroup": {
+          "$ref": "#/definitions/LolLootSvcRewardGroup"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootRewardStatus": {
+      "enum": [
+        "PENDING",
+        "FULFILLED",
+        "FAILED"
+      ],
+      "type": "string"
+    },
     "LolLootRewardStrategy": {
       "enum": [
         "ALL",
@@ -25798,6 +26173,28 @@
         "SELECTION"
       ],
       "type": "string"
+    },
+    "LolLootRewardsConfig": {
+      "properties": {
+        "Enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootSelectionRequestDTO": {
+      "properties": {
+        "rewardGroupId": {
+          "type": "string"
+        },
+        "selections": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
     },
     "LolLootSelectionStrategyConfig": {
       "properties": {
@@ -25817,6 +26214,77 @@
         "summonerLevel": {
           "format": "int32",
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootSvcRewardGrant": {
+      "properties": {
+        "grantElements": {
+          "items": {
+            "$ref": "#/definitions/LolLootSvcRewardGrantElement"
+          },
+          "type": "array"
+        },
+        "granteeId": {
+          "type": "string"
+        },
+        "grantorDescription": {
+          "$ref": "#/definitions/LolLootGrantorDescription"
+        },
+        "id": {
+          "type": "string"
+        },
+        "rewardGroupId": {
+          "type": "string"
+        },
+        "selectedIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "$ref": "#/definitions/LolLootGrantStatus"
+        },
+        "viewed": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "LolLootSvcRewardGrantElement": {
+      "properties": {
+        "fulfillmentSource": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        },
+        "itemType": {
+          "type": "string"
+        },
+        "localizations": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "media": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "quantity": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/definitions/LolLootRewardStatus"
         }
       },
       "type": "object"
@@ -32257,6 +32725,73 @@
           "type": "string"
         },
         "Version": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolPlayerReportSenderChampSelectReport": {
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "match_token": {
+          "type": "string"
+        },
+        "offender_puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolPlayerReportSenderEndOfGamePlayerReport": {
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "gameId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "offense": {
+          "type": "string"
+        },
+        "reportedPuuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "LolPlayerReportSenderGameAgnosticReportPayload": {
+      "properties": {
+        "categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "offenderId": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "tokenType": {
           "type": "string"
         }
       },
@@ -39735,8 +40270,8 @@
     "LolWorldsTokenCardTokenUpsellLockedType": {
       "enum": [
         "UNASSIGNED",
-        "LOCKED",
-        "UNLOCKED"
+        "UNLOCKED",
+        "LOCKED"
       ],
       "type": "string"
     },
@@ -39804,6 +40339,12 @@
     "LootLcdsClientConfigurationDTO": {
       "properties": {
         "currenciesUsingCapWallets": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "disabledRedemptions": {
           "items": {
             "type": "string"
           },
@@ -39946,6 +40487,47 @@
         "slotNumber": {
           "format": "int32",
           "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LootLedgerRecipeConfigMap": {
+      "properties": {
+        "lastUpdate": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "lootLedgerRecipeDTOMap": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LootLedgerRecipeConfiguration"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LootLedgerRecipeConfiguration": {
+      "properties": {
+        "activationTime": {
+          "type": "string"
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "counterUuids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "deactivationTime": {
+          "type": "string"
+        },
+        "ledgerUuid": {
+          "type": "string"
+        },
+        "recipeName": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -45384,7 +45966,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "Http2AsyncDelete",
+        "operationId": "HttpAsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -45418,7 +46000,7 @@
         ]
       },
       "get": {
-        "operationId": "Http2AsyncStatus",
+        "operationId": "HttpAsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -47008,6 +47590,28 @@
         ]
       }
     },
+    "/lol-challenges/v1/available-queue-ids": {
+      "get": {
+        "operationId": "GetLolChallengesV1AvailableQueueIds",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "format": "int32",
+                "type": "integer"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-challenges"
+        ]
+      }
+    },
     "/lol-challenges/v1/challenges/{product}/local-player": {
       "get": {
         "operationId": "GetLolChallengesV1ChallengesByProductLocalPlayer",
@@ -48196,38 +48800,6 @@
       "post": {
         "operationId": "PostLolChampSelectV1SessionMySelectionReroll",
         "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-champ-select"
-        ]
-      }
-    },
-    "/lol-champ-select/v1/session/report-player/{id}/{category}": {
-      "post": {
-        "operationId": "PostLolChampSelectV1SessionReportPlayerByIdByCategory",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "category",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful response",
@@ -56733,6 +57305,24 @@
         ]
       }
     },
+    "/lol-lobby-team-builder/champ-select/v1/match-token": {
+      "get": {
+        "operationId": "GetLolLobbyTeamBuilderChampSelectV1MatchToken",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-lobby-team-builder"
+        ]
+      }
+    },
     "/lol-lobby-team-builder/champ-select/v1/pickable-champion-ids": {
       "get": {
         "operationId": "GetLolLobbyTeamBuilderChampSelectV1PickableChampionIds",
@@ -56786,38 +57376,6 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/LolLobbyTeamBuilderChampionSelectPreferences"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-lobby-team-builder"
-        ]
-      }
-    },
-    "/lol-lobby-team-builder/champ-select/v1/report-player/{id}/{category}": {
-      "post": {
-        "operationId": "PostLolLobbyTeamBuilderChampSelectV1ReportPlayerByIdByCategory",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "category",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "additionalProperties": true,
-              "type": "object"
             }
           }
         },
@@ -58698,6 +59256,14 @@
             "name": "partyId",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "joinOptions",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/LolLobbyCustomJoinOptionsDto"
+            }
           }
         ],
         "responses": {
@@ -62152,6 +62718,24 @@
         ]
       }
     },
+    "/lol-personalized-offers/v1/ready": {
+      "get": {
+        "operationId": "GetLolPersonalizedOffersV1Ready",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-personalized-offers"
+        ]
+      }
+    },
     "/lol-personalized-offers/v1/status": {
       "get": {
         "operationId": "GetLolPersonalizedOffersV1Status",
@@ -62854,6 +63438,66 @@
         "tags": [
           "Plugins",
           "Plugin lol-player-preferences"
+        ]
+      }
+    },
+    "/lol-player-report-sender/v1/champ-select-reports/puuid/{puuid}/category/{category}": {
+      "post": {
+        "operationId": "PostLolPlayerReportSenderV1ChampSelectReportsPuuidByPuuidCategoryByCategory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "category",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-player-report-sender"
+        ]
+      }
+    },
+    "/lol-player-report-sender/v1/end-of-game-reports": {
+      "post": {
+        "operationId": "PostLolPlayerReportSenderV1EndOfGameReports",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "resource",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LolPlayerReportSenderEndOfGamePlayerReport"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": true,
+              "type": "object"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-player-report-sender"
         ]
       }
     },
@@ -63854,27 +64498,6 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/LolRankedEosRewardsConfig"
-            }
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin lol-ranked"
-        ]
-      }
-    },
-    "/lol-ranked/v1/global-notifications": {
-      "get": {
-        "operationId": "GetLolRankedV1GlobalNotifications",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "items": {
-                "$ref": "#/definitions/LolRankedGlobalNotification"
-              },
-              "type": "array"
             }
           }
         },
@@ -69906,7 +70529,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
