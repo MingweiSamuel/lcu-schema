@@ -45966,7 +45966,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -46000,7 +46000,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -70529,7 +70529,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
@@ -70548,7 +70548,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "HttpApiDocsV3",
+        "operationId": "Http2ApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
