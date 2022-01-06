@@ -594,6 +594,12 @@
           "format": "int64",
           "type": "integer"
         },
+        "multiUserChatJwtMap": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
         "name": {
           "type": "string"
         },
@@ -1799,6 +1805,9 @@
           "format": "int32",
           "type": "integer"
         },
+        "multiUserChatJwt": {
+          "type": "string"
+        },
         "myTeamInfo": {
           "$ref": "#/definitions/EndOfGameLcdsTeamInfo"
         },
@@ -2638,6 +2647,12 @@
           "format": "int32",
           "type": "integer"
         },
+        "multiUserChatJwtMap": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
         "name": {
           "type": "string"
         },
@@ -3101,123 +3116,6 @@
         "sumId": {
           "format": "int64",
           "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LeagueLadderDTO": {
-      "properties": {
-        "apexUnlockTimeMillis": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "entries": {
-          "items": {
-            "$ref": "#/definitions/LeagueLadderEntryDTO"
-          },
-          "type": "array"
-        },
-        "maxLeagueSize": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "minLpForTier": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "nextApexUpdate": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "provisionalGameThreshold": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "queueType": {
-          "type": "string"
-        },
-        "tier": {
-          "type": "string"
-        },
-        "topNumberOfPlayers": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LeagueLadderEntryDTO": {
-      "properties": {
-        "earnedRegaliaRewardIds": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "leaguePoints": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "losses": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "miniSeriesProgress": {
-          "type": "string"
-        },
-        "previousDayLeaguePosition": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "previousSeasonAchievedRank": {
-          "type": "string"
-        },
-        "previousSeasonAchievedTier": {
-          "type": "string"
-        },
-        "provisionalGamesRemaining": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "puuid": {
-          "type": "string"
-        },
-        "rank": {
-          "type": "string"
-        },
-        "summonerId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "summonerName": {
-          "type": "string"
-        },
-        "tier": {
-          "type": "string"
-        },
-        "wins": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "LeagueTierAndRankDTO": {
-      "properties": {
-        "playerOrTeamId": {
-          "type": "string"
-        },
-        "playerOrTeamName": {
-          "type": "string"
-        },
-        "queueType": {
-          "type": "string"
-        },
-        "rank": {
-          "type": "string"
-        },
-        "tier": {
-          "type": "string"
         }
       },
       "type": "object"
@@ -21646,6 +21544,9 @@
       "properties": {
         "jid": {
           "type": "string"
+        },
+        "multiUserChatJWT": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -22614,6 +22515,9 @@
         "maxAfkMillis": {
           "format": "int32",
           "type": "integer"
+        },
+        "multiUserChatJWT": {
+          "type": "string"
         },
         "remainingAfkMillis": {
           "format": "int32",
@@ -25343,6 +25247,9 @@
         "endDate": {
           "type": "string"
         },
+        "errorCachingMilestoneSet": {
+          "type": "boolean"
+        },
         "id": {
           "type": "string"
         },
@@ -25567,7 +25474,9 @@
         "Statstone",
         "Statstone_Shard",
         "Boost",
-        "SkinBorder"
+        "SkinBorder",
+        "TFT_Map_Skin",
+        "TFT_Damage_Skin"
       ],
       "type": "string"
     },
@@ -26255,10 +26164,10 @@
     },
     "LolLootSvcRewardGrantElement": {
       "properties": {
-        "fulfillmentSource": {
+        "elementId": {
           "type": "string"
         },
-        "id": {
+        "fulfillmentSource": {
           "type": "string"
         },
         "itemId": {
@@ -34915,6 +34824,103 @@
       },
       "type": "object"
     },
+    "LolRankedLeagueLadderDTO": {
+      "properties": {
+        "apexUnlockTimeMillis": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/definitions/LolRankedLeagueLadderEntryDTO"
+          },
+          "type": "array"
+        },
+        "maxLeagueSize": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "minLpForTier": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nextApexUpdate": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "provisionalGameThreshold": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "queueType": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "topNumberOfPlayers": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedLeagueLadderEntryDTO": {
+      "properties": {
+        "earnedRegaliaRewardIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "leaguePoints": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "losses": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "miniSeriesProgress": {
+          "type": "string"
+        },
+        "previousDayLeaguePosition": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "previousSeasonAchievedRank": {
+          "type": "string"
+        },
+        "previousSeasonAchievedTier": {
+          "type": "string"
+        },
+        "provisionalGamesRemaining": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "summonerId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "summonerName": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedLeagueLadderInfo": {
       "properties": {
         "divisions": {
@@ -35152,6 +35158,26 @@
       ],
       "type": "string"
     },
+    "LolRankedLeagueTierAndRankDTO": {
+      "properties": {
+        "playerOrTeamId": {
+          "type": "string"
+        },
+        "playerOrTeamName": {
+          "type": "string"
+        },
+        "queueType": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedLeaguesSeasonRewardConfig": {
       "properties": {
         "QualificationWarningEnabled": {
@@ -35306,8 +35332,91 @@
       },
       "type": "object"
     },
+    "LolRankedRankedQueueStatsDTO": {
+      "properties": {
+        "leaguePoints": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "losses": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "miniSeriesProgress": {
+          "type": "string"
+        },
+        "previousSeasonAchievedRank": {
+          "type": "string"
+        },
+        "previousSeasonAchievedTier": {
+          "type": "string"
+        },
+        "previousSeasonEndRank": {
+          "type": "string"
+        },
+        "previousSeasonEndTier": {
+          "type": "string"
+        },
+        "provisionalGameThreshold": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "provisionalGamesRemaining": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "queueType": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "ratedRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ratedTier": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
+        },
+        "warnings": {
+          "$ref": "#/definitions/LolRankedRankedQueueWarningsDTO"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedRankedQueueWarnings": {
       "properties": {
+        "daysUntilDecay": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "demotionWarning": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "displayDecayWarning": {
+          "type": "boolean"
+        },
+        "timeUntilInactivityStatusChanges": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedRankedQueueWarningsDTO": {
+      "properties": {
+        "apexDaysUntilDecay": {
+          "format": "int32",
+          "type": "integer"
+        },
         "daysUntilDecay": {
           "format": "int32",
           "type": "integer"
@@ -35370,7 +35479,7 @@
         },
         "seasons": {
           "additionalProperties": {
-            "$ref": "#/definitions/SeasonDTO"
+            "$ref": "#/definitions/LolRankedSeasonDTO"
           },
           "type": "object"
         },
@@ -35380,6 +35489,78 @@
             "type": "integer"
           },
           "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedRankedStatsDTO": {
+      "properties": {
+        "earnedRegaliaRewardIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "highestPreviousSeasonAchievedRank": {
+          "type": "string"
+        },
+        "highestPreviousSeasonAchievedTier": {
+          "type": "string"
+        },
+        "highestPreviousSeasonEndRank": {
+          "type": "string"
+        },
+        "highestPreviousSeasonEndTier": {
+          "type": "string"
+        },
+        "queues": {
+          "items": {
+            "$ref": "#/definitions/LolRankedRankedQueueStatsDTO"
+          },
+          "type": "array"
+        },
+        "seasons": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolRankedSeasonDTO"
+          },
+          "type": "object"
+        },
+        "splitsProgress": {
+          "additionalProperties": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedRatedLadderEntryDTO": {
+      "properties": {
+        "previousUpdateLadderPosition": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "ratedRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ratedTier": {
+          "type": "string"
+        },
+        "summonerId": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "summonerName": {
+          "type": "string"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
         }
       },
       "type": "object"
@@ -35475,6 +35656,23 @@
       },
       "type": "object"
     },
+    "LolRankedSeasonDTO": {
+      "properties": {
+        "currentSeasonEnd": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "currentSeasonId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nextSeasonStart": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedSeasonSplit": {
       "properties": {
         "endTimeMillis": {
@@ -35502,6 +35700,33 @@
       },
       "type": "object"
     },
+    "LolRankedSeasonSplitDTO": {
+      "properties": {
+        "endTime": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "rewardTrack": {
+          "items": {
+            "$ref": "#/definitions/LolRankedSplitRewardGroupDTO"
+          },
+          "type": "array"
+        },
+        "seasonId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "splitId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "startTime": {
+          "format": "int64",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedSequenceEvent": {
       "properties": {
         "name": {
@@ -35520,6 +35745,51 @@
         "ALERT"
       ],
       "type": "string"
+    },
+    "LolRankedSignedRankedStatsDTO": {
+      "properties": {
+        "earnedRegaliaRewardIds": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "highestPreviousSeasonAchievedRank": {
+          "type": "string"
+        },
+        "highestPreviousSeasonAchievedTier": {
+          "type": "string"
+        },
+        "highestPreviousSeasonEndRank": {
+          "type": "string"
+        },
+        "highestPreviousSeasonEndTier": {
+          "type": "string"
+        },
+        "jwt": {
+          "type": "string"
+        },
+        "queues": {
+          "items": {
+            "$ref": "#/definitions/LolRankedRankedQueueStatsDTO"
+          },
+          "type": "array"
+        },
+        "seasons": {
+          "additionalProperties": {
+            "$ref": "#/definitions/LolRankedSeasonDTO"
+          },
+          "type": "object"
+        },
+        "splitsProgress": {
+          "additionalProperties": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
     },
     "LolRankedSocialLeaderboardRankedQueueStats": {
       "properties": {
@@ -35560,6 +35830,50 @@
         },
         "tier": {
           "$ref": "#/definitions/LolRankedLeagueTier"
+        },
+        "wins": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedSocialLeaderboardRankedQueueStatsDTO": {
+      "properties": {
+        "leaguePoints": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "losses": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "miniSeriesProgress": {
+          "type": "string"
+        },
+        "provisionalGameThreshold": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "provisionalGamesRemaining": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "queueType": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "string"
+        },
+        "ratedRating": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ratedTier": {
+          "type": "string"
+        },
+        "tier": {
+          "type": "string"
         },
         "wins": {
           "format": "int32",
@@ -35636,6 +35950,26 @@
       },
       "type": "object"
     },
+    "LolRankedSplitRewardDTO": {
+      "properties": {
+        "defaultRewardId": {
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/LolRankedSplitRewardsMetaData"
+        },
+        "rewardType": {
+          "type": "string"
+        },
+        "tieredRewardIds": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
     "LolRankedSplitRewardGroup": {
       "properties": {
         "rewards": {
@@ -35645,6 +35979,33 @@
           "type": "array"
         },
         "splitPoints": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedSplitRewardGroupDTO": {
+      "properties": {
+        "rewards": {
+          "items": {
+            "$ref": "#/definitions/LolRankedSplitRewardDTO"
+          },
+          "type": "array"
+        },
+        "splitPoints": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "LolRankedSplitRewardsMetaData": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "quantity": {
           "format": "int32",
           "type": "integer"
         }
@@ -36509,10 +36870,10 @@
     },
     "LolRewardsSvcRewardGrantElement": {
       "properties": {
-        "fulfillmentSource": {
+        "elementId": {
           "type": "string"
         },
-        "id": {
+        "fulfillmentSource": {
           "type": "string"
         },
         "itemId": {
@@ -41633,6 +41994,9 @@
           },
           "type": "array"
         },
+        "multiUserChatJWT": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
         },
@@ -42877,89 +43241,6 @@
       },
       "type": "object"
     },
-    "RankedQueueStatsDTO": {
-      "properties": {
-        "leaguePoints": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "losses": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "miniSeriesProgress": {
-          "type": "string"
-        },
-        "previousSeasonAchievedRank": {
-          "type": "string"
-        },
-        "previousSeasonAchievedTier": {
-          "type": "string"
-        },
-        "previousSeasonEndRank": {
-          "type": "string"
-        },
-        "previousSeasonEndTier": {
-          "type": "string"
-        },
-        "provisionalGameThreshold": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "provisionalGamesRemaining": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "queueType": {
-          "type": "string"
-        },
-        "rank": {
-          "type": "string"
-        },
-        "ratedRating": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "ratedTier": {
-          "type": "string"
-        },
-        "tier": {
-          "type": "string"
-        },
-        "warnings": {
-          "$ref": "#/definitions/RankedQueueWarningsDTO"
-        },
-        "wins": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "RankedQueueWarningsDTO": {
-      "properties": {
-        "apexDaysUntilDecay": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "daysUntilDecay": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "demotionWarning": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "displayDecayWarning": {
-          "type": "boolean"
-        },
-        "timeUntilInactivityStatusChanges": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
     "RankedScoutingDTO": {
       "properties": {
         "playerId": {
@@ -43019,78 +43300,6 @@
           "type": "integer"
         },
         "winCount": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "RankedStatsDTO": {
-      "properties": {
-        "earnedRegaliaRewardIds": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "highestPreviousSeasonAchievedRank": {
-          "type": "string"
-        },
-        "highestPreviousSeasonAchievedTier": {
-          "type": "string"
-        },
-        "highestPreviousSeasonEndRank": {
-          "type": "string"
-        },
-        "highestPreviousSeasonEndTier": {
-          "type": "string"
-        },
-        "queues": {
-          "items": {
-            "$ref": "#/definitions/RankedQueueStatsDTO"
-          },
-          "type": "array"
-        },
-        "seasons": {
-          "additionalProperties": {
-            "$ref": "#/definitions/SeasonDTO"
-          },
-          "type": "object"
-        },
-        "splitsProgress": {
-          "additionalProperties": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "RatedLadderEntryDTO": {
-      "properties": {
-        "previousUpdateLadderPosition": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "puuid": {
-          "type": "string"
-        },
-        "ratedRating": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "ratedTier": {
-          "type": "string"
-        },
-        "summonerId": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "summonerName": {
-          "type": "string"
-        },
-        "wins": {
           "format": "int32",
           "type": "integer"
         }
@@ -43398,6 +43607,9 @@
             "$ref": "#/definitions/RosterMemberDTO"
           },
           "type": "array"
+        },
+        "multiUserChatJWT": {
+          "type": "string"
         },
         "name": {
           "type": "string"
@@ -43818,50 +44030,6 @@
       },
       "type": "object"
     },
-    "SeasonDTO": {
-      "properties": {
-        "currentSeasonEnd": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "currentSeasonId": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "nextSeasonStart": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "SeasonSplitDTO": {
-      "properties": {
-        "endTime": {
-          "format": "int64",
-          "type": "integer"
-        },
-        "rewardTrack": {
-          "items": {
-            "$ref": "#/definitions/SplitRewardGroupDTO"
-          },
-          "type": "array"
-        },
-        "seasonId": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "splitId": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "startTime": {
-          "format": "int64",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
     "SeriesDTO": {
       "properties": {
         "createdDate": {
@@ -43965,51 +44133,6 @@
       },
       "type": "object"
     },
-    "SignedRankedStatsDTO": {
-      "properties": {
-        "earnedRegaliaRewardIds": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "highestPreviousSeasonAchievedRank": {
-          "type": "string"
-        },
-        "highestPreviousSeasonAchievedTier": {
-          "type": "string"
-        },
-        "highestPreviousSeasonEndRank": {
-          "type": "string"
-        },
-        "highestPreviousSeasonEndTier": {
-          "type": "string"
-        },
-        "jwt": {
-          "type": "string"
-        },
-        "queues": {
-          "items": {
-            "$ref": "#/definitions/RankedQueueStatsDTO"
-          },
-          "type": "array"
-        },
-        "seasons": {
-          "additionalProperties": {
-            "$ref": "#/definitions/SeasonDTO"
-          },
-          "type": "object"
-        },
-        "splitsProgress": {
-          "additionalProperties": {
-            "format": "int32",
-            "type": "integer"
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
     "SimpleDialogMessage": {
       "properties": {
         "accountId": {
@@ -44046,50 +44169,6 @@
       },
       "type": "object"
     },
-    "SocialLeaderboardRankedQueueStatsDTO": {
-      "properties": {
-        "leaguePoints": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "losses": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "miniSeriesProgress": {
-          "type": "string"
-        },
-        "provisionalGameThreshold": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "provisionalGamesRemaining": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "queueType": {
-          "type": "string"
-        },
-        "rank": {
-          "type": "string"
-        },
-        "ratedRating": {
-          "format": "int32",
-          "type": "integer"
-        },
-        "ratedTier": {
-          "type": "string"
-        },
-        "tier": {
-          "type": "string"
-        },
-        "wins": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
     "SpectatorLcdsSpectateAvailabilityDto": {
       "properties": {
         "teamOrSummonerIds": {
@@ -44108,53 +44187,6 @@
             "type": "string"
           },
           "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "SplitRewardDTO": {
-      "properties": {
-        "defaultRewardId": {
-          "type": "string"
-        },
-        "metadata": {
-          "$ref": "#/definitions/SplitRewardsMetaData"
-        },
-        "rewardType": {
-          "type": "string"
-        },
-        "tieredRewardIds": {
-          "additionalProperties": {
-            "type": "string"
-          },
-          "type": "object"
-        }
-      },
-      "type": "object"
-    },
-    "SplitRewardGroupDTO": {
-      "properties": {
-        "rewards": {
-          "items": {
-            "$ref": "#/definitions/SplitRewardDTO"
-          },
-          "type": "array"
-        },
-        "splitPoints": {
-          "format": "int32",
-          "type": "integer"
-        }
-      },
-      "type": "object"
-    },
-    "SplitRewardsMetaData": {
-      "properties": {
-        "description": {
-          "type": "string"
-        },
-        "quantity": {
-          "format": "int32",
-          "type": "integer"
         }
       },
       "type": "object"
@@ -45966,7 +45998,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "Http2AsyncDelete",
+        "operationId": "HttpAsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -64681,7 +64713,7 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/SignedRankedStatsDTO"
+              "$ref": "#/definitions/LolRankedSignedRankedStatsDTO"
             }
           }
         },
@@ -70476,7 +70508,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "Http2ApiDocsV1",
+        "operationId": "HttpApiDocsV1",
         "parameters": [],
         "responses": {
           "200": {
@@ -70529,7 +70561,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "Http2ApiDocsV2",
+        "operationId": "HttpApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
