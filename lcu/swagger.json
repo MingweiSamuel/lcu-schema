@@ -40631,8 +40631,8 @@
     "LolWorldsTokenCardTokenUpsellLockedType": {
       "enum": [
         "UNASSIGNED",
-        "LOCKED",
-        "UNLOCKED"
+        "UNLOCKED",
+        "LOCKED"
       ],
       "type": "string"
     },
@@ -45998,7 +45998,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -46032,7 +46032,7 @@
         ]
       },
       "get": {
-        "operationId": "HttpAsyncStatus",
+        "operationId": "Http2AsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -70527,7 +70527,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
