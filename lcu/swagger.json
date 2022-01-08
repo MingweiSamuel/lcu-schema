@@ -46032,7 +46032,7 @@
         ]
       },
       "get": {
-        "operationId": "Http2AsyncStatus",
+        "operationId": "HttpAsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -70508,7 +70508,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [],
         "responses": {
           "200": {
