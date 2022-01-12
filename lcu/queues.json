@@ -3251,7 +3251,7 @@
     "isRanked": false,
     "isTeamBuilderManaged": true,
     "isTeamOnly": false,
-    "lastToggledOffTime": 1628578741913,
+    "lastToggledOffTime": 1641887940999,
     "lastToggledOnTime": 1637269200857,
     "mapId": 11,
     "maxDivisionForPremadeSize2": "",
@@ -3263,7 +3263,7 @@
     "minimumParticipantListSize": 1,
     "name": "Ultimate Spellbook",
     "numPlayersPerTeam": 5,
-    "queueAvailability": "Available",
+    "queueAvailability": "PlatformDisabled",
     "queueRewards": {
       "isChampionPointsEnabled": true,
       "isIpEnabled": true,
