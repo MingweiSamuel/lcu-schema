@@ -40622,8 +40622,8 @@
       "LolWorldsTokenCardTokenUpsellLockedType": {
         "enum": [
           "UNASSIGNED",
-          "LOCKED",
-          "UNLOCKED"
+          "UNLOCKED",
+          "LOCKED"
         ],
         "type": "string"
       },
@@ -46011,7 +46011,7 @@
     },
     "/async/v1/result/{asyncToken}": {
       "get": {
-        "operationId": "Http2AsyncResult",
+        "operationId": "HttpAsyncResult",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -74168,7 +74168,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
