@@ -27,7 +27,9 @@ If (-Not (Test-Path $LOGIN_FILE)) {
 function Stop-RiotProcesses {
     # Stop any existing processes.
     Stop-Process -Name 'RiotClientUx' -ErrorAction Ignore
-    Stop-Process -Name 'LeagueClient' -ErrorAction Ignore
+    Stop-Process -Name 'LeagueClient' -ErrorAction Ignore    
+    Wait-Process -Name 'RiotClientUx' -ErrorAction Ignore
+    Wait-Process -Name 'LeagueClient' -ErrorAction Ignore
     Remove-Item $RCS_LOCKFILE -Force -ErrorAction Ignore
     Remove-Item $LCU_LOCKFILE -Force -ErrorAction Ignore
     Start-Sleep 5 # Wait for processes to settle.
