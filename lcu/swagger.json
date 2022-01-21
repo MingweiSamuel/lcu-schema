@@ -25194,6 +25194,15 @@
       },
       "type": "object"
     },
+    "LolLootLootMilestoneClaimStatus": {
+      "enum": [
+        "NOT_STARTED",
+        "IN_PROGRESS",
+        "COMPLETED",
+        "FAILED"
+      ],
+      "type": "string"
+    },
     "LolLootLootMilestoneRepeat": {
       "properties": {
         "multiplier": {
@@ -25293,18 +25302,18 @@
             "type": "string"
           },
           "type": "array"
+        },
+        "lootMilestoneSetId": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/LolLootLootMilestoneClaimStatus"
         }
       },
       "type": "object"
     },
     "LolLootLootMilestonesCounter": {
       "properties": {
-        "claimedMilestones": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
         "completedLoops": {
           "format": "int32",
           "type": "integer"
@@ -25315,6 +25324,12 @@
         },
         "lootMilestonesId": {
           "type": "string"
+        },
+        "readyToClaimMilestones": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -26035,6 +26050,9 @@
           "type": "string"
         },
         "itemId": {
+          "type": "string"
+        },
+        "itemType": {
           "type": "string"
         },
         "localizations": {
@@ -36752,6 +36770,9 @@
         "itemId": {
           "type": "string"
         },
+        "itemType": {
+          "type": "string"
+        },
         "localizations": {
           "additionalProperties": {
             "type": "string"
@@ -40631,8 +40652,8 @@
     "LolWorldsTokenCardTokenUpsellLockedType": {
       "enum": [
         "UNASSIGNED",
-        "UNLOCKED",
-        "LOCKED"
+        "LOCKED",
+        "UNLOCKED"
       ],
       "type": "string"
     },
@@ -45998,7 +46019,7 @@
     },
     "/async/v1/status/{asyncToken}": {
       "delete": {
-        "operationId": "HttpAsyncDelete",
+        "operationId": "Http2AsyncDelete",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to remove",
@@ -60222,6 +60243,28 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-loot"
+        ]
+      }
+    },
+    "/lol-loot/v1/milestones/{lootMilestonesId}/claimProgress": {
+      "get": {
+        "operationId": "GetLolLootV1MilestonesByLootMilestonesIdClaimProgress",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "lootMilestonesId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
           "200": {
             "description": "Successful response",
             "schema": {
@@ -64438,6 +64481,27 @@
         ]
       }
     },
+    "/lol-ranked/v1/challenger-ladders-enabled": {
+      "get": {
+        "operationId": "GetLolRankedV1ChallengerLaddersEnabled",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-ranked"
+        ]
+      }
+    },
     "/lol-ranked/v1/current-lp-change-notification": {
       "get": {
         "operationId": "GetLolRankedV1CurrentLpChangeNotification",
@@ -64778,6 +64842,27 @@
             "description": "Successful response",
             "schema": {
               "$ref": "#/definitions/LolRankedRewardsInfo"
+            }
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-ranked"
+        ]
+      }
+    },
+    "/lol-ranked/v1/top-rated-ladders-enabled": {
+      "get": {
+        "operationId": "GetLolRankedV1TopRatedLaddersEnabled",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
             }
           }
         },
@@ -70508,7 +70593,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "HttpApiDocsV1",
+        "operationId": "Http2ApiDocsV1",
         "parameters": [],
         "responses": {
           "200": {
@@ -70527,7 +70612,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "Http2ApiDeclarationV1",
+        "operationId": "HttpApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -70561,7 +70646,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
@@ -70580,7 +70665,7 @@
     },
     "/swagger/v3/openapi.json": {
       "get": {
-        "operationId": "HttpApiDocsV3",
+        "operationId": "Http2ApiDocsV3",
         "parameters": [],
         "responses": {
           "200": {
