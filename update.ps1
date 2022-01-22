@@ -18,7 +18,14 @@ $LCU_LOCKFILE = "$LCU_DIR\lockfile"
 $LCU_SYSTEMYAML = "$LCU_DIR\system.yaml"
 $LCU_EXE = "$LCU_DIR\LeagueClient.exe"
 
+$INSTALLER_EXE = 'install.na.exe'
+$INSTALLER_ARGS = '--skip-to-install'
+
 $LOL_INSTALL_ID = 'league_of_legends.live'
+
+If (Test-Path $env:RUNNER_TEMP) { # For GitHub Actions runners
+    $INSTALLER_EXE = "$env:RUNNER_TEMP\$INSTALLER_EXE"
+}
 
 If (-Not (Test-Path $LOGIN_FILE)) {
     Throw "Login not found: $LOGIN_FILE."
@@ -89,7 +96,7 @@ If (-Not (Test-Path $LCU_EXE)) {
     $attempts = 5
     While ($True) {
         Try {
-            Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile 'install.na.exe'
+            Invoke-WebRequest 'https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe' -OutFile $INSTALLER_EXE
             Break
         }
         Catch {
@@ -101,7 +108,9 @@ If (-Not (Test-Path $LCU_EXE)) {
             Start-Sleep 5
         }
     }
-    .\install.na.exe --skip-to-install
+    
+    # Start the installer
+    & $INSTALLER_EXE $INSTALLER_ARGS
 
     # RCS starts, but install of LoL hangs, possibly due to .NET Framework 3.5 missing.
     # So we restart it and then it works.
