@@ -2,29 +2,29 @@
 
 # Config.
 $OUT_DIR = 'out'
-$RCS_OUT_DIR = "$OUT_DIR\rcs"
-$LCU_OUT_DIR = "$OUT_DIR\lcu"
+$RCS_OUT_DIR = Join-Path $OUT_DIR 'rcs'
+$LCU_OUT_DIR = Join-Path $OUT_DIR 'lcu'
 
 $LOGIN_FILE = 'lollogin.json'
 $LOGIN = Get-Content $LOGIN_FILE | ConvertFrom-Json
 
-$RCS_LOCKFILE = "$env:LOCALAPPDATA\Riot Games\Riot Client\Config\lockfile"
-$RCS_DIR = "C:\Riot Games\Riot Client"
-$RCS_EXE = "$RCS_DIR\RiotClientServices.exe"
+$RCS_LOCKFILE = Join-Path $env:LOCALAPPDATA 'Riot Games\Riot Client\Config\lockfile'
+$RCS_DIR = 'C:\Riot Games\Riot Client'
+$RCS_EXE = Join-Path $RCS_DIR 'RiotClientServices.exe'
 $RCS_ARGS = '--launch-product=league_of_legends', '--launch-patchline=live'
 
 $LCU_DIR = 'C:\Riot Games\League of Legends'
-$LCU_LOCKFILE = "$LCU_DIR\lockfile"
-$LCU_SYSTEMYAML = "$LCU_DIR\system.yaml"
-$LCU_EXE = "$LCU_DIR\LeagueClient.exe"
+$LCU_LOCKFILE = Join-Path $LCU_DIR 'lockfile'
+$LCU_SYSTEMYAML = Join-Path $LCU_DIR 'system.yaml'
+$LCU_EXE = Join-Path $LCU_DIR 'LeagueClient.exe'
 
-$INSTALLER_EXE = 'install.na.exe'
+$INSTALLER_EXE = '.\install.na.exe'
 $INSTALLER_ARGS = '--skip-to-install'
 
 $LOL_INSTALL_ID = 'league_of_legends.live'
 
 If (Test-Path $env:RUNNER_TEMP) { # For GitHub Actions runners
-    $INSTALLER_EXE = "$env:RUNNER_TEMP\$INSTALLER_EXE"
+    $INSTALLER_EXE = Join-Path $env:RUNNER_TEMP $INSTALLER_EXE
 }
 
 If (-Not (Test-Path $LOGIN_FILE)) {
