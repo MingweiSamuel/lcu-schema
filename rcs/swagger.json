@@ -1119,6 +1119,55 @@
       },
       "type": "object"
     },
+    "ChatCommandTelemetry": {
+      "properties": {
+        "commandType": {
+          "type": "string"
+        },
+        "hasPromiseToFulfill": {
+          "type": "boolean"
+        },
+        "isBlocking": {
+          "type": "boolean"
+        },
+        "mutatorExecutionTimeUs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "notifierExecutionTimeUs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "promiseFulfillmentTimeUs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "queueSize": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "timeInQueueMs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "totalExecutionTimeUs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "validatorExecutionTimeUs": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
     "ChatConfigReadinessEnum": {
       "enum": [
         "NotReady",
@@ -3672,6 +3721,30 @@
         "data": {
           "additionalProperties": true,
           "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason": {
+      "enum": [
+        "gameLaunched",
+        "gameReturnedToForeground",
+        "purchaseCompleted",
+        "other"
+      ],
+      "type": "string"
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentRequest": {
+      "properties": {
+        "firstPartyAuthToken": {
+          "type": "string"
+        },
+        "fulfillmentId": {
+          "type": "string"
+        },
+        "fulfillmentReason": {
+          "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason",
+          "default": "gameLaunched"
         }
       },
       "type": "object"
@@ -7588,20 +7661,6 @@
       },
       "type": "object"
     },
-    "PlatformIdInfo": {
-      "properties": {
-        "id": {
-          "description": "Platform-specific identifier as a string",
-          "type": "string"
-        },
-        "platform": {
-          "$ref": "#/definitions/OnlinePlatform",
-          "default": "unknown",
-          "description": "Canonical name of the online platform"
-        }
-      },
-      "type": "object"
-    },
     "PlatformUiAccessToken": {
       "properties": {
         "expiry": {
@@ -8113,6 +8172,7 @@
     },
     "PlatformUistatus": {
       "enum": [
+        "Destroyed",
         "Initializing",
         "Ready",
         "Authorizing",
@@ -8120,6 +8180,68 @@
         "ReadyToPlay"
       ],
       "type": "string"
+    },
+    "PlatformUser": {
+      "properties": {
+        "id": {
+          "description": "Platform-specific identifier as a string",
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/OnlinePlatform",
+          "default": "unknown",
+          "description": "Canonical name of the online platform"
+        }
+      },
+      "type": "object"
+    },
+    "PlayRestrictionsPlayRestrictionV1Data": {
+      "properties": {
+        "chat_enabled": {
+          "default": true,
+          "type": "boolean"
+        },
+        "play_restriction_setting": {
+          "$ref": "#/definitions/PlayRestrictionsPlayRestrictionV1Settings",
+          "default": "none"
+        }
+      },
+      "type": "object"
+    },
+    "PlayRestrictionsPlayRestrictionV1Settings": {
+      "enum": [
+        "none",
+        "platform_only"
+      ],
+      "type": "string"
+    },
+    "PlayRestrictionsPluginCallerId_MockCallerId": {
+      "properties": {
+        "patchlineId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayRestrictionsPluginCallerId_ProductSession": {
+      "properties": {
+        "patchlineFullName": {
+          "type": "string"
+        },
+        "patchlineId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "PlayerAccountAccessToken": {
       "properties": {
@@ -8359,6 +8481,17 @@
           "type": "string"
         },
         "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerAccountPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
           "type": "string"
         }
       },
@@ -12031,6 +12164,17 @@
       ],
       "type": "string"
     },
+    "RiotLoginPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "RiotLoginProduct": {
       "properties": {
         "patchline": {
@@ -13361,6 +13505,17 @@
           "type": "boolean"
         },
         "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
           "type": "string"
         }
       },
@@ -20122,6 +20277,33 @@
         ]
       }
     },
+    "/first-party-fulfillment/v1/fulfill": {
+      "post": {
+        "description": "\n**Description**\n\nInitiates the fulfillment process with a first party if there are any items to fulfill.\n\n**Arguments**\n\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n",
+        "operationId": "PostFirstPartyFulfillmentV1Fulfill",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Initiate a fulfillment attempt",
+        "tags": [
+          "Plugins",
+          "Plugin first-party-fulfillment",
+          "Internal"
+        ]
+      }
+    },
     "/friends/v1/add-friend-ui": {
       "post": {
         "description": "\n**Description**\n\nShows platform specific UI for adding platform friends. Must specify either a riotId or a platformId. PlatformId will be prioritized if provided otherwise RiotId will be converted to a platform specific ID.\n\n**Nintendo Switch**\n* Shows the native Nintendo Switch UI to send a Nintendo Switch friend request to the specified friend\n* **Will block until user input on native ui completes**\n* Must be exactly 1 opened user prior to calling add-friend-ui\n* platformId must be a Network Services Account ID\n* RiotId not yet supported. When supported will convert to Nintendo Network Services ID to add the user as a nintendo switch friend.\n",
@@ -22424,6 +22606,112 @@
           "Plugins",
           "Plugin platform-ui",
           "Subscribable"
+        ]
+      }
+    },
+    "/play-restrictions/v1/debug/caller-id/mock-id": {
+      "delete": {
+        "description": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "operationId": "DeletePlayRestrictionsV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Stops mocking the caller ID for Swagger calls",
+        "tags": [
+          "Plugins",
+          "Plugin play-restrictions",
+          "Internal"
+        ]
+      },
+      "get": {
+        "description": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "operationId": "GetPlayRestrictionsV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PlayRestrictionsPluginCallerId_MockCallerId"
+            }
+          }
+        },
+        "summary": "Checks the caller ID in use when APIs are called from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin play-restrictions",
+          "Internal"
+        ]
+      },
+      "put": {
+        "description": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "operationId": "PutPlayRestrictionsV1DebugCallerIdMockId",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "callerId",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlayRestrictionsPluginCallerId_MockCallerId"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets the caller ID to use when calling this plugin from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin play-restrictions",
+          "Internal"
+        ]
+      }
+    },
+    "/play-restrictions/v1/restrictions": {
+      "get": {
+        "operationId": "GetPlayRestrictionsV1Restrictions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PlayRestrictionsPlayRestrictionV1Data"
+            }
+          }
+        },
+        "summary": "Get the current play restrictions",
+        "tags": [
+          "Plugins",
+          "Plugin play-restrictions",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "description": "\n**Description**\nAllows game teams to configure how various services pertaining to play restrictions (being able to communicate with other players in-game) are configured.\n\n**Argument**\n* `data`: A struct containing booleans for each service that comes under play-restrictions.\n",
+        "operationId": "PutPlayRestrictionsV1Restrictions",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PlayRestrictionsPlayRestrictionV1Data"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Set the play restrictions for the SDK",
+        "tags": [
+          "Plugins",
+          "Plugin play-restrictions"
         ]
       }
     },
@@ -26802,15 +27090,15 @@
         ]
       }
     },
-    "/riotclient/v1/platform-id": {
+    "/riotclient/v1/platform-user": {
       "get": {
-        "operationId": "GetRiotclientV1PlatformId",
+        "operationId": "GetRiotclientV1PlatformUser",
         "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/PlatformIdInfo"
+              "$ref": "#/definitions/PlatformUser"
             }
           }
         },
@@ -26820,7 +27108,7 @@
         ]
       },
       "put": {
-        "operationId": "PutRiotclientV1PlatformId",
+        "operationId": "PutRiotclientV1PlatformUser",
         "parameters": [
           {
             "description": "Platform identifier for the currently active user",
@@ -26828,7 +27116,7 @@
             "name": "platformId",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/PlatformIdInfo"
+              "$ref": "#/definitions/PlatformUser"
             }
           }
         ],
