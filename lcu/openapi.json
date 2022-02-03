@@ -14236,6 +14236,29 @@
         },
         "type": "object"
       },
+      "LolDiscordRpPartyPresenceData": {
+        "properties": {
+          "maxPlayers": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "partyId": {
+            "type": "string"
+          },
+          "queueId": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "summoners": {
+            "items": {
+              "format": "int64",
+              "type": "integer"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "LolEmailVerificationAccessToken": {
         "properties": {
           "expiry": {
@@ -17680,6 +17703,9 @@
             "type": "boolean"
           },
           "Honor2018Enabled": {
+            "type": "boolean"
+          },
+          "LedgeEndpointsEnabled": {
             "type": "boolean"
           },
           "SecondsToVote": {
@@ -21756,6 +21782,10 @@
       },
       "LolLobbyPartyPresenceData": {
         "properties": {
+          "maxPlayers": {
+            "format": "int32",
+            "type": "integer"
+          },
           "partyId": {
             "type": "string"
           },
@@ -25306,7 +25336,7 @@
       "LolLootLootMilestonesCounter": {
         "properties": {
           "completedLoops": {
-            "format": "int32",
+            "format": "int64",
             "type": "integer"
           },
           "counterValue": {
@@ -46110,7 +46140,7 @@
         ]
       },
       "get": {
-        "operationId": "Http2AsyncStatus",
+        "operationId": "HttpAsyncStatus",
         "parameters": [
           {
             "description": "ID of the asynchronous operation to check",
@@ -54415,6 +54445,44 @@
                 "schema": {
                   "format": "int64",
                   "type": "integer"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin lol-collections"
+        ]
+      }
+    },
+    "/lol-collections/v1/inventories/scouting": {
+      "get": {
+        "operationId": "GetLolCollectionsV1InventoriesScouting",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "items": {
+                  "format": "int64",
+                  "type": "integer"
+                },
+                "type": "array"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RankedScoutingDTO"
+                  },
+                  "type": "array"
                 }
               }
             },
@@ -73717,7 +73785,14 @@
       },
       "put": {
         "operationId": "PutRiotclientSplash",
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "splash",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "204": {
             "description": "No content"
@@ -74200,7 +74275,7 @@
     },
     "/swagger/v1/api-docs": {
       "get": {
-        "operationId": "Http2ApiDocsV1",
+        "operationId": "HttpApiDocsV1",
         "parameters": [],
         "responses": {
           "200": {
@@ -74223,7 +74298,7 @@
     },
     "/swagger/v1/api-docs/{api}": {
       "get": {
-        "operationId": "HttpApiDeclarationV1",
+        "operationId": "Http2ApiDeclarationV1",
         "parameters": [
           {
             "description": "API to get a declaration for",
@@ -74261,7 +74336,7 @@
     },
     "/swagger/v2/swagger.json": {
       "get": {
-        "operationId": "HttpApiDocsV2",
+        "operationId": "Http2ApiDocsV2",
         "parameters": [],
         "responses": {
           "200": {
