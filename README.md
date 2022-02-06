@@ -22,3 +22,9 @@ Data:
 To update, call `.\update.ps1` with the League client closed. To get
 information requiring log-in, add a file `lollogin.json` with `"username"` and
 `"password"` fields for your League of Legends account.
+
+## See Also
+
+[Setup League Client](https://github.com/magisteriis/setup-league-client) - A
+gh-action for setting up the League of Legends client (a.k.a. League Client/LCU).
+Good for testing League Client integrations.
