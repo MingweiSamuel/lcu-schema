@@ -65,7 +65,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "ARURF",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "URF"
   },
   {
@@ -203,7 +203,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Ascension",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "ASCENSION"
   },
   {
@@ -272,7 +272,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Normal",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "NORMAL"
   },
   {
@@ -410,7 +410,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Nexus Blitz",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "NEXUSBLITZ"
   },
   {
@@ -479,7 +479,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Poro King",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "KING_PORO"
   },
   {
@@ -684,7 +684,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "ARAM",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "BILGEWATER"
   },
   {
@@ -819,7 +819,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Ranked Solo/Duo",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "RANKED_SOLO_5x5"
   },
   {
@@ -955,7 +955,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Nexus Siege",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "SIEGE"
   },
   {
@@ -1024,7 +1024,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Normal",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "NORMAL"
   },
   {
@@ -1366,7 +1366,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Ranked Flex",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "RANKED_FLEX_SR"
   },
   {
@@ -1523,7 +1523,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Clash",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "CLASH"
   },
   {
@@ -1894,7 +1894,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "ARAM",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "ARAM_UNRANKED_5x5"
   },
   {
@@ -2161,7 +2161,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Normal",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "NORMAL_3x3"
   },
   {
@@ -2503,7 +2503,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Ranked Flex",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "RANKED_FLEX_TT"
   },
   {
@@ -2702,7 +2702,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Blood Moon",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "ASSASSINATE"
   },
   {
@@ -2972,7 +2972,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Dark Star",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "DARKSTAR"
   },
   {
@@ -3104,7 +3104,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Overcharge",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "PROJECT"
   },
   {
@@ -3245,7 +3245,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Snow ARURF",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "SNOWURF"
   },
   {
@@ -3314,7 +3314,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "Ultimate Spellbook",
     "showPositionSelector": true,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "ULTBOOK"
   },
   {
@@ -3383,7 +3383,7 @@
     "removalFromGameDelayMinutes": 0,
     "shortName": "One For All",
     "showPositionSelector": false,
-    "spectatorEnabled": false,
+    "spectatorEnabled": true,
     "type": "ONEFORALL"
   },
   {
