@@ -61,7 +61,7 @@ function Invoke-RiotRequest {
             $pass = ConvertTo-SecureString $pass -AsPlainText -Force
             $cred = New-Object -TypeName PSCredential -ArgumentList 'riot', $pass
             
-            $uri = New-Object System.UriBuilder -argumentlist 'https', '127.0.0.1', $port, $path | % Uri | % AbsoluteUri
+            $uri = New-Object System.UriBuilder -ArgumentList 'https', '127.0.0.1', $port, $path | % Uri | % AbsoluteUri
 
             $result = Invoke-RestMethod $uri `
                 -SkipCertificateCheck `
