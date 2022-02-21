@@ -204,8 +204,10 @@ Try {
     Write-Host 'Getting LCU spec files.'
     # /Help is missing the `Content-Type: application/json` header when logged-in.
     Invoke-RiotRequest $LCU_LOCKFILE '/Help' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
-    Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v3/openapi.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\openapi.json"
-    Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v2/swagger.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\swagger.json"
+    Try { Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v3/openapi.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\openapi.json" }
+    Catch { $env:SOFT_FAIL = $_ }
+    Try { Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v2/swagger.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\swagger.json" }
+    Catch { $env:SOFT_FAIL = $_ }
 } Finally {
     Stop-RiotProcesses
 }

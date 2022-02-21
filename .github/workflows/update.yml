@@ -50,3 +50,10 @@ jobs:
                 commit -m "Update $(date -u -Is), script $(git log --pretty=format:%h -n 1)"
             git -C out push
           fi
+
+      - name: Check soft fail
+        shell: pwsh
+        run: |
+          If ($env:SOFT_FAIL) {
+            throw $env:SOFT_FAIL
+          }
