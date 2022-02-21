@@ -209,14 +209,14 @@ Try {
     }
     Catch {
         $env:SOFT_FAIL = $_
-        git checkout HEAD -- "$LCU_OUT_DIR\openapi.json"
+        git -C $LCU_OUT_DIR checkout HEAD -- "openapi.json"
     }
     Try {
         Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v2/swagger.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\swagger.json"
     }
     Catch {
         $env:SOFT_FAIL = $_
-        git checkout HEAD -- "$LCU_OUT_DIR\swagger.json"
+        git -C $LCU_OUT_DIR checkout HEAD -- "swagger.json"
     }
 } Finally {
     Stop-RiotProcesses
