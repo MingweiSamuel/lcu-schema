@@ -35,7 +35,8 @@ jobs:
         run: |
           $env:LOLLOGIN | Out-File -Encoding UTF8 'lollogin.json'
           .\update.ps1
-        shell: pwsh # Use powershell 7
+          Write-Output "SOFT_FAIL=$env:SOFT_FAIL" | Out-File -Append -FilePath $env:GITHUB_ENV
+        shell: pwsh
 
       - name: Push changes in output folder
         shell: bash
