@@ -1,3 +1,5 @@
+**Note: Riot has recently removed the OpenAPI/Swagger spec from the LCU, see [#5](https://github.com/MingweiSamuel/lcu-schema/issues/5). Spec may be out-of-date.**
+
 # LCU-Schema
 
 A script to grab the LCU swagger/openapi spec and serve it on a gh-pages site.
