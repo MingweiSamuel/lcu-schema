@@ -705,6 +705,9 @@
     },
     "ChatChatFriend": {
       "properties": {
+        "activePlatform": {
+          "type": "string"
+        },
         "displayGroup": {
           "type": "string"
         },
@@ -902,6 +905,9 @@
     },
     "ChatChatParticipant": {
       "properties": {
+        "activePlatform": {
+          "type": "string"
+        },
         "cid": {
           "type": "string"
         },
@@ -942,6 +948,9 @@
     },
     "ChatChatPlayer": {
       "properties": {
+        "activePlatform": {
+          "type": "string"
+        },
         "cid": {
           "type": "string"
         },
@@ -2087,6 +2096,26 @@
         }
       },
       "type": "object"
+    },
+    "ChatPlayRestrictionV1Data": {
+      "properties": {
+        "chat_enabled": {
+          "default": true,
+          "type": "boolean"
+        },
+        "play_restriction_setting": {
+          "$ref": "#/definitions/ChatPlayRestrictionV1Settings",
+          "default": "none"
+        }
+      },
+      "type": "object"
+    },
+    "ChatPlayRestrictionV1Settings": {
+      "enum": [
+        "none",
+        "platform_only"
+      ],
+      "type": "string"
     },
     "ChatPlayerAffinityInput": {
       "properties": {
@@ -7984,6 +8013,7 @@
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
+        "PendingPlatformAuthorizationConsent",
         "PendingProviderCredentials",
         "PendingAuthentication",
         "PendingSignup",
@@ -8146,12 +8176,15 @@
         "ConfigAuthPayloadMissing",
         "InvalidLoginState",
         "CreateSessionFailure",
+        "UpdateSessionFailure",
+        "DeleteSessionFailure",
         "AuthenticationFailure",
         "FetchCurrentAuthenticationFailure",
         "InvalidAuthenticationState",
         "SignupFailure",
         "TooYoung",
         "AcceptEulaFailure",
+        "PlatformConsentFailure",
         "GenerateTaglineFailure",
         "CreateRiotIDFailure",
         "SingletonMissing"
@@ -9846,6 +9879,7 @@
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
+        "PendingPlatformAuthorizationConsent",
         "PendingProviderCredentials",
         "PendingAuthentication",
         "PendingSignup",
@@ -9877,11 +9911,11 @@
         "clientID": {
           "type": "string"
         },
-        "clientSecret": {
-          "type": "string"
-        },
         "scopes": {
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -10128,7 +10162,10 @@
           "type": "string"
         },
         "scopes": {
-          "type": "string"
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "type": "object"
@@ -12157,7 +12194,7 @@
         "RegionLocaleMissing",
         "RegionMismatch",
         "RegionDataMissing",
-        "LoginSessionMissing",
+        "NoLoginSessionCookies",
         "SetPersistedLoginFailed",
         "AuthRequestFailed",
         "AuthResultNotAuthorized"
@@ -15915,7 +15952,7 @@
     },
     "/chat/v2/friendrequests": {
       "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "GetChatV2Friendrequests",
         "parameters": [],
         "responses": {
@@ -15934,7 +15971,7 @@
         ]
       },
       "post": {
-        "description": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be substituted in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be substituted in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "PostChatV2Friendrequests",
         "parameters": [
           {
@@ -15967,7 +16004,7 @@
     },
     "/chat/v2/friendrequests/{pid}": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "DeleteChatV2FriendrequestsByPid",
         "parameters": [
           {
@@ -15996,7 +16033,7 @@
         ]
       },
       "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests?pid={pid}' with pid query arg.",
+        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests?pid={pid}' with pid query arg.",
         "operationId": "GetChatV2FriendrequestsByPid",
         "parameters": [
           {
@@ -16280,7 +16317,7 @@
         ]
       },
       "get": {
-        "description": "**Response**:\n\n```\n{\n  \"blocked\": [\n    {\n      \"action\": \"[action]\",         // \"deny\" for blocked\n      \"name\": \"[name]\",             // player name\n      \"order\": \"[order],            // order in block list\n      \"pid\": \"[pid]\"                // player id\n    }\n  ]\n}\n```\n",
+        "description": "**Response**:\n\n```\n{\n  \"blocked\": [\n    {\n      \"action\": \"[action]\",         // \"deny\" for blocked\n      \"name\": \"[name]\",             // player name\n      \"order\": \"[order],            // order in block list\n      \"pid\": \"[pid]\"                // player id\n    }\n  ]\n}\n```\n\n\nEndpoint deleted August 2021; Please use '/chat/v4/blocked'.",
         "operationId": "GetChatV3Blocked",
         "parameters": [
           {
@@ -16308,7 +16345,8 @@
         "tags": [
           "Plugins",
           "Plugin chat",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       },
       "post": {
@@ -16396,7 +16434,7 @@
     },
     "/chat/v3/friendrequests": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "DeleteChatV3Friendrequests",
         "parameters": [
           {
@@ -16427,7 +16465,7 @@
         ]
       },
       "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "GetChatV3Friendrequests",
         "parameters": [
           {
@@ -16454,7 +16492,7 @@
         ]
       },
       "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v5/friendrequests'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
         "operationId": "PostChatV3Friendrequests",
         "parameters": [
           {
@@ -16893,7 +16931,7 @@
     },
     "/chat/v4/conversations": {
       "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations' or '/chat/v6/conversations/{domain}'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' or '/chat/v7/conversations/{domain}'.",
         "operationId": "GetChatV4Conversations",
         "parameters": [],
         "responses": {
@@ -16915,7 +16953,7 @@
     },
     "/chat/v4/conversations/active": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "DeleteChatV4ConversationsActive",
         "parameters": [],
         "responses": {
@@ -16931,7 +16969,7 @@
         ]
       },
       "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "GetChatV4ConversationsActive",
         "parameters": [],
         "responses": {
@@ -16951,7 +16989,7 @@
         ]
       },
       "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "PutChatV4ConversationsActive",
         "parameters": [
           {
@@ -17010,7 +17048,7 @@
     },
     "/chat/v4/conversations/{cid}": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations' where 'cid' is a body argument.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
         "operationId": "DeleteChatV4ConversationsByCid",
         "parameters": [
           {
@@ -17039,7 +17077,7 @@
         ]
       },
       "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations?cid=xyz' with query arg if you need a specific conversation.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations?cid=xyz' with query arg if you need a specific conversation.",
         "operationId": "GetChatV4ConversationsByCid",
         "parameters": [
           {
@@ -17066,7 +17104,7 @@
         ]
       },
       "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations' where 'cid' is a body argument. It supports federated chat better.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument. It supports federated chat better.",
         "operationId": "PostChatV4ConversationsByCid",
         "parameters": [
           {
@@ -17103,7 +17141,7 @@
         ]
       },
       "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations' where 'cid' is a body argument.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
         "operationId": "PutChatV4ConversationsByCid",
         "parameters": [
           {
@@ -17342,7 +17380,7 @@
     },
     "/chat/v4/conversations/{cid}/read": {
       "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/read' where 'cid' is a body arg.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read' where 'cid' is a body arg.",
         "operationId": "PostChatV4ConversationsByCidRead",
         "parameters": [
           {
@@ -17564,6 +17602,32 @@
           "Plugin chat"
         ]
       },
+      "get": {
+        "description": "**Response:** named groups root object: an ordered list of friend groups. First is highest displayed.  Could have one or more entries, always has a default group:\n\n```\n{\n  \"groups\": [\n    {\n      \"collapsed\":    [collapsed],                  // If the group is open or closed\n      \"isMetaGroup\":  [isMetaGroup],                // If the group is a meta group (ex. \"MOBILE\", \"OFFLINE\")\n      \"name\":        \"[group name]\"\n    }\n    ...\n  ]\n}\n```\n\n**Mobile and Offline Groups**\n\nThe mobile and offline groups will appear in the list of groups if the \"chatGroupMobile\" or \"chatGroupOffline\" settings are set to true. They will appear like this:\n\n```\n{\n  \"groups\": [\n    ...\n    {\n      \"collapsed\": [collapsed],\n      \"isMetaGroup\": true,\n      \"name\": \"MOBILE\"\n    },\n    ...\n    {\n      \"collapsed\": [collapsed],\n      \"isMetaGroup\": true,\n      \"name\": \"OFFLINE\"\n    }\n    ...\n  ]\n}\n```\n\nFriends who are either in the \"offline\" or \"mobile\" state will automatically be given the corresponding \"displayGroup\" (ex. either \"OFFLINE\" or \"MOBILE\") in place of their regular group name. If the settings are turned off the groups will be removed and the friends' \"displayGroup\"s will be set back to their regular group names.\n",
+        "operationId": "GetChatV4Groups",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ChatChatGroupList"
+            }
+          }
+        },
+        "summary": "Get groups",
+        "tags": [
+          "Plugins",
+          "Plugin chat",
+          "Subscribable"
+        ]
+      },
       "post": {
         "description": "**Data:**\n\n```\n{\n\"name\":  \"[new group name]\"\n}\n```\nRequirements to create a friend group:\n\n1. name can't be empty --> error 400\n2. name can't happen to be the default group \"**Default\" --> error 403\n3. name can't happen to be a meta group, neither \"OFFLINE\" nor \"MOBILE\" --> error 403\n4. name can't already be the name of another group --> error 409\n",
         "operationId": "PostChatV4Groups",
@@ -17679,7 +17743,7 @@
     },
     "/chat/v5/conversations": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'.",
         "operationId": "DeleteChatV5Conversations",
         "parameters": [
           {
@@ -17710,7 +17774,7 @@
         ]
       },
       "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations' or '/chat/v6/conversations/{domain}'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' or '/chat/v7/conversations/{domain}'.",
         "operationId": "GetChatV5Conversations",
         "parameters": [
           {
@@ -17737,7 +17801,7 @@
         ]
       },
       "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations'. It supports federated chat better.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'. It supports federated chat better.",
         "operationId": "PostChatV5Conversations",
         "parameters": [
           {
@@ -17768,7 +17832,7 @@
         ]
       },
       "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'.",
         "operationId": "PutChatV5Conversations",
         "parameters": [
           {
@@ -17801,7 +17865,7 @@
     },
     "/chat/v5/conversations/active": {
       "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "DeleteChatV5ConversationsActive",
         "parameters": [],
         "responses": {
@@ -17817,7 +17881,7 @@
         ]
       },
       "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "GetChatV5ConversationsActive",
         "parameters": [],
         "responses": {
@@ -17837,7 +17901,7 @@
         ]
       },
       "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/active'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
         "operationId": "PutChatV5ConversationsActive",
         "parameters": [
           {
@@ -17864,7 +17928,7 @@
     },
     "/chat/v5/conversations/read": {
       "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/conversations/read'.",
+        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read'.",
         "operationId": "PostChatV5ConversationsRead",
         "parameters": [
           {
@@ -23927,6 +23991,49 @@
         ]
       }
     },
+    "/playstation-account/v1/authorization-consent": {
+      "get": {
+        "operationId": "GetPlaystationAccountV1AuthorizationConsent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "summary": "Authorization consent status for PlayStation",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "operationId": "PutPlaystationAccountV1AuthorizationConsent",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "AuthorizationConsent",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update authorization consent status for PlayStation",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account"
+        ]
+      }
+    },
     "/playstation-account/v1/player-nickname": {
       "get": {
         "operationId": "GetPlaystationAccountV1PlayerNickname",
@@ -24179,6 +24286,22 @@
         "tags": [
           "Plugins",
           "Plugin privacy"
+        ]
+      }
+    },
+    "/private-settings/v1/settings": {
+      "delete": {
+        "operationId": "DeletePrivateSettingsV1Settings",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Clear all private settings",
+        "tags": [
+          "Plugins",
+          "Plugin private-settings"
         ]
       }
     },
@@ -25953,28 +26076,6 @@
           "Plugins",
           "Plugin riot-client-auth",
           "Subscribable"
-        ]
-      }
-    },
-    "/riot-login/v1/login-result-detail": {
-      "get": {
-        "description": "Endpoint to be deleted September 2021",
-        "operationId": "GetRiotLoginV1LoginResultDetail",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/RiotLoginLoginResult"
-            }
-          }
-        },
-        "summary": "[Deprecated] Get if the current game build is obsolete.",
-        "tags": [
-          "Plugins",
-          "Plugin riot-login",
-          "Subscribable",
-          "Deprecated"
         ]
       }
     },
@@ -30819,6 +30920,49 @@
           }
         },
         "summary": "Gets authorization from the Xbox Account of the player logged in the Xbox",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account"
+        ]
+      }
+    },
+    "/xbox-account/v1/authorization-consent": {
+      "get": {
+        "operationId": "GetXboxAccountV1AuthorizationConsent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "summary": "Authorization consent status for Xbox",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "operationId": "PutXboxAccountV1AuthorizationConsent",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "AuthorizationConsent",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Update authorization consent status for Xbox",
         "tags": [
           "Plugins",
           "Plugin xbox-account"
