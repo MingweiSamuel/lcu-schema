@@ -167,7 +167,7 @@ Try {
 
     # RCS files.
     Write-Host 'Getting RCS spec files.'
-    Invoke-RiotRequest $RCS_LOCKFILE '/Help'                    | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\help.json"
+    Invoke-RiotRequest $RCS_LOCKFILE '/Help?format=Full'        | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\help.json"
     Invoke-RiotRequest $RCS_LOCKFILE '/swagger/v3/openapi.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\openapi.json"
     Invoke-RiotRequest $RCS_LOCKFILE '/swagger/v2/swagger.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\swagger.json"
 
@@ -203,7 +203,7 @@ Try {
 
     Write-Host 'Getting LCU spec files.'
     # /Help is missing the `Content-Type: application/json` header when logged-in.
-    Invoke-RiotRequest $LCU_LOCKFILE '/Help' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
+    Invoke-RiotRequest $LCU_LOCKFILE '/Help?format=Full' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
     Try {
         Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v3/openapi.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\openapi.json"
     }
