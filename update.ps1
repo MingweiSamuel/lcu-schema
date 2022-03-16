@@ -47,6 +47,7 @@ function Invoke-RiotRequest {
         [Parameter(Mandatory=$true)]  [String]$lockfile,
         [Parameter(Mandatory=$true)]  [String]$path,
         [Parameter(Mandatory=$false)] [String]$method = 'GET',
+        [Parameter(Mandatory=$false)] $query = $null,
         [Parameter(Mandatory=$false)] $body = $null,
         [Parameter(Mandatory=$false)] [Int]$attempts = 100
     )
@@ -61,7 +62,7 @@ function Invoke-RiotRequest {
             $pass = ConvertTo-SecureString $pass -AsPlainText -Force
             $cred = New-Object -TypeName PSCredential -ArgumentList 'riot', $pass
 
-            $uri = New-Object System.UriBuilder -ArgumentList 'https', '127.0.0.1', $port, $path | % Uri | % AbsoluteUri
+            $uri = New-Object System.UriBuilder -ArgumentList 'https', '127.0.0.1', $port, $path, $query | % Uri | % AbsoluteUri
 
             $result = Invoke-RestMethod $uri `
                 -SkipCertificateCheck `
@@ -167,13 +168,13 @@ Try {
 
     # RCS files.
     Write-Host 'Getting RCS spec files.'
-    Invoke-RiotRequest $RCS_LOCKFILE '/Help?format=Full'        | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\help.json"
+    Invoke-RiotRequest $RCS_LOCKFILE '/Help' '?format=Full'     | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\help.json"
     Invoke-RiotRequest $RCS_LOCKFILE '/swagger/v3/openapi.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\openapi.json"
     Invoke-RiotRequest $RCS_LOCKFILE '/swagger/v2/swagger.json' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$RCS_OUT_DIR\swagger.json"
 
     # Login to RCS to start the LCU.
     Write-Host 'Logging into RCS, starts LCU.'
-    Invoke-RiotRequest $RCS_LOCKFILE '/rso-auth/v1/authorization/gas' 'POST' $LOGIN | Out-Null
+    Invoke-RiotRequest $RCS_LOCKFILE '/rso-auth/v1/authorization/gas' 'POST' -Body $LOGIN | Out-Null
 
     # Wait for LCU to update itself.
     Start-Sleep 5
@@ -203,7 +204,7 @@ Try {
 
     Write-Host 'Getting LCU spec files.'
     # /Help is missing the `Content-Type: application/json` header when logged-in.
-    Invoke-RiotRequest $LCU_LOCKFILE '/Help?format=Full' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
+    Invoke-RiotRequest $LCU_LOCKFILE '/Help' '?format=Full' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
     Try {
         Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v3/openapi.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\openapi.json"
     }
