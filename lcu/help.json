@@ -1254,7 +1254,47 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-display-categories",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot-map",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-loot_v1_ready",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v2_player-loot-map",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11625,16 +11665,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-spectator_v1_spectate",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
       "nameSpace": "",
       "tags": [],
       "type": {
