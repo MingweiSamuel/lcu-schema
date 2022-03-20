@@ -208,9 +208,9 @@ Try {
     Write-Host 'Getting LCU spec files.'
     # /Help is missing the `Content-Type: application/json` header when logged-in.
     Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Full' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.json"
-    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Brief' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.brief.json"
-    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Console' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.console.json"
-    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Epytext' | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.epytext.json"
+    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Brief' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.brief.json"
+    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Console' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.console.json"
+    Invoke-RiotRequest $LCU_LOCKFILE '/Help' -Query '?format=Epytext' | ConvertFrom-Json -AsHashTable | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\help.epytext.json"
     Try {
         Invoke-RiotRequest $LCU_LOCKFILE '/swagger/v3/openapi.json' -Attempts 10 | ConvertTo-Json -Depth 100 | Out-File -Encoding UTF8 "$LCU_OUT_DIR\openapi.json"
     }
