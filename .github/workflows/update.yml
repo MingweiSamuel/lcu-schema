@@ -39,6 +39,7 @@ jobs:
         shell: pwsh
 
       - name: Push changes in output folder
+        if: github.ref_name == github.event.repository.default_branch && github.event_name == 'push'
         shell: bash
         run: |
           git -C out add .
