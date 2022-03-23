@@ -7,7 +7,24 @@ index 32169e36..15193a59 100644
        // Begin Swagger UI call region
        const ui = SwaggerUIBundle({
 -        url: "https://petstore.swagger.io/v2/swagger.json",
-+        url: "../lcu/openapi.json",
++        urls: [
++          {
++            name: "LCU (OpenAPI 3.0)",
++            url:"../lcu/openapi.json",
++          },
++          {
++            name: "LCU (Swagger 2.0)",
++            url:"../lcu/swagger.json",
++          },
++          {
++            name: "RCS (OpenAPI 3.0)",
++            url:"../rcs/openapi.json",
++          },
++          {
++            name: "RCS (Swagger 2.0)",
++            url:"../rcs/swagger.json",
++          },
++        ],
          dom_id: '#swagger-ui',
          deepLinking: true,
          presets: [
