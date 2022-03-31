@@ -1264,47 +1264,7 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-loot_v1_player-display-categories",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-loot_v1_player-loot",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-loot_v1_player-loot-map",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-loot_v1_ready",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-loot_v2_player-loot-map",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -8154,6 +8114,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LootConfig_EnableMythicEssenceDisplay",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LootConfig_Enabled",
       "nameSpace": "",
       "tags": [],
@@ -11605,6 +11575,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-rso-auth_v1_authorization",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -15529,6 +15509,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolChallengesV1Penalty",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolChallengesUIChallengePenalty"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolChallengesV1SuggestedChallengesLocalPlayer",
       "nameSpace": "",
       "returns": {
@@ -15621,6 +15619,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolChallengesV1Titles",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolChallengesUITitle",
+        "type": "map"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolChallengesV1TitlesLocalPlayer",
       "nameSpace": "",
       "returns": {
@@ -15658,11 +15674,11 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolChallengesV1UpdatedChallengeByGameIdByPuuid",
+      "name": "GetLolChallengesV1UpdatedChallengesByGameIdByPuuid",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "LolChallengesUIChallenge"
+        "elementType": "LolChallengesUIChallenge",
+        "type": "vector"
       },
       "tags": [
         "$remoting-binding-module",
@@ -21460,15 +21476,6 @@
             "elementType": "",
             "type": "bool"
           }
-        },
-        {
-          "description": "",
-          "name": "includeInactive",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
         }
       ],
       "async": "",
@@ -21496,15 +21503,6 @@
           "type": {
             "elementType": "",
             "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "includeInactive",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
           }
         }
       ],
@@ -21807,15 +21805,6 @@
           "type": {
             "elementType": "",
             "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "includeInactive",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
           }
         }
       ],
@@ -23657,6 +23646,98 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-premade-voice"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "groupId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolProgressionV1GroupsByGroupIdConfiguration",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolProgressionGroup"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "groupId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolProgressionV1GroupsByGroupIdInstanceData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolProgressionEntityInstance"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolProgressionV1GroupsConfiguration",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolProgressionGroup",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolProgressionV1Ready",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-progression"
       ],
       "threadSafe": false
     },
@@ -28812,7 +28893,7 @@
       "arguments": [
         {
           "description": "",
-          "name": "gameId",
+          "name": "id",
           "optional": false,
           "type": {
             "elementType": "",
@@ -28823,11 +28904,29 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "PostLolChallengesV1ProcessGameByGameId",
+      "name": "PostLolChallengesV1AckChallengeUpdateById",
       "nameSpace": "",
       "returns": {
         "elementType": "",
         "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolChallengesV1ProcessMissedUpdates",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolChallengesChallengePlayerData",
+        "type": "vector"
       },
       "tags": [
         "$remoting-binding-module",
@@ -33811,15 +33910,6 @@
             "elementType": "",
             "type": "string"
           }
-        },
-        {
-          "description": "",
-          "name": "includeInactive",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
         }
       ],
       "async": "",
@@ -38292,6 +38382,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-login"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "request",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "QueryEvaluationRequestDTO"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolLootV1LootOddsEvaluateQuery",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolLootQueryEvaluatedLootItem",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-loot"
       ],
       "threadSafe": false
     },
@@ -52419,11 +52537,41 @@
             "elementType": "LolChallengesFriendLevelsData",
             "type": "vector"
           }
+        },
+        {
+          "description": "",
+          "name": "idListType",
+          "offset": 212,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesChallengeRequirementMappingName"
+          }
+        },
+        {
+          "description": "",
+          "name": "availableIds",
+          "offset": 216,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "completedIds",
+          "offset": 228,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
         }
       ],
       "name": "LolChallengesChallengeData",
       "nameSpace": "",
-      "size": 216,
+      "size": 240,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -52618,6 +52766,34 @@
         "Plugin lol-challenges"
       ],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolChallengesChallengeRequirementMappingName",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "CHAMPION",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "CHAMPION_SKIN",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 0
+        }
+      ]
     },
     {
       "description": "",
@@ -53158,6 +53334,145 @@
       "fields": [
         {
           "description": "",
+          "name": "queue",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesQueue"
+          }
+        }
+      ],
+      "name": "LolChallengesGameflowGameData",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolChallengesGameflowPhase",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ChampSelect",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "CheckedIntoTournament",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "EndOfGame",
+          "value": 12
+        },
+        {
+          "description": "",
+          "name": "FailedToLaunch",
+          "value": 7
+        },
+        {
+          "description": "",
+          "name": "GameStart",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "InProgress",
+          "value": 8
+        },
+        {
+          "description": "",
+          "name": "Lobby",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Matchmaking",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "None",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "PreEndOfGame",
+          "value": 11
+        },
+        {
+          "description": "",
+          "name": "ReadyCheck",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "Reconnect",
+          "value": 9
+        },
+        {
+          "description": "",
+          "name": "TerminatedInError",
+          "value": 13
+        },
+        {
+          "description": "",
+          "name": "WaitingForStats",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesGameflowPhase"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameData",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesGameflowGameData"
+          }
+        }
+      ],
+      "name": "LolChallengesGameflowSession",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "itemId",
           "offset": 0,
           "optional": false,
@@ -53175,16 +53490,117 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolChallengesInventoryTypeAchievementTitle",
       "nameSpace": "",
-      "size": 28,
+      "size": 52,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
       ],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "msgId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "level",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "categoryChallenges",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "LolChallengesUIChallenge",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "displayType",
+          "offset": 68,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesNotificationDisplayType"
+          }
+        }
+      ],
+      "name": "LolChallengesLcuChallengeNotification",
+      "nameSpace": "",
+      "size": 72,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolChallengesNotificationDisplayType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "TOAST",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "VIGNETTE",
+          "value": 2
+        }
+      ]
     },
     {
       "description": "",
@@ -53254,6 +53670,39 @@
         }
       ],
       "name": "LolChallengesQueue",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "priority",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolChallengesSequenceEvent",
       "nameSpace": "",
       "size": 28,
       "tags": [
@@ -53695,11 +54144,74 @@
             "elementType": "",
             "type": "bool"
           }
+        },
+        {
+          "description": "",
+          "name": "isPriority",
+          "offset": 466,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idListType",
+          "offset": 468,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChallengesChallengeRequirementMappingName"
+          }
+        },
+        {
+          "description": "",
+          "name": "availableIds",
+          "offset": 472,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "completedIds",
+          "offset": 484,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
         }
       ],
       "name": "LolChallengesUIChallenge",
       "nameSpace": "",
-      "size": 472,
+      "size": 496,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "reason",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolChallengesUIChallengePenalty",
+      "nameSpace": "",
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -53848,7 +54360,7 @@
         {
           "description": "",
           "name": "categoryProgress",
-          "offset": 100,
+          "offset": 184,
           "optional": false,
           "type": {
             "elementType": "LolChallengesUICategoryProgress",
@@ -53858,7 +54370,7 @@
         {
           "description": "",
           "name": "topChallenges",
-          "offset": 112,
+          "offset": 196,
           "optional": false,
           "type": {
             "elementType": "LolChallengesUIChallenge",
@@ -53868,7 +54380,7 @@
         {
           "description": "",
           "name": "apexLadderUpdateTime",
-          "offset": 128,
+          "offset": 208,
           "optional": false,
           "type": {
             "elementType": "",
@@ -53878,7 +54390,7 @@
       ],
       "name": "LolChallengesUIPlayerSummary",
       "nameSpace": "",
-      "size": 136,
+      "size": 216,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -53917,11 +54429,51 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "challengeId",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "challengeName",
+          "offset": 64,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "level",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 112,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolChallengesUITitle",
       "nameSpace": "",
-      "size": 52,
+      "size": 136,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -108218,8 +108770,18 @@
         },
         {
           "description": "",
-          "name": "imagePath",
+          "name": "title",
           "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "imagePath",
+          "offset": 28,
           "optional": false,
           "type": {
             "elementType": "",
@@ -108229,7 +108791,7 @@
       ],
       "name": "LolLootGameDataSummonerIcon",
       "nameSpace": "",
-      "size": 28,
+      "size": 52,
       "tags": [
         "Plugins",
         "Plugin lol-loot"
@@ -108508,6 +109070,39 @@
           "value": 1
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolLootItemKey",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-loot"
+      ],
+      "values": []
     },
     {
       "description": "",
@@ -109877,8 +110472,18 @@
         },
         {
           "description": "",
-          "name": "lootOrder",
+          "name": "query",
           "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "lootOrder",
+          "offset": 108,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109888,7 +110493,7 @@
         {
           "description": "",
           "name": "children",
-          "offset": 88,
+          "offset": 112,
           "optional": false,
           "type": {
             "elementType": "LolLootLootOddsResponse",
@@ -109898,7 +110503,7 @@
       ],
       "name": "LolLootLootOddsResponse",
       "nameSpace": "",
-      "size": 104,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-loot"
@@ -111317,6 +111922,39 @@
       "name": "LolLootProgressionConfigMilestoneRewardGdsResource",
       "nameSpace": "",
       "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-loot"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "lootName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedName",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolLootQueryEvaluatedLootItem",
+      "nameSpace": "",
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-loot"
@@ -131708,6 +132346,457 @@
       "fields": [
         {
           "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "direction",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "startValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolProgressionCounter",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ownerId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolProgressionCounterInstance",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counters",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "LolProgressionCounterInstance",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "milestones",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "LolProgressionMilestoneInstance",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolProgressionEntityInstance",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "repeat",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolProgressionRepeat"
+          }
+        },
+        {
+          "description": "",
+          "name": "counters",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "LolProgressionCounter",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "milestones",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "LolProgressionMilestone",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolProgressionGroup",
+      "nameSpace": "",
+      "size": 108,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggerValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "properties",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolProgressionMilestone",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "milestoneId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownerId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggerValue",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "repeatSequence",
+          "offset": 128,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggered",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolProgressionMilestoneInstance",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "count",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "scope",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiplier",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "float"
+          }
+        }
+      ],
+      "name": "LolProgressionRepeat",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-progression"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "locale",
           "offset": 0,
           "optional": false,
@@ -139000,11 +140089,21 @@
             "elementType": "",
             "type": "int32"
           }
+        },
+        {
+          "description": "",
+          "name": "championId",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
         }
       ],
       "name": "LolRankedSplitReward",
       "nameSpace": "",
-      "size": 92,
+      "size": 96,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -139037,7 +140136,7 @@
         {
           "description": "",
           "name": "defaultRewardId",
-          "offset": 52,
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "",
@@ -139047,7 +140146,7 @@
         {
           "description": "",
           "name": "tieredRewardIds",
-          "offset": 76,
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -139057,7 +140156,7 @@
       ],
       "name": "LolRankedSplitRewardDTO",
       "nameSpace": "",
-      "size": 108,
+      "size": 112,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -139152,11 +140251,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "championId",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
         }
       ],
       "name": "LolRankedSplitRewardsMetaData",
       "nameSpace": "",
-      "size": 28,
+      "size": 32,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -158957,6 +160066,46 @@
       "name": "Punishment",
       "nameSpace": "",
       "size": 128,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "query",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "QueryEvaluationRequestDTO",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "lootItemNames",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "QueryEvaluationResultDTO",
+      "nameSpace": "",
+      "size": 12,
       "tags": [],
       "values": []
     },
