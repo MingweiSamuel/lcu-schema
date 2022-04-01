@@ -184,16 +184,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-active-boosts_v1_active-boosts",
       "nameSpace": "",
       "tags": [],
@@ -1264,7 +1254,47 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-display-categories",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot-map",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-loot_v1_ready",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v2_player-loot-map",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11575,16 +11605,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-rso-auth_v1_authorization",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
       "nameSpace": "",
       "tags": [],
       "type": {
