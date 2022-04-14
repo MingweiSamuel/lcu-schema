@@ -184,6 +184,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-active-boosts_v1_active-boosts",
       "nameSpace": "",
       "tags": [],
@@ -1254,7 +1264,47 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-display-categories",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v1_player-loot-map",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-loot_v1_ready",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-loot_v2_player-loot-map",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -7435,6 +7485,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LeagueEdgeClientEnabledServices_Leagues",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LeagueEdgeClientEnabledServices_MarketingPreferences",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -15437,6 +15497,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolChallengesV1ChallengesCategoryData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolChallengesUIChallenge",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolChallengesV1ChallengesLocalPlayer",
       "nameSpace": "",
       "returns": {
@@ -22032,6 +22110,52 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-maps"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "partitionKey",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolMarketingPreferencesV1PartitionByPartitionKey",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "string",
+        "type": "map"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-marketing-preferences"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolMarketingPreferencesV1Ready",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-marketing-preferences"
       ],
       "threadSafe": false
     },
@@ -34026,6 +34150,43 @@
       "arguments": [
         {
           "description": "",
+          "name": "partitionKey",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "body",
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolMarketingPreferencesV1PartitionByPartitionKey",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "string",
+        "type": "map"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-marketing-preferences"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "data",
           "optional": false,
           "type": {
@@ -37023,6 +37184,32 @@
       "arguments": [
         {
           "description": "",
+          "name": "criticalFlowEvent",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TracingCriticalFlowEventV1"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Record a crtical flow event.",
+      "help": "",
+      "name": "PostTracingV1TraceCriticalFlow",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "Tracing"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "tracingEvent",
           "optional": false,
           "type": {
@@ -37853,34 +38040,6 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-collections"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "value",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint8"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutLolContentTargetingV1TftExperimentBucket",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-content-targeting"
       ],
       "threadSafe": false
     },
@@ -39239,6 +39398,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-summoner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "value",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint8"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolTftV1TftExperimentBucket",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft"
       ],
       "threadSafe": false
     },
@@ -52355,7 +52542,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int64"
           }
         },
         {
@@ -53774,8 +53961,18 @@
         },
         {
           "description": "",
+          "name": "NONE",
+          "value": 10
+        },
+        {
+          "description": "",
           "name": "RANKED_LEAGUES",
           "value": 5
+        },
+        {
+          "description": "",
+          "name": "SUMMONER_SERVICE",
+          "value": 9
         }
       ]
     },
@@ -53852,7 +54049,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int64"
           }
         },
         {
@@ -54072,7 +54269,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int64"
           }
         },
         {
@@ -54082,7 +54279,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int64"
           }
         },
         {
@@ -54447,7 +54644,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int64"
           }
         },
         {
@@ -80227,8 +80424,28 @@
         },
         {
           "description": "",
-          "name": "grade",
+          "name": "tokensEarned",
           "offset": 112,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenEarnedAfterGame",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "grade",
+          "offset": 124,
           "optional": false,
           "type": {
             "elementType": "",
@@ -80238,7 +80455,7 @@
         {
           "description": "",
           "name": "score",
-          "offset": 136,
+          "offset": 152,
           "optional": false,
           "type": {
             "elementType": "",
@@ -80248,7 +80465,7 @@
         {
           "description": "",
           "name": "levelUpList",
-          "offset": 144,
+          "offset": 160,
           "optional": false,
           "type": {
             "elementType": "LolEndOfGameChampionMasteryMini",
@@ -80258,7 +80475,7 @@
         {
           "description": "",
           "name": "memberGrades",
-          "offset": 156,
+          "offset": 172,
           "optional": false,
           "type": {
             "elementType": "LolEndOfGameChampionMasteryGrade",
@@ -80268,7 +80485,7 @@
       ],
       "name": "LolEndOfGameChampionMasteryUpdate",
       "nameSpace": "",
-      "size": 168,
+      "size": 184,
       "tags": [
         "Plugins",
         "Plugin lol-end-of-game"
@@ -127713,6 +127930,16 @@
         },
         {
           "description": "",
+          "name": "localPlayer",
+          "offset": 200,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolPftPFTEndOfGamePlayer"
+          }
+        },
+        {
+          "description": "",
           "name": "myTeamStatus",
           "offset": 320,
           "optional": false,
@@ -137729,6 +137956,11 @@
         },
         {
           "description": "",
+          "name": "RANKED_TFT_DOUBLE_UP",
+          "value": 7
+        },
+        {
+          "description": "",
           "name": "RANKED_TFT_PAIRS",
           "value": 6
         },
@@ -140638,6 +140870,11 @@
           "description": "",
           "name": "RANKED_TFT",
           "value": 4
+        },
+        {
+          "description": "",
+          "name": "RANKED_TFT_DOUBLE_UP",
+          "value": 7
         },
         {
           "description": "",
@@ -145508,6 +145745,11 @@
           "description": "",
           "name": "RANKED_TFT",
           "value": 4
+        },
+        {
+          "description": "",
+          "name": "RANKED_TFT_DOUBLE_UP",
+          "value": 7
         },
         {
           "description": "",
@@ -152156,6 +152398,188 @@
       "fields": [
         {
           "description": "",
+          "name": "responseCode",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "modelData",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        }
+      ],
+      "name": "LolTftDataModelResponse",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "gameId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "queue",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftQueue"
+          }
+        }
+      ],
+      "name": "LolTftGameflowGameData",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolTftGameflowPhase",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ChampSelect",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "CheckedIntoTournament",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "EndOfGame",
+          "value": 12
+        },
+        {
+          "description": "",
+          "name": "FailedToLaunch",
+          "value": 7
+        },
+        {
+          "description": "",
+          "name": "GameStart",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "InProgress",
+          "value": 8
+        },
+        {
+          "description": "",
+          "name": "Lobby",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Matchmaking",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "None",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "PreEndOfGame",
+          "value": 11
+        },
+        {
+          "description": "",
+          "name": "ReadyCheck",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "Reconnect",
+          "value": 9
+        },
+        {
+          "description": "",
+          "name": "TerminatedInError",
+          "value": 13
+        },
+        {
+          "description": "",
+          "name": "WaitingForStats",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftGameflowPhase"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameData",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftGameflowGameData"
+          }
+        }
+      ],
+      "name": "LolTftGameflowSession",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "topColor",
           "offset": 0,
           "optional": false,
@@ -152226,11 +152650,135 @@
             "elementType": "string",
             "type": "vector"
           }
+        },
+        {
+          "description": "",
+          "name": "fallbackStorePromoOfferIds",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
         }
       ],
       "name": "LolTftLolTftStorePromos",
       "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "mapId",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameMode",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "category",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftQueueGameCategory"
+          }
+        }
+      ],
+      "name": "LolTftQueue",
+      "nameSpace": "",
       "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolTftQueueGameCategory",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Alpha",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "Custom",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "None",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "PvP",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "VersusAi",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        }
+      ],
+      "name": "LolTftSettingsResource",
+      "nameSpace": "",
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-tft"
@@ -162295,7 +162843,7 @@
         {
           "description": "",
           "name": "tags",
-          "offset": 420,
+          "offset": 444,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -162305,7 +162853,7 @@
         {
           "description": "",
           "name": "warnings",
-          "offset": 432,
+          "offset": 456,
           "optional": false,
           "type": {
             "elementType": "AlertDTO",
@@ -162315,7 +162863,7 @@
       ],
       "name": "SeriesDTO",
       "nameSpace": "",
-      "size": 448,
+      "size": 472,
       "tags": [],
       "values": []
     },
@@ -162364,8 +162912,18 @@
         },
         {
           "description": "",
-          "name": "accentColor",
+          "name": "trackerIcon",
           "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "accentColor",
+          "offset": 120,
           "optional": false,
           "type": {
             "elementType": "",
@@ -162375,7 +162933,7 @@
       ],
       "name": "SeriesMediaDTO",
       "nameSpace": "",
-      "size": 120,
+      "size": 144,
       "tags": [],
       "values": []
     },
@@ -163939,6 +164497,58 @@
           "value": 3
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "timestamp in microseconds of when the event occurred",
+          "name": "when",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "succeeded",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "payloadString",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "TracingCriticalFlowEventV1",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Tracing"
+      ],
+      "values": []
     },
     {
       "description": "",
