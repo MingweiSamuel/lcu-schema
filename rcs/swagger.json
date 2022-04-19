@@ -3778,28 +3778,141 @@
       },
       "type": "object"
     },
-    "FriendsFriendsV1AddFriendData": {
+    "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse": {
       "properties": {
-        "friendDisplayName": {
-          "$ref": "#/definitions/FriendsFriendsV1DisplayName"
+        "fulfilledItems": {
+          "items": {
+            "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentSuccessInfo"
+          },
+          "type": "array"
         },
-        "myDisplayName": {
-          "$ref": "#/definitions/FriendsFriendsV1DisplayName"
+        "fulfillmentRequired": {
+          "type": "boolean"
         },
-        "platformId": {
+        "unfulfilledItems": {
+          "items": {
+            "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo": {
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "quantity": {
           "format": "int64",
           "minimum": 0,
           "type": "integer"
         },
-        "riotId": {
+        "reason": {
           "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1BlockInfoList": {
+    "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentSuccessInfo": {
       "properties": {
-        "blockedUsers": {
+        "itemId": {
+          "type": "string"
+        },
+        "quantity": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentMockApiState": {
+      "enum": [
+        "NoMock",
+        "NoFulfillmentRequired",
+        "FirstPartyQueryFailed",
+        "FirstPartyAuthorizationFailed",
+        "FirstPartyQueryByRiotPayFailed",
+        "RiotPayFulfillmentFailed",
+        "PartialFulfillmentCompleted",
+        "Success"
+      ],
+      "type": "string"
+    },
+    "FriendsChatBlockPid": {
+      "properties": {
+        "pid": {
+          "type": "string"
+        },
+        "puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsChatBlockedList": {
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/definitions/FriendsChatBlockedPlayer"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsChatBlockedPlayer": {
+      "properties": {
+        "game_name": {
+          "type": "string"
+        },
+        "game_tag": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "pid": {
+          "type": "string"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsFriendsConsoleIdToPuuidResponseElement": {
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "providerId": {
+          "type": "string"
+        },
+        "puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsFriendsConsoleIdsToPuuidsResponse": {
+      "properties": {
+        "response": {
+          "items": {
+            "$ref": "#/definitions/FriendsFriendsConsoleIdToPuuidResponseElement"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsFriendsV1NamesetsRequest": {
+      "properties": {
+        "puuids": {
           "items": {
             "type": "string"
           },
@@ -3808,178 +3921,444 @@
       },
       "type": "object"
     },
-    "FriendsFriendsV1BlockListOptions": {
+    "FriendsFriendsV1NamesetsResponse": {
       "properties": {
-        "maxBlockCount": {
-          "format": "int32",
-          "maximum": 2147483647,
-          "minimum": -2147483648,
-          "type": "integer"
-        },
-        "offset": {
-          "format": "int32",
-          "maximum": 2147483647,
-          "minimum": -2147483648,
-          "type": "integer"
+        "namesets": {
+          "items": {
+            "$ref": "#/definitions/FriendsFriendsV1NamesetsResponseElement"
+          },
+          "type": "array"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1DisplayName": {
+    "FriendsFriendsV1NamesetsResponseElement": {
       "properties": {
-        "language": {
+        "alias": {
+          "$ref": "#/definitions/FriendsFriendsV1RiotAlias"
+        },
+        "error": {
           "type": "string"
         },
+        "playstationNameset": {
+          "$ref": "#/definitions/FriendsFriendsV1PlaystationNameset"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "switchNameset": {
+          "$ref": "#/definitions/FriendsFriendsV1SwitchNameset"
+        },
+        "xboxNameset": {
+          "$ref": "#/definitions/FriendsFriendsV1XboxNameset"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsFriendsV1PlaystationNameset": {
+      "properties": {
         "name": {
           "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1FriendsListFilter": {
+    "FriendsFriendsV1RiotAlias": {
       "properties": {
-        "appGroupPlayedOnly": {
-          "format": "int64",
-          "minimum": 0,
-          "type": "integer"
+        "gameName": {
+          "type": "string"
         },
-        "favoriteOnly": {
-          "type": "boolean"
-        },
-        "presence": {
-          "$ref": "#/definitions/FriendsFriendsV1PresenceFilter"
-        },
-        "sameAppPlayedOnly": {
-          "type": "boolean"
-        },
-        "sameAppPresenceOnly": {
-          "type": "boolean"
+        "tagLine": {
+          "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1FriendsListOptions": {
+    "FriendsFriendsV1SwitchNameset": {
       "properties": {
-        "filter": {
-          "$ref": "#/definitions/FriendsFriendsV1FriendsListFilter"
-        },
-        "maxFriends": {
-          "format": "int32",
-          "maximum": 2147483647,
-          "minimum": -2147483648,
-          "type": "integer"
-        },
-        "offset": {
-          "format": "int32",
-          "maximum": 2147483647,
-          "minimum": -2147483648,
-          "type": "integer"
+        "name": {
+          "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1PlatformId": {
+    "FriendsFriendsV1XboxNameset": {
       "properties": {
-        "id": {
-          "format": "int64",
-          "minimum": 0,
-          "type": "integer"
+        "name": {
+          "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1Presence": {
-      "enum": [
-        "unknown",
-        "offline",
-        "online"
-      ],
-      "type": "string"
-    },
-    "FriendsFriendsV1PresenceFilter": {
+    "FriendsFriendsV2MockApiState": {
       "enum": [
         "none",
-        "onlineOnly"
+        "mock_enabled"
       ],
       "type": "string"
     },
-    "FriendsFriendsV1ProfileInfo": {
+    "GaRestrictionAuthorization": {
       "properties": {
-        "display_name": {
+        "puuid": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionCachedPenaltyNotificationDtoV1": {
+      "properties": {
+        "isDeleted": {
+          "type": "boolean"
+        },
+        "isUnread": {
+          "type": "boolean"
+        },
+        "penaltyNotification": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationDtoV1"
+        },
+        "textChatLogEvidenceV1": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationTextChatLogEvidenceV1"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionGapsMailboxUpdated": {
+      "properties": {
+        "product": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionLocalizedPenaltyNotification": {
+      "properties": {
+        "acknowledgeText": {
           "type": "string"
         },
-        "image_urls": {
-          "additionalProperties": {
-            "type": "string"
-          },
-          "type": "object"
-        },
-        "platform_id": {
+        "body": {
           "type": "string"
         },
-        "presence": {
-          "$ref": "#/definitions/FriendsFriendsV1Presence",
-          "default": "unknown"
-        }
-      },
-      "type": "object"
-    },
-    "FriendsFriendsV1ProfileInfoList": {
-      "properties": {
-        "users": {
-          "items": {
-            "$ref": "#/definitions/FriendsFriendsV1ProfileInfo"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "FriendsFriendsV1ProfilesRequest": {
-      "properties": {
-        "ids": {
-          "items": {
-            "$ref": "#/definitions/FriendsFriendsV1PlatformId"
-          },
-          "type": "array"
-        }
-      },
-      "type": "object"
-    },
-    "FriendsFriendsV1PromoteBlockData": {
-      "properties": {
-        "platformIdsToBlock": {
+        "matchHistoryHeader": {
+          "type": "string"
+        },
+        "matchHistoryLinkText": {
+          "type": "string"
+        },
+        "penalties": {
           "items": {
             "type": "string"
           },
           "type": "array"
+        },
+        "penaltyHeader": {
+          "type": "string"
+        },
+        "textChatLogEvidenceV1": {
+          "$ref": "#/definitions/GaRestrictionLocalizedPenaltyNotificationChatLogEvidenceV1"
+        },
+        "title": {
+          "type": "string"
         }
       },
       "type": "object"
     },
-    "FriendsFriendsV1ShowProfileData": {
+    "GaRestrictionLocalizedPenaltyNotificationChatLogEvidenceV1": {
       "properties": {
-        "myDisplayName": {
-          "$ref": "#/definitions/FriendsFriendsV1DisplayName"
+        "chatLogLines": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         },
-        "platformId": {
+        "header": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionMail": {
+      "properties": {
+        "createdAt": {
           "format": "int64",
           "minimum": 0,
           "type": "integer"
         },
-        "targetDisplayName": {
-          "$ref": "#/definitions/FriendsFriendsV1DisplayName"
+        "mailId": {
+          "type": "string"
+        },
+        "mailType": {
+          "$ref": "#/definitions/GaRestrictionMailType",
+          "default": "STANDARD"
+        },
+        "message": {
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/definitions/GaRestrictionMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
     },
-    "FriendsFrindsV1BlockInfoList": {
+    "GaRestrictionMailState": {
+      "enum": [
+        "NEW",
+        "READ",
+        "ACKNOWLEDGED"
+      ],
+      "type": "string"
+    },
+    "GaRestrictionMailType": {
+      "enum": [
+        "STANDARD",
+        "ACK_REQUIRED"
+      ],
+      "type": "string"
+    },
+    "GaRestrictionMailboxStatusUpdated": {
       "properties": {
-        "users": {
+        "lastUpdateReceived": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotification": {
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationData"
+        },
+        "isUnread": {
+          "type": "boolean"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "localizedTexts": {
+          "$ref": "#/definitions/GaRestrictionLocalizedPenaltyNotification"
+        },
+        "product": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationData": {
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "penalties": {
+          "items": {
+            "$ref": "#/definitions/GaRestrictionPenaltyNotificationVendedPenaltyDtoV1"
+          },
+          "type": "array"
+        },
+        "penaltyNotificationDescriptionKey": {
+          "type": "string"
+        },
+        "textChatLogEvidenceV1": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationTextChatLogEvidenceV1"
+        },
+        "transgressionCategory": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationDtoV1": {
+      "properties": {
+        "evidence": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationEvidenceDtoV1"
+        },
+        "matchId": {
+          "type": "string"
+        },
+        "penaltyNotificationDescriptionKey": {
+          "type": "string"
+        },
+        "product": {
+          "type": "string"
+        },
+        "transgressionCategory": {
+          "type": "string"
+        },
+        "vendedPenalties": {
+          "items": {
+            "$ref": "#/definitions/GaRestrictionPenaltyNotificationVendedPenaltyDtoV1"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationEvidenceDtoV1": {
+      "properties": {
+        "evidenceText": {
+          "type": "string"
+        },
+        "evidenceType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationPlayerAction": {
+      "enum": [
+        "RECEIVED_NEW",
+        "RECEIVED_OLD",
+        "ACKNOWLEDGED",
+        "DELETED"
+      ],
+      "type": "string"
+    },
+    "GaRestrictionPenaltyNotificationPlayerActionEvent": {
+      "properties": {
+        "action": {
+          "$ref": "#/definitions/GaRestrictionPenaltyNotificationPlayerAction",
+          "default": "RECEIVED_NEW"
+        },
+        "messageId": {
+          "type": "string"
+        },
+        "patchlineId": {
+          "type": "string"
+        },
+        "penaltyNotificationDescriptionKey": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "puuid": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "transgressionCategory": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationTextChatLogEvidenceV1": {
+      "properties": {
+        "chatLines": {
           "items": {
             "type": "string"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationVendedPenaltyDtoV1": {
+      "properties": {
+        "isPermanent": {
+          "type": "boolean"
+        },
+        "penaltyDurationMillis": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "penaltyTimestamp": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "penaltyType": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPenaltyNotificationsByMessageId": {
+      "properties": {
+        "penaltyNotificationsByMessageId": {
+          "additionalProperties": {
+            "$ref": "#/definitions/GaRestrictionCachedPenaltyNotificationDtoV1"
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPluginCallerId_MockCallerId": {
+      "properties": {
+        "patchlineId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionPluginCallerId_ProductSession": {
+      "properties": {
+        "patchlineFullName": {
+          "type": "string"
+        },
+        "patchlineId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionRegionLocale": {
+      "properties": {
+        "locale": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionRequestMailParameters": {
+      "properties": {
+        "count": {
+          "default": 20,
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "includedStates": {
+          "items": {
+            "$ref": "#/definitions/GaRestrictionMailState"
+          },
+          "type": "array"
+        },
+        "startIndex": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GaRestrictionUpdateMailStateRequest": {
+      "properties": {
+        "mailId": {
+          "type": "string"
+        },
+        "state": {
+          "$ref": "#/definitions/GaRestrictionMailState",
+          "default": "NEW"
         }
       },
       "type": "object"
@@ -4455,6 +4834,17 @@
       },
       "type": "object"
     },
+    "GameSessionConfigV3AuthProgress": {
+      "enum": [
+        "None",
+        "Ready",
+        "Pending",
+        "Complete",
+        "Skipped",
+        "Error"
+      ],
+      "type": "string"
+    },
     "GameSessionConfigV3OpenIdConfiguration": {
       "properties": {
         "config": {
@@ -4475,6 +4865,10 @@
     },
     "GameSessionConfigV3ReadyState": {
       "properties": {
+        "configAuthProgress": {
+          "$ref": "#/definitions/GameSessionConfigV3AuthProgress",
+          "default": "None"
+        },
         "ready": {
           "type": "boolean"
         }
@@ -4898,6 +5292,26 @@
       },
       "type": "object"
     },
+    "GameSessionMSDKV5PartnerCredentials": {
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "channel": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "openId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "GameSessionMSDKWeChatPartnerCredentials": {
       "properties": {
         "accessToken": {
@@ -4967,6 +5381,29 @@
         },
         "msdk_wechat": {
           "$ref": "#/definitions/GameSessionMSDKWeChatPartnerCredentials"
+        },
+        "tencent": {
+          "$ref": "#/definitions/GameSessionTencentPartnerCredentials"
+        },
+        "wegame": {
+          "$ref": "#/definitions/GameSessionWeGamePartnerCredentials"
+        }
+      },
+      "type": "object"
+    },
+    "GameSessionPartnerCredentialsV3": {
+      "properties": {
+        "game_center": {
+          "$ref": "#/definitions/GameSessionGameCenterAuthCredentials"
+        },
+        "garena": {
+          "$ref": "#/definitions/GameSessionGarenaPartnerCredentials"
+        },
+        "google_auth": {
+          "$ref": "#/definitions/GameSessionGoogleAuthCredentials"
+        },
+        "msdk_v5": {
+          "$ref": "#/definitions/GameSessionMSDKV5PartnerCredentials"
         },
         "tencent": {
           "$ref": "#/definitions/GameSessionTencentPartnerCredentials"
@@ -5096,23 +5533,6 @@
           "type": "boolean"
         },
         "retry": {
-          "type": "boolean"
-        },
-        "type": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "GameSessionRSOPartnerCredentialsSubmission": {
-      "properties": {
-        "credentials": {
-          "$ref": "#/definitions/GameSessionPartnerCredentials"
-        },
-        "locale": {
-          "type": "string"
-        },
-        "remember": {
           "type": "boolean"
         },
         "type": {
@@ -7690,6 +8110,243 @@
       },
       "type": "object"
     },
+    "PlatformLoginAuthenticationMethod": {
+      "enum": [
+        "Riot",
+        "Google",
+        "GameCenter",
+        "Facebook",
+        "Apple",
+        "QQ",
+        "Wechat",
+        "Wegame"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginAuthorizationRequest": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/PlatformLoginRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginAuthorizationResponse": {
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/PlatformLoginAuthorizationResponseType"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginAuthorizationResponseType": {
+      "enum": [
+        "needs_authentication",
+        "authorized"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginLoginPhase": {
+      "enum": [
+        "unknown",
+        "not_logged_in",
+        "logged_in"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginLoginResult": {
+      "properties": {
+        "additionalFields": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "error": {
+          "type": "string"
+        },
+        "isLoginSuccessful": {
+          "type": "boolean"
+        },
+        "loginType": {
+          "$ref": "#/definitions/PlatformLoginLoginTypeEnum",
+          "default": "Invalid"
+        },
+        "rsoSignOnAttemptEvent": {
+          "$ref": "#/definitions/PlatformLoginRSOSignOnAttemptEvent",
+          "default": {
+            "outcome": "Success",
+            "storedSessionState": "Accepted"
+          }
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginLoginStatus": {
+      "properties": {
+        "persist": {
+          "type": "boolean"
+        },
+        "phase": {
+          "$ref": "#/definitions/PlatformLoginLoginPhase",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginLoginTypeEnum": {
+      "enum": [
+        "Invalid",
+        "NoLongLivedSession",
+        "LongLivedSessionRejected",
+        "LongLivedSessionAccepted"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginOutcome": {
+      "enum": [
+        "Success",
+        "PrivateSettingsMissing",
+        "PrivateSettingsEmpty",
+        "NoLoginSessionCookies",
+        "SetPersistedLoginFailed",
+        "AuthRequestFailed",
+        "AuthResultNotAuthorized"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/PlatformLoginOnlinePlatform",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginProduct": {
+      "properties": {
+        "patchline": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginRSOAuthorizationTrustLevel": {
+      "enum": [
+        "always_trusted",
+        "trusted_device",
+        "always_verify"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginRSOSignOnAttemptEvent": {
+      "properties": {
+        "authenticationMethod": {
+          "$ref": "#/definitions/PlatformLoginAuthenticationMethod"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "errorDescription": {
+          "type": "string"
+        },
+        "errorName": {
+          "type": "string"
+        },
+        "outcome": {
+          "$ref": "#/definitions/PlatformLoginOutcome",
+          "default": "Success"
+        },
+        "product": {
+          "$ref": "#/definitions/PlatformLoginProduct"
+        },
+        "signOnAttemptNumber": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "storedSessionState": {
+          "$ref": "#/definitions/PlatformLoginStoredSessionState",
+          "default": "Accepted"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginReadyState": {
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginSessionResponse": {
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "persistLogin": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/definitions/PlatformLoginSessionResponseType",
+          "default": "unknown_authentication_response"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformLoginSessionResponseType": {
+      "enum": [
+        "unknown_authentication_response",
+        "needs_credentials",
+        "needs_multifactor_verification",
+        "authenticated",
+        "error"
+      ],
+      "type": "string"
+    },
+    "PlatformLoginStoredSessionState": {
+      "enum": [
+        "Accepted",
+        "Rejected",
+        "Absent"
+      ],
+      "type": "string"
+    },
     "PlatformUiAccessToken": {
       "properties": {
         "expiry": {
@@ -7898,6 +8555,9 @@
         "loginStrategy": {
           "$ref": "#/definitions/PlatformUiLoginStrategyType"
         },
+        "persistLogin": {
+          "type": "boolean"
+        },
         "requireRiotID": {
           "type": "boolean"
         },
@@ -8010,6 +8670,7 @@
     "PlatformUiPlayerSessionStateType": {
       "enum": [
         "PendingInitialization",
+        "PendingPlatformUser",
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
@@ -8166,6 +8827,27 @@
       },
       "type": "object"
     },
+    "PlatformUiXboxSelectUserParameters": {
+      "properties": {
+        "options": {
+          "$ref": "#/definitions/PlatformUiXboxSignInOptions",
+          "default": "show_user_selector"
+        },
+        "shouldRetryOnAbort": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiXboxSignInOptions": {
+      "enum": [
+        "add_default_user_allowing_ui",
+        "show_user_selector",
+        "allow_guests"
+      ],
+      "type": "string"
+    },
     "PlatformUicode": {
       "enum": [
         "RateLimited",
@@ -8183,6 +8865,8 @@
         "InvalidAuthenticationState",
         "SignupFailure",
         "TooYoung",
+        "SigninFailure",
+        "SigninAuthFailure",
         "AcceptEulaFailure",
         "PlatformConsentFailure",
         "GenerateTaglineFailure",
@@ -8199,6 +8883,9 @@
         "UserCancelled",
         "PendingConsent",
         "PendingForget",
+        "GuestAccount",
+        "SystemSignedOut",
+        "SystemOutOfDate",
         "InternalError"
       ],
       "type": "string"
@@ -9806,6 +10493,31 @@
       },
       "type": "object"
     },
+    "PlayerSessionLifecycleOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
+    },
+    "PlayerSessionLifecyclePlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/PlayerSessionLifecycleOnlinePlatform",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
     "PlayerSessionLifecyclePlayerAffinityProductToken": {
       "properties": {
         "affinities": {
@@ -9876,6 +10588,7 @@
     "PlayerSessionLifecyclePlayerSessionStateType": {
       "enum": [
         "PendingInitialization",
+        "PendingPlatformUser",
         "Initializing",
         "PendingClientId",
         "PendingCreateAuthorization",
@@ -9908,7 +10621,7 @@
     },
     "PlayerSessionLifecyclePlaystationAccountAuthorizationParameters": {
       "properties": {
-        "clientID": {
+        "client_id": {
           "type": "string"
         },
         "scopes": {
@@ -9919,6 +10632,28 @@
         }
       },
       "type": "object"
+    },
+    "PlayerSessionLifecyclePlaystationAccountAuthorizationResponse": {
+      "properties": {
+        "authorization": {
+          "$ref": "#/definitions/PlayerSessionLifecyclePlaystationAccountAuthorization"
+        },
+        "error_code": {
+          "$ref": "#/definitions/PlayerSessionLifecyclePlaystationAccountErrorCode"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerSessionLifecyclePlaystationAccountErrorCode": {
+      "enum": [
+        "aborted",
+        "signed_out",
+        "user_not_found",
+        "not_signed_up",
+        "logout",
+        "latest_system_software_exist"
+      ],
+      "type": "string"
     },
     "PlayerSessionLifecyclePlaystationInput": {
       "properties": {
@@ -10134,6 +10869,26 @@
       },
       "type": "object"
     },
+    "PlayerSessionLifecycleXboxAccountAuthorizationResponse": {
+      "properties": {
+        "authorization": {
+          "$ref": "#/definitions/PlayerSessionLifecycleXboxAccountAuthorization"
+        },
+        "error_code": {
+          "$ref": "#/definitions/PlayerSessionLifecycleXboxAccountErrorCode"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerSessionLifecycleXboxAccountErrorCode": {
+      "enum": [
+        "aborted",
+        "signed_out",
+        "user_not_found",
+        "no_default_user"
+      ],
+      "type": "string"
+    },
     "PlayerSessionLifecycleXboxInput": {
       "properties": {
         "user_hash": {
@@ -10158,7 +10913,7 @@
     },
     "PlaystationAccountAuthorizationParameters": {
       "properties": {
-        "clientID": {
+        "client_id": {
           "type": "string"
         },
         "scopes": {
@@ -10166,6 +10921,73 @@
             "type": "string"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "PlaystationAccountAuthorizationResponse": {
+      "properties": {
+        "authorization": {
+          "$ref": "#/definitions/PlaystationAccountAuthorization"
+        },
+        "error_code": {
+          "$ref": "#/definitions/PlaystationAccountErrorCode"
+        }
+      },
+      "type": "object"
+    },
+    "PlaystationAccountErrorCode": {
+      "enum": [
+        "aborted",
+        "signed_out",
+        "user_not_found",
+        "not_signed_up",
+        "logout",
+        "latest_system_software_exist"
+      ],
+      "type": "string"
+    },
+    "PlaystationAccountOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
+    },
+    "PlaystationAccountPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/PlaystationAccountOnlinePlatform",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
+    "PlaystationAccountUser": {
+      "properties": {
+        "account_id": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "error_code": {
+          "$ref": "#/definitions/PlaystationAccountErrorCode"
+        },
+        "user_id": {
+          "default": -1,
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -10535,6 +11357,17 @@
       },
       "type": "object"
     },
+    "ProductIntegrationAppUpdateStatusFile": {
+      "properties": {
+        "productSessionId": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/ProductIntegrationProductIntegrationAppUpdateStatus"
+        }
+      },
+      "type": "object"
+    },
     "ProductIntegrationDebugAppUpdateStatus": {
       "properties": {
         "patchlineId": {
@@ -10605,6 +11438,72 @@
       ],
       "type": "string"
     },
+    "ProductIntegrationDetachedSession": {
+      "properties": {
+        "patchlineId": {
+          "type": "string"
+        },
+        "pid": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductIntegrationHeartbeatFile": {
+      "properties": {
+        "data": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "source": {
+          "$ref": "#/definitions/ProductIntegrationDetachedSession"
+        }
+      },
+      "type": "object"
+    },
+    "ProductIntegrationLocaleDataResource": {
+      "properties": {
+        "available_locales": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "default_locale": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductIntegrationPatchlineMetadata": {
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "locale_data": {
+          "$ref": "#/definitions/ProductIntegrationLocaleDataResource"
+        },
+        "rso_client_id": {
+          "type": "string"
+        },
+        "rso_scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "ProductIntegrationProductIntegrationAppImmediateRepairRequestBody": {
       "properties": {
         "files": {
@@ -10666,6 +11565,40 @@
         "default",
         "integrity_check_failed",
         "immediate_repair"
+      ],
+      "type": "string"
+    },
+    "ProductIntegrationSettingsToken": {
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductIntegrationSettingsTokenRequest": {
+      "properties": {
+        "extraSettings": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "patchlineId": {
+          "type": "string"
+        },
+        "productId": {
+          "type": "string"
+        },
+        "productSessionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ProductIntegrationSignoutPermission": {
+      "enum": [
+        "Allowed",
+        "Disallowed",
+        "DisallowedOtherProducts"
       ],
       "type": "string"
     },
@@ -11762,6 +12695,10 @@
     },
     "ProductSessionSessionHeartbeat": {
       "properties": {
+        "phase": {
+          "$ref": "#/definitions/ProductSessionProductPhase",
+          "default": "None"
+        },
         "sessionTTL": {
           "format": "int32",
           "maximum": 4294967295,
@@ -12894,6 +13831,17 @@
       },
       "type": "object"
     },
+    "RsoAuthConfigV3AuthProgress": {
+      "enum": [
+        "None",
+        "Ready",
+        "Pending",
+        "Complete",
+        "Skipped",
+        "Error"
+      ],
+      "type": "string"
+    },
     "RsoAuthConfigV3OpenIdConfiguration": {
       "properties": {
         "config": {
@@ -12914,6 +13862,10 @@
     },
     "RsoAuthConfigV3ReadyState": {
       "properties": {
+        "configAuthProgress": {
+          "$ref": "#/definitions/RsoAuthConfigV3AuthProgress",
+          "default": "None"
+        },
         "ready": {
           "type": "boolean"
         }
@@ -13106,6 +14058,26 @@
       },
       "type": "object"
     },
+    "RsoAuthMSDKV5PartnerCredentials": {
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "channel": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "openId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthMSDKWeChatPartnerCredentials": {
       "properties": {
         "accessToken": {
@@ -13175,6 +14147,29 @@
         },
         "msdk_wechat": {
           "$ref": "#/definitions/RsoAuthMSDKWeChatPartnerCredentials"
+        },
+        "tencent": {
+          "$ref": "#/definitions/RsoAuthTencentPartnerCredentials"
+        },
+        "wegame": {
+          "$ref": "#/definitions/RsoAuthWeGamePartnerCredentials"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthPartnerCredentialsV3": {
+      "properties": {
+        "game_center": {
+          "$ref": "#/definitions/RsoAuthGameCenterAuthCredentials"
+        },
+        "garena": {
+          "$ref": "#/definitions/RsoAuthGarenaPartnerCredentials"
+        },
+        "google_auth": {
+          "$ref": "#/definitions/RsoAuthGoogleAuthCredentials"
+        },
+        "msdk_v5": {
+          "$ref": "#/definitions/RsoAuthMSDKV5PartnerCredentials"
         },
         "tencent": {
           "$ref": "#/definitions/RsoAuthTencentPartnerCredentials"
@@ -13276,23 +14271,6 @@
           "type": "boolean"
         },
         "retry": {
-          "type": "boolean"
-        },
-        "type": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "RsoAuthRSOPartnerCredentialsSubmission": {
-      "properties": {
-        "credentials": {
-          "$ref": "#/definitions/RsoAuthPartnerCredentials"
-        },
-        "locale": {
-          "type": "string"
-        },
-        "remember": {
           "type": "boolean"
         },
         "type": {
@@ -14438,6 +15416,891 @@
       },
       "type": "object"
     },
+    "TencentLauncherAccessToken": {
+      "properties": {
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthError": {
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "errorDescription": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthHint": {
+      "properties": {
+        "context": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/definitions/TencentLauncherAuthHintType",
+          "default": "email_verification"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthHintType": {
+      "enum": [
+        "email_verification",
+        "password_reset",
+        "parental_consent",
+        "ambiguous_username",
+        "alias_change_required"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherAuthenticationTypeEnum": {
+      "enum": [
+        "SSOAuth",
+        "RiotAuth",
+        "None"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherAuthorization": {
+      "properties": {
+        "currentAccountId": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "currentPlatformId": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationCode": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "code_verifier": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationKey": {
+      "properties": {
+        "key": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationKeyRequest": {
+      "properties": {
+        "client_id": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationRequest": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/TencentLauncherAuthenticationTypeEnum"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "keepAlive": {
+          "default": true,
+          "type": "boolean"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationResponse": {
+      "properties": {
+        "authorization": {
+          "$ref": "#/definitions/TencentLauncherImplicitAuthorization"
+        },
+        "country": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/TencentLauncherAuthorizationResponseType"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationResponseType": {
+      "enum": [
+        "needs_authentication",
+        "needs_reauthentication",
+        "authorized"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherAuthorizationUpdateRequest": {
+      "properties": {
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherConfigV3AMRValuesSupported": {
+      "properties": {
+        "values": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherLoginAMR"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherConfigV3AuthProgress": {
+      "enum": [
+        "None",
+        "Ready",
+        "Pending",
+        "Complete",
+        "Skipped",
+        "Error"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherConfigV3OpenIdConfiguration": {
+      "properties": {
+        "config": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherConfigV3PartnerAuthConfig": {
+      "properties": {
+        "config": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherConfigV3ReadyState": {
+      "properties": {
+        "configAuthProgress": {
+          "$ref": "#/definitions/TencentLauncherConfigV3AuthProgress",
+          "default": "None"
+        },
+        "ready": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherDeviceId": {
+      "properties": {
+        "collectorServerName": {
+          "type": "string"
+        },
+        "frameUrl": {
+          "type": "string"
+        },
+        "installId": {
+          "type": "string"
+        },
+        "merchantId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherEntitlementsToken": {
+      "properties": {
+        "entitlements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherGameCenterAuthCredentials": {
+      "properties": {
+        "bundleId": {
+          "type": "string"
+        },
+        "playerId": {
+          "type": "string"
+        },
+        "publicKeyUrl": {
+          "type": "string"
+        },
+        "salt": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherGarenaPartnerCredentials": {
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherGoogleAuthCredentials": {
+      "properties": {
+        "idToken": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherHttpCookie": {
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "hostOnly": {
+          "default": true,
+          "type": "boolean"
+        },
+        "httpOnly": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "persistent": {
+          "type": "boolean"
+        },
+        "secureOnly": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherHttpCookieJar": {
+      "properties": {
+        "cookies": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherHttpCookie"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherIdToken": {
+      "properties": {
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherImplicitAuthorization": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/TencentLauncherAccessToken"
+        },
+        "idToken": {
+          "$ref": "#/definitions/TencentLauncherIdToken"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherLoginAMR": {
+      "enum": [
+        "cookie",
+        "password",
+        "captcha",
+        "mfa",
+        "signup",
+        "google_auth",
+        "game_center",
+        "facebook",
+        "apple",
+        "msdk_qq",
+        "msdk_wechat",
+        "wegame",
+        "tencent",
+        "garena"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherLogoutReason": {
+      "enum": [
+        "generic",
+        "tokens_expired"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherMSDKQQPartnerCredentials": {
+      "properties": {
+        "appId": {
+          "type": "string"
+        },
+        "msdkKey": {
+          "type": "string"
+        },
+        "openId": {
+          "type": "string"
+        },
+        "openKey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherMSDKV5PartnerCredentials": {
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "channel": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "openId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherMSDKWeChatPartnerCredentials": {
+      "properties": {
+        "accessToken": {
+          "type": "string"
+        },
+        "appId": {
+          "type": "string"
+        },
+        "msdkKey": {
+          "type": "string"
+        },
+        "openId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherMultifactorDetails": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/definitions/TencentLauncherMultifactorMethod",
+          "default": "method_not_set"
+        },
+        "methods": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "mfaVersion": {
+          "type": "string"
+        },
+        "multiFactorCodeLength": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherMultifactorMethod": {
+      "enum": [
+        "method_not_set",
+        "email",
+        "authenticator",
+        "sms",
+        "push"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherPartnerCredentials": {
+      "properties": {
+        "game_center": {
+          "$ref": "#/definitions/TencentLauncherGameCenterAuthCredentials"
+        },
+        "garena": {
+          "$ref": "#/definitions/TencentLauncherGarenaPartnerCredentials"
+        },
+        "google_auth": {
+          "$ref": "#/definitions/TencentLauncherGoogleAuthCredentials"
+        },
+        "msdk_qq": {
+          "$ref": "#/definitions/TencentLauncherMSDKQQPartnerCredentials"
+        },
+        "msdk_wechat": {
+          "$ref": "#/definitions/TencentLauncherMSDKWeChatPartnerCredentials"
+        },
+        "tencent": {
+          "$ref": "#/definitions/TencentLauncherTencentPartnerCredentials"
+        },
+        "wegame": {
+          "$ref": "#/definitions/TencentLauncherWeGamePartnerCredentials"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherPartnerCredentialsV3": {
+      "properties": {
+        "game_center": {
+          "$ref": "#/definitions/TencentLauncherGameCenterAuthCredentials"
+        },
+        "garena": {
+          "$ref": "#/definitions/TencentLauncherGarenaPartnerCredentials"
+        },
+        "google_auth": {
+          "$ref": "#/definitions/TencentLauncherGoogleAuthCredentials"
+        },
+        "msdk_v5": {
+          "$ref": "#/definitions/TencentLauncherMSDKV5PartnerCredentials"
+        },
+        "tencent": {
+          "$ref": "#/definitions/TencentLauncherTencentPartnerCredentials"
+        },
+        "wegame": {
+          "$ref": "#/definitions/TencentLauncherWeGamePartnerCredentials"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherPublicClientConfig": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOAuthorizationSubmission": {
+      "properties": {
+        "acr_values": {
+          "type": "string"
+        },
+        "claims": {
+          "type": "string"
+        },
+        "client_id": {
+          "type": "string"
+        },
+        "code_challenge": {
+          "type": "string"
+        },
+        "code_challenge_method": {
+          "type": "string"
+        },
+        "nonce": {
+          "type": "string"
+        },
+        "redirect_uri": {
+          "type": "string"
+        },
+        "response_type": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOAuthorizationTrustLevel": {
+      "enum": [
+        "always_trusted",
+        "trusted_device",
+        "always_verify"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherRSOCredentialSubmission": {
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "remember": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOJWTConfig": {
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOOTPSubmission": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "rememberDevice": {
+          "type": "boolean"
+        },
+        "retry": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOPlayerCredentials": {
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "platformId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOReauthenticationSubmission": {
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionCredentials": {
+      "properties": {
+        "password": {
+          "type": "string"
+        },
+        "persistLogin": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionLoginToken": {
+      "properties": {
+        "authentication_type": {
+          "$ref": "#/definitions/TencentLauncherAuthenticationTypeEnum"
+        },
+        "code_verifier": {
+          "type": "string"
+        },
+        "login_token": {
+          "type": "string"
+        },
+        "persist_login": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionMultifactor": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "retry": {
+          "type": "boolean"
+        },
+        "trustDevice": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionReauthentication": {
+      "properties": {
+        "password": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionResponse": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/TencentLauncherAuthenticationTypeEnum"
+        },
+        "country": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "multifactor": {
+          "$ref": "#/definitions/TencentLauncherMultifactorDetails",
+          "default": {
+            "method": "method_not_set"
+          }
+        },
+        "persistLogin": {
+          "type": "boolean"
+        },
+        "securityProfile": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/TencentLauncherSessionResponseType",
+          "default": "unknown_authentication_response"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherSessionResponseType": {
+      "enum": [
+        "unknown_authentication_response",
+        "needs_credentials",
+        "needs_password",
+        "needs_multifactor_verification",
+        "authenticated",
+        "error"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherSessionSignup": {
+      "properties": {
+        "locale": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherStatusMessage": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherTencentLauncherLoginArguments": {
+      "properties": {
+        "tencentGameId": {
+          "type": "string"
+        },
+        "tencentGameKey": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherTencentLauncherLoginInfo": {
+      "properties": {
+        "channel": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "ext": {
+          "type": "string"
+        },
+        "openid": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherTencentPartnerCredentials": {
+      "properties": {
+        "accountType": {
+          "type": "string"
+        },
+        "appId": {
+          "type": "string"
+        },
+        "cltkey": {
+          "type": "string"
+        },
+        "cltkeyLength": {
+          "type": "string"
+        },
+        "gameSignatureLength": {
+          "type": "string"
+        },
+        "szGameSignature": {
+          "type": "string"
+        },
+        "uId": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherUserInfo": {
+      "properties": {
+        "userInfo": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherWeGamePartnerCredentials": {
+      "properties": {
+        "railGameId": {
+          "type": "string"
+        },
+        "railId": {
+          "type": "string"
+        },
+        "railSessionTicket": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "VoiceChatAccessToken": {
       "properties": {
         "token": {
@@ -15167,6 +17030,72 @@
         }
       },
       "type": "object"
+    },
+    "XboxAccountAuthorizationResponse": {
+      "properties": {
+        "authorization": {
+          "$ref": "#/definitions/XboxAccountAuthorization"
+        },
+        "error_code": {
+          "$ref": "#/definitions/XboxAccountErrorCode"
+        }
+      },
+      "type": "object"
+    },
+    "XboxAccountErrorCode": {
+      "enum": [
+        "aborted",
+        "signed_out",
+        "user_not_found",
+        "no_default_user"
+      ],
+      "type": "string"
+    },
+    "XboxAccountOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
+    },
+    "XboxAccountPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/XboxAccountOnlinePlatform",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
+    "XboxAccountSelectUserParameters": {
+      "properties": {
+        "options": {
+          "$ref": "#/definitions/XboxAccountSignInOptions",
+          "default": "show_user_selector"
+        },
+        "shouldRetryOnAbort": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "XboxAccountSignInOptions": {
+      "enum": [
+        "add_default_user_allowing_ui",
+        "show_user_selector",
+        "allow_guests"
+      ],
+      "type": "string"
     },
     "basicOperatingSystemInfo": {
       "description": "User Experience Settings Operating System Information",
@@ -17405,7 +19334,7 @@
     },
     "/chat/v4/friendrequests": {
       "delete": {
-        "description": "Endpoint deleted August 2021; Please use '/chat/v6/friendrequests'.",
+        "description": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
         "operationId": "DeleteChatV4Friendrequests",
         "parameters": [
           {
@@ -17436,7 +19365,7 @@
         ]
       },
       "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted August 2021; Please use '/chat/v6/friendrequests'.",
+        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
         "operationId": "GetChatV4Friendrequests",
         "parameters": [
           {
@@ -17463,7 +19392,7 @@
         ]
       },
       "post": {
-        "description": "Endpoint deleted August 2021; Please use '/chat/v6/friendrequests'.",
+        "description": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
         "operationId": "PostChatV4Friendrequests",
         "parameters": [
           {
@@ -19175,6 +21104,25 @@
         ]
       }
     },
+    "/client-config/v1/url": {
+      "get": {
+        "operationId": "GetClientConfigV1Url",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns the URL of the external service",
+        "tags": [
+          "Plugins",
+          "Plugin client-config"
+        ]
+      }
+    },
     "/client-config/v2/config/{name}": {
       "get": {
         "description": "Returns an individual configuration field for the requesting application. Both Public and Player types are checked. Subscribing to a configuration field that does not exist results in event UPDATE notifications with an `BindingProperty::Empty` data field. If the receiving module intends to handle the does-not-exist case, the event handler should accept a BindingProperty, not a concrete resource type. \n\n* This call does not block. If config is not already cached locally, an async request will be dispatched.\n\n* If configuration has not yet been fetched, an HTTP 202 is returned. When the configuration is available, a resource notification will be sent to subscribers.\n\n* Configuration is automatically refreshed on state change (login, logout, or notification of change), and apps may be notified by subscribing to this endpoint.\n\n* Connecting game applications will have product information automatically applied to outgoing configuration requests (i.e. app name, version, patchline). This allows configuration overrides to be applied specifically for the app.\n\nResponse codes:\n- 200 If the field exists. The body will be the configuration value.\n- 202 If configuration has not yet been fetched, and updates can be received via subscription notifications.\n- 204 If the field does not exist, and all configuration has been successfully fetched.",
@@ -19649,7 +21597,8 @@
         "summary": "Delete existing cookies.",
         "tags": [
           "Plugins",
-          "Plugin cookie-jar"
+          "Plugin cookie-jar",
+          "Internal"
         ]
       },
       "get": {
@@ -19695,7 +21644,8 @@
         "summary": "Set new cookies.",
         "tags": [
           "Plugins",
-          "Plugin cookie-jar"
+          "Plugin cookie-jar",
+          "Internal"
         ]
       }
     },
@@ -20057,6 +22007,7 @@
     },
     "/disambiguation/v1/magic-link": {
       "post": {
+        "description": "This API endpoint is deprecated and will be removed by 3/1/2023. Please do not use.",
         "operationId": "PostDisambiguationV1MagicLink",
         "parameters": [],
         "responses": {
@@ -20070,7 +22021,8 @@
         "summary": "Retrieves the magic disambiguation link for the current auth'd account.",
         "tags": [
           "Plugins",
-          "Plugin disambiguation"
+          "Plugin disambiguation",
+          "Deprecated"
         ]
       }
     },
@@ -20343,7 +22295,7 @@
     },
     "/first-party-fulfillment/v1/fulfill": {
       "post": {
-        "description": "\n**Description**\n\nInitiates the fulfillment process with a first party if there are any items to fulfill.\n\n**Arguments**\n\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n",
+        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
         "operationId": "PostFirstPartyFulfillmentV1Fulfill",
         "parameters": [
           {
@@ -20356,8 +22308,11 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "No content"
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse"
+            }
           }
         },
         "summary": "Initiate a fulfillment attempt",
@@ -20368,17 +22323,17 @@
         ]
       }
     },
-    "/friends/v1/add-friend-ui": {
-      "post": {
-        "description": "\n**Description**\n\nShows platform specific UI for adding platform friends. Must specify either a riotId or a platformId. PlatformId will be prioritized if provided otherwise RiotId will be converted to a platform specific ID.\n\n**Nintendo Switch**\n* Shows the native Nintendo Switch UI to send a Nintendo Switch friend request to the specified friend\n* **Will block until user input on native ui completes**\n* Must be exactly 1 opened user prior to calling add-friend-ui\n* platformId must be a Network Services Account ID\n* RiotId not yet supported. When supported will convert to Nintendo Network Services ID to add the user as a nintendo switch friend.\n",
-        "operationId": "PostFriendsV1AddFriendUi",
+    "/first-party-fulfillment/v1/mock-api/state": {
+      "put": {
+        "description": "\n**Description**\n\nSets whether or not the plugin should use a mock fulfillment API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `NoFulfillmentRequired`: The plugin is set to use the mock API. The mock API will return that no fulfillment is required.\n    * `FirstPartyQueryFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      items to fulfill.\n    * `FirstPartyAuthorizationFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to fetch the\n      first party authorization.\n    * `FirstPartyQueryByRiotPayFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay could not\n      call the first party services to verify the fulfillment request.\n    * `RiotPayFulfillmentFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay failed to complete\n      the fulfillment request entirely.\n    * `PartialFulfillmentCompleted`: The plugin is set to use the mock API. The mock API will return a response indicating that RiotPay managed\n      to fulfill some items, but failed to fulfill others.\n    * `Success`: The plugin is set to use the mock API. The mock API will return as if all items have been fulfilled successfully.\n",
+        "operationId": "PutFirstPartyFulfillmentV1MockApiState",
         "parameters": [
           {
             "in": "body",
-            "name": "request",
+            "name": "state",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1AddFriendData"
+              "$ref": "#/definitions/FirstPartyFulfillmentFirstPartyFulfillmentMockApiState"
             }
           }
         ],
@@ -20387,7 +22342,51 @@
             "description": "No content"
           }
         },
-        "summary": "Shows platform specific UI for adding a friend",
+        "summary": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave",
+        "tags": [
+          "Plugins",
+          "Plugin first-party-fulfillment",
+          "Internal"
+        ]
+      }
+    },
+    "/friends/v2/make-platform-blocks-riot-blocks": {
+      "get": {
+        "description": "\n**Description**\nThis endpoint queries the console for blocked users, looks them up in the Riot system, and checks if all of them are blocked in the Riot ecosystem.\nIf not, the blocks are 'promoted' to Riot blocks. Game teams are required to determined where this endpoint should be invoked in their app lifecycle.\n",
+        "operationId": "GetFriendsV2MakePlatformBlocksRiotBlocks",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Request a synchronization of blocked users from console to Riot ecosystem",
+        "tags": [
+          "Plugins",
+          "Plugin friends"
+        ]
+      }
+    },
+    "/friends/v2/mock-api/state": {
+      "put": {
+        "description": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
+        "operationId": "PutFriendsV2MockApiState",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "state",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/FriendsFriendsV2MockApiState"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
         "tags": [
           "Plugins",
           "Plugin friends",
@@ -20395,17 +22394,17 @@
         ]
       }
     },
-    "/friends/v1/block-list": {
-      "get": {
-        "description": "\n**Description**\n\nReturns the list of user IDs blocked by the current user on the local platform.\n\n**Nintendo Switch**\n* Must be exactly 1 opened user prior to calling block-list\n",
-        "operationId": "GetFriendsV1BlockList",
+    "/friends/v2/namesets-for-puuids": {
+      "post": {
+        "description": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n    \n\nResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\n\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "operationId": "PostFriendsV2NamesetsForPuuids",
         "parameters": [
           {
             "in": "body",
             "name": "request",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1BlockListOptions"
+              "$ref": "#/definitions/FriendsFriendsV1NamesetsRequest"
             }
           }
         ],
@@ -20413,29 +22412,31 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1BlockInfoList"
+              "$ref": "#/definitions/FriendsFriendsV1NamesetsResponse"
             }
           }
         },
-        "summary": "Returns platform specific information about a user's blocked users",
+        "summary": "Retrieves the namesets for each PUUID provided",
         "tags": [
           "Plugins",
-          "Plugin friends",
-          "Internal"
+          "Plugin friends"
         ]
       }
     },
-    "/friends/v1/friends-list": {
-      "get": {
-        "description": "\n**Description**\n\nReturns the profile information for platform friends.\n\n**Nintendo Switch**\n* Must be exactly 1 opened user prior to calling friends-list\n",
-        "operationId": "GetFriendsV1FriendsList",
+    "/friends/v2/puuids-for-consoleids": {
+      "post": {
+        "description": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\n\nConsoleIdToPuuidResponseElement:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+        "operationId": "PostFriendsV2PuuidsForConsoleids",
         "parameters": [
           {
             "in": "body",
-            "name": "request",
+            "name": "consoleIds",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1FriendsListOptions"
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
             }
           }
         ],
@@ -20443,119 +22444,303 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1ProfileInfoList"
+              "$ref": "#/definitions/FriendsFriendsConsoleIdsToPuuidsResponse"
             }
           }
         },
-        "summary": "Retrieves platform information for local platform friends",
+        "summary": "Retrieves the PUUIDs for each Console ID provided",
         "tags": [
           "Plugins",
-          "Plugin friends",
-          "Internal"
+          "Plugin friends"
         ]
       }
     },
-    "/friends/v1/platform-only-block-list": {
+    "/ga-restriction/v1/debug/caller-id/mock-id": {
+      "delete": {
+        "description": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "operationId": "DeleteGaRestrictionV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Stops mocking the caller ID for Swagger calls",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      },
       "get": {
-        "description": "\n**Description**\n\nReturns the list of Riot puuids blocked by the current user on the local platform that have not already been blocked at the Riot level.\n\n**Nintendo Switch**\n* Must be exactly 1 opened user prior to calling /friends/v1/platform-only-block-list\n",
-        "operationId": "GetFriendsV1PlatformOnlyBlockList",
+        "description": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "operationId": "GetGaRestrictionV1DebugCallerIdMockId",
         "parameters": [],
         "responses": {
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/FriendsFrindsV1BlockInfoList"
+              "$ref": "#/definitions/GaRestrictionPluginCallerId_MockCallerId"
             }
           }
         },
-        "summary": "Returns Riot puuids for blocked users that have been blocked locally but have not been blocked at the Riot level.",
+        "summary": "Checks the caller ID in use when APIs are called from Swagger",
         "tags": [
           "Plugins",
-          "Plugin friends",
-          "Subscribable",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      },
+      "put": {
+        "description": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "operationId": "PutGaRestrictionV1DebugCallerIdMockId",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "callerId",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GaRestrictionPluginCallerId_MockCallerId"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets the caller ID to use when calling this plugin from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
           "Internal"
         ]
       }
     },
-    "/friends/v1/profile-info": {
+    "/ga-restriction/v1/debug/penalty-notifications-data": {
+      "delete": {
+        "operationId": "DeleteGaRestrictionV1DebugPenaltyNotificationsData",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete all penalty notifications for all products.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      },
       "get": {
-        "description": "\n**Description**\n\nGets basic profile information for each id in {request.ids} including nickname and profile picture urls.\n\n**Nintendo Switch**\n* Must be exactly 1 opened user prior to calling profile-info\n* Can request 1 to 100 ids at a time\n* Calls nn::friends::GetProfileList, which has usage and rate guidelines. See [Nintendo Guidelines](https://developer.nintendo.com/html/online-docs/g1kr9vj6-en/Packages/Docs/Guidelines/NX-Guidelines/contents/Pages/Page_242589701.html#GuidelineDescLabel_275307940)\n",
-        "operationId": "GetFriendsV1ProfileInfo",
+        "operationId": "GetGaRestrictionV1DebugPenaltyNotificationsData",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": {
+                "$ref": "#/definitions/GaRestrictionPenaltyNotificationsByMessageId"
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Returns the raw data for the cached Penalty Notifications that this plugin received. This intended for debugging only.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      }
+    },
+    "/ga-restriction/v1/debug/penalty-notifications-data/{messageId}": {
+      "delete": {
+        "operationId": "DeleteGaRestrictionV1DebugPenaltyNotificationsDataByMessageId",
         "parameters": [
+          {
+            "in": "path",
+            "name": "messageId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete the penalty notification for a specific message ID. Note that you'll still be able to see the message until your next relog.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      },
+      "put": {
+        "operationId": "PutGaRestrictionV1DebugPenaltyNotificationsDataByMessageId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "messageId",
+            "required": true,
+            "type": "string"
+          },
           {
             "in": "body",
             "name": "request",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1ProfilesRequest"
+              "$ref": "#/definitions/GaRestrictionCachedPenaltyNotificationDtoV1"
             }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Add some arbitrary penalty notification. Uses your current callerId's productId. Note that if you acknowledge or delete this message, the plugin will still attempt to tell Mailbox, which may result in an error log.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      }
+    },
+    "/ga-restriction/v1/debug/time": {
+      "delete": {
+        "operationId": "DeleteGaRestrictionV1DebugTime",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Deletes the current mocked time, so that we use the real time again.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      },
+      "get": {
+        "operationId": "GetGaRestrictionV1DebugTime",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "format": "int64",
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        },
+        "summary": "Check what the plugin is using as the current time. If the time is being mocked, uses the mock. Otherwise uses the real current time. Uses milliseconds since epoch.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      }
+    },
+    "/ga-restriction/v1/debug/time/{millisSinceEpoch}": {
+      "put": {
+        "operationId": "PutGaRestrictionV1DebugTimeByMillisSinceEpoch",
+        "parameters": [
+          {
+            "format": "int64",
+            "in": "path",
+            "minimum": 0,
+            "name": "millisSinceEpoch",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Mock the current time. This can help you debug if the plugin automatically deletes messages. Note that we only try to delete messages when we receive or acknowledge messages. Uses milliseconds since epoch.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Internal"
+        ]
+      }
+    },
+    "/ga-restriction/v1/penalty-notifications": {
+      "get": {
+        "operationId": "GetGaRestrictionV1PenaltyNotifications",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "additionalProperties": {
+                "$ref": "#/definitions/GaRestrictionPenaltyNotification"
+              },
+              "type": "object"
+            }
+          }
+        },
+        "summary": "Provides a list of penalty notifications to show to the player for the callerId.",
+        "tags": [
+          "Plugins",
+          "Plugin ga-restriction",
+          "Subscribable"
+        ]
+      }
+    },
+    "/ga-restriction/v1/penalty-notifications/{messageId}": {
+      "put": {
+        "operationId": "PutGaRestrictionV1PenaltyNotificationsByMessageId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "messageId",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1ProfileInfoList"
+              "type": "boolean"
             }
           }
         },
-        "summary": "Returns platform specific profile info for one or more users",
+        "summary": "Marks a penalty notification as read. Read messages will still be accessible, but they don't need to be immediately displayed to the player.",
         "tags": [
           "Plugins",
-          "Plugin friends",
-          "Internal"
+          "Plugin ga-restriction"
         ]
       }
     },
-    "/friends/v1/promote-blocks": {
-      "post": {
-        "description": "\n**Description**\n\nBlocks the linked Riot accounts of the user IDs at the Riot chat level. Promotion of blocks at this level is one-way, and at one time.\n\nRequired arguments:\n```\n`blockIds`: NSA IDs of users\n```\n\n**Nintendo Switch**\n* Requires NSA IDs of other users\n",
-        "operationId": "PostFriendsV1PromoteBlocks",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "request",
-            "required": true,
+    "/ga-restriction/v1/unread-penalty-notifications": {
+      "get": {
+        "operationId": "GetGaRestrictionV1UnreadPenaltyNotifications",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1PromoteBlockData"
+              "additionalProperties": {
+                "$ref": "#/definitions/GaRestrictionPenaltyNotification"
+              },
+              "type": "object"
             }
           }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
         },
-        "summary": "Promotes a local console platform blocked user into a Riot level block.",
+        "summary": "Provides a list of unread penalty notifications to show to the player for the callerId.",
         "tags": [
           "Plugins",
-          "Plugin friends"
-        ]
-      }
-    },
-    "/friends/v1/show-profile-ui": {
-      "post": {
-        "description": "\n**Description**\n\nShows the platform specific profile UI for a target user.\n\nRequired arguments:\n```\n`platformId`: Platform specific ID of the user to show the platform profile information for.\n`myDisplayName`: The display name of the user viewing the profile.\n`targetDisplayName`: The display name of the user whose profile is being viewed.\n```\n\n**Nintendo Switch**\n* Shows the native Nintendo Switch UI to view the online profile of the specified user\n* **Will block until user input on native ui completes**\n* Must be exactly 1 opened user prior to calling show-profile-ui\n* platformId must be a Network Services Account ID\n",
-        "operationId": "PostFriendsV1ShowProfileUi",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "request",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/FriendsFriendsV1ShowProfileData"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Shows the platform specific profile UI for a target user",
-        "tags": [
-          "Plugins",
-          "Plugin friends"
+          "Plugin ga-restriction",
+          "Subscribable"
         ]
       }
     },
@@ -21334,6 +23519,7 @@
     },
     "/name-check/v1/validate": {
       "get": {
+        "description": "This API endpoint is deprecated and will be removed by 3/1/2023. Please do not use.",
         "operationId": "GetNameCheckV1Validate",
         "parameters": [
           {
@@ -21354,7 +23540,8 @@
         "summary": "Verify user input name.",
         "tags": [
           "Plugins",
-          "Plugin name-check"
+          "Plugin name-check",
+          "Deprecated"
         ]
       }
     },
@@ -22631,6 +24818,26 @@
         "tags": [
           "Plugins",
           "Plugin payments"
+        ]
+      }
+    },
+    "/platform-login/v1/status": {
+      "get": {
+        "operationId": "GetPlatformLoginV1Status",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PlatformLoginLoginStatus"
+            }
+          }
+        },
+        "summary": "Returns the current login state of the client",
+        "tags": [
+          "Plugins",
+          "Plugin platform-login",
+          "Subscribable"
         ]
       }
     },
@@ -23980,7 +26187,7 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/PlaystationAccountAuthorization"
+              "$ref": "#/definitions/PlaystationAccountAuthorizationResponse"
             }
           }
         },
@@ -24047,6 +26254,40 @@
           }
         },
         "summary": "Gets the player nickname of the Playstation Account for the player logged in the Playstation device",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account"
+        ]
+      }
+    },
+    "/playstation-account/v1/user": {
+      "get": {
+        "operationId": "GetPlaystationAccountV1User",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/PlaystationAccountUser"
+            }
+          }
+        },
+        "summary": "Retrieve Playstation profile and PSN account info",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostPlaystationAccountV1User",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Tries to sign in a player",
         "tags": [
           "Plugins",
           "Plugin playstation-account"
@@ -24999,6 +27240,92 @@
         ]
       }
     },
+    "/product-integration/v1/detached-sessions": {
+      "get": {
+        "operationId": "GetProductIntegrationV1DetachedSessions",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/ProductIntegrationDetachedSession"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "summary": "Finds standalone external product sessions from other closed or active instances of this application",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
+      }
+    },
+    "/product-integration/v1/settings-token": {
+      "post": {
+        "operationId": "PostProductIntegrationV1SettingsToken",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductIntegrationSettingsTokenRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ProductIntegrationSettingsToken"
+            }
+          }
+        },
+        "summary": "Generate a token that can be used to configure a standalone instance of the SDK running for a future instance of the given product",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
+      }
+    },
+    "/product-integration/v1/signout": {
+      "post": {
+        "operationId": "PostProductIntegrationV1Signout",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Requests signout from the Riot Platform for all running products, if permitted for requesting product",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
+      }
+    },
+    "/product-integration/v1/signout/permission": {
+      "get": {
+        "description": "If an error is returned, signout is not allowed. This is intended to be called by desktop games that are launched by Riot Client. Mobile and console products may call it and it will always be Allowed. Callers can use this information to take specific action (e.g. showing signout button or not).",
+        "operationId": "GetProductIntegrationV1SignoutPermission",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/ProductIntegrationSignoutPermission"
+            }
+          }
+        },
+        "summary": "Indicates if a product is allowed to request signout from the Riot Platform for all running products",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
+      }
+    },
     "/product-localization/v1/data": {
       "get": {
         "operationId": "GetProductLocalizationV1Data",
@@ -25576,6 +27903,51 @@
         ]
       }
     },
+    "/product-session/v1/data/path": {
+      "get": {
+        "operationId": "GetProductSessionV1DataPath",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns the standard data folder for your application",
+        "tags": [
+          "Plugins",
+          "Plugin product-session"
+        ]
+      }
+    },
+    "/product-session/v1/data/path/{patchline-name}": {
+      "get": {
+        "operationId": "GetProductSessionV1DataPathByPatchlineName",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "patchline-name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns the standard logs folder for a given full patchline name.",
+        "tags": [
+          "Plugins",
+          "Plugin product-session"
+        ]
+      }
+    },
     "/product-session/v1/external-sessions": {
       "get": {
         "operationId": "GetProductSessionV1ExternalSessions",
@@ -25759,7 +28131,7 @@
             }
           }
         },
-        "summary": "Returns the standard logs folder for a given patchline name.",
+        "summary": "Returns the standard logs folder for a given full patchline name.",
         "tags": [
           "Plugins",
           "Plugin product-session"
@@ -25936,6 +28308,41 @@
         "tags": [
           "Plugins",
           "Plugin product-session"
+        ]
+      }
+    },
+    "/product-session/v2/heartbeat-internal/{session-id}": {
+      "post": {
+        "operationId": "PostProductSessionV2HeartbeatInternalBySessionId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "session-id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "heartbeat-info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductSessionHeartbeatInfo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "summary": "Internal endpoint for updating the heartbeat of an existing session.",
+        "tags": [
+          "Plugins",
+          "Plugin product-session",
+          "Internal"
         ]
       }
     },
@@ -27100,7 +29507,7 @@
             }
           }
         },
-        "summary": "UUID identifying a user interaction session. This value is created or set when the Player Platform SDK is initialized.",
+        "summary": "UUID identifying a user interaction session. This value is created when the user session begins (i.e. mobile game open, Riot Client starts). Multiple instances of the SDK may share the same session ID if they were launched by the same Riot Client user session.",
         "tags": [
           "riotclient"
         ]
@@ -28285,6 +30692,7 @@
     },
     "/rso-auth/v2/partner-auth": {
       "post": {
+        "description": "Endpoint to be deleted January 2023; Please use '/rso-auth/v3/partner-auth'.",
         "operationId": "PostRsoAuthV2PartnerAuth",
         "parameters": [
           {
@@ -28293,6 +30701,35 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/RsoAuthPartnerCredentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthAuthorization"
+            }
+          }
+        },
+        "summary": "Log the user in with any of the accepted partner credentials",
+        "tags": [
+          "Plugins",
+          "Plugin rso-auth",
+          "Deprecated"
+        ]
+      }
+    },
+    "/rso-auth/v3/partner-auth": {
+      "post": {
+        "operationId": "PostRsoAuthV3PartnerAuth",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "partnerCreds",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthPartnerCredentialsV3"
             }
           }
         ],
@@ -29590,6 +32027,56 @@
         "summary": "Sets the metadata to automatically apply to a type of analytics platform event",
         "tags": [
           "telemetry"
+        ]
+      }
+    },
+    "/tencent-launcher/v1/login": {
+      "post": {
+        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n\n            If the function is disabled, a `404` error code is returned.\n        ",
+        "operationId": "PostTencentLauncherV1Login",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "arguments",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TencentLauncherTencentLauncherLoginArguments"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/TencentLauncherAuthorization"
+            }
+          }
+        },
+        "summary": "Initialize RSO login using mSDK credentials from the Tencent Launcher",
+        "tags": [
+          "Plugins",
+          "Plugin tencent-launcher"
+        ]
+      }
+    },
+    "/tencent-launcher/v1/login-info": {
+      "get": {
+        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not successfully been called, or the function is\n            disabled, a `404` error code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
+        "operationId": "GetTencentLauncherV1LoginInfo",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/TencentLauncherTencentLauncherLoginInfo"
+            }
+          }
+        },
+        "summary": "Retrieves the mSDK credentials from the Tencent Launcher",
+        "tags": [
+          "Plugins",
+          "Plugin tencent-launcher",
+          "Subscribable"
         ]
       }
     },
@@ -30915,7 +33402,7 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "$ref": "#/definitions/XboxAccountAuthorization"
+              "$ref": "#/definitions/XboxAccountAuthorizationResponse"
             }
           }
         },
@@ -30963,6 +33450,50 @@
           }
         },
         "summary": "Update authorization consent status for Xbox",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account"
+        ]
+      }
+    },
+    "/xbox-account/v1/player-nickname": {
+      "get": {
+        "operationId": "GetXboxAccountV1PlayerNickname",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Get user's Xbox gamertag",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account"
+        ]
+      }
+    },
+    "/xbox-account/v1/user": {
+      "post": {
+        "operationId": "PostXboxAccountV1User",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "SelectUserParameters",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/XboxAccountSelectUserParameters"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sign in user on Xbox",
         "tags": [
           "Plugins",
           "Plugin xbox-account"
