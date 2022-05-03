@@ -20031,60 +20031,6 @@
       "threadSafe": false
     },
     {
-      "arguments": [
-        {
-          "description": "The productId of the game that we're asking if needs to be kept up-to-date.",
-          "name": "productId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "The patchlineId of the game that we're asking if needs to be kept up-to-date.",
-          "name": "patchlineId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "The name of the game that we're asking if needs to be kept up-to-date, excluding the patchline name.",
-          "name": "productName",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "The full name of the game that we're asking if needs to be kept up-to-date, including the patchline name.",
-          "name": "patchlineName",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Display a modal dialog after the user closes a game for the first time, asking them if they'd like it automatically updated.",
-      "help": "",
-      "internal": false,
-      "name": "PutNativeUxV1DisplayKeepGameUpToDateDialog",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [],
-      "threadSafe": false
-    },
-    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",

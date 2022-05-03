@@ -38802,39 +38802,6 @@
       "url": "/native-ux/v1/display-game-running-dialog",
       "usage": "PutNativeUxV1DisplayGameRunningDialog [<singleGameName>]"
     },
-    "PutNativeUxV1DisplayKeepGameUpToDateDialog": {
-      "arguments": [
-        {
-          "productId": {
-            "description": "The productId of the game that we're asking if needs to be kept up-to-date.",
-            "type": "string"
-          }
-        },
-        {
-          "patchlineId": {
-            "description": "The patchlineId of the game that we're asking if needs to be kept up-to-date.",
-            "type": "string"
-          }
-        },
-        {
-          "productName": {
-            "description": "The name of the game that we're asking if needs to be kept up-to-date, excluding the patchline name.",
-            "type": "string"
-          }
-        },
-        {
-          "patchlineName": {
-            "description": "The full name of the game that we're asking if needs to be kept up-to-date, including the patchline name.",
-            "type": "string"
-          }
-        }
-      ],
-      "description": "Display a modal dialog after the user closes a game for the first time, asking them if they'd like it automatically updated.",
-      "http_method": "PUT",
-      "privilege": 127,
-      "url": "/native-ux/v1/display-keep-game-up-to-date-dialog",
-      "usage": "PutNativeUxV1DisplayKeepGameUpToDateDialog <productId> <patchlineId> <productName> <patchlineName>"
-    },
     "PutPatchProxyV1PatchJobsCancelActive": {
       "arguments": [],
       "description": "Cancel the active job from the scheduler and deprioritize it to the end of the queue.",

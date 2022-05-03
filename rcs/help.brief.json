@@ -761,7 +761,6 @@
     "PutMailboxV1MailState": "Update the state of a message as read or acknowledged",
     "PutNativeUxV1CloseGameRunningDialog": "Closes the game running modal dialog if it exists",
     "PutNativeUxV1DisplayGameRunningDialog": "Display a modal dialog when the user attempts to close the foundation with a game running.",
-    "PutNativeUxV1DisplayKeepGameUpToDateDialog": "Display a modal dialog after the user closes a game for the first time, asking them if they'd like it automatically updated.",
     "PutPatchProxyV1PatchJobsCancelActive": "Cancel the active job from the scheduler and deprioritize it to the end of the queue.",
     "PutPatchProxyV1PatchJobsProductsByProductIdPatchlinesByPatchlineId": "Add a patch job to the scheduler.",
     "PutPatchProxyV1PatchJobsStart": "Start the patching process in order of the current priority queue.",
