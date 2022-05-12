@@ -184,6 +184,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_ga-restriction_v1_penalty-notifications",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
       "nameSpace": "",
       "tags": [],
@@ -1854,6 +1864,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_ChallengeUpdateDelaySeconds",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_ClientState",
       "nameSpace": "",
       "tags": [],
@@ -1904,6 +1924,26 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_LobbyChallengesEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_MaxNotificationSubscriptionDelaySeconds",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_MaxWaitTimeBeforeNotificationSubscriptionSeconds",
       "nameSpace": "",
       "tags": [],
@@ -1925,6 +1965,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_PartiesV2Enabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Challenges_PostgameOverride",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11464,6 +11514,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-player-behavior_v3_reform-cards",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-player-preferences_v1_player-preferences-ready",
       "nameSpace": "",
       "tags": [],
@@ -11705,6 +11765,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-rso-auth_v1_authorization",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -23224,6 +23294,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolPersonalizedOffersV1Modal",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-personalized-offers"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolPersonalizedOffersV1Offers",
       "nameSpace": "",
       "returns": {
@@ -23592,6 +23680,24 @@
       "returns": {
         "elementType": "LolPlayerBehaviorReporterFeedbackMessage",
         "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-player-behavior"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolPlayerBehaviorV3ReformCards",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
@@ -25809,6 +25915,34 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "offerId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolStoreV1OffersByOfferId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolStoreCapOffer"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-store"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "async": "",
       "description": "",
@@ -25974,6 +26108,34 @@
       "returns": {
         "elementType": "",
         "type": "LolStoreWallet"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-store"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "typeId",
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolStoreV2Offers",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolStoreCapOffer",
+        "type": "vector"
       },
       "tags": [
         "$remoting-binding-module",
@@ -34651,6 +34813,34 @@
       "arguments": [
         {
           "description": "",
+          "name": "permissionRequest",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolPersonalizedOffersPlayerPermissions"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolPersonalizedOffersV1Permissions",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolPersonalizedOffersPlayerPermissions"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-personalized-offers"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "pftEvent",
           "optional": false,
           "type": {
@@ -39050,6 +39240,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-perks"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "id",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolPlayerBehaviorV3ReformCardById",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-player-behavior"
       ],
       "threadSafe": false
     },
@@ -50513,14 +50731,14 @@
           "offset": 120,
           "optional": false,
           "type": {
-            "elementType": "object",
-            "type": "vector"
+            "elementType": "",
+            "type": "object"
           }
         },
         {
           "description": "",
           "name": "active",
-          "offset": 132,
+          "offset": 136,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50530,7 +50748,7 @@
         {
           "description": "",
           "name": "startDate",
-          "offset": 136,
+          "offset": 140,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50540,7 +50758,7 @@
         {
           "description": "",
           "name": "createdDate",
-          "offset": 160,
+          "offset": 164,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50550,7 +50768,7 @@
       ],
       "name": "LolCatalogCapOffer",
       "nameSpace": "",
-      "size": 184,
+      "size": 192,
       "tags": [
         "Plugins",
         "Plugin lol-catalog"
@@ -50599,11 +50817,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "templateType",
+          "offset": 104,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolCatalogCapOfferPayloadEntry",
       "nameSpace": "",
-      "size": 104,
+      "size": 132,
       "tags": [
         "Plugins",
         "Plugin lol-catalog"
@@ -52463,7 +52691,7 @@
         {
           "description": "",
           "name": "catalogId",
-          "offset": 184,
+          "offset": 192,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52473,16 +52701,6 @@
         {
           "description": "",
           "name": "catalogStartDate",
-          "offset": 192,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "catalogCreatedDate",
           "offset": 200,
           "optional": false,
           "type": {
@@ -52492,8 +52710,18 @@
         },
         {
           "description": "",
-          "name": "tags",
+          "name": "catalogCreatedDate",
           "offset": 208,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 216,
           "optional": true,
           "type": {
             "elementType": "string",
@@ -52503,7 +52731,7 @@
         {
           "description": "",
           "name": "sale",
-          "offset": 224,
+          "offset": 232,
           "optional": true,
           "type": {
             "elementType": "",
@@ -52513,7 +52741,7 @@
         {
           "description": "",
           "name": "owned",
-          "offset": 288,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52523,7 +52751,7 @@
         {
           "description": "",
           "name": "requiredItems",
-          "offset": 292,
+          "offset": 300,
           "optional": true,
           "type": {
             "elementType": "LolCatalogCatalogPluginItemWithDetails",
@@ -52533,7 +52761,7 @@
       ],
       "name": "LolCatalogOfferValidationItem",
       "nameSpace": "",
-      "size": 312,
+      "size": 320,
       "tags": [
         "Plugins",
         "Plugin lol-catalog"
@@ -54953,11 +55181,21 @@
             "elementType": "",
             "type": "int64"
           }
+        },
+        {
+          "description": "",
+          "name": "selectedChallengesString",
+          "offset": 224,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolChallengesUIPlayerSummary",
       "nameSpace": "",
-      "size": 224,
+      "size": 248,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -55041,6 +55279,29 @@
       "name": "LolChallengesUITitle",
       "nameSpace": "",
       "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "lol",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolChallengesUserResource",
+      "nameSpace": "",
+      "size": 32,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -127242,6 +127503,29 @@
       "fields": [
         {
           "description": "",
+          "name": "useData",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolPersonalizedOffersPlayerPermissions",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-personalized-offers"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "name",
           "offset": 0,
           "optional": false,
@@ -133617,14 +133901,14 @@
           "offset": 120,
           "optional": false,
           "type": {
-            "elementType": "object",
-            "type": "vector"
+            "elementType": "",
+            "type": "object"
           }
         },
         {
           "description": "",
           "name": "active",
-          "offset": 132,
+          "offset": 136,
           "optional": false,
           "type": {
             "elementType": "",
@@ -133634,7 +133918,7 @@
         {
           "description": "",
           "name": "startDate",
-          "offset": 136,
+          "offset": 140,
           "optional": false,
           "type": {
             "elementType": "",
@@ -133644,7 +133928,7 @@
         {
           "description": "",
           "name": "createdDate",
-          "offset": 160,
+          "offset": 164,
           "optional": false,
           "type": {
             "elementType": "",
@@ -133654,7 +133938,7 @@
       ],
       "name": "LolPurchaseWidgetCapOffer",
       "nameSpace": "",
-      "size": 184,
+      "size": 192,
       "tags": [
         "Plugins",
         "Plugin lol-purchase-widget"
@@ -135362,11 +135646,21 @@
             "elementType": "",
             "type": "uint16"
           }
+        },
+        {
+          "description": "",
+          "name": "captionImagePath",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolPurchaseWidgetMediaCaptionDataResource",
       "nameSpace": "",
-      "size": 28,
+      "size": 52,
       "tags": [
         "Plugins",
         "Plugin lol-purchase-widget"
@@ -135399,7 +135693,7 @@
       ],
       "name": "LolPurchaseWidgetMediaComponentDataResource",
       "nameSpace": "",
-      "size": 64,
+      "size": 88,
       "tags": [
         "Plugins",
         "Plugin lol-purchase-widget"
@@ -135521,7 +135815,7 @@
         {
           "description": "",
           "name": "catalogId",
-          "offset": 184,
+          "offset": 192,
           "optional": false,
           "type": {
             "elementType": "",
@@ -135531,16 +135825,6 @@
         {
           "description": "",
           "name": "catalogStartDate",
-          "offset": 192,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "catalogCreatedDate",
           "offset": 200,
           "optional": false,
           "type": {
@@ -135550,8 +135834,18 @@
         },
         {
           "description": "",
-          "name": "tags",
+          "name": "catalogCreatedDate",
           "offset": 208,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 216,
           "optional": true,
           "type": {
             "elementType": "string",
@@ -135561,7 +135855,7 @@
         {
           "description": "",
           "name": "sale",
-          "offset": 224,
+          "offset": 232,
           "optional": true,
           "type": {
             "elementType": "",
@@ -135571,7 +135865,7 @@
         {
           "description": "",
           "name": "owned",
-          "offset": 288,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -135581,7 +135875,7 @@
         {
           "description": "",
           "name": "requiredItems",
-          "offset": 292,
+          "offset": 300,
           "optional": true,
           "type": {
             "elementType": "LolPurchaseWidgetCatalogPluginItemWithDetails",
@@ -135591,7 +135885,7 @@
       ],
       "name": "LolPurchaseWidgetOfferValidationItem",
       "nameSpace": "",
-      "size": 312,
+      "size": 320,
       "tags": [
         "Plugins",
         "Plugin lol-purchase-widget"
@@ -136773,11 +137067,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "captionImagePath",
+          "offset": 128,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolPurchaseWidgetSkinLineItemDto",
       "nameSpace": "",
-      "size": 128,
+      "size": 156,
       "tags": [
         "Plugins",
         "Plugin lol-purchase-widget"
@@ -150141,14 +150445,14 @@
           "offset": 120,
           "optional": false,
           "type": {
-            "elementType": "object",
-            "type": "vector"
+            "elementType": "",
+            "type": "object"
           }
         },
         {
           "description": "",
           "name": "active",
-          "offset": 132,
+          "offset": 136,
           "optional": false,
           "type": {
             "elementType": "",
@@ -150158,7 +150462,7 @@
         {
           "description": "",
           "name": "startDate",
-          "offset": 136,
+          "offset": 140,
           "optional": false,
           "type": {
             "elementType": "",
@@ -150168,7 +150472,7 @@
         {
           "description": "",
           "name": "createdDate",
-          "offset": 160,
+          "offset": 164,
           "optional": false,
           "type": {
             "elementType": "",
@@ -150178,7 +150482,7 @@
       ],
       "name": "LolStoreCapOffer",
       "nameSpace": "",
-      "size": 184,
+      "size": 192,
       "tags": [
         "Plugins",
         "Plugin lol-store"
