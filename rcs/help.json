@@ -554,44 +554,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "pid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Remove or decline friend request",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-      "internal": false,
-      "name": "DeleteChatV2FriendrequestsByPid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "rchat-blocking",
           "optional": true,
           "type": {
@@ -866,101 +828,6 @@
       "threadSafe": false
     },
     {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Clear active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "DeleteChatV4ConversationsActive",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Delete or leave a conversation by cid",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
-      "internal": false,
-      "name": "DeleteChatV4ConversationsByCid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Clear conversation message history",
-      "help": "Endpoint deleted August 2021; Please use 'chat/v6/messages'.",
-      "internal": false,
-      "name": "DeleteChatV4ConversationsByCidMessages",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
       "arguments": [
         {
           "description": "",
@@ -1083,25 +950,6 @@
       "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'.",
       "internal": false,
       "name": "DeleteChatV5Conversations",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Clear active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "DeleteChatV5ConversationsActive",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -1958,6 +1806,25 @@
       "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
       "internal": false,
       "name": "DeletePlayRestrictionsV1DebugCallerIdMockId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Stops mocking the caller ID for Swagger calls",
+      "help": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+      "internal": false,
+      "name": "DeletePlayerPreferencesV1DebugCallerIdMockId",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -3428,25 +3295,6 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "get chat product session state",
-      "help": "Endpoint deleted August 2021; Please use '/chat/v2/session/state'.",
-      "internal": false,
-      "name": "GetChatV1SessionState",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatSessionState"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
       "description": "Get the account settings related to chat",
       "help": "**Response:**\n\n```\n{\n  \"bounceDockIconEnabled\": [bounceDockIconEnabled], // If the dock icon will bounce when receiving a new message, game invite, etc\n  \"chat-status-message\": \"[status_message]\",      // The player's status message. This gets updated within chat when the \"status\" of the player is changed\n  \"chatFilterDisabled\": [chatFilterDisabled],       // If bad language is filtered in chat messages\n  \"chatGroupMobile\": [chatGroupMobile],             // If mobile friends are grouped in their own \"MOBILE\" folder\n  \"chatGroupOffline\": [chatGroupOffline],           // If offline friends are grouped in their own \"OFFLINE\" folder\n  \"chatWindow\": {                                   // The chat window settings\n    \"detached\": [detached],                         // If the chat window is docked or popped out\n    \"height\": [height],                             // The height of the chat window\n    \"left\": [left],                                 // The location of the left side of the chat window\n    \"top\": [top],                                   // The location of the top side of the chat window\n    \"width\": [width]                                // The width of the chat window\n  },\n  \"closed-conversations\": {                         // Which conversations have been closed. Used within chat to determine which recent convos to remove on startup. This gets updated\n                                                      // within chat when a conversation is deleted\n    \"[convo_id]\": [closed_timestamp],\n    ...\n  },\n  \"friendRequestToastsDisabled\": [friendRequestToastsDisabled], // If a toast appears when you receive a friend request\n  \"linkClickWarningEnabled\": [linkClickWarningEnabled],         // If a link warning will appear when clicking on links\n  \"messageNotificationsEnabled\": [messageNotificationsEnabled], // If a native toast or regular toast appears when receiving a message\n  \"moreUnreadsEnabled\": [moreUnreadsEnabled],                   // If a \"more unreads\" indicator appears for unread items not currently in scroll view\n  \"muted-conversations\": {                                      // A list of 1:1 muted conversations. This gets updated within chat when the \"muted\" state of a conversation is changed\n    \"[convo_id]\": 1\n  },                       \n  \"recentlyPlayedOpen\": [recentlyPlayedOpen],                  // If the \"recently played\" folder is open\n  \"roster-group-collapsed\": {                                  // A list of each folder's collapsed state. This gets updated within chat when the \"collapsed\" state of a group is changed\n    \"[group_folder_name]\": [collapsed],\n    ...\n  },\n  \"showWhenTypingEnabled\": [showWhenTypingEnabled],            // If an indicator is shown to other players when writing a message to them\n  \"sortBy\": \"[sort_type]\"                                    // How to sort friends in the friends list (ex. by \"availability\" vs \"alphabetical\")\n}\n```\n\nMost of these chat settings are straightforward and only require an update when a player enables or disables a setting. For example, when they check or uncheck a box for the setting.\n",
       "internal": false,
@@ -3455,54 +3303,6 @@
       "returns": {
         "elementType": "",
         "type": "ChatAccountChatSettings"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get all friend requests",
-      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-      "internal": false,
-      "name": "GetChatV2Friendrequests",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatFriendRequestList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "pid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get friend request",
-      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests?pid={pid}' with pid query arg.",
-      "internal": false,
-      "name": "GetChatV2FriendrequestsByPid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatFriendRequestList"
       },
       "subscribable": false,
       "tags": [
@@ -3723,149 +3523,6 @@
       "returns": {
         "elementType": "",
         "type": "ChatChatBlockedList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get all conversations",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' or '/chat/v7/conversations/{domain}'.",
-      "internal": false,
-      "name": "GetChatV4Conversations",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatUIStateConversationList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "GetChatV4ConversationsActive",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatUIStateConversationList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get a conversation by cid",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations?cid=xyz' with query arg if you need a specific conversation.",
-      "internal": false,
-      "name": "GetChatV4ConversationsByCid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatUIStateConversationList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get conversation messages",
-      "help": "**Response**: named messages root object: a flat list of message property groups (could have zero or more entries):\n\n```\n{ \"messages\": [\n                  { \"body\": \"[message]\",            //actual text of this message\n                    \"pid\":  \"[{pid}]\",              //pid of sender\n                    \"name\": \"[name]\",               //name of sender\n                    \"ts\":   \"[timestamp]\",          //integer value: milliseconds UTC\n                    \"cid\":  \"[cid]\",                //conversation id\n                    \"id\":   \"[message id]\",         //unique key within the conversation - for storage\n                    \"read\": true/false,               //whether message has been marked as read or not\n                    \"type\": \"[chat, groupchat, dm]\" //how the message was sent: from friend, from group chat, or a direct message from player in a group chat\n                  },\n                  { \"body\": \"[message]\",\n                    \"pid\":  \"[{pid}]\",\n                    \"ts\":   \"[timestamp]\",\n                    \"cid\":  \"[cid]\",\n                    \"id\":   \"[message id]\",\n                    \"read\": true/false,\n                    \"type\": \"[chat, groupchat, dm]\"\n                  },\n                  ...\n                ]\n}\n```\n\n**NOTE**: messages are sorted by time-stamp, earliest first, latest last\n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-      "internal": false,
-      "name": "GetChatV4ConversationsByCidMessages",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatMessageList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "id",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get a specific conversation message",
-      "help": "**Response**: named messages root object: a flat list of message property groups (could have zero or more entries):\n\n```\n{ \"messages\": [\n                  { \"body\": \"[message]\",            //actual text of this message\n                    \"pid\":  \"[{pid}]\",              //pid of sender\n                    \"name\": \"[name]\",               //name of sender\n                    \"ts\":   \"[timestamp]\",          //integer value: milliseconds UTC\n                    \"cid\":  \"[cid]\",                //conversation id\n                    \"id\":   \"[message id]\",         //unique key within the conversation - for storage\n                    \"read\": true/false,               //whether message has been marked as read or not\n                    \"type\": \"[chat, groupchat, dm]\" //how the message was sent: from friend, from group chat, or a direct message from player in a group chat\n                  },\n                  { \"body\": \"[message]\",\n                    \"pid\":  \"[{pid}]\",\n                    \"ts\":   \"[timestamp]\",\n                    \"cid\":  \"[cid]\",\n                    \"id\":   \"[message id]\",\n                    \"read\": true/false,\n                    \"type\": \"[chat, groupchat, dm]\"\n                  },\n                  ...\n                ]\n}\n```\n\n**NOTE**: messages are sorted by time-stamp, earliest first, latest last\n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-      "internal": false,
-      "name": "GetChatV4ConversationsByCidMessagesById",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatMessageList"
       },
       "subscribable": false,
       "tags": [
@@ -4101,25 +3758,6 @@
       "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' or '/chat/v7/conversations/{domain}'.",
       "internal": false,
       "name": "GetChatV5Conversations",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatUIStateConversationList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Get active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "GetChatV5ConversationsActive",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -5417,6 +5055,35 @@
       "returns": {
         "elementType": "",
         "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "puuid",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Retrieves the namesets for a single PUUID",
+      "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** URL Argument **\n\n\"puuid\" - PUUIDs to retrieve namesets for\n    \nResponse Body:\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+      "internal": false,
+      "name": "GetFriendsV2NamesetsForPuuidByPuuid",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "FriendsFriendsV1NamesetsResponseElement"
       },
       "subscribable": false,
       "tags": [
@@ -6834,6 +6501,63 @@
       "returns": {
         "elementType": "",
         "type": "map"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Get decompressed and decoded JSON player preferences information from a specified type from the Player Preferences service",
+      "help": "",
+      "internal": false,
+      "name": "GetPlayerPreferencesV1DataJsonProductIdByProductIdTypeByType",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "map"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Checks the caller ID in use when APIs are called from Swagger",
+      "help": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+      "internal": false,
+      "name": "GetPlayerPreferencesV1DebugCallerIdMockId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "PlayerPreferencesPluginCallerId_MockCallerId"
       },
       "subscribable": false,
       "tags": [
@@ -10031,6 +9755,27 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Get list of out of date patchlines in format of list of { productId, patchlineId }",
+      "help": "",
+      "internal": false,
+      "name": "GetRnetProductRegistryV4PatchStatesOutOfDate",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "RnetProductRegistryPatchlineInfo",
+        "type": "vector"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin rnet-product-registry"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "",
@@ -11027,7 +10772,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Retrieves the mSDK credentials from the Tencent Launcher",
-      "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not successfully been called, or the function is\n            disabled, a `404` error code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
+      "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not yet successfully been called, a `404` error\n            code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
       "internal": false,
       "name": "GetTencentLauncherV1LoginInfo",
       "nameSpace": "",
@@ -12216,82 +11961,6 @@
       "threadSafe": false
     },
     {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "request",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatFriendRequestAdd"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Add friend request / invite friend",
-      "help": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be substituted in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-      "internal": false,
-      "name": "PostChatV2Friendrequests",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "gamePresence",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatDebugChatGamePresence"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Simulate updating a game presence with jwt (server authoritative info)",
-      "help": "Endpoint deleted August 2021; Please use '/chat/v3/me/debug-jwt'.",
-      "internal": false,
-      "name": "PostChatV2MeDebugJwt",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -12563,167 +12232,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "convo",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatUIStateConversationJoin"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Create or join a conversation by cid",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument. It supports federated chat better.",
-      "internal": false,
-      "name": "PostChatV4ConversationsByCid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "message",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatMessageSend"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Send a new chat message to a room or individual",
-      "help": "**Sending A Message**\nA conversation id (cid) can be a MUC cid or for peer to peer messages, a player id (pid) can be used as a cid.\n\n```\nPOST /chat/v3/conversations/{cid}/messages      //cid is the conversation id passed as a path argument\n```\nData:\n\n```\n{\n  \"message\": \"[message]\" //the text to send\n  \"type\"   : \"[chat, groupchat, dm]\"\n}\n```\nAdditional notes:\n\n* type - used to specify the type of message (inferred from conversation type if left blank)\n  * chat: for P2P messages with friends\n  * groupchat: for group messages within a group chat\n  * dm: for Direct Messages with somebody in a group chat with you, or with a friend\n\nAs players post messages to a conversation, chat notifies on REST in this order:\n\n* /chat/v3/conversations/\n  * with updated data:  \"unread_count\" and the last message ID in the conversation\n* /chat/v3/conversations/{cid}/messages\n  * a list of new messages for the conversation (earliest first, latest last, but many times just one new message)\n\n**Direct Messages (private messages within a group chat)**\n\nPrivate messages between players that are not friends are possible, and this messaging is always tied to a JWT authenticated group chat (MUC) that both players are a part of. The MUC they are a part of has its own conversation-id (cid) and the private conversation between participants includes that cid in its derived cid.  For example if players \"Brad\" and \"Sue\" are both in MUC \"lobby01@league.pvp.net\" and Brad sends a direct message to Sue, then his client will...\n\n```\nPOST /chat/v3/conversations/{cid}/messages      //where cid = \"lobby01@league.pvp.net/Sue\"\n```\nNOTE: all {cid} values should be URL encoded, so the example cid when sent url encoded is \"lobby01%40league.pvp.net%2FSue\"\n\nData:\n\n```\n{\n  \"message\": \"[message]\" //the text to send\n  \"type\"   : \"dm\"\n}      \n```\nAdditional notes:\n\n* The conversation object (and child objects like messages) from Brad's perspective will be at: /chat/v3/conversations/lobby01%40league.pvp.net%2FSue\n* The conversation from Sue's perspective will be at:  /chat/v3/conversations/lobby01%40league.pvp.net%2FBrad\n* All operations (GET participants, GET messages, POST messages, etc) are the same as regular conversations\n* for direct messaging, the conversation \"type\" and the message \"type\" will always be \"dm\" \n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-      "internal": false,
-      "name": "PostChatV4ConversationsByCidMessages",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "ChatMessageList"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Mark conversation as read",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read' where 'cid' is a body arg.",
-      "internal": false,
-      "name": "PostChatV4ConversationsByCidRead",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "name",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Creates and joins a group conversation with the given name (debug builds only).",
-      "help": "Endpoint deleted July 2021; Sorry, not supporting this debug functionality moving forward.",
-      "internal": false,
-      "name": "PostChatV4ConversationsMucJoinByName",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "rchat-blocking",
           "optional": true,
           "type": {
@@ -12814,35 +12322,6 @@
       "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'. It supports federated chat better.",
       "internal": false,
       "name": "PostChatV5Conversations",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "body",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatConvoCid"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Mark conversation as read",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read'.",
-      "internal": false,
-      "name": "PostChatV5ConversationsRead",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -13412,7 +12891,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
       "internal": false,
       "name": "PostFirstPartyFulfillmentV1Fulfill",
       "nameSpace": "",
@@ -18287,6 +17766,25 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Force-load the ACLSDK",
+      "help": "\n            **Description**\n            A debug API to force-load the ACLSDK, even if configured off.\n            Can only be used internally for testing.\n        ",
+      "internal": false,
+      "name": "PostTencentLauncherV1DebugForceLoad",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "",
@@ -18301,7 +17799,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Initialize RSO login using mSDK credentials from the Tencent Launcher",
-      "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n\n            If the function is disabled, a `404` error code is returned.\n        ",
+      "help": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n        ",
       "internal": false,
       "name": "PostTencentLauncherV1Login",
       "nameSpace": "",
@@ -18695,44 +18193,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "update",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatProductSessionState"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "edit session state for specific product",
-      "help": "Endpoint deleted August 2021; Please use '/chat/v2/session/state'.",
-      "internal": false,
-      "name": "PutChatV1SessionState",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "settings",
           "optional": false,
           "type": {
@@ -18972,82 +18432,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "convo",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatActiveConvo"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Set active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "PutChatV4ConversationsActive",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "cid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "rchat-blocking",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "update",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatUIStateConversationUpdate"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Edit conversation by cid",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
-      "internal": false,
-      "name": "PutChatV4ConversationsByCid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "body",
           "optional": false,
           "type": {
@@ -19158,35 +18542,6 @@
       "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations'.",
       "internal": false,
       "name": "PutChatV5Conversations",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "convo",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ChatActiveConvo"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Set active conversation",
-      "help": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-      "internal": false,
-      "name": "PutChatV5ConversationsActive",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -20727,6 +20082,82 @@
       "arguments": [
         {
           "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "data",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "map"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Puts any valid JSON object for the specified type into the Player Preferences service",
+      "help": "",
+      "internal": false,
+      "name": "PutPlayerPreferencesV1DataJsonProductIdByProductIdTypeByType",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "map"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "callerId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesPluginCallerId_MockCallerId"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Sets the caller ID to use when calling this plugin from Swagger",
+      "help": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+      "internal": false,
+      "name": "PutPlayerPreferencesV1DebugCallerIdMockId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "InitiateLoginSessionRequest",
           "optional": false,
           "type": {
@@ -21312,6 +20743,58 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Scan the patchlines that are entitled to the player and make patch requests",
+      "help": "",
+      "internal": false,
+      "name": "PutProductUpdateScannerV1ScanAndPatch",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "interval",
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "uint8"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Starts the Update Scanner to check for product updates",
+      "help": "",
+      "internal": false,
+      "name": "PutProductUpdateScannerV1ScanAndPatchRoutine",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-update-scanner"
       ],
       "threadSafe": false
     },
@@ -34463,6 +33946,171 @@
           "description": "",
           "name": "Success",
           "value": 7
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "errorDescription",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentItemResult",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentReason",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentResult",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentResult"
+          }
+        },
+        {
+          "description": "",
+          "name": "funnelName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemFailureReason",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemQuantity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "failure",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "success",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "unassigned",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentResult",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "failure",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "fulfillmentFailure",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "noContent",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "partialSuccess",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "success",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "unassigned",
+          "value": 0
         }
       ]
     },
@@ -54432,6 +54080,86 @@
       "fields": [
         {
           "description": "",
+          "name": "patchlineId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPluginCallerId_MockCallerId",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "patchlineFullName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPluginCallerId_ProductSession",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "region",
           "offset": 0,
           "optional": false,
@@ -63142,6 +62870,39 @@
     },
     {
       "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ProductUpdateScannerPatchlineInfo",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [],
       "name": "PublicProductsState",
       "nameSpace": "",
@@ -69131,6 +68892,39 @@
       "fields": [
         {
           "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RnetProductRegistryPatchlineInfo",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin rnet-product-registry"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "product_id",
           "offset": 0,
           "optional": false,
@@ -71270,6 +71064,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "allowlistedWordCountsByLevel",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "uint32",
+            "type": "map"
+          }
+        },
         {
           "description": "",
           "name": "breakingCharsCount",

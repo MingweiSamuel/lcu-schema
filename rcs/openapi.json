@@ -3908,6 +3908,68 @@
         ],
         "type": "string"
       },
+      "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryContext": {
+        "properties": {
+          "errorDescription": {
+            "nullable": true,
+            "type": "string"
+          },
+          "fulfillmentId": {
+            "type": "string"
+          },
+          "fulfillmentItemResult": {
+            "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult",
+            "default": "unassigned",
+            "nullable": true
+          },
+          "fulfillmentReason": {
+            "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason",
+            "default": "other"
+          },
+          "fulfillmentResult": {
+            "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentResult",
+            "default": "unassigned",
+            "nullable": true
+          },
+          "funnelName": {
+            "type": "string"
+          },
+          "itemFailureReason": {
+            "nullable": true,
+            "type": "string"
+          },
+          "itemId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "itemQuantity": {
+            "format": "int64",
+            "minimum": 0,
+            "nullable": true,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult": {
+        "enum": [
+          "unassigned",
+          "success",
+          "failure"
+        ],
+        "type": "string"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentResult": {
+        "enum": [
+          "unassigned",
+          "success",
+          "partialSuccess",
+          "noContent",
+          "fulfillmentFailure",
+          "failure"
+        ],
+        "type": "string"
+      },
       "FriendsChatBlockPid": {
         "properties": {
           "pid": {
@@ -9995,6 +10057,34 @@
         },
         "type": "object"
       },
+      "PlayerPreferencesPluginCallerId_MockCallerId": {
+        "properties": {
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPluginCallerId_ProductSession": {
+        "properties": {
+          "patchlineFullName": {
+            "type": "string"
+          },
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerPreferencesRegionLocale": {
         "properties": {
           "region": {
@@ -13820,6 +13910,15 @@
       },
       "RnetSanitizerSanitizerStatus": {
         "properties": {
+          "allowlistedWordCountsByLevel": {
+            "additionalProperties": {
+              "format": "int32",
+              "maximum": 4294967295,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "type": "object"
+          },
           "breakingCharsCount": {
             "format": "int32",
             "maximum": 4294967295,
@@ -18158,67 +18257,6 @@
         ]
       }
     },
-    "/chat/v1/session/state": {
-      "get": {
-        "description": "Endpoint deleted August 2021; Please use '/chat/v2/session/state'.",
-        "operationId": "GetChatV1SessionState",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatSessionState"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "get chat product session state",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      },
-      "put": {
-        "description": "Endpoint deleted August 2021; Please use '/chat/v2/session/state'.",
-        "operationId": "PutChatV1SessionState",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatProductSessionState"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "update"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "edit session state for specific product",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
     "/chat/v1/settings": {
       "get": {
         "description": "**Response:**\n\n```\n{\n  \"bounceDockIconEnabled\": [bounceDockIconEnabled], // If the dock icon will bounce when receiving a new message, game invite, etc\n  \"chat-status-message\": \"[status_message]\",      // The player's status message. This gets updated within chat when the \"status\" of the player is changed\n  \"chatFilterDisabled\": [chatFilterDisabled],       // If bad language is filtered in chat messages\n  \"chatGroupMobile\": [chatGroupMobile],             // If mobile friends are grouped in their own \"MOBILE\" folder\n  \"chatGroupOffline\": [chatGroupOffline],           // If offline friends are grouped in their own \"OFFLINE\" folder\n  \"chatWindow\": {                                   // The chat window settings\n    \"detached\": [detached],                         // If the chat window is docked or popped out\n    \"height\": [height],                             // The height of the chat window\n    \"left\": [left],                                 // The location of the left side of the chat window\n    \"top\": [top],                                   // The location of the top side of the chat window\n    \"width\": [width]                                // The width of the chat window\n  },\n  \"closed-conversations\": {                         // Which conversations have been closed. Used within chat to determine which recent convos to remove on startup. This gets updated\n                                                      // within chat when a conversation is deleted\n    \"[convo_id]\": [closed_timestamp],\n    ...\n  },\n  \"friendRequestToastsDisabled\": [friendRequestToastsDisabled], // If a toast appears when you receive a friend request\n  \"linkClickWarningEnabled\": [linkClickWarningEnabled],         // If a link warning will appear when clicking on links\n  \"messageNotificationsEnabled\": [messageNotificationsEnabled], // If a native toast or regular toast appears when receiving a message\n  \"moreUnreadsEnabled\": [moreUnreadsEnabled],                   // If a \"more unreads\" indicator appears for unread items not currently in scroll view\n  \"muted-conversations\": {                                      // A list of 1:1 muted conversations. This gets updated within chat when the \"muted\" state of a conversation is changed\n    \"[convo_id]\": 1\n  },                       \n  \"recentlyPlayedOpen\": [recentlyPlayedOpen],                  // If the \"recently played\" folder is open\n  \"roster-group-collapsed\": {                                  // A list of each folder's collapsed state. This gets updated within chat when the \"collapsed\" state of a group is changed\n    \"[group_folder_name]\": [collapsed],\n    ...\n  },\n  \"showWhenTypingEnabled\": [showWhenTypingEnabled],            // If an indicator is shown to other players when writing a message to them\n  \"sortBy\": \"[sort_type]\"                                    // How to sort friends in the friends list (ex. by \"availability\" vs \"alphabetical\")\n}\n```\n\nMost of these chat settings are straightforward and only require an update when a player enables or disables a setting. For example, when they check or uncheck a box for the setting.\n",
@@ -18332,128 +18370,6 @@
         ]
       }
     },
-    "/chat/v2/friendrequests": {
-      "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-        "operationId": "GetChatV2Friendrequests",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatFriendRequestList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get all friend requests",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "post": {
-        "description": "Data:\n\n```\n{\n  \"name\": \"player summoner name\", //currently required, until we fix it\n  \"note\": \"string\",               //note to attach to request. will be substituted in as the friend note if request accepted\n  \"pid\": \"string\"                 //currently helps speed up the query, but in the future can be used in place of the name\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-        "operationId": "PostChatV2Friendrequests",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatFriendRequestAdd"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "request"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Add friend request / invite friend",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v2/friendrequests/{pid}": {
-      "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v6/friendrequests'.",
-        "operationId": "DeleteChatV2FriendrequestsByPid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "pid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Remove or decline friend request",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted July 2021; Please use '/chat/v6/friendrequests?pid={pid}' with pid query arg.",
-        "operationId": "GetChatV2FriendrequestsByPid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "pid",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatFriendRequestList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get friend request",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      }
-    },
     "/chat/v2/me": {
       "delete": {
         "description": "Endpoint deleted August 2021; Please use '/chat/v3/me'.",
@@ -18523,44 +18439,6 @@
           "Plugins",
           "Plugin chat",
           "Deprecated"
-        ]
-      }
-    },
-    "/chat/v2/me/debug-jwt": {
-      "post": {
-        "description": "Endpoint deleted August 2021; Please use '/chat/v3/me/debug-jwt'.",
-        "operationId": "PostChatV2MeDebugJwt",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatDebugChatGamePresence"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "gamePresence"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Simulate updating a game presence with jwt (server authoritative info)",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated",
-          "Internal"
         ]
       }
     },
@@ -19427,432 +19305,6 @@
         ]
       }
     },
-    "/chat/v4/conversations": {
-      "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' or '/chat/v7/conversations/{domain}'.",
-        "operationId": "GetChatV4Conversations",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatUIStateConversationList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get all conversations",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v4/conversations/active": {
-      "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "DeleteChatV4ConversationsActive",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Clear active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "GetChatV4ConversationsActive",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatUIStateConversationList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      },
-      "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "PutChatV4ConversationsActive",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatActiveConvo"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "convo"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Set active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v4/conversations/muc/join/{name}": {
-      "post": {
-        "description": "Endpoint deleted July 2021; Sorry, not supporting this debug functionality moving forward.",
-        "operationId": "PostChatV4ConversationsMucJoinByName",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "name",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Creates and joins a group conversation with the given name (debug builds only).",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated",
-          "Internal"
-        ]
-      }
-    },
-    "/chat/v4/conversations/{cid}": {
-      "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
-        "operationId": "DeleteChatV4ConversationsByCid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Delete or leave a conversation by cid",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations?cid=xyz' with query arg if you need a specific conversation.",
-        "operationId": "GetChatV4ConversationsByCid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatUIStateConversationList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get a conversation by cid",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      },
-      "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument. It supports federated chat better.",
-        "operationId": "PostChatV4ConversationsByCid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatUIStateConversationJoin"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "convo"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Create or join a conversation by cid",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations' where 'cid' is a body argument.",
-        "operationId": "PutChatV4ConversationsByCid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatUIStateConversationUpdate"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "update"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Edit conversation by cid",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v4/conversations/{cid}/messages": {
-      "delete": {
-        "description": "Endpoint deleted August 2021; Please use 'chat/v6/messages'.",
-        "operationId": "DeleteChatV4ConversationsByCidMessages",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Clear conversation message history",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "get": {
-        "description": "**Response**: named messages root object: a flat list of message property groups (could have zero or more entries):\n\n```\n{ \"messages\": [\n                  { \"body\": \"[message]\",            //actual text of this message\n                    \"pid\":  \"[{pid}]\",              //pid of sender\n                    \"name\": \"[name]\",               //name of sender\n                    \"ts\":   \"[timestamp]\",          //integer value: milliseconds UTC\n                    \"cid\":  \"[cid]\",                //conversation id\n                    \"id\":   \"[message id]\",         //unique key within the conversation - for storage\n                    \"read\": true/false,               //whether message has been marked as read or not\n                    \"type\": \"[chat, groupchat, dm]\" //how the message was sent: from friend, from group chat, or a direct message from player in a group chat\n                  },\n                  { \"body\": \"[message]\",\n                    \"pid\":  \"[{pid}]\",\n                    \"ts\":   \"[timestamp]\",\n                    \"cid\":  \"[cid]\",\n                    \"id\":   \"[message id]\",\n                    \"read\": true/false,\n                    \"type\": \"[chat, groupchat, dm]\"\n                  },\n                  ...\n                ]\n}\n```\n\n**NOTE**: messages are sorted by time-stamp, earliest first, latest last\n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-        "operationId": "GetChatV4ConversationsByCidMessages",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatMessageList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get conversation messages",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      },
-      "post": {
-        "description": "**Sending A Message**\nA conversation id (cid) can be a MUC cid or for peer to peer messages, a player id (pid) can be used as a cid.\n\n```\nPOST /chat/v3/conversations/{cid}/messages      //cid is the conversation id passed as a path argument\n```\nData:\n\n```\n{\n  \"message\": \"[message]\" //the text to send\n  \"type\"   : \"[chat, groupchat, dm]\"\n}\n```\nAdditional notes:\n\n* type - used to specify the type of message (inferred from conversation type if left blank)\n  * chat: for P2P messages with friends\n  * groupchat: for group messages within a group chat\n  * dm: for Direct Messages with somebody in a group chat with you, or with a friend\n\nAs players post messages to a conversation, chat notifies on REST in this order:\n\n* /chat/v3/conversations/\n  * with updated data:  \"unread_count\" and the last message ID in the conversation\n* /chat/v3/conversations/{cid}/messages\n  * a list of new messages for the conversation (earliest first, latest last, but many times just one new message)\n\n**Direct Messages (private messages within a group chat)**\n\nPrivate messages between players that are not friends are possible, and this messaging is always tied to a JWT authenticated group chat (MUC) that both players are a part of. The MUC they are a part of has its own conversation-id (cid) and the private conversation between participants includes that cid in its derived cid.  For example if players \"Brad\" and \"Sue\" are both in MUC \"lobby01@league.pvp.net\" and Brad sends a direct message to Sue, then his client will...\n\n```\nPOST /chat/v3/conversations/{cid}/messages      //where cid = \"lobby01@league.pvp.net/Sue\"\n```\nNOTE: all {cid} values should be URL encoded, so the example cid when sent url encoded is \"lobby01%40league.pvp.net%2FSue\"\n\nData:\n\n```\n{\n  \"message\": \"[message]\" //the text to send\n  \"type\"   : \"dm\"\n}      \n```\nAdditional notes:\n\n* The conversation object (and child objects like messages) from Brad's perspective will be at: /chat/v3/conversations/lobby01%40league.pvp.net%2FSue\n* The conversation from Sue's perspective will be at:  /chat/v3/conversations/lobby01%40league.pvp.net%2FBrad\n* All operations (GET participants, GET messages, POST messages, etc) are the same as regular conversations\n* for direct messaging, the conversation \"type\" and the message \"type\" will always be \"dm\" \n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-        "operationId": "PostChatV4ConversationsByCidMessages",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "rchat-blocking",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatMessageSend"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "message"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatMessageList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Send a new chat message to a room or individual",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v4/conversations/{cid}/messages/{id}": {
-      "get": {
-        "description": "**Response**: named messages root object: a flat list of message property groups (could have zero or more entries):\n\n```\n{ \"messages\": [\n                  { \"body\": \"[message]\",            //actual text of this message\n                    \"pid\":  \"[{pid}]\",              //pid of sender\n                    \"name\": \"[name]\",               //name of sender\n                    \"ts\":   \"[timestamp]\",          //integer value: milliseconds UTC\n                    \"cid\":  \"[cid]\",                //conversation id\n                    \"id\":   \"[message id]\",         //unique key within the conversation - for storage\n                    \"read\": true/false,               //whether message has been marked as read or not\n                    \"type\": \"[chat, groupchat, dm]\" //how the message was sent: from friend, from group chat, or a direct message from player in a group chat\n                  },\n                  { \"body\": \"[message]\",\n                    \"pid\":  \"[{pid}]\",\n                    \"ts\":   \"[timestamp]\",\n                    \"cid\":  \"[cid]\",\n                    \"id\":   \"[message id]\",\n                    \"read\": true/false,\n                    \"type\": \"[chat, groupchat, dm]\"\n                  },\n                  ...\n                ]\n}\n```\n\n**NOTE**: messages are sorted by time-stamp, earliest first, latest last\n\n\nEndpoint deleted August 2021; Please use 'chat/v6/messages'.",
-        "operationId": "GetChatV4ConversationsByCidMessagesById",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatMessageList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get a specific conversation message",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
     "/chat/v4/conversations/{cid}/participants": {
       "get": {
         "description": "**Response:** named participants root object: a flat list of conversation participant property groups (could have zero or more entries):\n\n```\n{ \"participants\": [\n                      { \"cid\":  \"[cid]\",\n                        \"pid\":  \"[pid]\",\n                        \"name\": \"[name]\"\n                      },\n                      { \"cid\":  \"[cid]\",\n                        \"pid\":  \"[pid]\",\n                        \"name\": \"[name]\"\n                      },\n                        ...\n                      ]}\n```\n",
@@ -19920,31 +19372,6 @@
           "Plugins",
           "Plugin chat",
           "Subscribable"
-        ]
-      }
-    },
-    "/chat/v4/conversations/{cid}/read": {
-      "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read' where 'cid' is a body arg.",
-        "operationId": "PostChatV4ConversationsByCidRead",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "cid",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Mark conversation as read",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
         ]
       }
     },
@@ -20463,106 +19890,6 @@
           }
         },
         "summary": "Edit conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v5/conversations/active": {
-      "delete": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "DeleteChatV5ConversationsActive",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Clear active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      },
-      "get": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "GetChatV5ConversationsActive",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ChatUIStateConversationList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Subscribable",
-          "Deprecated"
-        ]
-      },
-      "put": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/active'.",
-        "operationId": "PutChatV5ConversationsActive",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatActiveConvo"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "convo"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Set active conversation",
-        "tags": [
-          "Plugins",
-          "Plugin chat",
-          "Deprecated"
-        ]
-      }
-    },
-    "/chat/v5/conversations/read": {
-      "post": {
-        "description": "Endpoint deleted July 2021; Please use '/chat/v7/conversations/read'.",
-        "operationId": "PostChatV5ConversationsRead",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChatConvoCid"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "body"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Mark conversation as read",
         "tags": [
           "Plugins",
           "Plugin chat",
@@ -23299,7 +22626,7 @@
     },
     "/first-party-fulfillment/v1/fulfill": {
       "post": {
-        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
         "operationId": "PostFirstPartyFulfillmentV1Fulfill",
         "parameters": [],
         "requestBody": {
@@ -23329,8 +22656,7 @@
         "summary": "Initiate a fulfillment attempt",
         "tags": [
           "Plugins",
-          "Plugin first-party-fulfillment",
-          "Internal"
+          "Plugin first-party-fulfillment"
         ]
       }
     },
@@ -23408,6 +22734,37 @@
           "Plugins",
           "Plugin friends",
           "Internal"
+        ]
+      }
+    },
+    "/friends/v2/namesets-for-puuid/{puuid}": {
+      "get": {
+        "description": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** URL Argument **\n\n\"puuid\" - PUUIDs to retrieve namesets for\n    \nResponse Body:\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "operationId": "GetFriendsV2NamesetsForPuuidByPuuid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "puuid",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FriendsFriendsV1NamesetsResponseElement"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieves the namesets for a single PUUID",
+        "tags": [
+          "Plugins",
+          "Plugin friends"
         ]
       }
     },
@@ -27304,6 +26661,93 @@
         ]
       }
     },
+    "/player-preferences/v1/data-json/productId/{productId}/type/{type}": {
+      "get": {
+        "operationId": "GetPlayerPreferencesV1DataJsonProductIdByProductIdTypeByType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get decompressed and decoded JSON player preferences information from a specified type from the Player Preferences service",
+        "tags": [
+          "Plugins",
+          "Plugin player-preferences",
+          "Internal"
+        ]
+      },
+      "put": {
+        "operationId": "PutPlayerPreferencesV1DataJsonProductIdByProductIdTypeByType",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "type",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "data"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Puts any valid JSON object for the specified type into the Player Preferences service",
+        "tags": [
+          "Plugins",
+          "Plugin player-preferences",
+          "Internal"
+        ]
+      }
+    },
     "/player-preferences/v1/data-json/{type}": {
       "get": {
         "operationId": "GetPlayerPreferencesV1DataJsonByType",
@@ -27446,6 +26890,75 @@
         "tags": [
           "Plugins",
           "Plugin player-preferences"
+        ]
+      }
+    },
+    "/player-preferences/v1/debug/caller-id/mock-id": {
+      "delete": {
+        "description": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "operationId": "DeletePlayerPreferencesV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Stops mocking the caller ID for Swagger calls",
+        "tags": [
+          "Plugins",
+          "Plugin player-preferences",
+          "Internal"
+        ]
+      },
+      "get": {
+        "description": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "operationId": "GetPlayerPreferencesV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerPreferencesPluginCallerId_MockCallerId"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Checks the caller ID in use when APIs are called from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin player-preferences",
+          "Internal"
+        ]
+      },
+      "put": {
+        "description": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "operationId": "PutPlayerPreferencesV1DebugCallerIdMockId",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerPreferencesPluginCallerId_MockCallerId"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "callerId"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets the caller ID to use when calling this plugin from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin player-preferences",
+          "Internal"
         ]
       }
     },
@@ -34527,9 +34040,27 @@
         ]
       }
     },
+    "/tencent-launcher/v1/debug/force-load": {
+      "post": {
+        "description": "\n            **Description**\n            A debug API to force-load the ACLSDK, even if configured off.\n            Can only be used internally for testing.\n        ",
+        "operationId": "PostTencentLauncherV1DebugForceLoad",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Force-load the ACLSDK",
+        "tags": [
+          "Plugins",
+          "Plugin tencent-launcher",
+          "Internal"
+        ]
+      }
+    },
     "/tencent-launcher/v1/login": {
       "post": {
-        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n\n            If the function is disabled, a `404` error code is returned.\n        ",
+        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n\n            Initializes the ACLSDK, retrieves the player's Tencent credentials\n            from the Tencent Launcher, and uses them to auth with RSO via the\n            partner-auth API.\n\n            **Request Arguments**\n            * `tencentGameId` - The Tencent-supplied game ID\n            * `tencentGameKey` - The Tencent-supplied game key\n\n            **Returns**\n            A successful return indicates that the player has successfully authed\n            with RSO.\n\n            A failed return indicates an error, either with ACLSDK, or the resulting\n            RSO auth.\n        ",
         "operationId": "PostTencentLauncherV1Login",
         "parameters": [],
         "requestBody": {
@@ -34565,7 +34096,7 @@
     },
     "/tencent-launcher/v1/login-info": {
       "get": {
-        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill cause a crash.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not successfully been called, or the function is\n            disabled, a `404` error code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
+        "description": "**Requirements**\nThis should only be used by products launched via the Tencent Launcher.\n\nThis function is disabled unless the following configuration is passedto the SDK at startup:\n* `publisher`: must be set to `tencent`\n* `auth-via-tencent-launcher`: must be set to `true`\n\nRequires ACLSDK.dll to be present. If absent, calling this functionwill return a `501` error code.\n\n\n            **Description**\n            Retrieves the Tencent Launcher LoginInfo (credentials) from the\n            ACLSDK. If logged in, the response will contain the required tokens\n            for RSO auth, or for auth with other Tencent services like Midas.\n\n            This endpoint may be subscribed to, and a notification will be\n            generated when:\n            * `/login` is successfully called, containing the Tencent-specific\n              credentials,\n            * The Tencent Launcher performs a periodic refresh of the credentials.\n\n            **Returns**\n            If `/login` has not yet successfully been called, a `404` error\n            code is returned.\n\n            If the login information is available, a structure is returned\n            containing the fields:\n            * `openid`\n            * `token`\n            * `channel`\n            * `ext`\n\n            These fields should be treated as opaque.\n        ",
         "operationId": "GetTencentLauncherV1LoginInfo",
         "parameters": [],
         "responses": {
