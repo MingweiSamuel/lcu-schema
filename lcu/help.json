@@ -644,16 +644,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-content-targeting_v1_filters",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-cosmetics_v1_inventories",
       "nameSpace": "",
       "tags": [],
@@ -11755,16 +11745,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-rso-auth_v1_authorization",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
       "nameSpace": "",
       "tags": [],
       "type": {
