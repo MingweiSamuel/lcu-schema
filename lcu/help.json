@@ -644,6 +644,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-content-targeting_v1_filters",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-cosmetics_v1_inventories",
       "nameSpace": "",
       "tags": [],
