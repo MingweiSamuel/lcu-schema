@@ -11634,16 +11634,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-publishing-content_v1_available-locales",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-publishing-content_v1_pubhub-config",
       "nameSpace": "",
       "tags": [],
