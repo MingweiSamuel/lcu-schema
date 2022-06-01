@@ -7973,6 +7973,27 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns date-time of next scheduled scanning",
+      "help": "",
+      "internal": false,
+      "name": "GetProductUpdateScannerV1ScanAndPatchNextScheduled",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "",
@@ -20750,7 +20771,7 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Scan the patchlines that are entitled to the player and make patch requests",
+      "description": "Scans the patchlines that are entitled to the player and make patch requests",
       "help": "",
       "internal": false,
       "name": "PutProductUpdateScannerV1ScanAndPatch",
@@ -20775,16 +20796,58 @@
           "optional": true,
           "type": {
             "elementType": "",
-            "type": "uint8"
+            "type": "float"
           }
         }
       ],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Starts the Update Scanner to check for product updates",
+      "description": "Starts the routine Update Scanner to check for product updates and make patch requests",
       "help": "",
       "internal": false,
       "name": "PutProductUpdateScannerV1ScanAndPatchRoutine",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Resumes the routine Update Scanner",
+      "help": "",
+      "internal": false,
+      "name": "PutProductUpdateScannerV1ScanAndPatchRoutineResume",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Stops the routine Update Scanner",
+      "help": "",
+      "internal": false,
+      "name": "PutProductUpdateScannerV1ScanAndPatchRoutineStop",
       "nameSpace": "",
       "returns": {
         "elementType": "",

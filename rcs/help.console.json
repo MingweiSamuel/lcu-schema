@@ -15299,6 +15299,14 @@
       "url": "/product-session/v1/sessions/{session-id}",
       "usage": "GetProductSessionV1SessionsBySessionId <session-id>"
     },
+    "GetProductUpdateScannerV1ScanAndPatchNextScheduled": {
+      "arguments": [],
+      "description": "Returns date-time of next scheduled scanning",
+      "http_method": "GET",
+      "returns": "string",
+      "url": "/product-update-scanner/v1/scan-and-patch/next-scheduled",
+      "usage": "GetProductUpdateScannerV1ScanAndPatchNextScheduled"
+    },
     "GetPublishingContentV1NewsFeed": {
       "arguments": [
         {
@@ -40060,7 +40068,7 @@
     },
     "PutProductUpdateScannerV1ScanAndPatch": {
       "arguments": [],
-      "description": "Scan the patchlines that are entitled to the player and make patch requests",
+      "description": "Scans the patchlines that are entitled to the player and make patch requests",
       "http_method": "PUT",
       "returns": "object",
       "url": "/product-update-scanner/v1/scan-and-patch",
@@ -40071,15 +40079,31 @@
         {
           "interval": {
             "optional": true,
-            "type": "uint8"
+            "type": "float"
           }
         }
       ],
-      "description": "Starts the Update Scanner to check for product updates",
+      "description": "Starts the routine Update Scanner to check for product updates and make patch requests",
       "http_method": "PUT",
       "returns": "object",
       "url": "/product-update-scanner/v1/scan-and-patch/routine",
       "usage": "PutProductUpdateScannerV1ScanAndPatchRoutine [<interval>]"
+    },
+    "PutProductUpdateScannerV1ScanAndPatchRoutineResume": {
+      "arguments": [],
+      "description": "Resumes the routine Update Scanner",
+      "http_method": "PUT",
+      "returns": "object",
+      "url": "/product-update-scanner/v1/scan-and-patch/routine/resume",
+      "usage": "PutProductUpdateScannerV1ScanAndPatchRoutineResume"
+    },
+    "PutProductUpdateScannerV1ScanAndPatchRoutineStop": {
+      "arguments": [],
+      "description": "Stops the routine Update Scanner",
+      "http_method": "PUT",
+      "returns": "object",
+      "url": "/product-update-scanner/v1/scan-and-patch/routine/stop",
+      "usage": "PutProductUpdateScannerV1ScanAndPatchRoutineStop"
     },
     "PutRiotClientLifecycleStateV1StateByStateByParamSubscriberBySubscriberSerialNumber": {
       "arguments": [
