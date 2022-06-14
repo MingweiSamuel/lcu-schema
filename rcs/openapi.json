@@ -509,11 +509,7 @@
             "type": "boolean"
           },
           "chatWindow": {
-            "$ref": "#/components/schemas/ChatChatWindowSettings",
-            "default": {
-              "height": 366,
-              "width": 530
-            }
+            "$ref": "#/components/schemas/ChatChatWindowSettings"
           },
           "chatWindowDockedHeight": {
             "default": 366,
@@ -801,10 +797,7 @@
             "type": "string"
           },
           "update": {
-            "$ref": "#/components/schemas/ChatChatGamePresence",
-            "default": {
-              "state": "offline"
-            }
+            "$ref": "#/components/schemas/ChatChatGamePresence"
           }
         },
         "type": "object"
@@ -1148,6 +1141,9 @@
       },
       "ChatCommandTelemetry": {
         "properties": {
+          "commandGroupUuid": {
+            "type": "string"
+          },
           "commandType": {
             "type": "string"
           },
@@ -1249,10 +1245,7 @@
       "ChatConversationCreateJoinFederated": {
         "properties": {
           "join": {
-            "$ref": "#/components/schemas/ChatConvoJoinFederated",
-            "default": {
-              "type": "chat"
-            }
+            "$ref": "#/components/schemas/ChatConvoJoinFederated"
           },
           "session": {
             "type": "string"
@@ -1587,6 +1580,94 @@
         },
         "type": "object"
       },
+      "ChatExecutionTime": {
+        "properties": {
+          "executionTimeUs": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "measurementName": {
+            "type": "string"
+          },
+          "measurementType": {
+            "$ref": "#/components/schemas/ChatMeasurementType",
+            "default": "unknown"
+          },
+          "optionalData": {
+            "$ref": "#/components/schemas/ChatOptionalMeasurementInformation"
+          }
+        },
+        "type": "object"
+      },
+      "ChatExecutionTimeSummarization": {
+        "properties": {
+          "measurementExecutionTimeUs": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "measurementName": {
+            "type": "string"
+          },
+          "measurementsNum": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "optionalData": {
+            "$ref": "#/components/schemas/ChatOptionalMeasurementInformation"
+          },
+          "totalExecutionTimeUs": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "ChatExecutionTimes": {
+        "properties": {
+          "executionTimes": {
+            "items": {
+              "$ref": "#/components/schemas/ChatExecutionTime"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "ChatExecutionTimesTelemetry": {
+        "properties": {
+          "allMeasurementsExecutionTimeUs": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "longestCategoryMeasurementExecutionTimeUs": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "longestCategoryMeasurementType": {
+            "$ref": "#/components/schemas/ChatMeasurementType",
+            "default": "unknown"
+          },
+          "longestIndividualMeasurement": {
+            "$ref": "#/components/schemas/ChatExecutionTimeSummarization"
+          },
+          "longestIndividualMeasurementType": {
+            "$ref": "#/components/schemas/ChatMeasurementType",
+            "default": "unknown"
+          },
+          "longestMeasurements": {
+            "additionalProperties": true,
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
       "ChatFriendGroup": {
         "properties": {
           "collapsed": {
@@ -1864,6 +1945,27 @@
         },
         "type": "object"
       },
+      "ChatMeasurementType": {
+        "enum": [
+          "unknown",
+          "notifyResourceCreated",
+          "notifyResourceUpdated",
+          "notifyResourceDeleted",
+          "externalRequestHead",
+          "externalRequestGet",
+          "externalRequestPost",
+          "externalRequestPut",
+          "externalRequestPatch",
+          "externalRequestDelete",
+          "queueJob",
+          "queueCommand",
+          "fulfillPromise",
+          "log",
+          "lockGrabTime",
+          "lockHoldTime"
+        ],
+        "type": "string"
+      },
       "ChatMessage": {
         "properties": {
           "body": {
@@ -2133,6 +2235,39 @@
               "$ref": "#/components/schemas/ChatMultiGamePresence"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "ChatOptionalMeasurementInformation": {
+        "properties": {
+          "filename": {
+            "nullable": true,
+            "type": "string"
+          },
+          "firstGenericType": {
+            "nullable": true,
+            "type": "string"
+          },
+          "functionName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "logMessage": {
+            "nullable": true,
+            "type": "string"
+          },
+          "logSeverity": {
+            "$ref": "#/components/schemas/ChatRiotLogLevel",
+            "nullable": true
+          },
+          "secondGenericType": {
+            "nullable": true,
+            "type": "string"
+          },
+          "thirdGenericType": {
+            "nullable": true,
+            "type": "string"
           }
         },
         "type": "object"
@@ -2407,6 +2542,15 @@
           }
         },
         "type": "object"
+      },
+      "ChatRiotLogLevel": {
+        "enum": [
+          "Okay",
+          "Warning",
+          "Error",
+          "Always"
+        ],
+        "type": "string"
       },
       "ChatRsoAccessTokenResource": {
         "properties": {
@@ -2949,10 +3093,7 @@
             "type": "object"
           },
           "params": {
-            "$ref": "#/components/schemas/ClientConfigConfigParams",
-            "default": {
-              "type": "public"
-            }
+            "$ref": "#/components/schemas/ClientConfigConfigParams"
           },
           "updateTime": {
             "format": "int64",
@@ -3859,14 +4000,14 @@
           },
           "unfulfilledItems": {
             "items": {
-              "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo"
+              "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo"
             },
             "type": "array"
           }
         },
         "type": "object"
       },
-      "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo": {
+      "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo": {
         "properties": {
           "itemId": {
             "type": "string"
@@ -3904,9 +4045,56 @@
           "FirstPartyQueryByRiotPayFailed",
           "RiotPayFulfillmentFailed",
           "PartialFulfillmentCompleted",
+          "FulfillmentEmpty",
           "Success"
         ],
         "type": "string"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayFulfillmentResponse": {
+        "properties": {
+          "failed": {
+            "items": {
+              "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo"
+            },
+            "type": "array"
+          },
+          "fulfilled": {
+            "items": {
+              "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo": {
+        "properties": {
+          "itemId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "quantity": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo": {
+        "properties": {
+          "itemId": {
+            "type": "string"
+          },
+          "quantity": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
       },
       "FirstPartyFulfillmentFirstPartyFulfillmentTelemetryContext": {
         "properties": {
@@ -5791,10 +5979,7 @@
             "type": "string"
           },
           "multifactor": {
-            "$ref": "#/components/schemas/GameSessionMultifactorDetails",
-            "default": {
-              "method": "method_not_set"
-            }
+            "$ref": "#/components/schemas/GameSessionMultifactorDetails"
           },
           "persistLogin": {
             "type": "boolean"
@@ -6993,6 +7178,26 @@
         },
         "type": "object"
       },
+      "NintendoAccountAuthorizationResponse": {
+        "properties": {
+          "authorization": {
+            "$ref": "#/components/schemas/NintendoAccountAuthorization",
+            "nullable": true
+          },
+          "error_code": {
+            "$ref": "#/components/schemas/NintendoAccountErrorCode",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "NintendoAccountErrorCode": {
+        "enum": [
+          "user_canceled_authotization",
+          "user_canceled_login"
+        ],
+        "type": "string"
+      },
       "NintendoAccountGetNetworkServiceAccountParameters": {
         "properties": {
           "showUserSelector": {
@@ -7005,6 +7210,19 @@
         "properties": {
           "idToken": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "NintendoAccountNetworkServiceAccountResponse": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/NintendoAccountNetworkServiceAccount",
+            "nullable": true
+          },
+          "error_code": {
+            "$ref": "#/components/schemas/NintendoAccountErrorCode",
+            "nullable": true
           }
         },
         "type": "object"
@@ -7554,10 +7772,7 @@
             "nullable": true
           },
           "progress": {
-            "$ref": "#/components/schemas/PatchProgress",
-            "default": {
-              "phase": "None"
-            }
+            "$ref": "#/components/schemas/PatchProgress"
           },
           "state": {
             "$ref": "#/components/schemas/PatchPatchStatusState",
@@ -8046,10 +8261,7 @@
             "nullable": true
           },
           "progress": {
-            "$ref": "#/components/schemas/PatchProgress",
-            "default": {
-              "phase": "None"
-            }
+            "$ref": "#/components/schemas/PatchProgress"
           },
           "state": {
             "$ref": "#/components/schemas/PatchSeedStatusState",
@@ -8410,11 +8622,7 @@
             "default": "Invalid"
           },
           "rsoSignOnAttemptEvent": {
-            "$ref": "#/components/schemas/PlatformLoginRSOSignOnAttemptEvent",
-            "default": {
-              "outcome": "Success",
-              "storedSessionState": "Accepted"
-            }
+            "$ref": "#/components/schemas/PlatformLoginRSOSignOnAttemptEvent"
           }
         },
         "type": "object"
@@ -8836,6 +9044,19 @@
         },
         "type": "object"
       },
+      "PlatformUiOnlinePlatform": {
+        "enum": [
+          "absent",
+          "unknown",
+          "riot",
+          "tencent",
+          "garena",
+          "playstation",
+          "switch",
+          "xbox"
+        ],
+        "type": "string"
+      },
       "PlatformUiPlatformUIError": {
         "properties": {
           "code": {
@@ -8861,6 +9082,18 @@
           "view": {
             "nullable": true,
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiPlatformUser": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "platform": {
+            "$ref": "#/components/schemas/PlatformUiOnlinePlatform",
+            "default": "unknown"
           }
         },
         "type": "object"
@@ -8925,6 +9158,7 @@
           "PendingEulaData",
           "PendingEulaAcceptance",
           "PendingRiotID",
+          "PendingUserInfoRefresh",
           "Authorized",
           "Error"
         ],
@@ -10046,6 +10280,300 @@
         },
         "type": "object"
       },
+      "PlayerPreferencesAccessToken": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesAffinityV1AffinityInput": {
+        "properties": {
+          "hint": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesAffinityV2AffinityProductInput": {
+        "properties": {
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesAlias": {
+        "properties": {
+          "game_name": {
+            "nullable": true,
+            "type": "string"
+          },
+          "tag_line": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesAuthorization": {
+        "properties": {
+          "accessToken": {
+            "$ref": "#/components/schemas/PlayerPreferencesAccessToken"
+          },
+          "claims": {
+            "$ref": "#/components/schemas/PlayerPreferencesIdClaims"
+          },
+          "idToken": {
+            "$ref": "#/components/schemas/PlayerPreferencesIdToken"
+          },
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesIdClaims": {
+        "properties": {
+          "acct": {
+            "$ref": "#/components/schemas/PlayerPreferencesAlias"
+          },
+          "acr": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "login_country": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesIdToken": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "nonce": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityCachedProductAffinity": {
+        "properties": {
+          "affinities": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityCachedServiceAffinity": {
+        "properties": {
+          "affinity": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityDataSource": {
+        "enum": [
+          "localCache",
+          "serverAuthoritative"
+        ],
+        "type": "string"
+      },
+      "PlayerPreferencesPlayerAffinityPluginConfig": {
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "playerAffinityServiceUrl": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityPluginStatus": {
+        "properties": {
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityProductToken": {
+        "properties": {
+          "affinities": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "issuedAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "product": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityServiceToken": {
+        "properties": {
+          "affinity": {
+            "type": "string"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "issuedAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityShardInfo": {
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityToken": {
+        "properties": {
+          "affinity": {
+            "type": "string"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "issuedAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "service": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/PlayerPreferencesPlayerAffinityDataSource",
+            "default": "localCache"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesPlayerAffinityTokenProduct": {
+        "properties": {
+          "affinities": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "issuedAt": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "product": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/PlayerPreferencesPlayerAffinityDataSource",
+            "default": "localCache"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerPreferencesPlayerPreferencesData": {
         "properties": {
           "data": {
@@ -10085,9 +10613,28 @@
         },
         "type": "object"
       },
+      "PlayerPreferencesProductAffinityInput": {
+        "properties": {
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerPreferencesRegionLocale": {
         "properties": {
           "region": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerPreferencesServiceAffinityInput": {
+        "properties": {
+          "hint": {
+            "type": "string"
+          },
+          "service": {
             "type": "string"
           }
         },
@@ -10741,6 +11288,26 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleNintendoAccountAuthorizationResponse": {
+        "properties": {
+          "authorization": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleNintendoAccountAuthorization",
+            "nullable": true
+          },
+          "error_code": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleNintendoAccountErrorCode",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleNintendoAccountErrorCode": {
+        "enum": [
+          "user_canceled_authotization",
+          "user_canceled_login"
+        ],
+        "type": "string"
+      },
       "PlayerSessionLifecycleNintendoAccountGetNetworkServiceAccountParameters": {
         "properties": {
           "showUserSelector": {
@@ -10753,6 +11320,19 @@
         "properties": {
           "idToken": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleNintendoAccountNetworkServiceAccountResponse": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleNintendoAccountNetworkServiceAccount",
+            "nullable": true
+          },
+          "error_code": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleNintendoAccountErrorCode",
+            "nullable": true
           }
         },
         "type": "object"
@@ -10886,6 +11466,7 @@
           "PendingEulaData",
           "PendingEulaAcceptance",
           "PendingRiotID",
+          "PendingUserInfoRefresh",
           "Authorized",
           "Error"
         ],
@@ -11019,10 +11600,7 @@
             "type": "string"
           },
           "multifactor": {
-            "$ref": "#/components/schemas/PlayerSessionLifecycleMultifactorDetails",
-            "default": {
-              "method": "method_not_set"
-            }
+            "$ref": "#/components/schemas/PlayerSessionLifecycleMultifactorDetails"
           },
           "persistLogin": {
             "type": "boolean"
@@ -11296,18 +11874,7 @@
             "type": "array"
           },
           "riotMeta": {
-            "$ref": "#/components/schemas/PluginMetadataResource",
-            "default": {
-              "app": "",
-              "feature": "",
-              "globalAssetBundles": [],
-              "hasBundledAssets": false,
-              "implements": {},
-              "perLocaleAssetBundles": {},
-              "subtype": "",
-              "threading": "sequential",
-              "type": ""
-            }
+            "$ref": "#/components/schemas/PluginMetadataResource"
           }
         },
         "type": "object"
@@ -13409,11 +13976,7 @@
             "default": "Invalid"
           },
           "rsoSignOnAttemptEvent": {
-            "$ref": "#/components/schemas/RiotLoginRSOSignOnAttemptEvent",
-            "default": {
-              "outcome": "Success",
-              "storedSessionState": "Accepted"
-            }
+            "$ref": "#/components/schemas/RiotLoginRSOSignOnAttemptEvent"
           }
         },
         "type": "object"
@@ -14735,10 +15298,7 @@
             "type": "string"
           },
           "multifactor": {
-            "$ref": "#/components/schemas/RsoAuthMultifactorDetails",
-            "default": {
-              "method": "method_not_set"
-            }
+            "$ref": "#/components/schemas/RsoAuthMultifactorDetails"
           },
           "persistLogin": {
             "type": "boolean"
@@ -16584,10 +17144,7 @@
             "type": "string"
           },
           "multifactor": {
-            "$ref": "#/components/schemas/TencentLauncherMultifactorDetails",
-            "default": {
-              "method": "method_not_set"
-            }
+            "$ref": "#/components/schemas/TencentLauncherMultifactorDetails"
           },
           "persistLogin": {
             "type": "boolean"
@@ -22626,7 +23183,7 @@
     },
     "/first-party-fulfillment/v1/fulfill": {
       "post": {
-        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
         "operationId": "PostFirstPartyFulfillmentV1Fulfill",
         "parameters": [],
         "requestBody": {
@@ -22657,36 +23214,6 @@
         "tags": [
           "Plugins",
           "Plugin first-party-fulfillment"
-        ]
-      }
-    },
-    "/first-party-fulfillment/v1/mock-api/state": {
-      "put": {
-        "description": "\n**Description**\n\nSets whether or not the plugin should use a mock fulfillment API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `NoFulfillmentRequired`: The plugin is set to use the mock API. The mock API will return that no fulfillment is required.\n    * `FirstPartyQueryFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      items to fulfill.\n    * `FirstPartyAuthorizationFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to fetch the\n      first party authorization.\n    * `FirstPartyQueryByRiotPayFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay could not\n      call the first party services to verify the fulfillment request.\n    * `RiotPayFulfillmentFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay failed to complete\n      the fulfillment request entirely.\n    * `PartialFulfillmentCompleted`: The plugin is set to use the mock API. The mock API will return a response indicating that RiotPay managed\n      to fulfill some items, but failed to fulfill others.\n    * `Success`: The plugin is set to use the mock API. The mock API will return as if all items have been fulfilled successfully.\n",
-        "operationId": "PutFirstPartyFulfillmentV1MockApiState",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentMockApiState"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "state"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave",
-        "tags": [
-          "Plugins",
-          "Plugin first-party-fulfillment",
-          "Internal"
         ]
       }
     },
@@ -24090,7 +24617,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/NintendoAccountAuthorization"
+                  "$ref": "#/components/schemas/NintendoAccountAuthorizationResponse"
                 }
               }
             },
@@ -24125,7 +24652,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/NintendoAccountNetworkServiceAccount"
+                  "$ref": "#/components/schemas/NintendoAccountNetworkServiceAccountResponse"
                 }
               }
             },
@@ -27258,6 +27785,22 @@
         ]
       }
     },
+    "/player-session-lifecycle/v1/session/retry": {
+      "post": {
+        "operationId": "PostPlayerSessionLifecycleV1SessionRetry",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Retry the last known internal action causing the current error state.",
+        "tags": [
+          "Plugins",
+          "Plugin player-session-lifecycle"
+        ]
+      }
+    },
     "/playstation-account/v1/authorization": {
       "post": {
         "operationId": "PostPlaystationAccountV1Authorization",
@@ -27363,6 +27906,30 @@
         "tags": [
           "Plugins",
           "Plugin playstation-account"
+        ]
+      }
+    },
+    "/playstation-account/v1/player-nickname-without-consent": {
+      "get": {
+        "operationId": "GetPlaystationAccountV1PlayerNicknameWithoutConsent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Gets the player nickname of the Playstation Account for the player logged in the Playstation device without checking for consent authorization",
+        "tags": [
+          "Plugins",
+          "Plugin playstation-account",
+          "Subscribable"
         ]
       }
     },
@@ -35692,6 +36259,30 @@
         "tags": [
           "Plugins",
           "Plugin xbox-account"
+        ]
+      }
+    },
+    "/xbox-account/v1/player-nickname-without-consent": {
+      "get": {
+        "operationId": "GetXboxAccountV1PlayerNicknameWithoutConsent",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get user's Xbox gamertag without checking authorization consent",
+        "tags": [
+          "Plugins",
+          "Plugin xbox-account",
+          "Subscribable"
         ]
       }
     },

@@ -12910,6 +12910,14 @@
       "url": "/playstation-account/v1/player-nickname",
       "usage": "GetPlaystationAccountV1PlayerNickname"
     },
+    "GetPlaystationAccountV1PlayerNicknameWithoutConsent": {
+      "arguments": [],
+      "description": "Gets the player nickname of the Playstation Account for the player logged in the Playstation device without checking for consent authorization",
+      "http_method": "GET",
+      "returns": "string",
+      "url": "/playstation-account/v1/player-nickname-without-consent",
+      "usage": "GetPlaystationAccountV1PlayerNicknameWithoutConsent"
+    },
     "GetPlaystationAccountV1User": {
       "arguments": [],
       "description": "Retrieve Playstation profile and PSN account info",
@@ -22261,6 +22269,14 @@
       "url": "/xbox-account/v1/player-nickname",
       "usage": "GetXboxAccountV1PlayerNickname"
     },
+    "GetXboxAccountV1PlayerNicknameWithoutConsent": {
+      "arguments": [],
+      "description": "Get user's Xbox gamertag without checking authorization consent",
+      "http_method": "GET",
+      "returns": "string",
+      "url": "/xbox-account/v1/player-nickname-without-consent",
+      "usage": "GetXboxAccountV1PlayerNicknameWithoutConsent"
+    },
     "Help": {
       "arguments": [
         {
@@ -24482,7 +24498,7 @@
         }
       ],
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
       "http_method": "POST",
       "returns": {
         "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse": {
@@ -24508,7 +24524,7 @@
                 "description": "",
                 "offset": 0,
                 "optional": false,
-                "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo"
+                "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo"
               }
             }
           ]
@@ -25013,22 +25029,47 @@
       "description": "Gets authorization from the Nintendo Account of the player logged in the Nintendo Switch",
       "http_method": "POST",
       "returns": {
-        "NintendoAccountAuthorization": {
+        "NintendoAccountAuthorizationResponse": {
           "fields": [
             {
-              "code": {
+              "authorization": {
                 "description": "",
                 "offset": 0,
                 "optional": false,
-                "type": "string"
+                "type": {
+                  "NintendoAccountAuthorization": {
+                    "fields": [
+                      {
+                        "code": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "idToken": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
               }
             },
             {
-              "idToken": {
+              "error_code": {
                 "description": "",
                 "offset": 0,
                 "optional": false,
-                "type": "string"
+                "type": {
+                  "NintendoAccountErrorCode": {
+                    "fields": []
+                  }
+                }
               }
             }
           ]
@@ -25061,14 +25102,39 @@
       "description": "Get the Network Service Account ID (NSA) for the player logged in the Nintendo Switch",
       "http_method": "POST",
       "returns": {
-        "NintendoAccountNetworkServiceAccount": {
+        "NintendoAccountNetworkServiceAccountResponse": {
           "fields": [
             {
-              "idToken": {
+              "account": {
                 "description": "",
                 "offset": 0,
                 "optional": false,
-                "type": "string"
+                "type": {
+                  "NintendoAccountNetworkServiceAccount": {
+                    "fields": [
+                      {
+                        "idToken": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "error_code": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "NintendoAccountErrorCode": {
+                    "fields": []
+                  }
+                }
               }
             }
           ]
@@ -27551,6 +27617,13 @@
       "http_method": "POST",
       "url": "/player-session-lifecycle/v1/session",
       "usage": "PostPlayerSessionLifecycleV1Session <InitiateLoginSessionRequest>"
+    },
+    "PostPlayerSessionLifecycleV1SessionRetry": {
+      "arguments": [],
+      "description": "Retry the last known internal action causing the current error state.",
+      "http_method": "POST",
+      "url": "/player-session-lifecycle/v1/session/retry",
+      "usage": "PostPlayerSessionLifecycleV1SessionRetry"
     },
     "PostPlaystationAccountV1Authorization": {
       "arguments": [
@@ -37676,24 +37749,6 @@
       "http_method": "PUT",
       "url": "/eula/v1/product-context",
       "usage": "PutEulaV1ProductContext <ProductContext>"
-    },
-    "PutFirstPartyFulfillmentV1MockApiState": {
-      "arguments": [
-        {
-          "state": {
-            "type": {
-              "FirstPartyFulfillmentFirstPartyFulfillmentMockApiState": {
-                "fields": []
-              }
-            }
-          }
-        }
-      ],
-      "description": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave",
-      "help": "\n**Description**\n\nSets whether or not the plugin should use a mock fulfillment API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `NoFulfillmentRequired`: The plugin is set to use the mock API. The mock API will return that no fulfillment is required.\n    * `FirstPartyQueryFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      items to fulfill.\n    * `FirstPartyAuthorizationFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to fetch the\n      first party authorization.\n    * `FirstPartyQueryByRiotPayFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay could not\n      call the first party services to verify the fulfillment request.\n    * `RiotPayFulfillmentFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay failed to complete\n      the fulfillment request entirely.\n    * `PartialFulfillmentCompleted`: The plugin is set to use the mock API. The mock API will return a response indicating that RiotPay managed\n      to fulfill some items, but failed to fulfill others.\n    * `Success`: The plugin is set to use the mock API. The mock API will return as if all items have been fulfilled successfully.\n",
-      "http_method": "PUT",
-      "url": "/first-party-fulfillment/v1/mock-api/state",
-      "usage": "PutFirstPartyFulfillmentV1MockApiState <state>"
     },
     "PutFriendsV2MockApiState": {
       "arguments": [
@@ -48917,6 +48972,14 @@
     "ChatCommandTelemetry": {
       "fields": [
         {
+          "commandGroupUuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "commandType": {
             "description": "",
             "offset": 0,
@@ -50002,6 +50065,402 @@
         }
       ]
     },
+    "ChatExecutionTime": {
+      "fields": [
+        {
+          "executionTimeUs": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "measurementName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "measurementType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatMeasurementType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "optionalData": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatOptionalMeasurementInformation": {
+                "fields": [
+                  {
+                    "filename": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "firstGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "functionName": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "logMessage": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "logSeverity": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "ChatRiotLogLevel": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "secondGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "thirdGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ChatExecutionTimeSummarization": {
+      "fields": [
+        {
+          "measurementExecutionTimeUs": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "measurementName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "measurementsNum": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "optionalData": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatOptionalMeasurementInformation": {
+                "fields": [
+                  {
+                    "filename": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "firstGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "functionName": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "logMessage": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "logSeverity": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "ChatRiotLogLevel": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "secondGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "thirdGenericType": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "totalExecutionTimeUs": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "ChatExecutionTimes": {
+      "fields": [
+        {
+          "executionTimes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of ChatExecutionTime"
+          }
+        }
+      ]
+    },
+    "ChatExecutionTimesTelemetry": {
+      "fields": [
+        {
+          "allMeasurementsExecutionTimeUs": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "longestCategoryMeasurementExecutionTimeUs": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "longestCategoryMeasurementType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatMeasurementType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "longestIndividualMeasurement": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatExecutionTimeSummarization": {
+                "fields": [
+                  {
+                    "measurementExecutionTimeUs": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "measurementName": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "measurementsNum": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "optionalData": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "ChatOptionalMeasurementInformation": {
+                          "fields": [
+                            {
+                              "filename": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "firstGenericType": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "functionName": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "logMessage": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "logSeverity": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": {
+                                  "ChatRiotLogLevel": {
+                                    "fields": []
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "secondGenericType": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "thirdGenericType": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "totalExecutionTimeUs": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "longestIndividualMeasurementType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatMeasurementType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "longestMeasurements": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of "
+          }
+        }
+      ]
+    },
     "ChatFriendGroup": {
       "fields": [
         {
@@ -50507,6 +50966,74 @@
             "optional": false,
             "type": "string"
           }
+        }
+      ]
+    },
+    "ChatMeasurementType": {
+      "values": [
+        {
+          "name": "unknown",
+          "value": 0
+        },
+        {
+          "name": "notifyResourceCreated",
+          "value": 1
+        },
+        {
+          "name": "notifyResourceUpdated",
+          "value": 2
+        },
+        {
+          "name": "notifyResourceDeleted",
+          "value": 3
+        },
+        {
+          "name": "externalRequestHead",
+          "value": 4
+        },
+        {
+          "name": "externalRequestGet",
+          "value": 5
+        },
+        {
+          "name": "externalRequestPost",
+          "value": 6
+        },
+        {
+          "name": "externalRequestPut",
+          "value": 7
+        },
+        {
+          "name": "externalRequestPatch",
+          "value": 8
+        },
+        {
+          "name": "externalRequestDelete",
+          "value": 9
+        },
+        {
+          "name": "queueJob",
+          "value": 10
+        },
+        {
+          "name": "queueCommand",
+          "value": 11
+        },
+        {
+          "name": "fulfillPromise",
+          "value": 12
+        },
+        {
+          "name": "log",
+          "value": 13
+        },
+        {
+          "name": "lockGrabTime",
+          "value": 14
+        },
+        {
+          "name": "lockHoldTime",
+          "value": 15
         }
       ]
     },
@@ -51054,6 +51581,70 @@
         }
       ]
     },
+    "ChatOptionalMeasurementInformation": {
+      "fields": [
+        {
+          "filename": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "firstGenericType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "functionName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "logMessage": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "logSeverity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ChatRiotLogLevel": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "secondGenericType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "thirdGenericType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "ChatParticipantEdit": {
       "fields": [
         {
@@ -51572,6 +52163,26 @@
             "optional": false,
             "type": "string"
           }
+        }
+      ]
+    },
+    "ChatRiotLogLevel": {
+      "values": [
+        {
+          "name": "Okay",
+          "value": 0
+        },
+        {
+          "name": "Warning",
+          "value": 1
+        },
+        {
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "name": "Always",
+          "value": 3
         }
       ]
     },
@@ -55219,12 +55830,12 @@
             "description": "",
             "offset": 0,
             "optional": false,
-            "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo"
+            "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo"
           }
         }
       ]
     },
-    "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo": {
+    "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo": {
       "fields": [
         {
           "itemId": {
@@ -55303,8 +55914,80 @@
           "value": 6
         },
         {
-          "name": "Success",
+          "name": "FulfillmentEmpty",
           "value": 7
+        },
+        {
+          "name": "Success",
+          "value": 8
+        }
+      ]
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayFulfillmentResponse": {
+      "fields": [
+        {
+          "failed": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo"
+          }
+        },
+        {
+          "fulfilled": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo"
+          }
+        }
+      ]
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo": {
+      "fields": [
+        {
+          "itemId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "message": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "quantity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo": {
+      "fields": [
+        {
+          "itemId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "quantity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
         }
       ]
     },
@@ -63366,6 +64049,63 @@
         }
       ]
     },
+    "NintendoAccountAuthorizationResponse": {
+      "fields": [
+        {
+          "authorization": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "NintendoAccountAuthorization": {
+                "fields": [
+                  {
+                    "code": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "idToken": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "error_code": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "NintendoAccountErrorCode": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "NintendoAccountErrorCode": {
+      "values": [
+        {
+          "name": "user_canceled_authotization",
+          "value": 0
+        },
+        {
+          "name": "user_canceled_login",
+          "value": 1
+        }
+      ]
+    },
     "NintendoAccountGetNetworkServiceAccountParameters": {
       "fields": [
         {
@@ -63386,6 +64126,43 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "NintendoAccountNetworkServiceAccountResponse": {
+      "fields": [
+        {
+          "account": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "NintendoAccountNetworkServiceAccount": {
+                "fields": [
+                  {
+                    "idToken": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "error_code": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "NintendoAccountErrorCode": {
+                "fields": []
+              }
+            }
           }
         }
       ]
@@ -74606,6 +75383,42 @@
         }
       ]
     },
+    "PlatformUiOnlinePlatform": {
+      "values": [
+        {
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
     "PlatformUiPlatformUIError": {
       "fields": [
         {
@@ -74683,6 +75496,30 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "PlatformUiPlatformUser": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiOnlinePlatform": {
+                "fields": []
+              }
+            }
           }
         }
       ]
@@ -74925,12 +75762,16 @@
           "value": 15
         },
         {
-          "name": "Authorized",
+          "name": "PendingUserInfoRefresh",
           "value": 16
         },
         {
-          "name": "Error",
+          "name": "Authorized",
           "value": 17
+        },
+        {
+          "name": "Error",
+          "value": 18
         }
       ]
     },
@@ -77485,6 +78326,699 @@
         }
       ]
     },
+    "PlayerPreferencesAccessToken": {
+      "fields": [
+        {
+          "clientId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "scopes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesAffinityV1AffinityInput": {
+      "fields": [
+        {
+          "hint": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "service": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesAffinityV2AffinityProductInput": {
+      "fields": [
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesAlias": {
+      "fields": [
+        {
+          "game_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tag_line": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesAuthorization": {
+      "fields": [
+        {
+          "accessToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesAccessToken": {
+                "fields": [
+                  {
+                    "clientId": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "expiry": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "scopes": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "claims": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesIdClaims": {
+                "fields": [
+                  {
+                    "acct": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "PlayerPreferencesAlias": {
+                          "fields": [
+                            {
+                              "game_name": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "tag_line": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "acr": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "country": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "login_country": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "idToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesIdToken": {
+                "fields": [
+                  {
+                    "clientId": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "expiry": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "nonce": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesIdClaims": {
+      "fields": [
+        {
+          "acct": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesAlias": {
+                "fields": [
+                  {
+                    "game_name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "tag_line": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "acr": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "country": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "login_country": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesIdToken": {
+      "fields": [
+        {
+          "clientId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "nonce": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityCachedProductAffinity": {
+      "fields": [
+        {
+          "affinities": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityCachedServiceAffinity": {
+      "fields": [
+        {
+          "affinity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "service": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityDataSource": {
+      "values": [
+        {
+          "name": "localCache",
+          "value": 0
+        },
+        {
+          "name": "serverAuthoritative",
+          "value": 1
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityPluginConfig": {
+      "fields": [
+        {
+          "accessToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "playerAffinityServiceUrl": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityPluginStatus": {
+      "fields": [
+        {
+          "ready": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityProductToken": {
+      "fields": [
+        {
+          "affinities": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "issuedAt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityServiceToken": {
+      "fields": [
+        {
+          "affinity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "issuedAt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "service": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityShardInfo": {
+      "fields": [
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "shard": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "zone": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityToken": {
+      "fields": [
+        {
+          "affinity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "issuedAt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "service": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "source": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesPlayerAffinityDataSource": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesPlayerAffinityTokenProduct": {
+      "fields": [
+        {
+          "affinities": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of string"
+          }
+        },
+        {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "issuedAt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "source": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerPreferencesPlayerAffinityDataSource": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "PlayerPreferencesPlayerPreferencesData": {
       "fields": [
         {
@@ -77561,10 +79095,42 @@
         }
       ]
     },
+    "PlayerPreferencesProductAffinityInput": {
+      "fields": [
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "PlayerPreferencesRegionLocale": {
       "fields": [
         {
           "region": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerPreferencesServiceAffinityInput": {
+      "fields": [
+        {
+          "hint": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "service": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -79223,6 +80789,63 @@
         }
       ]
     },
+    "PlayerSessionLifecycleNintendoAccountAuthorizationResponse": {
+      "fields": [
+        {
+          "authorization": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleNintendoAccountAuthorization": {
+                "fields": [
+                  {
+                    "code": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "idToken": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "error_code": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleNintendoAccountErrorCode": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlayerSessionLifecycleNintendoAccountErrorCode": {
+      "values": [
+        {
+          "name": "user_canceled_authotization",
+          "value": 0
+        },
+        {
+          "name": "user_canceled_login",
+          "value": 1
+        }
+      ]
+    },
     "PlayerSessionLifecycleNintendoAccountGetNetworkServiceAccountParameters": {
       "fields": [
         {
@@ -79243,6 +80866,43 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerSessionLifecycleNintendoAccountNetworkServiceAccountResponse": {
+      "fields": [
+        {
+          "account": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleNintendoAccountNetworkServiceAccount": {
+                "fields": [
+                  {
+                    "idToken": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "error_code": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleNintendoAccountErrorCode": {
+                "fields": []
+              }
+            }
           }
         }
       ]
@@ -79625,12 +81285,16 @@
           "value": 15
         },
         {
-          "name": "Authorized",
+          "name": "PendingUserInfoRefresh",
           "value": 16
         },
         {
-          "name": "Error",
+          "name": "Authorized",
           "value": 17
+        },
+        {
+          "name": "Error",
+          "value": 18
         }
       ]
     },
@@ -85158,6 +86822,26 @@
         {
           "name": "Unknown",
           "value": 4
+        }
+      ]
+    },
+    "ProductUpdateScannerAuthorization": {
+      "fields": [
+        {
+          "currentPlatformId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "subject": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
         }
       ]
     },

@@ -6683,6 +6683,25 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Gets the player nickname of the Playstation Account for the player logged in the Playstation device without checking for consent authorization",
+      "help": "",
+      "internal": false,
+      "name": "GetPlaystationAccountV1PlayerNicknameWithoutConsent",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Retrieve Playstation profile and PSN account info",
       "help": "",
       "internal": false,
@@ -11410,6 +11429,25 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Get user's Xbox gamertag without checking authorization consent",
+      "help": "",
+      "internal": false,
+      "name": "GetXboxAccountV1PlayerNicknameWithoutConsent",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "Name of the function or type to describe",
@@ -12912,7 +12950,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
       "internal": false,
       "name": "PostFirstPartyFulfillmentV1Fulfill",
       "nameSpace": "",
@@ -13369,7 +13407,7 @@
       "nameSpace": "",
       "returns": {
         "elementType": "",
-        "type": "NintendoAccountAuthorization"
+        "type": "NintendoAccountAuthorizationResponse"
       },
       "subscribable": false,
       "tags": [
@@ -13398,7 +13436,7 @@
       "nameSpace": "",
       "returns": {
         "elementType": "",
-        "type": "NintendoAccountNetworkServiceAccount"
+        "type": "NintendoAccountNetworkServiceAccountResponse"
       },
       "subscribable": false,
       "tags": [
@@ -14714,6 +14752,25 @@
       "help": "Automatically attempt to handle RSO processing up to the point the player is logged in.",
       "internal": false,
       "name": "PostPlayerSessionLifecycleV1Session",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Retry the last known internal action causing the current error state.",
+      "help": "",
+      "internal": false,
+      "name": "PostPlayerSessionLifecycleV1SessionRetry",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -19014,35 +19071,6 @@
       "help": "",
       "internal": false,
       "name": "PutEulaV1ProductContext",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "state",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "FirstPartyFulfillmentFirstPartyFulfillmentMockApiState"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Set whether the plugin should use a mock fulfillment API or not and if so, how the mock API should behave",
-      "help": "\n**Description**\n\nSets whether or not the plugin should use a mock fulfillment API or not, and if it should, how the mock API should behave.\n\n**Argument**\n\n* `state`: String value determining if the mock fulfillment API should be used, and if so, how it will behave. Possible values are listed below:\n    * `NoMock`: The plugin will not use the mock API and will toggle back to using the fulfillment API it was initialized with.\n    * `NoFulfillmentRequired`: The plugin is set to use the mock API. The mock API will return that no fulfillment is required.\n    * `FirstPartyQueryFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to query if there are\n      items to fulfill.\n    * `FirstPartyAuthorizationFailed`: The plugin is set to use the mock API. The mock API will return an error when attempting to fetch the\n      first party authorization.\n    * `FirstPartyQueryByRiotPayFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay could not\n      call the first party services to verify the fulfillment request.\n    * `RiotPayFulfillmentFailed`: The plugin is set to use the mock API. The mock API will return an error indicating RiotPay failed to complete\n      the fulfillment request entirely.\n    * `PartialFulfillmentCompleted`: The plugin is set to use the mock API. The mock API will return a response indicating that RiotPay managed\n      to fulfill some items, but failed to fulfill others.\n    * `Success`: The plugin is set to use the mock API. The mock API will return as if all items have been fulfilled successfully.\n",
-      "internal": false,
-      "name": "PutFirstPartyFulfillmentV1MockApiState",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -26587,6 +26615,16 @@
       "fields": [
         {
           "description": "",
+          "name": "commandGroupUuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "commandType",
           "offset": 0,
           "optional": false,
@@ -27687,6 +27725,206 @@
       "fields": [
         {
           "description": "",
+          "name": "executionTimeUs",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "measurementName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "measurementType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatMeasurementType"
+          }
+        },
+        {
+          "description": "",
+          "name": "optionalData",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatOptionalMeasurementInformation"
+          }
+        }
+      ],
+      "name": "ChatExecutionTime",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "measurementExecutionTimeUs",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "measurementName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "measurementsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "optionalData",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatOptionalMeasurementInformation"
+          }
+        },
+        {
+          "description": "",
+          "name": "totalExecutionTimeUs",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "ChatExecutionTimeSummarization",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "executionTimes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "ChatExecutionTime",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ChatExecutionTimes",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "allMeasurementsExecutionTimeUs",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "longestCategoryMeasurementExecutionTimeUs",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "longestCategoryMeasurementType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatMeasurementType"
+          }
+        },
+        {
+          "description": "",
+          "name": "longestIndividualMeasurement",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatExecutionTimeSummarization"
+          }
+        },
+        {
+          "description": "",
+          "name": "longestIndividualMeasurementType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatMeasurementType"
+          }
+        },
+        {
+          "description": "",
+          "name": "longestMeasurements",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "ChatExecutionTimesTelemetry",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "collapsed",
           "offset": 0,
           "optional": false,
@@ -28404,6 +28642,96 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "ChatMeasurementType",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "externalRequestDelete",
+          "value": 9
+        },
+        {
+          "description": "",
+          "name": "externalRequestGet",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "externalRequestHead",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "externalRequestPatch",
+          "value": 8
+        },
+        {
+          "description": "",
+          "name": "externalRequestPost",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "externalRequestPut",
+          "value": 7
+        },
+        {
+          "description": "",
+          "name": "fulfillPromise",
+          "value": 12
+        },
+        {
+          "description": "",
+          "name": "lockGrabTime",
+          "value": 14
+        },
+        {
+          "description": "",
+          "name": "lockHoldTime",
+          "value": 15
+        },
+        {
+          "description": "",
+          "name": "log",
+          "value": 13
+        },
+        {
+          "description": "",
+          "name": "notifyResourceCreated",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "notifyResourceDeleted",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "notifyResourceUpdated",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "queueCommand",
+          "value": 11
+        },
+        {
+          "description": "",
+          "name": "queueJob",
+          "value": 10
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -29107,6 +29435,86 @@
         }
       ],
       "name": "ChatMultiGamePresenceList",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "filename",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "firstGenericType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "functionName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "logMessage",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "logSeverity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ChatRiotLogLevel"
+          }
+        },
+        {
+          "description": "",
+          "name": "secondGenericType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "thirdGenericType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ChatOptionalMeasurementInformation",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -29826,6 +30234,36 @@
       "size": 0,
       "tags": [],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ChatRiotLogLevel",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "Always",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Error",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Okay",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Warning",
+          "value": 1
+        }
+      ]
     },
     {
       "description": "",
@@ -33881,7 +34319,7 @@
           "offset": 0,
           "optional": false,
           "type": {
-            "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo",
+            "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo",
             "type": "vector"
           }
         }
@@ -33926,7 +34364,7 @@
           }
         }
       ],
-      "name": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmenFailureInfo",
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentItemFulfillmentFailureInfo",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -33987,6 +34425,11 @@
         },
         {
           "description": "",
+          "name": "FulfillmentEmpty",
+          "value": 7
+        },
+        {
+          "description": "",
           "name": "NoFulfillmentRequired",
           "value": 1
         },
@@ -34008,9 +34451,109 @@
         {
           "description": "",
           "name": "Success",
-          "value": 7
+          "value": 8
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "failed",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfilled",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayFulfillmentResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "message",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentFailureInfo",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
     },
     {
       "description": "",
@@ -43005,6 +43548,56 @@
       "fields": [
         {
           "description": "",
+          "name": "authorization",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NintendoAccountAuthorization"
+          }
+        },
+        {
+          "description": "",
+          "name": "error_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NintendoAccountErrorCode"
+          }
+        }
+      ],
+      "name": "NintendoAccountAuthorizationResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "NintendoAccountErrorCode",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "user_canceled_authotization",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "user_canceled_login",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "showUserSelector",
           "offset": 0,
           "optional": false,
@@ -43035,6 +43628,36 @@
         }
       ],
       "name": "NintendoAccountNetworkServiceAccount",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "account",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NintendoAccountNetworkServiceAccount"
+          }
+        },
+        {
+          "description": "",
+          "name": "error_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NintendoAccountErrorCode"
+          }
+        }
+      ],
+      "name": "NintendoAccountNetworkServiceAccountResponse",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -50850,6 +51473,56 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "PlatformUiOnlinePlatform",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -50913,6 +51586,36 @@
         }
       ],
       "name": "PlatformUiPlatformUIState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "platform",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiOnlinePlatform"
+          }
+        }
+      ],
+      "name": "PlatformUiPlatformUser",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -51029,12 +51732,12 @@
         {
           "description": "",
           "name": "Authorized",
-          "value": 16
+          "value": 17
         },
         {
           "description": "",
           "name": "Error",
-          "value": 17
+          "value": 18
         },
         {
           "description": "",
@@ -51115,6 +51818,11 @@
           "description": "",
           "name": "PendingSignup",
           "value": 8
+        },
+        {
+          "description": "",
+          "name": "PendingUserInfoRefresh",
+          "value": 16
         }
       ]
     },
@@ -54113,6 +54821,756 @@
       "fields": [
         {
           "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesAccessToken",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "hint",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesAffinityV1AffinityInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesAffinityV2AffinityProductInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "game_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tag_line",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesAlias",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesAccessToken"
+          }
+        },
+        {
+          "description": "",
+          "name": "claims",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesIdClaims"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesIdToken"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesAuthorization",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "acct",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesAlias"
+          }
+        },
+        {
+          "description": "",
+          "name": "acr",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "country",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "login_country",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesIdClaims",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "nonce",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesIdToken",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinities",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityCachedProductAffinity",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityCachedServiceAffinity",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlayerPreferencesPlayerAffinityDataSource",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "localCache",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "serverAuthoritative",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "playerAffinityServiceUrl",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityPluginConfig",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ready",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityPluginStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinities",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityProductToken",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityServiceToken",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "shard",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "zone",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityShardInfo",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "source",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesPlayerAffinityDataSource"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityToken",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "affinities",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "source",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerPreferencesPlayerAffinityDataSource"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesPlayerAffinityTokenProduct",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "data",
           "offset": 0,
           "optional": false,
@@ -54223,6 +55681,26 @@
       "fields": [
         {
           "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesProductAffinityInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "region",
           "offset": 0,
           "optional": false,
@@ -54233,6 +55711,36 @@
         }
       ],
       "name": "PlayerPreferencesRegionLocale",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "hint",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerPreferencesServiceAffinityInput",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -55978,6 +57486,56 @@
       "fields": [
         {
           "description": "",
+          "name": "authorization",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleNintendoAccountAuthorization"
+          }
+        },
+        {
+          "description": "",
+          "name": "error_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleNintendoAccountErrorCode"
+          }
+        }
+      ],
+      "name": "PlayerSessionLifecycleNintendoAccountAuthorizationResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlayerSessionLifecycleNintendoAccountErrorCode",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "user_canceled_authotization",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "user_canceled_login",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "showUserSelector",
           "offset": 0,
           "optional": false,
@@ -56008,6 +57566,36 @@
         }
       ],
       "name": "PlayerSessionLifecycleNintendoAccountNetworkServiceAccount",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "account",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleNintendoAccountNetworkServiceAccount"
+          }
+        },
+        {
+          "description": "",
+          "name": "error_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleNintendoAccountErrorCode"
+          }
+        }
+      ],
+      "name": "PlayerSessionLifecycleNintendoAccountNetworkServiceAccountResponse",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -56314,12 +57902,12 @@
         {
           "description": "",
           "name": "Authorized",
-          "value": 16
+          "value": 17
         },
         {
           "description": "",
           "name": "Error",
-          "value": 17
+          "value": 18
         },
         {
           "description": "",
@@ -56400,6 +57988,11 @@
           "description": "",
           "name": "PendingSignup",
           "value": 8
+        },
+        {
+          "description": "",
+          "name": "PendingUserInfoRefresh",
+          "value": 16
         }
       ]
     },
@@ -62930,6 +64523,39 @@
           "value": 4
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ProductUpdateScannerAuthorization",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": []
     },
     {
       "description": "",
