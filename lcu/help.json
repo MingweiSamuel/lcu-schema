@@ -1014,16 +1014,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-inventory_v1_notifications",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-inventory_v1_signedInventory",
       "nameSpace": "",
       "tags": [],
