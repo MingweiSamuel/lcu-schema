@@ -21,6 +21,16 @@
       }
     },
     {
+      "description": "Fired when we need to minimize riot client",
+      "name": "OnClientMinimize",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
       "description": "Fired when a resource is changed.",
       "name": "OnJsonApiEvent",
       "nameSpace": "",
@@ -53,6 +63,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_native-ux_v1_should-keep-game-up-to-date",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_patch-proxy_v1_active-updates",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -5579,6 +5599,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Get list of active updates",
+      "help": "",
+      "internal": false,
+      "name": "GetPatchProxyV1ActiveUpdates",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "PatchProxyProductPatchlineKey",
+        "type": "vector"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Get all patch job information (sequence, productId, patchlineId) from the scheduler.",
       "help": "",
       "internal": false,
@@ -10777,6 +10818,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Returns all pids with cpu and memory usage data",
+      "help": "",
+      "internal": false,
+      "name": "GetSystemInfoV1Processes",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "SystemInfoProcessInfo",
+        "type": "vector"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Gets the millisecond UNIX timestamp of when the application was started.",
       "help": "",
       "internal": false,
@@ -15015,6 +15077,27 @@
       "help": "",
       "internal": false,
       "name": "PostProductLauncherV1DefaultProductFocus",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Minimize the default product",
+      "help": "",
+      "internal": false,
+      "name": "PostProductLauncherV1DefaultProductMinimize",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -46670,7 +46753,7 @@
         {
           "description": "",
           "name": "install_id",
-          "offset": 0,
+          "offset": 48,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46680,7 +46763,7 @@
       ],
       "name": "PatchProxyPatchProxyProduct",
       "nameSpace": "",
-      "size": 24,
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -46723,7 +46806,7 @@
         {
           "description": "",
           "name": "id",
-          "offset": 32,
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46733,26 +46816,6 @@
         {
           "description": "",
           "name": "url",
-          "offset": 56,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "tags",
-          "offset": 92,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "temp_path",
           "offset": 104,
           "optional": false,
           "type": {
@@ -46762,8 +46825,28 @@
         },
         {
           "description": "",
+          "name": "tags",
+          "offset": 140,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "temp_path",
+          "offset": 152,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "stage",
-          "offset": 128,
+          "offset": 176,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46773,26 +46856,6 @@
         {
           "description": "",
           "name": "path",
-          "offset": 156,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "bundles_url",
-          "offset": 180,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "metadata_path",
           "offset": 204,
           "optional": false,
           "type": {
@@ -46802,8 +46865,28 @@
         },
         {
           "description": "",
-          "name": "exclude_foreign_paths",
+          "name": "bundles_url",
           "offset": 228,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata_path",
+          "offset": 252,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "exclude_foreign_paths",
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46813,7 +46896,7 @@
         {
           "description": "",
           "name": "excluded_paths",
-          "offset": 232,
+          "offset": 280,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -46823,7 +46906,7 @@
         {
           "description": "",
           "name": "repair",
-          "offset": 336,
+          "offset": 384,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46833,7 +46916,7 @@
         {
           "description": "",
           "name": "deleteForeignPaths",
-          "offset": 337,
+          "offset": 388,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46843,7 +46926,7 @@
       ],
       "name": "PatchProxyPatchProxyRequest",
       "nameSpace": "",
-      "size": 344,
+      "size": 392,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -47598,6 +47681,39 @@
       "name": "PatchProxyProductAlias",
       "nameSpace": "",
       "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PatchProxyProductPatchlineKey",
+      "nameSpace": "",
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -82004,6 +82120,59 @@
       "nameSpace": "",
       "size": 60,
       "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ProcessName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ProcessId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "CpuUsage",
+          "offset": 32,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        },
+        {
+          "description": "",
+          "name": "MemUsageInMB",
+          "offset": 48,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        }
+      ],
+      "name": "SystemInfoProcessInfo",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin system-info"
+      ],
       "values": []
     },
     {
