@@ -99,56 +99,6 @@
         }
       }
     },
-    "OnClientMinimize": {
-      "description": "Fired when we need to minimize riot client",
-      "type": {
-        "PluginResourceEvent": {
-          "fields": [
-            {
-              "uri": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "eventType": {
-                "description": "",
-                "offset": 24,
-                "optional": false,
-                "type": {
-                  "PluginResourceEventType": {
-                    "values": [
-                      {
-                        "name": "Create",
-                        "value": 0
-                      },
-                      {
-                        "name": "Update",
-                        "value": 1
-                      },
-                      {
-                        "name": "Delete",
-                        "value": 2
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "data": {
-                "description": "",
-                "offset": 32,
-                "optional": false,
-                "type": "object"
-              }
-            }
-          ]
-        }
-      }
-    },
     "OnJsonApiEvent": {
       "description": "Fired when a resource is changed.",
       "type": {
@@ -298,55 +248,6 @@
       }
     },
     "OnJsonApiEvent_native-ux_v1_should-keep-game-up-to-date": {
-      "type": {
-        "PluginResourceEvent": {
-          "fields": [
-            {
-              "uri": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "eventType": {
-                "description": "",
-                "offset": 24,
-                "optional": false,
-                "type": {
-                  "PluginResourceEventType": {
-                    "values": [
-                      {
-                        "name": "Create",
-                        "value": 0
-                      },
-                      {
-                        "name": "Update",
-                        "value": 1
-                      },
-                      {
-                        "name": "Delete",
-                        "value": 2
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "data": {
-                "description": "",
-                "offset": 32,
-                "optional": false,
-                "type": "object"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "OnJsonApiEvent_patch-proxy_v1_active-updates": {
       "type": {
         "PluginResourceEvent": {
           "fields": [
@@ -3250,7 +3151,7 @@
                       {
                         "install_id": {
                           "description": "",
-                          "offset": 48,
+                          "offset": 0,
                           "optional": false,
                           "type": "string"
                         }
@@ -3263,7 +3164,7 @@
             {
               "id": {
                 "description": "",
-                "offset": 80,
+                "offset": 32,
                 "optional": false,
                 "type": "string"
               }
@@ -3271,7 +3172,7 @@
             {
               "url": {
                 "description": "",
-                "offset": 104,
+                "offset": 56,
                 "optional": false,
                 "type": "string"
               }
@@ -3279,7 +3180,7 @@
             {
               "tags": {
                 "description": "",
-                "offset": 140,
+                "offset": 92,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -3287,7 +3188,7 @@
             {
               "temp_path": {
                 "description": "",
-                "offset": 152,
+                "offset": 104,
                 "optional": false,
                 "type": "string"
               }
@@ -3295,7 +3196,7 @@
             {
               "stage": {
                 "description": "",
-                "offset": 176,
+                "offset": 128,
                 "optional": false,
                 "type": "uint8"
               }
@@ -3303,7 +3204,7 @@
             {
               "path": {
                 "description": "",
-                "offset": 204,
+                "offset": 156,
                 "optional": false,
                 "type": "string"
               }
@@ -3311,7 +3212,7 @@
             {
               "bundles_url": {
                 "description": "",
-                "offset": 228,
+                "offset": 180,
                 "optional": false,
                 "type": "string"
               }
@@ -3319,7 +3220,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 204,
                 "optional": false,
                 "type": "string"
               }
@@ -3327,7 +3228,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 228,
                 "optional": false,
                 "type": "bool"
               }
@@ -3335,7 +3236,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 232,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -3343,7 +3244,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 336,
                 "optional": false,
                 "type": "bool"
               }
@@ -3351,7 +3252,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 337,
                 "optional": false,
                 "type": "bool"
               }
@@ -7535,14 +7436,6 @@
       "returns": "string",
       "url": "/nintendo-account/v1/player-nickname",
       "usage": "GetNintendoAccountV1PlayerNickname"
-    },
-    "GetPatchProxyV1ActiveUpdates": {
-      "arguments": [],
-      "description": "Get list of active updates",
-      "http_method": "GET",
-      "returns": "vector of PatchProxyProductPatchlineKey",
-      "url": "/patch-proxy/v1/active-updates",
-      "usage": "GetPatchProxyV1ActiveUpdates"
     },
     "GetPatchProxyV1PatchJobs": {
       "arguments": [],
@@ -20988,14 +20881,6 @@
       "url": "/swagger/v3/openapi.json",
       "usage": "GetSwaggerV3OpenapiJson [plugins_and_core_only]"
     },
-    "GetSystemInfoV1Processes": {
-      "arguments": [],
-      "description": "Returns all pids with cpu and memory usage data",
-      "http_method": "GET",
-      "returns": "vector of SystemInfoProcessInfo",
-      "url": "/system-info/v1/processes",
-      "usage": "GetSystemInfoV1Processes"
-    },
     "GetTelemetryV1ApplicationStartTime": {
       "arguments": [],
       "description": "Gets the millisecond UNIX timestamp of when the application was started.",
@@ -27991,13 +27876,6 @@
       "http_method": "POST",
       "url": "/product-launcher/v1/default-product/focus",
       "usage": "PostProductLauncherV1DefaultProductFocus"
-    },
-    "PostProductLauncherV1DefaultProductMinimize": {
-      "arguments": [],
-      "description": "Minimize the default product",
-      "http_method": "POST",
-      "url": "/product-launcher/v1/default-product/minimize",
-      "usage": "PostProductLauncherV1DefaultProductMinimize"
     },
     "PostProductLauncherV1PartnerProduct": {
       "arguments": [],
@@ -38425,7 +38303,7 @@
                       {
                         "install_id": {
                           "description": "",
-                          "offset": 48,
+                          "offset": 0,
                           "optional": false,
                           "type": "string"
                         }
@@ -38438,7 +38316,7 @@
             {
               "id": {
                 "description": "",
-                "offset": 80,
+                "offset": 32,
                 "optional": false,
                 "type": "string"
               }
@@ -38446,7 +38324,7 @@
             {
               "url": {
                 "description": "",
-                "offset": 104,
+                "offset": 56,
                 "optional": false,
                 "type": "string"
               }
@@ -38454,7 +38332,7 @@
             {
               "tags": {
                 "description": "",
-                "offset": 140,
+                "offset": 92,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -38462,7 +38340,7 @@
             {
               "temp_path": {
                 "description": "",
-                "offset": 152,
+                "offset": 104,
                 "optional": false,
                 "type": "string"
               }
@@ -38470,7 +38348,7 @@
             {
               "stage": {
                 "description": "",
-                "offset": 176,
+                "offset": 128,
                 "optional": false,
                 "type": "uint8"
               }
@@ -38478,7 +38356,7 @@
             {
               "path": {
                 "description": "",
-                "offset": 204,
+                "offset": 156,
                 "optional": false,
                 "type": "string"
               }
@@ -38486,7 +38364,7 @@
             {
               "bundles_url": {
                 "description": "",
-                "offset": 228,
+                "offset": 180,
                 "optional": false,
                 "type": "string"
               }
@@ -38494,7 +38372,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 204,
                 "optional": false,
                 "type": "string"
               }
@@ -38502,7 +38380,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 228,
                 "optional": false,
                 "type": "bool"
               }
@@ -38510,7 +38388,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 232,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -38518,7 +38396,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 336,
                 "optional": false,
                 "type": "bool"
               }
@@ -38526,7 +38404,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 337,
                 "optional": false,
                 "type": "bool"
               }
@@ -38691,7 +38569,7 @@
                       {
                         "install_id": {
                           "description": "",
-                          "offset": 48,
+                          "offset": 0,
                           "optional": false,
                           "type": "string"
                         }
@@ -38704,7 +38582,7 @@
             {
               "id": {
                 "description": "",
-                "offset": 80,
+                "offset": 32,
                 "optional": false,
                 "type": "string"
               }
@@ -38712,7 +38590,7 @@
             {
               "url": {
                 "description": "",
-                "offset": 104,
+                "offset": 56,
                 "optional": false,
                 "type": "string"
               }
@@ -38720,7 +38598,7 @@
             {
               "tags": {
                 "description": "",
-                "offset": 140,
+                "offset": 92,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -38728,7 +38606,7 @@
             {
               "temp_path": {
                 "description": "",
-                "offset": 152,
+                "offset": 104,
                 "optional": false,
                 "type": "string"
               }
@@ -38736,7 +38614,7 @@
             {
               "stage": {
                 "description": "",
-                "offset": 176,
+                "offset": 128,
                 "optional": false,
                 "type": "uint8"
               }
@@ -38744,7 +38622,7 @@
             {
               "path": {
                 "description": "",
-                "offset": 204,
+                "offset": 156,
                 "optional": false,
                 "type": "string"
               }
@@ -38752,7 +38630,7 @@
             {
               "bundles_url": {
                 "description": "",
-                "offset": 228,
+                "offset": 180,
                 "optional": false,
                 "type": "string"
               }
@@ -38760,7 +38638,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 204,
                 "optional": false,
                 "type": "string"
               }
@@ -38768,7 +38646,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 228,
                 "optional": false,
                 "type": "bool"
               }
@@ -38776,7 +38654,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 232,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -38784,7 +38662,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 336,
                 "optional": false,
                 "type": "bool"
               }
@@ -38792,7 +38670,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 337,
                 "optional": false,
                 "type": "bool"
               }
@@ -68510,7 +68388,7 @@
         {
           "install_id": {
             "description": "",
-            "offset": 48,
+            "offset": 0,
             "optional": false,
             "type": "string"
           }
@@ -68600,7 +68478,7 @@
                   {
                     "install_id": {
                       "description": "",
-                      "offset": 48,
+                      "offset": 0,
                       "optional": false,
                       "type": "string"
                     }
@@ -68613,7 +68491,7 @@
         {
           "id": {
             "description": "",
-            "offset": 80,
+            "offset": 32,
             "optional": false,
             "type": "string"
           }
@@ -68621,7 +68499,7 @@
         {
           "url": {
             "description": "",
-            "offset": 104,
+            "offset": 56,
             "optional": false,
             "type": "string"
           }
@@ -68629,7 +68507,7 @@
         {
           "tags": {
             "description": "",
-            "offset": 140,
+            "offset": 92,
             "optional": false,
             "type": "vector of string"
           }
@@ -68637,7 +68515,7 @@
         {
           "temp_path": {
             "description": "",
-            "offset": 152,
+            "offset": 104,
             "optional": false,
             "type": "string"
           }
@@ -68645,7 +68523,7 @@
         {
           "stage": {
             "description": "",
-            "offset": 176,
+            "offset": 128,
             "optional": false,
             "type": "uint8"
           }
@@ -68653,7 +68531,7 @@
         {
           "path": {
             "description": "",
-            "offset": 204,
+            "offset": 156,
             "optional": false,
             "type": "string"
           }
@@ -68661,7 +68539,7 @@
         {
           "bundles_url": {
             "description": "",
-            "offset": 228,
+            "offset": 180,
             "optional": false,
             "type": "string"
           }
@@ -68669,7 +68547,7 @@
         {
           "metadata_path": {
             "description": "",
-            "offset": 252,
+            "offset": 204,
             "optional": false,
             "type": "string"
           }
@@ -68677,7 +68555,7 @@
         {
           "exclude_foreign_paths": {
             "description": "",
-            "offset": 276,
+            "offset": 228,
             "optional": false,
             "type": "bool"
           }
@@ -68685,7 +68563,7 @@
         {
           "excluded_paths": {
             "description": "",
-            "offset": 280,
+            "offset": 232,
             "optional": false,
             "type": "vector of string"
           }
@@ -68693,7 +68571,7 @@
         {
           "repair": {
             "description": "",
-            "offset": 384,
+            "offset": 336,
             "optional": false,
             "type": "bool"
           }
@@ -68701,7 +68579,7 @@
         {
           "deleteForeignPaths": {
             "description": "",
-            "offset": 388,
+            "offset": 337,
             "optional": false,
             "type": "bool"
           }
@@ -70175,26 +70053,6 @@
             "offset": 24,
             "optional": false,
             "type": "vector of string"
-          }
-        }
-      ]
-    },
-    "PatchProxyProductPatchlineKey": {
-      "fields": [
-        {
-          "productId": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "patchlineId": {
-            "description": "",
-            "offset": 24,
-            "optional": false,
-            "type": "string"
           }
         }
       ]
@@ -105273,42 +105131,6 @@
             "offset": 28,
             "optional": false,
             "type": "map of object"
-          }
-        }
-      ]
-    },
-    "SystemInfoProcessInfo": {
-      "fields": [
-        {
-          "ProcessName": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "ProcessId": {
-            "description": "",
-            "offset": 24,
-            "optional": false,
-            "type": "uint32"
-          }
-        },
-        {
-          "CpuUsage": {
-            "description": "",
-            "offset": 32,
-            "optional": true,
-            "type": "double"
-          }
-        },
-        {
-          "MemUsageInMB": {
-            "description": "",
-            "offset": 48,
-            "optional": true,
-            "type": "double"
           }
         }
       ]
