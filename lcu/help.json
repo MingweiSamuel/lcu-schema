@@ -1364,16 +1364,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-loyalty_v1_legacy-status-notification",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-loyalty_v1_status-notification",
       "nameSpace": "",
       "tags": [],
@@ -11564,6 +11554,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-player-behavior_v2_reporter-feedback",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-player-behavior_v3_reform-cards",
       "nameSpace": "",
       "tags": [],
@@ -17366,8 +17366,8 @@
       "name": "GetLolChatV1PlayerMutes",
       "nameSpace": "",
       "returns": {
-        "elementType": "string",
-        "type": "vector"
+        "elementType": "",
+        "type": "LolChatPlayerMutesResponse"
       },
       "tags": [
         "$remoting-binding-module",
@@ -22239,24 +22239,6 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-loot"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "GetLolLoyaltyV1LegacyStatusNotification",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "LolLoyaltyLoyaltyStatusNotification"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-loyalty"
       ],
       "threadSafe": false
     },
@@ -29315,6 +29297,126 @@
     {
       "arguments": [
         {
+          "description": "diagnostic with bool value",
+          "name": "diagnostic",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SLIBoolDiagnostic"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Add bool diagnostic to be sent with SLIs.",
+      "help": "",
+      "name": "PatchTelemetryV3UptimeTrackingAddBoolDiagnostic",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "diagnostic with double value",
+          "name": "diagnostic",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SLIDoubleDiagnostic"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Add double diagnostic to be sent with SLIs.",
+      "help": "",
+      "name": "PatchTelemetryV3UptimeTrackingAddDoubleDiagnostic",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "diagnostic with int value",
+          "name": "diagnostic",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SLIIntDiagnostic"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Add int diagnostic to be sent with SLIs.",
+      "help": "",
+      "name": "PatchTelemetryV3UptimeTrackingAddIntDiagnostic",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "The label containing key and value",
+          "name": "label",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SLILabel"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Add label to be sent with SLI ",
+      "help": "",
+      "name": "PatchTelemetryV3UptimeTrackingAddLabel",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "diagnostic with string value",
+          "name": "diagnostic",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SLIStringDiagnostic"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Add string diagnostic to be sent with SLIs.",
+      "help": "",
+      "name": "PatchTelemetryV3UptimeTrackingAddStringDiagnostic",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
           "description": "Cookie to set",
           "name": "cookie",
           "optional": false,
@@ -34694,7 +34796,7 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "PostLolLoyaltyV1UpdateTftInventory",
+      "name": "PostLolLoyaltyV1UpdateLoyaltyInventory",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -37628,6 +37730,54 @@
       "description": "Adds a new event to be sent to Dradis and/or other analytics/monitoring data sinks using the Riot Data API that will be sent only once during this client executable run regardless of any javascript frontend restarts. All events will have their eventType prefixed with \"riot__rclient__\"",
       "help": "",
       "name": "PostTelemetryV3EventsOnceByEventType",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "request containing the name of the availability item we are tracking and its error message",
+          "name": "request",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NotifyFailureRequest"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Mark an availability item's operation as failure on uptime tracking mechanism.",
+      "help": "",
+      "name": "PostTelemetryV3UptimeTrackingNotifyFailure",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "request containing the name of the availability item we are tracking",
+          "name": "request",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NotifySuccessRequest"
+          }
+        }
+      ],
+      "async": "",
+      "description": "Mark an availability item's operation as success on uptime tracking mechanism.",
+      "help": "",
+      "name": "PostTelemetryV3UptimeTrackingNotifySuccess",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -53444,6 +53594,11 @@
         },
         {
           "description": "",
+          "name": "ITEM",
+          "value": 3
+        },
+        {
+          "description": "",
           "name": "NONE",
           "value": 0
         }
@@ -53587,7 +53742,7 @@
           "offset": 48,
           "optional": false,
           "type": {
-            "elementType": "uint64",
+            "elementType": "int64",
             "type": "vector"
           }
         },
@@ -54321,7 +54476,7 @@
         },
         {
           "description": "",
-          "name": "tokens",
+          "name": "challengeIds",
           "offset": 48,
           "optional": false,
           "type": {
@@ -62489,11 +62644,21 @@
             "elementType": "",
             "type": "LolChampionsLoyaltyStatus"
           }
+        },
+        {
+          "description": "",
+          "name": "reloadInventory",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
         }
       ],
       "name": "LolChampionsLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 4,
+      "size": 8,
       "tags": [
         "Plugins",
         "Plugin lol-champions"
@@ -64579,6 +64744,105 @@
       "name": "LolChatDebugResource",
       "nameSpace": "",
       "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isLocalPlayer",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolChatEndOfGamePlayer",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "teams",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolChatEndOfGameTeam",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "localPlayer",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChatEndOfGamePlayer"
+          }
+        }
+      ],
+      "name": "LolChatEndOfGameStats",
+      "nameSpace": "",
+      "size": 40,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "players",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolChatEndOfGamePlayer",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "isPlayerTeam",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolChatEndOfGameTeam",
+      "nameSpace": "",
+      "size": 16,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -67393,6 +67657,39 @@
       "name": "LolChatPlayerMuteUpdate",
       "nameSpace": "",
       "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "mutedPuuids",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "systemMutedPuuids",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolChatPlayerMutesResponse",
+      "nameSpace": "",
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -92781,11 +93078,21 @@
             "elementType": "",
             "type": "LolInventoryLoyaltyRewards"
           }
+        },
+        {
+          "description": "",
+          "name": "reloadInventory",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
         }
       ],
       "name": "LolInventoryLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 52,
+      "size": 56,
       "tags": [
         "Plugins",
         "Plugin lol-inventory"
@@ -115372,11 +115679,21 @@
             "elementType": "",
             "type": "LolLoyaltyLoyaltyRewards"
           }
+        },
+        {
+          "description": "",
+          "name": "reloadInventory",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
         }
       ],
       "name": "LolLoyaltyLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 56,
+      "size": 60,
       "tags": [
         "Plugins",
         "Plugin lol-loyalty"
@@ -158132,6 +158449,56 @@
       "fields": [
         {
           "description": "",
+          "name": "availabilityItemName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "failureInfo",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "NotifyFailureRequest",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "availabilityItemName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "NotifySuccessRequest",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "renderer",
           "offset": 0,
           "optional": false,
@@ -164431,6 +164798,156 @@
       "name": "RosterWithdraw",
       "nameSpace": "",
       "size": 64,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "value",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "SLIBoolDiagnostic",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "value",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        }
+      ],
+      "name": "SLIDoubleDiagnostic",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "value",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "SLIIntDiagnostic",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "value",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "SLILabel",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "value",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "SLIStringDiagnostic",
+      "nameSpace": "",
+      "size": 24,
       "tags": [],
       "values": []
     },
