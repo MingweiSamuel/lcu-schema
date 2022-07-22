@@ -224,6 +224,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-catalog_v1_items",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-challenges_v1_client-state",
       "nameSpace": "",
       "tags": [],
@@ -1365,6 +1375,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-maps_v2_maps",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-marketing-preferences_v1_partition",
       "nameSpace": "",
       "tags": [],
       "type": {
