@@ -14074,52 +14074,6 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "DeleteLolStatstonesV1EogNotifications",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-statstones"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "key",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "DeleteLolStatstonesV1EogNotificationsByKey",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-statstones"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "async": "",
-      "description": "",
-      "help": "",
       "name": "DeleteLolStatstonesV1VignetteNotifications",
       "nameSpace": "",
       "returns": {
@@ -23430,6 +23384,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolPersonalizedOffersV1HasPermissions",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-personalized-offers"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolPersonalizedOffersV1Modal",
       "nameSpace": "",
       "returns": {
@@ -25663,15 +25635,25 @@
       "threadSafe": false
     },
     {
-      "arguments": [],
+      "arguments": [
+        {
+          "description": "",
+          "name": "gameId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolStatstonesV1EogNotifications",
+      "name": "GetLolStatstonesV1EogNotificationsByGameId",
       "nameSpace": "",
       "returns": {
-        "elementType": "object",
-        "type": "vector"
+        "elementType": "",
+        "type": "LolStatstonesEogNotificationEnvelope"
       },
       "tags": [
         "$remoting-binding-module",
@@ -30540,34 +30522,6 @@
       "returns": {
         "elementType": "",
         "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-chat"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "auth",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolChatAuthResourcePlain"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolChatV1SessionPlain",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "LolChatSessionResource"
       },
       "tags": [
         "$remoting-binding-module",
@@ -62930,49 +62884,6 @@
       "fields": [
         {
           "description": "",
-          "name": "username",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "password",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
-        }
-      ],
-      "name": "LolChatAuthResourcePlain",
-      "nameSpace": "",
-      "size": 64,
-      "tags": [
-        "Plugins",
-        "Plugin lol-chat"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "token",
           "offset": 0,
           "optional": false,
@@ -63024,18 +62935,13 @@
       "values": [
         {
           "description": "",
-          "name": "plain",
+          "name": "rsoCreate",
           "value": 0
         },
         {
           "description": "",
-          "name": "rsoCreate",
-          "value": 1
-        },
-        {
-          "description": "",
           "name": "rsoRefresh",
-          "value": 2
+          "value": 1
         }
       ]
     },
@@ -87313,21 +87219,11 @@
             "elementType": "",
             "type": "uint64"
           }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
         }
       ],
       "name": "LolGameSettingsLoginSession",
       "nameSpace": "",
-      "size": 40,
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-game-settings"
@@ -90533,11 +90429,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "senderPuuid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolHonorV2Honor",
       "nameSpace": "",
-      "size": 48,
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin lol-honor-v2"
@@ -90571,6 +90477,16 @@
           "description": "",
           "name": "RecallRewardEnabled",
           "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "HonorVisibilityEnabled",
+          "offset": 9,
           "optional": false,
           "type": {
             "elementType": "",
@@ -90629,6 +90545,62 @@
         "Plugin lol-honor-v2"
       ],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolHonorV2LoginSessionStates"
+          }
+        }
+      ],
+      "name": "LolHonorV2LoginSession",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honor-v2"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolHonorV2LoginSessionStates",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honor-v2"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "IN_PROGRESS",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "LOGGING_OUT",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "SUCCEEDED",
+          "value": 1
+        }
+      ]
     },
     {
       "description": "",
@@ -92865,16 +92837,6 @@
           "type": {
             "elementType": "",
             "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
           }
         },
         {
@@ -95924,18 +95886,8 @@
         },
         {
           "description": "",
-          "name": "gasToken",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
-        },
-        {
-          "description": "",
           "name": "puuid",
-          "offset": 64,
+          "offset": 48,
           "optional": false,
           "type": {
             "elementType": "",
@@ -95945,7 +95897,7 @@
       ],
       "name": "LolLoadoutsLoginSession",
       "nameSpace": "",
-      "size": 88,
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin lol-loadouts"
@@ -101006,18 +100958,8 @@
         },
         {
           "description": "",
-          "name": "gasToken",
-          "offset": 56,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
-        },
-        {
-          "description": "",
           "name": "accountId",
-          "offset": 72,
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "",
@@ -101027,7 +100969,7 @@
         {
           "description": "",
           "name": "summonerId",
-          "offset": 80,
+          "offset": 64,
           "optional": false,
           "type": {
             "elementType": "",
@@ -101037,7 +100979,7 @@
         {
           "description": "",
           "name": "idToken",
-          "offset": 88,
+          "offset": 72,
           "optional": false,
           "type": {
             "elementType": "",
@@ -101047,7 +100989,7 @@
         {
           "description": "",
           "name": "puuid",
-          "offset": 112,
+          "offset": 96,
           "optional": false,
           "type": {
             "elementType": "",
@@ -101057,7 +100999,7 @@
         {
           "description": "",
           "name": "connected",
-          "offset": 136,
+          "offset": 120,
           "optional": false,
           "type": {
             "elementType": "",
@@ -101067,7 +101009,7 @@
       ],
       "name": "LolLobbyLoginSession",
       "nameSpace": "",
-      "size": 144,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-lobby"
@@ -109038,18 +108980,8 @@
         },
         {
           "description": "",
-          "name": "gasToken",
-          "offset": 56,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
-        },
-        {
-          "description": "",
           "name": "accountId",
-          "offset": 72,
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109059,7 +108991,7 @@
         {
           "description": "",
           "name": "summonerId",
-          "offset": 80,
+          "offset": 64,
           "optional": true,
           "type": {
             "elementType": "",
@@ -109069,7 +109001,7 @@
         {
           "description": "",
           "name": "isInLoginQueue",
-          "offset": 96,
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109079,7 +109011,7 @@
         {
           "description": "",
           "name": "error",
-          "offset": 100,
+          "offset": 84,
           "optional": true,
           "type": {
             "elementType": "",
@@ -109089,7 +109021,7 @@
         {
           "description": "",
           "name": "idToken",
-          "offset": 176,
+          "offset": 160,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109099,7 +109031,7 @@
         {
           "description": "",
           "name": "puuid",
-          "offset": 200,
+          "offset": 184,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109109,7 +109041,7 @@
         {
           "description": "",
           "name": "isNewPlayer",
-          "offset": 224,
+          "offset": 208,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109119,7 +109051,7 @@
         {
           "description": "",
           "name": "connected",
-          "offset": 225,
+          "offset": 209,
           "optional": false,
           "type": {
             "elementType": "",
@@ -109129,7 +109061,7 @@
       ],
       "name": "LolLoginLoginSession",
       "nameSpace": "",
-      "size": 232,
+      "size": 216,
       "tags": [
         "Plugins",
         "Plugin lol-login"
@@ -109224,21 +109156,11 @@
             "elementType": "",
             "type": "string"
           }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
         }
       ],
       "name": "LolLoginPlatformGeneratedCredentials",
       "nameSpace": "",
-      "size": 64,
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-login"
@@ -116365,18 +116287,8 @@
         },
         {
           "description": "",
-          "name": "gasToken",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
-        },
-        {
-          "description": "",
           "name": "idToken",
-          "offset": 40,
+          "offset": 24,
           "optional": false,
           "type": {
             "elementType": "",
@@ -116386,7 +116298,7 @@
       ],
       "name": "LolMatchHistoryLoginSession",
       "nameSpace": "",
-      "size": 64,
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-match-history"
@@ -132778,29 +132690,6 @@
       "fields": [
         {
           "description": "",
-          "name": "phase",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolPreEndOfGameGameflowPhase"
-          }
-        }
-      ],
-      "name": "LolPreEndOfGameGameflowSessionResource",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [
-        "Plugins",
-        "Plugin lol-pre-end-of-game"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "name",
           "offset": 0,
           "optional": false,
@@ -147607,21 +147496,11 @@
             "elementType": "",
             "type": "uint64"
           }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
         }
       ],
       "name": "LolSettingsLoginSession",
       "nameSpace": "",
-      "size": 40,
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-settings"
@@ -152248,21 +152127,11 @@
             "elementType": "",
             "type": "string"
           }
-        },
-        {
-          "description": "",
-          "name": "gasToken",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "object"
-          }
         }
       ],
       "name": "LolStoreLoginSession",
       "nameSpace": "",
-      "size": 64,
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-store"
