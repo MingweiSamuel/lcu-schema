@@ -15727,6 +15727,9 @@
     },
     "RsoAuthenticatorV1OpenIdConnectInput": {
       "properties": {
+        "authorization_code": {
+          "type": "string"
+        },
         "id_token": {
           "type": "string"
         }
@@ -27365,6 +27368,27 @@
         "tags": [
           "Plugins",
           "Plugin product-integration"
+        ]
+      }
+    },
+    "/product-integration/v1/locale": {
+      "get": {
+        "description": "Returns the locale the product should be running with. Prioritizes the product locale setting, followed by the SDK locale, and falling back to `en_US` if all else fails.",
+        "operationId": "GetProductIntegrationV1Locale",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns the locale the product should be running with. Prioritizes the product locale setting, followed by the SDK locale, and falling back to `en_US` if all else fails.",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration",
+          "Subscribable"
         ]
       }
     },

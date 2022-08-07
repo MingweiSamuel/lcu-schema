@@ -21,8 +21,28 @@
       }
     },
     {
+      "description": "Fired when we need to minimize riot client",
+      "name": "OnClientMinimize",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
       "description": "Fired when a resource is changed.",
       "name": "OnJsonApiEvent",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_agent_v1_registry-config",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -53,6 +73,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_native-ux_v1_should-keep-game-up-to-date",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_patch-proxy_v1_active-updates",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -460,6 +490,27 @@
     }
   ],
   "functions": [
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Delete the registry config for Riot Client on startup which will disable launching riot client on start up",
+      "help": "",
+      "internal": false,
+      "name": "DeleteAgentV1RegistryConfigStartup",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin agent"
+      ],
+      "threadSafe": false
+    },
     {
       "arguments": [
         {
@@ -3089,6 +3140,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Get the registry config for Riot Client on startup",
+      "help": "",
+      "internal": false,
+      "name": "GetAgentV1RegistryConfigStartup",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin agent"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Get the list of pending and active requests being handled by the agent",
       "help": "",
       "internal": false,
@@ -5579,6 +5651,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Get list of active updates",
+      "help": "",
+      "internal": false,
+      "name": "GetPatchProxyV1ActiveUpdates",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "PatchProxyProductPatchlineKey",
+        "type": "vector"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Get all patch job information (sequence, productId, patchlineId) from the scheduler.",
       "help": "",
       "internal": false,
@@ -7210,6 +7303,25 @@
       "returns": {
         "elementType": "ProductIntegrationDetachedSession",
         "type": "vector"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns the locale the product should be running with. Prioritizes the product locale setting, followed by the SDK locale, and falling back to `en_US` if all else fails.",
+      "help": "Returns the locale the product should be running with. Prioritizes the product locale setting, followed by the SDK locale, and falling back to `en_US` if all else fails.",
+      "internal": false,
+      "name": "GetProductIntegrationV1Locale",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
       },
       "subscribable": false,
       "tags": [
@@ -10770,6 +10882,27 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns all pids with cpu and memory usage data",
+      "help": "",
+      "internal": false,
+      "name": "GetSystemInfoV1Processes",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "SystemInfoProcessInfo",
+        "type": "vector"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-info"
       ],
       "threadSafe": false
     },
@@ -15032,6 +15165,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Minimize the default product",
+      "help": "",
+      "internal": false,
+      "name": "PostProductLauncherV1DefaultProductMinimize",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Launches the partner product. Returns the session ID.",
       "help": "",
       "internal": false,
@@ -18206,6 +18360,27 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Set the registry config for Riot Client on startup",
+      "help": "",
+      "internal": false,
+      "name": "PutAgentV1RegistryConfigStartup",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin agent"
       ],
       "threadSafe": false
     },
@@ -22459,6 +22634,110 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Resumes the routine to pull SystemInfo",
+      "help": "",
+      "internal": false,
+      "name": "PutSystemInfoV1RoutineResume",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "interval",
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "float"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Starts the routine to pull SystemInfo and send a warning to riot client if CPU or memory usage is high",
+      "help": "",
+      "internal": false,
+      "name": "PutSystemInfoV1RoutineStart",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Stops the routine to pull SystemInfo",
+      "help": "",
+      "internal": false,
+      "name": "PutSystemInfoV1RoutineStop",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "NotificationData",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "SystemTrayNotificationData"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Display a native notification tooltips in the systray",
+      "help": "",
+      "internal": false,
+      "name": "PutSystemTrayV1NativeNotificationShow",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin system-tray"
       ],
       "threadSafe": false
     },
@@ -41083,6 +41362,26 @@
       "fields": [
         {
           "description": "",
+          "name": "pcbId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LoyaltyResource",
+      "nameSpace": "",
+      "size": 8,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "patchlineId",
           "offset": 0,
           "optional": false,
@@ -46670,7 +46969,7 @@
         {
           "description": "",
           "name": "install_id",
-          "offset": 0,
+          "offset": 48,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46680,7 +46979,7 @@
       ],
       "name": "PatchProxyPatchProxyProduct",
       "nameSpace": "",
-      "size": 24,
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -46723,7 +47022,7 @@
         {
           "description": "",
           "name": "id",
-          "offset": 32,
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46733,26 +47032,6 @@
         {
           "description": "",
           "name": "url",
-          "offset": 56,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "tags",
-          "offset": 92,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "temp_path",
           "offset": 104,
           "optional": false,
           "type": {
@@ -46762,8 +47041,28 @@
         },
         {
           "description": "",
+          "name": "tags",
+          "offset": 140,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "temp_path",
+          "offset": 152,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "stage",
-          "offset": 128,
+          "offset": 176,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46773,26 +47072,6 @@
         {
           "description": "",
           "name": "path",
-          "offset": 156,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "bundles_url",
-          "offset": 180,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "metadata_path",
           "offset": 204,
           "optional": false,
           "type": {
@@ -46802,8 +47081,28 @@
         },
         {
           "description": "",
-          "name": "exclude_foreign_paths",
+          "name": "bundles_url",
           "offset": 228,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata_path",
+          "offset": 252,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "exclude_foreign_paths",
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46813,7 +47112,7 @@
         {
           "description": "",
           "name": "excluded_paths",
-          "offset": 232,
+          "offset": 280,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -46823,7 +47122,7 @@
         {
           "description": "",
           "name": "repair",
-          "offset": 336,
+          "offset": 384,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46833,7 +47132,7 @@
         {
           "description": "",
           "name": "deleteForeignPaths",
-          "offset": 337,
+          "offset": 388,
           "optional": false,
           "type": {
             "elementType": "",
@@ -46843,7 +47142,7 @@
       ],
       "name": "PatchProxyPatchProxyRequest",
       "nameSpace": "",
-      "size": 344,
+      "size": 392,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -47598,6 +47897,39 @@
       "name": "PatchProxyProductAlias",
       "nameSpace": "",
       "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PatchProxyProductPatchlineKey",
+      "nameSpace": "",
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -64559,6 +64891,29 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "ProductUpdateScannerConfigType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "player",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "public",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -64584,6 +64939,145 @@
       "name": "ProductUpdateScannerPatchlineInfo",
       "nameSpace": "",
       "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "installId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "fullName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "configType",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ProductUpdateScannerConfigType"
+          }
+        }
+      ],
+      "name": "ProductUpdateScannerProductRegistryPatchline",
+      "nameSpace": "",
+      "size": 76,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlines",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "ProductUpdateScannerProductRegistryPatchline",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ProductUpdateScannerProductRegistryProduct",
+      "nameSpace": "",
+      "size": 60,
+      "tags": [
+        "Plugins",
+        "Plugin product-update-scanner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ProductUpdateScannerProductSession",
+      "nameSpace": "",
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin product-update-scanner"
@@ -77412,6 +77906,16 @@
       "fields": [
         {
           "description": "",
+          "name": "authorization_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "id_token",
           "offset": 0,
           "optional": false,
@@ -80812,6 +81316,16 @@
       "fields": [
         {
           "description": "",
+          "name": "authorization_code",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "id_token",
           "offset": 0,
           "optional": false,
@@ -82011,6 +82525,92 @@
       "fields": [
         {
           "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "SystemInfoAuthorization",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ProcessName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ProcessId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "CpuUsage",
+          "offset": 32,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        },
+        {
+          "description": "",
+          "name": "MemUsageInMB",
+          "offset": 48,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        }
+      ],
+      "name": "SystemInfoProcessInfo",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin system-info"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "patchlineVisibleName",
           "offset": 0,
           "optional": false,
@@ -82200,6 +82800,69 @@
       "nameSpace": "",
       "size": 144,
       "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "title",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "body",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "SystemTrayNativeNotificationData",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "title",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "body",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "SystemTrayNotificationData",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin system-tray"
+      ],
       "values": []
     },
     {
