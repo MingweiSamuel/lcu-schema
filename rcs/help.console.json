@@ -49,6 +49,56 @@
         }
       }
     },
+    "OnClientFlash": {
+      "description": "Fired when we need to flash riot client",
+      "type": {
+        "PluginResourceEvent": {
+          "fields": [
+            {
+              "uri": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "eventType": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": {
+                  "PluginResourceEventType": {
+                    "values": [
+                      {
+                        "name": "Create",
+                        "value": 0
+                      },
+                      {
+                        "name": "Update",
+                        "value": 1
+                      },
+                      {
+                        "name": "Delete",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "data": {
+                "description": "",
+                "offset": 32,
+                "optional": false,
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
     "OnClientFocus": {
       "description": "Fired when we need focus on mac riot client",
       "type": {
@@ -2013,6 +2063,55 @@
       }
     },
     "OnJsonApiEvent_rnet-self-update_v1_status": {
+      "type": {
+        "PluginResourceEvent": {
+          "fields": [
+            {
+              "uri": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "eventType": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": {
+                  "PluginResourceEventType": {
+                    "values": [
+                      {
+                        "name": "Create",
+                        "value": 0
+                      },
+                      {
+                        "name": "Update",
+                        "value": 1
+                      },
+                      {
+                        "name": "Delete",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "data": {
+                "description": "",
+                "offset": 32,
+                "optional": false,
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "OnJsonApiEvent_startup-config_v1_registry-config": {
       "type": {
         "PluginResourceEvent": {
           "fields": [
@@ -4120,6 +4219,14 @@
       "url": "/rso-mobile-ui/v1/region-election",
       "usage": "DeleteRsoMobileUiV1RegionElection"
     },
+    "DeleteStartupConfigV1RegistryConfig": {
+      "arguments": [],
+      "description": "Delete the registry config for Riot Client on startup which will disable launching riot client on start up",
+      "http_method": "DELETE",
+      "returns": "object",
+      "url": "/startup-config/v1/registry-config",
+      "usage": "DeleteStartupConfigV1RegistryConfig"
+    },
     "DeleteTelemetryV2MetadataBySchemaPrefixByMetadataEntityByPropertyName": {
       "arguments": [
         {
@@ -4602,7 +4709,11 @@
         },
         {
           "policyType": {
-            "type": "string"
+            "type": {
+              "AntiAddictionPolicyType": {
+                "fields": []
+              }
+            }
           }
         }
       ],
@@ -5970,7 +6081,11 @@
       "arguments": [
         {
           "type": {
-            "type": "string"
+            "type": {
+              "ClientConfigConfigType": {
+                "fields": []
+              }
+            }
           }
         },
         {
@@ -6019,7 +6134,11 @@
         },
         {
           "type": {
-            "type": "string"
+            "type": {
+              "ClientConfigConfigType": {
+                "fields": []
+              }
+            }
           }
         },
         {
@@ -6057,7 +6176,11 @@
       "arguments": [
         {
           "type": {
-            "type": "string"
+            "type": {
+              "ClientConfigConfigType": {
+                "fields": []
+              }
+            }
           }
         }
       ],
@@ -12083,11 +12206,19 @@
     },
     "GetPlatformUiV1Enabled": {
       "arguments": [],
-      "description": "Returns true if UI is enabled",
+      "description": "Returns true if platform-ui is enabled",
       "http_method": "GET",
       "returns": "bool",
       "url": "/platform-ui/v1/enabled",
       "usage": "GetPlatformUiV1Enabled"
+    },
+    "GetPlatformUiV1SdkInstanceId": {
+      "arguments": [],
+      "description": "Returns sdk instance id to be used with platform-ui views, necessary when running multiple instances of the SDK",
+      "http_method": "GET",
+      "returns": "string",
+      "url": "/platform-ui/v1/sdk-instance-id",
+      "usage": "GetPlatformUiV1SdkInstanceId"
     },
     "GetPlatformUiV1Status": {
       "arguments": [],
@@ -20299,6 +20430,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -21031,6 +21216,14 @@
       "returns": "bool",
       "url": "/scd/v1/enabled-in-config",
       "usage": "GetScdV1EnabledInConfig"
+    },
+    "GetStartupConfigV1RegistryConfig": {
+      "arguments": [],
+      "description": "Get the registry config for Riot Client on startup",
+      "http_method": "GET",
+      "returns": "bool",
+      "url": "/startup-config/v1/registry-config",
+      "usage": "GetStartupConfigV1RegistryConfig"
     },
     "GetSwaggerV1ApiDocs": {
       "arguments": [],
@@ -24687,7 +24880,7 @@
         }
       ],
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
       "http_method": "POST",
       "returns": {
         "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse": {
@@ -28059,6 +28252,13 @@
       "url": "/product-launcher/v1/default-product",
       "usage": "PostProductLauncherV1DefaultProduct"
     },
+    "PostProductLauncherV1DefaultProductFlash": {
+      "arguments": [],
+      "description": "Flash the default product",
+      "http_method": "POST",
+      "url": "/product-launcher/v1/default-product/flash",
+      "usage": "PostProductLauncherV1DefaultProductFlash"
+    },
     "PostProductLauncherV1DefaultProductFocus": {
       "arguments": [],
       "description": "Brings the window of the default product into focus",
@@ -30822,6 +31022,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -31151,6 +31405,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -31510,6 +31818,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -31895,6 +32257,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -32245,6 +32661,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -32605,6 +33075,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -32964,6 +33488,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -33315,6 +33893,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -33636,6 +34268,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -33996,6 +34682,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -34283,6 +35023,806 @@
       "url": "/rso-authenticator/v1/authentication/riot-identity",
       "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentity <riotIdentity>"
     },
+    "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete": {
+      "arguments": [
+        {
+          "signupCompleteInput": {
+            "type": {
+              "RsoAuthenticatorV1RiotIdentitySignupCompleteInput": {
+                "fields": [
+                  {
+                    "birth_date": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "email_address": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "locale": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "newsletter": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "password": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "tou_agree": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "username": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Complete a new Riot Identity Signup authentication session.",
+      "http_method": "POST",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/riot-identity-signup/complete",
+      "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete <signupCompleteInput>"
+    },
+    "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart": {
+      "arguments": [
+        {
+          "signupStartInput": {
+            "type": {
+              "RsoAuthenticatorV1RiotIdentitySignupStartInput": {
+                "fields": [
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "remember": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Start a new Riot Identity Signup authentication session.",
+      "http_method": "POST",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/riot-identity-signup/start",
+      "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart <signupStartInput>"
+    },
     "PostRsoAuthenticatorV1AuthenticationXbox": {
       "arguments": [
         {
@@ -34346,6 +35886,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -42120,6 +43714,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -42442,6 +44090,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -42742,6 +44444,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -43072,6 +44828,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -43427,6 +45237,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -43748,6 +45612,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -44079,6 +45997,60 @@
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
             {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "country": {
                 "description": "",
                 "offset": 0,
@@ -44373,6 +46345,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -44703,6 +46729,60 @@
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
           "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
             {
               "country": {
                 "description": "",
@@ -45066,6 +47146,14 @@
       },
       "url": "/rso-mobile-ui/v1/region-election",
       "usage": "PutRsoMobileUiV1RegionElection <request>"
+    },
+    "PutStartupConfigV1RegistryConfig": {
+      "arguments": [],
+      "description": "Set the registry config for Riot Client on startup",
+      "http_method": "PUT",
+      "returns": "object",
+      "url": "/startup-config/v1/registry-config",
+      "usage": "PutStartupConfigV1RegistryConfig"
     },
     "PutSystemInfoV1RoutineResume": {
       "arguments": [],
@@ -46227,6 +48315,7 @@
       "arguments": [
         {
           "AuthorizationConsent": {
+            "optional": true,
             "type": "bool"
           }
         }
@@ -64481,6 +66570,66 @@
         }
       ]
     },
+    "NintendoAccountOnlinePlatform": {
+      "values": [
+        {
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
+    "NintendoAccountPlatformUser": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "NintendoAccountOnlinePlatform": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
     "OnlinePlatform": {
       "values": [
         {
@@ -75465,6 +77614,22 @@
         }
       ]
     },
+    "PlatformUiAuthenticationTypeEnum": {
+      "values": [
+        {
+          "name": "SSOAuth",
+          "value": 0
+        },
+        {
+          "name": "RiotAuth",
+          "value": 1
+        },
+        {
+          "name": "None",
+          "value": 2
+        }
+      ]
+    },
     "PlatformUiEligibilityResponse": {
       "fields": [
         {
@@ -75678,6 +77843,78 @@
         {
           "name": "playstation",
           "value": 7
+        }
+      ]
+    },
+    "PlatformUiMultifactorDetails": {
+      "fields": [
+        {
+          "email": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "method": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiMultifactorMethod": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "methods": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "mfaVersion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "multiFactorCodeLength": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "PlatformUiMultifactorMethod": {
+      "values": [
+        {
+          "name": "method_not_set",
+          "value": 0
+        },
+        {
+          "name": "email",
+          "value": 1
+        },
+        {
+          "name": "authenticator",
+          "value": 2
+        },
+        {
+          "name": "sms",
+          "value": 3
+        },
+        {
+          "name": "push",
+          "value": 4
         }
       ]
     },
@@ -76130,6 +78367,151 @@
         {
           "name": "error",
           "value": 4
+        }
+      ]
+    },
+    "PlatformUiSessionResponse": {
+      "fields": [
+        {
+          "authenticationType": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiAuthenticationTypeEnum": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "country": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "error": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "multifactor": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiMultifactorDetails": {
+                "fields": [
+                  {
+                    "email": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "method": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "PlatformUiMultifactorMethod": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "methods": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "mfaVersion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "multiFactorCodeLength": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "persistLogin": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "securityProfile": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiSessionResponseType": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlatformUiSessionResponseType": {
+      "values": [
+        {
+          "name": "unknown_authentication_response",
+          "value": 0
+        },
+        {
+          "name": "needs_credentials",
+          "value": 1
+        },
+        {
+          "name": "needs_password",
+          "value": 2
+        },
+        {
+          "name": "needs_multifactor_verification",
+          "value": 3
+        },
+        {
+          "name": "authenticated",
+          "value": 4
+        },
+        {
+          "name": "error",
+          "value": 5
         }
       ]
     },
@@ -76683,8 +79065,16 @@
           "value": 8
         },
         {
-          "name": "InternalError",
+          "name": "NetworkDisconnected",
           "value": 9
+        },
+        {
+          "name": "GamepadDisconnected",
+          "value": 10
+        },
+        {
+          "name": "InternalError",
+          "value": 11
         }
       ]
     },
@@ -100572,6 +102962,18 @@
           }
         },
         {
+          "riot_identity_signup": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
           "rso": {
             "description": "",
             "offset": 0,
@@ -100669,6 +103071,60 @@
     },
     "RsoAuthenticatorV1AuthenticationResponse": {
       "fields": [
+        {
+          "captcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1Captcha": {
+                "fields": [
+                  {
+                    "hcaptcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "RsoAuthenticatorV1HCaptcha": {
+                          "fields": [
+                            {
+                              "data": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "key": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "RsoAuthenticatorV1CaptchaType": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
         {
           "country": {
             "description": "",
@@ -100989,6 +103445,63 @@
         }
       ]
     },
+    "RsoAuthenticatorV1Captcha": {
+      "fields": [
+        {
+          "hcaptcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1HCaptcha": {
+                "fields": [
+                  {
+                    "data": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "key": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1CaptchaType": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1CaptchaType": {
+      "values": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "hcaptcha",
+          "value": 1
+        }
+      ]
+    },
     "RsoAuthenticatorV1CodeExchangeInput": {
       "fields": [
         {
@@ -101093,6 +103606,26 @@
         },
         {
           "timestamp": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1HCaptcha": {
+      "fields": [
+        {
+          "data": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "key": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -101414,6 +103947,177 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupCompleteInput": {
+      "fields": [
+        {
+          "birth_date": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "captcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "email_address": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "locale": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "newsletter": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "password": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tou_agree": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "username": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
+      "fields": []
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupRequest": {
+      "fields": [
+        {
+          "birth_date": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "captcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "email_address": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "locale": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "newsletter": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "password": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tou_agree": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1ResponseType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "username": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupStartInput": {
+      "fields": [
+        {
+          "language": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "remember": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
           }
         }
       ]

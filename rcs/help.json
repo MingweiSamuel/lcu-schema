@@ -11,6 +11,16 @@
       }
     },
     {
+      "description": "Fired when we need to flash riot client",
+      "name": "OnClientFlash",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
       "description": "Fired when we need focus on mac riot client",
       "name": "OnClientFocus",
       "nameSpace": "",
@@ -413,6 +423,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_rnet-self-update_v1_status",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_startup-config_v1_registry-config",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -2843,6 +2863,27 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Delete the registry config for Riot Client on startup which will disable launching riot client on start up",
+      "help": "",
+      "internal": false,
+      "name": "DeleteStartupConfigV1RegistryConfig",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin startup-config"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "The schema 'world' prefix (i.e. riotclient, rtp, etc) to match against incoming AP events.",
@@ -3247,7 +3288,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "AntiAddictionPolicyType"
           }
         }
       ],
@@ -4316,7 +4357,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         },
         {
@@ -4399,7 +4440,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         },
         {
@@ -4464,7 +4505,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         }
       ],
@@ -6136,7 +6177,7 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Returns true if UI is enabled",
+      "description": "Returns true if platform-ui is enabled",
       "help": "",
       "internal": false,
       "name": "GetPlatformUiV1Enabled",
@@ -6144,6 +6185,25 @@
       "returns": {
         "elementType": "",
         "type": "bool"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns sdk instance id to be used with platform-ui views, necessary when running multiple instances of the SDK",
+      "help": "",
+      "internal": false,
+      "name": "GetPlatformUiV1SdkInstanceId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
       },
       "subscribable": false,
       "tags": [
@@ -10822,6 +10882,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Get the registry config for Riot Client on startup",
+      "help": "",
+      "internal": false,
+      "name": "GetStartupConfigV1RegistryConfig",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin startup-config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Retrieves the API documentation",
       "help": "",
       "internal": false,
@@ -13083,7 +13164,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
       "internal": false,
       "name": "PostFirstPartyFulfillmentV1Fulfill",
       "nameSpace": "",
@@ -15144,6 +15225,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Flash the default product",
+      "help": "",
+      "internal": false,
+      "name": "PostProductLauncherV1DefaultProductFlash",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Brings the window of the default product into focus",
       "help": "",
       "internal": false,
@@ -17102,6 +17204,64 @@
       "help": "",
       "internal": false,
       "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentity",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "signupCompleteInput",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RiotIdentitySignupCompleteInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Complete a new Riot Identity Signup authentication session.",
+      "help": "",
+      "internal": false,
+      "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "signupStartInput",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RiotIdentitySignupStartInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Start a new Riot Identity Signup authentication session.",
+      "help": "",
+      "internal": false,
+      "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -22641,6 +22801,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Set the registry config for Riot Client on startup",
+      "help": "",
+      "internal": false,
+      "name": "PutStartupConfigV1RegistryConfig",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin startup-config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Resumes the routine to pull SystemInfo",
       "help": "",
       "internal": false,
@@ -23514,7 +23695,7 @@
         {
           "description": "",
           "name": "AuthorizationConsent",
-          "optional": false,
+          "optional": true,
           "type": {
             "elementType": "",
             "type": "bool"
@@ -43965,6 +44146,86 @@
     {
       "description": "",
       "fields": [],
+      "name": "NintendoAccountOnlinePlatform",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "platform",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "NintendoAccountOnlinePlatform"
+          }
+        }
+      ],
+      "name": "NintendoAccountPlatformUser",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
       "name": "OnlinePlatform",
       "nameSpace": "",
       "size": 0,
@@ -51465,6 +51726,31 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "PlatformUiAuthenticationTypeEnum",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "None",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "RiotAuth",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "SSOAuth",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -51750,6 +52036,101 @@
           "description": "",
           "name": "xbox",
           "value": 6
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "email",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "method",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiMultifactorMethod"
+          }
+        },
+        {
+          "description": "",
+          "name": "methods",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "mfaVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiFactorCodeLength",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "PlatformUiMultifactorDetails",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlatformUiMultifactorMethod",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "authenticator",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "email",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "method_not_set",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "push",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "sms",
+          "value": 3
         }
       ]
     },
@@ -52190,6 +52571,126 @@
           "description": "",
           "name": "success",
           "value": 3
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiAuthenticationTypeEnum"
+          }
+        },
+        {
+          "description": "",
+          "name": "country",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "error",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multifactor",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiMultifactorDetails"
+          }
+        },
+        {
+          "description": "",
+          "name": "persistLogin",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "securityProfile",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiSessionResponseType"
+          }
+        }
+      ],
+      "name": "PlatformUiSessionResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlatformUiSessionResponseType",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "authenticated",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "error",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "needs_credentials",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "needs_multifactor_verification",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "needs_password",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "unknown_authentication_response",
+          "value": 0
         }
       ]
     },
@@ -52713,12 +53214,22 @@
         },
         {
           "description": "",
+          "name": "GamepadDisconnected",
+          "value": 10
+        },
+        {
+          "description": "",
           "name": "GuestAccount",
           "value": 6
         },
         {
           "description": "",
           "name": "InternalError",
+          "value": 11
+        },
+        {
+          "description": "",
+          "name": "NetworkDisconnected",
           "value": 9
         },
         {
@@ -77331,6 +77842,16 @@
         },
         {
           "description": "",
+          "name": "riot_identity_signup",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RiotIdentitySignupCreateInput"
+          }
+        },
+        {
+          "description": "",
           "name": "rso",
           "offset": 0,
           "optional": false,
@@ -77379,6 +77900,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "captcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1Captcha"
+          }
+        },
         {
           "description": "",
           "name": "country",
@@ -77505,6 +78036,56 @@
       "size": 0,
       "tags": [],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "hcaptcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1HCaptcha"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1CaptchaType"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1Captcha",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoAuthenticatorV1CaptchaType",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "hcaptcha",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "none",
+          "value": 0
+        }
+      ]
     },
     {
       "description": "",
@@ -77661,6 +78242,36 @@
         }
       ],
       "name": "RsoAuthenticatorV1GameCenterInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "key",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1HCaptcha",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -78066,6 +78677,235 @@
         }
       ],
       "name": "RsoAuthenticatorV1RiotIdentityInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "birth_date",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "captcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "email_address",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "locale",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "newsletter",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "password",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tou_agree",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "username",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentitySignupCompleteInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoAuthenticatorV1RiotIdentitySignupCreateInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "birth_date",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "captcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "email_address",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "locale",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "newsletter",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "password",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tou_agree",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1ResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "username",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentitySignupRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "language",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "remember",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentitySignupStartInput",
       "nameSpace": "",
       "size": 0,
       "tags": [],

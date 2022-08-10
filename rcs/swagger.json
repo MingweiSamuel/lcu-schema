@@ -7102,6 +7102,31 @@
       },
       "type": "object"
     },
+    "NintendoAccountOnlinePlatform": {
+      "enum": [
+        "absent",
+        "unknown",
+        "riot",
+        "tencent",
+        "garena",
+        "playstation",
+        "switch",
+        "xbox"
+      ],
+      "type": "string"
+    },
+    "NintendoAccountPlatformUser": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "#/definitions/NintendoAccountOnlinePlatform",
+          "default": "unknown"
+        }
+      },
+      "type": "object"
+    },
     "OnlinePlatform": {
       "enum": [
         "absent",
@@ -8728,6 +8753,14 @@
       },
       "type": "object"
     },
+    "PlatformUiAuthenticationTypeEnum": {
+      "enum": [
+        "SSOAuth",
+        "RiotAuth",
+        "None"
+      ],
+      "type": "string"
+    },
     "PlatformUiEligibilityResponse": {
       "properties": {
         "errorCode": {
@@ -8833,6 +8866,42 @@
         "nintendo",
         "xbox",
         "playstation"
+      ],
+      "type": "string"
+    },
+    "PlatformUiMultifactorDetails": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/definitions/PlatformUiMultifactorMethod",
+          "default": "method_not_set"
+        },
+        "methods": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "mfaVersion": {
+          "type": "string"
+        },
+        "multiFactorCodeLength": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiMultifactorMethod": {
+      "enum": [
+        "method_not_set",
+        "email",
+        "authenticator",
+        "sms",
+        "push"
       ],
       "type": "string"
     },
@@ -8975,6 +9044,44 @@
         "healup",
         "signup",
         "success",
+        "error"
+      ],
+      "type": "string"
+    },
+    "PlatformUiSessionResponse": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/PlatformUiAuthenticationTypeEnum"
+        },
+        "country": {
+          "type": "string"
+        },
+        "error": {
+          "type": "string"
+        },
+        "multifactor": {
+          "$ref": "#/definitions/PlatformUiMultifactorDetails"
+        },
+        "persistLogin": {
+          "type": "boolean"
+        },
+        "securityProfile": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/PlatformUiSessionResponseType",
+          "default": "unknown_authentication_response"
+        }
+      },
+      "type": "object"
+    },
+    "PlatformUiSessionResponseType": {
+      "enum": [
+        "unknown_authentication_response",
+        "needs_credentials",
+        "needs_password",
+        "needs_multifactor_verification",
+        "authenticated",
         "error"
       ],
       "type": "string"
@@ -9165,6 +9272,8 @@
         "GuestAccount",
         "SystemSignedOut",
         "SystemOutOfDate",
+        "NetworkDisconnected",
+        "GamepadDisconnected",
         "InternalError"
       ],
       "type": "string"
@@ -11654,36 +11763,6 @@
       },
       "type": "object"
     },
-    "PluginLcdsEvent": {
-      "properties": {
-        "body": {
-          "additionalProperties": true,
-          "type": "object"
-        },
-        "clientId": {
-          "type": "string"
-        },
-        "subtopic": {
-          "type": "string"
-        },
-        "typeName": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
-    "PluginLcdsResponse": {
-      "properties": {
-        "body": {
-          "additionalProperties": true,
-          "type": "object"
-        },
-        "typeName": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "PluginManagerResource": {
       "properties": {
         "state": {
@@ -11858,34 +11937,9 @@
       ],
       "type": "string"
     },
-    "PluginServiceProxyResponse": {
-      "properties": {
-        "error": {
-          "type": "string"
-        },
-        "methodName": {
-          "type": "string"
-        },
-        "payload": {
-          "type": "string"
-        },
-        "serviceName": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "uuid": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    },
     "PluginThreadingModel": {
       "enum": [
-        "dedicated",
         "sequential",
-        "concurrent",
         "parallel"
       ],
       "type": "string"
@@ -15523,6 +15577,9 @@
         "riot_identity": {
           "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentityInput"
         },
+        "riot_identity_signup": {
+          "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentitySignupCreateInput"
+        },
         "rso": {
           "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationRsoInput"
         },
@@ -15541,6 +15598,9 @@
     },
     "RsoAuthenticatorV1AuthenticationResponse": {
       "properties": {
+        "captcha": {
+          "$ref": "#/definitions/RsoAuthenticatorV1Captcha"
+        },
         "country": {
           "type": "string"
         },
@@ -15582,6 +15642,25 @@
         }
       },
       "type": "object"
+    },
+    "RsoAuthenticatorV1Captcha": {
+      "properties": {
+        "hcaptcha": {
+          "$ref": "#/definitions/RsoAuthenticatorV1HCaptcha"
+        },
+        "type": {
+          "$ref": "#/definitions/RsoAuthenticatorV1CaptchaType",
+          "default": "none"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1CaptchaType": {
+      "enum": [
+        "none",
+        "hcaptcha"
+      ],
+      "type": "string"
     },
     "RsoAuthenticatorV1CodeExchangeInput": {
       "properties": {
@@ -15633,6 +15712,17 @@
           "type": "string"
         },
         "timestamp": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1HCaptcha": {
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "key": {
           "type": "string"
         }
       },
@@ -15780,6 +15870,83 @@
         },
         "username": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupCompleteInput": {
+      "properties": {
+        "birth_date": {
+          "type": "string"
+        },
+        "captcha": {
+          "type": "string"
+        },
+        "email_address": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "newsletter": {
+          "type": "boolean"
+        },
+        "password": {
+          "type": "string"
+        },
+        "tou_agree": {
+          "type": "boolean"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
+      "properties": {},
+      "type": "object"
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupRequest": {
+      "properties": {
+        "birth_date": {
+          "type": "string"
+        },
+        "captcha": {
+          "type": "string"
+        },
+        "email_address": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "newsletter": {
+          "type": "boolean"
+        },
+        "password": {
+          "type": "string"
+        },
+        "tou_agree": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/definitions/RsoAuthenticatorV1ResponseType",
+          "default": "signup"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupStartInput": {
+      "properties": {
+        "language": {
+          "type": "string"
+        },
+        "remember": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -17815,17 +17982,11 @@
             "type": "string"
           },
           {
+            "$ref": "#/definitions/RemotingHelpFormat",
             "description": "Format for returned information",
-            "enum": [
-              "Full",
-              "Epytext",
-              "Brief",
-              "Console"
-            ],
             "in": "query",
             "name": "format",
-            "required": false,
-            "type": "string"
+            "required": false
           }
         ],
         "responses": {
@@ -17855,16 +18016,11 @@
             "type": "string"
           },
           {
+            "$ref": "#/definitions/RemotingSerializedFormat",
             "description": "Desired format to receive events in. If unspecified, events will be sent in the active result format at the time.",
-            "enum": [
-              "JSON",
-              "YAML",
-              "MsgPack"
-            ],
             "in": "query",
             "name": "format",
-            "required": false,
-            "type": "string"
+            "required": false
           }
         ],
         "responses": {
@@ -18032,20 +18188,10 @@
             "type": "string"
           },
           {
-            "enum": [
-              "shutdown",
-              "playTime",
-              "warningMessage",
-              "disableMatchMaking",
-              "hopeWarning",
-              "hopeRewardRate",
-              "hopeShutdown",
-              "hopeHeartbeat"
-            ],
+            "$ref": "#/definitions/AntiAddictionPolicyType",
             "in": "path",
             "name": "policyType",
-            "required": true,
-            "type": "string"
+            "required": true
           }
         ],
         "responses": {
@@ -20847,14 +20993,10 @@
         "operationId": "GetClientConfigV1Config",
         "parameters": [
           {
-            "enum": [
-              "public",
-              "player"
-            ],
+            "$ref": "#/definitions/ClientConfigConfigType",
             "in": "query",
             "name": "type",
-            "required": true,
-            "type": "string"
+            "required": true
           },
           {
             "in": "query",
@@ -20917,14 +21059,10 @@
             "type": "string"
           },
           {
-            "enum": [
-              "public",
-              "player"
-            ],
+            "$ref": "#/definitions/ClientConfigConfigType",
             "in": "query",
             "name": "type",
-            "required": true,
-            "type": "string"
+            "required": true
           },
           {
             "in": "query",
@@ -21015,14 +21153,10 @@
         "operationId": "GetClientConfigV1StatusByType",
         "parameters": [
           {
-            "enum": [
-              "public",
-              "player"
-            ],
+            "$ref": "#/definitions/ClientConfigConfigType",
             "in": "path",
             "name": "type",
-            "required": true,
-            "type": "string"
+            "required": true
           }
         ],
         "responses": {
@@ -22232,7 +22366,7 @@
     },
     "/first-party-fulfillment/v1/fulfill": {
       "post": {
-        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4 and PlayStation 5 fulfillment. Xbox and Switch support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
         "operationId": "PostFirstPartyFulfillmentV1Fulfill",
         "parameters": [
           {
@@ -24789,7 +24923,26 @@
             }
           }
         },
-        "summary": "Returns true if UI is enabled",
+        "summary": "Returns true if platform-ui is enabled",
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui"
+        ]
+      }
+    },
+    "/platform-ui/v1/sdk-instance-id": {
+      "get": {
+        "operationId": "GetPlatformUiV1SdkInstanceId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns sdk instance id to be used with platform-ui views, necessary when running multiple instances of the SDK",
         "tags": [
           "Plugins",
           "Plugin platform-ui"
@@ -31470,6 +31623,62 @@
         ]
       }
     },
+    "/rso-authenticator/v1/authentication/riot-identity-signup/complete": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "signupCompleteInput",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentitySignupCompleteInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationResponse"
+            }
+          }
+        },
+        "summary": "Complete a new Riot Identity Signup authentication session.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/riot-identity-signup/start": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "signupStartInput",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentitySignupStartInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationResponse"
+            }
+          }
+        },
+        "summary": "Start a new Riot Identity Signup authentication session.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
     "/rso-authenticator/v1/authentication/xbox": {
       "post": {
         "operationId": "PostRsoAuthenticatorV1AuthenticationXbox",
@@ -33586,7 +33795,7 @@
           {
             "in": "body",
             "name": "AuthorizationConsent",
-            "required": true,
+            "required": false,
             "schema": {
               "type": "boolean"
             }
