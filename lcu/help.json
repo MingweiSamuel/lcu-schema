@@ -204,16 +204,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-active-boosts_v1_active-boosts",
       "nameSpace": "",
       "tags": [],
@@ -1385,16 +1375,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-maps_v2_maps",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-marketing-preferences_v1_partition",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11644,16 +11624,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-publishing-content_v1_client-data",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-publishing-content_v1_listeners",
       "nameSpace": "",
       "tags": [],
@@ -11685,6 +11655,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-purchase-widget_v1_configuration",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-ranked_v1_challenger-ladders-enabled",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11755,6 +11735,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-ranked_v1_splits-config",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-ranked_v1_top-rated-ladders-enabled",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -18881,6 +18871,348 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-esport-stream-notifications"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1CategoriesOffers",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolEventShopCategoryOffersUIData",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1CelebrationData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopCelebrationUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1ClaimSelectData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopClaimSelectUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1EventHeaderData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopEventHeaderUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1FailureLoadingRewardTrack",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopEventShopError"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1FailureLoadingTokenShop",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopEventShopError"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1IsGracePeriod",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1LevelBoostPurchaseData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopLevelBoostPurchaseUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1NavigationButtonData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopNavigationButtonUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1PassBackgroundData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopEventBackgroundUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1ProgressInfoData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopProgressInfoUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1RewardChoiceData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopRewardChoiceUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1RewardTrackBonusItems",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolEventShopRewardTrackItem",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1RewardTrackBonusProgress",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopRewardTrackProgress"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1RewardTrackItems",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolEventShopRewardTrackItem",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1RewardTrackProgress",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopRewardTrackProgress"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1TokenBalance",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "uint32"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1TokenShopData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopTokenShopUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1UnclaimedRewards",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopUnclaimedRewardsUIData"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
       ],
       "threadSafe": false
     },
@@ -31280,164 +31612,6 @@
             "elementType": "",
             "type": "string"
           }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolClashV1RosterByRosterIdSubstituteAccept",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rosterId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "summonerId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolClashV1RosterByRosterIdSubstituteBySummonerIdRevoke",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rosterId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolClashV1RosterByRosterIdSubstituteDecline",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rosterId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "inviteSubRequest",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolClashInviteSubRequest"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolClashV1RosterByRosterIdSubstituteInvite",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "LolClashClientFailedInvite",
-        "type": "vector"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rosterId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PostLolClashV1RosterByRosterIdSubstituteReclaim",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "rosterId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
         },
         {
           "description": "",
@@ -32137,6 +32311,60 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-esport-stream-notifications"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolEventShopV1ClaimSelectAll",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolEventShopV1ClaimSelectBonusIteration",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolEventShopV1LoadProgressionData",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
       ],
       "threadSafe": false
     },
@@ -42662,18 +42890,8 @@
         },
         {
           "description": "",
-          "name": "grantToSub",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
           "name": "keyDef",
-          "offset": 28,
+          "offset": 24,
           "optional": false,
           "type": {
             "elementType": "ClashRewardKeyType",
@@ -42683,7 +42901,7 @@
         {
           "description": "",
           "name": "entries",
-          "offset": 40,
+          "offset": 36,
           "optional": false,
           "type": {
             "elementType": "ClashRewardConfigEntry",
@@ -42693,7 +42911,7 @@
       ],
       "name": "ClashRewardConfigClient",
       "nameSpace": "",
-      "size": 52,
+      "size": 48,
       "tags": [],
       "values": []
     },
@@ -44020,368 +44238,338 @@
         },
         {
           "description": "",
-          "name": "CANNOT_SUB",
-          "value": 9
-        },
-        {
-          "description": "",
           "name": "CAPTAIN_NOT_ALLOWED",
           "value": 8
         },
         {
           "description": "",
           "name": "CLASH_BANNED",
-          "value": 10
+          "value": 9
         },
         {
           "description": "",
           "name": "CLASH_BANNED_INVITEE",
-          "value": 11
+          "value": 10
         },
         {
           "description": "",
           "name": "ELIGIBILITY_SERVER_ERROR",
-          "value": 12
+          "value": 11
         },
         {
           "description": "",
           "name": "FAIL_INVITE",
-          "value": 13
+          "value": 12
         },
         {
           "description": "",
           "name": "FAIL_SUGGESTINVITE",
-          "value": 14
+          "value": 13
         },
         {
           "description": "",
           "name": "HONOR_INELIGIBILITY",
-          "value": 15
+          "value": 14
         },
         {
           "description": "",
           "name": "INACTIVE_PHASE",
-          "value": 23
-        },
-        {
-          "description": "",
-          "name": "INACTIVE_REGISTRATION",
-          "value": 22
-        },
-        {
-          "description": "",
-          "name": "INTERNAL_ERROR",
-          "value": 24
-        },
-        {
-          "description": "",
-          "name": "INVALID_BRACKET",
-          "value": 38
-        },
-        {
-          "description": "",
-          "name": "INVALID_BUY_BACK",
-          "value": 26
-        },
-        {
-          "description": "",
-          "name": "INVALID_CHECKELIGIBILITY_SIZE",
-          "value": 37
-        },
-        {
-          "description": "",
-          "name": "INVALID_INVITEE",
-          "value": 30
-        },
-        {
-          "description": "",
-          "name": "INVALID_LOGO",
-          "value": 33
-        },
-        {
-          "description": "",
-          "name": "INVALID_LOGOCOLOR",
-          "value": 34
-        },
-        {
-          "description": "",
-          "name": "INVALID_MATCHID",
-          "value": 39
-        },
-        {
-          "description": "",
-          "name": "INVALID_MATCHSTATUS_FORGAMEEND",
-          "value": 43
-        },
-        {
-          "description": "",
-          "name": "INVALID_NAME",
-          "value": 35
-        },
-        {
-          "description": "",
-          "name": "INVALID_PHASE",
-          "value": 29
-        },
-        {
-          "description": "",
-          "name": "INVALID_PLAYER",
-          "value": 40
-        },
-        {
-          "description": "",
-          "name": "INVALID_POSITION",
-          "value": 32
-        },
-        {
-          "description": "",
-          "name": "INVALID_REWARD_CONFIG_NAME",
-          "value": 44
-        },
-        {
-          "description": "",
-          "name": "INVALID_ROSTER",
-          "value": 25
-        },
-        {
-          "description": "",
-          "name": "INVALID_ROSTER_MEMBER_SIZE",
-          "value": 31
-        },
-        {
-          "description": "",
-          "name": "INVALID_SEASON",
-          "value": 45
-        },
-        {
-          "description": "",
-          "name": "INVALID_SHORTNAME",
-          "value": 36
-        },
-        {
-          "description": "",
-          "name": "INVALID_SUB",
-          "value": 27
-        },
-        {
-          "description": "",
-          "name": "INVALID_TOURNAMENT",
-          "value": 28
-        },
-        {
-          "description": "",
-          "name": "INVALID_Tier",
-          "value": 41
-        },
-        {
-          "description": "",
-          "name": "INVALID_WITHDRAW",
-          "value": 42
-        },
-        {
-          "description": "",
-          "name": "IN_OTHER_PENDINGROSTER",
-          "value": 19
-        },
-        {
-          "description": "",
-          "name": "IN_OTHER_PENDINGSUB",
-          "value": 20
-        },
-        {
-          "description": "",
-          "name": "IN_OTHER_PHASE_OF_PERIOD",
           "value": 21
         },
         {
           "description": "",
-          "name": "IN_OTHER_ROSTER",
+          "name": "INACTIVE_REGISTRATION",
+          "value": 20
+        },
+        {
+          "description": "",
+          "name": "INTERNAL_ERROR",
+          "value": 22
+        },
+        {
+          "description": "",
+          "name": "INVALID_BRACKET",
+          "value": 35
+        },
+        {
+          "description": "",
+          "name": "INVALID_BUY_BACK",
+          "value": 24
+        },
+        {
+          "description": "",
+          "name": "INVALID_CHECKELIGIBILITY_SIZE",
+          "value": 34
+        },
+        {
+          "description": "",
+          "name": "INVALID_INVITEE",
+          "value": 27
+        },
+        {
+          "description": "",
+          "name": "INVALID_LOGO",
+          "value": 30
+        },
+        {
+          "description": "",
+          "name": "INVALID_LOGOCOLOR",
+          "value": 31
+        },
+        {
+          "description": "",
+          "name": "INVALID_MATCHID",
+          "value": 36
+        },
+        {
+          "description": "",
+          "name": "INVALID_MATCHSTATUS_FORGAMEEND",
+          "value": 40
+        },
+        {
+          "description": "",
+          "name": "INVALID_NAME",
+          "value": 32
+        },
+        {
+          "description": "",
+          "name": "INVALID_PHASE",
+          "value": 26
+        },
+        {
+          "description": "",
+          "name": "INVALID_PLAYER",
+          "value": 37
+        },
+        {
+          "description": "",
+          "name": "INVALID_POSITION",
+          "value": 29
+        },
+        {
+          "description": "",
+          "name": "INVALID_REWARD_CONFIG_NAME",
+          "value": 41
+        },
+        {
+          "description": "",
+          "name": "INVALID_ROSTER",
+          "value": 23
+        },
+        {
+          "description": "",
+          "name": "INVALID_ROSTER_MEMBER_SIZE",
+          "value": 28
+        },
+        {
+          "description": "",
+          "name": "INVALID_SEASON",
+          "value": 42
+        },
+        {
+          "description": "",
+          "name": "INVALID_SHORTNAME",
+          "value": 33
+        },
+        {
+          "description": "",
+          "name": "INVALID_TOURNAMENT",
+          "value": 25
+        },
+        {
+          "description": "",
+          "name": "INVALID_Tier",
+          "value": 38
+        },
+        {
+          "description": "",
+          "name": "INVALID_WITHDRAW",
+          "value": 39
+        },
+        {
+          "description": "",
+          "name": "IN_OTHER_PENDINGROSTER",
           "value": 18
         },
         {
           "description": "",
-          "name": "LOGOCOLOR_NOT_ALLOWED",
+          "name": "IN_OTHER_PHASE_OF_PERIOD",
+          "value": 19
+        },
+        {
+          "description": "",
+          "name": "IN_OTHER_ROSTER",
           "value": 17
         },
         {
           "description": "",
-          "name": "LOGO_NOT_ALLOWED",
+          "name": "LOGOCOLOR_NOT_ALLOWED",
           "value": 16
         },
         {
           "description": "",
+          "name": "LOGO_NOT_ALLOWED",
+          "value": 15
+        },
+        {
+          "description": "",
           "name": "MAX_INVITED",
-          "value": 46
+          "value": 43
         },
         {
           "description": "",
           "name": "MAX_ROSTER_FETCHSIZE",
-          "value": 48
-        },
-        {
-          "description": "",
-          "name": "MAX_SUBED",
-          "value": 47
-        },
-        {
-          "description": "",
-          "name": "MAX_SUB_SIZE",
-          "value": 49
+          "value": 44
         },
         {
           "description": "",
           "name": "NOT_ALLOWED_DELETE_TOURNAMENT",
-          "value": 58
-        },
-        {
-          "description": "",
-          "name": "NOT_ALLOWED_DELETE_TOURNAMENT_REWARD_CONFIG",
-          "value": 59
-        },
-        {
-          "description": "",
-          "name": "NOT_CAPTAIN",
-          "value": 53
-        },
-        {
-          "description": "",
-          "name": "NOT_ENOUGH_TICKETS",
-          "value": 57
-        },
-        {
-          "description": "",
-          "name": "NOT_INVITEE",
-          "value": 55
-        },
-        {
-          "description": "",
-          "name": "NOT_MEMBER",
-          "value": 54
-        },
-        {
-          "description": "",
-          "name": "NOT_SEED_INTO_LEAGUE",
-          "value": 56
-        },
-        {
-          "description": "",
-          "name": "NO_AVAILABLE_PHASE",
           "value": 52
         },
         {
           "description": "",
-          "name": "NO_MORE_RECOMMEND",
-          "value": 61
+          "name": "NOT_ALLOWED_DELETE_TOURNAMENT_REWARD_CONFIG",
+          "value": 53
         },
         {
           "description": "",
-          "name": "NO_PERMISSION",
-          "value": 60
+          "name": "NOT_CAPTAIN",
+          "value": 47
         },
         {
           "description": "",
-          "name": "NO_SAME_PLAYER",
+          "name": "NOT_ENOUGH_TICKETS",
           "value": 51
         },
         {
           "description": "",
-          "name": "OVER_INVITE",
-          "value": 63
+          "name": "NOT_INVITEE",
+          "value": 49
         },
         {
           "description": "",
-          "name": "OVER_SUGGESTION_INVITE",
-          "value": 62
+          "name": "NOT_MEMBER",
+          "value": 48
         },
         {
           "description": "",
-          "name": "PENDING_ROSTER_CLOSE",
-          "value": 66
-        },
-        {
-          "description": "",
-          "name": "PENDING_ROSTER_FULL",
-          "value": 65
-        },
-        {
-          "description": "",
-          "name": "PENDING_ROSTER_NOT_READY",
-          "value": 64
-        },
-        {
-          "description": "",
-          "name": "PHASE_CANCELLED",
-          "value": 67
-        },
-        {
-          "description": "",
-          "name": "PHASE_FULL",
-          "value": 68
-        },
-        {
-          "description": "",
-          "name": "ROSTER_DISBAND_NOT_ALLOWED",
-          "value": 70
-        },
-        {
-          "description": "",
-          "name": "ROSTER_ELIMINATED",
-          "value": 69
-        },
-        {
-          "description": "",
-          "name": "SMS_NOT_VERIFIED",
-          "value": 72
-        },
-        {
-          "description": "",
-          "name": "SUB_IN_OTHER_ROSTER",
+          "name": "NOT_SEED_INTO_LEAGUE",
           "value": 50
         },
         {
           "description": "",
+          "name": "NO_AVAILABLE_PHASE",
+          "value": 46
+        },
+        {
+          "description": "",
+          "name": "NO_MORE_RECOMMEND",
+          "value": 55
+        },
+        {
+          "description": "",
+          "name": "NO_PERMISSION",
+          "value": 54
+        },
+        {
+          "description": "",
+          "name": "NO_SAME_PLAYER",
+          "value": 45
+        },
+        {
+          "description": "",
+          "name": "OVER_INVITE",
+          "value": 57
+        },
+        {
+          "description": "",
+          "name": "OVER_SUGGESTION_INVITE",
+          "value": 56
+        },
+        {
+          "description": "",
+          "name": "PENDING_ROSTER_CLOSE",
+          "value": 60
+        },
+        {
+          "description": "",
+          "name": "PENDING_ROSTER_FULL",
+          "value": 59
+        },
+        {
+          "description": "",
+          "name": "PENDING_ROSTER_NOT_READY",
+          "value": 58
+        },
+        {
+          "description": "",
+          "name": "PHASE_CANCELLED",
+          "value": 61
+        },
+        {
+          "description": "",
+          "name": "PHASE_FULL",
+          "value": 62
+        },
+        {
+          "description": "",
+          "name": "ROSTER_DISBAND_NOT_ALLOWED",
+          "value": 64
+        },
+        {
+          "description": "",
+          "name": "ROSTER_ELIMINATED",
+          "value": 63
+        },
+        {
+          "description": "",
+          "name": "SMS_NOT_VERIFIED",
+          "value": 66
+        },
+        {
+          "description": "",
           "name": "SUGGEST_INVITEE_NOT_EXIST",
-          "value": 71
+          "value": 65
         },
         {
           "description": "",
           "name": "TICKET_ALREADY_SET",
-          "value": 73
+          "value": 67
         },
         {
           "description": "",
           "name": "TICKET_NOT_SET",
-          "value": 76
+          "value": 70
         },
         {
           "description": "",
           "name": "TICKET_OFFER_INVALID_COUNT",
-          "value": 75
+          "value": 69
         },
         {
           "description": "",
           "name": "TICKET_OFFER_NOT_EXIST",
-          "value": 74
+          "value": 68
         },
         {
           "description": "",
           "name": "VOICE_NOT_AVAILABLE",
-          "value": 77
+          "value": 71
         },
         {
           "description": "",
           "name": "WITHDRAW_CANCEL_NOT_ALLOWED",
-          "value": 79
+          "value": 73
         },
         {
           "description": "",
           "name": "WITHDRAW_LOCKOUT",
-          "value": 80
+          "value": 74
         },
         {
           "description": "",
           "name": "WITHDRAW_NOT_ALLOWED",
-          "value": 78
+          "value": 72
         }
       ]
     },
@@ -70033,39 +70221,6 @@
     },
     {
       "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "substituteSummonerId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "replacedSummonerId",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      ],
-      "name": "LolClashInviteSubRequest",
-      "nameSpace": "",
-      "size": 16,
-      "tags": [
-        "Plugins",
-        "Plugin lol-clash"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
       "fields": [],
       "name": "LolClashKdaClassification",
       "nameSpace": "",
@@ -71576,16 +71731,6 @@
             "elementType": "",
             "type": "int64"
           }
-        },
-        {
-          "description": "",
-          "name": "isSub",
-          "offset": 41,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
         }
       ],
       "name": "LolClashPlayerTournamentData",
@@ -72544,7 +72689,7 @@
         {
           "description": "",
           "name": "notifyReason",
-          "offset": 344,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "",
@@ -72554,7 +72699,7 @@
       ],
       "name": "LolClashRegisteredRosterNotification",
       "nameSpace": "",
-      "size": 352,
+      "size": 328,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -72903,7 +73048,7 @@
         {
           "description": "",
           "name": "notifyReason",
-          "offset": 152,
+          "offset": 128,
           "optional": false,
           "type": {
             "elementType": "",
@@ -72913,7 +73058,7 @@
         {
           "description": "",
           "name": "sourcePlayerId",
-          "offset": 160,
+          "offset": 136,
           "optional": false,
           "type": {
             "elementType": "",
@@ -72923,7 +73068,7 @@
       ],
       "name": "LolClashRosterDynamicStateNotification",
       "nameSpace": "",
-      "size": 168,
+      "size": 144,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -73138,38 +73283,8 @@
         },
         {
           "description": "",
-          "name": "isSubstitute",
-          "offset": 56,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "isSubbedOut",
-          "offset": 57,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "isSubForOtherTeam",
-          "offset": 58,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
           "name": "tier",
-          "offset": 60,
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "",
@@ -73258,17 +73373,17 @@
         {
           "description": "",
           "name": "BANNED_SMURF",
-          "value": 45
+          "value": 33
         },
         {
           "description": "",
           "name": "BANNED_SMURF_OPPONENT",
-          "value": 47
+          "value": 35
         },
         {
           "description": "",
           "name": "BANNED_SMURF_TEAMMATE",
-          "value": 46
+          "value": 34
         },
         {
           "description": "",
@@ -73278,12 +73393,12 @@
         {
           "description": "",
           "name": "BRACKET_ROSTER_REMOVED",
-          "value": 42
+          "value": 30
         },
         {
           "description": "",
           "name": "BRACKET_ROSTER_REPLACED",
-          "value": 43
+          "value": 31
         },
         {
           "description": "",
@@ -73293,7 +73408,7 @@
         {
           "description": "",
           "name": "CANNOT_FIND_MATCH",
-          "value": 44
+          "value": 32
         },
         {
           "description": "",
@@ -73318,7 +73433,7 @@
         {
           "description": "",
           "name": "GAME_RESCHEDULED",
-          "value": 58
+          "value": 45
         },
         {
           "description": "",
@@ -73338,52 +73453,37 @@
         {
           "description": "",
           "name": "GAME_START_FAILED",
-          "value": 55
+          "value": 42
         },
         {
           "description": "",
           "name": "GAME_START_FAILED_OPPONENT",
-          "value": 57
+          "value": 44
         },
         {
           "description": "",
           "name": "GAME_START_FAILED_SUMMONERS",
-          "value": 56
+          "value": 43
         },
         {
           "description": "",
           "name": "GAME_START_RETRY",
-          "value": 52
+          "value": 39
         },
         {
           "description": "",
           "name": "GAME_START_RETRY_OPPONENT",
-          "value": 54
+          "value": 41
         },
         {
           "description": "",
           "name": "GAME_START_RETRY_SUMMONERS",
-          "value": 53
-        },
-        {
-          "description": "",
-          "name": "MEMBER_SUBBED",
-          "value": 33
-        },
-        {
-          "description": "",
-          "name": "MEMBER_SUB_RECLAIM",
-          "value": 35
-        },
-        {
-          "description": "",
-          "name": "MEMBER_SUB_REVOKE",
-          "value": 34
+          "value": 40
         },
         {
           "description": "",
           "name": "NO_SHOW_PING",
-          "value": 40
+          "value": 28
         },
         {
           "description": "",
@@ -73463,92 +73563,42 @@
         {
           "description": "",
           "name": "ROUND_COMPLETE",
-          "value": 39
-        },
-        {
-          "description": "",
-          "name": "SUB_ACCEPT",
-          "value": 25
-        },
-        {
-          "description": "",
-          "name": "SUB_ACCEPTSUGGEST",
-          "value": 29
-        },
-        {
-          "description": "",
-          "name": "SUB_DECLINE",
-          "value": 26
-        },
-        {
-          "description": "",
-          "name": "SUB_DECLINESUGGEST",
-          "value": 30
-        },
-        {
-          "description": "",
-          "name": "SUB_INVITE",
-          "value": 24
-        },
-        {
-          "description": "",
-          "name": "SUB_INVITE_SELF",
-          "value": 51
-        },
-        {
-          "description": "",
-          "name": "SUB_LEAVE",
-          "value": 32
-        },
-        {
-          "description": "",
-          "name": "SUB_RECLAIM",
-          "value": 31
-        },
-        {
-          "description": "",
-          "name": "SUB_REVOKE",
           "value": 27
         },
         {
           "description": "",
-          "name": "SUB_SUGGEST",
-          "value": 28
-        },
-        {
-          "description": "",
           "name": "TICKET_CHARGED",
-          "value": 48
-        },
-        {
-          "description": "",
-          "name": "TICKET_COULD_NOT_BE_CHARGED",
-          "value": 50
-        },
-        {
-          "description": "",
-          "name": "TICKET_REFUNDED",
-          "value": 49
-        },
-        {
-          "description": "",
-          "name": "TIER_CHANGED",
-          "value": 41
-        },
-        {
-          "description": "",
-          "name": "VOTE_WITHDRAW_DISMISS",
-          "value": 37
-        },
-        {
-          "description": "",
-          "name": "VOTE_WITHDRAW_UPDATE",
           "value": 36
         },
         {
           "description": "",
-          "name": "WITHDRAW",
+          "name": "TICKET_COULD_NOT_BE_CHARGED",
           "value": 38
+        },
+        {
+          "description": "",
+          "name": "TICKET_REFUNDED",
+          "value": 37
+        },
+        {
+          "description": "",
+          "name": "TIER_CHANGED",
+          "value": 29
+        },
+        {
+          "description": "",
+          "name": "VOTE_WITHDRAW_DISMISS",
+          "value": 25
+        },
+        {
+          "description": "",
+          "name": "VOTE_WITHDRAW_UPDATE",
+          "value": 24
+        },
+        {
+          "description": "",
+          "name": "WITHDRAW",
+          "value": 26
         }
       ]
     },
@@ -73690,21 +73740,11 @@
             "elementType": "int32",
             "type": "map"
           }
-        },
-        {
-          "description": "",
-          "name": "sub",
-          "offset": 64,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
         }
       ],
       "name": "LolClashRosterPlayerAggregatedStats",
       "nameSpace": "",
-      "size": 68,
+      "size": 64,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -73727,7 +73767,7 @@
         {
           "description": "",
           "name": "notifyReason",
-          "offset": 344,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "",
@@ -73737,7 +73777,7 @@
         {
           "description": "",
           "name": "playerNotificationDTO",
-          "offset": 352,
+          "offset": 328,
           "optional": false,
           "type": {
             "elementType": "",
@@ -73747,7 +73787,7 @@
         {
           "description": "",
           "name": "sourcePlayerId",
-          "offset": 432,
+          "offset": 408,
           "optional": false,
           "type": {
             "elementType": "",
@@ -73757,7 +73797,7 @@
       ],
       "name": "LolClashRosterPlayerNotification",
       "nameSpace": "",
-      "size": 440,
+      "size": 416,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -74733,18 +74773,8 @@
         },
         {
           "description": "",
-          "name": "maxSubstitutes",
-          "offset": 128,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
           "name": "lastThemeOfSeason",
-          "offset": 132,
+          "offset": 128,
           "optional": false,
           "type": {
             "elementType": "",
@@ -74754,7 +74784,7 @@
         {
           "description": "",
           "name": "bracketSize",
-          "offset": 136,
+          "offset": 132,
           "optional": false,
           "type": {
             "elementType": "",
@@ -74764,7 +74794,7 @@
         {
           "description": "",
           "name": "isSmsRestrictionEnabled",
-          "offset": 160,
+          "offset": 156,
           "optional": false,
           "type": {
             "elementType": "",
@@ -74774,7 +74804,7 @@
         {
           "description": "",
           "name": "isHonorRestrictionEnabled",
-          "offset": 161,
+          "offset": 157,
           "optional": false,
           "type": {
             "elementType": "",
@@ -74784,7 +74814,7 @@
         {
           "description": "",
           "name": "isRankedRestrictionEnabled",
-          "offset": 162,
+          "offset": 158,
           "optional": false,
           "type": {
             "elementType": "",
@@ -74794,7 +74824,7 @@
         {
           "description": "",
           "name": "phases",
-          "offset": 164,
+          "offset": 160,
           "optional": false,
           "type": {
             "elementType": "LolClashTournamentPhase",
@@ -74804,7 +74834,7 @@
         {
           "description": "",
           "name": "rewardConfig",
-          "offset": 176,
+          "offset": 172,
           "optional": false,
           "type": {
             "elementType": "ClashRewardConfigClient",
@@ -74814,7 +74844,7 @@
         {
           "description": "",
           "name": "tierConfigs",
-          "offset": 188,
+          "offset": 184,
           "optional": false,
           "type": {
             "elementType": "TierConfig",
@@ -75454,7 +75484,7 @@
         {
           "description": "",
           "name": "relevantPhaseId",
-          "offset": 280,
+          "offset": 272,
           "optional": true,
           "type": {
             "elementType": "",
@@ -75464,7 +75494,7 @@
       ],
       "name": "LolClashTournamentUpdatedNotificationDTO",
       "nameSpace": "",
-      "size": 296,
+      "size": 288,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -85035,6 +85065,4573 @@
       "tags": [
         "Plugins",
         "Plugin lol-esport-stream-notifications"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "LolEventShopAccessTokenResource",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "contentId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "offerId",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "typeId",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopCatalogEntry",
+      "nameSpace": "",
+      "size": 40,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemInstanceId",
+          "offset": 28,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopCatalogItem",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "category",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopOfferCategory"
+          }
+        },
+        {
+          "description": "",
+          "name": "categoryIconPath",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "offers",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopOfferUIData",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopCategoryOffersUIData",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopCelebrationType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "TOAST",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "rewardTrackItems",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRewardTrackItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopCelebrationUIData",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "selectedRewardTrackItem",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackItem"
+          }
+        },
+        {
+          "description": "",
+          "name": "unclaimedRewardCount",
+          "offset": 64,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint16"
+          }
+        }
+      ],
+      "name": "LolEventShopClaimSelectUIData",
+      "nameSpace": "",
+      "size": 72,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "regions",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clearAll",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryTypes",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopClientCacheClearMessageDTO",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "direction",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "startValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolEventShopCounter",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ownerId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolEventShopCounterInstance",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "amount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "subCurrencies",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolEventShopCurrencyDTO",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counters",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCounterInstance",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "milestones",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopMilestoneInstance",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopEntityInstance",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "backgroundImagePath",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopEventBackgroundUIData",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "eventIconPath",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventName",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "progressEndDate",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "shopEndDate",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "helpModalImagePath",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopEventHeaderUIData",
+      "nameSpace": "",
+      "size": 60,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "eventId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedName",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "backgroundImage",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "navbarIconImage",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "headerIconImage",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "startDate",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "progressEndDate",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "shopEndDate",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "helpModalImage",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventPassBundlesCatalogEntry",
+          "offset": 108,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenShop",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopTokenShop"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardTrack",
+          "offset": 180,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrack"
+          }
+        }
+      ],
+      "name": "LolEventShopEventShop",
+      "nameSpace": "",
+      "size": 204,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "Enabled",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "ActiveEventId",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopEventShopClientConfig",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "errorMessage",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "errorId",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopEventShopError",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopGrantStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "FAILED",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "FULFILLED",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING_FULFILLMENT",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "PENDING_SELECTION",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "appName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entityId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopGrantorDescription",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "repeat",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRepeat"
+          }
+        },
+        {
+          "description": "",
+          "name": "counters",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCounter",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "milestones",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopMilestone",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopGroup",
+      "nameSpace": "",
+      "size": 108,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "signedInventoryJwt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationMS",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAtMS",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "receivedAtMS",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "valid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryCacheEntry",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "summonerId",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "object",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemsJwt",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryDTO",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "uuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownershipType",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopItemOwnershipType"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryItem",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownedQuantity",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "usedInGameDate",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementId",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementTypeId",
+          "offset": 144,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "instanceId",
+          "offset": 168,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "instanceTypeId",
+          "offset": 192,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 216,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 232,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rental",
+          "offset": 233,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 234,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "lsb",
+          "offset": 235,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "wins",
+          "offset": 240,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryItemDTO",
+      "nameSpace": "",
+      "size": 248,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "uuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownershipType",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopItemOwnershipType"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 116,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rental",
+          "offset": 117,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 118,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "owned",
+          "offset": 119,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryItemWithPayload",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "acknowledged",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryNotification",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopInventoryDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopInventoryResponseDTO",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "price",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "LolEventShopItem",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolEventShopItemKey",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopItemOwnershipType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "F2P",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "LOYALTY",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "OWNED",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "RENTED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "price",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "LolEventShopItemUIData",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "selectedRewardTrackItem",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackItem"
+          }
+        }
+      ],
+      "name": "LolEventShopLargeSelectionDisplayUIData",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "offerId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardTrackItems",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRewardTrackItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopLevelBoostPurchaseUIData",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopLoginSessionStates"
+          }
+        },
+        {
+          "description": "",
+          "name": "summonerId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 64,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopLoginSession",
+      "nameSpace": "",
+      "size": 88,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopLoginSessionStates",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "IN_PROGRESS",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "LOGGING_OUT",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "SUCCEEDED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "freeRewardedChampionsCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "championIds",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "freeRewardedSkinsCount",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "skinIds",
+          "offset": 20,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "ipBoost",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "xpBoost",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltyTFTMapSkinCount",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltyTFTCompanionCount",
+          "offset": 44,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolEventShopLoyaltyRewards",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopLoyaltyStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "CHANGE",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "DISABLED",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "EXPIRY",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "LEGACY",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "REVOKE",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "REWARDS_GRANT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopLoyaltyStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewards",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopLoyaltyRewards"
+          }
+        },
+        {
+          "description": "",
+          "name": "reloadInventory",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopLoyaltyStatusNotification",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggerValue",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "properties",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolEventShopMilestone",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "milestoneId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownerId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "counterId",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggerValue",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "repeatSequence",
+          "offset": 128,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "triggered",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopMilestoneInstance",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "activeEventId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "showPip",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "iconPath",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopNavigationButtonUIData",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedTitle",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedDescription",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "image",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "promotionType",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopOfferPromotionType"
+          }
+        },
+        {
+          "description": "",
+          "name": "offerCategory",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopOfferCategory"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopOffer",
+      "nameSpace": "",
+      "size": 68,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopOfferCategory",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Borders",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Chromas",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Currencies",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "Featured",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Loot",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "Skins",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Tft",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopOfferPromotionType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "kFeatured",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "kFeaturedHighlighted",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "kNone",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopOfferStates",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "kAvailable",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "kOwned",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "kUnavailable",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "kUnrevealed",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedTitle",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedDescription",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "image",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "highlighted",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "offerState",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopOfferStates"
+          }
+        },
+        {
+          "description": "",
+          "name": "price",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopItemUIData",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopOfferUIData",
+      "nameSpace": "",
+      "size": 72,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopPassOwnershipTypes",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Purchased",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Unowned",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "lastTimeSeen",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "lastSeenTokenBalance",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolEventShopPlayerSettingsData",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "tokenImage",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "passPurchased",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventPassBundlesCatalogEntry",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopProgressInfoUIData",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "affinities",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopRMSPayload",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "region",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "locale",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRegionLocale",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "count",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "scope",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiplier",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "float"
+          }
+        }
+      ],
+      "name": "LolEventShopRepeat",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSelectionRequestDTO"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRequestMetadataDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopRequestDTO-SelectionRequestDTO",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "transactionId",
+          "offset": 0,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRequestMetadataDTO",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSvcRewardGrant"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata",
+          "offset": 176,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopResponseMetadataDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopResponseDTO-SvcRewardGrant",
+      "nameSpace": "",
+      "size": 180,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopSvcRewardGrant",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopResponseMetadataDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopResponseDTO-vector-SvcRewardGrant",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopSvcRewardGroup",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopResponseMetadataDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopResponseDTO-vector-SvcRewardGroup",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopResponseMetadataDTO",
+      "nameSpace": "",
+      "size": 1,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemType",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentSource",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "media",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizations",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolEventShopReward",
+      "nameSpace": "",
+      "size": 164,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "rewardTrackItems",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRewardTrackItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardChoiceUIData",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "info",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSvcRewardGrant"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardGroup",
+          "offset": 176,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSvcRewardGroup"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardGrant",
+      "nameSpace": "",
+      "size": 372,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRewardStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "FAILED",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "FULFILLED",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRewardStrategy",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ALL",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "RANDOM",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "SELECTION",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "trackConfig",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackConfiguration"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardTrack",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "premiumEntitlementId",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardTrackConfiguration",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackItemStates"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardOptions",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRewardTrackItemOption",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardTags",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRewardTrackItemTag",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "progressRequired",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardName",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardDescription",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardTrackItem",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRewardTrackItemHeaderType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "FREE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PREMIUM",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackItemStates"
+          }
+        },
+        {
+          "description": "",
+          "name": "thumbIconPath",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "largeDisplayImagePath",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "selected",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "overrideFooter",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "headerType",
+          "offset": 44,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardTrackItemHeaderType"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardDescription",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardTrackItemOption",
+      "nameSpace": "",
+      "size": 72,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRewardTrackItemStates",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Locked",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Selected",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Unlocked",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Unselected",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRewardTrackItemTag",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Choice",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Free",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Instant",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Multiple",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "Rare",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "level",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int16"
+          }
+        },
+        {
+          "description": "",
+          "name": "levelProgress",
+          "offset": 2,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint16"
+          }
+        },
+        {
+          "description": "",
+          "name": "futureLevelProgress",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint16"
+          }
+        },
+        {
+          "description": "",
+          "name": "passProgress",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentLevelXP",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "totalLevelXP",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "iteration",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardTrackProgress",
+      "nameSpace": "",
+      "size": 40,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "Enabled",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopRewardsConfig",
+      "nameSpace": "",
+      "size": 1,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "resource",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "timestamp",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRiotMessagingServiceMessage",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemTypeId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementTypeId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "resourceOperation",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRmsEntitlementPayload",
+      "nameSpace": "",
+      "size": 96,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopRmsStoreEntitlementItem",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "transactionId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopRmsStoreEntitlementItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopRmsStoreEntitlementPayload",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolEventShopRmsWalletPayload",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "rewardGroupId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "selections",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopSelectionRequestDTO",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "minSelectionsAllowed",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "maxSelectionsAllowed",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "LolEventShopSelectionStrategyConfig",
+      "nameSpace": "",
+      "size": 8,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopPlayerSettingsData"
+          }
+        },
+        {
+          "description": "",
+          "name": "schemaVersion",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int16"
+          }
+        }
+      ],
+      "name": "LolEventShopSettingsResource",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "items",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "object",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemsJwt",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopSimpleInventoryDTO",
+      "nameSpace": "",
+      "size": 80,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSimpleInventoryDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopSimpleInventoryResponseDTO",
+      "nameSpace": "",
+      "size": 80,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolEventShopSummonerIcon",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "granteeId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardGroupId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "dateCreated",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopGrantStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "grantElements",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopSvcRewardGrantElement",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "selectedIds",
+          "offset": 112,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "viewed",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "grantorDescription",
+          "offset": 128,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopGrantorDescription"
+          }
+        }
+      ],
+      "name": "LolEventShopSvcRewardGrant",
+      "nameSpace": "",
+      "size": 176,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "elementId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemType",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "fulfillmentSource",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "media",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizations",
+          "offset": 136,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolEventShopSvcRewardGrantElement",
+      "nameSpace": "",
+      "size": 168,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "internalName",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "types",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewards",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopReward",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "childRewardGroupIds",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewardStrategy",
+          "offset": 108,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopRewardStrategy"
+          }
+        },
+        {
+          "description": "",
+          "name": "selectionStrategyConfig",
+          "offset": 112,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopSelectionStrategyConfig"
+          }
+        },
+        {
+          "description": "",
+          "name": "active",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "media",
+          "offset": 128,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizations",
+          "offset": 160,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "celebrationType",
+          "offset": 192,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopCelebrationType"
+          }
+        }
+      ],
+      "name": "LolEventShopSvcRewardGroup",
+      "nameSpace": "",
+      "size": 196,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "tokenImage",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenName",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenUuid",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "offers",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopOffer",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenBundlesCatalogEntry",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopTokenShop",
+      "nameSpace": "",
+      "size": 60,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "tokenName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenImage",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenUuid",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenBundlesCatalogEntry",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopTokenShopUIData",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "rewardsCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "lockedTokensCount",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolEventShopUnclaimedRewardsUIData",
+      "nameSpace": "",
+      "size": 8,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ip",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "rp",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "LolEventShopWallet",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "signedBalancesJwt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationMS",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAtMS",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "receivedAtMS",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "valid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolEventShopWalletCacheEntry",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "balances",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "balancesJwt",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolEventShopWalletDTO",
+      "nameSpace": "",
+      "size": 112,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolEventShopWalletDTO"
+          }
+        }
+      ],
+      "name": "LolEventShopWalletResponseDTO",
+      "nameSpace": "",
+      "size": 112,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
       ],
       "values": []
     },
@@ -160232,18 +164829,8 @@
         },
         {
           "description": "",
-          "name": "phaseRosterSubs",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "PhaseRosterSubDTO",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
           "name": "checkinTime",
-          "offset": 40,
+          "offset": 24,
           "optional": false,
           "type": {
             "elementType": "",
@@ -160253,7 +164840,7 @@
         {
           "description": "",
           "name": "bracketDTO",
-          "offset": 48,
+          "offset": 32,
           "optional": true,
           "type": {
             "elementType": "",
@@ -160263,107 +164850,7 @@
       ],
       "name": "PhaseRosterDTO",
       "nameSpace": "",
-      "size": 120,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "playerId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "replacedPlayerId",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "subState",
-          "offset": 16,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "SubState"
-          }
-        },
-        {
-          "description": "",
-          "name": "bet",
-          "offset": 20,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "betType",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "TicketType"
-          }
-        },
-        {
-          "description": "",
-          "name": "pay",
-          "offset": 28,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "premiumPay",
-          "offset": 32,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "position",
-          "offset": 36,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "Position"
-          }
-        },
-        {
-          "description": "",
-          "name": "tier",
-          "offset": 40,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        }
-      ],
-      "name": "PhaseRosterSubDTO",
-      "nameSpace": "",
-      "size": 48,
+      "size": 104,
       "tags": [],
       "values": []
     },
@@ -162620,66 +167107,6 @@
       "fields": [
         {
           "description": "",
-          "name": "playerId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "replacedPlayerId",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      ],
-      "name": "PublicPhaseSubDTO",
-      "nameSpace": "",
-      "size": 16,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "phaseId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "phaseSubs",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "PublicPhaseSubDTO",
-            "type": "vector"
-          }
-        }
-      ],
-      "name": "PublicPhaseSubsDTO",
-      "nameSpace": "",
-      "size": 24,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "id",
           "offset": 0,
           "optional": false,
@@ -162747,21 +167174,11 @@
             "elementType": "uint64",
             "type": "vector"
           }
-        },
-        {
-          "description": "",
-          "name": "phasesSubs",
-          "offset": 84,
-          "optional": false,
-          "type": {
-            "elementType": "PublicPhaseSubsDTO",
-            "type": "vector"
-          }
         }
       ],
       "name": "PublicRosterDTO",
       "nameSpace": "",
-      "size": 96,
+      "size": 88,
       "tags": [],
       "values": []
     },
@@ -163986,7 +168403,7 @@
         {
           "description": "",
           "name": "banned",
-          "offset": 312,
+          "offset": 288,
           "optional": false,
           "type": {
             "elementType": "",
@@ -163996,7 +168413,7 @@
         {
           "description": "",
           "name": "multiUserChatJWT",
-          "offset": 316,
+          "offset": 292,
           "optional": false,
           "type": {
             "elementType": "",
@@ -164006,7 +168423,7 @@
       ],
       "name": "RosterDTO",
       "nameSpace": "",
-      "size": 344,
+      "size": 320,
       "tags": [],
       "values": []
     },
@@ -164075,38 +168492,18 @@
         },
         {
           "description": "",
-          "name": "phaseRosterSubs",
-          "offset": 60,
-          "optional": false,
-          "type": {
-            "elementType": "PhaseRosterSubDTO",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
           "name": "withdraw",
-          "offset": 72,
+          "offset": 64,
           "optional": false,
           "type": {
             "elementType": "",
             "type": "RosterWithdraw"
           }
-        },
-        {
-          "description": "",
-          "name": "subbedMemberIds",
-          "offset": 136,
-          "optional": false,
-          "type": {
-            "elementType": "uint64",
-            "type": "vector"
-          }
         }
       ],
       "name": "RosterDynamicStateDTO",
       "nameSpace": "",
-      "size": 152,
+      "size": 128,
       "tags": [],
       "values": []
     },
@@ -164422,21 +168819,11 @@
             "elementType": "int32",
             "type": "map"
           }
-        },
-        {
-          "description": "",
-          "name": "sub",
-          "offset": 64,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
         }
       ],
       "name": "RosterPlayerAggregatedStatsDTO",
       "nameSpace": "",
-      "size": 68,
+      "size": 64,
       "tags": [],
       "values": []
     },
@@ -165897,51 +170284,6 @@
     },
     {
       "description": "",
-      "fields": [],
-      "name": "SubState",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [],
-      "values": [
-        {
-          "description": "",
-          "name": "DECLINED",
-          "value": 2
-        },
-        {
-          "description": "",
-          "name": "FORCED_NOT_READY",
-          "value": 5
-        },
-        {
-          "description": "",
-          "name": "NOT_READY",
-          "value": 4
-        },
-        {
-          "description": "",
-          "name": "PENDING",
-          "value": 1
-        },
-        {
-          "description": "",
-          "name": "READY",
-          "value": 6
-        },
-        {
-          "description": "",
-          "name": "REVOKED",
-          "value": 3
-        },
-        {
-          "description": "",
-          "name": "SUGGESTED",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "description": "",
       "fields": [
         {
           "description": "",
@@ -166371,18 +170713,8 @@
         },
         {
           "description": "",
-          "name": "maxSub",
-          "offset": 128,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
           "name": "lastThemeOfSeason",
-          "offset": 132,
+          "offset": 128,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166392,7 +170724,7 @@
         {
           "description": "",
           "name": "bracketSize",
-          "offset": 136,
+          "offset": 132,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166402,7 +170734,7 @@
         {
           "description": "",
           "name": "minGames",
-          "offset": 160,
+          "offset": 156,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166412,7 +170744,7 @@
         {
           "description": "",
           "name": "smsRestriction",
-          "offset": 164,
+          "offset": 160,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166422,7 +170754,7 @@
         {
           "description": "",
           "name": "honorRestriction",
-          "offset": 165,
+          "offset": 161,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166432,7 +170764,7 @@
         {
           "description": "",
           "name": "rankRestriction",
-          "offset": 166,
+          "offset": 162,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166442,7 +170774,7 @@
         {
           "description": "",
           "name": "voiceEnabled",
-          "offset": 167,
+          "offset": 163,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166452,7 +170784,7 @@
         {
           "description": "",
           "name": "phases",
-          "offset": 168,
+          "offset": 164,
           "optional": false,
           "type": {
             "elementType": "TournamentPhaseDTO",
@@ -166462,7 +170794,7 @@
         {
           "description": "",
           "name": "rewardConfig",
-          "offset": 180,
+          "offset": 176,
           "optional": false,
           "type": {
             "elementType": "ClashRewardConfigClient",
@@ -166472,7 +170804,7 @@
         {
           "description": "",
           "name": "tierConfigs",
-          "offset": 192,
+          "offset": 188,
           "optional": false,
           "type": {
             "elementType": "TierConfig",
@@ -166482,7 +170814,7 @@
         {
           "description": "",
           "name": "bracketFormationInitDelayMs",
-          "offset": 208,
+          "offset": 200,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166492,7 +170824,7 @@
         {
           "description": "",
           "name": "bracketFormationIntervalMs",
-          "offset": 216,
+          "offset": 208,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166502,7 +170834,7 @@
         {
           "description": "",
           "name": "status",
-          "offset": 224,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166512,7 +170844,7 @@
         {
           "description": "",
           "name": "resumeTime",
-          "offset": 232,
+          "offset": 224,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166522,7 +170854,7 @@
         {
           "description": "",
           "name": "lft",
-          "offset": 240,
+          "offset": 232,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166532,7 +170864,7 @@
         {
           "description": "",
           "name": "maxInvites",
-          "offset": 244,
+          "offset": 236,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166542,7 +170874,7 @@
         {
           "description": "",
           "name": "maxSuggestionsPerPlayer",
-          "offset": 248,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166552,7 +170884,7 @@
       ],
       "name": "TournamentDTO",
       "nameSpace": "",
-      "size": 256,
+      "size": 248,
       "tags": [],
       "values": []
     },
@@ -166602,7 +170934,7 @@
         {
           "description": "",
           "name": "roster",
-          "offset": 256,
+          "offset": 248,
           "optional": true,
           "type": {
             "elementType": "",
@@ -166611,18 +170943,8 @@
         },
         {
           "description": "",
-          "name": "subRosters",
-          "offset": 608,
-          "optional": false,
-          "type": {
-            "elementType": "RosterDTO",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
           "name": "pendingRoster",
-          "offset": 624,
+          "offset": 576,
           "optional": true,
           "type": {
             "elementType": "",
@@ -166632,7 +170954,7 @@
         {
           "description": "",
           "name": "inviteePendingRosters",
-          "offset": 832,
+          "offset": 784,
           "optional": false,
           "type": {
             "elementType": "PendingRosterDTO",
@@ -166642,7 +170964,7 @@
         {
           "description": "",
           "name": "themeVp",
-          "offset": 844,
+          "offset": 796,
           "optional": false,
           "type": {
             "elementType": "",
@@ -166652,7 +170974,7 @@
       ],
       "name": "TournamentInfoDTO",
       "nameSpace": "",
-      "size": 848,
+      "size": 800,
       "tags": [],
       "values": []
     },
