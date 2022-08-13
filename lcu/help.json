@@ -1434,7 +1434,37 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-npe-rewards_v1_login-rewards",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-npe-tutorial-path_v1_rewards",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-npe-tutorial-path_v1_settings",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-npe-tutorial-path_v1_tutorials",
       "nameSpace": "",
       "tags": [],
       "type": {
