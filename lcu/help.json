@@ -204,6 +204,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-active-boosts_v1_active-boosts",
       "nameSpace": "",
       "tags": [],
