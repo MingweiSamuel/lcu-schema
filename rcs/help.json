@@ -52,16 +52,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_agent_v1_registry-config",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_agent_v1_requests",
       "nameSpace": "",
       "tags": [],
@@ -73,16 +63,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_agent_v1_session",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_native-ux_v1_should-keep-game-up-to-date",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -510,27 +490,6 @@
     }
   ],
   "functions": [
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Delete the registry config for Riot Client on startup which will disable launching riot client on start up",
-      "help": "",
-      "internal": false,
-      "name": "DeleteAgentV1RegistryConfigStartup",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin agent"
-      ],
-      "threadSafe": false
-    },
     {
       "arguments": [
         {
@@ -3181,27 +3140,6 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Get the registry config for Riot Client on startup",
-      "help": "",
-      "internal": false,
-      "name": "GetAgentV1RegistryConfigStartup",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "bool"
-      },
-      "subscribable": true,
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin agent"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
       "description": "Get the list of pending and active requests being handled by the agent",
       "help": "",
       "internal": false,
@@ -5650,23 +5588,6 @@
       "tags": [
         "$remoting-binding-module"
       ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Setting that, if true, means that Foundation should exit if no games are running.",
-      "help": "",
-      "internal": false,
-      "name": "GetNativeUxV1ShouldKeepGameUpToDate",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "KeepGameUpToDateResult"
-      },
-      "subscribable": false,
-      "tags": [],
       "threadSafe": false
     },
     {
@@ -18520,27 +18441,6 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Set the registry config for Riot Client on startup",
-      "help": "",
-      "internal": false,
-      "name": "PutAgentV1RegistryConfigStartup",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin agent"
       ],
       "threadSafe": false
     },
@@ -40920,66 +40820,6 @@
       "name": "JwtAuthenticatorJWTVerifyResource",
       "nameSpace": "",
       "size": 0,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "productId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchlineId",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "keepUpToDate",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "doNotShowDialogAgain",
-          "offset": 49,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "dialogDismissed",
-          "offset": 50,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "name": "KeepGameUpToDateResult",
-      "nameSpace": "",
-      "size": 52,
       "tags": [],
       "values": []
     },

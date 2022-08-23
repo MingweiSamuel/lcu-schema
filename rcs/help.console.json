@@ -249,55 +249,6 @@
         }
       }
     },
-    "OnJsonApiEvent_agent_v1_registry-config": {
-      "type": {
-        "PluginResourceEvent": {
-          "fields": [
-            {
-              "uri": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "eventType": {
-                "description": "",
-                "offset": 24,
-                "optional": false,
-                "type": {
-                  "PluginResourceEventType": {
-                    "values": [
-                      {
-                        "name": "Create",
-                        "value": 0
-                      },
-                      {
-                        "name": "Update",
-                        "value": 1
-                      },
-                      {
-                        "name": "Delete",
-                        "value": 2
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "data": {
-                "description": "",
-                "offset": 32,
-                "optional": false,
-                "type": "object"
-              }
-            }
-          ]
-        }
-      }
-    },
     "OnJsonApiEvent_agent_v1_requests": {
       "type": {
         "PluginResourceEvent": {
@@ -348,55 +299,6 @@
       }
     },
     "OnJsonApiEvent_agent_v1_session": {
-      "type": {
-        "PluginResourceEvent": {
-          "fields": [
-            {
-              "uri": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "eventType": {
-                "description": "",
-                "offset": 24,
-                "optional": false,
-                "type": {
-                  "PluginResourceEventType": {
-                    "values": [
-                      {
-                        "name": "Create",
-                        "value": 0
-                      },
-                      {
-                        "name": "Update",
-                        "value": 1
-                      },
-                      {
-                        "name": "Delete",
-                        "value": 2
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "data": {
-                "description": "",
-                "offset": 32,
-                "optional": false,
-                "type": "object"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "OnJsonApiEvent_native-ux_v1_should-keep-game-up-to-date": {
       "type": {
         "PluginResourceEvent": {
           "fields": [
@@ -2447,14 +2349,6 @@
     }
   },
   "functions": {
-    "DeleteAgentV1RegistryConfigStartup": {
-      "arguments": [],
-      "description": "Delete the registry config for Riot Client on startup which will disable launching riot client on start up",
-      "http_method": "DELETE",
-      "returns": "object",
-      "url": "/agent/v1/registry-config/startup",
-      "usage": "DeleteAgentV1RegistryConfigStartup"
-    },
     "DeleteAgentV1RequestsThirdPartyDependencyByRequestId": {
       "arguments": [
         {
@@ -4418,14 +4312,6 @@
       },
       "url": "/age-restriction/v1/age-restriction/products/{productId}",
       "usage": "GetAgeRestrictionV1AgeRestrictionProductsByProductId <productId>"
-    },
-    "GetAgentV1RegistryConfigStartup": {
-      "arguments": [],
-      "description": "Get the registry config for Riot Client on startup",
-      "http_method": "GET",
-      "returns": "bool",
-      "url": "/agent/v1/registry-config/startup",
-      "usage": "GetAgentV1RegistryConfigStartup"
     },
     "GetAgentV1Requests": {
       "arguments": [],
@@ -7661,60 +7547,6 @@
       },
       "url": "/name-check/v1/validate",
       "usage": "GetNameCheckV1Validate <name>"
-    },
-    "GetNativeUxV1ShouldKeepGameUpToDate": {
-      "arguments": [],
-      "description": "Setting that, if true, means that Foundation should exit if no games are running.",
-      "http_method": "GET",
-      "privilege": 127,
-      "returns": {
-        "KeepGameUpToDateResult": {
-          "fields": [
-            {
-              "productId": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "patchlineId": {
-                "description": "",
-                "offset": 24,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "keepUpToDate": {
-                "description": "",
-                "offset": 48,
-                "optional": false,
-                "type": "bool"
-              }
-            },
-            {
-              "doNotShowDialogAgain": {
-                "description": "",
-                "offset": 49,
-                "optional": false,
-                "type": "bool"
-              }
-            },
-            {
-              "dialogDismissed": {
-                "description": "",
-                "offset": 50,
-                "optional": false,
-                "type": "bool"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/native-ux/v1/should-keep-game-up-to-date",
-      "usage": "GetNativeUxV1ShouldKeepGameUpToDate"
     },
     "GetNintendoAccountV1PlayerNickname": {
       "arguments": [],
@@ -37935,14 +37767,6 @@
       "url": "/age-restriction/v1/debug/age-restriction/products/{productId}",
       "usage": "PutAgeRestrictionV1DebugAgeRestrictionProductsByProductId [restricted] <productId>"
     },
-    "PutAgentV1RegistryConfigStartup": {
-      "arguments": [],
-      "description": "Set the registry config for Riot Client on startup",
-      "http_method": "PUT",
-      "returns": "object",
-      "url": "/agent/v1/registry-config/startup",
-      "usage": "PutAgentV1RegistryConfigStartup"
-    },
     "PutAppCommandSubmit": {
       "arguments": [
         {
@@ -63583,50 +63407,6 @@
             "offset": 0,
             "optional": false,
             "type": "string"
-          }
-        }
-      ]
-    },
-    "KeepGameUpToDateResult": {
-      "fields": [
-        {
-          "productId": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "patchlineId": {
-            "description": "",
-            "offset": 24,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "keepUpToDate": {
-            "description": "",
-            "offset": 48,
-            "optional": false,
-            "type": "bool"
-          }
-        },
-        {
-          "doNotShowDialogAgain": {
-            "description": "",
-            "offset": 49,
-            "optional": false,
-            "type": "bool"
-          }
-        },
-        {
-          "dialogDismissed": {
-            "description": "",
-            "offset": 50,
-            "optional": false,
-            "type": "bool"
           }
         }
       ]
