@@ -894,16 +894,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-geoinfo_v1_whereami",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-highlights_v1_config",
       "nameSpace": "",
       "tags": [],
