@@ -1584,26 +1584,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-perks_v1_servicesettings",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-perks_v1_settings",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-perks_v1_styles",
       "nameSpace": "",
       "tags": [],
@@ -11535,6 +11515,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_WardSkinConfig_WardSkinSelection",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-player-behavior_v1_code-of-conduct-notification",
       "nameSpace": "",
       "tags": [],
       "type": {
