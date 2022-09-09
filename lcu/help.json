@@ -164,6 +164,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_config_v1_config",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_data-store_v1_install-settings",
       "nameSpace": "",
       "tags": [],
@@ -1574,7 +1584,17 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-perks_v1_schema-version",
+      "name": "OnJsonApiEvent_lol-perks_v1_servicesettings",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-perks_v1_settings",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -14818,6 +14838,22 @@
     {
       "arguments": [],
       "async": "",
+      "description": "Returns a merged object of both public and player configs",
+      "help": "",
+      "name": "GetConfigV1Config",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "Config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
       "description": "Get all cookies.",
       "help": "",
       "name": "GetCookieJarV1Cookies",
@@ -17320,8 +17356,8 @@
       "name": "GetLolChatV1PlayerMutes",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "LolChatPlayerMutesResponse"
+        "elementType": "LolChatPlayerMuteStatus",
+        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
@@ -17567,17 +17603,7 @@
       "threadSafe": false
     },
     {
-      "arguments": [
-        {
-          "description": "",
-          "name": "uuid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
+      "arguments": [],
       "async": "",
       "description": "",
       "help": "",
@@ -23541,24 +23567,6 @@
       "returns": {
         "elementType": "int32",
         "type": "vector"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-perks"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "GetLolPerksV1SchemaVersion",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "uint32"
       },
       "tags": [
         "$remoting-binding-module",
@@ -29780,6 +29788,34 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "ConfirmDeactivationPinRequest",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolAccountVerificationConfirmDeactivationPinRequest"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolAccountVerificationV1ConfirmDeactivationPin",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "async": "",
       "description": "",
@@ -29813,6 +29849,34 @@
       "description": "",
       "help": "",
       "name": "PostLolAccountVerificationV1SendActivationPin",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "SendDeactivationPinRequest",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": ""
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolAccountVerificationV1SendDeactivationPin",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -30810,6 +30874,34 @@
       "returns": {
         "elementType": "",
         "type": "LolChatSessionResource"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "playerMuteUpdate",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChatPlayerMuteUpdate"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolChatV1SystemMutes",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
@@ -38783,43 +38875,6 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-chat"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "summonerId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        },
-        {
-          "description": "",
-          "name": "verificationCode",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutLolCollectionsV1InventoriesBySummonerIdVerification",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "string"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-collections"
       ],
       "threadSafe": false
     },
@@ -48886,6 +48941,49 @@
       "fields": [
         {
           "description": "",
+          "name": "token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "LolAccountVerificationAuthResourceRsoAccessToken",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "username",
           "offset": 0,
           "optional": false,
@@ -48985,18 +49083,51 @@
       "fields": [
         {
           "description": "",
-          "name": "success",
+          "name": "data",
           "offset": 0,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "bool"
+            "type": "LolAccountVerificationConfirmActivationPinResponseData"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientMessageId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         }
       ],
       "name": "LolAccountVerificationConfirmActivationPinResponse",
       "nameSpace": "",
-      "size": 32,
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolAccountVerificationConfirmActivationPinResponseData",
+      "nameSpace": "",
+      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-account-verification"
@@ -49273,6 +49404,105 @@
           "value": 1
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "countryCode",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "endsWith",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "length",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolAccountVerificationPhoneNumberObfuscated",
+      "nameSpace": "",
+      "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolAccountVerificationPhoneNumberResponseData"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientMessageId",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolAccountVerificationPhoneNumberResponse",
+      "nameSpace": "",
+      "size": 76,
+      "tags": [
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "phoneNumberObfuscated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolAccountVerificationPhoneNumberObfuscated"
+          }
+        }
+      ],
+      "name": "LolAccountVerificationPhoneNumberResponseData",
+      "nameSpace": "",
+      "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin lol-account-verification"
+      ],
+      "values": []
     },
     {
       "description": "",
@@ -64587,7 +64817,7 @@
         {
           "description": "",
           "name": "targetRegion",
-          "offset": 216,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "",
@@ -64597,7 +64827,7 @@
         {
           "description": "",
           "name": "isMuted",
-          "offset": 240,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "",
@@ -64607,7 +64837,7 @@
         {
           "description": "",
           "name": "unreadMessageCount",
-          "offset": 248,
+          "offset": 272,
           "optional": false,
           "type": {
             "elementType": "",
@@ -64617,7 +64847,7 @@
         {
           "description": "",
           "name": "lastMessage",
-          "offset": 264,
+          "offset": 288,
           "optional": true,
           "type": {
             "elementType": "",
@@ -64627,7 +64857,7 @@
       ],
       "name": "LolChatConversationResource",
       "nameSpace": "",
-      "size": 536,
+      "size": 560,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -67444,6 +67674,34 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "LolChatMuteType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "PLAYER_MUTE",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "SETTINGS_MUTE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "SYSTEM_MUTE",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -67695,6 +67953,59 @@
       "fields": [
         {
           "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isPlayerMuted",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "isSettingsMuted",
+          "offset": 25,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "isSystemMuted",
+          "offset": 26,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolChatPlayerMuteStatus",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-chat"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "puuids",
           "offset": 0,
           "optional": false,
@@ -67717,39 +68028,6 @@
       "name": "LolChatPlayerMuteUpdate",
       "nameSpace": "",
       "size": 16,
-      "tags": [
-        "Plugins",
-        "Plugin lol-chat"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "mutedPuuids",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "systemMutedPuuids",
-          "offset": 12,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        }
-      ],
-      "name": "LolChatPlayerMutesResponse",
-      "nameSpace": "",
-      "size": 24,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -77460,29 +77738,6 @@
       "fields": [
         {
           "description": "",
-          "name": "data",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "LolCollectionsTPVSaveResponseDTO",
-      "nameSpace": "",
-      "size": 24,
-      "tags": [
-        "Plugins",
-        "Plugin lol-collections"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "summonerId",
           "offset": 0,
           "optional": false,
@@ -86438,7 +86693,7 @@
         {
           "description": "",
           "name": "unclaimedRewardCount",
-          "offset": 40,
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "",
@@ -86448,7 +86703,7 @@
       ],
       "name": "LolEventShopClaimSelectUIData",
       "nameSpace": "",
-      "size": 48,
+      "size": 64,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -86994,11 +87249,41 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "StartDate",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ProgressEndDate",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "ShopEndDate",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolEventShopEventShopClientConfig",
       "nameSpace": "",
-      "size": 16,
+      "size": 52,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -88453,7 +88738,7 @@
       ],
       "name": "LolEventShopLargeSelectionDisplayUIData",
       "nameSpace": "",
-      "size": 40,
+      "size": 56,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -90530,11 +90815,21 @@
             "elementType": "",
             "type": "int64"
           }
+        },
+        {
+          "description": "",
+          "name": "threshold",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolEventShopRewardTrackItem",
       "nameSpace": "",
-      "size": 40,
+      "size": 56,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -147857,7 +148152,7 @@
       "fields": [
         {
           "description": "",
-          "name": "notifications",
+          "name": "leagueNotifications",
           "offset": 0,
           "optional": false,
           "type": {
