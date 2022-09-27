@@ -3369,7 +3369,7 @@
       5
     ],
     "areFreeChampionsAllowed": true,
-    "assetMutator": "",
+    "assetMutator": "PICKURF",
     "category": "PvP",
     "championsRequiredToPlay": 16,
     "description": "Ultra Rapid Fire",

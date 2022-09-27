@@ -724,6 +724,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_navigation-button-data",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-game-client-chat_v1_aas-messages",
       "nameSpace": "",
       "tags": [],
@@ -11945,16 +11955,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-spectator_v1_spectate",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
       "nameSpace": "",
       "tags": [],
       "type": {
