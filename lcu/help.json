@@ -1564,16 +1564,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-perks_v1_customizationlimits",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-perks_v1_inventory",
       "nameSpace": "",
       "tags": [],
@@ -1684,6 +1674,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_IsNewAvsServiceEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_KrPhoneDisplayEnabled",
       "nameSpace": "",
       "tags": [],
@@ -1725,6 +1725,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_SettingsEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_ShouldUseNewAvs",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -9194,6 +9204,36 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Perks_UnlockAllRunePageFunctionality",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Perks_UseDefaultPerksPages",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_Perks_UseInventoryPageCount",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_PersonalizedOffers",
       "nameSpace": "",
       "tags": [],
@@ -11945,6 +11985,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-spectator_v1_spectate",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -15873,6 +15923,24 @@
       "async": "",
       "description": "",
       "help": "",
+      "name": "GetLolChallengesV1Seasons",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolChallengesChallengeSeason",
+        "type": "vector"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
       "name": "GetLolChallengesV1SuggestedChallengesLocalPlayer",
       "nameSpace": "",
       "returns": {
@@ -19004,6 +19072,24 @@
       "returns": {
         "elementType": "",
         "type": "LolEventShopEventShopError"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolEventShopV1Info",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolEventShopEventShopInfoUIData"
       },
       "tags": [
         "$remoting-binding-module",
@@ -23487,24 +23573,6 @@
       "returns": {
         "elementType": "",
         "type": "LolPerksPerkPageResource"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-perks"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "GetLolPerksV1Customizationlimits",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "LolPerksCustomizationLimits"
       },
       "tags": [
         "$remoting-binding-module",
@@ -32469,7 +32537,7 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "PostLolEventShopV1LoadProgressionData",
+      "name": "PostLolEventShopV1LazyLoadData",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -53989,11 +54057,21 @@
             "elementType": "",
             "type": "uint64"
           }
+        },
+        {
+          "description": "",
+          "name": "seasons",
+          "offset": 280,
+          "optional": false,
+          "type": {
+            "elementType": "LolChallengesChallengeSeason",
+            "type": "vector"
+          }
         }
       ],
       "name": "LolChallengesChallengePlayerData",
       "nameSpace": "",
-      "size": 280,
+      "size": 296,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -54095,6 +54173,59 @@
           "value": 0
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "seasonId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "seasonStart",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "seasonEnd",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "isActive",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolChallengesChallengeSeason",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin lol-challenges"
+      ],
+      "values": []
     },
     {
       "description": "",
@@ -54553,11 +54684,31 @@
             "elementType": "",
             "type": "bool"
           }
+        },
+        {
+          "description": "",
+          "name": "endTimestamp",
+          "offset": 232,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "seasons",
+          "offset": 240,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
         }
       ],
       "name": "LolChallengesGameDataChallengeConfig",
       "nameSpace": "",
-      "size": 232,
+      "size": 256,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -55555,11 +55706,21 @@
             "elementType": "int32",
             "type": "vector"
           }
+        },
+        {
+          "description": "",
+          "name": "retireTimestamp",
+          "offset": 544,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
         }
       ],
       "name": "LolChallengesUIChallenge",
       "nameSpace": "",
-      "size": 544,
+      "size": 552,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -56258,11 +56419,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 52,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolChampSelectChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 52,
+      "size": 80,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select"
@@ -56587,7 +56758,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 140,
+          "offset": 168,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectPlayerSelection",
@@ -56597,7 +56768,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 152,
+          "offset": 180,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectPlayerSelection",
@@ -56607,7 +56778,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 164,
+          "offset": 192,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectTradeContract",
@@ -56617,7 +56788,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 176,
+          "offset": 204,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -56627,7 +56798,7 @@
         {
           "description": "",
           "name": "bans",
-          "offset": 188,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56637,7 +56808,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 216,
+          "offset": 248,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56647,7 +56818,7 @@
         {
           "description": "",
           "name": "isSpectating",
-          "offset": 224,
+          "offset": 256,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56657,7 +56828,7 @@
         {
           "description": "",
           "name": "allowSkinSelection",
-          "offset": 225,
+          "offset": 257,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56667,7 +56838,7 @@
         {
           "description": "",
           "name": "allowDuplicatePicks",
-          "offset": 226,
+          "offset": 258,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56677,7 +56848,7 @@
         {
           "description": "",
           "name": "allowBattleBoost",
-          "offset": 227,
+          "offset": 259,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56687,7 +56858,7 @@
         {
           "description": "",
           "name": "boostableSkinCount",
-          "offset": 228,
+          "offset": 260,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56697,7 +56868,7 @@
         {
           "description": "",
           "name": "allowRerolling",
-          "offset": 232,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56707,7 +56878,7 @@
         {
           "description": "",
           "name": "rerollsRemaining",
-          "offset": 236,
+          "offset": 268,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56717,7 +56888,7 @@
         {
           "description": "",
           "name": "allowLockedEvents",
-          "offset": 240,
+          "offset": 272,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56727,7 +56898,7 @@
         {
           "description": "",
           "name": "lockedEventIndex",
-          "offset": 244,
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56737,7 +56908,7 @@
         {
           "description": "",
           "name": "benchEnabled",
-          "offset": 248,
+          "offset": 280,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56747,7 +56918,7 @@
         {
           "description": "",
           "name": "benchChampions",
-          "offset": 252,
+          "offset": 284,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectBenchChampion",
@@ -56757,7 +56928,7 @@
         {
           "description": "",
           "name": "entitledFeatureState",
-          "offset": 264,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56767,7 +56938,7 @@
         {
           "description": "",
           "name": "counter",
-          "offset": 280,
+          "offset": 312,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56777,7 +56948,7 @@
         {
           "description": "",
           "name": "recoveryCounter",
-          "offset": 288,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56787,7 +56958,7 @@
         {
           "description": "",
           "name": "skipChampionSelect",
-          "offset": 296,
+          "offset": 328,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56797,7 +56968,7 @@
         {
           "description": "",
           "name": "hasSimultaneousBans",
-          "offset": 297,
+          "offset": 329,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56807,7 +56978,7 @@
         {
           "description": "",
           "name": "hasSimultaneousPicks",
-          "offset": 298,
+          "offset": 330,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56817,7 +56988,7 @@
         {
           "description": "",
           "name": "isCustomGame",
-          "offset": 299,
+          "offset": 331,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56827,7 +56998,7 @@
       ],
       "name": "LolChampSelectChampSelectSession",
       "nameSpace": "",
-      "size": 304,
+      "size": 336,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select"
@@ -71762,7 +71933,7 @@
         },
         {
           "description": "",
-          "name": "invitationId",
+          "name": "multiUserChatJWT",
           "offset": 116,
           "optional": false,
           "type": {
@@ -71772,8 +71943,18 @@
         },
         {
           "description": "",
-          "name": "key",
+          "name": "invitationId",
           "offset": 140,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "key",
+          "offset": 164,
           "optional": false,
           "type": {
             "elementType": "",
@@ -71783,7 +71964,7 @@
       ],
       "name": "LolClashPlayerChatRoster",
       "nameSpace": "",
-      "size": 168,
+      "size": 192,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -87542,6 +87723,139 @@
     },
     {
       "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "eventId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventName",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventIcon",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventTokenImage",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentTokenBalance",
+          "offset": 48,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "lockedTokenCount",
+          "offset": 64,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "unclaimedRewardCount",
+          "offset": 80,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "isPassPurchased",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "isEventActive",
+          "offset": 89,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "showPip",
+          "offset": 90,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventPassBundles",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenBundles",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopCatalogEntry",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopEventShopInfoUIData",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [],
       "name": "LolEventShopGrantStatus",
       "nameSpace": "",
@@ -91451,29 +91765,6 @@
       "name": "LolEventShopRewardTrackXP",
       "nameSpace": "",
       "size": 32,
-      "tags": [
-        "Plugins",
-        "Plugin lol-event-shop"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "Enabled",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "name": "LolEventShopRewardsConfig",
-      "nameSpace": "",
-      "size": 1,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -107769,8 +108060,18 @@
         },
         {
           "description": "",
-          "name": "scarcePositions",
+          "name": "multiUserChatJWT",
           "offset": 548,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scarcePositions",
+          "offset": 572,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -107780,7 +108081,7 @@
       ],
       "name": "LolLobbyLobbyDto",
       "nameSpace": "",
-      "size": 560,
+      "size": 584,
       "tags": [
         "Plugins",
         "Plugin lol-lobby"
@@ -123151,29 +123452,6 @@
     },
     {
       "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "Enabled",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "name": "LolLootRewardsConfig",
-      "nameSpace": "",
-      "size": 1,
-      "tags": [
-        "Plugins",
-        "Plugin lol-loot"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
       "fields": [],
       "name": "LolLootSelectGrantStatusResponse",
       "nameSpace": "",
@@ -134418,11 +134696,21 @@
             "elementType": "",
             "type": "string"
           }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 52,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolPerksChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 52,
+      "size": 80,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -134621,7 +134909,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 140,
+          "offset": 168,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectPlayerSelection",
@@ -134631,7 +134919,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 152,
+          "offset": 180,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectPlayerSelection",
@@ -134641,7 +134929,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 164,
+          "offset": 192,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectTradeContract",
@@ -134651,7 +134939,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 176,
+          "offset": 204,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -134661,7 +134949,7 @@
         {
           "description": "",
           "name": "bans",
-          "offset": 188,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "",
@@ -134671,7 +134959,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 216,
+          "offset": 248,
           "optional": false,
           "type": {
             "elementType": "",
@@ -134681,7 +134969,7 @@
         {
           "description": "",
           "name": "isSpectating",
-          "offset": 224,
+          "offset": 256,
           "optional": false,
           "type": {
             "elementType": "",
@@ -134691,7 +134979,7 @@
       ],
       "name": "LolPerksChampSelectSession",
       "nameSpace": "",
-      "size": 304,
+      "size": 336,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -134884,49 +135172,6 @@
         "Plugin lol-perks"
       ],
       "values": []
-    },
-    {
-      "description": "",
-      "fields": [],
-      "name": "LolPerksCustomizationLimits",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [
-        "Plugins",
-        "Plugin lol-perks"
-      ],
-      "values": [
-        {
-          "description": "",
-          "name": "CanSelectKeystones",
-          "value": 2
-        },
-        {
-          "description": "",
-          "name": "CanSelectPages",
-          "value": 1
-        },
-        {
-          "description": "",
-          "name": "CanSelectPrimaries",
-          "value": 4
-        },
-        {
-          "description": "",
-          "name": "CanSelectSplash",
-          "value": 8
-        },
-        {
-          "description": "",
-          "name": "CanUseAdvancedStyles",
-          "value": 16
-        },
-        {
-          "description": "",
-          "name": "Locked",
-          "value": 0
-        }
-      ]
     },
     {
       "description": "",
@@ -136291,6 +136536,29 @@
       "fields": [
         {
           "description": "",
+          "name": "styles",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolPerksPerkStyleResource",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolPerksPerksConfigDTO",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-perks"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "PerksEnabled",
           "offset": 0,
           "optional": false,
@@ -136369,69 +136637,6 @@
       "name": "LolPerksQueue",
       "nameSpace": "",
       "size": 8,
-      "tags": [
-        "Plugins",
-        "Plugin lol-perks"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "resource",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "service",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "version",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "timestamp",
-          "offset": 72,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "payload",
-          "offset": 80,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "LolPerksRiotMessagingServiceMessage",
-      "nameSpace": "",
-      "size": 104,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -153424,29 +153629,6 @@
     },
     {
       "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "Enabled",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "name": "LolRewardsRewardsConfig",
-      "nameSpace": "",
-      "size": 1,
-      "tags": [
-        "Plugins",
-        "Plugin lol-rewards"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
       "fields": [],
       "name": "LolRewardsSelectGrantStatusResponse",
       "nameSpace": "",
@@ -164710,6 +164892,1087 @@
       "fields": [
         {
           "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemInstanceId",
+          "offset": 28,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopCatalogItem",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "regions",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clearAll",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryTypes",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolYourshopClientCacheClearMessageDTO",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "amount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "subCurrencies",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "LolYourshopCurrencyDTO",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "signedInventoryJwt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationMS",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAtMS",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "receivedAtMS",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "valid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryCacheEntry",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "summonerId",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "object",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemsJwt",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryDTO",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "uuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownershipType",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopItemOwnershipType"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryItem",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownedQuantity",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "usedInGameDate",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementId",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementTypeId",
+          "offset": 144,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "instanceId",
+          "offset": 168,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "instanceTypeId",
+          "offset": 192,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 216,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 232,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rental",
+          "offset": 233,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 234,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "lsb",
+          "offset": 235,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "wins",
+          "offset": 240,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryItemDTO",
+      "nameSpace": "",
+      "size": 248,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "uuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "quantity",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "ownershipType",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopItemOwnershipType"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationDate",
+          "offset": 92,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 116,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rental",
+          "offset": 117,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 118,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "owned",
+          "offset": 119,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryItemWithPayload",
+      "nameSpace": "",
+      "size": 136,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "acknowledged",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryNotification",
+      "nameSpace": "",
+      "size": 64,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopInventoryDTO"
+          }
+        }
+      ],
+      "name": "LolYourshopInventoryResponseDTO",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolYourshopItemKey",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolYourshopItemOwnershipType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "F2P",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "LOYALTY",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "OWNED",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "RENTED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopLoginSessionStates"
+          }
+        },
+        {
+          "description": "",
+          "name": "summonerId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 64,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopLoginSession",
+      "nameSpace": "",
+      "size": 88,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolYourshopLoginSessionStates",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ERROR",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "IN_PROGRESS",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "LOGGING_OUT",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "SUCCEEDED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "freeRewardedChampionsCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "championIds",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "freeRewardedSkinsCount",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "skinIds",
+          "offset": 20,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "ipBoost",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "xpBoost",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltyTFTMapSkinCount",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltyTFTCompanionCount",
+          "offset": 44,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolYourshopLoyaltyRewards",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolYourshopLoyaltyStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "CHANGE",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "DISABLED",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "EXPIRY",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "LEGACY",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "REVOKE",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "REWARDS_GRANT",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopLoyaltyStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "rewards",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopLoyaltyRewards"
+          }
+        },
+        {
+          "description": "",
+          "name": "reloadInventory",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolYourshopLoyaltyStatusNotification",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "offerId",
           "offset": 0,
           "optional": false,
@@ -165120,6 +166383,289 @@
       "fields": [
         {
           "description": "",
+          "name": "resource",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "service",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "timestamp",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "payload",
+          "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopRiotMessagingServiceMessage",
+      "nameSpace": "",
+      "size": 104,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemTypeId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementTypeId",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "resourceOperation",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopRmsEntitlementPayload",
+      "nameSpace": "",
+      "size": 96,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopRmsStoreEntitlementItem",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "transactionId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "LolYourshopRmsStoreEntitlementItem",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolYourshopRmsStoreEntitlementPayload",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "LolYourshopRmsWalletPayload",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "items",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "object",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemsJwt",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopSimpleInventoryDTO",
+      "nameSpace": "",
+      "size": 80,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopSimpleInventoryDTO"
+          }
+        }
+      ],
+      "name": "LolYourshopSimpleInventoryResponseDTO",
+      "nameSpace": "",
+      "size": 80,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolYourshopSummonerIcon",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "id",
           "offset": 0,
           "optional": false,
@@ -165298,6 +166844,155 @@
       "name": "LolYourshopWallet",
       "nameSpace": "",
       "size": 8,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "signedBalancesJwt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "expirationMS",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuedAtMS",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "receivedAtMS",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "valid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolYourshopWalletCacheEntry",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "accountId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "expires",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "balances",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "int32",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "balancesJwt",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolYourshopWalletDTO",
+      "nameSpace": "",
+      "size": 112,
+      "tags": [
+        "Plugins",
+        "Plugin lol-yourshop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolYourshopWalletDTO"
+          }
+        }
+      ],
+      "name": "LolYourshopWalletResponseDTO",
+      "nameSpace": "",
+      "size": 112,
       "tags": [
         "Plugins",
         "Plugin lol-yourshop"
