@@ -881,7 +881,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Remove or decline friend request",
-      "help": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "internal": false,
       "name": "DeleteChatV4Friendrequests",
       "nameSpace": "",
@@ -3663,7 +3663,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Get friend requests",
-      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "internal": false,
       "name": "GetChatV4Friendrequests",
       "nameSpace": "",
@@ -6098,6 +6098,63 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "",
+      "help": "",
+      "internal": false,
+      "name": "GetPlatformUiSocialV1Friends",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "PlatformUiSocialFriendList"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "",
+      "help": "",
+      "internal": false,
+      "name": "GetPlatformUiSocialV1FullFriendsList",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "PlatformUiSocialFriendList"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "",
+      "help": "",
+      "internal": false,
+      "name": "GetPlatformUiSocialV1Initialize",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Returns true if platform-ui is enabled",
       "help": "",
       "internal": false,
@@ -6194,7 +6251,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Returns the current active game name for the player.",
-      "help": "",
+      "help": "Deprecated, please use v1/display-name to get the players game name and tag.",
       "internal": false,
       "name": "GetPlayerAccountAliasesV1Active",
       "nameSpace": "",
@@ -6220,6 +6277,25 @@
       "returns": {
         "elementType": "",
         "type": "PlayerAccountAliasesV1AliasList"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns the current active, sanitized, game name and tag for the player.",
+      "help": "",
+      "internal": false,
+      "name": "GetPlayerAccountAliasesV1DisplayName",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "PlayerAccountGameNameAndTagLine"
       },
       "subscribable": false,
       "tags": [
@@ -9226,7 +9302,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Get the current lifecycle events.",
-      "help": "",
+      "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
       "internal": false,
       "name": "GetRiotclientLifecycle",
       "nameSpace": "",
@@ -12446,7 +12522,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Add friend request / invite friend",
-      "help": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "internal": false,
       "name": "PostChatV4Friendrequests",
       "nameSpace": "",
@@ -13085,7 +13161,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n\n** Error Codes **\n* Possible error codes: 400, 403, 412, 417, 500, 502, 504, 512\n* Error codes fall into the following categories: recoverable, retriable, and hard failure.\n* Recoverable errors (400, 403, 412) will succeed when the root issue is resolved such as \"412 Unable to perform fulfillment because plugin is not enabled.\" - in this case the plugin needs to be enabled in the config\n* Retriable errors (500, 502, 503, 504) may succeed if another attempt is made later. This could include issues such as the network temporarily being down.\n* Hard failure (417, 512) errors are unlikely to succeed when retried and the root issue is unexpected. An example of this would be the first party libraries failing to load.\n* For more details on error codes and how to handle them please see https://platform.riotgames.com/riotgamesapi-sdk/features/first-party-fulfillment/integrating-first-party-fulfillment\n\n",
       "internal": false,
       "name": "PostFirstPartyFulfillmentV1Fulfill",
       "nameSpace": "",
@@ -14274,6 +14350,25 @@
       "returns": {
         "elementType": "",
         "type": "PaymentsInitializedPurchase"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "",
+      "help": "",
+      "internal": false,
+      "name": "PostPlatformUiSocialV1Initialize",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
       },
       "subscribable": false,
       "tags": [
@@ -17111,20 +17206,20 @@
       "arguments": [
         {
           "description": "",
-          "name": "riotIdentity",
+          "name": "authCompleteInput",
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "RsoAuthenticatorV1AuthenticateRiotIdentityInput"
+            "type": "RsoAuthenticatorV1RiotIdentityAuthCompleteInput"
           }
         }
       ],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Create a new authentication with riot credentials.",
+      "description": "Complete a new Riot Identity authentication session.",
       "help": "",
       "internal": false,
-      "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentity",
+      "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentityComplete",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -17183,6 +17278,35 @@
       "help": "",
       "internal": false,
       "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "authStartInput",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RiotIdentityAuthStartInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Start a new Riot Identity authentication session.",
+      "help": "",
+      "internal": false,
+      "name": "PostRsoAuthenticatorV1AuthenticationRiotIdentityStart",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -19270,6 +19394,35 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "withoutReading",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Rejects the most recent EULA for the current user.",
+      "help": "",
+      "internal": false,
+      "name": "PutEulaV1AgreementReject",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -20928,6 +21081,35 @@
       "arguments": [
         {
           "description": "",
+          "name": "locale",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ProductIntegrationLocaleUpdate"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Applies the locale specified in the body to the product currently running. Locale should be in language_country format. for example, zh_CN or ko_KR",
+      "help": "\n## Context\nThis function is being added the support the ability for standalone games to set product locale. The behavior works as follows:\n- First verify that the locale attempting to be set is listed as an available product locale. No actual validation is done on the product locale itself, just that it is present\nin the list of available locales stored in the configuration keyed locale_data.available_locales.\n- After confirming the validity, we attempt to find the product settings file. If it exists, it means that we are in standalone SDK mode. We then propagate the locale to the file\nto persist it across sessions\n- If the file does not exist, it means that we are being run through the Riot Client, and instead we call the `PUT /riotclient/product-locales/products/%s/patchlines/%s`\nendpoint to set the product locale for that product + patchline combination.\n\n### Legacy support\nLeague of Legends unofficially supports players setting their locale to values that are not available to the region. For example, setting their NA client to ja_JP. This is done\ncurrently via modifying the LeagueClientSettings.yaml file and explicitly setting their locale to their locale of choice. We want to continue to support this behavior on behalf\nof League. This function does not modify the validation or ability to override your locale. The validation done here on this function behaves the same as the existing Riot Client\nvalidation, which continues to allow for player modifications.\n\nIf that should change in the future, this function will need to be updated to reflect the changes as well as the `PUT /riotclient/product-locales/products/%s/patchlines/%s` endpoint.\n\n## Arguments\n- locale\n  - the 4 letter code representing the country + language specified separated by an underscore. For example, ja_JP is Japanese, and en_US is US English.\n  - no validation on the 4 letter codes are done; we merely check for its existence in the list of available locales.\n",
+      "internal": false,
+      "name": "PutProductIntegrationV1Locale",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "product-id",
           "optional": false,
           "type": {
@@ -21308,7 +21490,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Update the current app lifecycle events.",
-      "help": "",
+      "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
       "internal": false,
       "name": "PutRiotclientLifecycle",
       "nameSpace": "",
@@ -22287,7 +22469,7 @@
       "deprecated": false,
       "deprecatedHelp": "",
       "description": "Update an authentication session with a token from rso-authenticator.",
-      "help": "Authenticates a player using a token from rso-authenticator",
+      "help": "Authenticates a player using a token from rso-authenticator.\n\nThe `authentication_type` value should be `SSOAuth` for social/3rd party authentication tokens (e.g. Google, Facebook, etc), and `Riot Auth` for Riot Games authentication tokens.\n",
       "internal": false,
       "name": "PutRsoAuthV1SessionLoginToken",
       "nameSpace": "",
@@ -34300,6 +34482,66 @@
       "fields": [
         {
           "description": "",
+          "name": "agreementID",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "agreementURI",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "agreementVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "lastAcceptedTime",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "lastAcceptedVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "EulaAgreementContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "currentAccountId",
           "offset": 0,
           "optional": false,
@@ -34367,6 +34609,51 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "EulaFinalState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "accepted",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "alreadyAccepted",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "failedIntoTemporaryAcceptance",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "rejected",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "rejectedWithoutReading",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "stuck",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -34420,6 +34707,86 @@
       "fields": [
         {
           "description": "",
+          "name": "agreementContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "EulaAgreementContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientLocale",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "externalLegalLinks",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "EulaExternalLegalLinks"
+          }
+        },
+        {
+          "description": "",
+          "name": "finalState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "EulaFinalState"
+          }
+        },
+        {
+          "description": "",
+          "name": "homebaseCountry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "privacyPolicyContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "EulaPrivacyPolicyContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "productLocale",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "EulaPluginTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "policyContent",
           "offset": 0,
           "optional": false,
@@ -34450,6 +34817,36 @@
         }
       ],
       "name": "EulaPrivacyPolicy",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "policyURI",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "policyVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "EulaPrivacyPolicyContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -34514,41 +34911,6 @@
       "size": 0,
       "tags": [],
       "values": []
-    },
-    {
-      "description": "",
-      "fields": [],
-      "name": "EulaTOSEventTypeForAP",
-      "nameSpace": "",
-      "size": 0,
-      "tags": [],
-      "values": [
-        {
-          "description": "",
-          "name": "acceptanceRequired",
-          "value": 1
-        },
-        {
-          "description": "",
-          "name": "accepted",
-          "value": 2
-        },
-        {
-          "description": "",
-          "name": "failedIntoTemporaryAcceptance",
-          "value": 0
-        },
-        {
-          "description": "",
-          "name": "rejected",
-          "value": 3
-        },
-        {
-          "description": "",
-          "name": "rejectedWithoutReading",
-          "value": 4
-        }
-      ]
     },
     {
       "description": "",
@@ -34840,6 +35202,36 @@
         }
       ],
       "name": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayFulfillmentResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "authToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refundToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayGetAccessTokensResponse",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -35504,6 +35896,86 @@
           "value": 0
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "FriendsOnlinePlatform",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "platform",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "FriendsOnlinePlatform"
+          }
+        }
+      ],
+      "name": "FriendsPlatformUser",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
     },
     {
       "description": "",
@@ -50551,6 +51023,26 @@
     },
     {
       "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "ready",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "PaymentsReadyState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [],
       "name": "PlatformLoginAuthenticationMethod",
       "nameSpace": "",
@@ -51509,6 +52001,16 @@
         },
         {
           "description": "",
+          "name": "gamepass",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiGamepassResponseDetails"
+          }
+        },
+        {
+          "description": "",
           "name": "healup",
           "offset": 0,
           "optional": false,
@@ -51594,6 +52096,211 @@
       "fields": [
         {
           "description": "",
+          "name": "federated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "game_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "game_tag",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loaded",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "pid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "region",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "resource",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiChatSessionState"
+          }
+        }
+      ],
+      "name": "PlatformUiChatSession",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlatformUiChatSessionState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "connected",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "connecting",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "disconnected",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlatformUiConfigV3AuthProgress",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "Complete",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Error",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "None",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Pending",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Ready",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "Skipped",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "configAuthProgress",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiConfigV3AuthProgress"
+          }
+        },
+        {
+          "description": "",
+          "name": "ready",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "PlatformUiConfigV3ReadyState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "errorCode",
           "offset": 0,
           "optional": false,
@@ -51638,6 +52345,291 @@
       "size": 0,
       "tags": [],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "actor",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "details",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "displayGroup",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameTag",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "group",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "hovercard_background_url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "icon_url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "location",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "msg",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "note",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product_folder_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product_presence_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "region",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "showState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlatformUiFriend",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "friends",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "PlatformUiFriend",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "PlatformUiFriendList",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "delay",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "remaining",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlatformUiGamepassStatus"
+          }
+        }
+      ],
+      "name": "PlatformUiGamepassResponseDetails",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlatformUiGamepassStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
     },
     {
       "description": "",
@@ -52285,12 +53277,12 @@
         {
           "description": "",
           "name": "Authorized",
-          "value": 17
+          "value": 18
         },
         {
           "description": "",
           "name": "Error",
-          "value": 18
+          "value": 19
         },
         {
           "description": "",
@@ -52339,6 +53331,11 @@
         },
         {
           "description": "",
+          "name": "PendingGamepassStatus",
+          "value": 15
+        },
+        {
+          "description": "",
           "name": "PendingHealup",
           "value": 9
         },
@@ -52365,7 +53362,7 @@
         {
           "description": "",
           "name": "PendingRiotID",
-          "value": 15
+          "value": 16
         },
         {
           "description": "",
@@ -52375,7 +53372,7 @@
         {
           "description": "",
           "name": "PendingUserInfoRefresh",
-          "value": 16
+          "value": 17
         }
       ]
     },
@@ -52395,7 +53392,12 @@
         {
           "description": "",
           "name": "error",
-          "value": 4
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "gamepass",
+          "value": 3
         },
         {
           "description": "",
@@ -52410,7 +53412,7 @@
         {
           "description": "",
           "name": "success",
-          "value": 3
+          "value": 4
         }
       ]
     },
@@ -52709,6 +53711,226 @@
       "fields": [
         {
           "description": "",
+          "name": "actor",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "details",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "displayGroup",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameTag",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "group",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "hovercard_background_url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "icon_url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "location",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "msg",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "note",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product_folder_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "product_presence_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "region",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "showState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlatformUiSocialFriend",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "friends",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "PlatformUiSocialFriend",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "PlatformUiSocialFriendList",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "linked",
           "offset": 0,
           "optional": false,
@@ -52930,7 +54152,7 @@
         {
           "description": "",
           "name": "AcceptEulaFailure",
-          "value": 17
+          "value": 18
         },
         {
           "description": "",
@@ -52950,7 +54172,7 @@
         {
           "description": "",
           "name": "CreateRiotIDFailure",
-          "value": 20
+          "value": 21
         },
         {
           "description": "",
@@ -52975,7 +54197,7 @@
         {
           "description": "",
           "name": "GenerateTaglineFailure",
-          "value": 19
+          "value": 20
         },
         {
           "description": "",
@@ -53000,7 +54222,7 @@
         {
           "description": "",
           "name": "PlatformConsentFailure",
-          "value": 18
+          "value": 19
         },
         {
           "description": "",
@@ -53009,28 +54231,33 @@
         },
         {
           "description": "",
-          "name": "SigninAuthFailure",
-          "value": 16
-        },
-        {
-          "description": "",
-          "name": "SigninFailure",
-          "value": 15
-        },
-        {
-          "description": "",
-          "name": "SignupFailure",
+          "name": "ReadinessTimeout",
           "value": 13
         },
         {
           "description": "",
+          "name": "SigninAuthFailure",
+          "value": 17
+        },
+        {
+          "description": "",
+          "name": "SigninFailure",
+          "value": 16
+        },
+        {
+          "description": "",
+          "name": "SignupFailure",
+          "value": 14
+        },
+        {
+          "description": "",
           "name": "SingletonMissing",
-          "value": 21
+          "value": 22
         },
         {
           "description": "",
           "name": "TooYoung",
-          "value": 14
+          "value": 15
         },
         {
           "description": "",
@@ -53065,7 +54292,7 @@
         {
           "description": "",
           "name": "InternalError",
-          "value": 11
+          "value": 12
         },
         {
           "description": "",
@@ -53086,6 +54313,11 @@
           "description": "",
           "name": "RateLimited",
           "value": 1
+        },
+        {
+          "description": "",
+          "name": "ReadinessTimeout",
+          "value": 11
         },
         {
           "description": "",
@@ -53819,6 +55051,36 @@
       "fields": [
         {
           "description": "",
+          "name": "gameName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tagLine",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PlayerAccountGameNameAndTagLine",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "game_name",
           "offset": 0,
           "optional": false,
@@ -54488,6 +55750,96 @@
           "value": 1
         }
       ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "aggressiveScan",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "level",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "text",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "texts",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "PlayerAccountSanitizeRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "modified",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "text",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "texts",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "PlayerAccountSanitizeResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
     },
     {
       "description": "",
@@ -57794,6 +59146,71 @@
       "fields": [
         {
           "description": "",
+          "name": "delay",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "remaining",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleGamepassStatus"
+          }
+        }
+      ],
+      "name": "PlayerSessionLifecycleGamepassResponseDetails",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlayerSessionLifecycleGamepassStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "auth_method",
           "offset": 0,
           "optional": false,
@@ -58585,12 +60002,12 @@
         {
           "description": "",
           "name": "Authorized",
-          "value": 17
+          "value": 18
         },
         {
           "description": "",
           "name": "Error",
-          "value": 18
+          "value": 19
         },
         {
           "description": "",
@@ -58639,6 +60056,11 @@
         },
         {
           "description": "",
+          "name": "PendingGamepassStatus",
+          "value": 15
+        },
+        {
+          "description": "",
           "name": "PendingHealup",
           "value": 9
         },
@@ -58665,7 +60087,7 @@
         {
           "description": "",
           "name": "PendingRiotID",
-          "value": 15
+          "value": 16
         },
         {
           "description": "",
@@ -58675,7 +60097,7 @@
         {
           "description": "",
           "name": "PendingUserInfoRefresh",
-          "value": 16
+          "value": 17
         }
       ]
     },
@@ -58930,7 +60352,12 @@
         {
           "description": "",
           "name": "error",
-          "value": 4
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "gamepass",
+          "value": 3
         },
         {
           "description": "",
@@ -58945,7 +60372,7 @@
         {
           "description": "",
           "name": "success",
-          "value": 3
+          "value": 4
         }
       ]
     },
@@ -61083,6 +62510,26 @@
         }
       ],
       "name": "ProductIntegrationLocaleDataResource",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "locale",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ProductIntegrationLocaleUpdate",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -77282,32 +78729,12 @@
       "fields": [
         {
           "description": "",
-          "name": "language",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
           "name": "multifactor",
           "offset": 0,
           "optional": false,
           "type": {
             "elementType": "",
             "type": "RsoAuthenticatorV1MultifactorInput"
-          }
-        },
-        {
-          "description": "",
-          "name": "remember",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
           }
         }
       ],
@@ -77432,46 +78859,6 @@
         }
       ],
       "name": "RsoAuthenticatorV1AuthenticatePlaystationInput",
-      "nameSpace": "",
-      "size": 0,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "language",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "remember",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "riot_identity",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "RsoAuthenticatorV1RiotIdentityInput"
-          }
-        }
-      ],
-      "name": "RsoAuthenticatorV1AuthenticateRiotIdentityInput",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -77768,6 +79155,16 @@
           "type": {
             "elementType": "",
             "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gamepass",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1GamepassResponseDetails"
           }
         },
         {
@@ -78086,6 +79483,71 @@
       "size": 0,
       "tags": [],
       "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "delay",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "remaining",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1GamepassStatus"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1GamepassResponseDetails",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoAuthenticatorV1GamepassStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
     },
     {
       "description": "",
@@ -78458,7 +79920,12 @@
         {
           "description": "",
           "name": "error",
-          "value": 5
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "gamepass",
+          "value": 4
         },
         {
           "description": "",
@@ -78478,13 +79945,33 @@
         {
           "description": "",
           "name": "success",
-          "value": 4
+          "value": 5
         }
       ]
     },
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "captcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "language",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "password",
@@ -78497,7 +79984,147 @@
         },
         {
           "description": "",
-          "name": "region",
+          "name": "remember",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "username",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentityAuthCompleteInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "riot_identity",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RiotIdentityInput"
+          }
+        },
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1ResponseType"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentityAuthCompleteRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "language",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "state",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RiotIdentityAuthStartInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "captcha",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "language",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "password",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "remember",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "state",
           "offset": 0,
           "optional": false,
           "type": {
@@ -78614,15 +80241,6 @@
     },
     {
       "description": "",
-      "fields": [],
-      "name": "RsoAuthenticatorV1RiotIdentitySignupCreateInput",
-      "nameSpace": "",
-      "size": 0,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
       "fields": [
         {
           "description": "",
@@ -78715,7 +80333,16 @@
           }
         }
       ],
-      "name": "RsoAuthenticatorV1RiotIdentitySignupRequest",
+      "name": "RsoAuthenticatorV1RiotIdentitySignupCompleteRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoAuthenticatorV1RiotIdentitySignupCreateInput",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -79016,6 +80643,26 @@
       "fields": [
         {
           "description": "",
+          "name": "auth_method",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "is_console_link_session",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
           "name": "linked",
           "offset": 0,
           "optional": false,
@@ -79027,6 +80674,16 @@
         {
           "description": "",
           "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
           "offset": 0,
           "optional": false,
           "type": {
@@ -79076,8 +80733,23 @@
         },
         {
           "description": "",
+          "name": "nintendo",
+          "value": 4
+        },
+        {
+          "description": "",
           "name": "none",
           "value": 0
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 6
         }
       ]
     },
@@ -80326,6 +81998,16 @@
         },
         {
           "description": "",
+          "name": "nintendo",
+          "value": 10
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 11
+        },
+        {
+          "description": "",
           "name": "qq",
           "value": 7
         },
@@ -80343,6 +82025,11 @@
           "description": "",
           "name": "wegame",
           "value": 9
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 12
         }
       ]
     },
@@ -81676,6 +83363,16 @@
         },
         {
           "description": "",
+          "name": "gamepass",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoMobileUiRsoAuthenticatorGamepassResponseDetails"
+          }
+        },
+        {
+          "description": "",
           "name": "healup",
           "offset": 0,
           "optional": false,
@@ -81866,6 +83563,71 @@
       "fields": [
         {
           "description": "",
+          "name": "delay",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "remaining",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoMobileUiRsoAuthenticatorGamepassStatus"
+          }
+        }
+      ],
+      "name": "RsoMobileUiRsoAuthenticatorGamepassResponseDetails",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoMobileUiRsoAuthenticatorGamepassStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "auth_method",
           "offset": 0,
           "optional": false,
@@ -82037,7 +83799,12 @@
         {
           "description": "",
           "name": "error",
-          "value": 5
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "gamepass",
+          "value": 4
         },
         {
           "description": "",
@@ -82057,7 +83824,7 @@
         {
           "description": "",
           "name": "success",
-          "value": 4
+          "value": 5
         }
       ]
     },
@@ -82256,8 +84023,23 @@
         },
         {
           "description": "",
+          "name": "nintendo",
+          "value": 4
+        },
+        {
+          "description": "",
           "name": "none",
           "value": 0
+        },
+        {
+          "description": "",
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "value": 6
         }
       ]
     },

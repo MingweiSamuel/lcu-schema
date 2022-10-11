@@ -2696,7 +2696,7 @@
         }
       ],
       "description": "Remove or decline friend request",
-      "help": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "http_method": "DELETE",
       "url": "/chat/v4/friendrequests",
       "usage": "DeleteChatV4Friendrequests [rchat-blocking] <body>"
@@ -5376,7 +5376,7 @@
         }
       ],
       "description": "Get friend requests",
-      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "http_method": "GET",
       "returns": {
         "ChatFriendRequestList": {
@@ -12036,6 +12036,53 @@
       "url": "/platform-login/v1/status",
       "usage": "GetPlatformLoginV1Status"
     },
+    "GetPlatformUiSocialV1Friends": {
+      "arguments": [],
+      "http_method": "GET",
+      "returns": {
+        "PlatformUiSocialFriendList": {
+          "fields": [
+            {
+              "friends": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of PlatformUiSocialFriend"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/platform-ui-social/v1/friends",
+      "usage": "GetPlatformUiSocialV1Friends"
+    },
+    "GetPlatformUiSocialV1FullFriendsList": {
+      "arguments": [],
+      "http_method": "GET",
+      "returns": {
+        "PlatformUiSocialFriendList": {
+          "fields": [
+            {
+              "friends": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of PlatformUiSocialFriend"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/platform-ui-social/v1/full-friends-list",
+      "usage": "GetPlatformUiSocialV1FullFriendsList"
+    },
+    "GetPlatformUiSocialV1Initialize": {
+      "arguments": [],
+      "http_method": "GET",
+      "returns": "bool",
+      "url": "/platform-ui-social/v1/initialize",
+      "usage": "GetPlatformUiSocialV1Initialize"
+    },
     "GetPlatformUiV1Enabled": {
       "arguments": [],
       "description": "Returns true if platform-ui is enabled",
@@ -12184,6 +12231,7 @@
     "GetPlayerAccountAliasesV1Active": {
       "arguments": [],
       "description": "Returns the current active game name for the player.",
+      "help": "Deprecated, please use v1/display-name to get the players game name and tag.",
       "http_method": "GET",
       "returns": {
         "PlayerAccountAliasesV1Alias": {
@@ -12254,6 +12302,35 @@
       },
       "url": "/player-account/aliases/v1/aliases",
       "usage": "GetPlayerAccountAliasesV1Aliases"
+    },
+    "GetPlayerAccountAliasesV1DisplayName": {
+      "arguments": [],
+      "description": "Returns the current active, sanitized, game name and tag for the player.",
+      "http_method": "GET",
+      "returns": {
+        "PlayerAccountGameNameAndTagLine": {
+          "fields": [
+            {
+              "gameName": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "tagLine": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/player-account/aliases/v1/display-name",
+      "usage": "GetPlayerAccountAliasesV1DisplayName"
     },
     "GetPlayerAccountAliasesV1Required": {
       "arguments": [],
@@ -17403,6 +17480,7 @@
     "GetRiotclientLifecycle": {
       "arguments": [],
       "description": "Get the current lifecycle events.",
+      "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
       "http_method": "GET",
       "returns": {
         "LifecycleData": {
@@ -20332,6 +20410,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -20557,6 +20676,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -20566,6 +20701,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -23898,7 +24041,7 @@
         }
       ],
       "description": "Add friend request / invite friend",
-      "help": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+      "help": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
       "http_method": "POST",
       "returns": {
         "ChatFriendRequestList": {
@@ -24712,7 +24855,7 @@
         }
       ],
       "description": "Initiate a fulfillment attempt",
-      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+      "help": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n\n** Error Codes **\n* Possible error codes: 400, 403, 412, 417, 500, 502, 504, 512\n* Error codes fall into the following categories: recoverable, retriable, and hard failure.\n* Recoverable errors (400, 403, 412) will succeed when the root issue is resolved such as \"412 Unable to perform fulfillment because plugin is not enabled.\" - in this case the plugin needs to be enabled in the config\n* Retriable errors (500, 502, 503, 504) may succeed if another attempt is made later. This could include issues such as the network temporarily being down.\n* Hard failure (417, 512) errors are unlikely to succeed when retried and the root issue is unexpected. An example of this would be the first party libraries failing to load.\n* For more details on error codes and how to handle them please see https://platform.riotgames.com/riotgamesapi-sdk/features/first-party-fulfillment/integrating-first-party-fulfillment\n\n",
       "http_method": "POST",
       "returns": {
         "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentResponse": {
@@ -26192,6 +26335,12 @@
       },
       "url": "/payments/v1/initialize-purchase",
       "usage": "PostPaymentsV1InitializePurchase"
+    },
+    "PostPlatformUiSocialV1Initialize": {
+      "arguments": [],
+      "http_method": "POST",
+      "url": "/platform-ui-social/v1/initialize",
+      "usage": "PostPlatformUiSocialV1Initialize"
     },
     "PostPlayerAccountAliasesV1Aliases": {
       "arguments": [
@@ -30924,6 +31073,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -31149,6 +31339,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -31158,6 +31364,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -31308,6 +31522,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -31533,6 +31788,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -31542,6 +31813,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -31721,6 +32000,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -31946,6 +32266,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -31955,6 +32291,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -32159,6 +32503,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -32384,6 +32769,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -32393,6 +32794,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -32564,6 +32973,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -32789,6 +33239,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -32798,6 +33264,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -32843,14 +33317,6 @@
               "RsoAuthenticatorV1AuthenticateMultifactorInput": {
                 "fields": [
                   {
-                    "language": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
                     "multifactor": {
                       "description": "",
                       "offset": 0,
@@ -32885,14 +33351,6 @@
                           ]
                         }
                       }
-                    }
-                  },
-                  {
-                    "remember": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "bool"
                     }
                   }
                 ]
@@ -32977,6 +33435,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -33202,6 +33701,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -33211,6 +33726,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -33390,6 +33913,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -33615,6 +34179,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -33624,6 +34204,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -33795,6 +34383,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -34020,6 +34649,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -34029,6 +34674,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -34171,6 +34824,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -34396,6 +35090,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -34405,6 +35115,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -34442,15 +35160,31 @@
       "url": "/rso-authenticator/v1/authentication/redirect",
       "usage": "PostRsoAuthenticatorV1AuthenticationRedirect <redirect>"
     },
-    "PostRsoAuthenticatorV1AuthenticationRiotIdentity": {
+    "PostRsoAuthenticatorV1AuthenticationRiotIdentityComplete": {
       "arguments": [
         {
-          "riotIdentity": {
+          "authCompleteInput": {
             "type": {
-              "RsoAuthenticatorV1AuthenticateRiotIdentityInput": {
+              "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
                 "fields": [
                   {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "password": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -34466,40 +35200,11 @@
                     }
                   },
                   {
-                    "riot_identity": {
+                    "username": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
-                      "type": {
-                        "RsoAuthenticatorV1RiotIdentityInput": {
-                          "fields": [
-                            {
-                              "password": {
-                                "description": "",
-                                "offset": 0,
-                                "optional": false,
-                                "type": "string"
-                              }
-                            },
-                            {
-                              "region": {
-                                "description": "",
-                                "offset": 0,
-                                "optional": false,
-                                "type": "string"
-                              }
-                            },
-                            {
-                              "username": {
-                                "description": "",
-                                "offset": 0,
-                                "optional": false,
-                                "type": "string"
-                              }
-                            }
-                          ]
-                        }
-                      }
+                      "type": "string"
                     }
                   }
                 ]
@@ -34508,7 +35213,7 @@
           }
         }
       ],
-      "description": "Create a new authentication with riot credentials.",
+      "description": "Complete a new Riot Identity authentication session.",
       "http_method": "POST",
       "returns": {
         "RsoAuthenticatorV1AuthenticationResponse": {
@@ -34584,6 +35289,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -34809,6 +35555,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -34818,6 +35580,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -34852,8 +35622,8 @@
           ]
         }
       },
-      "url": "/rso-authenticator/v1/authentication/riot-identity",
-      "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentity <riotIdentity>"
+      "url": "/rso-authenticator/v1/authentication/riot-identity/complete",
+      "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentityComplete <authCompleteInput>"
     },
     "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete": {
       "arguments": [
@@ -35008,6 +35778,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -35233,6 +36044,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -35242,6 +36069,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -35384,6 +36219,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -35609,6 +36485,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -35618,6 +36510,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -35654,6 +36554,455 @@
       },
       "url": "/rso-authenticator/v1/authentication/riot-identity-signup/start",
       "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupStart <signupStartInput>"
+    },
+    "PostRsoAuthenticatorV1AuthenticationRiotIdentityStart": {
+      "arguments": [
+        {
+          "authStartInput": {
+            "type": {
+              "RsoAuthenticatorV1RiotIdentityAuthStartInput": {
+                "fields": [
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "productId": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "state": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Start a new Riot Identity authentication session.",
+      "http_method": "POST",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/riot-identity/start",
+      "usage": "PostRsoAuthenticatorV1AuthenticationRiotIdentityStart <authStartInput>"
     },
     "PostRsoAuthenticatorV1AuthenticationXbox": {
       "arguments": [
@@ -35789,6 +37138,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -36014,6 +37404,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -36023,6 +37429,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -39347,6 +40761,19 @@
       "url": "/eula/v1/agreement/acceptance",
       "usage": "PutEulaV1AgreementAcceptance"
     },
+    "PutEulaV1AgreementReject": {
+      "arguments": [
+        {
+          "withoutReading": {
+            "type": "bool"
+          }
+        }
+      ],
+      "description": "Rejects the most recent EULA for the current user.",
+      "http_method": "PUT",
+      "url": "/eula/v1/agreement/reject",
+      "usage": "PutEulaV1AgreementReject [withoutReading]"
+    },
     "PutEulaV1DebugAgreementShortAgreementContent": {
       "arguments": [],
       "description": "Simulate short agreement content. This is disabled in public builds.",
@@ -41670,6 +43097,33 @@
       "url": "/product-integration/v1/debug/app-update/statuses/{sessionId}",
       "usage": "PutProductIntegrationV1DebugAppUpdateStatusesBySessionId <sessionId> <updateStatus>"
     },
+    "PutProductIntegrationV1Locale": {
+      "arguments": [
+        {
+          "locale": {
+            "type": {
+              "ProductIntegrationLocaleUpdate": {
+                "fields": [
+                  {
+                    "locale": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Applies the locale specified in the body to the product currently running. Locale should be in language_country format. for example, zh_CN or ko_KR",
+      "help": "\n## Context\nThis function is being added the support the ability for standalone games to set product locale. The behavior works as follows:\n- First verify that the locale attempting to be set is listed as an available product locale. No actual validation is done on the product locale itself, just that it is present\nin the list of available locales stored in the configuration keyed locale_data.available_locales.\n- After confirming the validity, we attempt to find the product settings file. If it exists, it means that we are in standalone SDK mode. We then propagate the locale to the file\nto persist it across sessions\n- If the file does not exist, it means that we are being run through the Riot Client, and instead we call the `PUT /riotclient/product-locales/products/%s/patchlines/%s`\nendpoint to set the product locale for that product + patchline combination.\n\n### Legacy support\nLeague of Legends unofficially supports players setting their locale to values that are not available to the region. For example, setting their NA client to ja_JP. This is done\ncurrently via modifying the LeagueClientSettings.yaml file and explicitly setting their locale to their locale of choice. We want to continue to support this behavior on behalf\nof League. This function does not modify the validation or ability to override your locale. The validation done here on this function behaves the same as the existing Riot Client\nvalidation, which continues to allow for player modifications.\n\nIf that should change in the future, this function will need to be updated to reflect the changes as well as the `PUT /riotclient/product-locales/products/%s/patchlines/%s` endpoint.\n\n## Arguments\n- locale\n  - the 4 letter code representing the country + language specified separated by an underscore. For example, ja_JP is Japanese, and en_US is US English.\n  - no validation on the 4 letter codes are done; we merely check for its existence in the list of available locales.\n",
+      "http_method": "PUT",
+      "url": "/product-integration/v1/locale",
+      "usage": "PutProductIntegrationV1Locale <locale>"
+    },
     "PutProductLauncherV1ProductsByProductIdPatchlinesByPatchlineId": {
       "arguments": [
         {
@@ -41988,6 +43442,7 @@
         }
       ],
       "description": "Update the current app lifecycle events.",
+      "help": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
       "http_method": "PUT",
       "url": "/riotclient/lifecycle",
       "usage": "PutRiotclientLifecycle <data>"
@@ -42924,7 +44379,7 @@
         }
       ],
       "description": "Update an authentication session with a token from rso-authenticator.",
-      "help": "Authenticates a player using a token from rso-authenticator",
+      "help": "Authenticates a player using a token from rso-authenticator.\n\nThe `authentication_type` value should be `SSOAuth` for social/3rd party authentication tokens (e.g. Google, Facebook, etc), and `Riot Auth` for Riot Games authentication tokens.\n",
       "http_method": "PUT",
       "returns": {
         "RsoAuthSessionResponse": {
@@ -43608,6 +45063,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -43833,6 +45329,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -43842,6 +45354,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -43984,6 +45504,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -44209,6 +45770,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -44218,6 +45795,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -44339,6 +45924,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -44564,6 +46190,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -44573,6 +46215,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -44723,6 +46373,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -44948,6 +46639,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -44957,6 +46664,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -45131,6 +46846,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -45356,6 +47112,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -45365,6 +47137,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -45507,6 +47287,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -45732,6 +47553,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -45741,6 +47578,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -45891,6 +47736,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -46116,6 +48002,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -46125,6 +48027,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -46240,6 +48150,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -46465,6 +48416,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -46474,6 +48441,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -46519,6 +48494,22 @@
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
                   {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "password": {
                       "description": "",
                       "offset": 0,
@@ -46527,7 +48518,15 @@
                     }
                   },
                   {
-                    "region": {
+                    "remember": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "state": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -46624,6 +48623,47 @@
               }
             },
             {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "healup": {
                 "description": "",
                 "offset": 0,
@@ -46849,6 +48889,22 @@
                   "RsoAuthenticatorV1SuccessResponseDetails": {
                     "fields": [
                       {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "linked": {
                           "description": "",
                           "offset": 0,
@@ -46858,6 +48914,14 @@
                       },
                       {
                         "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -57778,6 +59842,50 @@
         }
       ]
     },
+    "EulaAgreementContext": {
+      "fields": [
+        {
+          "agreementID": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "agreementURI": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "agreementVersion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "lastAcceptedTime": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "int64"
+          }
+        },
+        {
+          "lastAcceptedVersion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "EulaAuthorization": {
       "fields": [
         {
@@ -57826,6 +59934,38 @@
         }
       ]
     },
+    "EulaFinalState": {
+      "values": [
+        {
+          "name": "unknown",
+          "value": 0
+        },
+        {
+          "name": "stuck",
+          "value": 1
+        },
+        {
+          "name": "failedIntoTemporaryAcceptance",
+          "value": 2
+        },
+        {
+          "name": "alreadyAccepted",
+          "value": 3
+        },
+        {
+          "name": "accepted",
+          "value": 4
+        },
+        {
+          "name": "rejected",
+          "value": 5
+        },
+        {
+          "name": "rejectedWithoutReading",
+          "value": 6
+        }
+      ]
+    },
     "EulaIdToken": {
       "fields": [
         {
@@ -57858,6 +59998,157 @@
         }
       ]
     },
+    "EulaPluginTelemetryContext": {
+      "fields": [
+        {
+          "agreementContext": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "EulaAgreementContext": {
+                "fields": [
+                  {
+                    "agreementID": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "agreementURI": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "agreementVersion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "lastAcceptedTime": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "int64"
+                    }
+                  },
+                  {
+                    "lastAcceptedVersion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "clientLocale": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "externalLegalLinks": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "EulaExternalLegalLinks": {
+                "fields": [
+                  {
+                    "privacyNoticeUrl": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "termsOfServiceUrl": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "finalState": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "EulaFinalState": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "homebaseCountry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "privacyPolicyContext": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "EulaPrivacyPolicyContext": {
+                "fields": [
+                  {
+                    "policyURI": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "policyVersion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "productLocale": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "EulaPrivacyPolicy": {
       "fields": [
         {
@@ -57868,6 +60159,26 @@
             "type": "string"
           }
         },
+        {
+          "policyURI": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "policyVersion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "EulaPrivacyPolicyContext": {
+      "fields": [
         {
           "policyURI": {
             "description": "",
@@ -57923,30 +60234,6 @@
             "optional": false,
             "type": "string"
           }
-        }
-      ]
-    },
-    "EulaTOSEventTypeForAP": {
-      "values": [
-        {
-          "name": "failedIntoTemporaryAcceptance",
-          "value": 0
-        },
-        {
-          "name": "acceptanceRequired",
-          "value": 1
-        },
-        {
-          "name": "accepted",
-          "value": 2
-        },
-        {
-          "name": "rejected",
-          "value": 3
-        },
-        {
-          "name": "rejectedWithoutReading",
-          "value": 4
         }
       ]
     },
@@ -58154,6 +60441,26 @@
             "offset": 0,
             "optional": false,
             "type": "vector of FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo"
+          }
+        }
+      ]
+    },
+    "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayGetAccessTokensResponse": {
+      "fields": [
+        {
+          "authToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "refundToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -58679,6 +60986,66 @@
         {
           "name": "mock_enabled",
           "value": 1
+        }
+      ]
+    },
+    "FriendsOnlinePlatform": {
+      "values": [
+        {
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
+    "FriendsPlatformUser": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "FriendsOnlinePlatform": {
+                "fields": []
+              }
+            }
+          }
         }
       ]
     },
@@ -76256,6 +78623,18 @@
         }
       ]
     },
+    "PaymentsReadyState": {
+      "fields": [
+        {
+          "ready": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
     "PlatformLoginAuthenticationMethod": {
       "values": [
         {
@@ -77127,6 +79506,47 @@
           }
         },
         {
+          "gamepass": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiGamepassResponseDetails": {
+                "fields": [
+                  {
+                    "delay": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "remaining": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "status": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "PlatformUiGamepassStatus": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "healup": {
             "description": "",
             "offset": 0,
@@ -77410,6 +79830,162 @@
         }
       ]
     },
+    "PlatformUiChatSession": {
+      "fields": [
+        {
+          "federated": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "game_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "game_tag": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "loaded": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "pid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "region": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "resource": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "state": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiChatSessionState": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlatformUiChatSessionState": {
+      "values": [
+        {
+          "name": "disconnected",
+          "value": 0
+        },
+        {
+          "name": "connecting",
+          "value": 1
+        },
+        {
+          "name": "connected",
+          "value": 2
+        }
+      ]
+    },
+    "PlatformUiConfigV3AuthProgress": {
+      "values": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Ready",
+          "value": 1
+        },
+        {
+          "name": "Pending",
+          "value": 2
+        },
+        {
+          "name": "Complete",
+          "value": 3
+        },
+        {
+          "name": "Skipped",
+          "value": 4
+        },
+        {
+          "name": "Error",
+          "value": 5
+        }
+      ]
+    },
+    "PlatformUiConfigV3ReadyState": {
+      "fields": [
+        {
+          "configAuthProgress": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiConfigV3AuthProgress": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "ready": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
     "PlatformUiEligibilityResponse": {
       "fields": [
         {
@@ -77447,6 +80023,222 @@
             "optional": false,
             "type": "bool"
           }
+        }
+      ]
+    },
+    "PlatformUiFriend": {
+      "fields": [
+        {
+          "actor": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "details": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "displayGroup": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameTag": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "group": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "hovercard_background_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "icon_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "location": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "msg": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "note": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_folder_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_presence_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "region": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "showState": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlatformUiFriendList": {
+      "fields": [
+        {
+          "friends": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of PlatformUiFriend"
+          }
+        }
+      ]
+    },
+    "PlatformUiGamepassResponseDetails": {
+      "fields": [
+        {
+          "delay": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "remaining": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiGamepassStatus": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlatformUiGamepassStatus": {
+      "values": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "NONE",
+          "value": 2
         }
       ]
     },
@@ -78109,20 +80901,24 @@
           "value": 14
         },
         {
-          "name": "PendingRiotID",
+          "name": "PendingGamepassStatus",
           "value": 15
         },
         {
-          "name": "PendingUserInfoRefresh",
+          "name": "PendingRiotID",
           "value": 16
         },
         {
-          "name": "Authorized",
+          "name": "PendingUserInfoRefresh",
           "value": 17
         },
         {
-          "name": "Error",
+          "name": "Authorized",
           "value": 18
+        },
+        {
+          "name": "Error",
+          "value": 19
         }
       ]
     },
@@ -78141,12 +80937,16 @@
           "value": 2
         },
         {
-          "name": "success",
+          "name": "gamepass",
           "value": 3
         },
         {
-          "name": "error",
+          "name": "success",
           "value": 4
+        },
+        {
+          "name": "error",
+          "value": 5
         }
       ]
     },
@@ -78562,6 +81362,174 @@
         }
       ]
     },
+    "PlatformUiSocialFriend": {
+      "fields": [
+        {
+          "actor": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "details": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "displayGroup": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameTag": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "group": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "hovercard_background_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "icon_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "location": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "msg": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "note": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_folder_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_presence_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "region": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "showState": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlatformUiSocialFriendList": {
+      "fields": [
+        {
+          "friends": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of PlatformUiSocialFriend"
+          }
+        }
+      ]
+    },
     "PlatformUiSuccessResponseDetails": {
       "fields": [
         {
@@ -78769,40 +81737,44 @@
           "value": 12
         },
         {
-          "name": "SignupFailure",
+          "name": "ReadinessTimeout",
           "value": 13
         },
         {
-          "name": "TooYoung",
+          "name": "SignupFailure",
           "value": 14
         },
         {
-          "name": "SigninFailure",
+          "name": "TooYoung",
           "value": 15
         },
         {
-          "name": "SigninAuthFailure",
+          "name": "SigninFailure",
           "value": 16
         },
         {
-          "name": "AcceptEulaFailure",
+          "name": "SigninAuthFailure",
           "value": 17
         },
         {
-          "name": "PlatformConsentFailure",
+          "name": "AcceptEulaFailure",
           "value": 18
         },
         {
-          "name": "GenerateTaglineFailure",
+          "name": "PlatformConsentFailure",
           "value": 19
         },
         {
-          "name": "CreateRiotIDFailure",
+          "name": "GenerateTaglineFailure",
           "value": 20
         },
         {
-          "name": "SingletonMissing",
+          "name": "CreateRiotIDFailure",
           "value": 21
+        },
+        {
+          "name": "SingletonMissing",
+          "value": 22
         }
       ]
     },
@@ -78853,8 +81825,12 @@
           "value": 10
         },
         {
-          "name": "InternalError",
+          "name": "ReadinessTimeout",
           "value": 11
+        },
+        {
+          "name": "InternalError",
+          "value": 12
         }
       ]
     },
@@ -79411,6 +82387,26 @@
         }
       ]
     },
+    "PlayerAccountGameNameAndTagLine": {
+      "fields": [
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tagLine": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "PlayerAccountGenerateTaglineInput": {
       "fields": [
         {
@@ -79949,6 +82945,70 @@
         {
           "name": "NO_ERROR",
           "value": 7
+        }
+      ]
+    },
+    "PlayerAccountSanitizeRequest": {
+      "fields": [
+        {
+          "aggressiveScan": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "level": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "text": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "texts": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountSanitizeResponse": {
+      "fields": [
+        {
+          "modified": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "text": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "texts": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
         }
       ]
     },
@@ -82975,6 +86035,54 @@
         }
       ]
     },
+    "PlayerSessionLifecycleGamepassResponseDetails": {
+      "fields": [
+        {
+          "delay": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "remaining": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleGamepassStatus": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlayerSessionLifecycleGamepassStatus": {
+      "values": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "NONE",
+          "value": 2
+        }
+      ]
+    },
     "PlayerSessionLifecycleHealupResponseDetails": {
       "fields": [
         {
@@ -83785,20 +86893,24 @@
           "value": 14
         },
         {
-          "name": "PendingRiotID",
+          "name": "PendingGamepassStatus",
           "value": 15
         },
         {
-          "name": "PendingUserInfoRefresh",
+          "name": "PendingRiotID",
           "value": 16
         },
         {
-          "name": "Authorized",
+          "name": "PendingUserInfoRefresh",
           "value": 17
         },
         {
-          "name": "Error",
+          "name": "Authorized",
           "value": 18
+        },
+        {
+          "name": "Error",
+          "value": 19
         }
       ]
     },
@@ -83998,12 +87110,16 @@
           "value": 2
         },
         {
-          "name": "success",
+          "name": "gamepass",
           "value": 3
         },
         {
-          "name": "error",
+          "name": "success",
           "value": 4
+        },
+        {
+          "name": "error",
+          "value": 5
         }
       ]
     },
@@ -85826,6 +88942,18 @@
         },
         {
           "default_locale": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ProductIntegrationLocaleUpdate": {
+      "fields": [
+        {
+          "locale": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -102047,14 +105175,6 @@
     "RsoAuthenticatorV1AuthenticateMultifactorInput": {
       "fields": [
         {
-          "language": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
           "multifactor": {
             "description": "",
             "offset": 0,
@@ -102089,14 +105209,6 @@
                 ]
               }
             }
-          }
-        },
-        {
-          "remember": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "bool"
           }
         }
       ]
@@ -102252,63 +105364,6 @@
             "offset": 0,
             "optional": false,
             "type": "bool"
-          }
-        }
-      ]
-    },
-    "RsoAuthenticatorV1AuthenticateRiotIdentityInput": {
-      "fields": [
-        {
-          "language": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "remember": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "bool"
-          }
-        },
-        {
-          "riot_identity": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "RsoAuthenticatorV1RiotIdentityInput": {
-                "fields": [
-                  {
-                    "password": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "region": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "username": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
           }
         }
       ]
@@ -102713,6 +105768,22 @@
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
                   {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "password": {
                       "description": "",
                       "offset": 0,
@@ -102721,7 +105792,15 @@
                     }
                   },
                   {
-                    "region": {
+                    "remember": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "state": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -102919,6 +105998,47 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        },
+        {
+          "gamepass": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1GamepassResponseDetails": {
+                "fields": [
+                  {
+                    "delay": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "remaining": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "status": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "RsoAuthenticatorV1GamepassStatus": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
           }
         },
         {
@@ -103147,6 +106267,22 @@
               "RsoAuthenticatorV1SuccessResponseDetails": {
                 "fields": [
                   {
+                    "auth_method": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "is_console_link_session": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "linked": {
                       "description": "",
                       "offset": 0,
@@ -103156,6 +106292,14 @@
                   },
                   {
                     "login_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "puuid": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -103391,6 +106535,54 @@
             "optional": false,
             "type": "string"
           }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1GamepassResponseDetails": {
+      "fields": [
+        {
+          "delay": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "remaining": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1GamepassStatus": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1GamepassStatus": {
+      "values": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "NONE",
+          "value": 2
         }
       ]
     },
@@ -103694,17 +106886,37 @@
           "value": 3
         },
         {
-          "name": "success",
+          "name": "gamepass",
           "value": 4
         },
         {
-          "name": "error",
+          "name": "success",
           "value": 5
+        },
+        {
+          "name": "error",
+          "value": 6
         }
       ]
     },
-    "RsoAuthenticatorV1RiotIdentityInput": {
+    "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
       "fields": [
+        {
+          "captcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "language": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
         {
           "password": {
             "description": "",
@@ -103714,7 +106926,164 @@
           }
         },
         {
-          "region": {
+          "remember": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "username": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentityAuthCompleteRequest": {
+      "fields": [
+        {
+          "riot_identity": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1RiotIdentityInput": {
+                "fields": [
+                  {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "password": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "remember": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "state": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "username": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1ResponseType": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentityAuthStartInput": {
+      "fields": [
+        {
+          "language": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "productId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "state": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RsoAuthenticatorV1RiotIdentityInput": {
+      "fields": [
+        {
+          "captcha": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "language": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "password": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "remember": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "state": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -103799,10 +107168,7 @@
         }
       ]
     },
-    "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
-      "fields": []
-    },
-    "RsoAuthenticatorV1RiotIdentitySignupRequest": {
+    "RsoAuthenticatorV1RiotIdentitySignupCompleteRequest": {
       "fields": [
         {
           "birth_date": {
@@ -103881,6 +107247,9 @@
           }
         }
       ]
+    },
+    "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
+      "fields": []
     },
     "RsoAuthenticatorV1RiotIdentitySignupStartInput": {
       "fields": [
@@ -104276,6 +107645,22 @@
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
                   {
+                    "captcha": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "language": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "password": {
                       "description": "",
                       "offset": 0,
@@ -104284,7 +107669,15 @@
                     }
                   },
                   {
-                    "region": {
+                    "remember": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "state": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -104447,6 +107840,22 @@
     "RsoAuthenticatorV1SuccessResponseDetails": {
       "fields": [
         {
+          "auth_method": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "is_console_link_session": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
           "linked": {
             "description": "",
             "offset": 0,
@@ -104456,6 +107865,14 @@
         },
         {
           "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -104489,6 +107906,18 @@
         {
           "name": "facebook",
           "value": 3
+        },
+        {
+          "name": "nintendo",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "xbox",
+          "value": 6
         }
       ]
     },
@@ -105425,6 +108854,18 @@
         {
           "name": "wegame",
           "value": 9
+        },
+        {
+          "name": "nintendo",
+          "value": 10
+        },
+        {
+          "name": "playstation",
+          "value": 11
+        },
+        {
+          "name": "xbox",
+          "value": 12
         }
       ]
     },
@@ -106719,6 +110160,47 @@
           }
         },
         {
+          "gamepass": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoMobileUiRsoAuthenticatorGamepassResponseDetails": {
+                "fields": [
+                  {
+                    "delay": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "remaining": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "status": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "RsoMobileUiRsoAuthenticatorGamepassStatus": {
+                          "fields": []
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "healup": {
             "description": "",
             "offset": 0,
@@ -107017,6 +110499,54 @@
         }
       ]
     },
+    "RsoMobileUiRsoAuthenticatorGamepassResponseDetails": {
+      "fields": [
+        {
+          "delay": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "remaining": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoMobileUiRsoAuthenticatorGamepassStatus": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RsoMobileUiRsoAuthenticatorGamepassStatus": {
+      "values": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "NONE",
+          "value": 2
+        }
+      ]
+    },
     "RsoMobileUiRsoAuthenticatorHealupResponseDetails": {
       "fields": [
         {
@@ -107148,12 +110678,16 @@
           "value": 3
         },
         {
-          "name": "success",
+          "name": "gamepass",
           "value": 4
         },
         {
-          "name": "error",
+          "name": "success",
           "value": 5
+        },
+        {
+          "name": "error",
+          "value": 6
         }
       ]
     },
@@ -107323,6 +110857,18 @@
         {
           "name": "facebook",
           "value": 3
+        },
+        {
+          "name": "nintendo",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "xbox",
+          "value": 6
         }
       ]
     },

@@ -3856,6 +3856,27 @@
         },
         "type": "object"
       },
+      "EulaAgreementContext": {
+        "properties": {
+          "agreementID": {
+            "type": "string"
+          },
+          "agreementURI": {
+            "type": "string"
+          },
+          "agreementVersion": {
+            "type": "string"
+          },
+          "lastAcceptedTime": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "lastAcceptedVersion": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "EulaAuthorization": {
         "properties": {
           "currentAccountId": {
@@ -3883,6 +3904,18 @@
         },
         "type": "object"
       },
+      "EulaFinalState": {
+        "enum": [
+          "unknown",
+          "stuck",
+          "failedIntoTemporaryAcceptance",
+          "alreadyAccepted",
+          "accepted",
+          "rejected",
+          "rejectedWithoutReading"
+        ],
+        "type": "string"
+      },
       "EulaIdToken": {
         "properties": {
           "token": {
@@ -3903,11 +3936,49 @@
         },
         "type": "object"
       },
+      "EulaPluginTelemetryContext": {
+        "properties": {
+          "agreementContext": {
+            "$ref": "#/components/schemas/EulaAgreementContext"
+          },
+          "clientLocale": {
+            "type": "string"
+          },
+          "externalLegalLinks": {
+            "$ref": "#/components/schemas/EulaExternalLegalLinks"
+          },
+          "finalState": {
+            "$ref": "#/components/schemas/EulaFinalState",
+            "default": "unknown"
+          },
+          "homebaseCountry": {
+            "type": "string"
+          },
+          "privacyPolicyContext": {
+            "$ref": "#/components/schemas/EulaPrivacyPolicyContext"
+          },
+          "productLocale": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "EulaPrivacyPolicy": {
         "properties": {
           "policyContent": {
             "type": "string"
           },
+          "policyURI": {
+            "type": "string"
+          },
+          "policyVersion": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "EulaPrivacyPolicyContext": {
+        "properties": {
           "policyURI": {
             "type": "string"
           },
@@ -3938,16 +4009,6 @@
           }
         },
         "type": "object"
-      },
-      "EulaTOSEventTypeForAP": {
-        "enum": [
-          "failedIntoTemporaryAcceptance",
-          "acceptanceRequired",
-          "accepted",
-          "rejected",
-          "rejectedWithoutReading"
-        ],
-        "type": "string"
       },
       "ExtendedEventData": {
         "properties": {
@@ -4063,6 +4124,17 @@
               "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentRiotPayItemFulfillmentSuccessInfo"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "FirstPartyFulfillmentFirstPartyFulfillmentRiotPayGetAccessTokensResponse": {
+        "properties": {
+          "authToken": {
+            "type": "string"
+          },
+          "refundToken": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -4314,6 +4386,31 @@
           "mock_enabled"
         ],
         "type": "string"
+      },
+      "FriendsOnlinePlatform": {
+        "enum": [
+          "absent",
+          "unknown",
+          "riot",
+          "tencent",
+          "garena",
+          "playstation",
+          "switch",
+          "xbox"
+        ],
+        "type": "string"
+      },
+      "FriendsPlatformUser": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "platform": {
+            "$ref": "#/components/schemas/FriendsOnlinePlatform",
+            "default": "unknown"
+          }
+        },
+        "type": "object"
       },
       "GaRestrictionAuthorization": {
         "properties": {
@@ -8570,6 +8667,14 @@
         },
         "type": "object"
       },
+      "PaymentsReadyState": {
+        "properties": {
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
       "PlatformLoginAuthenticationMethod": {
         "enum": [
           "Riot",
@@ -8921,6 +9026,9 @@
           "error": {
             "type": "string"
           },
+          "gamepass": {
+            "$ref": "#/components/schemas/PlatformUiGamepassResponseDetails"
+          },
           "healup": {
             "$ref": "#/components/schemas/PlatformUiHealupResponseDetails"
           },
@@ -8948,6 +9056,73 @@
         ],
         "type": "string"
       },
+      "PlatformUiChatSession": {
+        "properties": {
+          "federated": {
+            "type": "boolean"
+          },
+          "game_name": {
+            "type": "string"
+          },
+          "game_tag": {
+            "type": "string"
+          },
+          "loaded": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pid": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string"
+          },
+          "state": {
+            "$ref": "#/components/schemas/PlatformUiChatSessionState",
+            "default": "disconnected"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiChatSessionState": {
+        "enum": [
+          "disconnected",
+          "connecting",
+          "connected"
+        ],
+        "type": "string"
+      },
+      "PlatformUiConfigV3AuthProgress": {
+        "enum": [
+          "None",
+          "Ready",
+          "Pending",
+          "Complete",
+          "Skipped",
+          "Error"
+        ],
+        "type": "string"
+      },
+      "PlatformUiConfigV3ReadyState": {
+        "properties": {
+          "configAuthProgress": {
+            "$ref": "#/components/schemas/PlatformUiConfigV3AuthProgress",
+            "default": "None"
+          },
+          "ready": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
       "PlatformUiEligibilityResponse": {
         "properties": {
           "errorCode": {
@@ -8965,6 +9140,108 @@
           }
         },
         "type": "object"
+      },
+      "PlatformUiFriend": {
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "displayGroup": {
+            "type": "string"
+          },
+          "gameName": {
+            "type": "string"
+          },
+          "gameTag": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "hovercard_background_url": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "patchline": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "product_folder_name": {
+            "type": "string"
+          },
+          "product_presence_name": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "showState": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiFriendList": {
+        "properties": {
+          "friends": {
+            "items": {
+              "$ref": "#/components/schemas/PlatformUiFriend"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiGamepassResponseDetails": {
+        "properties": {
+          "delay": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "remaining": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PlatformUiGamepassStatus",
+            "default": "PENDING"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiGamepassStatus": {
+        "enum": [
+          "PENDING",
+          "ACTIVE",
+          "NONE"
+        ],
+        "type": "string"
       },
       "PlatformUiGenerateTaglineInput": {
         "properties": {
@@ -9228,6 +9505,7 @@
           "PendingConsent",
           "PendingEulaData",
           "PendingEulaAcceptance",
+          "PendingGamepassStatus",
           "PendingRiotID",
           "PendingUserInfoRefresh",
           "Authorized",
@@ -9240,6 +9518,7 @@
           "auth",
           "healup",
           "signup",
+          "gamepass",
           "success",
           "error"
         ],
@@ -9354,6 +9633,79 @@
         },
         "type": "object"
       },
+      "PlatformUiSocialFriend": {
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "displayGroup": {
+            "type": "string"
+          },
+          "gameName": {
+            "type": "string"
+          },
+          "gameTag": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "hovercard_background_url": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "patchline": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "product_folder_name": {
+            "type": "string"
+          },
+          "product_presence_name": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "showState": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiSocialFriendList": {
+        "properties": {
+          "friends": {
+            "items": {
+              "$ref": "#/components/schemas/PlatformUiSocialFriend"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "PlatformUiSuccessResponseDetails": {
         "properties": {
           "linked": {
@@ -9450,6 +9802,7 @@
           "AuthenticationFailure",
           "FetchCurrentAuthenticationFailure",
           "InvalidAuthenticationState",
+          "ReadinessTimeout",
           "SignupFailure",
           "TooYoung",
           "SigninFailure",
@@ -9475,6 +9828,7 @@
           "SystemOutOfDate",
           "NetworkDisconnected",
           "GamepadDisconnected",
+          "ReadinessTimeout",
           "InternalError"
         ],
         "type": "string"
@@ -9751,6 +10105,17 @@
         },
         "type": "object"
       },
+      "PlayerAccountGameNameAndTagLine": {
+        "properties": {
+          "gameName": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerAccountGenerateTaglineInput": {
         "properties": {
           "game_name": {
@@ -10021,6 +10386,52 @@
           "NO_ERROR"
         ],
         "type": "string"
+      },
+      "PlayerAccountSanitizeRequest": {
+        "properties": {
+          "aggressiveScan": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "level": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "nullable": true,
+            "type": "integer"
+          },
+          "text": {
+            "nullable": true,
+            "type": "string"
+          },
+          "texts": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountSanitizeResponse": {
+        "properties": {
+          "modified": {
+            "type": "boolean"
+          },
+          "text": {
+            "nullable": true,
+            "type": "string"
+          },
+          "texts": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          }
+        },
+        "type": "object"
       },
       "PlayerAccountVngV1HomeBaseCountry": {
         "properties": {
@@ -11261,6 +11672,35 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleGamepassResponseDetails": {
+        "properties": {
+          "delay": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "remaining": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleGamepassStatus",
+            "default": "PENDING"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleGamepassStatus": {
+        "enum": [
+          "PENDING",
+          "ACTIVE",
+          "NONE"
+        ],
+        "type": "string"
+      },
       "PlayerSessionLifecycleHealupResponseDetails": {
         "properties": {
           "auth_method": {
@@ -11578,6 +12018,7 @@
           "PendingConsent",
           "PendingEulaData",
           "PendingEulaAcceptance",
+          "PendingGamepassStatus",
           "PendingRiotID",
           "PendingUserInfoRefresh",
           "Authorized",
@@ -11680,6 +12121,7 @@
           "auth",
           "healup",
           "signup",
+          "gamepass",
           "success",
           "error"
         ],
@@ -12396,6 +12838,14 @@
             "type": "array"
           },
           "default_locale": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ProductIntegrationLocaleUpdate": {
+        "properties": {
+          "locale": {
             "type": "string"
           }
         },
@@ -15736,14 +16186,8 @@
       },
       "RsoAuthenticatorV1AuthenticateMultifactorInput": {
         "properties": {
-          "language": {
-            "type": "string"
-          },
           "multifactor": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1MultifactorInput"
-          },
-          "remember": {
-            "type": "boolean"
           }
         },
         "type": "object"
@@ -15786,20 +16230,6 @@
           },
           "remember": {
             "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "RsoAuthenticatorV1AuthenticateRiotIdentityInput": {
-        "properties": {
-          "language": {
-            "type": "string"
-          },
-          "remember": {
-            "type": "boolean"
-          },
-          "riot_identity": {
-            "$ref": "#/components/schemas/RsoAuthenticatorV1RiotIdentityInput"
           }
         },
         "type": "object"
@@ -15912,6 +16342,9 @@
           },
           "error": {
             "type": "string"
+          },
+          "gamepass": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1GamepassResponseDetails"
           },
           "healup": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1HealupResponseDetails"
@@ -16026,6 +16459,35 @@
           }
         },
         "type": "object"
+      },
+      "RsoAuthenticatorV1GamepassResponseDetails": {
+        "properties": {
+          "delay": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "remaining": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1GamepassStatus",
+            "default": "PENDING"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1GamepassStatus": {
+        "enum": [
+          "PENDING",
+          "ACTIVE",
+          "NONE"
+        ],
+        "type": "string"
       },
       "RsoAuthenticatorV1HCaptcha": {
         "properties": {
@@ -16170,21 +16632,87 @@
           "healup",
           "signup",
           "multifactor",
+          "gamepass",
           "success",
           "error"
         ],
         "type": "string"
       },
-      "RsoAuthenticatorV1RiotIdentityInput": {
+      "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
         "properties": {
+          "captcha": {
+            "type": "string"
+          },
+          "language": {
+            "nullable": true,
+            "type": "string"
+          },
           "password": {
             "type": "string"
           },
-          "region": {
+          "remember": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1RiotIdentityAuthCompleteRequest": {
+        "properties": {
+          "riot_identity": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1RiotIdentityInput"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1ResponseType",
+            "default": "auth"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1RiotIdentityAuthStartInput": {
+        "properties": {
+          "language": {
+            "nullable": true,
+            "type": "string"
+          },
+          "productId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "state": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1RiotIdentityInput": {
+        "properties": {
+          "captcha": {
+            "nullable": true,
+            "type": "string"
+          },
+          "language": {
+            "nullable": true,
+            "type": "string"
+          },
+          "password": {
+            "nullable": true,
+            "type": "string"
+          },
+          "remember": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "state": {
             "nullable": true,
             "type": "string"
           },
           "username": {
+            "nullable": true,
             "type": "string"
           }
         },
@@ -16223,11 +16751,7 @@
         },
         "type": "object"
       },
-      "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
-        "properties": {},
-        "type": "object"
-      },
-      "RsoAuthenticatorV1RiotIdentitySignupRequest": {
+      "RsoAuthenticatorV1RiotIdentitySignupCompleteRequest": {
         "properties": {
           "birth_date": {
             "type": "string"
@@ -16262,6 +16786,10 @@
             "type": "string"
           }
         },
+        "type": "object"
+      },
+      "RsoAuthenticatorV1RiotIdentitySignupCreateInput": {
+        "properties": {},
         "type": "object"
       },
       "RsoAuthenticatorV1RiotIdentitySignupStartInput": {
@@ -16383,10 +16911,19 @@
       },
       "RsoAuthenticatorV1SuccessResponseDetails": {
         "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "is_console_link_session": {
+            "type": "boolean"
+          },
           "linked": {
             "type": "string"
           },
           "login_token": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "redirect_url": {
@@ -16400,7 +16937,10 @@
           "none",
           "apple",
           "google",
-          "facebook"
+          "facebook",
+          "nintendo",
+          "playstation",
+          "xbox"
         ],
         "type": "string"
       },
@@ -20098,7 +20638,7 @@
     },
     "/chat/v4/friendrequests": {
       "delete": {
-        "description": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+        "description": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
         "operationId": "DeleteChatV4Friendrequests",
         "parameters": [
           {
@@ -20133,7 +20673,7 @@
         ]
       },
       "get": {
-        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+        "description": "**Response:** named requests root object: a flat list of friend request property groups with 'pid' and 'name' inside (could have zero or more entries):\n\n```\n{\n  \"requests\": [\n    {\n      \"name\":         \"[friend name]\",\n      \"note\":         \"[friend note]\",     // Can be set to contain information about the friend request. (ex. recofriender saves the player name from social media here)\n      \"pid\":          \"[friend pid]\",\n      \"subscription\": \"pending_out\"        //either \"pending_out\" or \"pending_in\" (sent or received request)\n    }\n  ]\n}\n```\n\n\nEndpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
         "operationId": "GetChatV4Friendrequests",
         "parameters": [
           {
@@ -20164,7 +20704,7 @@
         ]
       },
       "post": {
-        "description": "Endpoint deleted October 2022; Please use '/chat/v6/friendrequests'.",
+        "description": "Endpoint deleted August 2023; Please use '/chat/v6/friendrequests'.",
         "operationId": "PostChatV4Friendrequests",
         "parameters": [
           {
@@ -23163,6 +23703,34 @@
         ]
       }
     },
+    "/eula/v1/agreement/reject": {
+      "put": {
+        "operationId": "PutEulaV1AgreementReject",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "boolean"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "withoutReading"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Rejects the most recent EULA for the current user.",
+        "tags": [
+          "Plugins",
+          "Plugin eula"
+        ]
+      }
+    },
     "/eula/v1/debug/agreement/force-requirement": {
       "post": {
         "operationId": "PostEulaV1DebugAgreementForceRequirement",
@@ -23335,7 +23903,7 @@
     },
     "/first-party-fulfillment/v1/fulfill": {
       "post": {
-        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n",
+        "description": "\n**Description**\n\nThis API will check if the user has made any purchases on the first party store and will attempt to fulfill them.\nThis should typically be called when the game is launched or resumed.\n\nNOTE: Currently, this endpoint only supports PlayStation 4, PlayStation 5, and Switch fulfillment. Xbox support will be added in the future.\n\n** Request Arguments **\n\nRequest Body:\n* `firstPartyAuthToken`: Authentication token for the first party platform required to perform fulfillment.\n    * On Nintendo Switch, provide the NSA ID token if available. Otherwise, RiotGamesApi will fetch the NSA ID token itself.\n    * On Playstation 4 and Playstation 5, provide an NP auth code that includes the \"psn:s2s\" and \"openid\" scopes.\n    * On Xbox, no token is required and an empty string can be provided.\n* `fulfillmentId`: UUID that identifies a unique fulfillment attempt.\n* `fulfillmentReason`: The reason why the fulfillment attempt was made. Possible options are listed below:\n    * `GameLaunched`: Fulfillment was initiated because a purchase may have occurred while the game was not running.\n    * `GameReturnedToForeground`: Fulfillment was initiated because a purchase may have occurred while the game was in the background.\n    * `PurchaseCompleted`: Fulfillment was initiated because a purchase was completed (likely from the in-game store).\n    * `Other`: DO NOT USE without consulting the SDK Features team first. This is a fallback reason for why a fulfillment was initiated if it\n      is not covered by any of the existing reasons. However, you should only use this if SDK Features is not able to add a reason that covers\n      your use case before you need to use it and once SDK Features does add the reason, you are expected to update to using it as soon as it\n      has been made available in the next SDK release.\n\n** Returns **\n\nResponse Body:\n* `FulfillmentResponse` Object:\n    * `fulfillmentRequired`: Bool indicating whether the player owned anything that needed to be fulfilled.\n    * `fulfilledItems`: An `ItemFulfillmentSuccessInfo` object\n        * `itemId`: A string that identifies the item that was fulfilled.\n        * `quantity`: An integer representing how many of the item was fulfilled.\n    * `unfulfilledItems`: An `ItemFulfillmentFailureInfo` object\n        * `itemId`: A string that identifies the item that was unable to be fulfilled.\n        * `quantity`: An integer representing how many of the item could not be fulfilled.\n        * `reason`: A string describing why the item could not be fulfilled.\n\n** Error Codes **\n* Possible error codes: 400, 403, 412, 417, 500, 502, 504, 512\n* Error codes fall into the following categories: recoverable, retriable, and hard failure.\n* Recoverable errors (400, 403, 412) will succeed when the root issue is resolved such as \"412 Unable to perform fulfillment because plugin is not enabled.\" - in this case the plugin needs to be enabled in the config\n* Retriable errors (500, 502, 503, 504) may succeed if another attempt is made later. This could include issues such as the network temporarily being down.\n* Hard failure (417, 512) errors are unlikely to succeed when retried and the root issue is unexpected. An example of this would be the first party libraries failing to load.\n* For more details on error codes and how to handle them please see https://platform.riotgames.com/riotgamesapi-sdk/features/first-party-fulfillment/integrating-first-party-fulfillment\n\n",
         "operationId": "PostFirstPartyFulfillmentV1Fulfill",
         "parameters": [],
         "requestBody": {
@@ -26210,6 +26778,92 @@
         ]
       }
     },
+    "/platform-ui-social/v1/friends": {
+      "get": {
+        "operationId": "GetPlatformUiSocialV1Friends",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformUiSocialFriendList"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui-social",
+          "Subscribable",
+          "Internal"
+        ]
+      }
+    },
+    "/platform-ui-social/v1/full-friends-list": {
+      "get": {
+        "operationId": "GetPlatformUiSocialV1FullFriendsList",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformUiSocialFriendList"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui-social",
+          "Subscribable",
+          "Internal"
+        ]
+      }
+    },
+    "/platform-ui-social/v1/initialize": {
+      "get": {
+        "operationId": "GetPlatformUiSocialV1Initialize",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui-social",
+          "Subscribable",
+          "Internal"
+        ]
+      },
+      "post": {
+        "operationId": "PostPlatformUiSocialV1Initialize",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui-social",
+          "Internal"
+        ]
+      }
+    },
     "/platform-ui/v1/enabled": {
       "get": {
         "operationId": "GetPlatformUiV1Enabled",
@@ -26402,6 +27056,7 @@
     },
     "/player-account/aliases/v1/active": {
       "get": {
+        "description": "Deprecated, please use v1/display-name to get the players game name and tag.",
         "operationId": "GetPlayerAccountAliasesV1Active",
         "parameters": [],
         "responses": {
@@ -26420,7 +27075,8 @@
         "tags": [
           "Plugins",
           "Plugin player-account",
-          "Subscribable"
+          "Subscribable",
+          "Deprecated"
         ]
       }
     },
@@ -26478,6 +27134,30 @@
         "tags": [
           "Plugins",
           "Plugin player-account"
+        ]
+      }
+    },
+    "/player-account/aliases/v1/display-name": {
+      "get": {
+        "operationId": "GetPlayerAccountAliasesV1DisplayName",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountGameNameAndTagLine"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Returns the current active, sanitized, game name and tag for the player.",
+        "tags": [
+          "Plugins",
+          "Plugin player-account",
+          "Subscribable"
         ]
       }
     },
@@ -29263,6 +29943,33 @@
           "Plugin product-integration",
           "Subscribable"
         ]
+      },
+      "put": {
+        "description": "\n## Context\nThis function is being added the support the ability for standalone games to set product locale. The behavior works as follows:\n- First verify that the locale attempting to be set is listed as an available product locale. No actual validation is done on the product locale itself, just that it is present\nin the list of available locales stored in the configuration keyed locale_data.available_locales.\n- After confirming the validity, we attempt to find the product settings file. If it exists, it means that we are in standalone SDK mode. We then propagate the locale to the file\nto persist it across sessions\n- If the file does not exist, it means that we are being run through the Riot Client, and instead we call the `PUT /riotclient/product-locales/products/%s/patchlines/%s`\nendpoint to set the product locale for that product + patchline combination.\n\n### Legacy support\nLeague of Legends unofficially supports players setting their locale to values that are not available to the region. For example, setting their NA client to ja_JP. This is done\ncurrently via modifying the LeagueClientSettings.yaml file and explicitly setting their locale to their locale of choice. We want to continue to support this behavior on behalf\nof League. This function does not modify the validation or ability to override your locale. The validation done here on this function behaves the same as the existing Riot Client\nvalidation, which continues to allow for player modifications.\n\nIf that should change in the future, this function will need to be updated to reflect the changes as well as the `PUT /riotclient/product-locales/products/%s/patchlines/%s` endpoint.\n\n## Arguments\n- locale\n  - the 4 letter code representing the country + language specified separated by an underscore. For example, ja_JP is Japanese, and en_US is US English.\n  - no validation on the 4 letter codes are done; we merely check for its existence in the list of available locales.\n",
+        "operationId": "PutProductIntegrationV1Locale",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProductIntegrationLocaleUpdate"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "locale"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Applies the locale specified in the body to the product currently running. Locale should be in language_country format. for example, zh_CN or ko_KR",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
       }
     },
     "/product-integration/v1/settings-token": {
@@ -31576,6 +32283,7 @@
     },
     "/riotclient/lifecycle": {
       "get": {
+        "description": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
         "operationId": "GetRiotclientLifecycle",
         "parameters": [],
         "responses": {
@@ -31592,10 +32300,12 @@
         },
         "summary": "Get the current lifecycle events.",
         "tags": [
-          "riotclient"
+          "riotclient",
+          "Deprecated"
         ]
       },
       "put": {
+        "description": "Endpoint will be deleted after July 2023 [SDKEXP-2014]",
         "operationId": "PutRiotclientLifecycle",
         "parameters": [],
         "requestBody": {
@@ -31617,7 +32327,8 @@
         },
         "summary": "Update the current app lifecycle events.",
         "tags": [
-          "riotclient"
+          "riotclient",
+          "Deprecated"
         ]
       }
     },
@@ -32674,7 +33385,7 @@
     },
     "/rso-auth/v1/session/login-token": {
       "put": {
-        "description": "Authenticates a player using a token from rso-authenticator",
+        "description": "Authenticates a player using a token from rso-authenticator.\n\nThe `authentication_type` value should be `SSOAuth` for social/3rd party authentication tokens (e.g. Google, Facebook, etc), and `Riot Auth` for Riot Games authentication tokens.\n",
         "operationId": "PutRsoAuthV1SessionLoginToken",
         "parameters": [],
         "requestBody": {
@@ -33991,41 +34702,6 @@
         ]
       }
     },
-    "/rso-authenticator/v1/authentication/riot-identity": {
-      "post": {
-        "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentity",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticateRiotIdentityInput"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "riotIdentity"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticationResponse"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Create a new authentication with riot credentials.",
-        "tags": [
-          "Plugins",
-          "Plugin rso-authenticator"
-        ]
-      }
-    },
     "/rso-authenticator/v1/authentication/riot-identity-signup/complete": {
       "post": {
         "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentitySignupComplete",
@@ -34090,6 +34766,76 @@
           }
         },
         "summary": "Start a new Riot Identity Signup authentication session.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/riot-identity/complete": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentityComplete",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoAuthenticatorV1RiotIdentityAuthCompleteInput"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "authCompleteInput"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Complete a new Riot Identity authentication session.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/riot-identity/start": {
+      "post": {
+        "operationId": "PostRsoAuthenticatorV1AuthenticationRiotIdentityStart",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoAuthenticatorV1RiotIdentityAuthStartInput"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "authStartInput"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoAuthenticatorV1AuthenticationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Start a new Riot Identity authentication session.",
         "tags": [
           "Plugins",
           "Plugin rso-authenticator"
