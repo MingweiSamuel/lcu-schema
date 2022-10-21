@@ -72861,7 +72861,7 @@
       ],
       "name": "RnetProductRegistryPatchline",
       "nameSpace": "",
-      "size": 856,
+      "size": 864,
       "tags": [
         "Plugins",
         "Plugin rnet-product-registry"
@@ -74141,7 +74141,7 @@
       ],
       "name": "RnetProductRegistryProductPatchlineResourceV4",
       "nameSpace": "",
-      "size": 904,
+      "size": 912,
       "tags": [
         "Plugins",
         "Plugin rnet-product-registry"
