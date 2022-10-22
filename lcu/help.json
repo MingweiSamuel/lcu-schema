@@ -12144,6 +12144,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-store_v1_getStoreUrl",
       "nameSpace": "",
       "tags": [],
