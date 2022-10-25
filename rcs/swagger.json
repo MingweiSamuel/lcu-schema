@@ -4331,6 +4331,43 @@
       },
       "type": "object"
     },
+    "FriendsRsoAuthenticatorPluginConfigResponse": {
+      "properties": {
+        "methods": {
+          "items": {
+            "$ref": "#/definitions/FriendsRsoAuthenticatorV1AuthMethodConfig"
+          },
+          "type": "array"
+        },
+        "service_url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "FriendsRsoAuthenticatorV1AuthMethodConfig": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "mode": {
+          "type": "string"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "GaRestrictionAuthorization": {
       "properties": {
         "puuid": {
@@ -9552,6 +9589,9 @@
     },
     "PlatformUiWebLinkingStatusResponse": {
       "properties": {
+        "login_token": {
+          "type": "string"
+        },
         "status": {
           "$ref": "#/definitions/PlatformUiWebLinkingStatus",
           "default": "NEW"
@@ -12033,6 +12073,33 @@
       "properties": {
         "userInfo": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "PlayerSessionLifecycleWebLinkingStatus": {
+      "enum": [
+        "NEW",
+        "PENDING",
+        "EXPIRED",
+        "COMPLETED"
+      ],
+      "type": "string"
+    },
+    "PlayerSessionLifecycleWebLinkingStatusResponse": {
+      "properties": {
+        "login_token": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/PlayerSessionLifecycleWebLinkingStatus",
+          "default": "NEW"
+        },
+        "ttl": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -16463,6 +16530,17 @@
       },
       "type": "object"
     },
+    "RsoAuthenticatorV1RsoInput": {
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "id_token": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthenticatorV1SignupCodeLinking": {
       "properties": {
         "direct_url": {
@@ -16529,12 +16607,21 @@
         "nintendo": {
           "$ref": "#/definitions/RsoAuthenticatorV1NintendoInput"
         },
+        "playstation": {
+          "$ref": "#/definitions/RsoAuthenticatorV1PlaystationInput"
+        },
         "riot_identity": {
           "$ref": "#/definitions/RsoAuthenticatorV1RiotIdentityInput"
+        },
+        "rso": {
+          "$ref": "#/definitions/RsoAuthenticatorV1RsoInput"
         },
         "type": {
           "$ref": "#/definitions/RsoAuthenticatorV1ResponseType",
           "default": "auth"
+        },
+        "xbox": {
+          "$ref": "#/definitions/RsoAuthenticatorV1XboxInput"
         }
       },
       "type": "object"
@@ -16637,6 +16724,9 @@
     },
     "RsoAuthenticatorV1WebLinkingStatusResponse": {
       "properties": {
+        "login_token": {
+          "type": "string"
+        },
         "status": {
           "$ref": "#/definitions/RsoAuthenticatorV1WebLinkingStatus",
           "default": "NEW"
@@ -32075,6 +32165,34 @@
         ]
       }
     },
+    "/rso-authenticator/v1/authentication/link/playstation": {
+      "put": {
+        "operationId": "PutRsoAuthenticatorV1AuthenticationLinkPlaystation",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "playstation",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1PlaystationInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationResponse"
+            }
+          }
+        },
+        "summary": "Link the current authentication with an existing account with playstation authorization code.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
     "/rso-authenticator/v1/authentication/link/resendCode": {
       "put": {
         "operationId": "PutRsoAuthenticatorV1AuthenticationLinkResendCode",
@@ -32122,6 +32240,34 @@
         ]
       }
     },
+    "/rso-authenticator/v1/authentication/link/rso": {
+      "put": {
+        "operationId": "PutRsoAuthenticatorV1AuthenticationLinkRso",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "rso",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1RsoInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationResponse"
+            }
+          }
+        },
+        "summary": "Link the current authentication with an existing RSO account with access and id tokens.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
+        ]
+      }
+    },
     "/rso-authenticator/v1/authentication/link/status": {
       "delete": {
         "operationId": "DeleteRsoAuthenticatorV1AuthenticationLinkStatus",
@@ -32153,6 +32299,34 @@
           "Plugins",
           "Plugin rso-authenticator",
           "Subscribable"
+        ]
+      }
+    },
+    "/rso-authenticator/v1/authentication/link/xbox": {
+      "put": {
+        "operationId": "PutRsoAuthenticatorV1AuthenticationLinkXbox",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "xbox",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1XboxInput"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/RsoAuthenticatorV1AuthenticationResponse"
+            }
+          }
+        },
+        "summary": "Link the current authentication with an existing account with xbox tokens.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-authenticator"
         ]
       }
     },

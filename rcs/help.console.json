@@ -20754,6 +20754,14 @@
         "RsoAuthenticatorV1WebLinkingStatusResponse": {
           "fields": [
             {
+              "login_token": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
               "status": {
                 "description": "",
                 "offset": 0,
@@ -48072,6 +48080,447 @@
       "url": "/rso-authenticator/v1/authentication/link/nintendo",
       "usage": "PutRsoAuthenticatorV1AuthenticationLinkNintendo <openId>"
     },
+    "PutRsoAuthenticatorV1AuthenticationLinkPlaystation": {
+      "arguments": [
+        {
+          "playstation": {
+            "type": {
+              "RsoAuthenticatorV1PlaystationInput": {
+                "fields": [
+                  {
+                    "authorization_code": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "environment": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Link the current authentication with an existing account with playstation authorization code.",
+      "http_method": "PUT",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/link/playstation",
+      "usage": "PutRsoAuthenticatorV1AuthenticationLinkPlaystation <playstation>"
+    },
     "PutRsoAuthenticatorV1AuthenticationLinkResendCode": {
       "arguments": [],
       "description": "Request that a code for linking be resent.",
@@ -48958,6 +49407,888 @@
       },
       "url": "/rso-authenticator/v1/authentication/link/riot-identity",
       "usage": "PutRsoAuthenticatorV1AuthenticationLinkRiotIdentity <riotIdentity>"
+    },
+    "PutRsoAuthenticatorV1AuthenticationLinkRso": {
+      "arguments": [
+        {
+          "rso": {
+            "type": {
+              "RsoAuthenticatorV1RsoInput": {
+                "fields": [
+                  {
+                    "access_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "id_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Link the current authentication with an existing RSO account with access and id tokens.",
+      "http_method": "PUT",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/link/rso",
+      "usage": "PutRsoAuthenticatorV1AuthenticationLinkRso <rso>"
+    },
+    "PutRsoAuthenticatorV1AuthenticationLinkXbox": {
+      "arguments": [
+        {
+          "xbox": {
+            "type": {
+              "RsoAuthenticatorV1XboxInput": {
+                "fields": [
+                  {
+                    "user_hash": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "xsts_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Link the current authentication with an existing account with xbox tokens.",
+      "http_method": "PUT",
+      "returns": {
+        "RsoAuthenticatorV1AuthenticationResponse": {
+          "fields": [
+            {
+              "captcha": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1Captcha": {
+                    "fields": [
+                      {
+                        "hcaptcha": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1HCaptcha": {
+                              "fields": [
+                                {
+                                  "data": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "key": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1CaptchaType": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "country": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "gamepass": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1GamepassResponseDetails": {
+                    "fields": [
+                      {
+                        "delay": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "remaining": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "uint32"
+                        }
+                      },
+                      {
+                        "status": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1GamepassStatus": {
+                              "fields": []
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "healup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1HealupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "multifactor": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1MultifactorResponseDetails": {
+                    "fields": [
+                      {
+                        "email": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "methods": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "mode": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "signup": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SignupResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "link": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": {
+                            "RsoAuthenticatorV1SignupLinkDetails": {
+                              "fields": [
+                                {
+                                  "auth_method": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "code_linking": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": {
+                                      "RsoAuthenticatorV1SignupCodeLinking": {
+                                        "fields": [
+                                          {
+                                            "direct_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "manual_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_code": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "short_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "status_url": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          },
+                                          {
+                                            "uuid": {
+                                              "description": "",
+                                              "offset": 0,
+                                              "optional": false,
+                                              "type": "string"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  "options": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                },
+                                {
+                                  "suggested": {
+                                    "description": "",
+                                    "offset": 0,
+                                    "optional": false,
+                                    "type": "vector of string"
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "required_fields": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "vector of string"
+                        }
+                      },
+                      {
+                        "required_fields_hints": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "success": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1SuccessResponseDetails": {
+                    "fields": [
+                      {
+                        "auth_method": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "is_console_link_session": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
+                        "linked": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "login_token": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "puuid": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1ResponseType": {
+                    "fields": []
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rso-authenticator/v1/authentication/link/xbox",
+      "usage": "PutRsoAuthenticatorV1AuthenticationLinkXbox <xbox>"
     },
     "PutRsoMobileUiV1RegionElection": {
       "arguments": [
@@ -61045,6 +62376,70 @@
                 "fields": []
               }
             }
+          }
+        }
+      ]
+    },
+    "FriendsRsoAuthenticatorPluginConfigResponse": {
+      "fields": [
+        {
+          "methods": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of FriendsRsoAuthenticatorV1AuthMethodConfig"
+          }
+        },
+        {
+          "service_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "FriendsRsoAuthenticatorV1AuthMethodConfig": {
+      "fields": [
+        {
+          "clientId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "method": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "mode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "scopes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -81621,6 +83016,14 @@
     "PlatformUiWebLinkingStatusResponse": {
       "fields": [
         {
+          "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "status": {
             "description": "",
             "offset": 0,
@@ -87453,6 +88856,58 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerSessionLifecycleWebLinkingStatus": {
+      "values": [
+        {
+          "name": "NEW",
+          "value": 0
+        },
+        {
+          "name": "PENDING",
+          "value": 1
+        },
+        {
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "name": "COMPLETED",
+          "value": 3
+        }
+      ]
+    },
+    "PlayerSessionLifecycleWebLinkingStatusResponse": {
+      "fields": [
+        {
+          "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleWebLinkingStatus": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "ttl": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "int32"
           }
         }
       ]
@@ -107271,6 +108726,26 @@
         }
       ]
     },
+    "RsoAuthenticatorV1RsoInput": {
+      "fields": [
+        {
+          "access_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "id_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "RsoAuthenticatorV1SignupCodeLinking": {
       "fields": [
         {
@@ -107637,6 +109112,35 @@
           }
         },
         {
+          "playstation": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1PlaystationInput": {
+                "fields": [
+                  {
+                    "authorization_code": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "environment": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "riot_identity": {
             "description": "",
             "offset": 0,
@@ -107698,6 +109202,35 @@
           }
         },
         {
+          "rso": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1RsoInput": {
+                "fields": [
+                  {
+                    "access_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "id_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "type": {
             "description": "",
             "offset": 0,
@@ -107705,6 +109238,35 @@
             "type": {
               "RsoAuthenticatorV1ResponseType": {
                 "fields": []
+              }
+            }
+          }
+        },
+        {
+          "xbox": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1XboxInput": {
+                "fields": [
+                  {
+                    "user_hash": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "xsts_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
               }
             }
           }
@@ -108019,6 +109581,14 @@
     },
     "RsoAuthenticatorV1WebLinkingStatusResponse": {
       "fields": [
+        {
+          "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
         {
           "status": {
             "description": "",

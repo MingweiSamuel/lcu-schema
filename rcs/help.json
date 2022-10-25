@@ -22803,6 +22803,35 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "playstation",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1PlaystationInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Link the current authentication with an existing account with playstation authorization code.",
+      "help": "",
+      "internal": false,
+      "name": "PutRsoAuthenticatorV1AuthenticationLinkPlaystation",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -22839,6 +22868,64 @@
       "help": "",
       "internal": false,
       "name": "PutRsoAuthenticatorV1AuthenticationLinkRiotIdentity",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "rso",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RsoInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Link the current authentication with an existing RSO account with access and id tokens.",
+      "help": "",
+      "internal": false,
+      "name": "PutRsoAuthenticatorV1AuthenticationLinkRso",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RsoAuthenticatorV1AuthenticationResponse"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "xbox",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1XboxInput"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Link the current authentication with an existing account with xbox tokens.",
+      "help": "",
+      "internal": false,
+      "name": "PutRsoAuthenticatorV1AuthenticationLinkXbox",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -35972,6 +36059,96 @@
         }
       ],
       "name": "FriendsPlatformUser",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "methods",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "FriendsRsoAuthenticatorV1AuthMethodConfig",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "service_url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "FriendsRsoAuthenticatorPluginConfigResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "method",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "mode",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "FriendsRsoAuthenticatorV1AuthMethodConfig",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -54061,6 +54238,16 @@
       "fields": [
         {
           "description": "",
+          "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "status",
           "offset": 0,
           "optional": false,
@@ -60746,6 +60933,76 @@
         }
       ],
       "name": "PlayerSessionLifecycleUserInfo",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "PlayerSessionLifecycleWebLinkingStatus",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "COMPLETED",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "EXPIRED",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "NEW",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PlayerSessionLifecycleWebLinkingStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "ttl",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "PlayerSessionLifecycleWebLinkingStatusResponse",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -80383,6 +80640,36 @@
       "fields": [
         {
           "description": "",
+          "name": "access_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "id_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthenticatorV1RsoInput",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "direct_url",
           "offset": 0,
           "optional": false,
@@ -80563,6 +80850,16 @@
         },
         {
           "description": "",
+          "name": "playstation",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1PlaystationInput"
+          }
+        },
+        {
+          "description": "",
           "name": "riot_identity",
           "offset": 0,
           "optional": false,
@@ -80573,12 +80870,32 @@
         },
         {
           "description": "",
+          "name": "rso",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1RsoInput"
+          }
+        },
+        {
+          "description": "",
           "name": "type",
           "offset": 0,
           "optional": false,
           "type": {
             "elementType": "",
             "type": "RsoAuthenticatorV1ResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "xbox",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthenticatorV1XboxInput"
           }
         }
       ],
@@ -80876,6 +81193,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "status",
