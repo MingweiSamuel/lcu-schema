@@ -264,6 +264,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-challenges_v1_seasons",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-champ-select-legacy_v1_bannable-champion-ids",
       "nameSpace": "",
       "tags": [],
@@ -12125,6 +12135,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-spectator_v1_spectate",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
       "nameSpace": "",
       "tags": [],
       "type": {
