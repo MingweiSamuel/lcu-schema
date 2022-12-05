@@ -3444,6 +3444,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_DisabledChampions_ARAM_CLASH",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_DisabledChampions_ARAM_UNRANKED_5x5",
       "nameSpace": "",
       "tags": [],
