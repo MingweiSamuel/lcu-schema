@@ -16211,6 +16211,10 @@
       },
       "RsoAuthenticatorV1AuthenticateCodeInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "code": {
             "type": "string"
           },
@@ -16225,6 +16229,10 @@
       },
       "RsoAuthenticatorV1AuthenticateFacebookInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "facebook": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1FacebookInput"
           },
@@ -16261,6 +16269,10 @@
       },
       "RsoAuthenticatorV1AuthenticateNintendoInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "language": {
             "type": "string"
           },
@@ -16275,6 +16287,10 @@
       },
       "RsoAuthenticatorV1AuthenticateOpenIdConnectInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "language": {
             "type": "string"
           },
@@ -16289,6 +16305,10 @@
       },
       "RsoAuthenticatorV1AuthenticatePlaystationInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "language": {
             "type": "string"
           },
@@ -16303,6 +16323,10 @@
       },
       "RsoAuthenticatorV1AuthenticateXboxInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "language": {
             "type": "string"
           },
@@ -16331,6 +16355,10 @@
           "apple": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1OpenIdConnectInput",
             "nullable": true
+          },
+          "campaign": {
+            "nullable": true,
+            "type": "string"
           },
           "clientId": {
             "nullable": true,
@@ -16707,6 +16735,10 @@
       },
       "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "captcha": {
             "type": "string"
           },
@@ -16758,6 +16790,10 @@
       },
       "RsoAuthenticatorV1RiotIdentityInput": {
         "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
           "captcha": {
             "nullable": true,
             "type": "string"

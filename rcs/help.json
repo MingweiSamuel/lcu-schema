@@ -72,6 +72,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_external-message-handler_v1_patch-request",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_patch-proxy_v1_active-updates",
       "nameSpace": "",
       "tags": [],
@@ -112,6 +122,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_product-launcher_v1_launching_from_xbgp",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_publishing-content_v1_news-feed",
       "nameSpace": "",
       "tags": [],
@@ -123,6 +143,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_publishing-content_v1_promo",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_rc-auth_v1_xbgp",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -1370,6 +1400,27 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Delete patch request, which suggests that the request is already handled",
+      "help": "",
+      "internal": false,
+      "name": "DeleteExternalMessageHandlerV1PatchRequest",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
       ],
       "threadSafe": false
     },
@@ -5098,6 +5149,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Get patch request",
+      "help": "",
+      "internal": false,
+      "name": "GetExternalMessageHandlerV1PatchRequest",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "ExternalMessageHandlerPatchRequest"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Request a synchronization of blocked users from console to Riot ecosystem",
       "help": "\n**Description**\nThis endpoint queries the console for blocked users, looks them up in the Riot system, and checks if all of them are blocked in the Riot ecosystem.\nIf not, the blocks are 'promoted' to Riot blocks. Game teams are required to determined where this endpoint should be invoked in their app lifecycle.\n",
       "internal": false,
@@ -7409,6 +7481,27 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "return a boolean value if we should show the xbox linking modal which is only show in play flow",
+      "help": "",
+      "internal": false,
+      "name": "GetProductLauncherV1LaunchingFromXbgp",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Returns loc plugin data - for triaging issues with bad or missing loc data",
       "help": "",
       "internal": false,
@@ -8294,6 +8387,27 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin publishing-content"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Get the login status for player related to xbox game pass",
+      "help": "",
+      "internal": false,
+      "name": "GetRcAuthV1XbgpLoginStatus",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "RcAuthLoginStatusResponse"
+      },
+      "subscribable": true,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin rc-auth"
       ],
       "threadSafe": false
     },
@@ -15133,6 +15247,23 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Switch to background mode.",
+      "help": "",
+      "internal": false,
+      "name": "PostProcessControlV1ProcessQuitSwitchBackgroundMode",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "",
@@ -15287,6 +15418,27 @@
       "help": "",
       "internal": false,
       "name": "PostProductLauncherV1DefaultProductMinimize",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "set if we are in a xbgp play flow that will display the linking modal",
+      "help": "",
+      "internal": false,
+      "name": "PostProductLauncherV1LaunchingFromXbgp",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -15592,6 +15744,37 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "loginToken",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Update the player login-token",
+      "help": "",
+      "internal": false,
+      "name": "PostRcAuthV1XbgpUpdateLoginToken",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -15693,6 +15876,27 @@
       "help": "",
       "internal": false,
       "name": "PostRiotClientLifecycleV1Quit",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin riot-client-lifecycle"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Quit Riot Client Full mode and switch to the Background mode. If any games are running show the games-running exit-dialog.",
+      "help": "",
+      "internal": false,
+      "name": "PostRiotClientLifecycleV1QuitSwitchBackgroundMode",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -19467,6 +19671,117 @@
       "subscribable": false,
       "tags": [
         "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "message",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerMessageBody"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Emulate a message and send it to the event bus:'MessageId': Type of the message. (e.g. install_game, patch_game, launch_game)'MessageData': The message content",
+      "help": "",
+      "internal": false,
+      "name": "PutExternalMessageHandlerV1Emulate",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Notify patch request has been paused",
+      "help": "",
+      "internal": false,
+      "name": "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdPause",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Notify patch request has been resumed",
+      "help": "",
+      "internal": false,
+      "name": "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdResume",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
       ],
       "threadSafe": false
     },
@@ -35031,6 +35346,2307 @@
     },
     {
       "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "updateAvailable",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "updateRequired",
+          "offset": 1,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerAppUpdateStatus",
+      "nameSpace": "",
+      "size": 2,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerClientProductType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "forge",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "hidden",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "riot_game",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "special_event",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "third_party",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "thunderdome",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerCombinedPatchState",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "awaiting_headers",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "bad_install_path",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "not_installed",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "out_of_date",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "up_to_date",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "updating",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerConfigType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "player",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "public",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "launchable_on_update_fail",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_notes_url",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_url",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "bundles_url",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "allowed_http_fallback_hostnames",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "seed_url",
+          "offset": 136,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "excluded_paths",
+          "offset": 160,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "secondary_patchlines",
+          "offset": 172,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerSecondaryPatchline",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "dependencies",
+          "offset": 184,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerDependency",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 196,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "dynamic_tags",
+          "offset": 208,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerDynamicTags",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "delete_foreign_paths",
+          "offset": 220,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerConfigurationResource",
+      "nameSpace": "",
+      "size": 224,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerConfigurationStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "has_configuration",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "unknown",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "unsupported_32_bit_os",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "unsupported_os",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "unsupported_region",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "unsupported_shard",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "min_version",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "url",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "hash",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "args",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "valid_exit_codes",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "elevate",
+          "offset": 156,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerDependency",
+      "nameSpace": "",
+      "size": 160,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "hash",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ThirdPartyDependencyStatusPhase"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerDependencyState",
+      "nameSpace": "",
+      "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "countries",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerDynamicTagHeuristics",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "heuristics",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerDynamicTagHeuristics"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerDynamicTags",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "message",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "code",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "locked_file_info",
+          "offset": 48,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerLockedFileInfo"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerError",
+      "nameSpace": "",
+      "size": 88,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "path",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata_path",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "excluded_paths",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerInstall",
+      "nameSpace": "",
+      "size": 84,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "available_locales",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "default_locale",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerLocaleDataResource",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "process_name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "process_id",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerLockedFileInfo",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerLoginStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "xToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loginToken",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "xboxAccountPuuid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoPuuid",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "userHash",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerLoginStatus"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerLoginStatusResponse",
+      "nameSpace": "",
+      "size": 124,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "downloaded_bytes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "bytes_to_download",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerManifestProgress",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "message_id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerMessageId"
+          }
+        },
+        {
+          "description": "",
+          "name": "message_data",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerMessageData"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerMessageBody",
+      "nameSpace": "",
+      "size": 280,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "product_id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline_id",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "location",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "x_token",
+          "offset": 176,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "user_hash",
+          "offset": 204,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerMessageData",
+      "nameSpace": "",
+      "size": 272,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerMessageId",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "cancel_install_game",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "check_for_game_patch",
+          "value": 8
+        },
+        {
+          "description": "",
+          "name": "create_game_shortcut",
+          "value": 12
+        },
+        {
+          "description": "",
+          "name": "game_patch_available",
+          "value": 16
+        },
+        {
+          "description": "",
+          "name": "game_playable",
+          "value": 21
+        },
+        {
+          "description": "",
+          "name": "game_version",
+          "value": 20
+        },
+        {
+          "description": "",
+          "name": "install_error",
+          "value": 19
+        },
+        {
+          "description": "",
+          "name": "install_game",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "install_progress",
+          "value": 18
+        },
+        {
+          "description": "",
+          "name": "install_status",
+          "value": 17
+        },
+        {
+          "description": "",
+          "name": "installed_date_time",
+          "value": 25
+        },
+        {
+          "description": "",
+          "name": "installed_location",
+          "value": 23
+        },
+        {
+          "description": "",
+          "name": "last_played_date_time",
+          "value": 26
+        },
+        {
+          "description": "",
+          "name": "launch_game",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "move_install_location",
+          "value": 6
+        },
+        {
+          "description": "",
+          "name": "patch_game",
+          "value": 9
+        },
+        {
+          "description": "",
+          "name": "pause_install_game",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "prioritize_install_game",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "repair_game_install",
+          "value": 7
+        },
+        {
+          "description": "",
+          "name": "report_game_status",
+          "value": 10
+        },
+        {
+          "description": "",
+          "name": "resume_install_game",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "show_game",
+          "value": 13
+        },
+        {
+          "description": "",
+          "name": "shutdown_app_background",
+          "value": 14
+        },
+        {
+          "description": "",
+          "name": "shutdown_app_full",
+          "value": 15
+        },
+        {
+          "description": "",
+          "name": "size",
+          "value": 24
+        },
+        {
+          "description": "",
+          "name": "trial_info",
+          "value": 27
+        },
+        {
+          "description": "",
+          "name": "uninstall_game",
+          "value": 11
+        },
+        {
+          "description": "",
+          "name": "xbgp_user_sign_in",
+          "value": 36
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "product_id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline_id",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_type",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerPatchType"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerPatchRequest",
+      "nameSpace": "",
+      "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "createShortcut",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "installPath",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isRepair",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerPatchRequestOptions",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "url",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "state",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerPatchStatusState"
+          }
+        },
+        {
+          "description": "",
+          "name": "progress",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerProgress"
+          }
+        },
+        {
+          "description": "",
+          "name": "launchable_on_update_fail",
+          "offset": 184,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "error",
+          "offset": 192,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerError"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerPatchStatus",
+      "nameSpace": "",
+      "size": 288,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerPatchStatusState",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "not_installed",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "out_of_date",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "pending_verify",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "repairing",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "up_to_date",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "updating",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerPatchType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "install",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "patch",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "install",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerInstall"
+          }
+        },
+        {
+          "description": "",
+          "name": "dependency_status",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "ThirdPartyDependencyStatus",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "combined_patch_state",
+          "offset": 116,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerCombinedPatchState"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_status",
+          "offset": 120,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerPatchStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "configuration",
+          "offset": 416,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerConfigurationResource"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_requested",
+          "offset": 641,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "user_cancelled_patching",
+          "offset": 642,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "repair_code",
+          "offset": 676,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerRepairCode"
+          }
+        },
+        {
+          "description": "",
+          "name": "shards_data",
+          "offset": 688,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerPatchingResource",
+      "nameSpace": "",
+      "size": 720,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "install_id",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "release_id",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "path_name",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "full_name",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "platform",
+          "offset": 144,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_notes",
+          "offset": 168,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "theme_manifest",
+          "offset": 192,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "default_theme_manifest",
+          "offset": 216,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patching_policy",
+          "offset": 240,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "auto_patching_enabled_by_player",
+          "offset": 264,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "patching_ask_policy",
+          "offset": 268,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "primary_executable",
+          "offset": 292,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "configType",
+          "offset": 316,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerConfigType"
+          }
+        },
+        {
+          "description": "",
+          "name": "launcher_arguments",
+          "offset": 320,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "root_dir",
+          "offset": 332,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "install_dir",
+          "offset": 356,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "install_full_path",
+          "offset": 380,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "settings",
+          "offset": 408,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        },
+        {
+          "description": "",
+          "name": "product_install_move_status",
+          "offset": 424,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "object"
+          }
+        },
+        {
+          "description": "",
+          "name": "content_paths",
+          "offset": 440,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "patch_status_known",
+          "offset": 472,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "secondary_patchlines",
+          "offset": 476,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerSecondaryPatchlineResource",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "dependencies",
+          "offset": 488,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerDependency",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "dependencyStates",
+          "offset": 500,
+          "optional": true,
+          "type": {
+            "elementType": "ExternalMessageHandlerDependencyState",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "locale_data",
+          "offset": 536,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerLocaleDataResource"
+          }
+        },
+        {
+          "description": "",
+          "name": "region_data",
+          "offset": 576,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerRegionDataResource"
+          }
+        },
+        {
+          "description": "",
+          "name": "shards_data",
+          "offset": 616,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "rogue_process_allow_list",
+          "offset": 672,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "install_size_bytes",
+          "offset": 688,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "configuration_status",
+          "offset": 720,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerConfigurationStatus"
+          }
+        },
+        {
+          "description": "",
+          "name": "excluded_compat_modes",
+          "offset": 724,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "launch_disabled",
+          "offset": 736,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "disallow_32bit_windows",
+          "offset": 737,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "restart_required",
+          "offset": 738,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "vanguard_dependency",
+          "offset": 739,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "should_repair",
+          "offset": 792,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "available_platforms",
+          "offset": 796,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "alias",
+          "offset": 808,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerProductAlias"
+          }
+        },
+        {
+          "description": "",
+          "name": "client_product_type",
+          "offset": 844,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerClientProductType"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerPatchlineResource",
+      "nameSpace": "",
+      "size": 848,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerPhase",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Manifest",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "None",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Repair",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "Update",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "product_id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "platforms",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerProductAlias",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerPatchlineResource"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerProductPatchlineResourceV4",
+      "nameSpace": "",
+      "size": 896,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "progress",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "double"
+          }
+        },
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerPhase"
+          }
+        },
+        {
+          "description": "",
+          "name": "manifest",
+          "offset": 16,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerManifestProgress"
+          }
+        },
+        {
+          "description": "",
+          "name": "update",
+          "offset": 40,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerUpdateProgress"
+          }
+        },
+        {
+          "description": "",
+          "name": "repair",
+          "offset": 104,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "ExternalMessageHandlerRepairProgress"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerProgress",
+      "nameSpace": "",
+      "size": 144,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "available_regions",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "default_region",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerRegionDataResource",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ExternalMessageHandlerRepairCode",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "default",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "immediate_repair",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "integrity_check_failed",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "repaired_bytes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "bytes_to_repair",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "repaired_files",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "files_to_repair",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerRepairProgress",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "path",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "url",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "tags",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "dynamic_tags",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "ExternalMessageHandlerDynamicTags",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerSecondaryPatchline",
+      "nameSpace": "",
+      "size": 108,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "relativePath",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerSecondaryPatchlineResource",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "read_bytes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "bytes_to_read",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "written_bytes",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "bytes_to_write",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "downloaded_bytes",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "bytes_to_download",
+          "offset": 40,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "stage",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint8"
+          }
+        }
+      ],
+      "name": "ExternalMessageHandlerUpdateProgress",
+      "nameSpace": "",
+      "size": 56,
+      "tags": [
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [],
       "name": "FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason",
       "nameSpace": "",
@@ -47842,7 +50458,7 @@
         {
           "description": "",
           "name": "metadata_path",
-          "offset": 252,
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -47852,7 +50468,7 @@
         {
           "description": "",
           "name": "exclude_foreign_paths",
-          "offset": 276,
+          "offset": 300,
           "optional": false,
           "type": {
             "elementType": "",
@@ -47862,7 +50478,7 @@
         {
           "description": "",
           "name": "excluded_paths",
-          "offset": 280,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -47872,7 +50488,7 @@
         {
           "description": "",
           "name": "repair",
-          "offset": 384,
+          "offset": 408,
           "optional": false,
           "type": {
             "elementType": "",
@@ -47882,7 +50498,7 @@
         {
           "description": "",
           "name": "deleteForeignPaths",
-          "offset": 388,
+          "offset": 412,
           "optional": false,
           "type": {
             "elementType": "",
@@ -47892,7 +50508,7 @@
       ],
       "name": "PatchProxyPatchProxyRequest",
       "nameSpace": "",
-      "size": 392,
+      "size": 416,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -48723,6 +51339,145 @@
       "name": "PatchProxyProductPatchlineResourceV4",
       "nameSpace": "",
       "size": 896,
+      "tags": [
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "installId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "fullName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "configType",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "PatchProxyConfigType"
+          }
+        }
+      ],
+      "name": "PatchProxyProductRegistryPatchline",
+      "nameSpace": "",
+      "size": 76,
+      "tags": [
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlines",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "PatchProxyProductRegistryPatchline",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "PatchProxyProductRegistryProduct",
+      "nameSpace": "",
+      "size": 60,
+      "tags": [
+        "Plugins",
+        "Plugin patch-proxy"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "phase",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "PatchProxyProductSession",
+      "nameSpace": "",
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -63405,6 +66160,122 @@
     },
     {
       "description": "",
+      "fields": [],
+      "name": "ProductLauncherLoginStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "xToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loginToken",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "xboxAccountPuuid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoPuuid",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "userHash",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ProductLauncherLoginStatus"
+          }
+        }
+      ],
+      "name": "ProductLauncherLoginStatusResponse",
+      "nameSpace": "",
+      "size": 124,
+      "tags": [
+        "Plugins",
+        "Plugin product-launcher"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [
         {
           "description": "",
@@ -67885,6 +70756,700 @@
       "tags": [
         "Plugins",
         "Plugin publishing-content"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthAuthenticationTypeEnum",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "SSOAuth",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthAuthorization",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "trustLevels",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "RcAuthRSOAuthorizationTrustLevel",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthAuthorizationRequest",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthAuthorizationResponseType"
+          }
+        }
+      ],
+      "name": "RcAuthAuthorizationResponse",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthAuthorizationResponseType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "authorized",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "needs_authentication",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "needs_reauthentication",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "remaining",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "delay",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthGamepassStatus"
+          }
+        }
+      ],
+      "name": "RcAuthGamepassResponseDetails",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthGamepassStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "NONE",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "PENDING",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "persist_login",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "authentication_type",
+          "offset": 28,
+          "optional": true,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthAuthenticationTypeEnum"
+          }
+        }
+      ],
+      "name": "RcAuthLoginRequest",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthSessionResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "error",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthLoginResponse",
+      "nameSpace": "",
+      "size": 28,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthLoginStatus",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "xToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loginToken",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "xboxAccountPuuid",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoPuuid",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "userHash",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "status",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthLoginStatus"
+          }
+        }
+      ],
+      "name": "RcAuthLoginStatusResponse",
+      "nameSpace": "",
+      "size": 124,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthRSOAuthorizationTrustLevel",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "always_trusted",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "always_verify",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "trusted_device",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthRegionLocale",
+      "nameSpace": "",
+      "size": 96,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "gamepass",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthGamepassResponseDetails"
+          }
+        },
+        {
+          "description": "",
+          "name": "success",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthSuccessResponseDetails"
+          }
+        },
+        {
+          "description": "",
+          "name": "country",
+          "offset": 136,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "error",
+          "offset": 160,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthRsoAuthenticatorAuthResponse",
+      "nameSpace": "",
+      "size": 184,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RcAuthSessionResponseType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "authenticated",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "error",
+          "value": 5
+        },
+        {
+          "description": "",
+          "name": "needs_credentials",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "needs_multifactor_verification",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "needs_password",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "unknown_authentication_response",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "login_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "redirect_url",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "linked",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "is_console_link_session",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "auth_method",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "puuid",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthSuccessResponseDetails",
+      "nameSpace": "",
+      "size": 124,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "xsts_token",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "user_hash",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RcAuthV1XboxInput",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "xbox",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RcAuthV1XboxInput"
+          }
+        },
+        {
+          "description": "",
+          "name": "language",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "remember",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "RcAuthV1XboxLogin",
+      "nameSpace": "",
+      "size": 100,
+      "tags": [
+        "Plugins",
+        "Plugin rc-auth"
       ],
       "values": []
     },
@@ -78866,6 +82431,16 @@
       "fields": [
         {
           "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "code",
           "offset": 0,
           "optional": false,
@@ -78904,6 +82479,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "facebook",
@@ -79006,6 +82591,16 @@
       "fields": [
         {
           "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "language",
           "offset": 0,
           "optional": false,
@@ -79044,6 +82639,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "language",
@@ -79086,6 +82691,16 @@
       "fields": [
         {
           "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "language",
           "offset": 0,
           "optional": false,
@@ -79124,6 +82739,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "language",
@@ -79202,6 +82827,16 @@
           "type": {
             "elementType": "",
             "type": "RsoAuthenticatorV1OpenIdConnectInput"
+          }
+        },
+        {
+          "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
           }
         },
         {
@@ -80211,6 +83846,16 @@
       "fields": [
         {
           "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "captcha",
           "offset": 0,
           "optional": false,
@@ -80339,6 +83984,16 @@
     {
       "description": "",
       "fields": [
+        {
+          "description": "",
+          "name": "campaign",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
         {
           "description": "",
           "name": "captcha",
@@ -90935,6 +94590,86 @@
       "name": "VoiceChatVoiceChatHeartbeatMetrics_PerProviderData",
       "nameSpace": "",
       "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "exe",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "XBGPRegistryRequest",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "XbgpAcceptance",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "description": "",
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "status",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "XbgpAcceptance"
+          }
+        }
+      ],
+      "name": "XbgpAcceptanceResponse",
+      "nameSpace": "",
+      "size": 4,
       "tags": [],
       "values": []
     },

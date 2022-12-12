@@ -347,6 +347,55 @@
         }
       }
     },
+    "OnJsonApiEvent_external-message-handler_v1_patch-request": {
+      "type": {
+        "PluginResourceEvent": {
+          "fields": [
+            {
+              "uri": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "eventType": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": {
+                  "PluginResourceEventType": {
+                    "values": [
+                      {
+                        "name": "Create",
+                        "value": 0
+                      },
+                      {
+                        "name": "Update",
+                        "value": 1
+                      },
+                      {
+                        "name": "Delete",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "data": {
+                "description": "",
+                "offset": 32,
+                "optional": false,
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
     "OnJsonApiEvent_patch-proxy_v1_active-updates": {
       "type": {
         "PluginResourceEvent": {
@@ -543,6 +592,55 @@
         }
       }
     },
+    "OnJsonApiEvent_product-launcher_v1_launching_from_xbgp": {
+      "type": {
+        "PluginResourceEvent": {
+          "fields": [
+            {
+              "uri": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "eventType": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": {
+                  "PluginResourceEventType": {
+                    "values": [
+                      {
+                        "name": "Create",
+                        "value": 0
+                      },
+                      {
+                        "name": "Update",
+                        "value": 1
+                      },
+                      {
+                        "name": "Delete",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "data": {
+                "description": "",
+                "offset": 32,
+                "optional": false,
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
     "OnJsonApiEvent_publishing-content_v1_news-feed": {
       "type": {
         "PluginResourceEvent": {
@@ -593,6 +691,55 @@
       }
     },
     "OnJsonApiEvent_publishing-content_v1_promo": {
+      "type": {
+        "PluginResourceEvent": {
+          "fields": [
+            {
+              "uri": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "eventType": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": {
+                  "PluginResourceEventType": {
+                    "values": [
+                      {
+                        "name": "Create",
+                        "value": 0
+                      },
+                      {
+                        "name": "Update",
+                        "value": 1
+                      },
+                      {
+                        "name": "Delete",
+                        "value": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "data": {
+                "description": "",
+                "offset": 32,
+                "optional": false,
+                "type": "object"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "OnJsonApiEvent_rc-auth_v1_xbgp": {
       "type": {
         "PluginResourceEvent": {
           "fields": [
@@ -3088,6 +3235,13 @@
       "url": "/eula/v1/product-context",
       "usage": "DeleteEulaV1ProductContext"
     },
+    "DeleteExternalMessageHandlerV1PatchRequest": {
+      "arguments": [],
+      "description": "Delete patch request, which suggests that the request is already handled",
+      "http_method": "DELETE",
+      "url": "/external-message-handler/v1/patch-request",
+      "usage": "DeleteExternalMessageHandlerV1PatchRequest"
+    },
     "DeleteGaRestrictionV1DebugCallerIdMockId": {
       "arguments": [],
       "description": "Stops mocking the caller ID for Swagger calls",
@@ -3369,7 +3523,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 276,
                 "optional": false,
                 "type": "string"
               }
@@ -3377,7 +3531,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 300,
                 "optional": false,
                 "type": "bool"
               }
@@ -3385,7 +3539,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -3393,7 +3547,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 408,
                 "optional": false,
                 "type": "bool"
               }
@@ -3401,7 +3555,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 412,
                 "optional": false,
                 "type": "bool"
               }
@@ -6854,6 +7008,56 @@
       },
       "url": "/eula/v1/product-context",
       "usage": "GetEulaV1ProductContext"
+    },
+    "GetExternalMessageHandlerV1PatchRequest": {
+      "arguments": [],
+      "description": "Get patch request",
+      "http_method": "GET",
+      "returns": {
+        "ExternalMessageHandlerPatchRequest": {
+          "fields": [
+            {
+              "product_id": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "patchline_id": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "patch_type": {
+                "description": "",
+                "offset": 48,
+                "optional": false,
+                "type": {
+                  "ExternalMessageHandlerPatchType": {
+                    "values": [
+                      {
+                        "name": "install",
+                        "value": 0
+                      },
+                      {
+                        "name": "patch",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/external-message-handler/v1/patch-request",
+      "usage": "GetExternalMessageHandlerV1PatchRequest"
     },
     "GetFriendsV2MakePlatformBlocksRiotBlocks": {
       "arguments": [],
@@ -13960,6 +14164,14 @@
       "url": "/product-integration/v1/signout/permission",
       "usage": "GetProductIntegrationV1SignoutPermission"
     },
+    "GetProductLauncherV1LaunchingFromXbgp": {
+      "arguments": [],
+      "description": "return a boolean value if we should show the xbox linking modal which is only show in play flow",
+      "http_method": "GET",
+      "returns": "bool",
+      "url": "/product-launcher/v1/launching_from_xbgp",
+      "usage": "GetProductLauncherV1LaunchingFromXbgp"
+    },
     "GetProductLocalizationV1Data": {
       "arguments": [],
       "description": "Returns loc plugin data - for triaging issues with bad or missing loc data",
@@ -15926,6 +16138,96 @@
       },
       "url": "/publishing-content/v1/promo/{productId}",
       "usage": "GetPublishingContentV1PromoByProductId <productId> [<from>] [<to>]"
+    },
+    "GetRcAuthV1XbgpLoginStatus": {
+      "arguments": [],
+      "description": "Get the login status for player related to xbox game pass",
+      "http_method": "GET",
+      "returns": {
+        "RcAuthLoginStatusResponse": {
+          "fields": [
+            {
+              "xToken": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "loginToken": {
+                "description": "",
+                "offset": 24,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "xboxAccountPuuid": {
+                "description": "",
+                "offset": 48,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "rsoPuuid": {
+                "description": "",
+                "offset": 72,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "userHash": {
+                "description": "",
+                "offset": 96,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "status": {
+                "description": "",
+                "offset": 120,
+                "optional": false,
+                "type": {
+                  "RcAuthLoginStatus": {
+                    "values": [
+                      {
+                        "name": "Authenticated",
+                        "value": 0
+                      },
+                      {
+                        "name": "NotAuthenticated",
+                        "value": 1
+                      },
+                      {
+                        "name": "AccountNotLinked",
+                        "value": 2
+                      },
+                      {
+                        "name": "MismatchedPuuid",
+                        "value": 3
+                      },
+                      {
+                        "name": "NoXToken",
+                        "value": 4
+                      },
+                      {
+                        "name": "XbgpDisabled",
+                        "value": 5
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/rc-auth/v1/xbgp/login-status",
+      "usage": "GetRcAuthV1XbgpLoginStatus"
     },
     "GetRestrictionV1LaunchRestrictedProducts": {
       "arguments": [],
@@ -28142,6 +28444,14 @@
       "url": "/process-control/v1/process/quit",
       "usage": "PostProcessControlV1ProcessQuit"
     },
+    "PostProcessControlV1ProcessQuitSwitchBackgroundMode": {
+      "arguments": [],
+      "description": "Switch to background mode.",
+      "http_method": "POST",
+      "privilege": 127,
+      "url": "/process-control/v1/process/quit/switch-background-mode",
+      "usage": "PostProcessControlV1ProcessQuitSwitchBackgroundMode"
+    },
     "PostProcessControlV1ProcessRestart": {
       "arguments": [
         {
@@ -28261,6 +28571,13 @@
       "http_method": "POST",
       "url": "/product-launcher/v1/default-product/minimize",
       "usage": "PostProductLauncherV1DefaultProductMinimize"
+    },
+    "PostProductLauncherV1LaunchingFromXbgp": {
+      "arguments": [],
+      "description": "set if we are in a xbgp play flow that will display the linking modal",
+      "http_method": "POST",
+      "url": "/product-launcher/v1/launching_from_xbgp",
+      "usage": "PostProductLauncherV1LaunchingFromXbgp"
     },
     "PostProductLauncherV1PartnerProduct": {
       "arguments": [],
@@ -28856,6 +29173,19 @@
       "url": "/product-session/v2/heartbeat-internal/{session-id}",
       "usage": "PostProductSessionV2HeartbeatInternalBySessionId <session-id> <heartbeat-info>"
     },
+    "PostRcAuthV1XbgpUpdateLoginToken": {
+      "arguments": [
+        {
+          "loginToken": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Update the player login-token",
+      "http_method": "POST",
+      "url": "/rc-auth/v1/xbgp/update-login-token",
+      "usage": "PostRcAuthV1XbgpUpdateLoginToken <loginToken>"
+    },
     "PostRiotClientAppCommandV1DebugUseLocalUriHandler": {
       "arguments": [],
       "description": "Sets uri handler to use riotclient-local for testing",
@@ -28957,6 +29287,13 @@
       "http_method": "POST",
       "url": "/riot-client-lifecycle/v1/quit",
       "usage": "PostRiotClientLifecycleV1Quit"
+    },
+    "PostRiotClientLifecycleV1QuitSwitchBackgroundMode": {
+      "arguments": [],
+      "description": "Quit Riot Client Full mode and switch to the Background mode. If any games are running show the games-running exit-dialog.",
+      "http_method": "POST",
+      "url": "/riot-client-lifecycle/v1/quit/switch-background-mode",
+      "usage": "PostRiotClientLifecycleV1QuitSwitchBackgroundMode"
     },
     "PostRiotClientLifecycleV1Restart": {
       "arguments": [],
@@ -30955,6 +31292,14 @@
               "RsoAuthenticatorV1AuthenticateOpenIdConnectInput": {
                 "fields": [
                   {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "language": {
                       "description": "",
                       "offset": 0,
@@ -31425,6 +31770,14 @@
               "RsoAuthenticatorV1AuthenticateCodeInput": {
                 "fields": [
                   {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "code": {
                       "description": "",
                       "offset": 0,
@@ -31873,6 +32226,14 @@
             "type": {
               "RsoAuthenticatorV1AuthenticateFacebookInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "facebook": {
                       "description": "",
@@ -32855,6 +33216,14 @@
               "RsoAuthenticatorV1AuthenticateOpenIdConnectInput": {
                 "fields": [
                   {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "language": {
                       "description": "",
                       "offset": 0,
@@ -33787,6 +34156,14 @@
               "RsoAuthenticatorV1AuthenticateNintendoInput": {
                 "fields": [
                   {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
                     "language": {
                       "description": "",
                       "offset": 0,
@@ -34264,6 +34641,14 @@
             "type": {
               "RsoAuthenticatorV1AuthenticatePlaystationInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "language": {
                       "description": "",
@@ -35175,6 +35560,14 @@
             "type": {
               "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "captcha": {
                       "description": "",
@@ -37019,6 +37412,14 @@
             "type": {
               "RsoAuthenticatorV1AuthenticateXboxInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "language": {
                       "description": "",
@@ -40823,6 +41224,238 @@
       "url": "/eula/v1/product-context",
       "usage": "PutEulaV1ProductContext <ProductContext>"
     },
+    "PutExternalMessageHandlerV1Emulate": {
+      "arguments": [
+        {
+          "message": {
+            "type": {
+              "ExternalMessageHandlerMessageBody": {
+                "fields": [
+                  {
+                    "message_id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerMessageId": {
+                          "values": [
+                            {
+                              "name": "launch_game",
+                              "value": 0
+                            },
+                            {
+                              "name": "install_game",
+                              "value": 1
+                            },
+                            {
+                              "name": "pause_install_game",
+                              "value": 2
+                            },
+                            {
+                              "name": "cancel_install_game",
+                              "value": 3
+                            },
+                            {
+                              "name": "resume_install_game",
+                              "value": 4
+                            },
+                            {
+                              "name": "prioritize_install_game",
+                              "value": 5
+                            },
+                            {
+                              "name": "move_install_location",
+                              "value": 6
+                            },
+                            {
+                              "name": "repair_game_install",
+                              "value": 7
+                            },
+                            {
+                              "name": "check_for_game_patch",
+                              "value": 8
+                            },
+                            {
+                              "name": "patch_game",
+                              "value": 9
+                            },
+                            {
+                              "name": "report_game_status",
+                              "value": 10
+                            },
+                            {
+                              "name": "uninstall_game",
+                              "value": 11
+                            },
+                            {
+                              "name": "create_game_shortcut",
+                              "value": 12
+                            },
+                            {
+                              "name": "show_game",
+                              "value": 13
+                            },
+                            {
+                              "name": "shutdown_app_background",
+                              "value": 14
+                            },
+                            {
+                              "name": "shutdown_app_full",
+                              "value": 15
+                            },
+                            {
+                              "name": "game_patch_available",
+                              "value": 16
+                            },
+                            {
+                              "name": "install_status",
+                              "value": 17
+                            },
+                            {
+                              "name": "install_progress",
+                              "value": 18
+                            },
+                            {
+                              "name": "install_error",
+                              "value": 19
+                            },
+                            {
+                              "name": "game_version",
+                              "value": 20
+                            },
+                            {
+                              "name": "game_playable",
+                              "value": 21
+                            },
+                            {
+                              "name": "installed_location",
+                              "value": 23
+                            },
+                            {
+                              "name": "size",
+                              "value": 24
+                            },
+                            {
+                              "name": "installed_date_time",
+                              "value": 25
+                            },
+                            {
+                              "name": "last_played_date_time",
+                              "value": 26
+                            },
+                            {
+                              "name": "trial_info",
+                              "value": 27
+                            },
+                            {
+                              "name": "xbgp_user_sign_in",
+                              "value": 36
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "message_data": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerMessageData": {
+                          "fields": [
+                            {
+                              "product_id": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "patchline_id": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "location": {
+                                "description": "",
+                                "offset": 48,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "x_token": {
+                                "description": "",
+                                "offset": 176,
+                                "optional": true,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "user_hash": {
+                                "description": "",
+                                "offset": 204,
+                                "optional": true,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Emulate a message and send it to the event bus:'MessageId': Type of the message. (e.g. install_game, patch_game, launch_game)'MessageData': The message content",
+      "http_method": "PUT",
+      "url": "/external-message-handler/v1/emulate",
+      "usage": "PutExternalMessageHandlerV1Emulate <message>"
+    },
+    "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdPause": {
+      "arguments": [
+        {
+          "productId": {
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Notify patch request has been paused",
+      "http_method": "PUT",
+      "url": "/external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/pause",
+      "usage": "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdPause <productId> <patchlineId>"
+    },
+    "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdResume": {
+      "arguments": [
+        {
+          "productId": {
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Notify patch request has been resumed",
+      "http_method": "PUT",
+      "url": "/external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}/resume",
+      "usage": "PutExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineIdResume <productId> <patchlineId>"
+    },
     "PutFriendsV2MockApiState": {
       "arguments": [
         {
@@ -41445,7 +42078,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 276,
                 "optional": false,
                 "type": "string"
               }
@@ -41453,7 +42086,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 300,
                 "optional": false,
                 "type": "bool"
               }
@@ -41461,7 +42094,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -41469,7 +42102,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 408,
                 "optional": false,
                 "type": "bool"
               }
@@ -41477,7 +42110,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 412,
                 "optional": false,
                 "type": "bool"
               }
@@ -41711,7 +42344,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 252,
+                "offset": 276,
                 "optional": false,
                 "type": "string"
               }
@@ -41719,7 +42352,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 276,
+                "offset": 300,
                 "optional": false,
                 "type": "bool"
               }
@@ -41727,7 +42360,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -41735,7 +42368,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 384,
+                "offset": 408,
                 "optional": false,
                 "type": "bool"
               }
@@ -41743,7 +42376,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 388,
+                "offset": 412,
                 "optional": false,
                 "type": "bool"
               }
@@ -48942,6 +49575,14 @@
             "type": {
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "captcha": {
                       "description": "",
@@ -61584,6 +62225,3411 @@
             "offset": 16,
             "optional": true,
             "type": "object"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerAppUpdateStatus": {
+      "fields": [
+        {
+          "updateAvailable": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "updateRequired": {
+            "description": "",
+            "offset": 1,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerClientProductType": {
+      "values": [
+        {
+          "name": "riot_game",
+          "value": 0
+        },
+        {
+          "name": "thunderdome",
+          "value": 1
+        },
+        {
+          "name": "forge",
+          "value": 2
+        },
+        {
+          "name": "third_party",
+          "value": 3
+        },
+        {
+          "name": "special_event",
+          "value": 4
+        },
+        {
+          "name": "hidden",
+          "value": 5
+        }
+      ]
+    },
+    "ExternalMessageHandlerCombinedPatchState": {
+      "values": [
+        {
+          "name": "awaiting_headers",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "name": "updating",
+          "value": 2
+        },
+        {
+          "name": "out_of_date",
+          "value": 3
+        },
+        {
+          "name": "up_to_date",
+          "value": 4
+        },
+        {
+          "name": "not_installed",
+          "value": 5
+        },
+        {
+          "name": "bad_install_path",
+          "value": 6
+        }
+      ]
+    },
+    "ExternalMessageHandlerConfigType": {
+      "values": [
+        {
+          "name": "public",
+          "value": 0
+        },
+        {
+          "name": "player",
+          "value": 1
+        }
+      ]
+    },
+    "ExternalMessageHandlerConfigurationResource": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "launchable_on_update_fail": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "patch_notes_url": {
+            "description": "",
+            "offset": 28,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 52,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patch_url": {
+            "description": "",
+            "offset": 76,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "bundles_url": {
+            "description": "",
+            "offset": 100,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "allowed_http_fallback_hostnames": {
+            "description": "",
+            "offset": 124,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "seed_url": {
+            "description": "",
+            "offset": 136,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "excluded_paths": {
+            "description": "",
+            "offset": 160,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "secondary_patchlines": {
+            "description": "",
+            "offset": 172,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerSecondaryPatchline"
+          }
+        },
+        {
+          "dependencies": {
+            "description": "",
+            "offset": 184,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerDependency"
+          }
+        },
+        {
+          "tags": {
+            "description": "",
+            "offset": 196,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "dynamic_tags": {
+            "description": "",
+            "offset": 208,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerDynamicTags"
+          }
+        },
+        {
+          "delete_foreign_paths": {
+            "description": "",
+            "offset": 220,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerConfigurationStatus": {
+      "values": [
+        {
+          "name": "unknown",
+          "value": 0
+        },
+        {
+          "name": "has_configuration",
+          "value": 1
+        },
+        {
+          "name": "unsupported_region",
+          "value": 2
+        },
+        {
+          "name": "unsupported_shard",
+          "value": 3
+        },
+        {
+          "name": "unsupported_os",
+          "value": 4
+        },
+        {
+          "name": "unsupported_32_bit_os",
+          "value": 5
+        }
+      ]
+    },
+    "ExternalMessageHandlerDependency": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "min_version": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "url": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "hash": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "args": {
+            "description": "",
+            "offset": 120,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "valid_exit_codes": {
+            "description": "",
+            "offset": 132,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "elevate": {
+            "description": "",
+            "offset": 156,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerDependencyState": {
+      "fields": [
+        {
+          "hash": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "phase": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": {
+              "ThirdPartyDependencyStatusPhase": {
+                "values": [
+                  {
+                    "name": "Unknown",
+                    "value": 0
+                  },
+                  {
+                    "name": "NotInstalled",
+                    "value": 1
+                  },
+                  {
+                    "name": "Imported",
+                    "value": 2
+                  },
+                  {
+                    "name": "AlreadyInstalled",
+                    "value": 3
+                  },
+                  {
+                    "name": "Waiting",
+                    "value": 4
+                  },
+                  {
+                    "name": "Download",
+                    "value": 5
+                  },
+                  {
+                    "name": "Install",
+                    "value": 6
+                  },
+                  {
+                    "name": "Failed",
+                    "value": 7
+                  },
+                  {
+                    "name": "Cancelled",
+                    "value": 8
+                  },
+                  {
+                    "name": "Succeeded",
+                    "value": 9
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerDynamicTagHeuristics": {
+      "fields": [
+        {
+          "countries": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerDynamicTags": {
+      "fields": [
+        {
+          "heuristics": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerDynamicTagHeuristics": {
+                "fields": [
+                  {
+                    "countries": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "tags": {
+            "description": "",
+            "offset": 12,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerError": {
+      "fields": [
+        {
+          "message": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "code": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "locked_file_info": {
+            "description": "",
+            "offset": 48,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerLockedFileInfo": {
+                "fields": [
+                  {
+                    "process_name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "process_id": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerInstall": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "path": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "metadata_path": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "excluded_paths": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerLocaleDataResource": {
+      "fields": [
+        {
+          "available_locales": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "default_locale": {
+            "description": "",
+            "offset": 12,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerLockedFileInfo": {
+      "fields": [
+        {
+          "process_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "process_id": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerLoginStatus": {
+      "values": [
+        {
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    "ExternalMessageHandlerLoginStatusResponse": {
+      "fields": [
+        {
+          "xToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "loginToken": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "xboxAccountPuuid": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "rsoPuuid": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "userHash": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 120,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerLoginStatus": {
+                "values": [
+                  {
+                    "name": "Authenticated",
+                    "value": 0
+                  },
+                  {
+                    "name": "NotAuthenticated",
+                    "value": 1
+                  },
+                  {
+                    "name": "AccountNotLinked",
+                    "value": 2
+                  },
+                  {
+                    "name": "MismatchedPuuid",
+                    "value": 3
+                  },
+                  {
+                    "name": "NoXToken",
+                    "value": 4
+                  },
+                  {
+                    "name": "XbgpDisabled",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerManifestProgress": {
+      "fields": [
+        {
+          "downloaded_bytes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "bytes_to_download": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerMessageBody": {
+      "fields": [
+        {
+          "message_id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerMessageId": {
+                "values": [
+                  {
+                    "name": "launch_game",
+                    "value": 0
+                  },
+                  {
+                    "name": "install_game",
+                    "value": 1
+                  },
+                  {
+                    "name": "pause_install_game",
+                    "value": 2
+                  },
+                  {
+                    "name": "cancel_install_game",
+                    "value": 3
+                  },
+                  {
+                    "name": "resume_install_game",
+                    "value": 4
+                  },
+                  {
+                    "name": "prioritize_install_game",
+                    "value": 5
+                  },
+                  {
+                    "name": "move_install_location",
+                    "value": 6
+                  },
+                  {
+                    "name": "repair_game_install",
+                    "value": 7
+                  },
+                  {
+                    "name": "check_for_game_patch",
+                    "value": 8
+                  },
+                  {
+                    "name": "patch_game",
+                    "value": 9
+                  },
+                  {
+                    "name": "report_game_status",
+                    "value": 10
+                  },
+                  {
+                    "name": "uninstall_game",
+                    "value": 11
+                  },
+                  {
+                    "name": "create_game_shortcut",
+                    "value": 12
+                  },
+                  {
+                    "name": "show_game",
+                    "value": 13
+                  },
+                  {
+                    "name": "shutdown_app_background",
+                    "value": 14
+                  },
+                  {
+                    "name": "shutdown_app_full",
+                    "value": 15
+                  },
+                  {
+                    "name": "game_patch_available",
+                    "value": 16
+                  },
+                  {
+                    "name": "install_status",
+                    "value": 17
+                  },
+                  {
+                    "name": "install_progress",
+                    "value": 18
+                  },
+                  {
+                    "name": "install_error",
+                    "value": 19
+                  },
+                  {
+                    "name": "game_version",
+                    "value": 20
+                  },
+                  {
+                    "name": "game_playable",
+                    "value": 21
+                  },
+                  {
+                    "name": "installed_location",
+                    "value": 23
+                  },
+                  {
+                    "name": "size",
+                    "value": 24
+                  },
+                  {
+                    "name": "installed_date_time",
+                    "value": 25
+                  },
+                  {
+                    "name": "last_played_date_time",
+                    "value": 26
+                  },
+                  {
+                    "name": "trial_info",
+                    "value": 27
+                  },
+                  {
+                    "name": "xbgp_user_sign_in",
+                    "value": 36
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "message_data": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerMessageData": {
+                "fields": [
+                  {
+                    "product_id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "patchline_id": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "location": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "x_token": {
+                      "description": "",
+                      "offset": 176,
+                      "optional": true,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "user_hash": {
+                      "description": "",
+                      "offset": 204,
+                      "optional": true,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerMessageData": {
+      "fields": [
+        {
+          "product_id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline_id": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "location": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "x_token": {
+            "description": "",
+            "offset": 176,
+            "optional": true,
+            "type": "string"
+          }
+        },
+        {
+          "user_hash": {
+            "description": "",
+            "offset": 204,
+            "optional": true,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerMessageId": {
+      "values": [
+        {
+          "name": "launch_game",
+          "value": 0
+        },
+        {
+          "name": "install_game",
+          "value": 1
+        },
+        {
+          "name": "pause_install_game",
+          "value": 2
+        },
+        {
+          "name": "cancel_install_game",
+          "value": 3
+        },
+        {
+          "name": "resume_install_game",
+          "value": 4
+        },
+        {
+          "name": "prioritize_install_game",
+          "value": 5
+        },
+        {
+          "name": "move_install_location",
+          "value": 6
+        },
+        {
+          "name": "repair_game_install",
+          "value": 7
+        },
+        {
+          "name": "check_for_game_patch",
+          "value": 8
+        },
+        {
+          "name": "patch_game",
+          "value": 9
+        },
+        {
+          "name": "report_game_status",
+          "value": 10
+        },
+        {
+          "name": "uninstall_game",
+          "value": 11
+        },
+        {
+          "name": "create_game_shortcut",
+          "value": 12
+        },
+        {
+          "name": "show_game",
+          "value": 13
+        },
+        {
+          "name": "shutdown_app_background",
+          "value": 14
+        },
+        {
+          "name": "shutdown_app_full",
+          "value": 15
+        },
+        {
+          "name": "game_patch_available",
+          "value": 16
+        },
+        {
+          "name": "install_status",
+          "value": 17
+        },
+        {
+          "name": "install_progress",
+          "value": 18
+        },
+        {
+          "name": "install_error",
+          "value": 19
+        },
+        {
+          "name": "game_version",
+          "value": 20
+        },
+        {
+          "name": "game_playable",
+          "value": 21
+        },
+        {
+          "name": "installed_location",
+          "value": 23
+        },
+        {
+          "name": "size",
+          "value": 24
+        },
+        {
+          "name": "installed_date_time",
+          "value": 25
+        },
+        {
+          "name": "last_played_date_time",
+          "value": 26
+        },
+        {
+          "name": "trial_info",
+          "value": 27
+        },
+        {
+          "name": "xbgp_user_sign_in",
+          "value": 36
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchRequest": {
+      "fields": [
+        {
+          "product_id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline_id": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patch_type": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerPatchType": {
+                "values": [
+                  {
+                    "name": "install",
+                    "value": 0
+                  },
+                  {
+                    "name": "patch",
+                    "value": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchRequestOptions": {
+      "fields": [
+        {
+          "createShortcut": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "installPath": {
+            "description": "",
+            "offset": 4,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "isRepair": {
+            "description": "",
+            "offset": 28,
+            "optional": false,
+            "type": "bool"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchStatus": {
+      "fields": [
+        {
+          "url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tags": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "state": {
+            "description": "",
+            "offset": 36,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerPatchStatusState": {
+                "values": [
+                  {
+                    "name": "updating",
+                    "value": 0
+                  },
+                  {
+                    "name": "out_of_date",
+                    "value": 1
+                  },
+                  {
+                    "name": "up_to_date",
+                    "value": 2
+                  },
+                  {
+                    "name": "not_installed",
+                    "value": 3
+                  },
+                  {
+                    "name": "pending_verify",
+                    "value": 4
+                  },
+                  {
+                    "name": "repairing",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "progress": {
+            "description": "",
+            "offset": 40,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerProgress": {
+                "fields": [
+                  {
+                    "progress": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "double"
+                    }
+                  },
+                  {
+                    "phase": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerPhase": {
+                          "values": [
+                            {
+                              "name": "None",
+                              "value": 0
+                            },
+                            {
+                              "name": "Manifest",
+                              "value": 1
+                            },
+                            {
+                              "name": "Update",
+                              "value": 2
+                            },
+                            {
+                              "name": "Repair",
+                              "value": 3
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "manifest": {
+                      "description": "",
+                      "offset": 16,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerManifestProgress": {
+                          "fields": [
+                            {
+                              "downloaded_bytes": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "bytes_to_download": {
+                                "description": "",
+                                "offset": 8,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "update": {
+                      "description": "",
+                      "offset": 40,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerUpdateProgress": {
+                          "fields": [
+                            {
+                              "read_bytes": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "bytes_to_read": {
+                                "description": "",
+                                "offset": 8,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "written_bytes": {
+                                "description": "",
+                                "offset": 16,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "bytes_to_write": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "downloaded_bytes": {
+                                "description": "",
+                                "offset": 32,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "bytes_to_download": {
+                                "description": "",
+                                "offset": 40,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "stage": {
+                                "description": "",
+                                "offset": 48,
+                                "optional": false,
+                                "type": "uint8"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "repair": {
+                      "description": "",
+                      "offset": 104,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerRepairProgress": {
+                          "fields": [
+                            {
+                              "repaired_bytes": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "bytes_to_repair": {
+                                "description": "",
+                                "offset": 8,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "repaired_files": {
+                                "description": "",
+                                "offset": 16,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            },
+                            {
+                              "files_to_repair": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "launchable_on_update_fail": {
+            "description": "",
+            "offset": 184,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "error": {
+            "description": "",
+            "offset": 192,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerError": {
+                "fields": [
+                  {
+                    "message": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "code": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "locked_file_info": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerLockedFileInfo": {
+                          "fields": [
+                            {
+                              "process_name": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "process_id": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "uint64"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchStatusState": {
+      "values": [
+        {
+          "name": "updating",
+          "value": 0
+        },
+        {
+          "name": "out_of_date",
+          "value": 1
+        },
+        {
+          "name": "up_to_date",
+          "value": 2
+        },
+        {
+          "name": "not_installed",
+          "value": 3
+        },
+        {
+          "name": "pending_verify",
+          "value": 4
+        },
+        {
+          "name": "repairing",
+          "value": 5
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchType": {
+      "values": [
+        {
+          "name": "install",
+          "value": 0
+        },
+        {
+          "name": "patch",
+          "value": 1
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchingResource": {
+      "fields": [
+        {
+          "install": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerInstall": {
+                "fields": [
+                  {
+                    "id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "path": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "metadata_path": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "excluded_paths": {
+                      "description": "",
+                      "offset": 72,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "dependency_status": {
+            "description": "",
+            "offset": 84,
+            "optional": false,
+            "type": "map of ThirdPartyDependencyStatus"
+          }
+        },
+        {
+          "combined_patch_state": {
+            "description": "",
+            "offset": 116,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerCombinedPatchState": {
+                "values": [
+                  {
+                    "name": "awaiting_headers",
+                    "value": 0
+                  },
+                  {
+                    "name": "unknown",
+                    "value": 1
+                  },
+                  {
+                    "name": "updating",
+                    "value": 2
+                  },
+                  {
+                    "name": "out_of_date",
+                    "value": 3
+                  },
+                  {
+                    "name": "up_to_date",
+                    "value": 4
+                  },
+                  {
+                    "name": "not_installed",
+                    "value": 5
+                  },
+                  {
+                    "name": "bad_install_path",
+                    "value": 6
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "patch_status": {
+            "description": "",
+            "offset": 120,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerPatchStatus": {
+                "fields": [
+                  {
+                    "url": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "tags": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "state": {
+                      "description": "",
+                      "offset": 36,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerPatchStatusState": {
+                          "values": [
+                            {
+                              "name": "updating",
+                              "value": 0
+                            },
+                            {
+                              "name": "out_of_date",
+                              "value": 1
+                            },
+                            {
+                              "name": "up_to_date",
+                              "value": 2
+                            },
+                            {
+                              "name": "not_installed",
+                              "value": 3
+                            },
+                            {
+                              "name": "pending_verify",
+                              "value": 4
+                            },
+                            {
+                              "name": "repairing",
+                              "value": 5
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "progress": {
+                      "description": "",
+                      "offset": 40,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerProgress": {
+                          "fields": [
+                            {
+                              "progress": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "double"
+                              }
+                            },
+                            {
+                              "phase": {
+                                "description": "",
+                                "offset": 8,
+                                "optional": false,
+                                "type": {
+                                  "ExternalMessageHandlerPhase": {
+                                    "values": [
+                                      {
+                                        "name": "None",
+                                        "value": 0
+                                      },
+                                      {
+                                        "name": "Manifest",
+                                        "value": 1
+                                      },
+                                      {
+                                        "name": "Update",
+                                        "value": 2
+                                      },
+                                      {
+                                        "name": "Repair",
+                                        "value": 3
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "manifest": {
+                                "description": "",
+                                "offset": 16,
+                                "optional": true,
+                                "type": {
+                                  "ExternalMessageHandlerManifestProgress": {
+                                    "fields": [
+                                      {
+                                        "downloaded_bytes": {
+                                          "description": "",
+                                          "offset": 0,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "bytes_to_download": {
+                                          "description": "",
+                                          "offset": 8,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "update": {
+                                "description": "",
+                                "offset": 40,
+                                "optional": true,
+                                "type": {
+                                  "ExternalMessageHandlerUpdateProgress": {
+                                    "fields": [
+                                      {
+                                        "read_bytes": {
+                                          "description": "",
+                                          "offset": 0,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "bytes_to_read": {
+                                          "description": "",
+                                          "offset": 8,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "written_bytes": {
+                                          "description": "",
+                                          "offset": 16,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "bytes_to_write": {
+                                          "description": "",
+                                          "offset": 24,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "downloaded_bytes": {
+                                          "description": "",
+                                          "offset": 32,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "bytes_to_download": {
+                                          "description": "",
+                                          "offset": 40,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "stage": {
+                                          "description": "",
+                                          "offset": 48,
+                                          "optional": false,
+                                          "type": "uint8"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "repair": {
+                                "description": "",
+                                "offset": 104,
+                                "optional": true,
+                                "type": {
+                                  "ExternalMessageHandlerRepairProgress": {
+                                    "fields": [
+                                      {
+                                        "repaired_bytes": {
+                                          "description": "",
+                                          "offset": 0,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "bytes_to_repair": {
+                                          "description": "",
+                                          "offset": 8,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "repaired_files": {
+                                          "description": "",
+                                          "offset": 16,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      },
+                                      {
+                                        "files_to_repair": {
+                                          "description": "",
+                                          "offset": 24,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "launchable_on_update_fail": {
+                      "description": "",
+                      "offset": 184,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "error": {
+                      "description": "",
+                      "offset": 192,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerError": {
+                          "fields": [
+                            {
+                              "message": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "code": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "locked_file_info": {
+                                "description": "",
+                                "offset": 48,
+                                "optional": true,
+                                "type": {
+                                  "ExternalMessageHandlerLockedFileInfo": {
+                                    "fields": [
+                                      {
+                                        "process_name": {
+                                          "description": "",
+                                          "offset": 0,
+                                          "optional": false,
+                                          "type": "string"
+                                        }
+                                      },
+                                      {
+                                        "process_id": {
+                                          "description": "",
+                                          "offset": 24,
+                                          "optional": false,
+                                          "type": "uint64"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "configuration": {
+            "description": "",
+            "offset": 416,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerConfigurationResource": {
+                "fields": [
+                  {
+                    "id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "launchable_on_update_fail": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "patch_notes_url": {
+                      "description": "",
+                      "offset": 28,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "version": {
+                      "description": "",
+                      "offset": 52,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "patch_url": {
+                      "description": "",
+                      "offset": 76,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "bundles_url": {
+                      "description": "",
+                      "offset": 100,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "allowed_http_fallback_hostnames": {
+                      "description": "",
+                      "offset": 124,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "seed_url": {
+                      "description": "",
+                      "offset": 136,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "excluded_paths": {
+                      "description": "",
+                      "offset": 160,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "secondary_patchlines": {
+                      "description": "",
+                      "offset": 172,
+                      "optional": false,
+                      "type": "vector of ExternalMessageHandlerSecondaryPatchline"
+                    }
+                  },
+                  {
+                    "dependencies": {
+                      "description": "",
+                      "offset": 184,
+                      "optional": false,
+                      "type": "vector of ExternalMessageHandlerDependency"
+                    }
+                  },
+                  {
+                    "tags": {
+                      "description": "",
+                      "offset": 196,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "dynamic_tags": {
+                      "description": "",
+                      "offset": 208,
+                      "optional": false,
+                      "type": "vector of ExternalMessageHandlerDynamicTags"
+                    }
+                  },
+                  {
+                    "delete_foreign_paths": {
+                      "description": "",
+                      "offset": 220,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "patch_requested": {
+            "description": "",
+            "offset": 641,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "user_cancelled_patching": {
+            "description": "",
+            "offset": 642,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "repair_code": {
+            "description": "",
+            "offset": 676,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerRepairCode": {
+                "values": [
+                  {
+                    "name": "default",
+                    "value": 0
+                  },
+                  {
+                    "name": "integrity_check_failed",
+                    "value": 1
+                  },
+                  {
+                    "name": "immediate_repair",
+                    "value": 2
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "shards_data": {
+            "description": "",
+            "offset": 688,
+            "optional": false,
+            "type": "map of string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerPatchlineResource": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "install_id": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "release_id": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "path_name": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "full_name": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 144,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patch_notes": {
+            "description": "",
+            "offset": 168,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "theme_manifest": {
+            "description": "",
+            "offset": 192,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "default_theme_manifest": {
+            "description": "",
+            "offset": 216,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patching_policy": {
+            "description": "",
+            "offset": 240,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "auto_patching_enabled_by_player": {
+            "description": "",
+            "offset": 264,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "patching_ask_policy": {
+            "description": "",
+            "offset": 268,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "primary_executable": {
+            "description": "",
+            "offset": 292,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "configType": {
+            "description": "",
+            "offset": 316,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerConfigType": {
+                "values": [
+                  {
+                    "name": "public",
+                    "value": 0
+                  },
+                  {
+                    "name": "player",
+                    "value": 1
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "launcher_arguments": {
+            "description": "",
+            "offset": 320,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "root_dir": {
+            "description": "",
+            "offset": 332,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "install_dir": {
+            "description": "",
+            "offset": 356,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "install_full_path": {
+            "description": "",
+            "offset": 380,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "settings": {
+            "description": "",
+            "offset": 408,
+            "optional": false,
+            "type": "object"
+          }
+        },
+        {
+          "product_install_move_status": {
+            "description": "",
+            "offset": 424,
+            "optional": false,
+            "type": "object"
+          }
+        },
+        {
+          "content_paths": {
+            "description": "",
+            "offset": 440,
+            "optional": false,
+            "type": "map of string"
+          }
+        },
+        {
+          "patch_status_known": {
+            "description": "",
+            "offset": 472,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "secondary_patchlines": {
+            "description": "",
+            "offset": 476,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerSecondaryPatchlineResource"
+          }
+        },
+        {
+          "dependencies": {
+            "description": "",
+            "offset": 488,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerDependency"
+          }
+        },
+        {
+          "dependencyStates": {
+            "description": "",
+            "offset": 500,
+            "optional": true,
+            "type": "map of ExternalMessageHandlerDependencyState"
+          }
+        },
+        {
+          "locale_data": {
+            "description": "",
+            "offset": 536,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerLocaleDataResource": {
+                "fields": [
+                  {
+                    "available_locales": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "default_locale": {
+                      "description": "",
+                      "offset": 12,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "region_data": {
+            "description": "",
+            "offset": 576,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerRegionDataResource": {
+                "fields": [
+                  {
+                    "available_regions": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "default_region": {
+                      "description": "",
+                      "offset": 12,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "shards_data": {
+            "description": "",
+            "offset": 616,
+            "optional": false,
+            "type": "map of string"
+          }
+        },
+        {
+          "rogue_process_allow_list": {
+            "description": "",
+            "offset": 672,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "install_size_bytes": {
+            "description": "",
+            "offset": 688,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "configuration_status": {
+            "description": "",
+            "offset": 720,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerConfigurationStatus": {
+                "values": [
+                  {
+                    "name": "unknown",
+                    "value": 0
+                  },
+                  {
+                    "name": "has_configuration",
+                    "value": 1
+                  },
+                  {
+                    "name": "unsupported_region",
+                    "value": 2
+                  },
+                  {
+                    "name": "unsupported_shard",
+                    "value": 3
+                  },
+                  {
+                    "name": "unsupported_os",
+                    "value": 4
+                  },
+                  {
+                    "name": "unsupported_32_bit_os",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "excluded_compat_modes": {
+            "description": "",
+            "offset": 724,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "launch_disabled": {
+            "description": "",
+            "offset": 736,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "disallow_32bit_windows": {
+            "description": "",
+            "offset": 737,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "restart_required": {
+            "description": "",
+            "offset": 738,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "vanguard_dependency": {
+            "description": "",
+            "offset": 739,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "should_repair": {
+            "description": "",
+            "offset": 792,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "available_platforms": {
+            "description": "",
+            "offset": 796,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "alias": {
+            "description": "",
+            "offset": 808,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerProductAlias": {
+                "fields": [
+                  {
+                    "product_id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "platforms": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "client_product_type": {
+            "description": "",
+            "offset": 844,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerClientProductType": {
+                "values": [
+                  {
+                    "name": "riot_game",
+                    "value": 0
+                  },
+                  {
+                    "name": "thunderdome",
+                    "value": 1
+                  },
+                  {
+                    "name": "forge",
+                    "value": 2
+                  },
+                  {
+                    "name": "third_party",
+                    "value": 3
+                  },
+                  {
+                    "name": "special_event",
+                    "value": 4
+                  },
+                  {
+                    "name": "hidden",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerPhase": {
+      "values": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Manifest",
+          "value": 1
+        },
+        {
+          "name": "Update",
+          "value": 2
+        },
+        {
+          "name": "Repair",
+          "value": 3
+        }
+      ]
+    },
+    "ExternalMessageHandlerProductAlias": {
+      "fields": [
+        {
+          "product_id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platforms": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerProductPatchlineResourceV4": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerPatchlineResource": {
+                "fields": [
+                  {
+                    "id": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "install_id": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "release_id": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "path_name": {
+                      "description": "",
+                      "offset": 72,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "full_name": {
+                      "description": "",
+                      "offset": 96,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "platform": {
+                      "description": "",
+                      "offset": 144,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "patch_notes": {
+                      "description": "",
+                      "offset": 168,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "theme_manifest": {
+                      "description": "",
+                      "offset": 192,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "default_theme_manifest": {
+                      "description": "",
+                      "offset": 216,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "patching_policy": {
+                      "description": "",
+                      "offset": 240,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "auto_patching_enabled_by_player": {
+                      "description": "",
+                      "offset": 264,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "patching_ask_policy": {
+                      "description": "",
+                      "offset": 268,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "primary_executable": {
+                      "description": "",
+                      "offset": 292,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "configType": {
+                      "description": "",
+                      "offset": 316,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerConfigType": {
+                          "values": [
+                            {
+                              "name": "public",
+                              "value": 0
+                            },
+                            {
+                              "name": "player",
+                              "value": 1
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "launcher_arguments": {
+                      "description": "",
+                      "offset": 320,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "root_dir": {
+                      "description": "",
+                      "offset": 332,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "install_dir": {
+                      "description": "",
+                      "offset": 356,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "install_full_path": {
+                      "description": "",
+                      "offset": 380,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "settings": {
+                      "description": "",
+                      "offset": 408,
+                      "optional": false,
+                      "type": "object"
+                    }
+                  },
+                  {
+                    "product_install_move_status": {
+                      "description": "",
+                      "offset": 424,
+                      "optional": false,
+                      "type": "object"
+                    }
+                  },
+                  {
+                    "content_paths": {
+                      "description": "",
+                      "offset": 440,
+                      "optional": false,
+                      "type": "map of string"
+                    }
+                  },
+                  {
+                    "patch_status_known": {
+                      "description": "",
+                      "offset": 472,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "secondary_patchlines": {
+                      "description": "",
+                      "offset": 476,
+                      "optional": false,
+                      "type": "vector of ExternalMessageHandlerSecondaryPatchlineResource"
+                    }
+                  },
+                  {
+                    "dependencies": {
+                      "description": "",
+                      "offset": 488,
+                      "optional": false,
+                      "type": "vector of ExternalMessageHandlerDependency"
+                    }
+                  },
+                  {
+                    "dependencyStates": {
+                      "description": "",
+                      "offset": 500,
+                      "optional": true,
+                      "type": "map of ExternalMessageHandlerDependencyState"
+                    }
+                  },
+                  {
+                    "locale_data": {
+                      "description": "",
+                      "offset": 536,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerLocaleDataResource": {
+                          "fields": [
+                            {
+                              "available_locales": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "vector of string"
+                              }
+                            },
+                            {
+                              "default_locale": {
+                                "description": "",
+                                "offset": 12,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "region_data": {
+                      "description": "",
+                      "offset": 576,
+                      "optional": true,
+                      "type": {
+                        "ExternalMessageHandlerRegionDataResource": {
+                          "fields": [
+                            {
+                              "available_regions": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "vector of string"
+                              }
+                            },
+                            {
+                              "default_region": {
+                                "description": "",
+                                "offset": 12,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "shards_data": {
+                      "description": "",
+                      "offset": 616,
+                      "optional": false,
+                      "type": "map of string"
+                    }
+                  },
+                  {
+                    "rogue_process_allow_list": {
+                      "description": "",
+                      "offset": 672,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "install_size_bytes": {
+                      "description": "",
+                      "offset": 688,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "configuration_status": {
+                      "description": "",
+                      "offset": 720,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerConfigurationStatus": {
+                          "values": [
+                            {
+                              "name": "unknown",
+                              "value": 0
+                            },
+                            {
+                              "name": "has_configuration",
+                              "value": 1
+                            },
+                            {
+                              "name": "unsupported_region",
+                              "value": 2
+                            },
+                            {
+                              "name": "unsupported_shard",
+                              "value": 3
+                            },
+                            {
+                              "name": "unsupported_os",
+                              "value": 4
+                            },
+                            {
+                              "name": "unsupported_32_bit_os",
+                              "value": 5
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "excluded_compat_modes": {
+                      "description": "",
+                      "offset": 724,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "launch_disabled": {
+                      "description": "",
+                      "offset": 736,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "disallow_32bit_windows": {
+                      "description": "",
+                      "offset": 737,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "restart_required": {
+                      "description": "",
+                      "offset": 738,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "vanguard_dependency": {
+                      "description": "",
+                      "offset": 739,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "should_repair": {
+                      "description": "",
+                      "offset": 792,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "available_platforms": {
+                      "description": "",
+                      "offset": 796,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "alias": {
+                      "description": "",
+                      "offset": 808,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerProductAlias": {
+                          "fields": [
+                            {
+                              "product_id": {
+                                "description": "",
+                                "offset": 0,
+                                "optional": false,
+                                "type": "string"
+                              }
+                            },
+                            {
+                              "platforms": {
+                                "description": "",
+                                "offset": 24,
+                                "optional": false,
+                                "type": "vector of string"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "client_product_type": {
+                      "description": "",
+                      "offset": 844,
+                      "optional": false,
+                      "type": {
+                        "ExternalMessageHandlerClientProductType": {
+                          "values": [
+                            {
+                              "name": "riot_game",
+                              "value": 0
+                            },
+                            {
+                              "name": "thunderdome",
+                              "value": 1
+                            },
+                            {
+                              "name": "forge",
+                              "value": 2
+                            },
+                            {
+                              "name": "third_party",
+                              "value": 3
+                            },
+                            {
+                              "name": "special_event",
+                              "value": 4
+                            },
+                            {
+                              "name": "hidden",
+                              "value": 5
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerProgress": {
+      "fields": [
+        {
+          "progress": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "double"
+          }
+        },
+        {
+          "phase": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": {
+              "ExternalMessageHandlerPhase": {
+                "values": [
+                  {
+                    "name": "None",
+                    "value": 0
+                  },
+                  {
+                    "name": "Manifest",
+                    "value": 1
+                  },
+                  {
+                    "name": "Update",
+                    "value": 2
+                  },
+                  {
+                    "name": "Repair",
+                    "value": 3
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "manifest": {
+            "description": "",
+            "offset": 16,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerManifestProgress": {
+                "fields": [
+                  {
+                    "downloaded_bytes": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "bytes_to_download": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "update": {
+            "description": "",
+            "offset": 40,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerUpdateProgress": {
+                "fields": [
+                  {
+                    "read_bytes": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "bytes_to_read": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "written_bytes": {
+                      "description": "",
+                      "offset": 16,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "bytes_to_write": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "downloaded_bytes": {
+                      "description": "",
+                      "offset": 32,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "bytes_to_download": {
+                      "description": "",
+                      "offset": 40,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "stage": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": false,
+                      "type": "uint8"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "repair": {
+            "description": "",
+            "offset": 104,
+            "optional": true,
+            "type": {
+              "ExternalMessageHandlerRepairProgress": {
+                "fields": [
+                  {
+                    "repaired_bytes": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "bytes_to_repair": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "repaired_files": {
+                      "description": "",
+                      "offset": 16,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  },
+                  {
+                    "files_to_repair": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "uint64"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerRegionDataResource": {
+      "fields": [
+        {
+          "available_regions": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "default_region": {
+            "description": "",
+            "offset": 12,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerRepairCode": {
+      "values": [
+        {
+          "name": "default",
+          "value": 0
+        },
+        {
+          "name": "integrity_check_failed",
+          "value": 1
+        },
+        {
+          "name": "immediate_repair",
+          "value": 2
+        }
+      ]
+    },
+    "ExternalMessageHandlerRepairProgress": {
+      "fields": [
+        {
+          "repaired_bytes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "bytes_to_repair": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "repaired_files": {
+            "description": "",
+            "offset": 16,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "files_to_repair": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerSecondaryPatchline": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "path": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "url": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tags": {
+            "description": "",
+            "offset": 84,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "dynamic_tags": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "vector of ExternalMessageHandlerDynamicTags"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerSecondaryPatchlineResource": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "relativePath": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ExternalMessageHandlerUpdateProgress": {
+      "fields": [
+        {
+          "read_bytes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "bytes_to_read": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "written_bytes": {
+            "description": "",
+            "offset": 16,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "bytes_to_write": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "downloaded_bytes": {
+            "description": "",
+            "offset": 32,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "bytes_to_download": {
+            "description": "",
+            "offset": 40,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "stage": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "uint8"
           }
         }
       ]
@@ -74552,7 +78598,7 @@
         {
           "metadata_path": {
             "description": "",
-            "offset": 252,
+            "offset": 276,
             "optional": false,
             "type": "string"
           }
@@ -74560,7 +78606,7 @@
         {
           "exclude_foreign_paths": {
             "description": "",
-            "offset": 276,
+            "offset": 300,
             "optional": false,
             "type": "bool"
           }
@@ -74568,7 +78614,7 @@
         {
           "excluded_paths": {
             "description": "",
-            "offset": 280,
+            "offset": 304,
             "optional": false,
             "type": "vector of string"
           }
@@ -74576,7 +78622,7 @@
         {
           "repair": {
             "description": "",
-            "offset": 384,
+            "offset": 408,
             "optional": false,
             "type": "bool"
           }
@@ -74584,7 +78630,7 @@
         {
           "deleteForeignPaths": {
             "description": "",
-            "offset": 388,
+            "offset": 412,
             "optional": false,
             "type": "bool"
           }
@@ -76565,6 +80611,111 @@
                 ]
               }
             }
+          }
+        }
+      ]
+    },
+    "PatchProxyProductRegistryPatchline": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "installId": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "fullName": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "configType": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": {
+              "PatchProxyConfigType": {
+                "values": [
+                  {
+                    "name": "public",
+                    "value": 0
+                  },
+                  {
+                    "name": "player",
+                    "value": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PatchProxyProductRegistryProduct": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchlines": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "vector of PatchProxyProductRegistryPatchline"
+          }
+        }
+      ]
+    },
+    "PatchProxyProductSession": {
+      "fields": [
+        {
+          "productId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "phase": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -90846,6 +94997,115 @@
         }
       ]
     },
+    "ProductLauncherLoginStatus": {
+      "values": [
+        {
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    "ProductLauncherLoginStatusResponse": {
+      "fields": [
+        {
+          "xToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "loginToken": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "xboxAccountPuuid": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "rsoPuuid": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "userHash": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 120,
+            "optional": false,
+            "type": {
+              "ProductLauncherLoginStatus": {
+                "values": [
+                  {
+                    "name": "Authenticated",
+                    "value": 0
+                  },
+                  {
+                    "name": "NotAuthenticated",
+                    "value": 1
+                  },
+                  {
+                    "name": "AccountNotLinked",
+                    "value": 2
+                  },
+                  {
+                    "name": "MismatchedPuuid",
+                    "value": 3
+                  },
+                  {
+                    "name": "NoXToken",
+                    "value": 4
+                  },
+                  {
+                    "name": "XbgpDisabled",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
     "ProductLauncherPatchlineResource": {
       "fields": [
         {
@@ -94870,6 +99130,667 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthAuthenticationTypeEnum": {
+      "values": [
+        {
+          "name": "SSOAuth",
+          "value": 0
+        }
+      ]
+    },
+    "RcAuthAuthorization": {
+      "fields": [
+        {
+          "currentPlatformId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "subject": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthAuthorizationRequest": {
+      "fields": [
+        {
+          "trustLevels": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of RcAuthRSOAuthorizationTrustLevel"
+          }
+        },
+        {
+          "clientId": {
+            "description": "",
+            "offset": 12,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthAuthorizationResponse": {
+      "fields": [
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RcAuthAuthorizationResponseType": {
+                "values": [
+                  {
+                    "name": "needs_authentication",
+                    "value": 1
+                  },
+                  {
+                    "name": "needs_reauthentication",
+                    "value": 2
+                  },
+                  {
+                    "name": "authorized",
+                    "value": 3
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RcAuthAuthorizationResponseType": {
+      "values": [
+        {
+          "name": "needs_authentication",
+          "value": 1
+        },
+        {
+          "name": "needs_reauthentication",
+          "value": 2
+        },
+        {
+          "name": "authorized",
+          "value": 3
+        }
+      ]
+    },
+    "RcAuthGamepassResponseDetails": {
+      "fields": [
+        {
+          "remaining": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "delay": {
+            "description": "",
+            "offset": 4,
+            "optional": false,
+            "type": "uint32"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 8,
+            "optional": false,
+            "type": {
+              "RcAuthGamepassStatus": {
+                "values": [
+                  {
+                    "name": "PENDING",
+                    "value": 0
+                  },
+                  {
+                    "name": "ACTIVE",
+                    "value": 1
+                  },
+                  {
+                    "name": "NONE",
+                    "value": 2
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RcAuthGamepassStatus": {
+      "values": [
+        {
+          "name": "PENDING",
+          "value": 0
+        },
+        {
+          "name": "ACTIVE",
+          "value": 1
+        },
+        {
+          "name": "NONE",
+          "value": 2
+        }
+      ]
+    },
+    "RcAuthLoginRequest": {
+      "fields": [
+        {
+          "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "persist_login": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "authentication_type": {
+            "description": "",
+            "offset": 28,
+            "optional": true,
+            "type": {
+              "RcAuthAuthenticationTypeEnum": {
+                "values": [
+                  {
+                    "name": "SSOAuth",
+                    "value": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RcAuthLoginResponse": {
+      "fields": [
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RcAuthSessionResponseType": {
+                "values": [
+                  {
+                    "name": "unknown_authentication_response",
+                    "value": 0
+                  },
+                  {
+                    "name": "needs_credentials",
+                    "value": 1
+                  },
+                  {
+                    "name": "needs_password",
+                    "value": 2
+                  },
+                  {
+                    "name": "needs_multifactor_verification",
+                    "value": 3
+                  },
+                  {
+                    "name": "authenticated",
+                    "value": 4
+                  },
+                  {
+                    "name": "error",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "error": {
+            "description": "",
+            "offset": 4,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthLoginStatus": {
+      "values": [
+        {
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    "RcAuthLoginStatusResponse": {
+      "fields": [
+        {
+          "xToken": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "loginToken": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "xboxAccountPuuid": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "rsoPuuid": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "userHash": {
+            "description": "",
+            "offset": 96,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "status": {
+            "description": "",
+            "offset": 120,
+            "optional": false,
+            "type": {
+              "RcAuthLoginStatus": {
+                "values": [
+                  {
+                    "name": "Authenticated",
+                    "value": 0
+                  },
+                  {
+                    "name": "NotAuthenticated",
+                    "value": 1
+                  },
+                  {
+                    "name": "AccountNotLinked",
+                    "value": 2
+                  },
+                  {
+                    "name": "MismatchedPuuid",
+                    "value": 3
+                  },
+                  {
+                    "name": "NoXToken",
+                    "value": 4
+                  },
+                  {
+                    "name": "XbgpDisabled",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "RcAuthRSOAuthorizationTrustLevel": {
+      "values": [
+        {
+          "name": "always_trusted",
+          "value": 0
+        },
+        {
+          "name": "trusted_device",
+          "value": 1
+        },
+        {
+          "name": "always_verify",
+          "value": 2
+        }
+      ]
+    },
+    "RcAuthRegionLocale": {
+      "fields": [
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthRsoAuthenticatorAuthResponse": {
+      "fields": [
+        {
+          "gamepass": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RcAuthGamepassResponseDetails": {
+                "fields": [
+                  {
+                    "remaining": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "delay": {
+                      "description": "",
+                      "offset": 4,
+                      "optional": false,
+                      "type": "uint32"
+                    }
+                  },
+                  {
+                    "status": {
+                      "description": "",
+                      "offset": 8,
+                      "optional": false,
+                      "type": {
+                        "RcAuthGamepassStatus": {
+                          "values": [
+                            {
+                              "name": "PENDING",
+                              "value": 0
+                            },
+                            {
+                              "name": "ACTIVE",
+                              "value": 1
+                            },
+                            {
+                              "name": "NONE",
+                              "value": 2
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "success": {
+            "description": "",
+            "offset": 12,
+            "optional": false,
+            "type": {
+              "RcAuthSuccessResponseDetails": {
+                "fields": [
+                  {
+                    "login_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "redirect_url": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "linked": {
+                      "description": "",
+                      "offset": 48,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "is_console_link_session": {
+                      "description": "",
+                      "offset": 72,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "auth_method": {
+                      "description": "",
+                      "offset": 76,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "puuid": {
+                      "description": "",
+                      "offset": 100,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "country": {
+            "description": "",
+            "offset": 136,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "error": {
+            "description": "",
+            "offset": 160,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthSessionResponseType": {
+      "values": [
+        {
+          "name": "unknown_authentication_response",
+          "value": 0
+        },
+        {
+          "name": "needs_credentials",
+          "value": 1
+        },
+        {
+          "name": "needs_password",
+          "value": 2
+        },
+        {
+          "name": "needs_multifactor_verification",
+          "value": 3
+        },
+        {
+          "name": "authenticated",
+          "value": 4
+        },
+        {
+          "name": "error",
+          "value": 5
+        }
+      ]
+    },
+    "RcAuthSuccessResponseDetails": {
+      "fields": [
+        {
+          "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "redirect_url": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "linked": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "is_console_link_session": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "auth_method": {
+            "description": "",
+            "offset": 76,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 100,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthV1XboxInput": {
+      "fields": [
+        {
+          "xsts_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "user_hash": {
+            "description": "",
+            "offset": 24,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "RcAuthV1XboxLogin": {
+      "fields": [
+        {
+          "xbox": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RcAuthV1XboxInput": {
+                "fields": [
+                  {
+                    "xsts_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "user_hash": {
+                      "description": "",
+                      "offset": 24,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "language": {
+            "description": "",
+            "offset": 48,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "remember": {
+            "description": "",
+            "offset": 72,
+            "optional": false,
+            "type": "bool"
           }
         }
       ]
@@ -106464,6 +111385,14 @@
     "RsoAuthenticatorV1AuthenticateCodeInput": {
       "fields": [
         {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "code": {
             "description": "",
             "offset": 0,
@@ -106491,6 +111420,14 @@
     },
     "RsoAuthenticatorV1AuthenticateFacebookInput": {
       "fields": [
+        {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
         {
           "facebook": {
             "description": "",
@@ -106671,6 +111608,14 @@
     "RsoAuthenticatorV1AuthenticateNintendoInput": {
       "fields": [
         {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "language": {
             "description": "",
             "offset": 0,
@@ -106728,6 +111673,14 @@
     "RsoAuthenticatorV1AuthenticateOpenIdConnectInput": {
       "fields": [
         {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "language": {
             "description": "",
             "offset": 0,
@@ -106777,6 +111730,14 @@
     "RsoAuthenticatorV1AuthenticatePlaystationInput": {
       "fields": [
         {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "language": {
             "description": "",
             "offset": 0,
@@ -106825,6 +111786,14 @@
     },
     "RsoAuthenticatorV1AuthenticateXboxInput": {
       "fields": [
+        {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
         {
           "language": {
             "description": "",
@@ -106921,6 +111890,14 @@
                 ]
               }
             }
+          }
+        },
+        {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         },
         {
@@ -107222,6 +112199,14 @@
             "type": {
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "captcha": {
                       "description": "",
@@ -108357,6 +113342,14 @@
     "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
       "fields": [
         {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
           "captcha": {
             "description": "",
             "offset": 0,
@@ -108408,6 +113401,14 @@
             "type": {
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "captcha": {
                       "description": "",
@@ -108505,6 +113506,14 @@
     },
     "RsoAuthenticatorV1RiotIdentityInput": {
       "fields": [
+        {
+          "campaign": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
         {
           "captcha": {
             "description": "",
@@ -109148,6 +114157,14 @@
             "type": {
               "RsoAuthenticatorV1RiotIdentityInput": {
                 "fields": [
+                  {
+                    "campaign": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
                   {
                     "captcha": {
                       "description": "",
@@ -118304,6 +123321,87 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        }
+      ]
+    },
+    "XBGPRegistryRequest": {
+      "fields": [
+        {
+          "exe": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "XbgpAcceptance": {
+      "values": [
+        {
+          "name": "Authenticated",
+          "value": 0
+        },
+        {
+          "name": "NotAuthenticated",
+          "value": 1
+        },
+        {
+          "name": "AccountNotLinked",
+          "value": 2
+        },
+        {
+          "name": "MismatchedPuuid",
+          "value": 3
+        },
+        {
+          "name": "NoXToken",
+          "value": 4
+        },
+        {
+          "name": "XbgpDisabled",
+          "value": 5
+        }
+      ]
+    },
+    "XbgpAcceptanceResponse": {
+      "fields": [
+        {
+          "status": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "XbgpAcceptance": {
+                "values": [
+                  {
+                    "name": "Authenticated",
+                    "value": 0
+                  },
+                  {
+                    "name": "NotAuthenticated",
+                    "value": 1
+                  },
+                  {
+                    "name": "AccountNotLinked",
+                    "value": 2
+                  },
+                  {
+                    "name": "MismatchedPuuid",
+                    "value": 3
+                  },
+                  {
+                    "name": "NoXToken",
+                    "value": 4
+                  },
+                  {
+                    "name": "XbgpDisabled",
+                    "value": 5
+                  }
+                ]
+              }
+            }
           }
         }
       ]

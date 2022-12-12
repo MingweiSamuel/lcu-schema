@@ -15912,6 +15912,9 @@
     },
     "RsoAuthenticatorV1AuthenticateCodeInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "code": {
           "type": "string"
         },
@@ -15926,6 +15929,9 @@
     },
     "RsoAuthenticatorV1AuthenticateFacebookInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "facebook": {
           "$ref": "#/definitions/RsoAuthenticatorV1FacebookInput"
         },
@@ -15962,6 +15968,9 @@
     },
     "RsoAuthenticatorV1AuthenticateNintendoInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "language": {
           "type": "string"
         },
@@ -15976,6 +15985,9 @@
     },
     "RsoAuthenticatorV1AuthenticateOpenIdConnectInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "language": {
           "type": "string"
         },
@@ -15990,6 +16002,9 @@
     },
     "RsoAuthenticatorV1AuthenticatePlaystationInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "language": {
           "type": "string"
         },
@@ -16004,6 +16019,9 @@
     },
     "RsoAuthenticatorV1AuthenticateXboxInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "language": {
           "type": "string"
         },
@@ -16031,6 +16049,9 @@
       "properties": {
         "apple": {
           "$ref": "#/definitions/RsoAuthenticatorV1OpenIdConnectInput"
+        },
+        "campaign": {
+          "type": "string"
         },
         "clientId": {
           "type": "string"
@@ -16386,6 +16407,9 @@
     },
     "RsoAuthenticatorV1RiotIdentityAuthCompleteInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "captcha": {
           "type": "string"
         },
@@ -16432,6 +16456,9 @@
     },
     "RsoAuthenticatorV1RiotIdentityInput": {
       "properties": {
+        "campaign": {
+          "type": "string"
+        },
         "captcha": {
           "type": "string"
         },
