@@ -9080,7 +9080,7 @@
     "id": 720,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 0,
+    "lastToggledOffTime": 1671136439169,
     "lastToggledOnTime": 1670183973824,
     "mapId": 12,
     "maxDivisionForPremadeSize2": "",
@@ -9090,7 +9090,7 @@
     "minimumParticipantListSize": 5,
     "name": "",
     "numPlayersPerTeam": 5,
-    "queueAvailability": "Available",
+    "queueAvailability": "PlatformDisabled",
     "queueRewards": {
       "isChampionPointsEnabled": true,
       "isIpEnabled": true,
