@@ -214,16 +214,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-account-verification_v1_get-phone-number",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-account-verification_v1_is-verified",
       "nameSpace": "",
       "tags": [],
@@ -12204,16 +12194,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-store_v1_getStoreUrl",
       "nameSpace": "",
       "tags": [],
@@ -20494,15 +20474,43 @@
       "threadSafe": false
     },
     {
-      "arguments": [],
+      "arguments": [
+        {
+          "description": "",
+          "name": "puuid",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolHoneyfruitV1AccountClaimAccountStatus",
+      "name": "GetLolHoneyfruitV1AccountClaimAccountStatusByPuuid",
       "nameSpace": "",
       "returns": {
         "elementType": "",
         "type": "LolHoneyfruitAccountClaimStatus"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolHoneyfruitV1AccountClaimAutoDismiss",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
       },
       "tags": [
         "$remoting-binding-module",
@@ -39730,6 +39738,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-highlights"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "shouldDismiss",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolHoneyfruitV1AccountClaimAutoDismiss",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-honeyfruit"
       ],
       "threadSafe": false
     },
@@ -100929,6 +100965,39 @@
       "fields": [
         {
           "description": "",
+          "name": "schemaVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "data",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolHoneyfruitHoneyfruitSettingsAccountClaim"
+          }
+        }
+      ],
+      "name": "LolHoneyfruitHoneyfruitSettingCategoryResourceAccountClaim",
+      "nameSpace": "",
+      "size": 8,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "snoozeUntilMS",
           "offset": 0,
           "optional": false,
@@ -100951,6 +101020,29 @@
       "name": "LolHoneyfruitHoneyfruitSettings",
       "nameSpace": "",
       "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "isAccountClaimAutoDismiss",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolHoneyfruitHoneyfruitSettingsAccountClaim",
+      "nameSpace": "",
+      "size": 1,
       "tags": [
         "Plugins",
         "Plugin lol-honeyfruit"
