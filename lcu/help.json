@@ -734,36 +734,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_categories-offers",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_event-header-data",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_failure-loading-token-shop",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-event-shop_v1_info",
       "nameSpace": "",
       "tags": [],
@@ -774,97 +744,7 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_is-grace-period",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-event-shop_v1_navigation-button-data",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_pass-background-data",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_progress-info-data",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-bonus-items",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-bonus-progress",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-items",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-progress",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-xp",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-event-shop_v1_token-shop-data",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -1135,6 +1015,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-honor-v2_v1_config",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-honor-v2_v1_level-change",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -7484,6 +7374,26 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LeagueConfig_CurrentSplit",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LeagueConfig_CurrentYear",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LeagueConfig_DefaultJwtTimeToLiveSeconds",
       "nameSpace": "",
       "tags": [],
@@ -11924,16 +11834,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-purchase-widget_v3_purchase-offer-order-statuses",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-ranked_v1_challenger-ladders-enabled",
       "nameSpace": "",
       "tags": [],
@@ -12265,6 +12165,26 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-tastes_v1_ready",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-tft-team-planner_v1_config",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-tft-team-planner_v1_team",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -14468,6 +14388,98 @@
       "threadSafe": false
     },
     {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "DeleteLolTftTeamPlannerV1TeamChampions",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "championName",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "DeleteLolTftTeamPlannerV1TeamChampionsByIdByChampionName",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "index",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "DeleteLolTftTeamPlannerV1TeamChampionsByIndex",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "DeleteLolTftTeamPlannerV1TeamDirty",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [
         {
           "description": "",
@@ -16267,7 +16279,7 @@
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolChallengesV1Titles",
+      "name": "GetLolChallengesV1TitlesAll",
       "nameSpace": "",
       "returns": {
         "elementType": "LolChallengesUITitle",
@@ -20474,43 +20486,15 @@
       "threadSafe": false
     },
     {
-      "arguments": [
-        {
-          "description": "",
-          "name": "puuid",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "GetLolHoneyfruitV1AccountClaimAccountStatusByPuuid",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "LolHoneyfruitAccountClaimStatus"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-honeyfruit"
-      ],
-      "threadSafe": false
-    },
-    {
       "arguments": [],
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolHoneyfruitV1AccountClaimAutoDismiss",
+      "name": "GetLolHoneyfruitV1AccountClaimAccountStatus",
       "nameSpace": "",
       "returns": {
         "elementType": "",
-        "type": "bool"
+        "type": "LolHoneyfruitAccountClaimStatus"
       },
       "tags": [
         "$remoting-binding-module",
@@ -25876,6 +25860,62 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "inventoryType",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolRegaliaV3InventoryByInventoryType",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "LolRegaliaRegaliaInventoryItem",
+        "type": "map"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-regalia"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "summonerId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolRegaliaV3SummonersBySummonerIdRegalia",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolRegaliaRegalia"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-regalia"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "async": "",
       "description": "",
@@ -27773,6 +27813,78 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-tastes"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolTftTeamPlannerV1Config",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolTftTeamPlannerTFTTeamPlannerConfig"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolTftTeamPlannerV1TeamDirty",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolTftTeamPlannerTeamPlan"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolTftTeamPlannerV1TeamLocal",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolTftTeamPlannerTeamSettings"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolTftV1TftBattlePassHub",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "LolTftLolTftBattlePassHub"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft"
       ],
       "threadSafe": false
     },
@@ -29972,6 +30084,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-settings"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "indices",
+          "optional": false,
+          "type": {
+            "elementType": "uint32",
+            "type": "vector"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PatchLolTftTeamPlannerV1TeamChampions",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
       ],
       "threadSafe": false
     },
@@ -37627,6 +37767,71 @@
       "arguments": [
         {
           "description": "",
+          "name": "championName",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolTftTeamPlannerV1TeamChampionsByIdByChampionName",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "index",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "championName",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PostLolTftTeamPlannerV1TeamChampionsByIndex",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "id",
           "optional": false,
           "type": {
@@ -39745,34 +39950,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "shouldDismiss",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutLolHoneyfruitV1AccountClaimAutoDismiss",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": "object"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-honeyfruit"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "body",
           "optional": false,
           "type": {
@@ -41059,6 +41236,24 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-summoner"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolTftTeamPlannerV1Team",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-tft-team-planner"
       ],
       "threadSafe": false
     },
@@ -55328,7 +55523,7 @@
           }
         }
       ],
-      "name": "LolChallengesInventoryTypeAchievementTitle",
+      "name": "LolChallengesInventoryItem",
       "nameSpace": "",
       "size": 52,
       "tags": [
@@ -55506,7 +55701,7 @@
       "fields": [
         {
           "description": "",
-          "name": "tabard",
+          "name": "bannerAccent",
           "offset": 0,
           "optional": false,
           "type": {
@@ -56318,8 +56513,18 @@
         },
         {
           "description": "",
-          "name": "categoryProgress",
+          "name": "bannerId",
           "offset": 248,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "categoryProgress",
+          "offset": 272,
           "optional": false,
           "type": {
             "elementType": "LolChallengesUICategoryProgress",
@@ -56329,7 +56534,7 @@
         {
           "description": "",
           "name": "topChallenges",
-          "offset": 260,
+          "offset": 284,
           "optional": false,
           "type": {
             "elementType": "LolChallengesUIChallenge",
@@ -56339,7 +56544,7 @@
         {
           "description": "",
           "name": "apexLadderUpdateTime",
-          "offset": 272,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56349,7 +56554,7 @@
         {
           "description": "",
           "name": "selectedChallengesString",
-          "offset": 280,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -56359,7 +56564,7 @@
       ],
       "name": "LolChallengesUIPlayerSummary",
       "nameSpace": "",
-      "size": 304,
+      "size": 328,
       "tags": [
         "Plugins",
         "Plugin lol-challenges"
@@ -87845,6 +88050,11 @@
       "values": [
         {
           "description": "",
+          "name": "FULLSCREEN",
+          "value": 2
+        },
+        {
+          "description": "",
           "name": "NONE",
           "value": 0
         },
@@ -100965,39 +101175,6 @@
       "fields": [
         {
           "description": "",
-          "name": "schemaVersion",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        },
-        {
-          "description": "",
-          "name": "data",
-          "offset": 4,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolHoneyfruitHoneyfruitSettingsAccountClaim"
-          }
-        }
-      ],
-      "name": "LolHoneyfruitHoneyfruitSettingCategoryResourceAccountClaim",
-      "nameSpace": "",
-      "size": 8,
-      "tags": [
-        "Plugins",
-        "Plugin lol-honeyfruit"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "snoozeUntilMS",
           "offset": 0,
           "optional": false,
@@ -101020,29 +101197,6 @@
       "name": "LolHoneyfruitHoneyfruitSettings",
       "nameSpace": "",
       "size": 16,
-      "tags": [
-        "Plugins",
-        "Plugin lol-honeyfruit"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "isAccountClaimAutoDismiss",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        }
-      ],
-      "name": "LolHoneyfruitHoneyfruitSettingsAccountClaim",
-      "nameSpace": "",
-      "size": 1,
       "tags": [
         "Plugins",
         "Plugin lol-honeyfruit"
@@ -121770,6 +121924,11 @@
       "values": [
         {
           "description": "",
+          "name": "FULLSCREEN",
+          "value": 2
+        },
+        {
+          "description": "",
           "name": "NONE",
           "value": 0
         },
@@ -139885,11 +140044,51 @@
             "elementType": "",
             "type": "uint64"
           }
+        },
+        {
+          "description": "",
+          "name": "runeRecommendationId",
+          "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "recommendationIndex",
+          "offset": 112,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "isRecommendationOverride",
+          "offset": 116,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "recommendationChampionId",
+          "offset": 120,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
         }
       ],
       "name": "LolPerksPerkPageResource",
       "nameSpace": "",
-      "size": 88,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -140416,11 +140615,41 @@
             "elementType": "int32",
             "type": "vector"
           }
+        },
+        {
+          "description": "",
+          "name": "recommendationId",
+          "offset": 328,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isRecommendationOverride",
+          "offset": 352,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "recommendationChampionId",
+          "offset": 356,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
         }
       ],
       "name": "LolPerksPerkUIRecommendedPage",
       "nameSpace": "",
-      "size": 336,
+      "size": 368,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -140837,11 +141066,21 @@
             "elementType": "int32",
             "type": "vector"
           }
+        },
+        {
+          "description": "",
+          "name": "recommendationId",
+          "offset": 56,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
         }
       ],
       "name": "LolPerksRuneRecommendationGDSResource",
       "nameSpace": "",
-      "size": 60,
+      "size": 92,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -153523,7 +153762,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonEndTier",
+          "name": "highestTier",
           "offset": 68,
           "optional": false,
           "type": {
@@ -153533,7 +153772,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonEndDivision",
+          "name": "highestDivision",
           "offset": 72,
           "optional": false,
           "type": {
@@ -153543,7 +153782,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonAchievedTier",
+          "name": "previousSeasonEndTier",
           "offset": 76,
           "optional": false,
           "type": {
@@ -153553,7 +153792,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonAchievedDivision",
+          "name": "previousSeasonEndDivision",
           "offset": 80,
           "optional": false,
           "type": {
@@ -153563,8 +153802,28 @@
         },
         {
           "description": "",
-          "name": "warnings",
+          "name": "previousSeasonAchievedTier",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolRankedLeagueTier"
+          }
+        },
+        {
+          "description": "",
+          "name": "previousSeasonAchievedDivision",
           "offset": 88,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolRankedLeagueDivision"
+          }
+        },
+        {
+          "description": "",
+          "name": "warnings",
+          "offset": 96,
           "optional": true,
           "type": {
             "elementType": "",
@@ -153574,7 +153833,7 @@
       ],
       "name": "LolRankedRankedQueueStats",
       "nameSpace": "",
-      "size": 120,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -153696,7 +153955,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonEndTier",
+          "name": "highestTier",
           "offset": 144,
           "optional": false,
           "type": {
@@ -153706,7 +153965,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonEndRank",
+          "name": "highestRank",
           "offset": 168,
           "optional": false,
           "type": {
@@ -153716,7 +153975,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonAchievedTier",
+          "name": "previousSeasonEndTier",
           "offset": 192,
           "optional": false,
           "type": {
@@ -153726,7 +153985,7 @@
         },
         {
           "description": "",
-          "name": "previousSeasonAchievedRank",
+          "name": "previousSeasonEndRank",
           "offset": 216,
           "optional": false,
           "type": {
@@ -153736,8 +153995,28 @@
         },
         {
           "description": "",
-          "name": "warnings",
+          "name": "previousSeasonAchievedTier",
           "offset": 240,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "previousSeasonAchievedRank",
+          "offset": 264,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "warnings",
+          "offset": 288,
           "optional": true,
           "type": {
             "elementType": "",
@@ -153747,7 +154026,7 @@
       ],
       "name": "LolRankedRankedQueueStatsDTO",
       "nameSpace": "",
-      "size": 280,
+      "size": 328,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -153906,7 +154185,7 @@
         {
           "description": "",
           "name": "highestRankedEntrySR",
-          "offset": 176,
+          "offset": 184,
           "optional": true,
           "type": {
             "elementType": "",
@@ -153916,7 +154195,7 @@
         {
           "description": "",
           "name": "earnedRegaliaRewardIds",
-          "offset": 304,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -153926,7 +154205,7 @@
         {
           "description": "",
           "name": "rankedRegaliaLevel",
-          "offset": 316,
+          "offset": 332,
           "optional": false,
           "type": {
             "elementType": "",
@@ -153935,8 +154214,18 @@
         },
         {
           "description": "",
+          "name": "highestCurrentSeasonReachedTierSR",
+          "offset": 336,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolRankedLeagueTier"
+          }
+        },
+        {
+          "description": "",
           "name": "highestPreviousSeasonEndTier",
-          "offset": 320,
+          "offset": 340,
           "optional": false,
           "type": {
             "elementType": "",
@@ -153946,7 +154235,7 @@
         {
           "description": "",
           "name": "highestPreviousSeasonEndDivision",
-          "offset": 324,
+          "offset": 344,
           "optional": false,
           "type": {
             "elementType": "",
@@ -153956,7 +154245,7 @@
         {
           "description": "",
           "name": "highestPreviousSeasonAchievedTier",
-          "offset": 328,
+          "offset": 348,
           "optional": false,
           "type": {
             "elementType": "",
@@ -153966,7 +154255,7 @@
         {
           "description": "",
           "name": "highestPreviousSeasonAchievedDivision",
-          "offset": 332,
+          "offset": 352,
           "optional": false,
           "type": {
             "elementType": "",
@@ -153976,7 +154265,7 @@
         {
           "description": "",
           "name": "splitsProgress",
-          "offset": 336,
+          "offset": 356,
           "optional": false,
           "type": {
             "elementType": "int32",
@@ -153986,7 +154275,7 @@
         {
           "description": "",
           "name": "seasons",
-          "offset": 368,
+          "offset": 388,
           "optional": false,
           "type": {
             "elementType": "LolRankedSeasonDTO",
@@ -153996,7 +154285,7 @@
       ],
       "name": "LolRankedRankedStats",
       "nameSpace": "",
-      "size": 400,
+      "size": 424,
       "tags": [
         "Plugins",
         "Plugin lol-ranked"
@@ -154552,7 +154841,7 @@
         },
         {
           "description": "",
-          "name": "victoriousSkin",
+          "name": "victoriousSkinRewardGroup",
           "offset": 36,
           "optional": false,
           "type": {
@@ -154625,7 +154914,7 @@
         },
         {
           "description": "",
-          "name": "victoriousSkin",
+          "name": "victoriousSkinRewardGroup",
           "offset": 36,
           "optional": false,
           "type": {
@@ -155722,6 +156011,132 @@
       "fields": [
         {
           "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "idSecondary",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "assetPath",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isSelectable",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "regaliaType",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedName",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localizedDescription",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolRegaliaGameDataRegalia",
+      "nameSpace": "",
+      "size": 148,
+      "tags": [
+        "Plugins",
+        "Plugin lol-regalia"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "uuid",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolRegaliaInventoryItem",
+      "nameSpace": "",
+      "size": 52,
+      "tags": [
+        "Plugins",
+        "Plugin lol-regalia"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "inventoryType",
           "offset": 0,
           "optional": false,
@@ -156252,6 +156667,39 @@
       "name": "LolRegaliaRegaliaFrontendConfig",
       "nameSpace": "",
       "size": 2,
+      "tags": [
+        "Plugins",
+        "Plugin lol-regalia"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "items",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolRegaliaGameDataRegalia",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "isOwned",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolRegaliaRegaliaInventoryItem",
+      "nameSpace": "",
+      "size": 16,
       "tags": [
         "Plugins",
         "Plugin lol-regalia"
@@ -157432,6 +157880,11 @@
         "Plugin lol-rewards"
       ],
       "values": [
+        {
+          "description": "",
+          "name": "FULLSCREEN",
+          "value": 2
+        },
         {
           "description": "",
           "name": "NONE",
@@ -167985,6 +168438,29 @@
       "fields": [
         {
           "description": "",
+          "name": "battlePassXPBoosted",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolTftLolTftBattlePassHub",
+      "nameSpace": "",
+      "size": 1,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "titleTranslationKey",
           "offset": 0,
           "optional": false,
@@ -168053,16 +168529,6 @@
           "description": "",
           "name": "enabled",
           "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "tftEventPromoEnabled",
-          "offset": 1,
           "optional": false,
           "type": {
             "elementType": "",
@@ -168286,6 +168752,210 @@
       "tags": [
         "Plugins",
         "Plugin lol-tft"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "championId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerChampion",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "LCTFTModeData",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftTeamPlannerTFTModeData"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerGameDataTFTSets",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "data",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftTeamPlannerTeamSettings"
+          }
+        },
+        {
+          "description": "",
+          "name": "schemaVersion",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerSettingsStorageContainer",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "SetCoreName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerTFTMapSetData",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "mDefaultSet",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolTftTeamPlannerTFTMapSetData"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerTFTModeData",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "enabled",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerTFTTeamPlannerConfig",
+      "nameSpace": "",
+      "size": 1,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "champions",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolTftTeamPlannerChampion",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "setName",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerTeamPlan",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "teams",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "LolTftTeamPlannerTeamPlan",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolTftTeamPlannerTeamSettings",
+      "nameSpace": "",
+      "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-tft-team-planner"
       ],
       "values": []
     },
