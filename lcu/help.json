@@ -734,6 +734,36 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_categories-offers",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_event-header-data",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_failure-loading-token-shop",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-event-shop_v1_info",
       "nameSpace": "",
       "tags": [],
@@ -744,7 +774,97 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_is-grace-period",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-event-shop_v1_navigation-button-data",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_pass-background-data",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_progress-info-data",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-bonus-items",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-bonus-progress",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-items",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-progress",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_reward-track-xp",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-event-shop_v1_token-shop-data",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -3665,6 +3785,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_DisabledChampions_KING_PORO",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_DisabledChampions_LNY23_TFT",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11834,6 +11964,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-purchase-widget_v3_purchase-offer-order-statuses",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-ranked_v1_challenger-ladders-enabled",
       "nameSpace": "",
       "tags": [],
@@ -11995,16 +12135,6 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-rso-auth_v1_authorization",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
-      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -20486,15 +20616,43 @@
       "threadSafe": false
     },
     {
-      "arguments": [],
+      "arguments": [
+        {
+          "description": "",
+          "name": "puuid",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
       "async": "",
       "description": "",
       "help": "",
-      "name": "GetLolHoneyfruitV1AccountClaimAccountStatus",
+      "name": "GetLolHoneyfruitV1AccountClaimAccountStatusByPuuid",
       "nameSpace": "",
       "returns": {
         "elementType": "",
         "type": "LolHoneyfruitAccountClaimStatus"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "GetLolHoneyfruitV1AccountClaimAutoDismiss",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
       },
       "tags": [
         "$remoting-binding-module",
@@ -39943,6 +40101,34 @@
         "$remoting-binding-module",
         "Plugins",
         "Plugin lol-highlights"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "shouldDismiss",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutLolHoneyfruitV1AccountClaimAutoDismiss",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "object"
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin lol-honeyfruit"
       ],
       "threadSafe": false
     },
@@ -101175,6 +101361,39 @@
       "fields": [
         {
           "description": "",
+          "name": "schemaVersion",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "data",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolHoneyfruitHoneyfruitSettingsAccountClaim"
+          }
+        }
+      ],
+      "name": "LolHoneyfruitHoneyfruitSettingCategoryResourceAccountClaim",
+      "nameSpace": "",
+      "size": 8,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "snoozeUntilMS",
           "offset": 0,
           "optional": false,
@@ -101197,6 +101416,29 @@
       "name": "LolHoneyfruitHoneyfruitSettings",
       "nameSpace": "",
       "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin lol-honeyfruit"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "isAccountClaimAutoDismiss",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "LolHoneyfruitHoneyfruitSettingsAccountClaim",
+      "nameSpace": "",
+      "size": 1,
       "tags": [
         "Plugins",
         "Plugin lol-honeyfruit"
