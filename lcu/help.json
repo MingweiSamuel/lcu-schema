@@ -12144,6 +12144,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-service-status_v1_ticker-messages",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-settings_v1_account",
       "nameSpace": "",
       "tags": [],
