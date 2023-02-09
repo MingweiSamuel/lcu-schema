@@ -1425,6 +1425,46 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Cancel the current patch request.",
+      "help": "",
+      "internal": false,
+      "name": "DeleteExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin external-message-handler"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -7481,7 +7521,7 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "return a boolean value if we should show the xbox linking modal which is only show in play flow",
+      "description": "return a boolean value if we should show the xbox linking modal which shows in the install and play flows",
       "help": "",
       "internal": false,
       "name": "GetProductLauncherV1LaunchingFromXbgp",

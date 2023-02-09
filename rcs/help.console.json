@@ -3242,6 +3242,24 @@
       "url": "/external-message-handler/v1/patch-request",
       "usage": "DeleteExternalMessageHandlerV1PatchRequest"
     },
+    "DeleteExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineId": {
+      "arguments": [
+        {
+          "productId": {
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Cancel the current patch request.",
+      "http_method": "DELETE",
+      "url": "/external-message-handler/v1/patch-request/products/{productId}/patchlines/{patchlineId}",
+      "usage": "DeleteExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineId <productId> <patchlineId>"
+    },
     "DeleteGaRestrictionV1DebugCallerIdMockId": {
       "arguments": [],
       "description": "Stops mocking the caller ID for Swagger calls",
@@ -14166,7 +14184,7 @@
     },
     "GetProductLauncherV1LaunchingFromXbgp": {
       "arguments": [],
-      "description": "return a boolean value if we should show the xbox linking modal which is only show in play flow",
+      "description": "return a boolean value if we should show the xbox linking modal which shows in the install and play flows",
       "http_method": "GET",
       "returns": "bool",
       "url": "/product-launcher/v1/launching_from_xbgp",
