@@ -514,6 +514,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-chat_v1_obfuscated-summoner-ids",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-chat_v1_resources",
       "nameSpace": "",
       "tags": [],
@@ -1915,6 +1925,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_SettingsEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_AccountVerification_SettingsVerifyEnabled",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -5924,6 +5944,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LcuChampionSelect_ChampTradingTooltipEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LcuChampionSelect_DisableAutoSmiteAssignment",
       "nameSpace": "",
       "tags": [],
@@ -5955,6 +5985,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LcuChampionSelect_IsDisconnectNotificationEnabled",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_LcuChampionSelect_PickOrderSwappingTooltipEnabled",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -12225,6 +12265,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-spectator_v1_spectate",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-statstones_v2_player-summary-self",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -25623,34 +25673,6 @@
       "returns": {
         "elementType": "LolRankedLcuLeagueNotification",
         "type": "vector"
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin lol-ranked"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "puuids",
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "GetLolRankedV1RankedStats",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "LolRankedRankedStats",
-        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
@@ -57220,7 +57242,7 @@
       "fields": [
         {
           "description": "",
-          "name": "chatRoomName",
+          "name": "multiUserChatId",
           "offset": 0,
           "optional": false,
           "type": {
@@ -57230,8 +57252,28 @@
         },
         {
           "description": "",
-          "name": "chatRoomPassword",
+          "name": "multiUserChatPassword",
           "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomPassword",
+          "offset": 72,
           "optional": true,
           "type": {
             "elementType": "",
@@ -57241,7 +57283,7 @@
         {
           "description": "",
           "name": "multiUserChatJWT",
-          "offset": 52,
+          "offset": 100,
           "optional": true,
           "type": {
             "elementType": "",
@@ -57251,7 +57293,7 @@
       ],
       "name": "LolChampSelectChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 80,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select"
@@ -57616,7 +57658,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 168,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectPlayerSelection",
@@ -57626,7 +57668,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 180,
+          "offset": 228,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectPlayerSelection",
@@ -57636,7 +57678,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 192,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectTradeContract",
@@ -57646,7 +57688,7 @@
         {
           "description": "",
           "name": "pickOrderSwaps",
-          "offset": 204,
+          "offset": 252,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectChampSelectSwapContract",
@@ -57656,7 +57698,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 216,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -57666,7 +57708,7 @@
         {
           "description": "",
           "name": "bans",
-          "offset": 228,
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57676,7 +57718,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 256,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57686,7 +57728,7 @@
         {
           "description": "",
           "name": "isSpectating",
-          "offset": 264,
+          "offset": 312,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57696,7 +57738,7 @@
         {
           "description": "",
           "name": "allowSkinSelection",
-          "offset": 265,
+          "offset": 313,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57706,7 +57748,7 @@
         {
           "description": "",
           "name": "allowDuplicatePicks",
-          "offset": 266,
+          "offset": 314,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57716,7 +57758,7 @@
         {
           "description": "",
           "name": "allowBattleBoost",
-          "offset": 267,
+          "offset": 315,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57726,7 +57768,7 @@
         {
           "description": "",
           "name": "boostableSkinCount",
-          "offset": 268,
+          "offset": 316,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57736,7 +57778,7 @@
         {
           "description": "",
           "name": "allowRerolling",
-          "offset": 272,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57746,7 +57788,7 @@
         {
           "description": "",
           "name": "rerollsRemaining",
-          "offset": 276,
+          "offset": 324,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57756,7 +57798,7 @@
         {
           "description": "",
           "name": "allowLockedEvents",
-          "offset": 280,
+          "offset": 328,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57766,7 +57808,7 @@
         {
           "description": "",
           "name": "lockedEventIndex",
-          "offset": 284,
+          "offset": 332,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57776,56 +57818,6 @@
         {
           "description": "",
           "name": "benchEnabled",
-          "offset": 288,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "benchChampions",
-          "offset": 292,
-          "optional": false,
-          "type": {
-            "elementType": "LolChampSelectBenchChampion",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "entitledFeatureState",
-          "offset": 304,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolChampSelectEntitledFeatureState"
-          }
-        },
-        {
-          "description": "",
-          "name": "counter",
-          "offset": 320,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "recoveryCounter",
-          "offset": 328,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "skipChampionSelect",
           "offset": 336,
           "optional": false,
           "type": {
@@ -57835,8 +57827,58 @@
         },
         {
           "description": "",
+          "name": "benchChampions",
+          "offset": 340,
+          "optional": false,
+          "type": {
+            "elementType": "LolChampSelectBenchChampion",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitledFeatureState",
+          "offset": 352,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolChampSelectEntitledFeatureState"
+          }
+        },
+        {
+          "description": "",
+          "name": "counter",
+          "offset": 368,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "recoveryCounter",
+          "offset": 376,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "skipChampionSelect",
+          "offset": 384,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
           "name": "hasSimultaneousBans",
-          "offset": 337,
+          "offset": 385,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57846,7 +57888,7 @@
         {
           "description": "",
           "name": "hasSimultaneousPicks",
-          "offset": 338,
+          "offset": 386,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57856,7 +57898,7 @@
         {
           "description": "",
           "name": "isCustomGame",
-          "offset": 339,
+          "offset": 387,
           "optional": false,
           "type": {
             "elementType": "",
@@ -57866,7 +57908,7 @@
       ],
       "name": "LolChampSelectChampSelectSession",
       "nameSpace": "",
-      "size": 344,
+      "size": 392,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select"
@@ -59923,7 +59965,7 @@
       "fields": [
         {
           "description": "",
-          "name": "chatRoomName",
+          "name": "multiUserChatId",
           "offset": 0,
           "optional": false,
           "type": {
@@ -59933,8 +59975,28 @@
         },
         {
           "description": "",
-          "name": "chatRoomPassword",
+          "name": "multiUserChatPassword",
           "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomPassword",
+          "offset": 72,
           "optional": true,
           "type": {
             "elementType": "",
@@ -59944,7 +60006,7 @@
         {
           "description": "",
           "name": "multiUserChatJWT",
-          "offset": 52,
+          "offset": 100,
           "optional": true,
           "type": {
             "elementType": "",
@@ -59954,7 +60016,7 @@
       ],
       "name": "LolChampSelectLegacyChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 80,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select-legacy"
@@ -60163,7 +60225,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 160,
+          "offset": 208,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectLegacyChampSelectPlayerSelection",
@@ -60173,7 +60235,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 172,
+          "offset": 220,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectLegacyChampSelectPlayerSelection",
@@ -60183,7 +60245,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 184,
+          "offset": 232,
           "optional": false,
           "type": {
             "elementType": "LolChampSelectLegacyChampSelectTradeContract",
@@ -60193,7 +60255,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 196,
+          "offset": 244,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -60203,7 +60265,7 @@
         {
           "description": "",
           "name": "bans",
-          "offset": 208,
+          "offset": 256,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60213,7 +60275,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 240,
+          "offset": 288,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60223,7 +60285,7 @@
         {
           "description": "",
           "name": "isSpectating",
-          "offset": 248,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60233,7 +60295,7 @@
         {
           "description": "",
           "name": "allowSkinSelection",
-          "offset": 249,
+          "offset": 297,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60243,7 +60305,7 @@
         {
           "description": "",
           "name": "allowBattleBoost",
-          "offset": 250,
+          "offset": 298,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60253,7 +60315,7 @@
         {
           "description": "",
           "name": "allowRerolling",
-          "offset": 251,
+          "offset": 299,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60263,7 +60325,7 @@
         {
           "description": "",
           "name": "rerollsRemaining",
-          "offset": 252,
+          "offset": 300,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60273,7 +60335,7 @@
         {
           "description": "",
           "name": "hasSimultaneousBans",
-          "offset": 256,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60283,7 +60345,7 @@
         {
           "description": "",
           "name": "hasSimultaneousPicks",
-          "offset": 257,
+          "offset": 305,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60293,7 +60355,7 @@
         {
           "description": "",
           "name": "isCustomGame",
-          "offset": 258,
+          "offset": 306,
           "optional": false,
           "type": {
             "elementType": "",
@@ -60303,7 +60365,7 @@
       ],
       "name": "LolChampSelectLegacyChampSelectSession",
       "nameSpace": "",
-      "size": 264,
+      "size": 312,
       "tags": [
         "Plugins",
         "Plugin lol-champ-select-legacy"
@@ -73203,7 +73265,7 @@
         },
         {
           "description": "",
-          "name": "multiUserChatJWT",
+          "name": "invitationId",
           "offset": 116,
           "optional": false,
           "type": {
@@ -73213,7 +73275,7 @@
         },
         {
           "description": "",
-          "name": "invitationId",
+          "name": "multiUserChatId",
           "offset": 140,
           "optional": false,
           "type": {
@@ -73223,8 +73285,28 @@
         },
         {
           "description": "",
-          "name": "key",
+          "name": "multiUserChatPassword",
           "offset": 164,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "key",
+          "offset": 188,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 212,
           "optional": false,
           "type": {
             "elementType": "",
@@ -73234,7 +73316,7 @@
       ],
       "name": "LolClashPlayerChatRoster",
       "nameSpace": "",
-      "size": 192,
+      "size": 240,
       "tags": [
         "Plugins",
         "Plugin lol-clash"
@@ -83854,7 +83936,7 @@
         },
         {
           "description": "",
-          "name": "roomName",
+          "name": "multiUserChatId",
           "offset": 136,
           "optional": false,
           "type": {
@@ -83864,7 +83946,7 @@
         },
         {
           "description": "",
-          "name": "roomPassword",
+          "name": "multiUserChatPassword",
           "offset": 160,
           "optional": false,
           "type": {
@@ -83874,7 +83956,7 @@
         },
         {
           "description": "",
-          "name": "multiUserChatJWT",
+          "name": "roomName",
           "offset": 184,
           "optional": false,
           "type": {
@@ -83884,8 +83966,28 @@
         },
         {
           "description": "",
-          "name": "teams",
+          "name": "roomPassword",
           "offset": 208,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 232,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "teams",
+          "offset": 256,
           "optional": false,
           "type": {
             "elementType": "LolEndOfGameEndOfGameTeam",
@@ -83895,7 +83997,7 @@
         {
           "description": "",
           "name": "localPlayer",
-          "offset": 224,
+          "offset": 272,
           "optional": false,
           "type": {
             "elementType": "",
@@ -83905,7 +84007,7 @@
         {
           "description": "",
           "name": "myTeamStatus",
-          "offset": 528,
+          "offset": 576,
           "optional": false,
           "type": {
             "elementType": "",
@@ -83915,7 +84017,7 @@
         {
           "description": "",
           "name": "leveledUp",
-          "offset": 552,
+          "offset": 600,
           "optional": false,
           "type": {
             "elementType": "",
@@ -83925,7 +84027,7 @@
         {
           "description": "",
           "name": "newSpells",
-          "offset": 556,
+          "offset": 604,
           "optional": false,
           "type": {
             "elementType": "int32",
@@ -83935,7 +84037,7 @@
         {
           "description": "",
           "name": "previousLevel",
-          "offset": 568,
+          "offset": 616,
           "optional": false,
           "type": {
             "elementType": "",
@@ -83945,126 +84047,6 @@
         {
           "description": "",
           "name": "rpEarned",
-          "offset": 576,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "basePoints",
-          "offset": 580,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "battleBoostIpEarned",
-          "offset": 584,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "boostIpEarned",
-          "offset": 588,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "firstWinBonus",
-          "offset": 592,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "ipEarned",
-          "offset": 596,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "ipTotal",
-          "offset": 600,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "boostXpEarned",
-          "offset": 604,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "experienceEarned",
-          "offset": 608,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "experienceTotal",
-          "offset": 612,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "globalBoostXpEarned",
-          "offset": 616,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "loyaltyBoostXpEarned",
-          "offset": 620,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "xbgpBoostXpEarned",
           "offset": 624,
           "optional": false,
           "type": {
@@ -84074,7 +84056,7 @@
         },
         {
           "description": "",
-          "name": "missionsXpEarned",
+          "name": "basePoints",
           "offset": 628,
           "optional": false,
           "type": {
@@ -84084,57 +84066,107 @@
         },
         {
           "description": "",
-          "name": "previousXpTotal",
+          "name": "battleBoostIpEarned",
           "offset": 632,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int32"
           }
         },
         {
           "description": "",
-          "name": "nextLevelXp",
+          "name": "boostIpEarned",
+          "offset": 636,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "firstWinBonus",
           "offset": 640,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int32"
           }
         },
         {
           "description": "",
-          "name": "currentLevel",
+          "name": "ipEarned",
+          "offset": 644,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "ipTotal",
           "offset": 648,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int32"
           }
         },
         {
           "description": "",
-          "name": "preLevelUpExperienceTotal",
+          "name": "boostXpEarned",
+          "offset": 652,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "experienceEarned",
           "offset": 656,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int32"
           }
         },
         {
           "description": "",
-          "name": "preLevelUpNextLevelXp",
+          "name": "experienceTotal",
+          "offset": 660,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "globalBoostXpEarned",
           "offset": 664,
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "uint64"
+            "type": "int32"
           }
         },
         {
           "description": "",
-          "name": "timeUntilNextFirstWinBonus",
+          "name": "loyaltyBoostXpEarned",
+          "offset": 668,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "xbgpBoostXpEarned",
           "offset": 672,
           "optional": false,
           "type": {
@@ -84144,8 +84176,78 @@
         },
         {
           "description": "",
-          "name": "causedEarlySurrender",
+          "name": "missionsXpEarned",
           "offset": 676,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "previousXpTotal",
+          "offset": 680,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "nextLevelXp",
+          "offset": 688,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentLevel",
+          "offset": 696,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "preLevelUpExperienceTotal",
+          "offset": 704,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "preLevelUpNextLevelXp",
+          "offset": 712,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "timeUntilNextFirstWinBonus",
+          "offset": 720,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "causedEarlySurrender",
+          "offset": 724,
           "optional": false,
           "type": {
             "elementType": "",
@@ -84155,7 +84257,7 @@
         {
           "description": "",
           "name": "earlySurrenderAccomplice",
-          "offset": 677,
+          "offset": 725,
           "optional": false,
           "type": {
             "elementType": "",
@@ -84165,7 +84267,7 @@
         {
           "description": "",
           "name": "teamEarlySurrendered",
-          "offset": 678,
+          "offset": 726,
           "optional": false,
           "type": {
             "elementType": "",
@@ -84175,7 +84277,7 @@
         {
           "description": "",
           "name": "gameEndedInEarlySurrender",
-          "offset": 679,
+          "offset": 727,
           "optional": false,
           "type": {
             "elementType": "",
@@ -84185,7 +84287,7 @@
         {
           "description": "",
           "name": "rerollData",
-          "offset": 680,
+          "offset": 728,
           "optional": false,
           "type": {
             "elementType": "",
@@ -84195,7 +84297,7 @@
         {
           "description": "",
           "name": "teamBoost",
-          "offset": 712,
+          "offset": 760,
           "optional": true,
           "type": {
             "elementType": "",
@@ -84205,7 +84307,7 @@
       ],
       "name": "LolEndOfGameEndOfGameStats",
       "nameSpace": "",
-      "size": 808,
+      "size": 856,
       "tags": [
         "Plugins",
         "Plugin lol-end-of-game"
@@ -110825,7 +110927,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomId",
+          "name": "multiUserChatId",
           "offset": 56,
           "optional": false,
           "type": {
@@ -110835,7 +110937,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomKey",
+          "name": "multiUserChatPassword",
           "offset": 80,
           "optional": false,
           "type": {
@@ -110845,7 +110947,7 @@
         },
         {
           "description": "",
-          "name": "multiUserChatJWT",
+          "name": "chatRoomId",
           "offset": 104,
           "optional": false,
           "type": {
@@ -110855,8 +110957,28 @@
         },
         {
           "description": "",
-          "name": "members",
+          "name": "chatRoomKey",
           "offset": 128,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 152,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "members",
+          "offset": 176,
           "optional": false,
           "type": {
             "elementType": "LolLobbyLobbyMember",
@@ -110866,7 +110988,7 @@
         {
           "description": "",
           "name": "localMember",
-          "offset": 144,
+          "offset": 192,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110876,7 +110998,7 @@
         {
           "description": "",
           "name": "invitations",
-          "offset": 272,
+          "offset": 320,
           "optional": false,
           "type": {
             "elementType": "LolLobbyLobbyInvitation",
@@ -110886,7 +111008,7 @@
         {
           "description": "",
           "name": "wasKicked",
-          "offset": 284,
+          "offset": 332,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110896,7 +111018,7 @@
         {
           "description": "",
           "name": "removalReason",
-          "offset": 288,
+          "offset": 336,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110906,7 +111028,7 @@
         {
           "description": "",
           "name": "canStartMatchmaking",
-          "offset": 292,
+          "offset": 340,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110916,7 +111038,7 @@
         {
           "description": "",
           "name": "showPositionSelector",
-          "offset": 293,
+          "offset": 341,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110926,7 +111048,7 @@
         {
           "description": "",
           "name": "showPositionExcluder",
-          "offset": 294,
+          "offset": 342,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110936,7 +111058,7 @@
         {
           "description": "",
           "name": "specifiablePositionPreferences",
-          "offset": 296,
+          "offset": 344,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -110946,7 +111068,7 @@
         {
           "description": "",
           "name": "autoFillEligible",
-          "offset": 308,
+          "offset": 356,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110956,7 +111078,7 @@
         {
           "description": "",
           "name": "customGameLobby",
-          "offset": 312,
+          "offset": 360,
           "optional": true,
           "type": {
             "elementType": "",
@@ -110966,7 +111088,7 @@
         {
           "description": "",
           "name": "isCustom",
-          "offset": 856,
+          "offset": 904,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110976,7 +111098,7 @@
         {
           "description": "",
           "name": "autoFillProtectedForStreaking",
-          "offset": 857,
+          "offset": 905,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110986,7 +111108,7 @@
         {
           "description": "",
           "name": "autoFillProtectedForPromos",
-          "offset": 858,
+          "offset": 906,
           "optional": false,
           "type": {
             "elementType": "",
@@ -110996,7 +111118,7 @@
         {
           "description": "",
           "name": "isTeamBuilderManaged",
-          "offset": 859,
+          "offset": 907,
           "optional": false,
           "type": {
             "elementType": "",
@@ -111006,7 +111128,7 @@
         {
           "description": "",
           "name": "maximumParticipantListSize",
-          "offset": 860,
+          "offset": 908,
           "optional": false,
           "type": {
             "elementType": "",
@@ -111016,7 +111138,7 @@
         {
           "description": "",
           "name": "premadeSizeAllowed",
-          "offset": 864,
+          "offset": 912,
           "optional": false,
           "type": {
             "elementType": "",
@@ -111026,7 +111148,7 @@
         {
           "description": "",
           "name": "requiredPositionCoverageMet",
-          "offset": 865,
+          "offset": 913,
           "optional": false,
           "type": {
             "elementType": "",
@@ -111036,7 +111158,7 @@
         {
           "description": "",
           "name": "allowablePremadeSizes",
-          "offset": 868,
+          "offset": 916,
           "optional": false,
           "type": {
             "elementType": "int32",
@@ -111046,7 +111168,7 @@
         {
           "description": "",
           "name": "queueAvailability",
-          "offset": 880,
+          "offset": 928,
           "optional": false,
           "type": {
             "elementType": "",
@@ -111056,7 +111178,7 @@
       ],
       "name": "LolLobbyLobby",
       "nameSpace": "",
-      "size": 888,
+      "size": 936,
       "tags": [
         "Plugins",
         "Plugin lol-lobby"
@@ -111866,7 +111988,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomId",
+          "name": "multiUserChatId",
           "offset": 492,
           "optional": false,
           "type": {
@@ -111876,7 +111998,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomKey",
+          "name": "multiUserChatPassword",
           "offset": 516,
           "optional": false,
           "type": {
@@ -111886,7 +112008,7 @@
         },
         {
           "description": "",
-          "name": "multiUserChatJWT",
+          "name": "chatRoomId",
           "offset": 540,
           "optional": false,
           "type": {
@@ -111896,8 +112018,28 @@
         },
         {
           "description": "",
-          "name": "scarcePositions",
+          "name": "chatRoomKey",
           "offset": 564,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "multiUserChatJWT",
+          "offset": 588,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scarcePositions",
+          "offset": 612,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -111907,7 +112049,7 @@
       ],
       "name": "LolLobbyLobbyDto",
       "nameSpace": "",
-      "size": 576,
+      "size": 624,
       "tags": [
         "Plugins",
         "Plugin lol-lobby"
@@ -116984,7 +117126,7 @@
       "fields": [
         {
           "description": "",
-          "name": "chatRoomName",
+          "name": "multiUserChatId",
           "offset": 0,
           "optional": false,
           "type": {
@@ -116994,8 +117136,28 @@
         },
         {
           "description": "",
-          "name": "chatRoomPassword",
+          "name": "multiUserChatPassword",
           "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomPassword",
+          "offset": 72,
           "optional": true,
           "type": {
             "elementType": "",
@@ -117005,7 +117167,7 @@
         {
           "description": "",
           "name": "multiUserChatJWT",
-          "offset": 52,
+          "offset": 100,
           "optional": true,
           "type": {
             "elementType": "",
@@ -117015,7 +117177,7 @@
       ],
       "name": "LolLobbyTeamBuilderChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 80,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-lobby-team-builder"
@@ -117473,7 +117635,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 168,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderChampSelectPlayerSelection",
@@ -117483,7 +117645,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 180,
+          "offset": 228,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderChampSelectPlayerSelection",
@@ -117493,7 +117655,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 192,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderChampSelectTradeContract",
@@ -117503,7 +117665,7 @@
         {
           "description": "",
           "name": "pickOrderSwaps",
-          "offset": 204,
+          "offset": 252,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderChampSelectSwapContract",
@@ -117513,7 +117675,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 216,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -117523,7 +117685,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 232,
+          "offset": 280,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117533,7 +117695,7 @@
         {
           "description": "",
           "name": "allowSkinSelection",
-          "offset": 240,
+          "offset": 288,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117543,7 +117705,7 @@
         {
           "description": "",
           "name": "allowDuplicatePicks",
-          "offset": 241,
+          "offset": 289,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117553,7 +117715,7 @@
         {
           "description": "",
           "name": "allowBattleBoost",
-          "offset": 242,
+          "offset": 290,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117563,7 +117725,7 @@
         {
           "description": "",
           "name": "boostableSkinCount",
-          "offset": 244,
+          "offset": 292,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117573,7 +117735,7 @@
         {
           "description": "",
           "name": "allowRerolling",
-          "offset": 248,
+          "offset": 296,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117583,7 +117745,7 @@
         {
           "description": "",
           "name": "rerollsRemaining",
-          "offset": 252,
+          "offset": 300,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117593,7 +117755,7 @@
         {
           "description": "",
           "name": "allowLockedEvents",
-          "offset": 256,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117603,7 +117765,7 @@
         {
           "description": "",
           "name": "lockedEventIndex",
-          "offset": 260,
+          "offset": 308,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117613,56 +117775,6 @@
         {
           "description": "",
           "name": "benchEnabled",
-          "offset": 264,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "benchChampions",
-          "offset": 268,
-          "optional": false,
-          "type": {
-            "elementType": "LolLobbyTeamBuilderBenchChampion",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "entitledFeatureState",
-          "offset": 280,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "LolLobbyTeamBuilderEntitledFeatureState"
-          }
-        },
-        {
-          "description": "",
-          "name": "counter",
-          "offset": 296,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "recoveryCounter",
-          "offset": 304,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        },
-        {
-          "description": "",
-          "name": "skipChampionSelect",
           "offset": 312,
           "optional": false,
           "type": {
@@ -117672,8 +117784,58 @@
         },
         {
           "description": "",
+          "name": "benchChampions",
+          "offset": 316,
+          "optional": false,
+          "type": {
+            "elementType": "LolLobbyTeamBuilderBenchChampion",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitledFeatureState",
+          "offset": 328,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolLobbyTeamBuilderEntitledFeatureState"
+          }
+        },
+        {
+          "description": "",
+          "name": "counter",
+          "offset": 344,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "recoveryCounter",
+          "offset": 352,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        },
+        {
+          "description": "",
+          "name": "skipChampionSelect",
+          "offset": 360,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
           "name": "isSpectating",
-          "offset": 313,
+          "offset": 361,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117683,7 +117845,7 @@
         {
           "description": "",
           "name": "hasSimultaneousBans",
-          "offset": 314,
+          "offset": 362,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117693,7 +117855,7 @@
         {
           "description": "",
           "name": "hasSimultaneousPicks",
-          "offset": 315,
+          "offset": 363,
           "optional": false,
           "type": {
             "elementType": "",
@@ -117703,7 +117865,7 @@
       ],
       "name": "LolLobbyTeamBuilderChampSelectSession",
       "nameSpace": "",
-      "size": 320,
+      "size": 368,
       "tags": [
         "Plugins",
         "Plugin lol-lobby-team-builder"
@@ -118662,7 +118824,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomId",
+          "name": "multiUserChatId",
           "offset": 28,
           "optional": false,
           "type": {
@@ -118672,7 +118834,7 @@
         },
         {
           "description": "",
-          "name": "chatRoomKey",
+          "name": "multiUserChatPassword",
           "offset": 52,
           "optional": false,
           "type": {
@@ -118682,8 +118844,28 @@
         },
         {
           "description": "",
-          "name": "members",
+          "name": "chatRoomId",
           "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomKey",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "members",
+          "offset": 124,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderLobbyMember",
@@ -118693,7 +118875,7 @@
         {
           "description": "",
           "name": "localMember",
-          "offset": 88,
+          "offset": 136,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118703,7 +118885,7 @@
         {
           "description": "",
           "name": "invitations",
-          "offset": 184,
+          "offset": 232,
           "optional": false,
           "type": {
             "elementType": "LolLobbyTeamBuilderLobbyInvitation",
@@ -118713,7 +118895,7 @@
         {
           "description": "",
           "name": "wasKicked",
-          "offset": 196,
+          "offset": 244,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118723,7 +118905,7 @@
         {
           "description": "",
           "name": "removalReason",
-          "offset": 200,
+          "offset": 248,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118733,7 +118915,7 @@
         {
           "description": "",
           "name": "canStartMatchmaking",
-          "offset": 204,
+          "offset": 252,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118743,7 +118925,7 @@
         {
           "description": "",
           "name": "showPositionSelector",
-          "offset": 205,
+          "offset": 253,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118753,7 +118935,7 @@
         {
           "description": "",
           "name": "showPositionExcluder",
-          "offset": 206,
+          "offset": 254,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118763,7 +118945,7 @@
         {
           "description": "",
           "name": "specifiablePositionPreferences",
-          "offset": 208,
+          "offset": 256,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -118773,7 +118955,7 @@
         {
           "description": "",
           "name": "autoFillEligible",
-          "offset": 220,
+          "offset": 268,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118783,7 +118965,7 @@
         {
           "description": "",
           "name": "autoFillProtectedForStreaking",
-          "offset": 221,
+          "offset": 269,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118793,7 +118975,7 @@
         {
           "description": "",
           "name": "autoFillProtectedForPromos",
-          "offset": 222,
+          "offset": 270,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118803,7 +118985,7 @@
         {
           "description": "",
           "name": "isTeamBuilderManaged",
-          "offset": 223,
+          "offset": 271,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118813,7 +118995,7 @@
         {
           "description": "",
           "name": "premadeSizeAllowed",
-          "offset": 224,
+          "offset": 272,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118823,7 +119005,7 @@
         {
           "description": "",
           "name": "requiredPositionCoverageMet",
-          "offset": 225,
+          "offset": 273,
           "optional": false,
           "type": {
             "elementType": "",
@@ -118833,7 +119015,7 @@
         {
           "description": "",
           "name": "allowablePremadeSizes",
-          "offset": 228,
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "int32",
@@ -118843,7 +119025,7 @@
       ],
       "name": "LolLobbyTeamBuilderLobby",
       "nameSpace": "",
-      "size": 240,
+      "size": 288,
       "tags": [
         "Plugins",
         "Plugin lol-lobby-team-builder"
@@ -138903,7 +139085,7 @@
       "fields": [
         {
           "description": "",
-          "name": "chatRoomName",
+          "name": "multiUserChatId",
           "offset": 0,
           "optional": false,
           "type": {
@@ -138913,8 +139095,28 @@
         },
         {
           "description": "",
-          "name": "chatRoomPassword",
+          "name": "multiUserChatPassword",
           "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomName",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "chatRoomPassword",
+          "offset": 72,
           "optional": true,
           "type": {
             "elementType": "",
@@ -138924,7 +139126,7 @@
         {
           "description": "",
           "name": "multiUserChatJWT",
-          "offset": 52,
+          "offset": 100,
           "optional": true,
           "type": {
             "elementType": "",
@@ -138934,7 +139136,7 @@
       ],
       "name": "LolPerksChampSelectChatRoomDetails",
       "nameSpace": "",
-      "size": 80,
+      "size": 128,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -139133,7 +139335,7 @@
         {
           "description": "",
           "name": "myTeam",
-          "offset": 168,
+          "offset": 216,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectPlayerSelection",
@@ -139143,7 +139345,7 @@
         {
           "description": "",
           "name": "theirTeam",
-          "offset": 180,
+          "offset": 228,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectPlayerSelection",
@@ -139153,7 +139355,7 @@
         {
           "description": "",
           "name": "trades",
-          "offset": 192,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "LolPerksChampSelectTradeContract",
@@ -139163,7 +139365,7 @@
         {
           "description": "",
           "name": "actions",
-          "offset": 216,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "object",
@@ -139173,7 +139375,7 @@
         {
           "description": "",
           "name": "bans",
-          "offset": 228,
+          "offset": 276,
           "optional": false,
           "type": {
             "elementType": "",
@@ -139183,7 +139385,7 @@
         {
           "description": "",
           "name": "localPlayerCellId",
-          "offset": 256,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -139193,7 +139395,7 @@
         {
           "description": "",
           "name": "isSpectating",
-          "offset": 264,
+          "offset": 312,
           "optional": false,
           "type": {
             "elementType": "",
@@ -139203,7 +139405,7 @@
       ],
       "name": "LolPerksChampSelectSession",
       "nameSpace": "",
-      "size": 344,
+      "size": 392,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
@@ -139735,39 +139937,6 @@
       "name": "LolPerksGetGameCustomizationDTO",
       "nameSpace": "",
       "size": 24,
-      "tags": [
-        "Plugins",
-        "Plugin lol-perks"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "error",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "result",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "LolPerksGetResultFromServiceDTO",
-      "nameSpace": "",
-      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-perks"
