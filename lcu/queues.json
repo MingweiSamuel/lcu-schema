@@ -5922,7 +5922,7 @@
     "id": 1170,
     "isRanked": false,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 0,
+    "lastToggledOffTime": 1676313598070,
     "lastToggledOnTime": 1673549134399,
     "mapId": 22,
     "maxDivisionForPremadeSize2": "",
@@ -5932,7 +5932,7 @@
     "minimumParticipantListSize": 1,
     "name": "Teamfight Tactics (Fortune's Favor)",
     "numPlayersPerTeam": 8,
-    "queueAvailability": "Available",
+    "queueAvailability": "PlatformDisabled",
     "queueRewards": {
       "isChampionPointsEnabled": false,
       "isIpEnabled": true,
