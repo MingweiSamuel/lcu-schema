@@ -684,6 +684,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_lol-content-targeting_v1_filters",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_lol-cosmetics_v1_inventories",
       "nameSpace": "",
       "tags": [],
@@ -1495,6 +1505,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-npe-rewards_v1_level-rewards",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-npe-rewards_v1_login-rewards",
       "nameSpace": "",
       "tags": [],
       "type": {
@@ -11665,6 +11685,16 @@
     {
       "description": "",
       "name": "OnJsonApiEvent_lol-platform-config_v1_namespaces_WardSkinConfig_WardSkinSelection",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
+      "name": "OnJsonApiEvent_lol-player-behavior_v1_code-of-conduct-notification",
       "nameSpace": "",
       "tags": [],
       "type": {
