@@ -504,16 +504,6 @@
     },
     {
       "description": "",
-      "name": "OnJsonApiEvent_lol-chat_v1_obfuscated-summoner-ids",
-      "nameSpace": "",
-      "tags": [],
-      "type": {
-        "elementType": "",
-        "type": "PluginResourceEvent"
-      }
-    },
-    {
-      "description": "",
       "name": "OnJsonApiEvent_lol-chat_v1_resources",
       "nameSpace": "",
       "tags": [],
@@ -14857,7 +14847,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "ClientConfigConfigType"
+            "type": "string"
           }
         },
         {
@@ -14912,13 +14902,13 @@
       "name": "GetClientConfigV1Config",
       "nameSpace": "",
       "returns": {
-        "elementType": "object",
-        "type": "map"
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -14939,7 +14929,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "ClientConfigConfigType"
+            "type": "string"
           }
         },
         {
@@ -14991,7 +14981,7 @@
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -15003,7 +14993,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "ClientConfigConfigType"
+            "type": "string"
           }
         }
       ],
@@ -15014,12 +15004,12 @@
       "nameSpace": "",
       "returns": {
         "elementType": "",
-        "type": "ClientConfigConfigStatus"
+        "type": "RgaClientConfigConfigStatus"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -15047,7 +15037,7 @@
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -15069,13 +15059,13 @@
       "name": "GetClientConfigV2NamespaceByNamespace",
       "nameSpace": "",
       "returns": {
-        "elementType": "object",
-        "type": "map"
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -15097,13 +15087,13 @@
       "name": "GetClientConfigV2NamespaceByNamespacePlayer",
       "nameSpace": "",
       "returns": {
-        "elementType": "object",
-        "type": "map"
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -15125,13 +15115,13 @@
       "name": "GetClientConfigV2NamespaceByNamespacePublic",
       "nameSpace": "",
       "returns": {
-        "elementType": "object",
-        "type": "map"
+        "elementType": "",
+        "type": "object"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin client-config"
+        "Plugin rga-client-config"
       ],
       "threadSafe": false
     },
@@ -39261,80 +39251,6 @@
       "arguments": [
         {
           "description": "",
-          "name": "update",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigEntitlementsUpdate"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutClientConfigV1EntitlementsToken",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutClientConfigV1RefreshConfigStatus",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "namespaces",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigConfigNamespaceUpdate"
-          }
-        }
-      ],
-      "async": "",
-      "description": "",
-      "help": "",
-      "name": "PutClientConfigV2NamespaceChanges",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
           "name": "flag",
           "optional": false,
           "type": {
@@ -44227,458 +44143,6 @@
       "fields": [
         {
           "description": "",
-          "name": "connectionId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        },
-        {
-          "description": "",
-          "name": "subscribed",
-          "offset": 4,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "authToken",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "ClientConfigAuthenticatedConnection",
-      "nameSpace": "",
-      "size": 32,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "contentBuildId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "codeBuildId",
-          "offset": 4,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "gameDataBuildId",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int32"
-          }
-        },
-        {
-          "description": "",
-          "name": "branch",
-          "offset": 12,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "branchFull",
-          "offset": 36,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "gameBranch",
-          "offset": 60,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "gameBranchFull",
-          "offset": 84,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchline",
-          "offset": 108,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "version",
-          "offset": 132,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchlineVisibleName",
-          "offset": 156,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "ClientConfigBuildInfo",
-      "nameSpace": "",
-      "size": 180,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "params",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigConfigParams"
-          }
-        },
-        {
-          "description": "",
-          "name": "data",
-          "offset": 124,
-          "optional": false,
-          "type": {
-            "elementType": "object",
-            "type": "map"
-          }
-        },
-        {
-          "description": "",
-          "name": "updateTime",
-          "offset": 160,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        }
-      ],
-      "name": "ClientConfigClientConfig",
-      "nameSpace": "",
-      "size": 168,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "public",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        },
-        {
-          "description": "",
-          "name": "player",
-          "offset": 12,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        }
-      ],
-      "name": "ClientConfigConfigNamespaceUpdate",
-      "nameSpace": "",
-      "size": 24,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "type",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigConfigType"
-          }
-        },
-        {
-          "description": "",
-          "name": "appName",
-          "offset": 4,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "version",
-          "offset": 28,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchline",
-          "offset": 52,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "region",
-          "offset": 76,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "namespace",
-          "offset": 100,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "ClientConfigConfigParams",
-      "nameSpace": "",
-      "size": 124,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [],
-      "name": "ClientConfigConfigReadinessEnum",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": [
-        {
-          "description": "",
-          "name": "Disabled",
-          "value": 2
-        },
-        {
-          "description": "",
-          "name": "NotReady",
-          "value": 0
-        },
-        {
-          "description": "",
-          "name": "Ready",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "readiness",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigConfigReadinessEnum"
-          }
-        },
-        {
-          "description": "",
-          "name": "updateId",
-          "offset": 8,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      ],
-      "name": "ClientConfigConfigStatus",
-      "nameSpace": "",
-      "size": 16,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [],
-      "name": "ClientConfigConfigType",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": [
-        {
-          "description": "",
-          "name": "player",
-          "value": 1
-        },
-        {
-          "description": "",
-          "name": "public",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "userDataRoot",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "configRoot",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "dataRoot",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "localSettingsPath",
-          "offset": 72,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "privateSettingsPath",
-          "offset": 96,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "ClientConfigDataPaths",
-      "nameSpace": "",
-      "size": 120,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
           "name": "accessToken",
           "offset": 0,
           "optional": false,
@@ -44779,193 +44243,6 @@
       "tags": [
         "Plugins",
         "Plugin client-config-dep-injector"
-      ],
-      "values": [
-        {
-          "description": "",
-          "name": "Create",
-          "value": 0
-        },
-        {
-          "description": "",
-          "name": "Delete",
-          "value": 2
-        },
-        {
-          "description": "",
-          "name": "Update",
-          "value": 1
-        }
-      ]
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "accessToken",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "token",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "subject",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "issuer",
-          "offset": 72,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "entitlements",
-          "offset": 96,
-          "optional": false,
-          "type": {
-            "elementType": "string",
-            "type": "vector"
-          }
-        }
-      ],
-      "name": "ClientConfigEntitlements",
-      "nameSpace": "",
-      "size": 108,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "UpdateType",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigUpdateType"
-          }
-        },
-        {
-          "description": "",
-          "name": "EntitlementsTokenResource",
-          "offset": 4,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "ClientConfigEntitlements"
-          }
-        }
-      ],
-      "name": "ClientConfigEntitlementsUpdate",
-      "nameSpace": "",
-      "size": 112,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "productId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchlineId",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "version",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "isInternal",
-          "offset": 72,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "bool"
-          }
-        },
-        {
-          "description": "",
-          "name": "connections",
-          "offset": 76,
-          "optional": false,
-          "type": {
-            "elementType": "ClientConfigAuthenticatedConnection",
-            "type": "vector"
-          }
-        }
-      ],
-      "name": "ClientConfigSession",
-      "nameSpace": "",
-      "size": 88,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [],
-      "name": "ClientConfigUpdateType",
-      "nameSpace": "",
-      "size": 4,
-      "tags": [
-        "Plugins",
-        "Plugin client-config"
       ],
       "values": [
         {
@@ -65754,7 +65031,7 @@
         },
         {
           "description": "",
-          "name": "multiUserChatJWT",
+          "name": "targetRegion",
           "offset": 216,
           "optional": false,
           "type": {
@@ -65764,18 +65041,8 @@
         },
         {
           "description": "",
-          "name": "targetRegion",
-          "offset": 240,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
           "name": "isMuted",
-          "offset": 264,
+          "offset": 240,
           "optional": false,
           "type": {
             "elementType": "",
@@ -65785,7 +65052,7 @@
         {
           "description": "",
           "name": "unreadMessageCount",
-          "offset": 272,
+          "offset": 248,
           "optional": false,
           "type": {
             "elementType": "",
@@ -65795,7 +65062,7 @@
         {
           "description": "",
           "name": "lastMessage",
-          "offset": 288,
+          "offset": 264,
           "optional": true,
           "type": {
             "elementType": "",
@@ -65805,7 +65072,7 @@
       ],
       "name": "LolChatConversationResource",
       "nameSpace": "",
-      "size": 568,
+      "size": 544,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -68614,49 +67881,6 @@
       "name": "LolChatMultiGamePresenceUpdate",
       "nameSpace": "",
       "size": 312,
-      "tags": [
-        "Plugins",
-        "Plugin lol-chat"
-      ],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "typ",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "tgt",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "chn",
-          "offset": 48,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "LolChatMultiUserChatJWTPayload",
-      "nameSpace": "",
-      "size": 72,
       "tags": [
         "Plugins",
         "Plugin lol-chat"
@@ -81353,6 +80577,295 @@
         },
         {
           "description": "",
+          "name": "description",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loadoutsIcon",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "owned",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "selected",
+          "offset": 101,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 102,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 103,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rarityValue",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 108,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolCosmeticsCosmeticsTFTPlaybook",
+      "nameSpace": "",
+      "size": 144,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "name",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolCosmeticsCosmeticsTFTPlaybookAugment",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "contentId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "description",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loadoutsIcon",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "owned",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "selected",
+          "offset": 101,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyalty",
+          "offset": 102,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "f2p",
+          "offset": 103,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "rarityValue",
+          "offset": 104,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "purchaseDate",
+          "offset": 108,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isRecentItem",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "augments",
+          "offset": 136,
+          "optional": false,
+          "type": {
+            "elementType": "LolCosmeticsCosmeticsTFTPlaybookAugment",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolCosmeticsCosmeticsTFTPlaybookViewModel",
+      "nameSpace": "",
+      "size": 148,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "contentId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
           "name": "loadoutsIcon",
           "offset": 52,
           "optional": false,
@@ -81445,6 +80958,52 @@
       "name": "LolCosmeticsGameDataCompanion",
       "nameSpace": "",
       "size": 176,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        }
+      ],
+      "name": "LolCosmeticsGameDataTFTCosmeticsDefaultItem",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "playbook",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolCosmeticsGameDataTFTCosmeticsDefaultItem"
+          }
+        }
+      ],
+      "name": "LolCosmeticsGameDataTFTCosmeticsDefaults",
+      "nameSpace": "",
+      "size": 4,
       "tags": [
         "Plugins",
         "Plugin lol-cosmetics"
@@ -81641,6 +81200,89 @@
       "name": "LolCosmeticsGameDataTFTMapSkin",
       "nameSpace": "",
       "size": 132,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "contentId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "itemId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "name",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "description",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "translatedName",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "loadoutsIcon",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "augments",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "LolCosmeticsCosmeticsTFTPlaybookAugment",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolCosmeticsGameDataTFTPlaybook",
+      "nameSpace": "",
+      "size": 136,
       "tags": [
         "Plugins",
         "Plugin lol-cosmetics"
@@ -81982,6 +81624,112 @@
       "name": "LolCosmeticsTFTMapSkinGroupedViewModel",
       "nameSpace": "",
       "size": 180,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "groupName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "groupId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "numOwned",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "numAvailable",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "items",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "LolCosmeticsCosmeticsTFTPlaybookViewModel",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolCosmeticsTFTPlaybookGroupViewModel",
+      "nameSpace": "",
+      "size": 48,
+      "tags": [
+        "Plugins",
+        "Plugin lol-cosmetics"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "selectedLoadoutItem",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "LolCosmeticsCosmeticsTFTPlaybookViewModel"
+          }
+        },
+        {
+          "description": "",
+          "name": "defaultItemId",
+          "offset": 148,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "groups",
+          "offset": 152,
+          "optional": false,
+          "type": {
+            "elementType": "LolCosmeticsTFTPlaybookGroupViewModel",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolCosmeticsTFTPlaybookGroupedViewModel",
+      "nameSpace": "",
+      "size": 164,
       "tags": [
         "Plugins",
         "Plugin lol-cosmetics"
@@ -87834,6 +87582,49 @@
       "fields": [
         {
           "description": "",
+          "name": "patch",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "activationDate",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "offers",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopOffer",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "LolEventShopContentDrop",
+      "nameSpace": "",
+      "size": 36,
+      "tags": [
+        "Plugins",
+        "Plugin lol-event-shop"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "id",
           "offset": 0,
           "optional": false,
@@ -88346,7 +88137,7 @@
         {
           "description": "",
           "name": "rewardTrack",
-          "offset": 252,
+          "offset": 264,
           "optional": false,
           "type": {
             "elementType": "",
@@ -88356,7 +88147,7 @@
       ],
       "name": "LolEventShopEventShop",
       "nameSpace": "",
-      "size": 276,
+      "size": 288,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -90321,8 +90112,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -90332,7 +90133,7 @@
       ],
       "name": "LolEventShopLoyaltyRewards",
       "nameSpace": "",
-      "size": 108,
+      "size": 112,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -90424,8 +90225,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 52,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -90435,7 +90246,7 @@
       ],
       "name": "LolEventShopLoyaltyRewardsSimplified",
       "nameSpace": "",
-      "size": 80,
+      "size": 84,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -90511,7 +90322,7 @@
         {
           "description": "",
           "name": "reloadInventory",
-          "offset": 84,
+          "offset": 88,
           "optional": false,
           "type": {
             "elementType": "",
@@ -90521,7 +90332,7 @@
       ],
       "name": "LolEventShopLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 88,
+      "size": 92,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -93806,7 +93617,7 @@
           "offset": 176,
           "optional": false,
           "type": {
-            "elementType": "string",
+            "elementType": "object",
             "type": "map"
           }
         }
@@ -94081,8 +93892,18 @@
         },
         {
           "description": "",
-          "name": "tokenBundlesCatalogEntry",
+          "name": "contentDrops",
           "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "LolEventShopContentDrop",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "tokenBundlesCatalogEntry",
+          "offset": 60,
           "optional": false,
           "type": {
             "elementType": "LolEventShopCatalogEntry",
@@ -94092,7 +93913,7 @@
       ],
       "name": "LolEventShopTokenShop",
       "nameSpace": "",
-      "size": 60,
+      "size": 72,
       "tags": [
         "Plugins",
         "Plugin lol-event-shop"
@@ -97307,6 +97128,59 @@
       "name": "LolGameflowGameModeSpellList",
       "nameSpace": "",
       "size": 12,
+      "tags": [
+        "Plugins",
+        "Plugin lol-gameflow"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameState",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameType",
+          "offset": 20,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "errorMessage",
+          "offset": 32,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "LolGameflowGameStateUpdate",
+      "nameSpace": "",
+      "size": 48,
       "tags": [
         "Plugins",
         "Plugin lol-gameflow"
@@ -104377,8 +104251,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -104388,7 +104272,7 @@
       ],
       "name": "LolInventoryLoyaltyRewards",
       "nameSpace": "",
-      "size": 108,
+      "size": 112,
       "tags": [
         "Plugins",
         "Plugin lol-inventory"
@@ -104480,8 +104364,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 52,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -104491,7 +104385,7 @@
       ],
       "name": "LolInventoryLoyaltyRewardsSimplified",
       "nameSpace": "",
-      "size": 80,
+      "size": 84,
       "tags": [
         "Plugins",
         "Plugin lol-inventory"
@@ -104567,7 +104461,7 @@
         {
           "description": "",
           "name": "reloadInventory",
-          "offset": 84,
+          "offset": 88,
           "optional": false,
           "type": {
             "elementType": "",
@@ -104577,7 +104471,7 @@
       ],
       "name": "LolInventoryLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 88,
+      "size": 92,
       "tags": [
         "Plugins",
         "Plugin lol-inventory"
@@ -126863,7 +126757,7 @@
           "offset": 176,
           "optional": false,
           "type": {
-            "elementType": "string",
+            "elementType": "object",
             "type": "map"
           }
         }
@@ -127644,8 +127538,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 80,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 84,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -127655,7 +127559,7 @@
       ],
       "name": "LolLoyaltyLoyaltyRewards",
       "nameSpace": "",
-      "size": 112,
+      "size": 116,
       "tags": [
         "Plugins",
         "Plugin lol-loyalty"
@@ -127757,8 +127661,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 56,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -127768,7 +127682,7 @@
       ],
       "name": "LolLoyaltyLoyaltyRewardsSimplified",
       "nameSpace": "",
-      "size": 84,
+      "size": 88,
       "tags": [
         "Plugins",
         "Plugin lol-loyalty"
@@ -127844,7 +127758,7 @@
         {
           "description": "",
           "name": "reloadInventory",
-          "offset": 88,
+          "offset": 92,
           "optional": false,
           "type": {
             "elementType": "",
@@ -127854,7 +127768,7 @@
       ],
       "name": "LolLoyaltyLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 92,
+      "size": 96,
       "tags": [
         "Plugins",
         "Plugin lol-loyalty"
@@ -158018,7 +157932,7 @@
           "offset": 176,
           "optional": false,
           "type": {
-            "elementType": "string",
+            "elementType": "object",
             "type": "map"
           }
         }
@@ -169915,8 +169829,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 80,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -169926,7 +169850,7 @@
       ],
       "name": "LolYourshopLoyaltyRewards",
       "nameSpace": "",
-      "size": 108,
+      "size": 112,
       "tags": [
         "Plugins",
         "Plugin lol-yourshop"
@@ -170018,8 +169942,18 @@
         },
         {
           "description": "",
-          "name": "loyaltySources",
+          "name": "loyaltyTFTDamageSkinCount",
           "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "loyaltySources",
+          "offset": 52,
           "optional": false,
           "type": {
             "elementType": "bool",
@@ -170029,7 +169963,7 @@
       ],
       "name": "LolYourshopLoyaltyRewardsSimplified",
       "nameSpace": "",
-      "size": 80,
+      "size": 84,
       "tags": [
         "Plugins",
         "Plugin lol-yourshop"
@@ -170105,7 +170039,7 @@
         {
           "description": "",
           "name": "reloadInventory",
-          "offset": 84,
+          "offset": 88,
           "optional": false,
           "type": {
             "elementType": "",
@@ -170115,7 +170049,7 @@
       ],
       "name": "LolYourshopLoyaltyStatusNotification",
       "nameSpace": "",
-      "size": 88,
+      "size": 92,
       "tags": [
         "Plugins",
         "Plugin lol-yourshop"
@@ -177348,7 +177282,7 @@
         },
         {
           "description": "",
-          "name": "orderWADFileMounted",
+          "name": "orderWadFileMounted",
           "offset": 236,
           "optional": false,
           "type": {
@@ -178418,6 +178352,39 @@
       "nameSpace": "",
       "size": 28,
       "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "readiness",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "updateId",
+          "offset": 16,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "RgaClientConfigConfigStatus",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin rga-client-config"
+      ],
       "values": []
     },
     {
@@ -182597,16 +182564,6 @@
           "description": "",
           "name": "physicalProcessorCores",
           "offset": 104,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint32"
-          }
-        },
-        {
-          "description": "",
-          "name": "processorSpeed",
-          "offset": 108,
           "optional": false,
           "type": {
             "elementType": "",

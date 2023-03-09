@@ -2538,8 +2538,8 @@
     "id": 1100,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677657602898,
-    "lastToggledOnTime": 1677676178523,
+    "lastToggledOffTime": 1678267804071,
+    "lastToggledOnTime": 1678278698419,
     "mapId": 22,
     "maxDivisionForPremadeSize2": "I",
     "maxTierForPremadeSize2": "DIAMOND",
@@ -3173,8 +3173,8 @@
     "id": 860,
     "isRanked": false,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677676409007,
-    "lastToggledOnTime": 1677676182392,
+    "lastToggledOffTime": 1678278642375,
+    "lastToggledOnTime": 1678274793308,
     "mapId": 12,
     "maxDivisionForPremadeSize2": "",
     "maxTierForPremadeSize2": "",
@@ -3624,8 +3624,8 @@
     "id": 1130,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677657603801,
-    "lastToggledOnTime": 1677681314672,
+    "lastToggledOffTime": 1678267805100,
+    "lastToggledOnTime": 1678278699321,
     "mapId": 22,
     "maxDivisionForPremadeSize2": "",
     "maxTierForPremadeSize2": "",
@@ -5147,8 +5147,8 @@
     "id": 1160,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677657604741,
-    "lastToggledOnTime": 1677681298612,
+    "lastToggledOffTime": 1678267806072,
+    "lastToggledOnTime": 1678278697506,
     "mapId": 22,
     "maxDivisionForPremadeSize2": "",
     "maxTierForPremadeSize2": "",
@@ -6193,7 +6193,7 @@
     "shortName": "1v0 (Fortune's Favor)",
     "showPositionSelector": false,
     "spectatorEnabled": false,
-    "type": "NORMAL_TFT"
+    "type": "LNY23_TFT"
   },
   {
     "allowablePremadeSizes": [
@@ -6256,7 +6256,7 @@
     "shortName": "2v0 (Fortune's Favor)",
     "showPositionSelector": false,
     "spectatorEnabled": false,
-    "type": "NORMAL_TFT"
+    "type": "LNY23_TFT"
   },
   {
     "allowablePremadeSizes": [
@@ -6318,7 +6318,7 @@
     "shortName": "1v7 Bots (Fortune's Favor)",
     "showPositionSelector": false,
     "spectatorEnabled": false,
-    "type": "NORMAL_TFT"
+    "type": "LNY23_TFT"
   },
   {
     "allowablePremadeSizes": [
@@ -7188,8 +7188,8 @@
     "id": 420,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677657601984,
-    "lastToggledOnTime": 1677676174741,
+    "lastToggledOffTime": 1678267803107,
+    "lastToggledOnTime": 1678278696602,
     "mapId": 11,
     "maxDivisionForPremadeSize2": "I",
     "maxTierForPremadeSize2": "DIAMOND",
@@ -7339,7 +7339,8 @@
   },
   {
     "allowablePremadeSizes": [
-      1
+      1,
+      2
     ],
     "areFreeChampionsAllowed": true,
     "assetMutator": "",
@@ -7380,7 +7381,7 @@
     "mapId": 21,
     "maxDivisionForPremadeSize2": "",
     "maxTierForPremadeSize2": "",
-    "maximumParticipantListSize": 1,
+    "maximumParticipantListSize": 2,
     "minLevel": 0,
     "minimumParticipantListSize": 1,
     "name": "",
@@ -8237,8 +8238,8 @@
     "id": 440,
     "isRanked": true,
     "isTeamBuilderManaged": true,
-    "lastToggledOffTime": 1677657601085,
-    "lastToggledOnTime": 1677676176628,
+    "lastToggledOffTime": 1678267801477,
+    "lastToggledOnTime": 1678278695182,
     "mapId": 11,
     "maxDivisionForPremadeSize2": "",
     "maxTierForPremadeSize2": "",
