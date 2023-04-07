@@ -14991,7 +14991,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         },
         {
@@ -15046,13 +15046,13 @@
       "name": "GetClientConfigV1Config",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "object"
+        "elementType": "object",
+        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15073,7 +15073,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         },
         {
@@ -15125,7 +15125,7 @@
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15137,7 +15137,7 @@
           "optional": false,
           "type": {
             "elementType": "",
-            "type": "string"
+            "type": "ClientConfigConfigType"
           }
         }
       ],
@@ -15148,12 +15148,12 @@
       "nameSpace": "",
       "returns": {
         "elementType": "",
-        "type": "RgaClientConfigConfigStatus"
+        "type": "ClientConfigConfigStatus"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15181,7 +15181,7 @@
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15203,13 +15203,13 @@
       "name": "GetClientConfigV2NamespaceByNamespace",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "object"
+        "elementType": "object",
+        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15231,13 +15231,13 @@
       "name": "GetClientConfigV2NamespaceByNamespacePlayer",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "object"
+        "elementType": "object",
+        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -15259,13 +15259,13 @@
       "name": "GetClientConfigV2NamespaceByNamespacePublic",
       "nameSpace": "",
       "returns": {
-        "elementType": "",
-        "type": "object"
+        "elementType": "object",
+        "type": "map"
       },
       "tags": [
         "$remoting-binding-module",
         "Plugins",
-        "Plugin rga-client-config"
+        "Plugin client-config"
       ],
       "threadSafe": false
     },
@@ -39559,6 +39559,80 @@
       "arguments": [
         {
           "description": "",
+          "name": "update",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigEntitlementsUpdate"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutClientConfigV1EntitlementsToken",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutClientConfigV1RefreshConfigStatus",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "namespaces",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigConfigNamespaceUpdate"
+          }
+        }
+      ],
+      "async": "",
+      "description": "",
+      "help": "",
+      "name": "PutClientConfigV2NamespaceChanges",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "flag",
           "optional": false,
           "type": {
@@ -44395,6 +44469,458 @@
       "fields": [
         {
           "description": "",
+          "name": "connectionId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "subscribed",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "authToken",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ClientConfigAuthenticatedConnection",
+      "nameSpace": "",
+      "size": 32,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "contentBuildId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "codeBuildId",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameDataBuildId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "branch",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "branchFull",
+          "offset": 36,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameBranch",
+          "offset": 60,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "gameBranchFull",
+          "offset": 84,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline",
+          "offset": 108,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 132,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineVisibleName",
+          "offset": 156,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ClientConfigBuildInfo",
+      "nameSpace": "",
+      "size": 180,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "params",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigConfigParams"
+          }
+        },
+        {
+          "description": "",
+          "name": "data",
+          "offset": 124,
+          "optional": false,
+          "type": {
+            "elementType": "object",
+            "type": "map"
+          }
+        },
+        {
+          "description": "",
+          "name": "updateTime",
+          "offset": 160,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int64"
+          }
+        }
+      ],
+      "name": "ClientConfigClientConfig",
+      "nameSpace": "",
+      "size": 168,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "public",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "player",
+          "offset": 12,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ClientConfigConfigNamespaceUpdate",
+      "nameSpace": "",
+      "size": 24,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "type",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigConfigType"
+          }
+        },
+        {
+          "description": "",
+          "name": "appName",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 28,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchline",
+          "offset": 52,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "region",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "namespace",
+          "offset": 100,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ClientConfigConfigParams",
+      "nameSpace": "",
+      "size": 124,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ClientConfigConfigReadinessEnum",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Disabled",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "NotReady",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Ready",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "readiness",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigConfigReadinessEnum"
+          }
+        },
+        {
+          "description": "",
+          "name": "updateId",
+          "offset": 8,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        }
+      ],
+      "name": "ClientConfigConfigStatus",
+      "nameSpace": "",
+      "size": 16,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ClientConfigConfigType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "player",
+          "value": 1
+        },
+        {
+          "description": "",
+          "name": "public",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "userDataRoot",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "configRoot",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "dataRoot",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "localSettingsPath",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "privateSettingsPath",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "ClientConfigDataPaths",
+      "nameSpace": "",
+      "size": 120,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "accessToken",
           "offset": 0,
           "optional": false,
@@ -44495,6 +45021,193 @@
       "tags": [
         "Plugins",
         "Plugin client-config-dep-injector"
+      ],
+      "values": [
+        {
+          "description": "",
+          "name": "Create",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Delete",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Update",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "token",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "issuer",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlements",
+          "offset": 96,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ClientConfigEntitlements",
+      "nameSpace": "",
+      "size": 108,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "UpdateType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigUpdateType"
+          }
+        },
+        {
+          "description": "",
+          "name": "EntitlementsTokenResource",
+          "offset": 4,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ClientConfigEntitlements"
+          }
+        }
+      ],
+      "name": "ClientConfigEntitlementsUpdate",
+      "nameSpace": "",
+      "size": 112,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "productId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "version",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "isInternal",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "connections",
+          "offset": 76,
+          "optional": false,
+          "type": {
+            "elementType": "ClientConfigAuthenticatedConnection",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "ClientConfigSession",
+      "nameSpace": "",
+      "size": 88,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
+      ],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "ClientConfigUpdateType",
+      "nameSpace": "",
+      "size": 4,
+      "tags": [
+        "Plugins",
+        "Plugin client-config"
       ],
       "values": [
         {
@@ -180193,39 +180906,6 @@
       "nameSpace": "",
       "size": 28,
       "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "readiness",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "updateId",
-          "offset": 16,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "uint64"
-          }
-        }
-      ],
-      "name": "RgaClientConfigConfigStatus",
-      "nameSpace": "",
-      "size": 24,
-      "tags": [
-        "Plugins",
-        "Plugin rga-client-config"
-      ],
       "values": []
     },
     {
