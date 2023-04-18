@@ -5132,6 +5132,42 @@
       },
       "type": "object"
     },
+    "GameSessionAuthorizationRequestTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/GameSessionAuthenticationTypeEnum"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "keepAlive": {
+          "default": true,
+          "type": "boolean"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/GameSessionRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "GameSessionAuthorizationResponse": {
       "properties": {
         "authorization": {
@@ -5142,6 +5178,20 @@
         },
         "type": {
           "$ref": "#/definitions/GameSessionAuthorizationResponseType"
+        }
+      },
+      "type": "object"
+    },
+    "GameSessionAuthorizationResponseTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/GameSessionTokenContext"
+        },
+        "authorizationResponseType": {
+          "$ref": "#/definitions/GameSessionAuthorizationResponseType"
+        },
+        "idToken": {
+          "$ref": "#/definitions/GameSessionTokenContext"
         }
       },
       "type": "object"
@@ -5176,6 +5226,53 @@
             "$ref": "#/definitions/GameSessionRSOAuthorizationTrustLevel"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GameSessionClientAuthorizationState": {
+      "enum": [
+        "Created",
+        "Updated",
+        "Destroyed"
+      ],
+      "type": "string"
+    },
+    "GameSessionClientAuthorizationTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "type": "string"
+        },
+        "authorizationRequest": {
+          "$ref": "#/definitions/GameSessionAuthorizationRequestTelemetryContext"
+        },
+        "authorizationResponse": {
+          "$ref": "#/definitions/GameSessionAuthorizationResponseTelemetryContext"
+        },
+        "authorizationState": {
+          "$ref": "#/definitions/GameSessionClientAuthorizationState",
+          "default": "Destroyed"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "refreshId": {
+          "type": "string"
+        },
+        "rsoAuthorization": {
+          "$ref": "#/definitions/GameSessionRSOAuthorizationTelemetryContext"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "scopesNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -5540,6 +5637,53 @@
       },
       "type": "object"
     },
+    "GameSessionImplicitGrantModeTelemetryContext": {
+      "properties": {
+        "clientAuthorizationContext": {
+          "$ref": "#/definitions/GameSessionClientAuthorizationTelemetryContext"
+        },
+        "clientAuthorizations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientAuthorizationsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/GameSessionTelemetryEvent"
+          },
+          "type": "array"
+        },
+        "eventsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "methodName": {
+          "type": "string"
+        },
+        "refreshErrorCount": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "restoredSession": {
+          "type": "boolean"
+        },
+        "sessionState": {
+          "$ref": "#/definitions/GameSessionSessionResponse"
+        }
+      },
+      "type": "object"
+    },
     "GameSessionLoginAMR": {
       "enum": [
         "cookie",
@@ -5824,6 +5968,14 @@
       },
       "type": "object"
     },
+    "GameSessionRSOAuthTelemetryContext": {
+      "properties": {
+        "implicitGrantModeContext": {
+          "$ref": "#/definitions/GameSessionImplicitGrantModeTelemetryContext"
+        }
+      },
+      "type": "object"
+    },
     "GameSessionRSOAuthorizationSubmission": {
       "properties": {
         "acr_values": {
@@ -5851,6 +6003,37 @@
           "type": "string"
         },
         "scope": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GameSessionRSOAuthorizationTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/GameSessionTokenContext"
+        },
+        "currentAccountId": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "currentPlatformId": {
+          "type": "string"
+        },
+        "entitlementsToken": {
+          "$ref": "#/definitions/GameSessionTokenContext"
+        },
+        "hasGasToken": {
+          "type": "boolean"
+        },
+        "hasRefreshToken": {
+          "type": "boolean"
+        },
+        "idToken": {
+          "$ref": "#/definitions/GameSessionTokenContext"
+        },
+        "subject": {
           "type": "string"
         }
       },
@@ -6056,6 +6239,26 @@
       },
       "type": "object"
     },
+    "GameSessionTelemetryEvent": {
+      "properties": {
+        "accessTokenUpdated": {
+          "type": "boolean"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "idTokenExists": {
+          "type": "boolean"
+        },
+        "idTokenUpdated": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "GameSessionTencentPartnerCredentials": {
       "properties": {
         "accountType": {
@@ -6078,6 +6281,28 @@
         },
         "uId": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "GameSessionTokenContext": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "entitlements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hasToken": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -14976,6 +15201,42 @@
       },
       "type": "object"
     },
+    "RsoAuthAuthorizationRequestTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/RsoAuthAuthenticationTypeEnum"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "keepAlive": {
+          "default": true,
+          "type": "boolean"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/RsoAuthRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthAuthorizationResponse": {
       "properties": {
         "authorization": {
@@ -14986,6 +15247,20 @@
         },
         "type": {
           "$ref": "#/definitions/RsoAuthAuthorizationResponseType"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthAuthorizationResponseTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/RsoAuthTokenContext"
+        },
+        "authorizationResponseType": {
+          "$ref": "#/definitions/RsoAuthAuthorizationResponseType"
+        },
+        "idToken": {
+          "$ref": "#/definitions/RsoAuthTokenContext"
         }
       },
       "type": "object"
@@ -15020,6 +15295,53 @@
             "$ref": "#/definitions/RsoAuthRSOAuthorizationTrustLevel"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthClientAuthorizationState": {
+      "enum": [
+        "Created",
+        "Updated",
+        "Destroyed"
+      ],
+      "type": "string"
+    },
+    "RsoAuthClientAuthorizationTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "type": "string"
+        },
+        "authorizationRequest": {
+          "$ref": "#/definitions/RsoAuthAuthorizationRequestTelemetryContext"
+        },
+        "authorizationResponse": {
+          "$ref": "#/definitions/RsoAuthAuthorizationResponseTelemetryContext"
+        },
+        "authorizationState": {
+          "$ref": "#/definitions/RsoAuthClientAuthorizationState",
+          "default": "Destroyed"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "refreshId": {
+          "type": "string"
+        },
+        "rsoAuthorization": {
+          "$ref": "#/definitions/RsoAuthRSOAuthorizationTelemetryContext"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "scopesNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -15219,6 +15541,53 @@
       },
       "type": "object"
     },
+    "RsoAuthImplicitGrantModeTelemetryContext": {
+      "properties": {
+        "clientAuthorizationContext": {
+          "$ref": "#/definitions/RsoAuthClientAuthorizationTelemetryContext"
+        },
+        "clientAuthorizations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientAuthorizationsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/RsoAuthTelemetryEvent"
+          },
+          "type": "array"
+        },
+        "eventsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "methodName": {
+          "type": "string"
+        },
+        "refreshErrorCount": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "restoredSession": {
+          "type": "boolean"
+        },
+        "sessionState": {
+          "$ref": "#/definitions/RsoAuthSessionResponse"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthLoginAMR": {
       "enum": [
         "cookie",
@@ -15395,6 +15764,14 @@
       },
       "type": "object"
     },
+    "RsoAuthRSOAuthTelemetryContext": {
+      "properties": {
+        "implicitGrantModeContext": {
+          "$ref": "#/definitions/RsoAuthImplicitGrantModeTelemetryContext"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthRSOAuthorizationSubmission": {
       "properties": {
         "acr_values": {
@@ -15422,6 +15799,37 @@
           "type": "string"
         },
         "scope": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthRSOAuthorizationTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/RsoAuthTokenContext"
+        },
+        "currentAccountId": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "currentPlatformId": {
+          "type": "string"
+        },
+        "entitlementsToken": {
+          "$ref": "#/definitions/RsoAuthTokenContext"
+        },
+        "hasGasToken": {
+          "type": "boolean"
+        },
+        "hasRefreshToken": {
+          "type": "boolean"
+        },
+        "idToken": {
+          "$ref": "#/definitions/RsoAuthTokenContext"
+        },
+        "subject": {
           "type": "string"
         }
       },
@@ -15627,6 +16035,26 @@
       },
       "type": "object"
     },
+    "RsoAuthTelemetryEvent": {
+      "properties": {
+        "accessTokenUpdated": {
+          "type": "boolean"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "idTokenExists": {
+          "type": "boolean"
+        },
+        "idTokenUpdated": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "RsoAuthTencentPartnerCredentials": {
       "properties": {
         "accountType": {
@@ -15649,6 +16077,28 @@
         },
         "uId": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RsoAuthTokenContext": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "entitlements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hasToken": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -17015,6 +17465,42 @@
       },
       "type": "object"
     },
+    "TencentLauncherAuthorizationRequestTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "$ref": "#/definitions/TencentLauncherAuthenticationTypeEnum"
+        },
+        "claims": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "keepAlive": {
+          "default": true,
+          "type": "boolean"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "scope": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "trustLevels": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherRSOAuthorizationTrustLevel"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
     "TencentLauncherAuthorizationResponse": {
       "properties": {
         "authorization": {
@@ -17025,6 +17511,20 @@
         },
         "type": {
           "$ref": "#/definitions/TencentLauncherAuthorizationResponseType"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherAuthorizationResponseTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/TencentLauncherTokenContext"
+        },
+        "authorizationResponseType": {
+          "$ref": "#/definitions/TencentLauncherAuthorizationResponseType"
+        },
+        "idToken": {
+          "$ref": "#/definitions/TencentLauncherTokenContext"
         }
       },
       "type": "object"
@@ -17059,6 +17559,53 @@
             "$ref": "#/definitions/TencentLauncherRSOAuthorizationTrustLevel"
           },
           "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherClientAuthorizationState": {
+      "enum": [
+        "Created",
+        "Updated",
+        "Destroyed"
+      ],
+      "type": "string"
+    },
+    "TencentLauncherClientAuthorizationTelemetryContext": {
+      "properties": {
+        "authenticationType": {
+          "type": "string"
+        },
+        "authorizationRequest": {
+          "$ref": "#/definitions/TencentLauncherAuthorizationRequestTelemetryContext"
+        },
+        "authorizationResponse": {
+          "$ref": "#/definitions/TencentLauncherAuthorizationResponseTelemetryContext"
+        },
+        "authorizationState": {
+          "$ref": "#/definitions/TencentLauncherClientAuthorizationState",
+          "default": "Destroyed"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "refreshId": {
+          "type": "string"
+        },
+        "rsoAuthorization": {
+          "$ref": "#/definitions/TencentLauncherRSOAuthorizationTelemetryContext"
+        },
+        "scopes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "scopesNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
         }
       },
       "type": "object"
@@ -17258,6 +17805,53 @@
       },
       "type": "object"
     },
+    "TencentLauncherImplicitGrantModeTelemetryContext": {
+      "properties": {
+        "clientAuthorizationContext": {
+          "$ref": "#/definitions/TencentLauncherClientAuthorizationTelemetryContext"
+        },
+        "clientAuthorizations": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clientAuthorizationsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/definitions/TencentLauncherTelemetryEvent"
+          },
+          "type": "array"
+        },
+        "eventsNum": {
+          "format": "int32",
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "methodName": {
+          "type": "string"
+        },
+        "refreshErrorCount": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "restoredSession": {
+          "type": "boolean"
+        },
+        "sessionState": {
+          "$ref": "#/definitions/TencentLauncherSessionResponse"
+        }
+      },
+      "type": "object"
+    },
     "TencentLauncherLoginAMR": {
       "enum": [
         "cookie",
@@ -17434,6 +18028,14 @@
       },
       "type": "object"
     },
+    "TencentLauncherRSOAuthTelemetryContext": {
+      "properties": {
+        "implicitGrantModeContext": {
+          "$ref": "#/definitions/TencentLauncherImplicitGrantModeTelemetryContext"
+        }
+      },
+      "type": "object"
+    },
     "TencentLauncherRSOAuthorizationSubmission": {
       "properties": {
         "acr_values": {
@@ -17461,6 +18063,37 @@
           "type": "string"
         },
         "scope": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherRSOAuthorizationTelemetryContext": {
+      "properties": {
+        "accessToken": {
+          "$ref": "#/definitions/TencentLauncherTokenContext"
+        },
+        "currentAccountId": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "currentPlatformId": {
+          "type": "string"
+        },
+        "entitlementsToken": {
+          "$ref": "#/definitions/TencentLauncherTokenContext"
+        },
+        "hasGasToken": {
+          "type": "boolean"
+        },
+        "hasRefreshToken": {
+          "type": "boolean"
+        },
+        "idToken": {
+          "$ref": "#/definitions/TencentLauncherTokenContext"
+        },
+        "subject": {
           "type": "string"
         }
       },
@@ -17666,6 +18299,26 @@
       },
       "type": "object"
     },
+    "TencentLauncherTelemetryEvent": {
+      "properties": {
+        "accessTokenUpdated": {
+          "type": "boolean"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "idTokenExists": {
+          "type": "boolean"
+        },
+        "idTokenUpdated": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "TencentLauncherTencentLauncherLoginArguments": {
       "properties": {
         "tencentGameId": {
@@ -17719,6 +18372,28 @@
         },
         "uId": {
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "TencentLauncherTokenContext": {
+      "properties": {
+        "clientId": {
+          "type": "string"
+        },
+        "entitlements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "expiry": {
+          "format": "int64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hasToken": {
+          "type": "boolean"
         }
       },
       "type": "object"

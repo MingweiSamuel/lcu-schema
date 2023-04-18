@@ -262,6 +262,16 @@
     },
     {
       "description": "",
+      "name": "OnJsonApiEvent_riotclientapp_v1_isXbgpRunning",
+      "nameSpace": "",
+      "tags": [],
+      "type": {
+        "elementType": "",
+        "type": "PluginResourceEvent"
+      }
+    },
+    {
+      "description": "",
       "name": "OnJsonApiEvent_riotclientapp_v1_new-args",
       "nameSpace": "",
       "tags": [],
@@ -1411,46 +1421,6 @@
       "help": "",
       "internal": false,
       "name": "DeleteExternalMessageHandlerV1PatchRequest",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [
-        "$remoting-binding-module",
-        "Plugins",
-        "Plugin external-message-handler"
-      ],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "",
-          "name": "productId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "patchlineId",
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Cancel the current patch request.",
-      "help": "",
-      "internal": false,
-      "name": "DeleteExternalMessageHandlerV1PatchRequestProductsByProductIdPatchlinesByPatchlineId",
       "nameSpace": "",
       "returns": {
         "elementType": "",
@@ -9696,6 +9666,23 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "get if xbgp com server is running",
+      "help": "",
+      "internal": false,
+      "name": "GetRiotclientappV1IsXbgpRunning",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "bool"
+      },
+      "subscribable": false,
+      "tags": [],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Returns the list of secondary arguments used for launched applications.",
       "help": "",
       "internal": false,
@@ -16675,6 +16662,46 @@
       ],
       "deprecated": false,
       "deprecatedHelp": "",
+      "description": "Cancels dependency install and mark the patching as cancelled",
+      "help": "",
+      "internal": false,
+      "name": "PostRnetProductRegistryV4PatchRequestsProductsByProductIdPatchlinesByPatchlineIdCancelDependencies",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module",
+        "Plugins",
+        "Plugin rnet-product-registry"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
       "description": "Installs dependencies for the specified product/patchline combo.",
       "help": "",
       "internal": false,
@@ -20137,50 +20164,6 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Closes the game running modal dialog if it exists",
-      "help": "",
-      "internal": false,
-      "name": "PutNativeUxV1CloseGameRunningDialog",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [],
-      "threadSafe": false
-    },
-    {
-      "arguments": [
-        {
-          "description": "This value should be set to the full game name, when there is a single game name. Otherwise empty.",
-          "name": "singleGameName",
-          "optional": true,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "deprecated": false,
-      "deprecatedHelp": "",
-      "description": "Display a modal dialog when the user attempts to close the foundation with a game running.",
-      "help": "",
-      "internal": false,
-      "name": "PutNativeUxV1DisplayGameRunningDialog",
-      "nameSpace": "",
-      "returns": {
-        "elementType": "",
-        "type": ""
-      },
-      "subscribable": false,
-      "tags": [],
-      "threadSafe": false
-    },
-    {
-      "arguments": [],
-      "deprecated": false,
-      "deprecatedHelp": "",
       "description": "Cancel the active job from the scheduler and deprioritize it to the end of the queue.",
       "help": "",
       "internal": false,
@@ -22081,7 +22064,7 @@
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
-      "description": "Quit Riot Client. If any games are running show the games-running exit-dialog.",
+      "description": "Quit Riot Client. If any games are running hide Riot Client instead.",
       "help": "",
       "internal": false,
       "name": "PutRnetLifecycleV1Quit",
@@ -36256,7 +36239,7 @@
       ],
       "name": "ExternalMessageHandlerMessageBody",
       "nameSpace": "",
-      "size": 280,
+      "size": 336,
       "tags": [
         "Plugins",
         "Plugin external-message-handler"
@@ -36289,7 +36272,7 @@
         {
           "description": "",
           "name": "location",
-          "offset": 48,
+          "offset": 72,
           "optional": false,
           "type": {
             "elementType": "",
@@ -36299,7 +36282,7 @@
         {
           "description": "",
           "name": "x_token",
-          "offset": 176,
+          "offset": 200,
           "optional": true,
           "type": {
             "elementType": "",
@@ -36309,7 +36292,7 @@
         {
           "description": "",
           "name": "user_hash",
-          "offset": 204,
+          "offset": 228,
           "optional": true,
           "type": {
             "elementType": "",
@@ -36319,7 +36302,7 @@
       ],
       "name": "ExternalMessageHandlerMessageData",
       "nameSpace": "",
-      "size": 272,
+      "size": 328,
       "tags": [
         "Plugins",
         "Plugin external-message-handler"
@@ -36339,38 +36322,48 @@
       "values": [
         {
           "description": "",
-          "name": "cancel_install_game",
-          "value": 3
-        },
-        {
-          "description": "",
           "name": "check_for_game_patch",
-          "value": 8
+          "value": 11
         },
         {
           "description": "",
           "name": "create_game_shortcut",
-          "value": 12
-        },
-        {
-          "description": "",
-          "name": "game_patch_available",
           "value": 16
         },
         {
           "description": "",
-          "name": "game_playable",
-          "value": 21
+          "name": "do_cancel_install_game",
+          "value": 3
         },
         {
           "description": "",
-          "name": "game_version",
+          "name": "do_pause_install_game",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "do_resume_install_game",
+          "value": 4
+        },
+        {
+          "description": "",
+          "name": "game_patch_available",
           "value": 20
         },
         {
           "description": "",
+          "name": "game_playable",
+          "value": 25
+        },
+        {
+          "description": "",
+          "name": "game_version",
+          "value": 24
+        },
+        {
+          "description": "",
           "name": "install_error",
-          "value": 19
+          "value": 23
         },
         {
           "description": "",
@@ -36380,27 +36373,27 @@
         {
           "description": "",
           "name": "install_progress",
-          "value": 18
+          "value": 22
         },
         {
           "description": "",
           "name": "install_status",
-          "value": 17
+          "value": 21
         },
         {
           "description": "",
           "name": "installed_date_time",
-          "value": 25
+          "value": 29
         },
         {
           "description": "",
           "name": "installed_location",
-          "value": 23
+          "value": 27
         },
         {
           "description": "",
           "name": "last_played_date_time",
-          "value": 26
+          "value": 30
         },
         {
           "description": "",
@@ -36410,72 +36403,77 @@
         {
           "description": "",
           "name": "move_install_location",
-          "value": 6
-        },
-        {
-          "description": "",
-          "name": "patch_game",
           "value": 9
         },
         {
           "description": "",
-          "name": "pause_install_game",
-          "value": 2
+          "name": "on_cancel_install_game",
+          "value": 6
         },
         {
           "description": "",
-          "name": "prioritize_install_game",
+          "name": "on_pause_install_game",
           "value": 5
         },
         {
           "description": "",
-          "name": "repair_game_install",
+          "name": "on_resume_install_game",
           "value": 7
         },
         {
           "description": "",
-          "name": "report_game_status",
+          "name": "patch_game",
+          "value": 12
+        },
+        {
+          "description": "",
+          "name": "prioritize_install_game",
+          "value": 8
+        },
+        {
+          "description": "",
+          "name": "repair_game_install",
           "value": 10
         },
         {
           "description": "",
-          "name": "resume_install_game",
-          "value": 4
-        },
-        {
-          "description": "",
-          "name": "show_game",
+          "name": "report_game_status",
           "value": 13
         },
         {
           "description": "",
+          "name": "show_game",
+          "value": 17
+        },
+        {
+          "description": "",
           "name": "shutdown_app_background",
-          "value": 14
+          "value": 18
         },
         {
           "description": "",
           "name": "shutdown_app_full",
-          "value": 15
+          "value": 19
         },
         {
           "description": "",
           "name": "size",
-          "value": 24
+          "value": 28
         },
         {
           "description": "",
           "name": "trial_info",
-          "value": 27
+          "value": 31
         },
         {
           "description": "",
           "name": "uninstall_game",
-          "value": 11
+          "value": 15
         },
         {
           "description": "",
           "name": "xbgp_user_sign_in",
-          "value": 36
+          "value": 40
         }
       ]
     },
@@ -40785,6 +40783,86 @@
       "fields": [
         {
           "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionAuthenticationTypeEnum"
+          }
+        },
+        {
+          "description": "",
+          "name": "claims",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "keepAlive",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "prompt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scope",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "trustLevels",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "GameSessionRSOAuthorizationTrustLevel",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "GameSessionAuthorizationRequestTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "authorization",
           "offset": 0,
           "optional": false,
@@ -40815,6 +40893,46 @@
         }
       ],
       "name": "GameSessionAuthorizationResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponseType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionAuthorizationResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionTokenContext"
+          }
+        }
+      ],
+      "name": "GameSessionAuthorizationResponseTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -40890,6 +41008,131 @@
         }
       ],
       "name": "GameSessionAuthorizationUpdateRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "GameSessionClientAuthorizationState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Destroyed",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Updated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationRequest",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionAuthorizationRequestTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponse",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionAuthorizationResponseTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionClientAuthorizationState"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoAuthorization",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionRSOAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopesNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "GameSessionClientAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -41892,6 +42135,106 @@
     },
     {
       "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientAuthorizationContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionClientAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizations",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizationsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "events",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "GameSessionTelemetryEvent",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "methodName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshErrorCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "restoredSession",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "sessionState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionSessionResponse"
+          }
+        }
+      ],
+      "name": "GameSessionImplicitGrantModeTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
       "fields": [],
       "name": "GameSessionLoginAMR",
       "nameSpace": "",
@@ -42685,6 +43028,26 @@
       "fields": [
         {
           "description": "",
+          "name": "implicitGrantModeContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionImplicitGrantModeTelemetryContext"
+          }
+        }
+      ],
+      "name": "GameSessionRSOAuthTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "acr_values",
           "offset": 0,
           "optional": false,
@@ -42775,6 +43138,96 @@
         }
       ],
       "name": "GameSessionRSOAuthorizationSubmission",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentAccountId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementsToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasGasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasRefreshToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "GameSessionTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "GameSessionRSOAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -43370,6 +43823,66 @@
       "fields": [
         {
           "description": "",
+          "name": "accessTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenExists",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "GameSessionTelemetryEvent",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "accountType",
           "offset": 0,
           "optional": false,
@@ -43440,6 +43953,56 @@
         }
       ],
       "name": "GameSessionTencentPartnerCredentials",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlements",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "GameSessionTokenContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -44046,6 +44609,56 @@
       "name": "InfoRadiatorVoiceChatHeartbeatMetrics_PerProviderData",
       "nameSpace": "",
       "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "id",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "path",
+          "offset": 24,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "metadata_path",
+          "offset": 48,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "excluded_paths",
+          "offset": 72,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "Install",
+      "nameSpace": "",
+      "size": 84,
       "tags": [],
       "values": []
     },
@@ -44680,26 +45293,6 @@
       "name": "LolInfo",
       "nameSpace": "",
       "size": 48,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "pcbId",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "int64"
-          }
-        }
-      ],
-      "name": "LoyaltyResource",
-      "nameSpace": "",
-      "size": 8,
       "tags": [],
       "values": []
     },
@@ -50478,7 +51071,7 @@
         {
           "description": "",
           "name": "path",
-          "offset": 204,
+          "offset": 208,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50488,7 +51081,7 @@
         {
           "description": "",
           "name": "bundles_url",
-          "offset": 228,
+          "offset": 232,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50498,7 +51091,7 @@
         {
           "description": "",
           "name": "metadata_path",
-          "offset": 276,
+          "offset": 280,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50508,7 +51101,7 @@
         {
           "description": "",
           "name": "exclude_foreign_paths",
-          "offset": 300,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50518,7 +51111,7 @@
         {
           "description": "",
           "name": "excluded_paths",
-          "offset": 304,
+          "offset": 308,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -50528,7 +51121,7 @@
         {
           "description": "",
           "name": "repair",
-          "offset": 408,
+          "offset": 376,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50538,7 +51131,7 @@
         {
           "description": "",
           "name": "deleteForeignPaths",
-          "offset": 412,
+          "offset": 404,
           "optional": false,
           "type": {
             "elementType": "",
@@ -50548,7 +51141,7 @@
       ],
       "name": "PatchProxyPatchProxyRequest",
       "nameSpace": "",
-      "size": 416,
+      "size": 408,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -52983,8 +53576,18 @@
       "fields": [
         {
           "description": "",
-          "name": "combined_patch_state",
+          "name": "install",
           "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "Install"
+          }
+        },
+        {
+          "description": "",
+          "name": "combined_patch_state",
+          "offset": 84,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52994,7 +53597,7 @@
         {
           "description": "",
           "name": "patch_requested",
-          "offset": 4,
+          "offset": 88,
           "optional": false,
           "type": {
             "elementType": "",
@@ -53004,7 +53607,7 @@
         {
           "description": "",
           "name": "user_cancelled_patching",
-          "offset": 5,
+          "offset": 89,
           "optional": false,
           "type": {
             "elementType": "",
@@ -53014,7 +53617,7 @@
         {
           "description": "",
           "name": "shards_data",
-          "offset": 8,
+          "offset": 92,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -53024,7 +53627,7 @@
       ],
       "name": "PatchingResource",
       "nameSpace": "",
-      "size": 40,
+      "size": 124,
       "tags": [],
       "values": []
     },
@@ -79891,6 +80494,86 @@
       "fields": [
         {
           "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthAuthenticationTypeEnum"
+          }
+        },
+        {
+          "description": "",
+          "name": "claims",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "keepAlive",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "prompt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scope",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "trustLevels",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "RsoAuthRSOAuthorizationTrustLevel",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "RsoAuthAuthorizationRequestTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "authorization",
           "offset": 0,
           "optional": false,
@@ -79921,6 +80604,46 @@
         }
       ],
       "name": "RsoAuthAuthorizationResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponseType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthTokenContext"
+          }
+        }
+      ],
+      "name": "RsoAuthAuthorizationResponseTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -79996,6 +80719,131 @@
         }
       ],
       "name": "RsoAuthAuthorizationUpdateRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "RsoAuthClientAuthorizationState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Destroyed",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Updated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationRequest",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationRequestTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponse",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthAuthorizationResponseTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthClientAuthorizationState"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoAuthorization",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthRSOAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopesNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "RsoAuthClientAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -80506,6 +81354,106 @@
         }
       ],
       "name": "RsoAuthImplicitAuthorization",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientAuthorizationContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthClientAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizations",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizationsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "events",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "RsoAuthTelemetryEvent",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "methodName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshErrorCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "restoredSession",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "sessionState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthSessionResponse"
+          }
+        }
+      ],
+      "name": "RsoAuthImplicitGrantModeTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -81041,6 +81989,26 @@
       "fields": [
         {
           "description": "",
+          "name": "implicitGrantModeContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthImplicitGrantModeTelemetryContext"
+          }
+        }
+      ],
+      "name": "RsoAuthRSOAuthTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "acr_values",
           "offset": 0,
           "optional": false,
@@ -81131,6 +82099,96 @@
         }
       ],
       "name": "RsoAuthRSOAuthorizationSubmission",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentAccountId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementsToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasGasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasRefreshToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "RsoAuthTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "RsoAuthRSOAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -81726,6 +82784,66 @@
       "fields": [
         {
           "description": "",
+          "name": "accessTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenExists",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "RsoAuthTelemetryEvent",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "accountType",
           "offset": 0,
           "optional": false,
@@ -81796,6 +82914,56 @@
         }
       ],
       "name": "RsoAuthTencentPartnerCredentials",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlements",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "RsoAuthTokenContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -89291,7 +90459,7 @@
       "fields": [
         {
           "description": "",
-          "name": "title",
+          "name": "titleId",
           "offset": 0,
           "optional": false,
           "type": {
@@ -89301,37 +90469,7 @@
         },
         {
           "description": "",
-          "name": "body",
-          "offset": 24,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        }
-      ],
-      "name": "SystemTrayNativeNotificationData",
-      "nameSpace": "",
-      "size": 48,
-      "tags": [],
-      "values": []
-    },
-    {
-      "description": "",
-      "fields": [
-        {
-          "description": "",
-          "name": "title",
-          "offset": 0,
-          "optional": false,
-          "type": {
-            "elementType": "",
-            "type": "string"
-          }
-        },
-        {
-          "description": "",
-          "name": "body",
+          "name": "bodyId",
           "offset": 24,
           "optional": false,
           "type": {
@@ -90133,6 +91271,86 @@
       "fields": [
         {
           "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherAuthenticationTypeEnum"
+          }
+        },
+        {
+          "description": "",
+          "name": "claims",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "keepAlive",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "prompt",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "scope",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "trustLevels",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "TencentLauncherRSOAuthorizationTrustLevel",
+            "type": "vector"
+          }
+        }
+      ],
+      "name": "TencentLauncherAuthorizationRequestTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "authorization",
           "offset": 0,
           "optional": false,
@@ -90163,6 +91381,46 @@
         }
       ],
       "name": "TencentLauncherAuthorizationResponse",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponseType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherAuthorizationResponseType"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherTokenContext"
+          }
+        }
+      ],
+      "name": "TencentLauncherAuthorizationResponseTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -90238,6 +91496,131 @@
         }
       ],
       "name": "TencentLauncherAuthorizationUpdateRequest",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [],
+      "name": "TencentLauncherClientAuthorizationState",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": [
+        {
+          "description": "",
+          "name": "Created",
+          "value": 0
+        },
+        {
+          "description": "",
+          "name": "Destroyed",
+          "value": 2
+        },
+        {
+          "description": "",
+          "name": "Updated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "authenticationType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationRequest",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherAuthorizationRequestTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationResponse",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherAuthorizationResponseTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "authorizationState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherClientAuthorizationState"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "rsoAuthorization",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherRSOAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopes",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "scopesNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        }
+      ],
+      "name": "TencentLauncherClientAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -90748,6 +92131,106 @@
         }
       ],
       "name": "TencentLauncherImplicitAuthorization",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientAuthorizationContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherClientAuthorizationTelemetryContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizations",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientAuthorizationsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "events",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "TencentLauncherTelemetryEvent",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventsNum",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint32"
+          }
+        },
+        {
+          "description": "",
+          "name": "methodName",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "refreshErrorCount",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "int32"
+          }
+        },
+        {
+          "description": "",
+          "name": "restoredSession",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "sessionState",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherSessionResponse"
+          }
+        }
+      ],
+      "name": "TencentLauncherImplicitGrantModeTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -91283,6 +92766,26 @@
       "fields": [
         {
           "description": "",
+          "name": "implicitGrantModeContext",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherImplicitGrantModeTelemetryContext"
+          }
+        }
+      ],
+      "name": "TencentLauncherRSOAuthTelemetryContext",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "acr_values",
           "offset": 0,
           "optional": false,
@@ -91373,6 +92876,96 @@
         }
       ],
       "name": "TencentLauncherRSOAuthorizationSubmission",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "accessToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentAccountId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "currentPlatformId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlementsToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasGasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasRefreshToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "TencentLauncherTokenContext"
+          }
+        },
+        {
+          "description": "",
+          "name": "subject",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "name": "TencentLauncherRSOAuthorizationTelemetryContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
@@ -91968,6 +93561,66 @@
       "fields": [
         {
           "description": "",
+          "name": "accessTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "eventType",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenExists",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "idTokenUpdated",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "TencentLauncherTelemetryEvent",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
           "name": "tencentGameId",
           "offset": 0,
           "optional": false,
@@ -92118,6 +93771,56 @@
         }
       ],
       "name": "TencentLauncherTencentPartnerCredentials",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "clientId",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "entitlements",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "string",
+            "type": "vector"
+          }
+        },
+        {
+          "description": "",
+          "name": "expiry",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "uint64"
+          }
+        },
+        {
+          "description": "",
+          "name": "hasToken",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "TencentLauncherTokenContext",
       "nameSpace": "",
       "size": 0,
       "tags": [],
