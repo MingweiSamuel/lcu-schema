@@ -170809,7 +170809,7 @@
           "description": "",
           "name": "primeGamingPromoOffer",
           "offset": 104,
-          "optional": false,
+          "optional": true,
           "type": {
             "elementType": "",
             "type": "LolTftLolTftPrimeGaming"
@@ -170818,7 +170818,7 @@
       ],
       "name": "LolTftLolTftHomeHub",
       "nameSpace": "",
-      "size": 136,
+      "size": 144,
       "tags": [
         "Plugins",
         "Plugin lol-tft"
