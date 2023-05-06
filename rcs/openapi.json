@@ -1,6 +1,25 @@
 {
   "components": {
     "schemas": {
+      "AccessToken": {
+        "properties": {
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "AccountsSecurityAccountsSecurity": {
         "properties": {
           "action": {
@@ -93,6 +112,40 @@
         },
         "type": "object"
       },
+      "AntiAddictionAntiAddictionStandaloneConfig": {
+        "properties": {
+          "backendUrl": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "heartbeatInterval": {
+            "default": 60.0,
+            "format": "double",
+            "type": "number"
+          },
+          "webRequestInitialRetryDelayInMilliSec": {
+            "default": 100,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "webRequestMaxRetryDelayInMilliSec": {
+            "default": 1000,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "webRequestRetryCount": {
+            "default": 3,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "AntiAddictionAntiAddictionState": {
         "properties": {
           "displayType": {
@@ -136,11 +189,7 @@
           "shutdown",
           "playTime",
           "warningMessage",
-          "disableMatchMaking",
-          "hopeWarning",
-          "hopeRewardRate",
-          "hopeShutdown",
-          "hopeHeartbeat"
+          "disableMatchMaking"
         ],
         "type": "string"
       },
@@ -271,6 +320,22 @@
           "SSOAuth"
         ],
         "type": "string"
+      },
+      "Authorization": {
+        "properties": {
+          "currentAccountId": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "currentPlatformId": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "BindingFullApiHelp": {
         "description": "Describes the exposed native API.",
@@ -3777,6 +3842,26 @@
         },
         "type": "object"
       },
+      "EntitlementsServiceEntitlementsServiceToken": {
+        "properties": {
+          "entitlements": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "EntitlementsToken": {
         "properties": {
           "accessToken": {
@@ -4275,7 +4360,89 @@
         },
         "type": "object"
       },
-      "FriendsFriendsConsoleIdToPuuidResponseElement": {
+      "FriendsFriendsV2MockApiState": {
+        "enum": [
+          "none",
+          "mock_enabled"
+        ],
+        "type": "string"
+      },
+      "FriendsLookupV1GamerNameAndTagline": {
+        "properties": {
+          "gameName": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1NamesetsForPuuidRequest": {
+        "properties": {
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1NamesetsForPuuidResponse": {
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "gnt": {
+            "$ref": "#/components/schemas/FriendsLookupV1GamerNameAndTagline"
+          },
+          "playstationNameset": {
+            "$ref": "#/components/schemas/FriendsLookupV1PlaystationNameset"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "switchNameset": {
+            "$ref": "#/components/schemas/FriendsLookupV1SwitchNameset"
+          },
+          "xboxNameset": {
+            "$ref": "#/components/schemas/FriendsLookupV1XboxNameset"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1NamesetsForPuuidsRequest": {
+        "properties": {
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1NamesetsForPuuidsResponse": {
+        "properties": {
+          "namesets": {
+            "items": {
+              "$ref": "#/components/schemas/FriendsLookupV1NamesetsForPuuidResponse"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1PlaystationNameset": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "FriendsLookupV1PuuidAndProvider": {
         "properties": {
           "error": {
             "type": "string"
@@ -4289,63 +4456,35 @@
         },
         "type": "object"
       },
-      "FriendsFriendsConsoleIdsToPuuidsResponse": {
+      "FriendsLookupV1PuuidsForConsoleIdsRequest": {
         "properties": {
-          "response": {
-            "items": {
-              "$ref": "#/components/schemas/FriendsFriendsConsoleIdToPuuidResponseElement"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "FriendsFriendsV1NamesetsRequest": {
-        "properties": {
-          "puuids": {
+          "consoleIds": {
             "items": {
               "type": "string"
             },
             "type": "array"
+          },
+          "environment": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
           }
         },
         "type": "object"
       },
-      "FriendsFriendsV1NamesetsResponse": {
+      "FriendsLookupV1PuuidsForConsoleIdsResponse": {
         "properties": {
-          "namesets": {
+          "response": {
             "items": {
-              "$ref": "#/components/schemas/FriendsFriendsV1NamesetsResponseElement"
+              "$ref": "#/components/schemas/FriendsLookupV1PuuidAndProvider"
             },
             "type": "array"
           }
         },
         "type": "object"
       },
-      "FriendsFriendsV1NamesetsResponseElement": {
-        "properties": {
-          "alias": {
-            "$ref": "#/components/schemas/FriendsFriendsV1RiotAlias"
-          },
-          "error": {
-            "type": "string"
-          },
-          "playstationNameset": {
-            "$ref": "#/components/schemas/FriendsFriendsV1PlaystationNameset"
-          },
-          "puuid": {
-            "type": "string"
-          },
-          "switchNameset": {
-            "$ref": "#/components/schemas/FriendsFriendsV1SwitchNameset"
-          },
-          "xboxNameset": {
-            "$ref": "#/components/schemas/FriendsFriendsV1XboxNameset"
-          }
-        },
-        "type": "object"
-      },
-      "FriendsFriendsV1PlaystationNameset": {
+      "FriendsLookupV1SwitchNameset": {
         "properties": {
           "name": {
             "type": "string"
@@ -4353,39 +4492,27 @@
         },
         "type": "object"
       },
-      "FriendsFriendsV1RiotAlias": {
+      "FriendsLookupV1ToggleMockApiRequest": {
         "properties": {
-          "gameName": {
+          "enable": {
+            "type": "boolean"
+          },
+          "environment": {
             "type": "string"
           },
-          "tagLine": {
+          "platform": {
             "type": "string"
           }
         },
         "type": "object"
       },
-      "FriendsFriendsV1SwitchNameset": {
+      "FriendsLookupV1XboxNameset": {
         "properties": {
           "name": {
             "type": "string"
           }
         },
         "type": "object"
-      },
-      "FriendsFriendsV1XboxNameset": {
-        "properties": {
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "FriendsFriendsV2MockApiState": {
-        "enum": [
-          "none",
-          "mock_enabled"
-        ],
-        "type": "string"
       },
       "FriendsOnlinePlatform": {
         "enum": [
@@ -5165,6 +5292,12 @@
       },
       "GameSessionAuthorizationKeyRequest": {
         "properties": {
+          "claims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
           "client_id": {
             "type": "string"
           },
@@ -6792,6 +6925,46 @@
         },
         "type": "object"
       },
+      "LoyaltyV2LoyaltyStandaloneConfig": {
+        "properties": {
+          "backendUrl": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "heartbeatInterval": {
+            "format": "double",
+            "type": "number"
+          },
+          "webRequestInitialRetryDelayInMilliSec": {
+            "default": 100,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "webRequestMaxRetryDelayInMilliSec": {
+            "default": 1000,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "webRequestRetryCount": {
+            "default": 3,
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "webRequestTimeoutInSec": {
+            "default": 5,
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "LoyaltyV2PCBangInfo": {
         "properties": {
           "pcbId": {
@@ -7514,6 +7687,161 @@
         },
         "type": "object"
       },
+      "MatchmakingServiceV1CreateMatchmakingTicketParams": {
+        "properties": {
+          "additionalDataForAlgorithm": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "submode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1CreateMatchmakingTicketResult": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1CreateMatchmakingTicketServiceData": {
+        "properties": {
+          "mode": {
+            "type": "string"
+          },
+          "players": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MatchmakingServiceV1PlayerData"
+            },
+            "type": "object"
+          },
+          "product": {
+            "type": "string"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "submode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1DeletePlayerFromMatchmakingResult": {
+        "properties": {
+          "removedTicketIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1PlayerData": {
+        "properties": {
+          "data": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "platform": {
+            "nullable": true,
+            "type": "string"
+          },
+          "puuid": {
+            "nullable": true,
+            "type": "string"
+          },
+          "ticketId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "token": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1TicketState": {
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "match_id": {
+            "nullable": true,
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "state_updated_at": {
+            "type": "string"
+          },
+          "submode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "ticket_age_ms": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingServiceV1TicketsState": {
+        "properties": {
+          "tickets": {
+            "items": {
+              "$ref": "#/components/schemas/MatchmakingServiceV1TicketState"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "NameCheckNameValidationResult": {
         "properties": {
           "errors": {
@@ -7930,7 +8258,7 @@
         "properties": {
           "code": {
             "$ref": "#/components/schemas/PatchErrorCode",
-            "default": "Unspecified"
+            "default": "OK"
           },
           "locked_file_info": {
             "$ref": "#/components/schemas/PatchLockedFileInfo",
@@ -7944,20 +8272,21 @@
       },
       "PatchErrorCode": {
         "enum": [
+          "OK",
           "Unspecified",
           "Cancelled",
           "NotEnoughDiskSpace",
           "AccessDenied",
           "FileNotFound",
-          "CorruptData",
-          "FileLocked",
-          "InvalidArgument",
           "DownloaderConnection",
           "DownloaderClientError",
           "DownloaderServerError",
           "DownloaderAuthorization",
           "DownloadedCorruptData",
-          "AddressResolutionFailed"
+          "CorruptData",
+          "AddressResolutionFailed",
+          "FileLocked",
+          "InvalidArgument"
         ],
         "type": "string"
       },
@@ -8939,6 +9268,26 @@
         },
         "type": "object"
       },
+      "PaymentsLoginInfo": {
+        "properties": {
+          "channel": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "ext": {
+            "type": "string"
+          },
+          "openid": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PaymentsReadyState": {
         "properties": {
           "ready": {
@@ -9304,6 +9653,9 @@
           "healup": {
             "$ref": "#/components/schemas/PlatformUiHealupResponseDetails"
           },
+          "kr-id-verification": {
+            "$ref": "#/components/schemas/PlatformUiKRIdVerificationResponseDetails"
+          },
           "multifactor": {
             "$ref": "#/components/schemas/PlatformUiMultifactorResponseDetails"
           },
@@ -9325,50 +9677,6 @@
           "SSOAuth",
           "RiotAuth",
           "None"
-        ],
-        "type": "string"
-      },
-      "PlatformUiChatSession": {
-        "properties": {
-          "federated": {
-            "type": "boolean"
-          },
-          "game_name": {
-            "type": "string"
-          },
-          "game_tag": {
-            "type": "string"
-          },
-          "loaded": {
-            "type": "boolean"
-          },
-          "name": {
-            "type": "string"
-          },
-          "pid": {
-            "type": "string"
-          },
-          "puuid": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "resource": {
-            "type": "string"
-          },
-          "state": {
-            "$ref": "#/components/schemas/PlatformUiChatSessionState",
-            "default": "disconnected"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiChatSessionState": {
-        "enum": [
-          "disconnected",
-          "connecting",
-          "connected"
         ],
         "type": "string"
       },
@@ -9409,79 +9717,6 @@
           },
           "isTagLineCustomizable": {
             "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiFriend": {
-        "properties": {
-          "actor": {
-            "type": "string"
-          },
-          "details": {
-            "type": "string"
-          },
-          "displayGroup": {
-            "type": "string"
-          },
-          "gameName": {
-            "type": "string"
-          },
-          "gameTag": {
-            "type": "string"
-          },
-          "group": {
-            "type": "string"
-          },
-          "hovercard_background_url": {
-            "type": "string"
-          },
-          "icon_url": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "msg": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "note": {
-            "type": "string"
-          },
-          "patchline": {
-            "type": "string"
-          },
-          "product": {
-            "type": "string"
-          },
-          "product_folder_name": {
-            "type": "string"
-          },
-          "product_presence_name": {
-            "type": "string"
-          },
-          "puuid": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "showState": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiFriendList": {
-        "properties": {
-          "friends": {
-            "items": {
-              "$ref": "#/components/schemas/PlatformUiFriend"
-            },
-            "type": "array"
           }
         },
         "type": "object"
@@ -9581,7 +9816,13 @@
           "persistLogin": {
             "type": "boolean"
           },
+          "requireLolRegion": {
+            "type": "boolean"
+          },
           "requireRiotID": {
+            "type": "boolean"
+          },
+          "requireVNG": {
             "type": "boolean"
           },
           "scopes": {
@@ -9589,6 +9830,14 @@
               "type": "string"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiKRIdVerificationResponseDetails": {
+        "properties": {
+          "redirect_url": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -9767,11 +10016,14 @@
           "Initializing",
           "PendingClientId",
           "PendingCreateAuthorization",
+          "PendingLoginStrategy",
           "PendingPlatformAuthorizationConsent",
           "PendingProviderCredentials",
           "PendingAuthentication",
+          "PendingKRIdVerification",
           "PendingSignup",
           "PendingHealup",
+          "PendingMultifactor",
           "LoginTokenExchange",
           "PendingForget",
           "PendingConsent",
@@ -9779,9 +10031,117 @@
           "PendingEulaAcceptance",
           "PendingGamepassStatus",
           "PendingRiotID",
+          "PendingVNGProfile",
+          "PendingLolRegionSelection",
           "PendingUserInfoRefresh",
           "Authorized",
           "Error"
+        ],
+        "type": "string"
+      },
+      "PlatformUiRSOMobileUIAuthorizationTrustLevel": {
+        "enum": [
+          "always_trusted",
+          "trusted_device",
+          "always_verify"
+        ],
+        "type": "string"
+      },
+      "PlatformUiRSOMobileUILoginInitiateRequest": {
+        "properties": {
+          "facebookUseClassicLogin": {
+            "type": "boolean"
+          },
+          "forceUseWebView": {
+            "type": "boolean"
+          },
+          "scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUILoginStrategyType",
+            "default": "riot"
+          },
+          "trustLevels": {
+            "items": {
+              "$ref": "#/components/schemas/PlatformUiRSOMobileUIAuthorizationTrustLevel"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUILoginStatus": {
+        "properties": {
+          "error_description": {
+            "type": "string"
+          },
+          "federated_error_code": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "ready": {
+            "default": true,
+            "type": "boolean"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUILoginStrategyType",
+            "default": "riot"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUILoginStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUILoginStatusType": {
+        "enum": [
+          "uninitialized",
+          "initialized",
+          "authenticating",
+          "cancelled",
+          "success",
+          "error"
+        ],
+        "type": "string"
+      },
+      "PlatformUiRSOMobileUILoginStrategyInfo": {
+        "properties": {
+          "appInstalled": {
+            "default": true,
+            "type": "boolean"
+          },
+          "forceUseWebView": {
+            "type": "boolean"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUILoginStrategyType",
+            "default": "riot"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUILoginStrategyType": {
+        "enum": [
+          "riot",
+          "google_auth",
+          "game_center",
+          "facebook",
+          "apple",
+          "msdk_qq",
+          "msdk_wechat",
+          "qq",
+          "wechat",
+          "wegame",
+          "nintendo",
+          "playstation",
+          "xbox"
         ],
         "type": "string"
       },
@@ -9789,7 +10149,9 @@
         "enum": [
           "auth",
           "healup",
+          "kr-id-verification",
           "signup",
+          "multifactor",
           "gamepass",
           "success",
           "error"
@@ -9905,85 +10267,21 @@
         },
         "type": "object"
       },
-      "PlatformUiSocialFriend": {
-        "properties": {
-          "actor": {
-            "type": "string"
-          },
-          "details": {
-            "type": "string"
-          },
-          "displayGroup": {
-            "type": "string"
-          },
-          "gameName": {
-            "type": "string"
-          },
-          "gameTag": {
-            "type": "string"
-          },
-          "group": {
-            "type": "string"
-          },
-          "hovercard_background_url": {
-            "type": "string"
-          },
-          "icon_url": {
-            "type": "string"
-          },
-          "location": {
-            "type": "string"
-          },
-          "msg": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "note": {
-            "type": "string"
-          },
-          "patchline": {
-            "type": "string"
-          },
-          "product": {
-            "type": "string"
-          },
-          "product_folder_name": {
-            "type": "string"
-          },
-          "product_presence_name": {
-            "type": "string"
-          },
-          "puuid": {
-            "type": "string"
-          },
-          "region": {
-            "type": "string"
-          },
-          "showState": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PlatformUiSocialFriendList": {
-        "properties": {
-          "friends": {
-            "items": {
-              "$ref": "#/components/schemas/PlatformUiSocialFriend"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
       "PlatformUiSuccessResponseDetails": {
         "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "is_console_link_session": {
+            "type": "boolean"
+          },
           "linked": {
             "type": "string"
           },
           "login_token": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "redirect_url": {
@@ -10065,6 +10363,7 @@
       "PlatformUicode": {
         "enum": [
           "RateLimited",
+          "SingletonMissing",
           "FetchProductIdFailure",
           "InvalidCDNPath",
           "LoginStrategyMissing",
@@ -10083,10 +10382,13 @@
           "SigninFailure",
           "SigninAuthFailure",
           "AcceptEulaFailure",
+          "AcceptEulaRequired",
           "PlatformConsentFailure",
           "GenerateTaglineFailure",
           "CreateRiotIDFailure",
-          "SingletonMissing"
+          "AccountUpdateRequired",
+          "UnsupportedLoginStrategy",
+          "LoginInitFailure"
         ],
         "type": "string"
       },
@@ -10104,6 +10406,8 @@
           "NetworkDisconnected",
           "GamepadDisconnected",
           "ReadinessTimeout",
+          "AcceptEulaRequired",
+          "AccountUpdateRequired",
           "InternalError"
         ],
         "type": "string"
@@ -10436,13 +10740,174 @@
         },
         "type": "object"
       },
+      "PlayerAccountLookupV1GamerNameAndTagline": {
+        "properties": {
+          "gameName": {
+            "type": "string"
+          },
+          "tagLine": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1NamesetsForPuuidRequest": {
+        "properties": {
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1NamesetsForPuuidResponse": {
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "gnt": {
+            "$ref": "#/components/schemas/PlayerAccountLookupV1GamerNameAndTagline"
+          },
+          "playstationNameset": {
+            "$ref": "#/components/schemas/PlayerAccountLookupV1PlaystationNameset"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "switchNameset": {
+            "$ref": "#/components/schemas/PlayerAccountLookupV1SwitchNameset"
+          },
+          "xboxNameset": {
+            "$ref": "#/components/schemas/PlayerAccountLookupV1XboxNameset"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1NamesetsForPuuidsRequest": {
+        "properties": {
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1NamesetsForPuuidsResponse": {
+        "properties": {
+          "namesets": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountLookupV1NamesetsForPuuidResponse"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1PlaystationNameset": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1PuuidAndProvider": {
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "providerId": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1PuuidsForConsoleIdsRequest": {
+        "properties": {
+          "consoleIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "environment": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1PuuidsForConsoleIdsResponse": {
+        "properties": {
+          "response": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountLookupV1PuuidAndProvider"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1SwitchNameset": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1ToggleMockApiRequest": {
+        "properties": {
+          "enable": {
+            "type": "boolean"
+          },
+          "environment": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountLookupV1XboxNameset": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountOnlinePlatform": {
+        "enum": [
+          "absent",
+          "unknown",
+          "riot",
+          "tencent",
+          "garena",
+          "playstation",
+          "switch",
+          "xbox"
+        ],
+        "type": "string"
+      },
       "PlayerAccountPlatformUser": {
         "properties": {
           "id": {
             "type": "string"
           },
           "platform": {
-            "type": "string"
+            "$ref": "#/components/schemas/PlayerAccountOnlinePlatform",
+            "default": "unknown"
           }
         },
         "type": "object"
@@ -10704,6 +11169,14 @@
             },
             "nullable": true,
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountUserInfo": {
+        "properties": {
+          "userInfo": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -11824,6 +12297,9 @@
           "healup": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleHealupResponseDetails"
           },
+          "kr-id-verification": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleKRIdVerificationResponseDetails"
+          },
           "multifactor": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleMultifactorResponseDetails"
           },
@@ -12027,7 +12503,13 @@
           "persistLogin": {
             "type": "boolean"
           },
+          "requireLolRegion": {
+            "type": "boolean"
+          },
           "requireRiotID": {
+            "type": "boolean"
+          },
+          "requireVNG": {
             "type": "boolean"
           },
           "scopes": {
@@ -12035,6 +12517,14 @@
               "type": "string"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleKRIdVerificationResponseDetails": {
+        "properties": {
+          "redirect_url": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -12204,6 +12694,20 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecyclePlayerAccountVngV1StatusResponse": {
+        "properties": {
+          "action_required": {
+            "type": "boolean"
+          },
+          "action_url": {
+            "type": "string"
+          },
+          "action_url_raw": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerSessionLifecyclePlayerAffinityProductToken": {
         "properties": {
           "affinities": {
@@ -12243,10 +12747,21 @@
           "actionRequired": {
             "type": "boolean"
           },
+          "availableLoginStrategies": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "type": "array"
+          },
           "config": {
             "$ref": "#/components/schemas/PlayerSessionLifecycleInitiateLoginSessionRequest"
           },
           "errorCode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id": {
             "nullable": true,
             "type": "string"
           },
@@ -12283,11 +12798,14 @@
           "Initializing",
           "PendingClientId",
           "PendingCreateAuthorization",
+          "PendingLoginStrategy",
           "PendingPlatformAuthorizationConsent",
           "PendingProviderCredentials",
           "PendingAuthentication",
+          "PendingKRIdVerification",
           "PendingSignup",
           "PendingHealup",
+          "PendingMultifactor",
           "LoginTokenExchange",
           "PendingForget",
           "PendingConsent",
@@ -12295,6 +12813,8 @@
           "PendingEulaAcceptance",
           "PendingGamepassStatus",
           "PendingRiotID",
+          "PendingVNGProfile",
+          "PendingLolRegionSelection",
           "PendingUserInfoRefresh",
           "Authorized",
           "Error"
@@ -12391,11 +12911,30 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleRegionElectionV1EligibilityResponse": {
+        "properties": {
+          "canSelectRegion": {
+            "type": "boolean"
+          },
+          "multipleRegionsAllowed": {
+            "type": "boolean"
+          },
+          "selectedRegions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "PlayerSessionLifecycleResponseType": {
         "enum": [
           "auth",
           "healup",
+          "kr-id-verification",
           "signup",
+          "multifactor",
           "gamepass",
           "success",
           "error"
@@ -12508,10 +13047,19 @@
       },
       "PlayerSessionLifecycleSuccessResponseDetails": {
         "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "is_console_link_session": {
+            "type": "boolean"
+          },
           "linked": {
             "type": "string"
           },
           "login_token": {
+            "type": "string"
+          },
+          "puuid": {
             "type": "string"
           },
           "redirect_url": {
@@ -13261,6 +13809,12 @@
           },
           "productSessionId": {
             "type": "string"
+          },
+          "rsoClaims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           }
         },
         "type": "object"
@@ -14404,6 +14958,22 @@
         ],
         "type": "string"
       },
+      "ReferenceEchoRequest": {
+        "properties": {
+          "echo": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "ReferenceEchoResponse": {
+        "properties": {
+          "echo": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "RegionLocale": {
         "properties": {
           "locale": {
@@ -15321,15 +15891,6 @@
           },
           "region": {
             "type": "string"
-          },
-          "whitelistedWordCountsByLevel": {
-            "additionalProperties": {
-              "format": "int32",
-              "maximum": 4294967295,
-              "minimum": 0,
-              "type": "integer"
-            },
-            "type": "object"
           }
         },
         "type": "object"
@@ -15435,6 +15996,12 @@
       },
       "RsoAuthAuthorizationKeyRequest": {
         "properties": {
+          "claims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
           "client_id": {
             "type": "string"
           },
@@ -16914,6 +17481,9 @@
           "healup": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1HealupResponseDetails"
           },
+          "kr-id-verification": {
+            "$ref": "#/components/schemas/RsoAuthenticatorV1KRIdVerificationResponseDetails"
+          },
           "multifactor": {
             "$ref": "#/components/schemas/RsoAuthenticatorV1MultifactorResponseDetails"
           },
@@ -17083,6 +17653,14 @@
         },
         "type": "object"
       },
+      "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+        "properties": {
+          "redirect_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "RsoAuthenticatorV1LoginRequest": {
         "properties": {
           "authentication_type": {
@@ -17195,6 +17773,7 @@
         "enum": [
           "auth",
           "healup",
+          "kr-id-verification",
           "signup",
           "multifactor",
           "gamepass",
@@ -17609,6 +18188,1427 @@
         },
         "type": "object"
       },
+      "RsoMobileUiAcceptance": {
+        "enum": [
+          "WaitingForAllServiceData",
+          "AcceptanceRequired",
+          "Accepted"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiAccountDeletionV1AccountDeletionUIStatus": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/RsoMobileUiAccountDeletionV1AccountDeletionUIStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiAccountDeletionV1AccountDeletionUIStatusType": {
+        "enum": [
+          "uninitialized",
+          "started",
+          "external",
+          "visible",
+          "completed",
+          "cancelled",
+          "error",
+          "shutdown"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiAccountDeletionV1HomeBaseCountry": {
+        "properties": {
+          "cached_home_base_country": {
+            "type": "string"
+          },
+          "home_base_country": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiAccountPromotionStatus": {
+        "properties": {
+          "error_description": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiAccountPromotionStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiAccountPromotionStatusType": {
+        "enum": [
+          "uninitialized",
+          "initialized",
+          "promoted",
+          "cancelled",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiAuthMethodConfig": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiAuthenticationMethod": {
+        "enum": [
+          "Riot",
+          "Google",
+          "GameCenter",
+          "Facebook",
+          "Apple",
+          "QQ",
+          "Wechat",
+          "Wegame"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiAuthenticationRedirectRequest": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "redirect_uri": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiConfigReadinessEnum": {
+        "enum": [
+          "NotReady",
+          "Ready"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiConfigStatus": {
+        "properties": {
+          "readiness": {
+            "$ref": "#/components/schemas/RsoMobileUiConfigReadinessEnum",
+            "default": "NotReady"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIInitiate": {
+        "properties": {
+          "accept": {
+            "type": "string"
+          },
+          "allowDecline": {
+            "type": "boolean"
+          },
+          "decline": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "privacyPolicy": {
+            "type": "string"
+          },
+          "privacyPolicyUri": {
+            "type": "string"
+          },
+          "termsOfUse": {
+            "type": "string"
+          },
+          "termsOfUseUri": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIStatus": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/RsoMobileUiEULAUIStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIStatusType": {
+        "enum": [
+          "uninitialized",
+          "visible",
+          "accepted",
+          "declined",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiEULAUIV2Agreement": {
+        "properties": {
+          "isAccepted": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIV2Config": {
+        "properties": {
+          "privacyNoticeUrl": {
+            "type": "string"
+          },
+          "termsOfServiceContent": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIV2Status": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/RsoMobileUiEULAUIV2StatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiEULAUIV2StatusType": {
+        "enum": [
+          "uninitialized",
+          "visible",
+          "accepted",
+          "acceptanceRequired",
+          "declined",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiFederatedAuthState": {
+        "properties": {
+          "error": {
+            "nullable": true,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiFederatedAuthStateType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiFederatedAuthStateType": {
+        "enum": [
+          "none",
+          "success",
+          "failure",
+          "cancelled"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiFederatedLoginRequest": {
+        "properties": {
+          "facebookUseClassicLogin": {
+            "type": "boolean"
+          },
+          "forceUseWebView": {
+            "type": "boolean"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/RsoMobileUiLoginStrategyType",
+            "default": "riot"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiGameOutOfDateUIInitiate": {
+        "properties": {
+          "appId": {
+            "type": "string"
+          },
+          "appUrl": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiIOSEventInfo": {
+        "properties": {
+          "optionsAnnotation": {
+            "type": "string"
+          },
+          "sourceApplication": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiKrAccountPromotionSession": {
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiLoginInitiateRequest": {
+        "properties": {
+          "facebookUseClassicLogin": {
+            "type": "boolean"
+          },
+          "forceUseWebView": {
+            "type": "boolean"
+          },
+          "scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/RsoMobileUiLoginStrategyType",
+            "default": "riot"
+          },
+          "trustLevels": {
+            "items": {
+              "$ref": "#/components/schemas/RsoMobileUiRSOAuthorizationTrustLevel"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiLoginStatus": {
+        "properties": {
+          "error_description": {
+            "type": "string"
+          },
+          "federated_error_code": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "ready": {
+            "default": true,
+            "type": "boolean"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/RsoMobileUiLoginStrategyType",
+            "default": "riot"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiLoginStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiLoginStatusType": {
+        "enum": [
+          "uninitialized",
+          "initialized",
+          "authenticating",
+          "cancelled",
+          "success",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiLoginStrategyInfo": {
+        "properties": {
+          "appInstalled": {
+            "default": true,
+            "type": "boolean"
+          },
+          "forceUseWebView": {
+            "type": "boolean"
+          },
+          "strategy": {
+            "$ref": "#/components/schemas/RsoMobileUiLoginStrategyType",
+            "default": "riot"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiLoginStrategyType": {
+        "enum": [
+          "riot",
+          "google_auth",
+          "game_center",
+          "facebook",
+          "apple",
+          "msdk_qq",
+          "msdk_wechat",
+          "qq",
+          "wechat",
+          "wegame",
+          "nintendo",
+          "playstation",
+          "xbox"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiLoginTypeEnum": {
+        "enum": [
+          "Invalid",
+          "NoLongLivedSession",
+          "LongLivedSessionRejected",
+          "LongLivedSessionAccepted"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiLoginV1Request": {
+        "properties": {
+          "options": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "parameters": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "requestId": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "uri": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiOutcome": {
+        "enum": [
+          "Success",
+          "PrivateSettingsMissing",
+          "PrivateSettingsEmpty",
+          "RegionLocaleMissing",
+          "RegionMismatch",
+          "RegionDataMissing",
+          "NoLoginSessionCookies",
+          "SetPersistedLoginFailed",
+          "AuthRequestFailed",
+          "AuthResultNotAuthorized"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiPlatformUser": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiPluginConfigResponse": {
+        "properties": {
+          "methods": {
+            "items": {
+              "$ref": "#/components/schemas/RsoMobileUiAuthMethodConfig"
+            },
+            "type": "array"
+          },
+          "service_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiProduct": {
+        "properties": {
+          "patchline": {
+            "nullable": true,
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRSOAuthorizationTrustLevel": {
+        "enum": [
+          "always_trusted",
+          "trusted_device",
+          "always_verify"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRSOSignOnAttemptEvent": {
+        "properties": {
+          "authenticationMethod": {
+            "$ref": "#/components/schemas/RsoMobileUiAuthenticationMethod",
+            "nullable": true
+          },
+          "errorCode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "errorDescription": {
+            "nullable": true,
+            "type": "string"
+          },
+          "errorName": {
+            "nullable": true,
+            "type": "string"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/RsoMobileUiOutcome",
+            "default": "Success"
+          },
+          "product": {
+            "$ref": "#/components/schemas/RsoMobileUiProduct",
+            "nullable": true
+          },
+          "signOnAttemptNumber": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "nullable": true,
+            "type": "integer"
+          },
+          "storedSessionState": {
+            "$ref": "#/components/schemas/RsoMobileUiStoredSessionState",
+            "default": "Accepted"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionElectionV1EligibilityResponse": {
+        "properties": {
+          "canSelectRegion": {
+            "type": "boolean"
+          },
+          "multipleRegionsAllowed": {
+            "type": "boolean"
+          },
+          "selectedRegions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionElectionV1InitiateRequest": {
+        "properties": {
+          "regionHint": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionElectionV1RegionElection": {
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "$ref": "#/components/schemas/RsoMobileUiRegionsV1RegionAssignmentResponseMessage",
+            "default": "NO_ERROR"
+          },
+          "productId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "regionHint": {
+            "nullable": true,
+            "type": "string"
+          },
+          "selectedRegion": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionElectionV1UpdateRequest": {
+        "properties": {
+          "region": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionsV1EligibilityCheckResponse": {
+        "properties": {
+          "canSelectRegion": {
+            "type": "boolean"
+          },
+          "multipleRegionsAllowed": {
+            "type": "boolean"
+          },
+          "selectedRegions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionsV1RegionAssignmentResponse": {
+        "properties": {
+          "message": {
+            "$ref": "#/components/schemas/RsoMobileUiRegionsV1RegionAssignmentResponseMessage",
+            "default": "NO_ERROR"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRegionsV1RegionAssignmentResponseMessage": {
+        "enum": [
+          "LOGIN_REQUIRED",
+          "SERVER_ERROR",
+          "AUTH_REFRESH_FAILED",
+          "REGION_ALREADY_ASSIGNED",
+          "REGION_EXISTS",
+          "BAD_ENTITY_PARAMETER",
+          "NO_ERROR"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthAccessToken": {
+        "properties": {
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthAuthorizationRequest": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "scope": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "trustLevels": {
+            "items": {
+              "$ref": "#/components/schemas/RsoMobileUiRSOAuthorizationTrustLevel"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthAuthorizationResponse": {
+        "properties": {
+          "authorization": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthImplicitAuthorization"
+          },
+          "country": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthAuthorizationResponseType"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthAuthorizationResponseType": {
+        "enum": [
+          "needs_authentication",
+          "needs_reauthentication",
+          "authorized"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthIdToken": {
+        "properties": {
+          "expiry": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthImplicitAuthorization": {
+        "properties": {
+          "accessToken": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthAccessToken"
+          },
+          "idToken": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthIdToken"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthMultifactorDetails": {
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "method": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthMultifactorMethod",
+            "default": "method_not_set"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthMultifactorMethod": {
+        "enum": [
+          "method_not_set",
+          "email",
+          "authenticator",
+          "sms",
+          "push"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthOpenIdConfiguration": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthSessionLoginToken": {
+        "properties": {
+          "code_verifier": {
+            "type": "string"
+          },
+          "login_token": {
+            "type": "string"
+          },
+          "persist_login": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthSessionResponse": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthMultifactorDetails"
+          },
+          "persistLogin": {
+            "type": "boolean"
+          },
+          "state": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthSessionState",
+            "default": "Destroyed"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthSessionResponseType",
+            "default": "unknown_authentication_response"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthSessionResponseType": {
+        "enum": [
+          "unknown_authentication_response",
+          "needs_credentials",
+          "needs_password",
+          "needs_multifactor_verification",
+          "authenticated",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthSessionState": {
+        "enum": [
+          "Created",
+          "Updated",
+          "Destroyed"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateCodeInput": {
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateFacebookInput": {
+        "properties": {
+          "facebook": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorFacebookInput"
+          },
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateGameCenterInput": {
+        "properties": {
+          "gamecenter": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorGameCenterInput"
+          },
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateMultifactorInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorMultifactorInput"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateOpenIdConnectInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "open_id": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorOpenIdConnectInput"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticateRiotIdentityInput": {
+        "properties": {
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          },
+          "riot_identity": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorRiotIdentityInput"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorAuthenticationResponse": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "gamepass": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorGamepassResponseDetails"
+          },
+          "healup": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorHealupResponseDetails"
+          },
+          "multifactor": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorMultifactorResponseDetails"
+          },
+          "signup": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorSignupResponseDetails"
+          },
+          "success": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorSuccessResponseDetails"
+          },
+          "type": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorResponseType",
+            "default": "auth"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorDisplayMode": {
+        "enum": [
+          "page",
+          "touch"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthenticatorFacebookInput": {
+        "properties": {
+          "access_token": {
+            "nullable": true,
+            "type": "string"
+          },
+          "app_id": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorGameCenterInput": {
+        "properties": {
+          "bundle_id": {
+            "type": "string"
+          },
+          "player_id": {
+            "type": "string"
+          },
+          "public_key_url": {
+            "type": "string"
+          },
+          "salt": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorGamepassResponseDetails": {
+        "properties": {
+          "delay": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "remaining": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorGamepassStatus",
+            "default": "PENDING"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorGamepassStatus": {
+        "enum": [
+          "PENDING",
+          "ACTIVE",
+          "NONE"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthenticatorHealupResponseDetails": {
+        "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "required_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "required_fields_hints": {
+            "additionalProperties": true,
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorMultifactorInput": {
+        "properties": {
+          "action": {
+            "nullable": true,
+            "type": "string"
+          },
+          "otp": {
+            "nullable": true,
+            "type": "string"
+          },
+          "rememberDevice": {
+            "nullable": true,
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorMultifactorResponseDetails": {
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "methods": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mode": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorOpenIdConnectInput": {
+        "properties": {
+          "authorization_code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorResponseType": {
+        "enum": [
+          "auth",
+          "healup",
+          "signup",
+          "multifactor",
+          "gamepass",
+          "success",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthenticatorRiotIdentityInput": {
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "region": {
+            "nullable": true,
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorSignupLinkDetails": {
+        "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "options": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "suggested": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorSignupResponseDetails": {
+        "properties": {
+          "auth_method": {
+            "type": "string"
+          },
+          "link": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorSignupLinkDetails"
+          },
+          "required_fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "required_fields_hints": {
+            "additionalProperties": true,
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorSuccessResponseDetails": {
+        "properties": {
+          "linked": {
+            "type": "string"
+          },
+          "login_token": {
+            "type": "string"
+          },
+          "redirect_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiRsoAuthenticatorWebAuthenticationMethod": {
+        "enum": [
+          "none",
+          "apple",
+          "google",
+          "facebook",
+          "nintendo",
+          "playstation",
+          "xbox"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiRsoAuthenticatorWebAuthenticationUrlRequest": {
+        "properties": {
+          "authentication_callback_uri": {
+            "type": "string"
+          },
+          "display": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorDisplayMode",
+            "default": "page"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "method": {
+            "$ref": "#/components/schemas/RsoMobileUiRsoAuthenticatorWebAuthenticationMethod",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiStoredSessionState": {
+        "enum": [
+          "Accepted",
+          "Rejected",
+          "Absent"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiUIAccountPromotionFieldResponse": {
+        "properties": {
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIAccountPromotionResponse": {
+        "properties": {
+          "fields": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIAuthorization": {
+        "properties": {
+          "currentAccountId": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "currentPlatformId": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIEligibilityCheckResponse": {
+        "properties": {
+          "errorCode": {
+            "default": 200,
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "errorMessage": {
+            "type": "string"
+          },
+          "isEligible": {
+            "type": "boolean"
+          },
+          "isTooYoung": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIMSDKQQPartnerCredentials": {
+        "properties": {
+          "appId": {
+            "type": "string"
+          },
+          "msdkKey": {
+            "type": "string"
+          },
+          "openId": {
+            "type": "string"
+          },
+          "openKey": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIMSDKWeChatPartnerCredentials": {
+        "properties": {
+          "accessToken": {
+            "type": "string"
+          },
+          "appId": {
+            "type": "string"
+          },
+          "msdkKey": {
+            "type": "string"
+          },
+          "openId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIPartnerCredentials": {
+        "properties": {
+          "msdk_qq": {
+            "$ref": "#/components/schemas/RsoMobileUiUIMSDKQQPartnerCredentials",
+            "nullable": true
+          },
+          "msdk_wechat": {
+            "$ref": "#/components/schemas/RsoMobileUiUIMSDKWeChatPartnerCredentials",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewIncomingCloseRequest": {
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "userInitiated": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewIncomingError": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewIncomingResourceRequest": {
+        "properties": {
+          "body": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "id": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewOutgoingResourceData": {
+        "properties": {
+          "body": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "code": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewOutgoingResourceNotification": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RsoMobileUiUIWebViewOutgoingResourceNotificationData"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewOutgoingResourceNotificationData": {
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "value": {
+            "additionalProperties": true,
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiUIWebViewOutgoingResourceRequest": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RsoMobileUiUIWebViewOutgoingResourceData"
+          },
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiVngV1RegistrationUIStatus": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/RsoMobileUiVngV1RegistrationUIStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiVngV1RegistrationUIStatusType": {
+        "enum": [
+          "uninitialized",
+          "visible",
+          "completed",
+          "cancelled",
+          "error"
+        ],
+        "type": "string"
+      },
+      "RsoMobileUiVngV1StatusResponse": {
+        "properties": {
+          "action_required": {
+            "type": "boolean"
+          },
+          "action_url": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RsoMobileUiWebViewAccountPromotionResponse": {
+        "properties": {
+          "error": {
+            "type": "string"
+          },
+          "fields": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
       "ScdCookie": {
         "properties": {
           "cookie": {
@@ -17674,6 +19674,98 @@
           "On"
         ],
         "type": "string"
+      },
+      "Session": {
+        "properties": {
+          "productId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "SocialFriend": {
+        "properties": {
+          "actor": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "displayGroup": {
+            "type": "string"
+          },
+          "gameName": {
+            "type": "string"
+          },
+          "gameTag": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "hovercard_background_url": {
+            "type": "string"
+          },
+          "icon_url": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "patchline": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "product_folder_name": {
+            "type": "string"
+          },
+          "product_presence_name": {
+            "type": "string"
+          },
+          "puuid": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "showState": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "SocialFriendList": {
+        "properties": {
+          "friends": {
+            "items": {
+              "$ref": "#/components/schemas/SocialFriend"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "SocialProductContext": {
+        "properties": {
+          "patchline": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "StructuredLogRequest": {
         "properties": {
@@ -17795,6 +19887,12 @@
       },
       "TencentLauncherAuthorizationKeyRequest": {
         "properties": {
+          "claims": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
           "client_id": {
             "type": "string"
           },
@@ -18417,6 +20515,30 @@
         },
         "type": "object"
       },
+      "TencentLauncherProductSessionHeartbeatInfo": {
+        "properties": {
+          "phase": {
+            "$ref": "#/components/schemas/TencentLauncherProductSessionProductPhase",
+            "default": "None"
+          },
+          "sessionTTL": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "TencentLauncherProductSessionProductPhase": {
+        "enum": [
+          "None",
+          "Pending",
+          "Idle",
+          "Gameplay"
+        ],
+        "type": "string"
+      },
       "TencentLauncherPublicClientConfig": {
         "properties": {
           "clientId": {
@@ -18928,6 +21050,25 @@
         },
         "type": "object"
       },
+      "VoiceChatGamepadPTTButton": {
+        "enum": [
+          "FaceButton_Top",
+          "FaceButton_Bottom",
+          "FaceButton_Left",
+          "FaceButton_Right",
+          "Dpad_Up",
+          "Dpad_Down",
+          "Dpad_Left",
+          "Dpad_Right",
+          "LeftShoulder",
+          "RightShoulder",
+          "LeftTrigger",
+          "RightTrigger",
+          "LeftThumbstickButton",
+          "RightThumbstickButton"
+        ],
+        "type": "string"
+      },
       "VoiceChatIdToken": {
         "properties": {
           "token": {
@@ -19030,6 +21171,10 @@
       },
       "VoiceChatPushToTalkKey": {
         "properties": {
+          "gamepadButton": {
+            "$ref": "#/components/schemas/VoiceChatGamepadPTTButton",
+            "nullable": true
+          },
           "key": {
             "format": "int32",
             "maximum": 4294967295,
@@ -19182,6 +21327,10 @@
       },
       "VoiceChatUnnormalizedPushToTalkKey": {
         "properties": {
+          "gamepadButton": {
+            "$ref": "#/components/schemas/VoiceChatGamepadPTTButton",
+            "nullable": true
+          },
           "key": {
             "format": "int32",
             "maximum": 4294967295,
@@ -24401,6 +26550,32 @@
         ]
       }
     },
+    "/entitlements-service/v1/token": {
+      "get": {
+        "description": "Calls the entitlements service, and retrieves the user's current entitlements token.\n\nReturns HTTP 400 if the token is not ready.",
+        "operationId": "GetEntitlementsServiceV1Token",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementsServiceEntitlementsServiceToken"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get the entitlements token from the service",
+        "tags": [
+          "Plugins",
+          "Plugin entitlements-service",
+          "Subscribable",
+          "Internal"
+        ]
+      }
+    },
     "/entitlements/v1/token": {
       "get": {
         "description": "Callers should prefer /v2/token in order to acquire both access and ID token\n\nReturns HTTP 400 if the token is not ready.",
@@ -24815,112 +26990,6 @@
           "Plugins",
           "Plugin friends",
           "Internal"
-        ]
-      }
-    },
-    "/friends/v2/namesets-for-puuid/{puuid}": {
-      "get": {
-        "description": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** URL Argument **\n\n\"puuid\" - PUUIDs to retrieve namesets for\n    \nResponse Body:\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-        "operationId": "GetFriendsV2NamesetsForPuuidByPuuid",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "puuid",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FriendsFriendsV1NamesetsResponseElement"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Retrieves the namesets for a single PUUID",
-        "tags": [
-          "Plugins",
-          "Plugin friends"
-        ]
-      }
-    },
-    "/friends/v2/namesets-for-puuids": {
-      "post": {
-        "description": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n    \n\nResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\n\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-        "operationId": "PostFriendsV2NamesetsForPuuids",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/FriendsFriendsV1NamesetsRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "request"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FriendsFriendsV1NamesetsResponse"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Retrieves the namesets for each PUUID provided",
-        "tags": [
-          "Plugins",
-          "Plugin friends"
-        ]
-      }
-    },
-    "/friends/v2/puuids-for-consoleids": {
-      "post": {
-        "description": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\n\nConsoleIdToPuuidResponseElement:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
-        "operationId": "PostFriendsV2PuuidsForConsoleids",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "consoleIds"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FriendsFriendsConsoleIdsToPuuidsResponse"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Retrieves the PUUIDs for each Console ID provided",
-        "tags": [
-          "Plugins",
-          "Plugin friends"
         ]
       }
     },
@@ -26115,6 +28184,211 @@
           "Plugins",
           "Plugin mailbox",
           "Subscribable"
+        ]
+      }
+    },
+    "/matchmaking-service/v1/match/{check_id}/accept": {
+      "post": {
+        "description": "\n**Description**\n\nThis endpoint accepts the ready check and confirm the player is entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to accept\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "PostMatchmakingServiceV1MatchByCheckIdAccept",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      }
+    },
+    "/matchmaking-service/v1/match/{check_id}/decline": {
+      "post": {
+        "description": "\n**Description**\n\nThis endpoint declines the ready check and confirm the player is not entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to decline\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "PostMatchmakingServiceV1MatchByCheckIdDecline",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "check_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      }
+    },
+    "/matchmaking-service/v1/match/{ticket_id}": {
+      "delete": {
+        "description": "\n**Description**\n\nThis endpoint removes a ticket with given id from the Matchmaking flow.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "DeleteMatchmakingServiceV1MatchByTicketId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      },
+      "get": {
+        "description": "\n**Description**\n\nThis endpoint gets the current state of a specified ticket.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\nResponse Body:\n* `TicketState` Object:\n    * `id` - A string that contains ticket id\n    * `product` - A string that contains product id\n    * `shard` - A string that contains information about shard info\n    * `mode` - A string that contains information about matchmaking mode\n    * `submode` - An optional string that contains information about matchmaking submode\n    * `version` - A string that contains information about matchmaking version\n    * `state` - A string that contains information about state of match\n    * `match_id` - A string that contains information about match id\n    * `puuids` - A list of strings containing puuid of players participating in match\n    * `created_at` - A string that contains information about creation time of ticket\n    * `updated_at` - A string that contains information about update time of ticket\n    * `state_updated_at` - A string that contains information about update time of match state\n    * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "GetMatchmakingServiceV1MatchByTicketId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingServiceV1TicketState"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      }
+    },
+    "/matchmaking-service/v1/matches": {
+      "delete": {
+        "description": "\n**Description**\n\nThis endpoint removes a player from the matchmaking flow, ie. ends their current request for a match in matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "DeleteMatchmakingServiceV1Matches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "shard",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      },
+      "get": {
+        "description": "\n**Description**\n\nThis endpoint gets the current state of a player who has entered matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* `TicketsState` Object:\n    * `tickets`: A list containg `TicketState` objects\n        * `id` - A string that contains ticket id\n        * `product` - A string that contains product id\n        * `shard` - A string that contains information about shard info\n        * `mode` - A string that contains information about matchmaking mode\n        * `submode` - An optional string that contains information about matchmaking submode\n        * `version` - A string that contains information about matchmaking version\n        * `state` - A string that contains information about state of match\n        * `match_id` - A string that contains information about match id\n        * `puuids` - A list of strings containing puuid of players participating in match\n        * `created_at` - A string that contains information about creation time of ticket\n        * `updated_at` - A string that contains information about update time of ticket\n        * `state_updated_at` - A string that contains information about update time of match state\n        * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "GetMatchmakingServiceV1Matches",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "shard",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "mode",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "version",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingServiceV1TicketsState"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
+        ]
+      },
+      "post": {
+        "description": "\n**Description**\n\nThis endpoint creates a Matchmaking ticket with the provided params.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nBody argument\n\n* `CreateMatchmakingTicketParams` Object:\n    * `shard`: parameter storing shard info\n    * `mode`: parameter storing matchmaking mode\n    * `mode`: optional parameter storing matchmaking mode\n    * `version`: parameter storing matchmaking version\n    * `additionalDataForAlgorithm`: parameter storing additional data required by matchmaking algorithm\n\n**Returns**\n\nResponse Body:\n* `CreateMatchmakingTicketResult` Object:\n    * `ticketId`: A string that contains ticket id\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+        "operationId": "PostMatchmakingServiceV1Matches",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchmakingServiceV1CreateMatchmakingTicketParams"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "params"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingServiceV1CreateMatchmakingTicketResult"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking-service"
         ]
       }
     },
@@ -27612,92 +29886,6 @@
         ]
       }
     },
-    "/platform-ui-social/v1/friends": {
-      "get": {
-        "operationId": "GetPlatformUiSocialV1Friends",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PlatformUiSocialFriendList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin platform-ui-social",
-          "Subscribable",
-          "Internal"
-        ]
-      }
-    },
-    "/platform-ui-social/v1/full-friends-list": {
-      "get": {
-        "operationId": "GetPlatformUiSocialV1FullFriendsList",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PlatformUiSocialFriendList"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin platform-ui-social",
-          "Subscribable",
-          "Internal"
-        ]
-      }
-    },
-    "/platform-ui-social/v1/initialize": {
-      "get": {
-        "operationId": "GetPlatformUiSocialV1Initialize",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin platform-ui-social",
-          "Subscribable",
-          "Internal"
-        ]
-      },
-      "post": {
-        "operationId": "PostPlatformUiSocialV1Initialize",
-        "parameters": [],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "tags": [
-          "Plugins",
-          "Plugin platform-ui-social",
-          "Internal"
-        ]
-      }
-    },
     "/platform-ui/v1/enabled": {
       "get": {
         "operationId": "GetPlatformUiV1Enabled",
@@ -28136,6 +30324,144 @@
         ]
       }
     },
+    "/player-account/lookup/v1/namesets-for-puuid": {
+      "post": {
+        "description": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n    \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "operationId": "PostPlayerAccountLookupV1NamesetsForPuuid",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountLookupV1NamesetsForPuuidRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountLookupV1NamesetsForPuuidResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieves the namesets for a single PUUID",
+        "tags": [
+          "Plugins",
+          "Plugin player-account"
+        ]
+      }
+    },
+    "/player-account/lookup/v1/namesets-for-puuids": {
+      "post": {
+        "description": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+        "operationId": "PostPlayerAccountLookupV1NamesetsForPuuids",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountLookupV1NamesetsForPuuidsRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountLookupV1NamesetsForPuuidsResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieves the namesets for each PUUID provided",
+        "tags": [
+          "Plugins",
+          "Plugin player-account"
+        ]
+      }
+    },
+    "/player-account/lookup/v1/puuids-for-consoleids": {
+      "post": {
+        "description": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nConsoleIdsToPuuidsResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+        "operationId": "PostPlayerAccountLookupV1PuuidsForConsoleids",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountLookupV1PuuidsForConsoleIdsRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountLookupV1PuuidsForConsoleIdsResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieves the PUUIDs for each Console ID provided",
+        "tags": [
+          "Plugins",
+          "Plugin player-account"
+        ]
+      }
+    },
+    "/player-account/lookup/v1/toggle-mock-api": {
+      "post": {
+        "description": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
+        "operationId": "PostPlayerAccountLookupV1ToggleMockApi",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountLookupV1ToggleMockApiRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
+        "tags": [
+          "Plugins",
+          "Plugin player-account",
+          "Internal"
+        ]
+      }
+    },
     "/player-account/promotion/v1/eligibility": {
       "get": {
         "operationId": "GetPlayerAccountPromotionV1Eligibility",
@@ -28540,44 +30866,6 @@
           "Plugins",
           "Plugin player-affinity",
           "Deprecated"
-        ]
-      }
-    },
-    "/player-affinity/product/v1/token/debug": {
-      "post": {
-        "description": "Endpoint deleted November 2021; Please use 'player-affinity/product/v2/token/debug.",
-        "operationId": "PostPlayerAffinityProductV1TokenDebug",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PlayerAffinityPlayerAffinityTokenProduct"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "input"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PlayerAffinityPlayerAffinityTokenProduct"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "DEBUG: For debugging subscribers. Save a new product affinity token to the local cache then notify subscribers.",
-        "tags": [
-          "Plugins",
-          "Plugin player-affinity",
-          "Deprecated",
-          "Internal"
         ]
       }
     },
@@ -32116,6 +34404,42 @@
         ]
       }
     },
+    "/reference/v1/echo": {
+      "put": {
+        "description": "\n**Description**\n\nThis API is intended as a reference on how to create a plugin for new developers. The endpoint simply returns a string that the user inputs\n\nRequired arguments:\n```\necho: A string that will be returned to the user\n```\n",
+        "operationId": "PutReferenceV1Echo",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReferenceEchoRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "echo"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReferenceEchoResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Returns the user input string",
+        "tags": [
+          "Plugins",
+          "Plugin reference"
+        ]
+      }
+    },
     "/riot-client-auth/v1/authorization": {
       "get": {
         "description": "*Internal Riot Client API. Please don't use outside of Riot Client.*\n\nProvides the RSO Access Token for the SDK, intended for internal use by plugins that don't provide game-specific data.",
@@ -32691,6 +35015,31 @@
           }
         },
         "summary": "Subscription endpoint to receive async notifications of push messages with the given resource path.",
+        "tags": [
+          "Plugins",
+          "Plugin riot-messaging-service",
+          "Subscribable"
+        ]
+      }
+    },
+    "/riot-messaging-service/v1/out-of-sync": {
+      "get": {
+        "operationId": "GetRiotMessagingServiceV1OutOfSync",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "This is subscribe-only endpoint. Notification on this resource is triggered if RMS session is out of sync.",
         "tags": [
           "Plugins",
           "Plugin riot-messaging-service",
@@ -34138,6 +36487,30 @@
         "tags": [
           "Plugins",
           "Plugin rso-auth"
+        ]
+      }
+    },
+    "/rso-auth/v1/logout-reason": {
+      "get": {
+        "operationId": "GetRsoAuthV1LogoutReason",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoAuthLogoutReason"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Returns latest logout reason.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-auth",
+          "Subscribable"
         ]
       }
     },
@@ -35903,6 +38276,935 @@
         ]
       }
     },
+    "/rso-mobile-ui/v1/account-promotion/initiate": {
+      "post": {
+        "description": "Launches a UI for handling account promotion",
+        "operationId": "PostRsoMobileUiV1AccountPromotionInitiate",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/account-promotion/status": {
+      "get": {
+        "operationId": "GetRsoMobileUiV1AccountPromotionStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiAccountPromotionStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get the current account promotion UI status",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/authentication-redirect": {
+      "post": {
+        "description": "Internal endpoint for triggering redirect of the current authentication to a given url.",
+        "operationId": "PostRsoMobileUiV1AuthenticationRedirect",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiAuthenticationRedirectRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "redirectRequest"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/browser/redirect": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugBrowserRedirect",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiIOSEventInfo"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/configurations": {
+      "get": {
+        "operationId": "GetRsoMobileUiV1DebugConfigurations",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Introspect the current configuration",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/sdk": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugSdk",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/webview/decide-navigation-policy": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugWebviewDecideNavigationPolicy",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/webview/javascript-message": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugWebviewJavascriptMessage",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/webview/launch": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugWebviewLaunch",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Debug endpoint to detect page launches",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/webview/load-error-page": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugWebviewLoadErrorPage",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "debug"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/debug/webview/simulate-onfinish": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DebugWebviewSimulateOnfinish",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "arg"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Simulates the callback from the web view closing",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/delete-account": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1DeleteAccount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Initiates the Account Deletion UI to delete a player's Riot account. Be careful, this functionality is destructive - making it difficult, if not impossible, to recover an account.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/delete-account/status": {
+      "get": {
+        "description": "\n**Response**\n* `status`: the current status of the Delete Account flow. Of type Api::AccountDeletionV1::AccountDeletionUIStatus.\n",
+        "operationId": "GetRsoMobileUiV1DeleteAccountStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiAccountDeletionV1AccountDeletionUIStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieves the current status of the Account Deletion UI initiated via /rso-mobile-ui/v1/delete-account. Most useful for a client to track whether or not an Account Deletion flow was cancelled or completed.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/eula/initiate": {
+      "post": {
+        "description": "Launches a dialog UI for requesting player acceptance to the current EULA from rcp-be-eula",
+        "operationId": "PostRsoMobileUiV1EulaInitiate",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiEULAUIInitiate"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "dialog"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/eula/status": {
+      "get": {
+        "description": "Get the current EULA UI status.",
+        "operationId": "GetRsoMobileUiV1EulaStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiEULAUIStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/federated-login": {
+      "post": {
+        "description": "Internal endpoint for triggering federated logins for account linking.",
+        "operationId": "PostRsoMobileUiV1FederatedLogin",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiFederatedLoginRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "strategy"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Internal"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/ios-auth-redirect": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1IosAuthRedirect",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiIOSEventInfo"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "iOS application open url event",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/login/initiate": {
+      "post": {
+        "description": "Launches an Android Activity or iOS UIView to display a login flow to the player using a WebView",
+        "operationId": "PostRsoMobileUiV1LoginInitiate",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiLoginInitiateRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "strategy"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/login/status": {
+      "get": {
+        "operationId": "GetRsoMobileUiV1LoginStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiLoginStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get the current login UI status",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/login/strategies": {
+      "get": {
+        "description": "Returns a list of strategies supported by the rso-mobile-ui plugin for this SDK version and client id",
+        "operationId": "GetRsoMobileUiV1LoginStrategies",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RsoMobileUiLoginStrategyInfo"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/region-election": {
+      "delete": {
+        "operationId": "DeleteRsoMobileUiV1RegionElection",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1RegionElection"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Programmatically dismiss the Region Election UI. Note that this endpoit returns immediately, but the resource is finalized synchronously.",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      },
+      "get": {
+        "operationId": "GetRsoMobileUiV1RegionElection",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1RegionElection"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Fetches the state of the Region Election UI",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostRsoMobileUiV1RegionElection",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1InitiateRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1RegionElection"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Initiates the display of the Region Election UI",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      },
+      "put": {
+        "operationId": "PutRsoMobileUiV1RegionElection",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1UpdateRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1RegionElection"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Programmatically update the state of the Region Election UI",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/region-election/eligibility": {
+      "get": {
+        "operationId": "GetRsoMobileUiV1RegionElectionEligibility",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiRegionElectionV1EligibilityResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Check if a player is eligible for region election with UI",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/show-game-out-of-date": {
+      "post": {
+        "operationId": "PostRsoMobileUiV1ShowGameOutOfDate",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiGameOutOfDateUIInitiate"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Show a native dialog displaying game is out of date and redirecting user to app store",
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/vng/profile/{productId}": {
+      "post": {
+        "description": "Launches a WebView to edit VNG (Vietnam) profile registration",
+        "operationId": "PostRsoMobileUiV1VngProfileByProductId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/vng/register/{productId}": {
+      "post": {
+        "description": "Launches a WebView (if necessary) to handle initial, one-time, game-specific, required VNG (Vietnam) profile registration",
+        "operationId": "PostRsoMobileUiV1VngRegisterByProductId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v1/vng/status": {
+      "get": {
+        "description": "Get the current VNG Registration UI status.",
+        "operationId": "GetRsoMobileUiV1VngStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiVngV1RegistrationUIStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v2/eula": {
+      "get": {
+        "description": "Get the current EULA UI V2 content.",
+        "operationId": "GetRsoMobileUiV2Eula",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiEULAUIV2Config"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v2/eula/agreement": {
+      "post": {
+        "description": "Saves agreement status",
+        "operationId": "PostRsoMobileUiV2EulaAgreement",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RsoMobileUiEULAUIV2Agreement"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "isAccepted"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v2/eula/initiate": {
+      "post": {
+        "description": "Launches a WebView for requesting player acceptance to the current EULA from rcp-be-eula",
+        "operationId": "PostRsoMobileUiV2EulaInitiate",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui"
+        ]
+      }
+    },
+    "/rso-mobile-ui/v2/eula/status": {
+      "get": {
+        "description": "Get the current EULA UI V2 status.",
+        "operationId": "GetRsoMobileUiV2EulaStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RsoMobileUiEULAUIV2Status"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin rso-mobile-ui",
+          "Subscribable"
+        ]
+      }
+    },
     "/scd/v1/cookies": {
       "get": {
         "operationId": "GetScdV1Cookies",
@@ -36034,6 +39336,104 @@
         "tags": [
           "Plugins",
           "Plugin scd"
+        ]
+      }
+    },
+    "/social/v1/friends": {
+      "get": {
+        "operationId": "GetSocialV1Friends",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SocialFriendList"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+        "tags": [
+          "Plugins",
+          "Plugin social",
+          "Subscribable"
+        ]
+      }
+    },
+    "/social/v1/friends/patch": {
+      "get": {
+        "operationId": "GetSocialV1FriendsPatch",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SocialFriendList"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+        "tags": [
+          "Plugins",
+          "Plugin social",
+          "Subscribable"
+        ]
+      }
+    },
+    "/social/v1/initialize": {
+      "post": {
+        "operationId": "PostSocialV1Initialize",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SocialProductContext"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "product_context"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin social"
+        ]
+      }
+    },
+    "/social/v1/ready": {
+      "get": {
+        "operationId": "GetSocialV1Ready",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin social",
+          "Subscribable"
         ]
       }
     },
@@ -36641,6 +40041,23 @@
         ]
       }
     },
+    "/tencent-launcher/v1/repair-on-shutdown": {
+      "post": {
+        "description": "\n            **Description**\n            After the game shuts down Tencent Launcher will repair the game and then relaunch it.\n        ",
+        "operationId": "PostTencentLauncherV1RepairOnShutdown",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Initializes repair on shutdown flow in the ACLOS",
+        "tags": [
+          "Plugins",
+          "Plugin tencent-launcher"
+        ]
+      }
+    },
     "/voice-chat/v1/active-product": {
       "get": {
         "operationId": "GetVoiceChatV1ActiveProduct",
@@ -36660,7 +40077,8 @@
         "summary": "Get the current active product",
         "tags": [
           "Plugins",
-          "Plugin voice-chat"
+          "Plugin voice-chat",
+          "Subscribable"
         ]
       }
     },

@@ -3397,6 +3397,45 @@
       "url": "/mailbox/v1/debug/caller-id/mock-id",
       "usage": "DeleteMailboxV1DebugCallerIdMockId"
     },
+    "DeleteMatchmakingServiceV1MatchByTicketId": {
+      "arguments": [
+        {
+          "ticket_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint removes a ticket with given id from the Matchmaking flow.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "DELETE",
+      "url": "/matchmaking-service/v1/match/{ticket_id}",
+      "usage": "DeleteMatchmakingServiceV1MatchByTicketId <ticket_id>"
+    },
+    "DeleteMatchmakingServiceV1Matches": {
+      "arguments": [
+        {
+          "shard": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        {
+          "mode": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "optional": true,
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint removes a player from the matchmaking flow, ie. ends their current request for a match in matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "DELETE",
+      "url": "/matchmaking-service/v1/matches",
+      "usage": "DeleteMatchmakingServiceV1Matches [<shard>] [<mode>] [<version>]"
+    },
     "DeletePatchProxyV1PatchJobsAll": {
       "arguments": [],
       "description": "Delete all patch jobs from the scheduler. This will stop patch in progress.",
@@ -6659,6 +6698,52 @@
       "url": "/data-store/v1/system-settings/{+path}",
       "usage": "GetDataStoreV1SystemSettingsByPath <path>"
     },
+    "GetEntitlementsServiceV1Token": {
+      "arguments": [],
+      "description": "Get the entitlements token from the service",
+      "help": "Calls the entitlements service, and retrieves the user's current entitlements token.\n\nReturns HTTP 400 if the token is not ready.",
+      "http_method": "GET",
+      "returns": {
+        "EntitlementsServiceEntitlementsServiceToken": {
+          "fields": [
+            {
+              "entitlements": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of string"
+              }
+            },
+            {
+              "issuer": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "subject": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "token": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/entitlements-service/v1/token",
+      "usage": "GetEntitlementsServiceV1Token"
+    },
     "GetEntitlementsV1Token": {
       "arguments": [],
       "description": "Get V1 entitlements token, which contains the RSO access token.",
@@ -7115,134 +7200,6 @@
       "http_method": "GET",
       "url": "/friends/v2/make-platform-blocks-riot-blocks",
       "usage": "GetFriendsV2MakePlatformBlocksRiotBlocks"
-    },
-    "GetFriendsV2NamesetsForPuuidByPuuid": {
-      "arguments": [
-        {
-          "puuid": {
-            "type": "string"
-          }
-        }
-      ],
-      "description": "Retrieves the namesets for a single PUUID",
-      "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** URL Argument **\n\n\"puuid\" - PUUIDs to retrieve namesets for\n    \nResponse Body:\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-      "http_method": "GET",
-      "returns": {
-        "FriendsFriendsV1NamesetsResponseElement": {
-          "fields": [
-            {
-              "alias": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": {
-                  "FriendsFriendsV1RiotAlias": {
-                    "fields": [
-                      {
-                        "gameName": {
-                          "description": "",
-                          "offset": 0,
-                          "optional": false,
-                          "type": "string"
-                        }
-                      },
-                      {
-                        "tagLine": {
-                          "description": "",
-                          "offset": 0,
-                          "optional": false,
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "error": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "playstationNameset": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": {
-                  "FriendsFriendsV1PlaystationNameset": {
-                    "fields": [
-                      {
-                        "name": {
-                          "description": "",
-                          "offset": 0,
-                          "optional": false,
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "puuid": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "switchNameset": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": {
-                  "FriendsFriendsV1SwitchNameset": {
-                    "fields": [
-                      {
-                        "name": {
-                          "description": "",
-                          "offset": 0,
-                          "optional": false,
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "xboxNameset": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": {
-                  "FriendsFriendsV1XboxNameset": {
-                    "fields": [
-                      {
-                        "name": {
-                          "description": "",
-                          "offset": 0,
-                          "optional": false,
-                          "type": "string"
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      "url": "/friends/v2/namesets-for-puuid/{puuid}",
-      "usage": "GetFriendsV2NamesetsForPuuidByPuuid <puuid>"
     },
     "GetGaRestrictionV1DebugCallerIdMockId": {
       "arguments": [],
@@ -7725,6 +7682,169 @@
       "returns": "bool",
       "url": "/mailbox/v1/ready",
       "usage": "GetMailboxV1Ready"
+    },
+    "GetMatchmakingServiceV1MatchByTicketId": {
+      "arguments": [
+        {
+          "ticket_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint gets the current state of a specified ticket.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument:\n* `ticket_id` - id of a ticket to remove\n\n**Returns**\n\nResponse Body:\n* `TicketState` Object:\n    * `id` - A string that contains ticket id\n    * `product` - A string that contains product id\n    * `shard` - A string that contains information about shard info\n    * `mode` - A string that contains information about matchmaking mode\n    * `submode` - An optional string that contains information about matchmaking submode\n    * `version` - A string that contains information about matchmaking version\n    * `state` - A string that contains information about state of match\n    * `match_id` - A string that contains information about match id\n    * `puuids` - A list of strings containing puuid of players participating in match\n    * `created_at` - A string that contains information about creation time of ticket\n    * `updated_at` - A string that contains information about update time of ticket\n    * `state_updated_at` - A string that contains information about update time of match state\n    * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "GET",
+      "returns": {
+        "MatchmakingServiceV1TicketState": {
+          "fields": [
+            {
+              "created_at": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "id": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "match_id": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "mode": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "product": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "puuids": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of string"
+              }
+            },
+            {
+              "shard": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "state": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "state_updated_at": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "submode": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "ticket_age_ms": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "uint64"
+              }
+            },
+            {
+              "updated_at": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "version": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/matchmaking-service/v1/match/{ticket_id}",
+      "usage": "GetMatchmakingServiceV1MatchByTicketId <ticket_id>"
+    },
+    "GetMatchmakingServiceV1Matches": {
+      "arguments": [
+        {
+          "shard": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        {
+          "mode": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "optional": true,
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint gets the current state of a player who has entered matchmaking.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nQuery arguments\n* `shard`: optional parameter storing shard info\n\n* `mode`: optional parameter storing matchmaking mode\n\n* `version`: optional parameter storing matchmaking version\n\n**Returns**\n\nResponse Body:\n* `TicketsState` Object:\n    * `tickets`: A list containg `TicketState` objects\n        * `id` - A string that contains ticket id\n        * `product` - A string that contains product id\n        * `shard` - A string that contains information about shard info\n        * `mode` - A string that contains information about matchmaking mode\n        * `submode` - An optional string that contains information about matchmaking submode\n        * `version` - A string that contains information about matchmaking version\n        * `state` - A string that contains information about state of match\n        * `match_id` - A string that contains information about match id\n        * `puuids` - A list of strings containing puuid of players participating in match\n        * `created_at` - A string that contains information about creation time of ticket\n        * `updated_at` - A string that contains information about update time of ticket\n        * `state_updated_at` - A string that contains information about update time of match state\n        * `ticket_age_ms` - A string that contains information about age of ticket in miliseconds\n\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "GET",
+      "returns": {
+        "MatchmakingServiceV1TicketsState": {
+          "fields": [
+            {
+              "tickets": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of MatchmakingServiceV1TicketState"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/matchmaking-service/v1/matches",
+      "usage": "GetMatchmakingServiceV1Matches [<shard>] [<mode>] [<version>]"
     },
     "GetMobileProductRegistryV1BuildNumber": {
       "arguments": [],
@@ -12289,53 +12409,6 @@
       "url": "/platform-login/v1/status",
       "usage": "GetPlatformLoginV1Status"
     },
-    "GetPlatformUiSocialV1Friends": {
-      "arguments": [],
-      "http_method": "GET",
-      "returns": {
-        "PlatformUiSocialFriendList": {
-          "fields": [
-            {
-              "friends": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "vector of PlatformUiSocialFriend"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/platform-ui-social/v1/friends",
-      "usage": "GetPlatformUiSocialV1Friends"
-    },
-    "GetPlatformUiSocialV1FullFriendsList": {
-      "arguments": [],
-      "http_method": "GET",
-      "returns": {
-        "PlatformUiSocialFriendList": {
-          "fields": [
-            {
-              "friends": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "vector of PlatformUiSocialFriend"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/platform-ui-social/v1/full-friends-list",
-      "usage": "GetPlatformUiSocialV1FullFriendsList"
-    },
-    "GetPlatformUiSocialV1Initialize": {
-      "arguments": [],
-      "http_method": "GET",
-      "returns": "bool",
-      "url": "/platform-ui-social/v1/initialize",
-      "usage": "GetPlatformUiSocialV1Initialize"
-    },
     "GetPlatformUiV1Enabled": {
       "arguments": [],
       "description": "Returns true if platform-ui is enabled",
@@ -13232,6 +13305,14 @@
               }
             },
             {
+              "availableLoginStrategies": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of string"
+              }
+            },
+            {
               "config": {
                 "description": "",
                 "offset": 0,
@@ -13260,7 +13341,23 @@
                         }
                       },
                       {
+                        "requireLolRegion": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
                         "requireRiotID": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "bool"
+                        }
+                      },
+                      {
+                        "requireVNG": {
                           "description": "",
                           "offset": 0,
                           "optional": false,
@@ -13282,6 +13379,14 @@
             },
             {
               "errorCode": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "id": {
                 "description": "",
                 "offset": 0,
                 "optional": false,
@@ -17627,6 +17732,14 @@
       "url": "/riot-messaging-service/v1/messages/{+path}",
       "usage": "GetRiotMessagingServiceV1MessagesByPath <path>"
     },
+    "GetRiotMessagingServiceV1OutOfSync": {
+      "arguments": [],
+      "description": "This is subscribe-only endpoint. Notification on this resource is triggered if RMS session is out of sync.",
+      "http_method": "GET",
+      "returns": "map of ",
+      "url": "/riot-messaging-service/v1/out-of-sync",
+      "usage": "GetRiotMessagingServiceV1OutOfSync"
+    },
     "GetRiotMessagingServiceV1Session": {
       "arguments": [],
       "description": "Return the current session, if any.",
@@ -19949,14 +20062,6 @@
                 "optional": false,
                 "type": "string"
               }
-            },
-            {
-              "whitelistedWordCountsByLevel": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "map of uint32"
-              }
             }
           ]
         }
@@ -20371,6 +20476,18 @@
       },
       "url": "/rso-auth/v1/authorization/userinfo",
       "usage": "GetRsoAuthV1AuthorizationUserinfo"
+    },
+    "GetRsoAuthV1LogoutReason": {
+      "arguments": [],
+      "description": "Returns latest logout reason.",
+      "http_method": "GET",
+      "returns": {
+        "RsoAuthLogoutReason": {
+          "fields": []
+        }
+      },
+      "url": "/rso-auth/v1/logout-reason",
+      "usage": "GetRsoAuthV1LogoutReason"
     },
     "GetRsoAuthV1Session": {
       "arguments": [],
@@ -20840,6 +20957,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -21559,6 +21697,55 @@
       "returns": "bool",
       "url": "/scd/v1/enabled-in-config",
       "usage": "GetScdV1EnabledInConfig"
+    },
+    "GetSocialV1Friends": {
+      "arguments": [],
+      "description": "When subscribed to this endpoint will notify with the entire friend list on every create/update/delete.",
+      "http_method": "GET",
+      "returns": {
+        "SocialFriendList": {
+          "fields": [
+            {
+              "friends": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of SocialFriend"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/social/v1/friends",
+      "usage": "GetSocialV1Friends"
+    },
+    "GetSocialV1FriendsPatch": {
+      "arguments": [],
+      "description": "For subscriptions only. On update and delete will notify with patches (changed elements only) rather than the full list. For a simple GET use the non-patch version of this URL.",
+      "http_method": "GET",
+      "returns": {
+        "SocialFriendList": {
+          "fields": [
+            {
+              "friends": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of SocialFriend"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/social/v1/friends/patch",
+      "usage": "GetSocialV1FriendsPatch"
+    },
+    "GetSocialV1Ready": {
+      "arguments": [],
+      "http_method": "GET",
+      "returns": "bool",
+      "url": "/social/v1/ready",
+      "usage": "GetSocialV1Ready"
     },
     "GetStartupConfigV1RegistryConfig": {
       "arguments": [],
@@ -25258,75 +25445,6 @@
       "url": "/first-party-fulfillment/v1/fulfill",
       "usage": "PostFirstPartyFulfillmentV1Fulfill <request>"
     },
-    "PostFriendsV2NamesetsForPuuids": {
-      "arguments": [
-        {
-          "request": {
-            "type": {
-              "FriendsFriendsV1NamesetsRequest": {
-                "fields": [
-                  {
-                    "puuids": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "vector of string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ],
-      "description": "Retrieves the namesets for each PUUID provided",
-      "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n    \n\nResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\n\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
-      "http_method": "POST",
-      "returns": {
-        "FriendsFriendsV1NamesetsResponse": {
-          "fields": [
-            {
-              "namesets": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "vector of FriendsFriendsV1NamesetsResponseElement"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/friends/v2/namesets-for-puuids",
-      "usage": "PostFriendsV2NamesetsForPuuids <request>"
-    },
-    "PostFriendsV2PuuidsForConsoleids": {
-      "arguments": [
-        {
-          "consoleIds": {
-            "type": "vector of string"
-          }
-        }
-      ],
-      "description": "Retrieves the PUUIDs for each Console ID provided",
-      "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\n\nConsoleIdToPuuidResponseElement:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
-      "http_method": "POST",
-      "returns": {
-        "FriendsFriendsConsoleIdsToPuuidsResponse": {
-          "fields": [
-            {
-              "response": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "vector of FriendsFriendsConsoleIdToPuuidResponseElement"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/friends/v2/puuids-for-consoleids",
-      "usage": "PostFriendsV2PuuidsForConsoleids <consoleIds>"
-    },
     "PostGaWarningV1DebugSimulateWarningByCategory": {
       "arguments": [
         {
@@ -25626,6 +25744,104 @@
       "returns": "vector of MailboxMail",
       "url": "/mailbox/v1/mail/{productId}",
       "usage": "PostMailboxV1MailByProductId <productId> <request>"
+    },
+    "PostMatchmakingServiceV1MatchByCheckIdAccept": {
+      "arguments": [
+        {
+          "check_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint accepts the ready check and confirm the player is entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to accept\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "POST",
+      "url": "/matchmaking-service/v1/match/{check_id}/accept",
+      "usage": "PostMatchmakingServiceV1MatchByCheckIdAccept <check_id>"
+    },
+    "PostMatchmakingServiceV1MatchByCheckIdDecline": {
+      "arguments": [
+        {
+          "check_id": {
+            "type": "string"
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint declines the ready check and confirm the player is not entering the match.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nPath argument\n* `check_id` - id of a ready check to decline\n\n**Returns**\n\n* GenericSuccess on successful request\n* Failure object on failed request\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input` - test text\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "POST",
+      "url": "/matchmaking-service/v1/match/{check_id}/decline",
+      "usage": "PostMatchmakingServiceV1MatchByCheckIdDecline <check_id>"
+    },
+    "PostMatchmakingServiceV1Matches": {
+      "arguments": [
+        {
+          "params": {
+            "type": {
+              "MatchmakingServiceV1CreateMatchmakingTicketParams": {
+                "fields": [
+                  {
+                    "additionalDataForAlgorithm": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "map of "
+                    }
+                  },
+                  {
+                    "mode": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "shard": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "submode": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "version": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "help": "\n**Description**\n\nThis endpoint creates a Matchmaking ticket with the provided params.\nIt's achived by calling equivalent endpoint in the matchmaking service.\n\n**Request Argument**\n\nBody argument\n\n* `CreateMatchmakingTicketParams` Object:\n    * `shard`: parameter storing shard info\n    * `mode`: parameter storing matchmaking mode\n    * `mode`: optional parameter storing matchmaking mode\n    * `version`: parameter storing matchmaking version\n    * `additionalDataForAlgorithm`: parameter storing additional data required by matchmaking algorithm\n\n**Returns**\n\nResponse Body:\n* `CreateMatchmakingTicketResult` Object:\n    * `ticketId`: A string that contains ticket id\n\n**Error Codes**\n\nPossible error codes with general information about possible root causes:\n\n* `httpStatus: 400`\n    * `errorCode: BAD_REQUEST` `message: Bad parameter used as input`\n        * At least one of the parameters you provided are invalid and did not pass matchmaking service parsing.\n\n* `httpStatus: 401`\n    * `errorCode: UNAUTHORIZED` `message: Request lacks valid authentication` - ie. Unauthorized from Matchmaking Service\n        * The player is not part of the ticket you are trying to act on\n        * Invalid or missing claims\n        * Your product does not have access to matchmaking service\n\n    * `errorCode: UNAUTHORIZED` `message: Unauthorized` - ie. Unauthorized from SGP\n        * Invalid token - It may be expired or your product does not have access to matchmaking service\n\n* `httpStatus: 404` `errorCode: NOT_FOUND` `message: Resource not found`\n    * The resource you are trying to act on, such as deleting or retrieving a ticket, does not exist in the Matchmaking system.\n\n* `httpStatus: 409` `errorCode: CONFLICT` `message: conflict occurred (puuid: {PUUID}, ticket_id: {TICKET_ID})`\n    * Usually caused by attempting to create a ticket for a product and PUUID combination that already exists.\n\n* `httpStatus: 422` `errorCode: UNPROCESSABLE_ENTITY` `message: ProductAlgorithms.Ruleset config is not found`\n    * No matchmaking algorithm has been configured for the given ticket create parameters.\n\n* `httpStatus: 500`\n    * `errorCode: INTERNAL_SERVER_ERROR`\n        * There may be variations to the message to explain exactly what went wrong, but logs should have the details needed to triage. These errors are unexpected and warrant an investigation into the issue.\n\n    * `endpoint_dependency_not_ready`\n        * One or more dependencies for endpoint are not ready yet\n\n    * `no_base_url_detected`\n        * Key `service-plugin.matchmaking-service.base_url` is missing in ublic client-config\n",
+      "http_method": "POST",
+      "returns": {
+        "MatchmakingServiceV1CreateMatchmakingTicketResult": {
+          "fields": [
+            {
+              "id": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/matchmaking-service/v1/matches",
+      "usage": "PostMatchmakingServiceV1Matches <params>"
     },
     "PostMobileProductRegistryV1BuildNumberByBuild": {
       "arguments": [
@@ -26704,12 +26920,6 @@
       "url": "/payments/v1/initialize-purchase",
       "usage": "PostPaymentsV1InitializePurchase"
     },
-    "PostPlatformUiSocialV1Initialize": {
-      "arguments": [],
-      "http_method": "POST",
-      "url": "/platform-ui-social/v1/initialize",
-      "usage": "PostPlatformUiSocialV1Initialize"
-    },
     "PostPlayerAccountAliasesV1Aliases": {
       "arguments": [
         {
@@ -27068,6 +27278,296 @@
       },
       "url": "/player-account/aliases/v1/validity",
       "usage": "PostPlayerAccountAliasesV1Validity <names>"
+    },
+    "PostPlayerAccountLookupV1NamesetsForPuuid": {
+      "arguments": [
+        {
+          "request": {
+            "type": {
+              "PlayerAccountLookupV1NamesetsForPuuidRequest": {
+                "fields": [
+                  {
+                    "puuid": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Retrieves the namesets for a single PUUID",
+      "help": "\n**Description**\nRetrieves the namesets for the PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Body Argument **\n\n\"NamesetsForPuuidRequest\"\n    \"puuid\" - PUUID (String)\n\nResponse Body:\nNamesetsForPuuidResponse:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+      "http_method": "POST",
+      "returns": {
+        "PlayerAccountLookupV1NamesetsForPuuidResponse": {
+          "fields": [
+            {
+              "error": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "gnt": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "PlayerAccountLookupV1GamerNameAndTagline": {
+                    "fields": [
+                      {
+                        "gameName": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      },
+                      {
+                        "tagLine": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "playstationNameset": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "PlayerAccountLookupV1PlaystationNameset": {
+                    "fields": [
+                      {
+                        "name": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "providerId": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "puuid": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            },
+            {
+              "switchNameset": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "PlayerAccountLookupV1SwitchNameset": {
+                    "fields": [
+                      {
+                        "name": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "xboxNameset": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "PlayerAccountLookupV1XboxNameset": {
+                    "fields": [
+                      {
+                        "name": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "url": "/player-account/lookup/v1/namesets-for-puuid",
+      "usage": "PostPlayerAccountLookupV1NamesetsForPuuid <request>"
+    },
+    "PostPlayerAccountLookupV1NamesetsForPuuids": {
+      "arguments": [
+        {
+          "request": {
+            "type": {
+              "PlayerAccountLookupV1NamesetsForPuuidsRequest": {
+                "fields": [
+                  {
+                    "puuids": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Retrieves the namesets for each PUUID provided",
+      "help": "\n**Description**\nRetrieves the namesets for each PUUID provided.\nA Nameset contains the user's name on the given platform.\nExample: SwitchNameset.name would be the Switch username associated with the user's PUUID on Switch\n\n** Request Arguments **\n\nRequest Body Object:\nNamesetsForPuuidsRequest Object:\n    \"puuids\" - A list of PUUIDs to retrieve namesets for\n\nNamesetsForPuuidsResponse Body:\n    \"namesets\" - A list of NamesetsResponseElements\n\nNamesetsResponseElement:\n    \"puuid\" - PUUID (String)\n    \"switchNameset\" - A SwitchNameset\n    \"playstationNameset\" - A PlaystationNameset\n    \"xboxNameset\" - An XboxNameset\n    \"alias\" - A RiotAlias\n    \"error\" - A String containing any errors\n\nSwitchNameset:\n    \"name\" - A String with the Switch name associated to the requested PUUID\n\nPlaystationNameset:\n    \"name\" - A String with the Playstation name associated to the requested PUUID\n\nXboxNameset:\n    \"name\" - A String with the Xbox name associated to the requested PUUID\n\nRiotAlias:\n    \"gameName\" - The users Game Name (String)\n    \"tagLine\" - The users Tag Line (String)\n\n",
+      "http_method": "POST",
+      "returns": {
+        "PlayerAccountLookupV1NamesetsForPuuidsResponse": {
+          "fields": [
+            {
+              "namesets": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of PlayerAccountLookupV1NamesetsForPuuidResponse"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/player-account/lookup/v1/namesets-for-puuids",
+      "usage": "PostPlayerAccountLookupV1NamesetsForPuuids <request>"
+    },
+    "PostPlayerAccountLookupV1PuuidsForConsoleids": {
+      "arguments": [
+        {
+          "request": {
+            "type": {
+              "PlayerAccountLookupV1PuuidsForConsoleIdsRequest": {
+                "fields": [
+                  {
+                    "consoleIds": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
+                    "environment": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "platform": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Retrieves the PUUIDs for each Console ID provided",
+      "help": "\n**Description**\nRetrieves the PUUIDs for each Console ID provided.\n\n** Request Arguments **\n\nRequest Body Object:\nConsoleIdsToPuuidsRequest Object:\n    \"consoleIds\" - A list of console IDs to retrieve PUUIDs for\n    \"environment\" - A String name for the platform environment (e.g. \"sp-int\")\n\nConsoleIdsToPuuidsResponse Body:\n    \"response\" - A list of ConsoleIdToPuuidResponseElements\n\nPuuidAndProvider:\n    \"puuid\" - The PUUID associated with the Console ID\n    \"providerId\" - A String ID for the provider (e.g. as \"123abc123\")\n    \"error\" - A String containing any errors (e.g. \"No matching account found.\")\n\n",
+      "http_method": "POST",
+      "returns": {
+        "PlayerAccountLookupV1PuuidsForConsoleIdsResponse": {
+          "fields": [
+            {
+              "response": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "vector of PlayerAccountLookupV1PuuidAndProvider"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/player-account/lookup/v1/puuids-for-consoleids",
+      "usage": "PostPlayerAccountLookupV1PuuidsForConsoleids <request>"
+    },
+    "PostPlayerAccountLookupV1ToggleMockApi": {
+      "arguments": [
+        {
+          "request": {
+            "type": {
+              "PlayerAccountLookupV1ToggleMockApiRequest": {
+                "fields": [
+                  {
+                    "enable": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "environment": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "platform": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Set whether the plugin should use a mock friends API or not and if so, how the mock API should behave",
+      "help": "\n**Description**\n-- To be filled out when Mock implementation is done.\nSDKFEAT-1393: [Mock] Get Console Blocked User List\n",
+      "http_method": "POST",
+      "url": "/player-account/lookup/v1/toggle-mock-api",
+      "usage": "PostPlayerAccountLookupV1ToggleMockApi <request>"
     },
     "PostPlayerAccountPromotionV1Eligibility": {
       "arguments": [],
@@ -27599,151 +28099,6 @@
       },
       "url": "/player-affinity/product/v1/token",
       "usage": "PostPlayerAffinityProductV1Token <input>"
-    },
-    "PostPlayerAffinityProductV1TokenDebug": {
-      "arguments": [
-        {
-          "input": {
-            "type": {
-              "PlayerAffinityPlayerAffinityTokenProduct": {
-                "fields": [
-                  {
-                    "affinities": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "map of string"
-                    }
-                  },
-                  {
-                    "expiry": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "uint64"
-                    }
-                  },
-                  {
-                    "issuedAt": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "uint64"
-                    }
-                  },
-                  {
-                    "product": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "puuid": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "source": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": {
-                        "PlayerAffinityPlayerAffinityDataSource": {
-                          "fields": []
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "token": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ],
-      "description": "DEBUG: For debugging subscribers. Save a new product affinity token to the local cache then notify subscribers.",
-      "help": "Endpoint deleted November 2021; Please use 'player-affinity/product/v2/token/debug.",
-      "http_method": "POST",
-      "returns": {
-        "PlayerAffinityPlayerAffinityTokenProduct": {
-          "fields": [
-            {
-              "affinities": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "map of string"
-              }
-            },
-            {
-              "expiry": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "uint64"
-              }
-            },
-            {
-              "issuedAt": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "uint64"
-              }
-            },
-            {
-              "product": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "puuid": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            },
-            {
-              "source": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": {
-                  "PlayerAffinityPlayerAffinityDataSource": {
-                    "fields": []
-                  }
-                }
-              }
-            },
-            {
-              "token": {
-                "description": "",
-                "offset": 0,
-                "optional": false,
-                "type": "string"
-              }
-            }
-          ]
-        }
-      },
-      "url": "/player-affinity/product/v1/token/debug",
-      "usage": "PostPlayerAffinityProductV1TokenDebug <input>"
     },
     "PostPlayerAffinityProductV2Token": {
       "arguments": [
@@ -28322,7 +28677,23 @@
                     }
                   },
                   {
+                    "requireLolRegion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "requireRiotID": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "requireVNG": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -28567,6 +28938,14 @@
                       "offset": 0,
                       "optional": false,
                       "type": "string"
+                    }
+                  },
+                  {
+                    "rsoClaims": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
                     }
                   }
                 ]
@@ -30322,6 +30701,14 @@
               "RsoAuthAuthorizationKeyRequest": {
                 "fields": [
                   {
+                    "claims": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "vector of string"
+                    }
+                  },
+                  {
                     "client_id": {
                       "description": "",
                       "offset": 0,
@@ -31580,6 +31967,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -32029,6 +32437,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -32515,6 +32944,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -33026,6 +33476,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -33504,6 +33975,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -33958,6 +34450,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -34452,6 +34965,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -34930,6 +35464,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -35363,6 +35918,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -35836,6 +36412,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -36333,6 +36930,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -36766,6 +37384,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -37215,6 +37854,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -37693,6 +38353,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -38701,6 +39382,39 @@
       "url": "/scd/v1/url-patterns/test",
       "usage": "PostScdV1UrlPatternsTest <url>"
     },
+    "PostSocialV1Initialize": {
+      "arguments": [
+        {
+          "product_context": {
+            "type": {
+              "SocialProductContext": {
+                "fields": [
+                  {
+                    "patchline": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "product": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "http_method": "POST",
+      "url": "/social/v1/initialize",
+      "usage": "PostSocialV1Initialize <product_context>"
+    },
     "PostTelemetryV1CommonDataByKey": {
       "arguments": [
         {
@@ -38884,6 +39598,14 @@
       },
       "url": "/tencent-launcher/v1/login",
       "usage": "PostTencentLauncherV1Login <arguments>"
+    },
+    "PostTencentLauncherV1RepairOnShutdown": {
+      "arguments": [],
+      "description": "Initializes repair on shutdown flow in the ACLOS",
+      "help": "\n            **Description**\n            After the game shuts down Tencent Launcher will repair the game and then relaunch it.\n        ",
+      "http_method": "POST",
+      "url": "/tencent-launcher/v1/repair-on-shutdown",
+      "usage": "PostTencentLauncherV1RepairOnShutdown"
     },
     "PostVanguardV1CheckVanguardService": {
       "arguments": [],
@@ -43367,7 +44089,23 @@
                     }
                   },
                   {
+                    "requireLolRegion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "requireRiotID": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "requireVNG": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -43956,6 +44694,47 @@
       "returns": "object",
       "url": "/product-update-scanner/v1/scan-and-patch/routine/stop",
       "usage": "PutProductUpdateScannerV1ScanAndPatchRoutineStop"
+    },
+    "PutReferenceV1Echo": {
+      "arguments": [
+        {
+          "echo": {
+            "type": {
+              "ReferenceEchoRequest": {
+                "fields": [
+                  {
+                    "echo": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Returns the user input string",
+      "help": "\n**Description**\n\nThis API is intended as a reference on how to create a plugin for new developers. The endpoint simply returns a string that the user inputs\n\nRequired arguments:\n```\necho: A string that will be returned to the user\n```\n",
+      "http_method": "PUT",
+      "returns": {
+        "ReferenceEchoResponse": {
+          "fields": [
+            {
+              "echo": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/reference/v1/echo",
+      "usage": "PutReferenceV1Echo <echo>"
     },
     "PutRiotClientLifecycleStateV1StateByStateByParamSubscriberBySubscriberSerialNumber": {
       "arguments": [
@@ -45846,6 +46625,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -46287,6 +47087,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -46699,6 +47520,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -47148,6 +47990,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -47629,6 +48492,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -48062,6 +48946,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -48519,6 +49424,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -48960,6 +49886,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -49366,6 +50313,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -49855,6 +50823,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -50296,6 +51285,27 @@
               }
             },
             {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
               "multifactor": {
                 "description": "",
                 "offset": 0,
@@ -50729,6 +51739,27 @@
                           "offset": 0,
                           "optional": false,
                           "type": "map of "
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "kr-id-verification": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": {
+                  "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                    "fields": [
+                      {
+                        "redirect_url": {
+                          "description": "",
+                          "offset": 0,
+                          "optional": false,
+                          "type": "string"
                         }
                       }
                     ]
@@ -52341,6 +53372,22 @@
     "AccessToken": {
       "fields": [
         {
+          "expiry": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "scopes": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
           "token": {
             "description": "",
             "offset": 0,
@@ -52734,6 +53781,58 @@
         }
       ]
     },
+    "AntiAddictionAntiAddictionStandaloneConfig": {
+      "fields": [
+        {
+          "backendUrl": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "enabled": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "heartbeatInterval": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "double"
+          }
+        },
+        {
+          "webRequestInitialRetryDelayInMilliSec": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "webRequestMaxRetryDelayInMilliSec": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "webRequestRetryCount": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        }
+      ]
+    },
     "AntiAddictionAntiAddictionState": {
       "fields": [
         {
@@ -52823,22 +53922,6 @@
         {
           "name": "disableMatchMaking",
           "value": 3
-        },
-        {
-          "name": "hopeWarning",
-          "value": 4
-        },
-        {
-          "name": "hopeRewardRate",
-          "value": 5
-        },
-        {
-          "name": "hopeShutdown",
-          "value": 6
-        },
-        {
-          "name": "hopeHeartbeat",
-          "value": 7
         }
       ]
     },
@@ -53108,6 +54191,34 @@
         {
           "name": "SSOAuth",
           "value": 0
+        }
+      ]
+    },
+    "Authorization": {
+      "fields": [
+        {
+          "currentAccountId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "currentPlatformId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "subject": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
         }
       ]
     },
@@ -61615,6 +62726,42 @@
         }
       ]
     },
+    "EntitlementsServiceEntitlementsServiceToken": {
+      "fields": [
+        {
+          "entitlements": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "issuer": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "subject": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "EntitlementsToken": {
       "fields": [
         {
@@ -66210,7 +67357,207 @@
         }
       ]
     },
-    "FriendsFriendsConsoleIdToPuuidResponseElement": {
+    "FriendsFriendsV2MockApiState": {
+      "values": [
+        {
+          "name": "none",
+          "value": 0
+        },
+        {
+          "name": "mock_enabled",
+          "value": 1
+        }
+      ]
+    },
+    "FriendsLookupV1GamerNameAndTagline": {
+      "fields": [
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tagLine": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1NamesetsForPuuidRequest": {
+      "fields": [
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1NamesetsForPuuidResponse": {
+      "fields": [
+        {
+          "error": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gnt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "FriendsLookupV1GamerNameAndTagline": {
+                "fields": [
+                  {
+                    "gameName": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "tagLine": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "playstationNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "FriendsLookupV1PlaystationNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "providerId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "switchNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "FriendsLookupV1SwitchNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "xboxNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "FriendsLookupV1XboxNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1NamesetsForPuuidsRequest": {
+      "fields": [
+        {
+          "puuids": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1NamesetsForPuuidsResponse": {
+      "fields": [
+        {
+          "namesets": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of FriendsLookupV1NamesetsForPuuidResponse"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1PlaystationNameset": {
+      "fields": [
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1PuuidAndProvider": {
       "fields": [
         {
           "error": {
@@ -66238,155 +67585,47 @@
         }
       ]
     },
-    "FriendsFriendsConsoleIdsToPuuidsResponse": {
+    "FriendsLookupV1PuuidsForConsoleIdsRequest": {
+      "fields": [
+        {
+          "consoleIds": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "environment": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "FriendsLookupV1PuuidsForConsoleIdsResponse": {
       "fields": [
         {
           "response": {
             "description": "",
             "offset": 0,
             "optional": false,
-            "type": "vector of FriendsFriendsConsoleIdToPuuidResponseElement"
+            "type": "vector of FriendsLookupV1PuuidAndProvider"
           }
         }
       ]
     },
-    "FriendsFriendsV1NamesetsRequest": {
-      "fields": [
-        {
-          "puuids": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "vector of string"
-          }
-        }
-      ]
-    },
-    "FriendsFriendsV1NamesetsResponse": {
-      "fields": [
-        {
-          "namesets": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "vector of FriendsFriendsV1NamesetsResponseElement"
-          }
-        }
-      ]
-    },
-    "FriendsFriendsV1NamesetsResponseElement": {
-      "fields": [
-        {
-          "alias": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "FriendsFriendsV1RiotAlias": {
-                "fields": [
-                  {
-                    "gameName": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  },
-                  {
-                    "tagLine": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "error": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "playstationNameset": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "FriendsFriendsV1PlaystationNameset": {
-                "fields": [
-                  {
-                    "name": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "puuid": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "switchNameset": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "FriendsFriendsV1SwitchNameset": {
-                "fields": [
-                  {
-                    "name": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        },
-        {
-          "xboxNameset": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "FriendsFriendsV1XboxNameset": {
-                "fields": [
-                  {
-                    "name": {
-                      "description": "",
-                      "offset": 0,
-                      "optional": false,
-                      "type": "string"
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ]
-    },
-    "FriendsFriendsV1PlaystationNameset": {
+    "FriendsLookupV1SwitchNameset": {
       "fields": [
         {
           "name": {
@@ -66398,10 +67637,18 @@
         }
       ]
     },
-    "FriendsFriendsV1RiotAlias": {
+    "FriendsLookupV1ToggleMockApiRequest": {
       "fields": [
         {
-          "gameName": {
+          "enable": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "environment": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -66409,7 +67656,7 @@
           }
         },
         {
-          "tagLine": {
+          "platform": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -66418,7 +67665,7 @@
         }
       ]
     },
-    "FriendsFriendsV1SwitchNameset": {
+    "FriendsLookupV1XboxNameset": {
       "fields": [
         {
           "name": {
@@ -66427,30 +67674,6 @@
             "optional": false,
             "type": "string"
           }
-        }
-      ]
-    },
-    "FriendsFriendsV1XboxNameset": {
-      "fields": [
-        {
-          "name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        }
-      ]
-    },
-    "FriendsFriendsV2MockApiState": {
-      "values": [
-        {
-          "name": "none",
-          "value": 0
-        },
-        {
-          "name": "mock_enabled",
-          "value": 1
         }
       ]
     },
@@ -68190,6 +69413,14 @@
     },
     "GameSessionAuthorizationKeyRequest": {
       "fields": [
+        {
+          "claims": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
         {
           "client_id": {
             "description": "",
@@ -74093,6 +75324,66 @@
         }
       ]
     },
+    "LoyaltyV2LoyaltyStandaloneConfig": {
+      "fields": [
+        {
+          "backendUrl": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "enabled": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "heartbeatInterval": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "double"
+          }
+        },
+        {
+          "webRequestInitialRetryDelayInMilliSec": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "webRequestMaxRetryDelayInMilliSec": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "webRequestRetryCount": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "webRequestTimeoutInSec": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        }
+      ]
+    },
     "LoyaltyV2PCBangInfo": {
       "fields": [
         {
@@ -75935,6 +77226,290 @@
         }
       ]
     },
+    "MatchmakingServiceV1CreateMatchmakingTicketParams": {
+      "fields": [
+        {
+          "additionalDataForAlgorithm": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of "
+          }
+        },
+        {
+          "mode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "shard": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "submode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1CreateMatchmakingTicketResult": {
+      "fields": [
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1CreateMatchmakingTicketServiceData": {
+      "fields": [
+        {
+          "mode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "players": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of MatchmakingServiceV1PlayerData"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "shard": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "submode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1DeletePlayerFromMatchmakingResult": {
+      "fields": [
+        {
+          "removedTicketIds": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1PlayerData": {
+      "fields": [
+        {
+          "data": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "map of "
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "ticketId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1TicketState": {
+      "fields": [
+        {
+          "created_at": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "match_id": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "mode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuids": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "shard": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "state": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "state_updated_at": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "submode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "ticket_age_ms": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint64"
+          }
+        },
+        {
+          "updated_at": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "version": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "MatchmakingServiceV1TicketsState": {
+      "fields": [
+        {
+          "tickets": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of MatchmakingServiceV1TicketState"
+          }
+        }
+      ]
+    },
     "MiddlewareManagerPhase": {
       "values": [
         {
@@ -77391,60 +78966,64 @@
     "PatchErrorCode": {
       "values": [
         {
-          "name": "Unspecified",
+          "name": "OK",
           "value": 0
         },
         {
-          "name": "Cancelled",
+          "name": "Unspecified",
           "value": 1
         },
         {
-          "name": "NotEnoughDiskSpace",
+          "name": "Cancelled",
           "value": 2
         },
         {
-          "name": "AccessDenied",
+          "name": "NotEnoughDiskSpace",
           "value": 3
         },
         {
-          "name": "FileNotFound",
+          "name": "AccessDenied",
           "value": 4
         },
         {
-          "name": "CorruptData",
+          "name": "FileNotFound",
           "value": 5
         },
         {
-          "name": "FileLocked",
+          "name": "DownloaderConnection",
           "value": 6
         },
         {
-          "name": "InvalidArgument",
+          "name": "DownloaderClientError",
           "value": 7
         },
         {
-          "name": "DownloaderConnection",
+          "name": "DownloaderServerError",
           "value": 8
         },
         {
-          "name": "DownloaderClientError",
+          "name": "DownloaderAuthorization",
           "value": 9
         },
         {
-          "name": "DownloaderServerError",
+          "name": "DownloadedCorruptData",
           "value": 10
         },
         {
-          "name": "DownloaderAuthorization",
+          "name": "CorruptData",
           "value": 11
         },
         {
-          "name": "DownloadedCorruptData",
+          "name": "AddressResolutionFailed",
           "value": 12
         },
         {
-          "name": "AddressResolutionFailed",
+          "name": "FileLocked",
           "value": 13
+        },
+        {
+          "name": "InvalidArgument",
+          "value": 14
         }
       ]
     },
@@ -86470,6 +88049,42 @@
         }
       ]
     },
+    "PaymentsLoginInfo": {
+      "fields": [
+        {
+          "channel": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "int32"
+          }
+        },
+        {
+          "ext": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "openid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "PaymentsReadyState": {
       "fields": [
         {
@@ -87431,6 +89046,27 @@
           }
         },
         {
+          "kr-id-verification": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiKRIdVerificationResponseDetails": {
+                "fields": [
+                  {
+                    "redirect_url": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "multifactor": {
             "description": "",
             "offset": 0,
@@ -87619,6 +89255,22 @@
               "PlatformUiSuccessResponseDetails": {
                 "fields": [
                   {
+                    "auth_method": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "is_console_link_session": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "linked": {
                       "description": "",
                       "offset": 0,
@@ -87628,6 +89280,14 @@
                   },
                   {
                     "login_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "puuid": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -87673,110 +89333,6 @@
         },
         {
           "name": "None",
-          "value": 2
-        }
-      ]
-    },
-    "PlatformUiChatSession": {
-      "fields": [
-        {
-          "federated": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "bool"
-          }
-        },
-        {
-          "game_name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "game_tag": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "loaded": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "bool"
-          }
-        },
-        {
-          "name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "pid": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "puuid": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "region": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "resource": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "state": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": {
-              "PlatformUiChatSessionState": {
-                "fields": []
-              }
-            }
-          }
-        }
-      ]
-    },
-    "PlatformUiChatSessionState": {
-      "values": [
-        {
-          "name": "disconnected",
-          "value": 0
-        },
-        {
-          "name": "connecting",
-          "value": 1
-        },
-        {
-          "name": "connected",
           "value": 2
         }
       ]
@@ -87869,174 +89425,6 @@
             "offset": 0,
             "optional": false,
             "type": "bool"
-          }
-        }
-      ]
-    },
-    "PlatformUiFriend": {
-      "fields": [
-        {
-          "actor": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "details": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "displayGroup": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "gameName": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "gameTag": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "group": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "hovercard_background_url": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "icon_url": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "location": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "msg": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "note": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "patchline": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product_folder_name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product_presence_name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "puuid": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "region": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "showState": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        }
-      ]
-    },
-    "PlatformUiFriendList": {
-      "fields": [
-        {
-          "friends": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "vector of PlatformUiFriend"
           }
         }
       ]
@@ -88212,7 +89600,23 @@
           }
         },
         {
+          "requireLolRegion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
           "requireRiotID": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "requireVNG": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -88225,6 +89629,18 @@
             "offset": 0,
             "optional": false,
             "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "PlatformUiKRIdVerificationResponseDetails": {
+      "fields": [
+        {
+          "redirect_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -88590,7 +90006,23 @@
                     }
                   },
                   {
+                    "requireLolRegion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "requireRiotID": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "requireVNG": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -88708,64 +90140,316 @@
           "value": 4
         },
         {
-          "name": "PendingPlatformAuthorizationConsent",
+          "name": "PendingLoginStrategy",
           "value": 5
         },
         {
-          "name": "PendingProviderCredentials",
+          "name": "PendingPlatformAuthorizationConsent",
           "value": 6
         },
         {
-          "name": "PendingAuthentication",
+          "name": "PendingProviderCredentials",
           "value": 7
         },
         {
-          "name": "PendingSignup",
+          "name": "PendingAuthentication",
           "value": 8
         },
         {
-          "name": "PendingHealup",
+          "name": "PendingKRIdVerification",
           "value": 9
         },
         {
-          "name": "LoginTokenExchange",
+          "name": "PendingSignup",
           "value": 10
         },
         {
-          "name": "PendingForget",
+          "name": "PendingHealup",
           "value": 11
         },
         {
-          "name": "PendingConsent",
+          "name": "PendingMultifactor",
           "value": 12
         },
         {
-          "name": "PendingEulaData",
+          "name": "LoginTokenExchange",
           "value": 13
         },
         {
-          "name": "PendingEulaAcceptance",
+          "name": "PendingForget",
           "value": 14
         },
         {
-          "name": "PendingGamepassStatus",
+          "name": "PendingConsent",
           "value": 15
         },
         {
-          "name": "PendingRiotID",
+          "name": "PendingEulaData",
           "value": 16
         },
         {
-          "name": "PendingUserInfoRefresh",
+          "name": "PendingEulaAcceptance",
           "value": 17
         },
         {
-          "name": "Authorized",
+          "name": "PendingGamepassStatus",
           "value": 18
         },
         {
-          "name": "Error",
+          "name": "PendingRiotID",
           "value": 19
+        },
+        {
+          "name": "PendingVNGProfile",
+          "value": 20
+        },
+        {
+          "name": "PendingLolRegionSelection",
+          "value": 21
+        },
+        {
+          "name": "PendingUserInfoRefresh",
+          "value": 22
+        },
+        {
+          "name": "Authorized",
+          "value": 23
+        },
+        {
+          "name": "Error",
+          "value": 24
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUIAuthorizationTrustLevel": {
+      "values": [
+        {
+          "name": "always_trusted",
+          "value": 0
+        },
+        {
+          "name": "trusted_device",
+          "value": 1
+        },
+        {
+          "name": "always_verify",
+          "value": 2
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUILoginInitiateRequest": {
+      "fields": [
+        {
+          "facebookUseClassicLogin": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "forceUseWebView": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "scope": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "strategy": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiRSOMobileUILoginStrategyType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "trustLevels": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of PlatformUiRSOMobileUIAuthorizationTrustLevel"
+          }
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUILoginStatus": {
+      "fields": [
+        {
+          "error_description": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "federated_error_code": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "int32"
+          }
+        },
+        {
+          "ready": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "strategy": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiRSOMobileUILoginStrategyType": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "type": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiRSOMobileUILoginStatusType": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUILoginStatusType": {
+      "values": [
+        {
+          "name": "uninitialized",
+          "value": 0
+        },
+        {
+          "name": "initialized",
+          "value": 1
+        },
+        {
+          "name": "authenticating",
+          "value": 2
+        },
+        {
+          "name": "cancelled",
+          "value": 3
+        },
+        {
+          "name": "success",
+          "value": 4
+        },
+        {
+          "name": "error",
+          "value": 5
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUILoginStrategyInfo": {
+      "fields": [
+        {
+          "appInstalled": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "forceUseWebView": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "strategy": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlatformUiRSOMobileUILoginStrategyType": {
+                "fields": []
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlatformUiRSOMobileUILoginStrategyType": {
+      "values": [
+        {
+          "name": "riot",
+          "value": 0
+        },
+        {
+          "name": "google_auth",
+          "value": 1
+        },
+        {
+          "name": "game_center",
+          "value": 2
+        },
+        {
+          "name": "facebook",
+          "value": 3
+        },
+        {
+          "name": "apple",
+          "value": 4
+        },
+        {
+          "name": "msdk_qq",
+          "value": 5
+        },
+        {
+          "name": "msdk_wechat",
+          "value": 6
+        },
+        {
+          "name": "qq",
+          "value": 7
+        },
+        {
+          "name": "wechat",
+          "value": 8
+        },
+        {
+          "name": "wegame",
+          "value": 9
+        },
+        {
+          "name": "nintendo",
+          "value": 10
+        },
+        {
+          "name": "playstation",
+          "value": 11
+        },
+        {
+          "name": "xbox",
+          "value": 12
         }
       ]
     },
@@ -88780,20 +90464,28 @@
           "value": 1
         },
         {
-          "name": "signup",
+          "name": "kr-id-verification",
           "value": 2
         },
         {
-          "name": "gamepass",
+          "name": "signup",
           "value": 3
         },
         {
-          "name": "success",
+          "name": "multifactor",
           "value": 4
         },
         {
-          "name": "error",
+          "name": "gamepass",
           "value": 5
+        },
+        {
+          "name": "success",
+          "value": 6
+        },
+        {
+          "name": "error",
+          "value": 7
         }
       ]
     },
@@ -89209,176 +90901,24 @@
         }
       ]
     },
-    "PlatformUiSocialFriend": {
-      "fields": [
-        {
-          "actor": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "details": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "displayGroup": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "gameName": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "gameTag": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "group": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "hovercard_background_url": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "icon_url": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "location": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "msg": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "note": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "patchline": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product_folder_name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "product_presence_name": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "puuid": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "region": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        },
-        {
-          "showState": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "string"
-          }
-        }
-      ]
-    },
-    "PlatformUiSocialFriendList": {
-      "fields": [
-        {
-          "friends": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "vector of PlatformUiSocialFriend"
-          }
-        }
-      ]
-    },
     "PlatformUiSuccessResponseDetails": {
       "fields": [
+        {
+          "auth_method": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "is_console_link_session": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
         {
           "linked": {
             "description": "",
@@ -89389,6 +90929,14 @@
         },
         {
           "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -89544,92 +91092,108 @@
           "value": 0
         },
         {
-          "name": "FetchProductIdFailure",
+          "name": "SingletonMissing",
           "value": 1
         },
         {
-          "name": "InvalidCDNPath",
+          "name": "FetchProductIdFailure",
           "value": 2
         },
         {
-          "name": "LoginStrategyMissing",
+          "name": "InvalidCDNPath",
           "value": 3
         },
         {
-          "name": "ConfigAuthMethodMissing",
+          "name": "LoginStrategyMissing",
           "value": 4
         },
         {
-          "name": "ConfigAuthPayloadMissing",
+          "name": "ConfigAuthMethodMissing",
           "value": 5
         },
         {
-          "name": "InvalidLoginState",
+          "name": "ConfigAuthPayloadMissing",
           "value": 6
         },
         {
-          "name": "CreateSessionFailure",
+          "name": "InvalidLoginState",
           "value": 7
         },
         {
-          "name": "UpdateSessionFailure",
+          "name": "CreateSessionFailure",
           "value": 8
         },
         {
-          "name": "DeleteSessionFailure",
+          "name": "UpdateSessionFailure",
           "value": 9
         },
         {
-          "name": "AuthenticationFailure",
+          "name": "DeleteSessionFailure",
           "value": 10
         },
         {
-          "name": "FetchCurrentAuthenticationFailure",
+          "name": "AuthenticationFailure",
           "value": 11
         },
         {
-          "name": "InvalidAuthenticationState",
+          "name": "FetchCurrentAuthenticationFailure",
           "value": 12
         },
         {
-          "name": "ReadinessTimeout",
+          "name": "InvalidAuthenticationState",
           "value": 13
         },
         {
-          "name": "SignupFailure",
+          "name": "ReadinessTimeout",
           "value": 14
         },
         {
-          "name": "TooYoung",
+          "name": "SignupFailure",
           "value": 15
         },
         {
-          "name": "SigninFailure",
+          "name": "TooYoung",
           "value": 16
         },
         {
-          "name": "SigninAuthFailure",
+          "name": "SigninFailure",
           "value": 17
         },
         {
-          "name": "AcceptEulaFailure",
+          "name": "SigninAuthFailure",
           "value": 18
         },
         {
-          "name": "PlatformConsentFailure",
+          "name": "AcceptEulaFailure",
           "value": 19
         },
         {
-          "name": "GenerateTaglineFailure",
+          "name": "AcceptEulaRequired",
           "value": 20
         },
         {
-          "name": "CreateRiotIDFailure",
+          "name": "PlatformConsentFailure",
           "value": 21
         },
         {
-          "name": "SingletonMissing",
+          "name": "GenerateTaglineFailure",
           "value": 22
+        },
+        {
+          "name": "CreateRiotIDFailure",
+          "value": 23
+        },
+        {
+          "name": "AccountUpdateRequired",
+          "value": 24
+        },
+        {
+          "name": "UnsupportedLoginStrategy",
+          "value": 25
+        },
+        {
+          "name": "LoginInitFailure",
+          "value": 26
         }
       ]
     },
@@ -89684,8 +91248,16 @@
           "value": 11
         },
         {
-          "name": "InternalError",
+          "name": "AcceptEulaRequired",
           "value": 12
+        },
+        {
+          "name": "AccountUpdateRequired",
+          "value": 13
+        },
+        {
+          "name": "InternalError",
+          "value": 14
         }
       ]
     },
@@ -90350,6 +91922,350 @@
         }
       ]
     },
+    "PlayerAccountLookupV1GamerNameAndTagline": {
+      "fields": [
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "tagLine": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1NamesetsForPuuidRequest": {
+      "fields": [
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1NamesetsForPuuidResponse": {
+      "fields": [
+        {
+          "error": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gnt": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerAccountLookupV1GamerNameAndTagline": {
+                "fields": [
+                  {
+                    "gameName": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "tagLine": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "playstationNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerAccountLookupV1PlaystationNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "providerId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "switchNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerAccountLookupV1SwitchNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "xboxNameset": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerAccountLookupV1XboxNameset": {
+                "fields": [
+                  {
+                    "name": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1NamesetsForPuuidsRequest": {
+      "fields": [
+        {
+          "puuids": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1NamesetsForPuuidsResponse": {
+      "fields": [
+        {
+          "namesets": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of PlayerAccountLookupV1NamesetsForPuuidResponse"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1PlaystationNameset": {
+      "fields": [
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1PuuidAndProvider": {
+      "fields": [
+        {
+          "error": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "providerId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1PuuidsForConsoleIdsRequest": {
+      "fields": [
+        {
+          "consoleIds": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
+          "environment": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1PuuidsForConsoleIdsResponse": {
+      "fields": [
+        {
+          "response": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of PlayerAccountLookupV1PuuidAndProvider"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1SwitchNameset": {
+      "fields": [
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1ToggleMockApiRequest": {
+      "fields": [
+        {
+          "enable": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "environment": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "platform": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountLookupV1XboxNameset": {
+      "fields": [
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountOnlinePlatform": {
+      "values": [
+        {
+          "name": "absent",
+          "value": 0
+        },
+        {
+          "name": "unknown",
+          "value": 1
+        },
+        {
+          "name": "riot",
+          "value": 2
+        },
+        {
+          "name": "tencent",
+          "value": 3
+        },
+        {
+          "name": "garena",
+          "value": 4
+        },
+        {
+          "name": "playstation",
+          "value": 5
+        },
+        {
+          "name": "switch",
+          "value": 6
+        },
+        {
+          "name": "xbox",
+          "value": 7
+        }
+      ]
+    },
     "PlayerAccountPlatformUser": {
       "fields": [
         {
@@ -90365,7 +92281,11 @@
             "description": "",
             "offset": 0,
             "optional": false,
-            "type": "string"
+            "type": {
+              "PlayerAccountOnlinePlatform": {
+                "fields": []
+              }
+            }
           }
         }
       ]
@@ -90863,6 +92783,18 @@
             "offset": 0,
             "optional": false,
             "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "PlayerAccountUserInfo": {
+      "fields": [
+        {
+          "userInfo": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -93446,6 +95378,27 @@
           }
         },
         {
+          "kr-id-verification": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "PlayerSessionLifecycleKRIdVerificationResponseDetails": {
+                "fields": [
+                  {
+                    "redirect_url": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "multifactor": {
             "description": "",
             "offset": 0,
@@ -93573,6 +95526,22 @@
               "PlayerSessionLifecycleSuccessResponseDetails": {
                 "fields": [
                   {
+                    "auth_method": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "is_console_link_session": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "linked": {
                       "description": "",
                       "offset": 0,
@@ -93582,6 +95551,14 @@
                   },
                   {
                     "login_token": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "puuid": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -94079,7 +96056,23 @@
           }
         },
         {
+          "requireLolRegion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
           "requireRiotID": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "requireVNG": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -94092,6 +96085,18 @@
             "offset": 0,
             "optional": false,
             "type": "vector of string"
+          }
+        }
+      ]
+    },
+    "PlayerSessionLifecycleKRIdVerificationResponseDetails": {
+      "fields": [
+        {
+          "redirect_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -94462,6 +96467,34 @@
         }
       ]
     },
+    "PlayerSessionLifecyclePlayerAccountVngV1StatusResponse": {
+      "fields": [
+        {
+          "action_required": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "action_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "action_url_raw": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "PlayerSessionLifecyclePlayerAffinityProductToken": {
       "fields": [
         {
@@ -94562,6 +96595,14 @@
           }
         },
         {
+          "availableLoginStrategies": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
+        {
           "config": {
             "description": "",
             "offset": 0,
@@ -94590,7 +96631,23 @@
                     }
                   },
                   {
+                    "requireLolRegion": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
                     "requireRiotID": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
+                    }
+                  },
+                  {
+                    "requireVNG": {
                       "description": "",
                       "offset": 0,
                       "optional": false,
@@ -94612,6 +96669,14 @@
         },
         {
           "errorCode": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "id": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -94708,64 +96773,84 @@
           "value": 4
         },
         {
-          "name": "PendingPlatformAuthorizationConsent",
+          "name": "PendingLoginStrategy",
           "value": 5
         },
         {
-          "name": "PendingProviderCredentials",
+          "name": "PendingPlatformAuthorizationConsent",
           "value": 6
         },
         {
-          "name": "PendingAuthentication",
+          "name": "PendingProviderCredentials",
           "value": 7
         },
         {
-          "name": "PendingSignup",
+          "name": "PendingAuthentication",
           "value": 8
         },
         {
-          "name": "PendingHealup",
+          "name": "PendingKRIdVerification",
           "value": 9
         },
         {
-          "name": "LoginTokenExchange",
+          "name": "PendingSignup",
           "value": 10
         },
         {
-          "name": "PendingForget",
+          "name": "PendingHealup",
           "value": 11
         },
         {
-          "name": "PendingConsent",
+          "name": "PendingMultifactor",
           "value": 12
         },
         {
-          "name": "PendingEulaData",
+          "name": "LoginTokenExchange",
           "value": 13
         },
         {
-          "name": "PendingEulaAcceptance",
+          "name": "PendingForget",
           "value": 14
         },
         {
-          "name": "PendingGamepassStatus",
+          "name": "PendingConsent",
           "value": 15
         },
         {
-          "name": "PendingRiotID",
+          "name": "PendingEulaData",
           "value": 16
         },
         {
-          "name": "PendingUserInfoRefresh",
+          "name": "PendingEulaAcceptance",
           "value": 17
         },
         {
-          "name": "Authorized",
+          "name": "PendingGamepassStatus",
           "value": 18
         },
         {
-          "name": "Error",
+          "name": "PendingRiotID",
           "value": 19
+        },
+        {
+          "name": "PendingVNGProfile",
+          "value": 20
+        },
+        {
+          "name": "PendingLolRegionSelection",
+          "value": 21
+        },
+        {
+          "name": "PendingUserInfoRefresh",
+          "value": 22
+        },
+        {
+          "name": "Authorized",
+          "value": 23
+        },
+        {
+          "name": "Error",
+          "value": 24
         }
       ]
     },
@@ -94950,6 +97035,34 @@
         }
       ]
     },
+    "PlayerSessionLifecycleRegionElectionV1EligibilityResponse": {
+      "fields": [
+        {
+          "canSelectRegion": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "multipleRegionsAllowed": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "selectedRegions": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        }
+      ]
+    },
     "PlayerSessionLifecycleResponseType": {
       "values": [
         {
@@ -94961,20 +97074,28 @@
           "value": 1
         },
         {
-          "name": "signup",
+          "name": "kr-id-verification",
           "value": 2
         },
         {
-          "name": "gamepass",
+          "name": "signup",
           "value": 3
         },
         {
-          "name": "success",
+          "name": "multifactor",
           "value": 4
         },
         {
-          "name": "error",
+          "name": "gamepass",
           "value": 5
+        },
+        {
+          "name": "success",
+          "value": 6
+        },
+        {
+          "name": "error",
+          "value": 7
         }
       ]
     },
@@ -95247,6 +97368,22 @@
     "PlayerSessionLifecycleSuccessResponseDetails": {
       "fields": [
         {
+          "auth_method": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "is_console_link_session": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
           "linked": {
             "description": "",
             "offset": 0,
@@ -95256,6 +97393,14 @@
         },
         {
           "login_token": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
             "description": "",
             "offset": 0,
             "optional": false,
@@ -97082,6 +99227,14 @@
             "offset": 0,
             "optional": false,
             "type": "string"
+          }
+        },
+        {
+          "rsoClaims": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
           }
         }
       ]
@@ -102092,6 +104245,30 @@
             "offset": 72,
             "optional": false,
             "type": "bool"
+          }
+        }
+      ]
+    },
+    "ReferenceEchoRequest": {
+      "fields": [
+        {
+          "echo": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "ReferenceEchoResponse": {
+      "fields": [
+        {
+          "echo": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
           }
         }
       ]
@@ -110162,14 +112339,6 @@
             "optional": false,
             "type": "string"
           }
-        },
-        {
-          "whitelistedWordCountsByLevel": {
-            "description": "",
-            "offset": 0,
-            "optional": false,
-            "type": "map of uint32"
-          }
         }
       ]
     },
@@ -111001,6 +113170,14 @@
     },
     "RsoAuthAuthorizationKeyRequest": {
       "fields": [
+        {
+          "claims": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
         {
           "client_id": {
             "description": "",
@@ -116964,6 +119141,27 @@
           }
         },
         {
+          "kr-id-verification": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+                "fields": [
+                  {
+                    "redirect_url": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
           "multifactor": {
             "description": "",
             "offset": 0,
@@ -117519,6 +119717,18 @@
         }
       ]
     },
+    "RsoAuthenticatorV1KRIdVerificationResponseDetails": {
+      "fields": [
+        {
+          "redirect_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "RsoAuthenticatorV1LoginRequest": {
       "fields": [
         {
@@ -117763,24 +119973,28 @@
           "value": 1
         },
         {
-          "name": "signup",
+          "name": "kr-id-verification",
           "value": 2
         },
         {
-          "name": "multifactor",
+          "name": "signup",
           "value": 3
         },
         {
-          "name": "gamepass",
+          "name": "multifactor",
           "value": 4
         },
         {
-          "name": "success",
+          "name": "gamepass",
           "value": 5
         },
         {
-          "name": "error",
+          "name": "success",
           "value": 6
+        },
+        {
+          "name": "error",
+          "value": 7
         }
       ]
     },
@@ -122659,6 +124873,206 @@
         }
       ]
     },
+    "Session": {
+      "fields": [
+        {
+          "productId": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "SocialFriend": {
+      "fields": [
+        {
+          "actor": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "details": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "displayGroup": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameName": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "gameTag": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "group": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "hovercard_background_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "icon_url": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "location": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "msg": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "note": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "patchline": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_folder_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product_presence_name": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "puuid": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "region": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "showState": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "SocialFriendList": {
+      "fields": [
+        {
+          "friends": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of SocialFriend"
+          }
+        }
+      ]
+    },
+    "SocialProductContext": {
+      "fields": [
+        {
+          "patchline": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        },
+        {
+          "product": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "string"
+          }
+        }
+      ]
+    },
     "StructuredLogRequest": {
       "fields": [
         {
@@ -123501,6 +125915,14 @@
     },
     "TencentLauncherAuthorizationKeyRequest": {
       "fields": [
+        {
+          "claims": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "vector of string"
+          }
+        },
         {
           "client_id": {
             "description": "",
@@ -126207,6 +128629,50 @@
               }
             }
           }
+        }
+      ]
+    },
+    "TencentLauncherProductSessionHeartbeatInfo": {
+      "fields": [
+        {
+          "phase": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "TencentLauncherProductSessionProductPhase": {
+                "fields": []
+              }
+            }
+          }
+        },
+        {
+          "sessionTTL": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "uint32"
+          }
+        }
+      ]
+    },
+    "TencentLauncherProductSessionProductPhase": {
+      "values": [
+        {
+          "name": "None",
+          "value": 0
+        },
+        {
+          "name": "Pending",
+          "value": 1
+        },
+        {
+          "name": "Idle",
+          "value": 2
+        },
+        {
+          "name": "Gameplay",
+          "value": 3
         }
       ]
     },
@@ -128918,6 +131384,66 @@
         }
       ]
     },
+    "VoiceChatGamepadPTTButton": {
+      "values": [
+        {
+          "name": "FaceButton_Top",
+          "value": 0
+        },
+        {
+          "name": "FaceButton_Bottom",
+          "value": 1
+        },
+        {
+          "name": "FaceButton_Left",
+          "value": 2
+        },
+        {
+          "name": "FaceButton_Right",
+          "value": 3
+        },
+        {
+          "name": "Dpad_Up",
+          "value": 4
+        },
+        {
+          "name": "Dpad_Down",
+          "value": 5
+        },
+        {
+          "name": "Dpad_Left",
+          "value": 6
+        },
+        {
+          "name": "Dpad_Right",
+          "value": 7
+        },
+        {
+          "name": "LeftShoulder",
+          "value": 8
+        },
+        {
+          "name": "RightShoulder",
+          "value": 9
+        },
+        {
+          "name": "LeftTrigger",
+          "value": 10
+        },
+        {
+          "name": "RightTrigger",
+          "value": 11
+        },
+        {
+          "name": "LeftThumbstickButton",
+          "value": 12
+        },
+        {
+          "name": "RightThumbstickButton",
+          "value": 13
+        }
+      ]
+    },
     "VoiceChatIdToken": {
       "fields": [
         {
@@ -129092,6 +131618,18 @@
     },
     "VoiceChatPushToTalkKey": {
       "fields": [
+        {
+          "gamepadButton": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "VoiceChatGamepadPTTButton": {
+                "fields": []
+              }
+            }
+          }
+        },
         {
           "key": {
             "description": "",
@@ -129344,6 +131882,18 @@
     },
     "VoiceChatUnnormalizedPushToTalkKey": {
       "fields": [
+        {
+          "gamepadButton": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": {
+              "VoiceChatGamepadPTTButton": {
+                "fields": []
+              }
+            }
+          }
+        },
         {
           "key": {
             "description": "",
