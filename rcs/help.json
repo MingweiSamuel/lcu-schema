@@ -36753,7 +36753,7 @@
       ],
       "name": "ExternalMessageHandlerMessageBody",
       "nameSpace": "",
-      "size": 336,
+      "size": 304,
       "tags": [
         "Plugins",
         "Plugin external-message-handler"
@@ -36816,7 +36816,7 @@
       ],
       "name": "ExternalMessageHandlerMessageData",
       "nameSpace": "",
-      "size": 328,
+      "size": 296,
       "tags": [
         "Plugins",
         "Plugin external-message-handler"
