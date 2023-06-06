@@ -946,6 +946,9 @@
         "type": {
           "$ref": "#/definitions/ChatMessageType",
           "default": "chat"
+        },
+        "uicEvent": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -2039,6 +2042,9 @@
         "type": {
           "$ref": "#/definitions/ChatMessageType",
           "default": "chat"
+        },
+        "uicEvent": {
+          "type": "boolean"
         }
       },
       "type": "object"
@@ -20081,6 +20087,17 @@
       },
       "type": "object"
     },
+    "TencentLauncherProductIntegrationAppUpdateStatus": {
+      "properties": {
+        "updateAvailable": {
+          "type": "boolean"
+        },
+        "updateRequired": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "TencentLauncherProductSessionHeartbeatInfo": {
       "properties": {
         "phase": {
@@ -31252,6 +31269,76 @@
         ]
       }
     },
+    "/product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}": {
+      "get": {
+        "description": "\n## Context\nThis endpoint is similar to the `GET /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+        "operationId": "GetProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "patchlineId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "summary": "Returns the locale of the product setting if in Standalone mode, or else returns the locale of the product/patchline setting in Riot Client",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration",
+          "Subscribable"
+        ]
+      },
+      "put": {
+        "description": "\n## Context\nThis endpoint is similar to the `PUT /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+        "operationId": "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "patchlineId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "locale",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ProductIntegrationLocaleUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Applies the locale specified in the body to the product and patchline provided. Locale should be in language_country format. for example, zh_CN or ko_KR",
+        "tags": [
+          "Plugins",
+          "Plugin product-integration"
+        ]
+      }
+    },
     "/product-integration/v1/settings-token": {
       "post": {
         "operationId": "PostProductIntegrationV1SettingsToken",
@@ -37212,6 +37299,26 @@
         "tags": [
           "Plugins",
           "Plugin tencent-launcher"
+        ]
+      }
+    },
+    "/tencent-launcher/v1/update-status": {
+      "get": {
+        "operationId": "GetTencentLauncherV1UpdateStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "$ref": "#/definitions/TencentLauncherProductIntegrationAppUpdateStatus"
+            }
+          }
+        },
+        "summary": "Gets the current update status. This will be no-update-available until ACLSDK tells us that there is an update.",
+        "tags": [
+          "Plugins",
+          "Plugin tencent-launcher",
+          "Subscribable"
         ]
       }
     },

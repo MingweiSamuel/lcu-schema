@@ -3611,7 +3611,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "string"
               }
@@ -3619,7 +3619,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 304,
+                "offset": 328,
                 "optional": false,
                 "type": "bool"
               }
@@ -3627,7 +3627,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 308,
+                "offset": 332,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -3635,7 +3635,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 376,
+                "offset": 400,
                 "optional": false,
                 "type": "bool"
               }
@@ -3643,7 +3643,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 404,
+                "offset": 428,
                 "optional": false,
                 "type": "bool"
               }
@@ -14305,6 +14305,26 @@
       "url": "/product-integration/v1/locale",
       "usage": "GetProductIntegrationV1Locale"
     },
+    "GetProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId": {
+      "arguments": [
+        {
+          "productId": {
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Returns the locale of the product setting if in Standalone mode, or else returns the locale of the product/patchline setting in Riot Client",
+      "help": "\n## Context\nThis endpoint is similar to the `GET /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+      "http_method": "GET",
+      "returns": "string",
+      "url": "/product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
+      "usage": "GetProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId <productId> <patchlineId>"
+    },
     "GetProductIntegrationV1SignoutPermission": {
       "arguments": [],
       "description": "Indicates if a product is allowed to request signout from the Riot Platform for all running products",
@@ -21856,6 +21876,35 @@
       },
       "url": "/tencent-launcher/v1/login-info",
       "usage": "GetTencentLauncherV1LoginInfo"
+    },
+    "GetTencentLauncherV1UpdateStatus": {
+      "arguments": [],
+      "description": "Gets the current update status. This will be no-update-available until ACLSDK tells us that there is an update.",
+      "http_method": "GET",
+      "returns": {
+        "TencentLauncherProductIntegrationAppUpdateStatus": {
+          "fields": [
+            {
+              "updateAvailable": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "bool"
+              }
+            },
+            {
+              "updateRequired": {
+                "description": "",
+                "offset": 0,
+                "optional": false,
+                "type": "bool"
+              }
+            }
+          ]
+        }
+      },
+      "url": "/tencent-launcher/v1/update-status",
+      "usage": "GetTencentLauncherV1UpdateStatus"
     },
     "GetVanguardV1Status": {
       "arguments": [],
@@ -42864,7 +42913,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "string"
               }
@@ -42872,7 +42921,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 304,
+                "offset": 328,
                 "optional": false,
                 "type": "bool"
               }
@@ -42880,7 +42929,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 308,
+                "offset": 332,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -42888,7 +42937,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 376,
+                "offset": 400,
                 "optional": false,
                 "type": "bool"
               }
@@ -42896,7 +42945,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 404,
+                "offset": 428,
                 "optional": false,
                 "type": "bool"
               }
@@ -43130,7 +43179,7 @@
             {
               "metadata_path": {
                 "description": "",
-                "offset": 280,
+                "offset": 304,
                 "optional": false,
                 "type": "string"
               }
@@ -43138,7 +43187,7 @@
             {
               "exclude_foreign_paths": {
                 "description": "",
-                "offset": 304,
+                "offset": 328,
                 "optional": false,
                 "type": "bool"
               }
@@ -43146,7 +43195,7 @@
             {
               "excluded_paths": {
                 "description": "",
-                "offset": 308,
+                "offset": 332,
                 "optional": false,
                 "type": "vector of string"
               }
@@ -43154,7 +43203,7 @@
             {
               "repair": {
                 "description": "",
-                "offset": 376,
+                "offset": 400,
                 "optional": false,
                 "type": "bool"
               }
@@ -43162,7 +43211,7 @@
             {
               "deleteForeignPaths": {
                 "description": "",
-                "offset": 404,
+                "offset": 428,
                 "optional": false,
                 "type": "bool"
               }
@@ -44566,6 +44615,43 @@
       "http_method": "PUT",
       "url": "/product-integration/v1/locale",
       "usage": "PutProductIntegrationV1Locale <locale>"
+    },
+    "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId": {
+      "arguments": [
+        {
+          "productId": {
+            "type": "string"
+          }
+        },
+        {
+          "patchlineId": {
+            "type": "string"
+          }
+        },
+        {
+          "locale": {
+            "type": {
+              "ProductIntegrationLocaleUpdate": {
+                "fields": [
+                  {
+                    "locale": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "description": "Applies the locale specified in the body to the product and patchline provided. Locale should be in language_country format. for example, zh_CN or ko_KR",
+      "help": "\n## Context\nThis endpoint is similar to the `PUT /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+      "http_method": "PUT",
+      "url": "/product-integration/v1/locale/products/{productId}/patchlines/{patchlineId}",
+      "usage": "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId <productId> <patchlineId> <locale>"
     },
     "PutProductLauncherV1ProductsByProductIdPatchlinesByPatchlineId": {
       "arguments": [
@@ -55735,6 +55821,14 @@
               }
             }
           }
+        },
+        {
+          "uicEvent": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
         }
       ]
     },
@@ -56848,6 +56942,14 @@
                           "fields": []
                         }
                       }
+                    }
+                  },
+                  {
+                    "uicEvent": {
+                      "description": "",
+                      "offset": 0,
+                      "optional": false,
+                      "type": "bool"
                     }
                   }
                 ]
@@ -58587,6 +58689,14 @@
                 "fields": []
               }
             }
+          }
+        },
+        {
+          "uicEvent": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
           }
         }
       ]
@@ -82433,7 +82543,7 @@
         {
           "metadata_path": {
             "description": "",
-            "offset": 280,
+            "offset": 304,
             "optional": false,
             "type": "string"
           }
@@ -82441,7 +82551,7 @@
         {
           "exclude_foreign_paths": {
             "description": "",
-            "offset": 304,
+            "offset": 328,
             "optional": false,
             "type": "bool"
           }
@@ -82449,7 +82559,7 @@
         {
           "excluded_paths": {
             "description": "",
-            "offset": 308,
+            "offset": 332,
             "optional": false,
             "type": "vector of string"
           }
@@ -82457,7 +82567,7 @@
         {
           "repair": {
             "description": "",
-            "offset": 376,
+            "offset": 400,
             "optional": false,
             "type": "bool"
           }
@@ -82465,7 +82575,7 @@
         {
           "deleteForeignPaths": {
             "description": "",
-            "offset": 404,
+            "offset": 428,
             "optional": false,
             "type": "bool"
           }
@@ -128628,6 +128738,26 @@
                 ]
               }
             }
+          }
+        }
+      ]
+    },
+    "TencentLauncherProductIntegrationAppUpdateStatus": {
+      "fields": [
+        {
+          "updateAvailable": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
+          }
+        },
+        {
+          "updateRequired": {
+            "description": "",
+            "offset": 0,
+            "optional": false,
+            "type": "bool"
           }
         }
       ]

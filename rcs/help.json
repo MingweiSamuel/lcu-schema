@@ -7554,6 +7554,44 @@
       "threadSafe": false
     },
     {
+      "arguments": [
+        {
+          "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Returns the locale of the product setting if in Standalone mode, or else returns the locale of the product/patchline setting in Riot Client",
+      "help": "\n## Context\nThis endpoint is similar to the `GET /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+      "internal": false,
+      "name": "GetProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "string"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
       "arguments": [],
       "deprecated": false,
       "deprecatedHelp": "",
@@ -11351,6 +11389,25 @@
       "returns": {
         "elementType": "",
         "type": "TencentLauncherTencentLauncherLoginInfo"
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Gets the current update status. This will be no-update-available until ACLSDK tells us that there is an update.",
+      "help": "",
+      "internal": false,
+      "name": "GetTencentLauncherV1UpdateStatus",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": "TencentLauncherProductIntegrationAppUpdateStatus"
       },
       "subscribable": false,
       "tags": [
@@ -21773,6 +21830,53 @@
       "arguments": [
         {
           "description": "",
+          "name": "productId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "patchlineId",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "string"
+          }
+        },
+        {
+          "description": "",
+          "name": "locale",
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "ProductIntegrationLocaleUpdate"
+          }
+        }
+      ],
+      "deprecated": false,
+      "deprecatedHelp": "",
+      "description": "Applies the locale specified in the body to the product and patchline provided. Locale should be in language_country format. for example, zh_CN or ko_KR",
+      "help": "\n## Context\nThis endpoint is similar to the `PUT /product-integration/v1/locale` endpoint except that the product and patchline IDs are provided. Note that the product and patchline IDs are only used if Standalone mode is NOT enabled since it takes priority.\n\nThis endpoint was added to give game teams the flexibility to switch between Standalone mode and Riot Client mode via configuration (no code changes). As soon as all games have migrated to Standalone mode, we can remove this endpoint.\n",
+      "internal": false,
+      "name": "PutProductIntegrationV1LocaleProductsByProductIdPatchlinesByPatchlineId",
+      "nameSpace": "",
+      "returns": {
+        "elementType": "",
+        "type": ""
+      },
+      "subscribable": false,
+      "tags": [
+        "$remoting-binding-module"
+      ],
+      "threadSafe": false
+    },
+    {
+      "arguments": [
+        {
+          "description": "",
           "name": "product-id",
           "optional": false,
           "type": {
@@ -27378,6 +27482,16 @@
             "elementType": "",
             "type": "ChatMessageType"
           }
+        },
+        {
+          "description": "",
+          "name": "uicEvent",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
         }
       ],
       "name": "ChatChatMessage",
@@ -30312,6 +30426,16 @@
           "type": {
             "elementType": "",
             "type": "ChatMessageType"
+          }
+        },
+        {
+          "description": "",
+          "name": "uicEvent",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
           }
         }
       ],
@@ -52200,7 +52324,7 @@
         {
           "description": "",
           "name": "metadata_path",
-          "offset": 280,
+          "offset": 304,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52210,7 +52334,7 @@
         {
           "description": "",
           "name": "exclude_foreign_paths",
-          "offset": 304,
+          "offset": 328,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52220,7 +52344,7 @@
         {
           "description": "",
           "name": "excluded_paths",
-          "offset": 308,
+          "offset": 332,
           "optional": false,
           "type": {
             "elementType": "string",
@@ -52230,7 +52354,7 @@
         {
           "description": "",
           "name": "repair",
-          "offset": 376,
+          "offset": 400,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52240,7 +52364,7 @@
         {
           "description": "",
           "name": "deleteForeignPaths",
-          "offset": 404,
+          "offset": 428,
           "optional": false,
           "type": {
             "elementType": "",
@@ -52250,7 +52374,7 @@
       ],
       "name": "PatchProxyPatchProxyRequest",
       "nameSpace": "",
-      "size": 408,
+      "size": 432,
       "tags": [
         "Plugins",
         "Plugin patch-proxy"
@@ -94775,6 +94899,36 @@
         }
       ],
       "name": "TencentLauncherPartnerCredentialsV3",
+      "nameSpace": "",
+      "size": 0,
+      "tags": [],
+      "values": []
+    },
+    {
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "updateAvailable",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        },
+        {
+          "description": "",
+          "name": "updateRequired",
+          "offset": 0,
+          "optional": false,
+          "type": {
+            "elementType": "",
+            "type": "bool"
+          }
+        }
+      ],
+      "name": "TencentLauncherProductIntegrationAppUpdateStatus",
       "nameSpace": "",
       "size": 0,
       "tags": [],
