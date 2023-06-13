@@ -72,6 +72,23 @@
         },
         "type": "object"
       },
+      "AmbassadorErrorResponse": {
+        "properties": {
+          "errorCode": {
+            "type": "string"
+          },
+          "httpStatus": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "AntiAddictionAntiAddictionConfig": {
         "properties": {
           "backendUrl": {
@@ -310,6 +327,174 @@
           },
           "version": {
             "description": "Version of the host application",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountAppleAuthorizationError": {
+        "enum": [
+          "missing_credentials",
+          "serialization_failed",
+          "invalid_credentials_type",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "missing_result",
+          "missing_code",
+          "as_authorization_error_failed",
+          "as_authorization_error_invalid_response",
+          "as_authorization_error_not_handled",
+          "as_authorization_error_unknown",
+          "as_web_authentication_session_presentation_context_invalid",
+          "as_web_authentication_session_presentation_context_not_provided",
+          "unknown_as_web_authentication_session_error",
+          "unknown_java_error",
+          "unknown_sf_authentication_session_error",
+          "unknown"
+        ],
+        "type": "string"
+      },
+      "AppleAccountAppleAuthorizationOpenConnectId": {
+        "properties": {
+          "authotization_code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountAppleAuthorizationParameters": {
+        "properties": {
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountAppleAuthorizationResponse": {
+        "properties": {
+          "code_exchange": {
+            "nullable": true,
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/AppleAccountAppleAuthorizationError",
+            "nullable": true
+          },
+          "open_connect_id": {
+            "$ref": "#/components/schemas/AppleAccountAppleAuthorizationOpenConnectId",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/AppleAccountAppleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountAppleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "canceled",
+          "error",
+          "open_connect_id",
+          "code_exchange"
+        ],
+        "type": "string"
+      },
+      "AppleAccountPluginConfigResponse": {
+        "properties": {
+          "methods": {
+            "items": {
+              "$ref": "#/components/schemas/AppleAccountV1AuthMethodConfig"
+            },
+            "type": "array"
+          },
+          "service_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountV1AuthMethodConfig": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "AppleAccountV1DisplayMode": {
+        "enum": [
+          "page",
+          "touch"
+        ],
+        "type": "string"
+      },
+      "AppleAccountV1WebAuthenticationMethod": {
+        "enum": [
+          "none",
+          "apple",
+          "google",
+          "facebook",
+          "nintendo",
+          "playstation",
+          "xbox"
+        ],
+        "type": "string"
+      },
+      "AppleAccountV1WebAuthenticationUrlRequest": {
+        "properties": {
+          "authentication_callback_uri": {
+            "type": "string"
+          },
+          "display": {
+            "$ref": "#/components/schemas/AppleAccountV1DisplayMode",
+            "default": "page"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "method": {
+            "$ref": "#/components/schemas/AppleAccountV1WebAuthenticationMethod",
+            "default": "none"
+          },
+          "product_id": {
+            "type": "string"
+          },
+          "redirect_uri": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          },
+          "riot_theme": {
             "type": "string"
           }
         },
@@ -3914,6 +4099,15 @@
         },
         "type": "object"
       },
+      "ErrorType": {
+        "enum": [
+          "UnexpectedError",
+          "AmbassadorError",
+          "SGPError",
+          "PluginError"
+        ],
+        "type": "string"
+      },
       "EulaAcceptance": {
         "enum": [
           "WaitingForAllServiceData",
@@ -4041,9 +4235,6 @@
           "finalState": {
             "$ref": "#/components/schemas/EulaFinalState",
             "default": "unknown"
-          },
-          "homebaseCountry": {
-            "type": "string"
           },
           "privacyPolicyContext": {
             "$ref": "#/components/schemas/EulaPrivacyPolicyContext"
@@ -4268,11 +4459,6 @@
           "fulfillmentId": {
             "type": "string"
           },
-          "fulfillmentItemResult": {
-            "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult",
-            "default": "unassigned",
-            "nullable": true
-          },
           "fulfillmentReason": {
             "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentFulfillmentReason",
             "default": "other"
@@ -4285,10 +4471,6 @@
           "funnelName": {
             "type": "string"
           },
-          "itemFailureReason": {
-            "nullable": true,
-            "type": "string"
-          },
           "itemId": {
             "nullable": true,
             "type": "string"
@@ -4298,6 +4480,11 @@
             "minimum": 0,
             "nullable": true,
             "type": "integer"
+          },
+          "itemResult": {
+            "$ref": "#/components/schemas/FirstPartyFulfillmentFirstPartyFulfillmentTelemetryFulfillmentItemResult",
+            "default": "unassigned",
+            "nullable": true
           }
         },
         "type": "object"
@@ -6587,32 +6774,159 @@
         },
         "type": "object"
       },
-      "GarenaAuthGarenaPartnerCredentials": {
+      "GoogleAccountGoogleAuthorizationError": {
+        "enum": [
+          "unknown",
+          "sign_in_currently_in_progress",
+          "sign_in_failed",
+          "developer_error",
+          "internal_error",
+          "network_error",
+          "invalid_account",
+          "missing_result",
+          "missing_code",
+          "aswebauthentication_session_presentation_context_invalid",
+          "aswebauthentication_session_presentation_context_not_provided",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "unknown_aswebauthentication_session_error",
+          "unknown_sfauthentication_session_error",
+          "unknown_java_error"
+        ],
+        "type": "string"
+      },
+      "GoogleAccountGoogleAuthorizationParameters": {
         "properties": {
-          "token": {
+          "googleClientId": {
             "type": "string"
+          },
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           }
         },
         "type": "object"
       },
-      "GarenaAuthPartnerCredentials": {
-        "properties": {
-          "garena": {
-            "$ref": "#/components/schemas/GarenaAuthGarenaPartnerCredentials",
-            "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "GarenaAuthStatusMessage": {
+      "GoogleAccountGoogleAuthorizationResponse": {
         "properties": {
           "code": {
+            "nullable": true,
             "type": "string"
           },
-          "isError": {
+          "error": {
+            "$ref": "#/components/schemas/GoogleAccountGoogleAuthorizationError",
+            "nullable": true
+          },
+          "idToken": {
+            "nullable": true,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/GoogleAccountGoogleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "GoogleAccountGoogleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "cancelled",
+          "error",
+          "token",
+          "code"
+        ],
+        "type": "string"
+      },
+      "GoogleAccountPluginConfigResponse": {
+        "properties": {
+          "methods": {
+            "items": {
+              "$ref": "#/components/schemas/GoogleAccountV1AuthMethodConfig"
+            },
+            "type": "array"
+          },
+          "service_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GoogleAccountV1AuthMethodConfig": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "GoogleAccountV1DisplayMode": {
+        "enum": [
+          "page",
+          "touch"
+        ],
+        "type": "string"
+      },
+      "GoogleAccountV1WebAuthenticationMethod": {
+        "enum": [
+          "none",
+          "apple",
+          "google",
+          "facebook",
+          "nintendo",
+          "playstation",
+          "xbox"
+        ],
+        "type": "string"
+      },
+      "GoogleAccountV1WebAuthenticationUrlRequest": {
+        "properties": {
+          "authentication_callback_uri": {
+            "type": "string"
+          },
+          "display": {
+            "$ref": "#/components/schemas/GoogleAccountV1DisplayMode",
+            "default": "page"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "method": {
+            "$ref": "#/components/schemas/GoogleAccountV1WebAuthenticationMethod",
+            "default": "none"
+          },
+          "product_id": {
+            "type": "string"
+          },
+          "redirect_uri": {
+            "type": "string"
+          },
+          "remember": {
             "type": "boolean"
           },
-          "message": {
+          "riot_theme": {
             "type": "string"
           }
         },
@@ -6695,6 +7009,34 @@
           }
         },
         "type": "object"
+      },
+      "InfoRadiatorSessionStartEvent": {
+        "properties": {
+          "authState": {
+            "$ref": "#/components/schemas/InfoRadiatorSessionStartEvent_AuthState",
+            "default": "Unauthenticated"
+          },
+          "eventTrigger": {
+            "$ref": "#/components/schemas/InfoRadiatorSessionStartEvent_EventTrigger",
+            "default": "DelayTimeout"
+          }
+        },
+        "type": "object"
+      },
+      "InfoRadiatorSessionStartEvent_AuthState": {
+        "enum": [
+          "Unauthenticated",
+          "Authenticated"
+        ],
+        "type": "string"
+      },
+      "InfoRadiatorSessionStartEvent_EventTrigger": {
+        "enum": [
+          "DelayTimeout",
+          "FirstAuthentication",
+          "SubsequentAuthentication"
+        ],
+        "type": "string"
       },
       "InfoRadiatorVoiceChatHeartbeatMetrics": {
         "properties": {
@@ -7693,6 +8035,34 @@
         },
         "type": "object"
       },
+      "MatchmakingPluginCallerId_MockCallerId": {
+        "properties": {
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingPluginCallerId_ProductSession": {
+        "properties": {
+          "patchlineFullName": {
+            "type": "string"
+          },
+          "patchlineId": {
+            "type": "string"
+          },
+          "productId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "MatchmakingServiceV1CreateMatchmakingTicketParams": {
         "properties": {
           "additionalDataForAlgorithm": {
@@ -7848,6 +8218,161 @@
         },
         "type": "object"
       },
+      "MatchmakingV1AcceptReady": {
+        "properties": {
+          "accepted": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1MatchmakingReadyCheck": {
+        "properties": {
+          "check_uuid": {
+            "type": "string"
+          },
+          "duration": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MatchmakingV1ReadyCheckStatus",
+            "default": "pending"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1MatchmakingServiceTicket": {
+        "properties": {
+          "created_at": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "match_id": {
+            "nullable": true,
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "state_updated_at": {
+            "type": "string"
+          },
+          "submode": {
+            "nullable": true,
+            "type": "string"
+          },
+          "ticket_age_ms": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1MatchmakingTicket": {
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "match_id": {
+            "nullable": true,
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "shard": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "submode": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1RMSPayloadReadyCheck": {
+        "properties": {
+          "mode": {
+            "type": "string"
+          },
+          "ms": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": -2147483648,
+            "type": "integer"
+          },
+          "status": {
+            "$ref": "#/components/schemas/MatchmakingV1ReadyCheckStatus",
+            "default": "pending"
+          },
+          "tid": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1RMSPayloadTicketStatus": {
+        "properties": {
+          "state": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "MatchmakingV1ReadyCheckStatus": {
+        "enum": [
+          "pending",
+          "failed",
+          "success",
+          "declined"
+        ],
+        "type": "string"
+      },
       "NameCheckNameValidationResult": {
         "properties": {
           "errors": {
@@ -7968,226 +8493,6 @@
         ],
         "type": "string"
       },
-      "PatchComponent": {
-        "properties": {
-          "bundlesUrl": {
-            "type": "string"
-          },
-          "deleteForeignPaths": {
-            "type": "boolean"
-          },
-          "dependsOn": {
-            "type": "string"
-          },
-          "error": {
-            "$ref": "#/components/schemas/PatchError",
-            "nullable": true
-          },
-          "excludedPaths": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "id": {
-            "type": "string"
-          },
-          "installPath": {
-            "type": "string"
-          },
-          "isPatchingLocked": {
-            "type": "boolean"
-          },
-          "metadataPath": {
-            "type": "string"
-          },
-          "preview": {
-            "$ref": "#/components/schemas/PatchPreviewDiff",
-            "nullable": true
-          },
-          "progress": {
-            "$ref": "#/components/schemas/PatchComponentActionProgress",
-            "nullable": true
-          },
-          "requestId": {
-            "type": "string"
-          },
-          "seedPath": {
-            "type": "string"
-          },
-          "sieveArtifactVersion": {
-            "type": "string"
-          },
-          "sieveProductId": {
-            "type": "string"
-          },
-          "sieveVersionSetId": {
-            "type": "string"
-          },
-          "state": {
-            "$ref": "#/components/schemas/PatchComponentState",
-            "default": "PendingVerify"
-          },
-          "storedDesiredComponentState": {
-            "$ref": "#/components/schemas/PatchPatchsieveRelease",
-            "nullable": true
-          },
-          "tags": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "url": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchComponentActionProgress": {
-        "properties": {
-          "bytesToDownload": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "bytesToRead": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "bytesToRepair": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "bytesToWrite": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "downloadedBytes": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "filesToRepair": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "phase": {
-            "$ref": "#/components/schemas/PatchComponentActionProgressPhase",
-            "default": "None"
-          },
-          "progress": {
-            "format": "double",
-            "type": "number"
-          },
-          "readBytes": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "repairedBytes": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "repairedFiles": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "stage": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "writtenBytes": {
-            "format": "int64",
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "PatchComponentActionProgressPhase": {
-        "enum": [
-          "None",
-          "Manifest",
-          "Update",
-          "Repair"
-        ],
-        "type": "string"
-      },
-      "PatchComponentRequest": {
-        "properties": {
-          "deleteForeignPaths": {
-            "type": "boolean"
-          },
-          "dependsOn": {
-            "type": "string"
-          },
-          "excludedPaths": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "id": {
-            "type": "string"
-          },
-          "installPath": {
-            "type": "string"
-          },
-          "metadataPath": {
-            "type": "string"
-          },
-          "params": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          },
-          "seedPath": {
-            "type": "string"
-          },
-          "sieveProductId": {
-            "type": "string"
-          },
-          "versionSet": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchComponentState": {
-        "enum": [
-          "NotInstalled",
-          "PendingVerify",
-          "Verifying",
-          "CheckingForUpdates",
-          "Previewing",
-          "Patching",
-          "Repairing",
-          "Seeding",
-          "OutOfDate",
-          "UpToDate"
-        ],
-        "type": "string"
-      },
       "PatchConfiguration": {
         "properties": {
           "cache_path": {
@@ -8228,23 +8533,6 @@
             "maximum": 2147483647,
             "minimum": -2147483648,
             "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "PatchDebugSetup": {
-        "properties": {
-          "componentId": {
-            "type": "string"
-          },
-          "installId": {
-            "type": "string"
-          },
-          "installPath": {
-            "type": "string"
-          },
-          "metadataPath": {
-            "type": "string"
           }
         },
         "type": "object"
@@ -8345,34 +8633,6 @@
         },
         "type": "object"
       },
-      "PatchInstallRequest": {
-        "properties": {
-          "components": {
-            "items": {
-              "$ref": "#/components/schemas/PatchComponentRequest"
-            },
-            "type": "array"
-          },
-          "id": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchInstallState": {
-        "properties": {
-          "components": {
-            "items": {
-              "$ref": "#/components/schemas/PatchComponent"
-            },
-            "type": "array"
-          },
-          "id": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "PatchLockedFileInfo": {
         "properties": {
           "process_id": {
@@ -8397,38 +8657,6 @@
             "format": "int64",
             "minimum": 0,
             "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchComponentMetadata": {
-        "properties": {
-          "excludedPaths": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "id": {
-            "type": "string"
-          },
-          "path": {
-            "type": "string"
-          },
-          "sieveLabels": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          },
-          "sieveProductId": {
-            "type": "string"
-          },
-          "tags": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
           }
         },
         "type": "object"
@@ -8483,17 +8711,6 @@
         },
         "type": "object"
       },
-      "PatchPatchSetMetadata": {
-        "properties": {
-          "components": {
-            "items": {
-              "$ref": "#/components/schemas/PatchPatchComponentMetadata"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
       "PatchPatchStatus": {
         "properties": {
           "error": {
@@ -8529,97 +8746,6 @@
           "repairing"
         ],
         "type": "string"
-      },
-      "PatchPatchlineMetadata": {
-        "properties": {
-          "patching_metadata": {
-            "additionalProperties": {
-              "$ref": "#/components/schemas/PatchPatchSetMetadata"
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchsieveRelease": {
-        "properties": {
-          "artifactId": {
-            "type": "string"
-          },
-          "artifactVersion": {
-            "type": "string"
-          },
-          "downloadUrl": {
-            "type": "string"
-          },
-          "releaseId": {
-            "type": "string"
-          },
-          "requiresScd": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchsieveReleases": {
-        "properties": {
-          "releases": {
-            "items": {
-              "$ref": "#/components/schemas/PatchPatchsieveRelease"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "PatchPatchsieveRequest": {
-        "properties": {
-          "artifactType": {
-            "nullable": true,
-            "type": "string"
-          },
-          "cpuArch": {
-            "nullable": true,
-            "type": "string"
-          },
-          "extraParams": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          },
-          "fromArtifactType": {
-            "nullable": true,
-            "type": "string"
-          },
-          "fromArtifactVersion": {
-            "nullable": true,
-            "type": "string"
-          },
-          "fromCpuArch": {
-            "nullable": true,
-            "type": "string"
-          },
-          "fromPlatform": {
-            "nullable": true,
-            "type": "string"
-          },
-          "platform": {
-            "nullable": true,
-            "type": "string"
-          },
-          "productId": {
-            "type": "string"
-          },
-          "published": {
-            "default": true,
-            "type": "boolean"
-          },
-          "versionSet": {
-            "type": "string"
-          }
-        },
-        "type": "object"
       },
       "PatchPhase": {
         "enum": [
@@ -8878,29 +9004,6 @@
         ],
         "type": "string"
       },
-      "PatchRequestStatus": {
-        "properties": {
-          "fullName": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "state": {
-            "$ref": "#/components/schemas/PatchRequestStatusState",
-            "default": "Queued"
-          }
-        },
-        "type": "object"
-      },
-      "PatchRequestStatusState": {
-        "enum": [
-          "Queued",
-          "InProgress",
-          "Done"
-        ],
-        "type": "string"
-      },
       "PatchRequests": {
         "properties": {
           "patch": {
@@ -8918,23 +9021,6 @@
           "seed": {
             "$ref": "#/components/schemas/PatchSeedRequest",
             "nullable": true
-          }
-        },
-        "type": "object"
-      },
-      "PatchScheduleRepairRequest": {
-        "properties": {
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "headers": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
           }
         },
         "type": "object"
@@ -9017,97 +9103,6 @@
         ],
         "type": "string"
       },
-      "PatchSession": {
-        "properties": {
-          "patchlineFullName": {
-            "type": "string"
-          },
-          "patchlineId": {
-            "type": "string"
-          },
-          "productId": {
-            "type": "string"
-          },
-          "version": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchStartFullRepairRequest": {
-        "properties": {
-          "deleteForeignPaths": {
-            "type": "boolean"
-          },
-          "headers": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "PatchStartPartialRepairRequest": {
-        "properties": {
-          "deleteForeignPaths": {
-            "type": "boolean"
-          },
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "headers": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "PatchStartPatchingOrSeedingRequest": {
-        "properties": {
-          "headers": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          },
-          "stage": {
-            "maximum": 255,
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          },
-          "tempPath": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "PatchStartPreviewRequest": {
-        "properties": {
-          "fast": {
-            "type": "boolean"
-          },
-          "headers": {
-            "additionalProperties": {
-              "type": "string"
-            },
-            "type": "object"
-          },
-          "stage": {
-            "maximum": 255,
-            "minimum": 0,
-            "nullable": true,
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "PatchStatus": {
         "properties": {
           "patch": {
@@ -9169,84 +9164,6 @@
         },
         "type": "object"
       },
-      "PatchV2Configuration": {
-        "properties": {
-          "chunkBatchSize": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "chunkingThreads": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "connections": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "dnsTTL": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "downloadBuffer": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "downloadLimit": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "ipv4Only": {
-            "type": "boolean"
-          },
-          "maxByteRanges": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "receiveBuffer": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "sliceSize": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          },
-          "timeout": {
-            "format": "int32",
-            "maximum": 2147483647,
-            "minimum": -2147483648,
-            "nullable": true,
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
       "PaymentsIdToken": {
         "properties": {
           "clientId": {
@@ -9298,6 +9215,14 @@
         "properties": {
           "ready": {
             "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PaymentsUserInfo": {
+        "properties": {
+          "userInfo": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -9442,18 +9367,6 @@
         },
         "type": "object"
       },
-      "PlatformLoginProduct": {
-        "properties": {
-          "patchline": {
-            "nullable": true,
-            "type": "string"
-          },
-          "productId": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "PlatformLoginRSOAuthorizationTrustLevel": {
         "enum": [
           "always_trusted",
@@ -9483,10 +9396,6 @@
           "outcome": {
             "$ref": "#/components/schemas/PlatformLoginOutcome",
             "default": "Success"
-          },
-          "product": {
-            "$ref": "#/components/schemas/PlatformLoginProduct",
-            "nullable": true
           },
           "signOnAttemptNumber": {
             "format": "int32",
@@ -9645,8 +9554,100 @@
         },
         "type": "object"
       },
+      "PlatformUiAppleAuthorizationError": {
+        "enum": [
+          "missing_credentials",
+          "serialization_failed",
+          "invalid_credentials_type",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "missing_result",
+          "missing_code",
+          "as_authorization_error_failed",
+          "as_authorization_error_invalid_response",
+          "as_authorization_error_not_handled",
+          "as_authorization_error_unknown",
+          "as_web_authentication_session_presentation_context_invalid",
+          "as_web_authentication_session_presentation_context_not_provided",
+          "unknown_as_web_authentication_session_error",
+          "unknown_java_error",
+          "unknown_sf_authentication_session_error",
+          "unknown"
+        ],
+        "type": "string"
+      },
+      "PlatformUiAppleAuthorizationOpenConnectId": {
+        "properties": {
+          "authotization_code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiAppleAuthorizationParameters": {
+        "properties": {
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiAppleAuthorizationResponse": {
+        "properties": {
+          "code_exchange": {
+            "nullable": true,
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/PlatformUiAppleAuthorizationError",
+            "nullable": true
+          },
+          "open_connect_id": {
+            "$ref": "#/components/schemas/PlatformUiAppleAuthorizationOpenConnectId",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlatformUiAppleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiAppleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "canceled",
+          "error",
+          "open_connect_id",
+          "code_exchange"
+        ],
+        "type": "string"
+      },
+      "PlatformUiAuthenticateMultifactorInput": {
+        "properties": {
+          "multifactor": {
+            "$ref": "#/components/schemas/PlatformUiMultifactorInput"
+          }
+        },
+        "type": "object"
+      },
       "PlatformUiAuthenticationResponse": {
         "properties": {
+          "captcha": {
+            "$ref": "#/components/schemas/PlatformUiCaptcha"
+          },
           "country": {
             "type": "string"
           },
@@ -9686,6 +9687,26 @@
         ],
         "type": "string"
       },
+      "PlatformUiCaptcha": {
+        "properties": {
+          "hcaptcha": {
+            "$ref": "#/components/schemas/PlatformUiHCaptcha",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlatformUiCaptchaType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiCaptchaType": {
+        "enum": [
+          "none",
+          "hcaptcha"
+        ],
+        "type": "string"
+      },
       "PlatformUiConfigV3AuthProgress": {
         "enum": [
           "None",
@@ -9722,6 +9743,20 @@
             "type": "boolean"
           },
           "isTagLineCustomizable": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiFREStatus": {
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "loading": {
+            "type": "boolean"
+          },
+          "required": {
             "type": "boolean"
           }
         },
@@ -9777,6 +9812,88 @@
             "type": "boolean"
           },
           "tag_line": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiGoogleAuthorizationError": {
+        "enum": [
+          "unknown",
+          "sign_in_currently_in_progress",
+          "sign_in_failed",
+          "developer_error",
+          "internal_error",
+          "network_error",
+          "invalid_account",
+          "missing_result",
+          "missing_code",
+          "aswebauthentication_session_presentation_context_invalid",
+          "aswebauthentication_session_presentation_context_not_provided",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "unknown_aswebauthentication_session_error",
+          "unknown_sfauthentication_session_error",
+          "unknown_java_error"
+        ],
+        "type": "string"
+      },
+      "PlatformUiGoogleAuthorizationParameters": {
+        "properties": {
+          "googleClientId": {
+            "type": "string"
+          },
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiGoogleAuthorizationResponse": {
+        "properties": {
+          "code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/PlatformUiGoogleAuthorizationError",
+            "nullable": true
+          },
+          "idToken": {
+            "nullable": true,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlatformUiGoogleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiGoogleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "cancelled",
+          "error",
+          "token",
+          "code"
+        ],
+        "type": "string"
+      },
+      "PlatformUiHCaptcha": {
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "key": {
             "type": "string"
           }
         },
@@ -9852,7 +9969,7 @@
         "enum": [
           "riot_identity",
           "google",
-          "game_center",
+          "gamecenter",
           "facebook",
           "apple",
           "nintendo",
@@ -9885,6 +10002,23 @@
             "minimum": 0,
             "nullable": true,
             "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiMultifactorInput": {
+        "properties": {
+          "action": {
+            "nullable": true,
+            "type": "string"
+          },
+          "otp": {
+            "nullable": true,
+            "type": "string"
+          },
+          "rememberDevice": {
+            "nullable": true,
+            "type": "boolean"
           }
         },
         "type": "object"
@@ -10039,17 +10173,50 @@
           "PendingRiotID",
           "PendingVNGProfile",
           "PendingLolRegionSelection",
-          "PendingUserInfoRefresh",
           "Authorized",
           "Error"
         ],
         "type": "string"
+      },
+      "PlatformUiPluginConfigResponse": {
+        "properties": {
+          "methods": {
+            "items": {
+              "$ref": "#/components/schemas/PlatformUiV1AuthMethodConfig"
+            },
+            "type": "array"
+          },
+          "service_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "PlatformUiRSOMobileUIAuthorizationTrustLevel": {
         "enum": [
           "always_trusted",
           "trusted_device",
           "always_verify"
+        ],
+        "type": "string"
+      },
+      "PlatformUiRSOMobileUIEULAUIV2Status": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUIEULAUIV2StatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUIEULAUIV2StatusType": {
+        "enum": [
+          "uninitialized",
+          "visible",
+          "accepted",
+          "acceptanceRequired",
+          "declined",
+          "error"
         ],
         "type": "string"
       },
@@ -10151,6 +10318,70 @@
         ],
         "type": "string"
       },
+      "PlatformUiRSOMobileUIRegionElectionV1InitiateRequest": {
+        "properties": {
+          "regionHint": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUIRegionElectionV1RegionElection": {
+        "properties": {
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "message": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUIRegionsV1RegionAssignmentResponseMessage",
+            "default": "NO_ERROR"
+          },
+          "productId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "regionHint": {
+            "nullable": true,
+            "type": "string"
+          },
+          "selectedRegion": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUIRegionsV1RegionAssignmentResponseMessage": {
+        "enum": [
+          "LOGIN_REQUIRED",
+          "SERVER_ERROR",
+          "AUTH_REFRESH_FAILED",
+          "REGION_ALREADY_ASSIGNED",
+          "REGION_EXISTS",
+          "BAD_ENTITY_PARAMETER",
+          "NO_ERROR"
+        ],
+        "type": "string"
+      },
+      "PlatformUiRSOMobileUIVngV1RegistrationUIStatus": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/PlatformUiRSOMobileUIVngV1RegistrationUIStatusType",
+            "default": "uninitialized"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRSOMobileUIVngV1RegistrationUIStatusType": {
+        "enum": [
+          "uninitialized",
+          "visible",
+          "completed",
+          "cancelled",
+          "error"
+        ],
+        "type": "string"
+      },
       "PlatformUiResponseType": {
         "enum": [
           "auth",
@@ -10163,6 +10394,49 @@
           "error"
         ],
         "type": "string"
+      },
+      "PlatformUiRiotIdentityAuthCompleteInput": {
+        "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
+          "captcha": {
+            "type": "string"
+          },
+          "language": {
+            "nullable": true,
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "remember": {
+            "nullable": true,
+            "type": "boolean"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiRiotIdentityAuthStartInput": {
+        "properties": {
+          "language": {
+            "nullable": true,
+            "type": "string"
+          },
+          "productId": {
+            "nullable": true,
+            "type": "string"
+          },
+          "state": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
       },
       "PlatformUiSessionResponse": {
         "properties": {
@@ -10310,9 +10584,41 @@
         },
         "type": "object"
       },
+      "PlatformUiUpdateLoginStrategyRequest": {
+        "properties": {
+          "loginStrategy": {
+            "$ref": "#/components/schemas/PlatformUiLoginStrategyType",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
       "PlatformUiUserInfo": {
         "properties": {
           "userInfo": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlatformUiV1AuthMethodConfig": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
             "type": "string"
           }
         },
@@ -10378,6 +10684,7 @@
           "InvalidLoginState",
           "CreateSessionFailure",
           "UpdateSessionFailure",
+          "UpdateLoginStrategyFailure",
           "DeleteSessionFailure",
           "AuthenticationFailure",
           "FetchCurrentAuthenticationFailure",
@@ -10387,6 +10694,8 @@
           "TooYoung",
           "SigninFailure",
           "SigninAuthFailure",
+          "SigninCaptchaNotLoaded",
+          "SigninMfaFailure",
           "AcceptEulaFailure",
           "AcceptEulaRequired",
           "PlatformConsentFailure",
@@ -10553,6 +10862,28 @@
               "$ref": "#/components/schemas/PlayerAccountAliasesV1Alias"
             },
             "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountAliasesV1AliasLookup": {
+        "properties": {
+          "game_name": {
+            "type": "string"
+          },
+          "tag_line": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountAliasesV1AliasLookupResponse": {
+        "properties": {
+          "alias": {
+            "$ref": "#/components/schemas/PlayerAccountAliasesV1AliasLookup"
+          },
+          "puuid": {
+            "type": "string"
           }
         },
         "type": "object"
@@ -10933,6 +11264,20 @@
         },
         "type": "object"
       },
+      "PlayerAccountPluginConfigResponse": {
+        "properties": {
+          "methods": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountV1AuthMethodConfig"
+            },
+            "type": "array"
+          },
+          "service_url": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "PlayerAccountPromotionV1AccountDetails": {
         "properties": {
           "birth_date": {
@@ -11179,10 +11524,165 @@
         },
         "type": "object"
       },
+      "PlayerAccountServiceV1LoginLocationInfo": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "latitude": {
+            "format": "double",
+            "type": "number"
+          },
+          "longitude": {
+            "format": "double",
+            "type": "number"
+          },
+          "region": {
+            "nullable": true,
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountServiceV1PlayerLoginLocationHistory": {
+        "properties": {
+          "history": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountServiceV1LoginLocationInfo"
+            },
+            "type": "array"
+          },
+          "lastUpdated": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountServiceV1PlayersLoginLocationHistory": {
+        "properties": {
+          "playersLoginLocationHistory": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountServiceV1PlayerLoginLocationHistory"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountServiceV1RequestedPlayersLoginLocationHistory": {
+        "properties": {
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
       "PlayerAccountUserInfo": {
         "properties": {
           "userInfo": {
             "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountV1AuthMethodConfig": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountV1LoginLocationInfo": {
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "latitude": {
+            "format": "double",
+            "type": "number"
+          },
+          "longitude": {
+            "format": "double",
+            "type": "number"
+          },
+          "region": {
+            "nullable": true,
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountV1PlayerLoginLocationHistory": {
+        "properties": {
+          "history": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountV1LoginLocationInfo"
+            },
+            "type": "array"
+          },
+          "lastUpdated": {
+            "format": "int64",
+            "minimum": 0,
+            "type": "integer"
+          },
+          "puuid": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountV1PlayersLoginLocationHistory": {
+        "properties": {
+          "playersLoginLocationHistory": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerAccountV1PlayerLoginLocationHistory"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerAccountV1RequestedPlayersLoginLocationHistory": {
+        "properties": {
+          "puuids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           }
         },
         "type": "object"
@@ -12213,6 +12713,87 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleAppleAuthorizationError": {
+        "enum": [
+          "missing_credentials",
+          "serialization_failed",
+          "invalid_credentials_type",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "missing_result",
+          "missing_code",
+          "as_authorization_error_failed",
+          "as_authorization_error_invalid_response",
+          "as_authorization_error_not_handled",
+          "as_authorization_error_unknown",
+          "as_web_authentication_session_presentation_context_invalid",
+          "as_web_authentication_session_presentation_context_not_provided",
+          "unknown_as_web_authentication_session_error",
+          "unknown_java_error",
+          "unknown_sf_authentication_session_error",
+          "unknown"
+        ],
+        "type": "string"
+      },
+      "PlayerSessionLifecycleAppleAuthorizationOpenConnectId": {
+        "properties": {
+          "authotization_code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleAppleAuthorizationParameters": {
+        "properties": {
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleAppleAuthorizationResponse": {
+        "properties": {
+          "code_exchange": {
+            "nullable": true,
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleAppleAuthorizationError",
+            "nullable": true
+          },
+          "open_connect_id": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleAppleAuthorizationOpenConnectId",
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleAppleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleAppleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "canceled",
+          "error",
+          "open_connect_id",
+          "code_exchange"
+        ],
+        "type": "string"
+      },
       "PlayerSessionLifecycleAuthMethodConfig": {
         "properties": {
           "clientId": {
@@ -12458,6 +13039,77 @@
         ],
         "type": "string"
       },
+      "PlayerSessionLifecycleGoogleAuthorizationError": {
+        "enum": [
+          "unknown",
+          "sign_in_currently_in_progress",
+          "sign_in_failed",
+          "developer_error",
+          "internal_error",
+          "network_error",
+          "invalid_account",
+          "missing_result",
+          "missing_code",
+          "aswebauthentication_session_presentation_context_invalid",
+          "aswebauthentication_session_presentation_context_not_provided",
+          "invalid_redirect_path",
+          "invalid_redirect_schema",
+          "redirect_missing_query_parameters",
+          "unknown_aswebauthentication_session_error",
+          "unknown_sfauthentication_session_error",
+          "unknown_java_error"
+        ],
+        "type": "string"
+      },
+      "PlayerSessionLifecycleGoogleAuthorizationParameters": {
+        "properties": {
+          "googleClientId": {
+            "type": "string"
+          },
+          "locale": {
+            "nullable": true,
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleGoogleAuthorizationResponse": {
+        "properties": {
+          "code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "error": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleGoogleAuthorizationError",
+            "nullable": true
+          },
+          "idToken": {
+            "nullable": true,
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleGoogleAuthorizationResponseType",
+            "default": "none"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleGoogleAuthorizationResponseType": {
+        "enum": [
+          "none",
+          "cancelled",
+          "error",
+          "token",
+          "code"
+        ],
+        "type": "string"
+      },
       "PlayerSessionLifecycleHealupResponseDetails": {
         "properties": {
           "auth_method": {
@@ -12539,7 +13191,7 @@
         "enum": [
           "riot_identity",
           "google",
-          "game_center",
+          "gamecenter",
           "facebook",
           "apple",
           "nintendo",
@@ -12821,7 +13473,6 @@
           "PendingRiotID",
           "PendingVNGProfile",
           "PendingLolRegionSelection",
-          "PendingUserInfoRefresh",
           "Authorized",
           "Error"
         ],
@@ -13088,9 +13739,66 @@
         },
         "type": "object"
       },
+      "PlayerSessionLifecycleUpdateLoginStrategyRequest": {
+        "properties": {
+          "loginStrategy": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleLoginStrategyType",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
       "PlayerSessionLifecycleUserInfo": {
         "properties": {
           "userInfo": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleV1AuthenticateCodeInput": {
+        "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleV1AuthenticateOpenIdConnectInput": {
+        "properties": {
+          "campaign": {
+            "nullable": true,
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "open_id": {
+            "$ref": "#/components/schemas/PlayerSessionLifecycleV1OpenIdConnectInput"
+          },
+          "remember": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "PlayerSessionLifecycleV1OpenIdConnectInput": {
+        "properties": {
+          "authorization_code": {
+            "nullable": true,
+            "type": "string"
+          },
+          "id_token": {
             "type": "string"
           }
         },
@@ -13464,6 +14172,28 @@
         ],
         "type": "string"
       },
+      "PluginServiceError": {
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ErrorType",
+            "default": "UnexpectedError"
+          },
+          "version": {
+            "default": 1,
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "PluginThreadingModel": {
         "enum": [
           "sequential",
@@ -13527,20 +14257,6 @@
         ],
         "type": "string"
       },
-      "ProductIntegrationAppImmediateRepairRequest": {
-        "properties": {
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "sessionId": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "ProductIntegrationAppRepairApplyRequest": {
         "properties": {
           "repairCode": {
@@ -13600,20 +14316,6 @@
         },
         "type": "object"
       },
-      "ProductIntegrationDepsAppImmediateRepairRequest": {
-        "properties": {
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          },
-          "sessionId": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "ProductIntegrationDepsAppRepairApplyRequest": {
         "properties": {
           "repairCode": {
@@ -13648,8 +14350,7 @@
       "ProductIntegrationDepsRepairCode": {
         "enum": [
           "default",
-          "integrity_check_failed",
-          "immediate_repair"
+          "integrity_check_failed"
         ],
         "type": "string"
       },
@@ -13728,25 +14429,6 @@
         },
         "type": "object"
       },
-      "ProductIntegrationProductIntegrationAppImmediateRepairRequestBody": {
-        "properties": {
-          "files": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array"
-          }
-        },
-        "type": "object"
-      },
-      "ProductIntegrationProductIntegrationAppImmediateRepairResponseBody": {
-        "properties": {
-          "path": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "ProductIntegrationProductIntegrationAppRepairBody": {
         "properties": {
           "repairCode": {
@@ -13787,8 +14469,7 @@
       "ProductIntegrationRepairCode": {
         "enum": [
           "default",
-          "integrity_check_failed",
-          "immediate_repair"
+          "integrity_check_failed"
         ],
         "type": "string"
       },
@@ -18625,6 +19306,15 @@
         ],
         "type": "string"
       },
+      "RsoMobileUiPSLPlayerSessionState": {
+        "properties": {
+          "id": {
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "RsoMobileUiPlatformUser": {
         "properties": {
           "id": {
@@ -19611,6 +20301,28 @@
           },
           "success": {
             "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "SGPErrorMessage": {
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "status_code": {
+            "format": "int32",
+            "maximum": 4294967295,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "SGPErrorResponse": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/SGPErrorMessage"
           }
         },
         "type": "object"
@@ -22287,6 +22999,70 @@
           "Plugins",
           "Plugin app-command",
           "Subscribable"
+        ]
+      }
+    },
+    "/apple-account/v1/authorization": {
+      "delete": {
+        "operationId": "DeleteAppleAccountV1Authorization",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete authorization status for Apple",
+        "tags": [
+          "Plugins",
+          "Plugin apple-account"
+        ]
+      },
+      "get": {
+        "operationId": "GetAppleAccountV1Authorization",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppleAccountAppleAuthorizationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Retrieve authorization from the Sign In with Apple Account",
+        "tags": [
+          "Plugins",
+          "Plugin apple-account",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostAppleAccountV1Authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppleAccountAppleAuthorizationParameters"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "AuthorizationParameters"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Create authorization from the Sign In with Apple Account",
+        "tags": [
+          "Plugins",
+          "Plugin apple-account"
         ]
       }
     },
@@ -27670,6 +28446,70 @@
         ]
       }
     },
+    "/google-account/v1/authorization": {
+      "delete": {
+        "operationId": "DeleteGoogleAccountV1Authorization",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete the current Google authorization session.",
+        "tags": [
+          "Plugins",
+          "Plugin google-account"
+        ]
+      },
+      "get": {
+        "operationId": "GetGoogleAccountV1Authorization",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GoogleAccountGoogleAuthorizationResponse"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Gets the current Google authorization status.",
+        "tags": [
+          "Plugins",
+          "Plugin google-account",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostGoogleAccountV1Authorization",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GoogleAccountGoogleAuthorizationParameters"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "AuthorizationRequestParameters"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Start an authorization request with Google.",
+        "tags": [
+          "Plugins",
+          "Plugin google-account"
+        ]
+      }
+    },
     "/info-radiator/v1/custom-heartbeat-metric/{name}": {
       "delete": {
         "operationId": "DeleteInfoRadiatorV1CustomHeartbeatMetricByName",
@@ -27729,6 +28569,7 @@
     },
     "/info-radiator/v1/time-sample/{phaseName}/end": {
       "post": {
+        "description": "The time-sample APIs are deprecated and no longer do useful work. They will be removed in March 2024.",
         "operationId": "PostInfoRadiatorV1TimeSampleByPhaseNameEnd",
         "parameters": [
           {
@@ -27746,12 +28587,14 @@
         "summary": "Mark the end of the time phase sample and send an event to Analytics Platform conforming to the `riotclient__TimeSample__v4` schema.",
         "tags": [
           "Plugins",
-          "Plugin info-radiator"
+          "Plugin info-radiator",
+          "Deprecated"
         ]
       }
     },
     "/info-radiator/v1/time-sample/{phaseName}/start": {
       "post": {
+        "description": "The time-sample APIs are deprecated and no longer do useful work. They will be removed in March 2024.",
         "operationId": "PostInfoRadiatorV1TimeSampleByPhaseNameStart",
         "parameters": [
           {
@@ -27769,7 +28612,8 @@
         "summary": "Track the start time for a time phase sample of interest. Call `/info-radiator/v1/time-sample/{phase}/end` to mark the end of the sample.",
         "tags": [
           "Plugins",
-          "Plugin info-radiator"
+          "Plugin info-radiator",
+          "Deprecated"
         ]
       }
     },
@@ -28406,6 +29250,191 @@
         "tags": [
           "Plugins",
           "Plugin matchmaking-service"
+        ]
+      }
+    },
+    "/matchmaking/v1/debug/caller-id/mock-id": {
+      "delete": {
+        "description": "Deletes the currently set `productId` and `patchlineId`. Plugin APIs will receive `swagger` as the `productId`.",
+        "operationId": "DeleteMatchmakingV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Stops mocking the caller ID for Swagger calls",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking",
+          "Internal"
+        ]
+      },
+      "get": {
+        "description": "Returns the `productId` and `patchlineId` being passed to APIs in this plugin when called via Swagger.\n\nReturns 404 if a mock caller ID is not in use.",
+        "operationId": "GetMatchmakingV1DebugCallerIdMockId",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingPluginCallerId_MockCallerId"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Checks the caller ID in use when APIs are called from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking",
+          "Internal"
+        ]
+      },
+      "put": {
+        "description": "Sets the `productId` and `patchlineId` to pass to APIs in this plugin during future calls from Swagger.\n\nUse this functionality to test APIs in this plugin with Swagger, as if they were being called from another product.",
+        "operationId": "PutMatchmakingV1DebugCallerIdMockId",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchmakingPluginCallerId_MockCallerId"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "callerId"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets the caller ID to use when calling this plugin from Swagger",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking",
+          "Internal"
+        ]
+      }
+    },
+    "/matchmaking/v1/tickets/{ticket_id}": {
+      "delete": {
+        "operationId": "DeleteMatchmakingV1TicketsByTicketId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Delete the matchmaking ticket and remove player from matchmaking queue",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking"
+        ]
+      },
+      "get": {
+        "operationId": "GetMatchmakingV1TicketsByTicketId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingV1MatchmakingTicket"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get a Matchmaking Ticket associated with a ticketid",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking",
+          "Subscribable"
+        ]
+      }
+    },
+    "/matchmaking/v1/tickets/{ticket_id}/ready-check": {
+      "get": {
+        "operationId": "GetMatchmakingV1TicketsByTicketIdReadyCheck",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchmakingV1MatchmakingReadyCheck"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get the ready-check status of the current ticket, if it exists",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostMatchmakingV1TicketsByTicketIdReadyCheck",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ticket_id",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchmakingV1AcceptReady"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "accept_ready"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Accept or decline the ready check associated with a ticket id",
+        "tags": [
+          "Plugins",
+          "Plugin matchmaking"
         ]
       }
     },
@@ -29089,773 +30118,6 @@
         ]
       }
     },
-    "/patch/v2/configuration": {
-      "get": {
-        "operationId": "GetPatchV2Configuration",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchV2Configuration"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Retrieve the configuration",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      },
-      "put": {
-        "description": "\n**Data**\n* `chunkBatchSize`:     Maximum size in bytes of each batched chunk request. Downloads are split into requests of this size in order to better parallelize the download of chunks across connections. Default: 2097152 (2MB)\n* `chunkingThreads`:    Number of threads to use for rechunking, in case a repair is needed. Note: By default, the patcher will select the number of chunking threads automatically. If the drive is detected as an SSD, it will use as many threads as there are processors, otherwise it will use a single thread. This option can be used to override this detection and use the specified number of threads.\n* `connections`:        Number of concurrent connections to use for downloading. Default: 8\n* `dnsTTL`:             Time in seconds to keep resolved IP addresses before performing another name resolution operation. This allows the download process to operate with the latest available CDN edge server addresses in case they change rapidly. Default:60\n* `downloadBuffer`:     Specifies the size of the libcurl receive buffer. Larger receive buffers can help with throughput for high-latency links when using HTTP/3. Default: 64KB\n* `downloadLimit`:      Maximum amount of downloaded chunk data that will be kept in memory at any one time. The patcher won't issue additional chunk downloads until downloaded data goes under this limit. The limit is important to ensure that even in the event of very fast downloads and very slow disk operations memory usage doesn't grow uncontrollably. Default: 128MB\n* `ipv4Only`:           Whether to ignore any non-IPv4 addresses that download servers resolve to. Use this if your DNS server returns IPv6 addresses but you don't have IPv6 connectivity.\n* `maxByteRanges`:      Maximum number of discontiguous byte ranges to request from the server. The chunk downloader will split a request if it would result in more than this many ranges in the range request. This helps prevent issues when communicating with edge servers that can't support large amounts of independent ranges. Default: 64\n* `maxDownloadSpeed`:   Maximum download speed. Default: 0 (no limit)\n* `maxManifestSize`:    Maximum release manifest size that we're willing to load. If zero, the size is unlimited. Default: 64MB\n* `receiveBuffer`:      Specifies the size of the TCP receive buffer. Larger receive buffers can help with TCP throughput for high-latency links.\n* `sliceSize`:          Size in bytes of each slice, that is, the size of the write buffer used when updating files. Default: 65536 (64 MB)\n* `timeout`:            Time in seconds to wait before canceling an update that is not making any progress. If zero, this timeout is disabled. Default: 60\n",
-        "operationId": "PutPatchV2Configuration",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchV2Configuration"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Configure patcher settings such as thread count and timeout.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/debug/set-up": {
-      "post": {
-        "operationId": "PostPatchV2DebugSetUp",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchDebugSetup"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Takes care of setup and returns a patch url and bundles url that can be used to issue patch, seed, partial-repair, full-repair and preview requests.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs": {
-      "get": {
-        "operationId": "GetPatchV2Installs",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "type": "string"
-                  },
-                  "type": "array"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Get list of installs on disk",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}": {
-      "get": {
-        "operationId": "GetPatchV2InstallsByInstallId",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchInstallState"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Returns the state of the entire install along with the state of its components.",
-        "tags": [
-          "Plugins",
-          "Plugin patch",
-          "Subscribable"
-        ]
-      },
-      "put": {
-        "description": "\n**Data**\n* `components`: List of components. A component is a patchable artifact that is part of the install of a specific product. For example, League of Legends has a Client component and a Game component.\n    * `id`:                     The id of the component.\n    * `installPath`:            The install location of the component. Absolute file path required.\n    * `metadataPath`:           The location for the install .db and .manifest files. The extension will be directly appended to this path. Absolute file path required.\n    * `seedPath`:               The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation. Absolute file path required.\n    * `deleteForeignPaths`:     If set, extra paths that don't belong to the release will be deleted during the repair processes.\n    * `excludedPaths`:          List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n    * `tags`:                   Tags to filter which content gets patched. These are different from the params used to fetch the release from Patchsieve https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/.\n    * `sieveProductId`:         The id used to fetch a product in the Patchsieve service. It can differ from the product-id.\n    * `versionSet`:             The id used to fetch a version set of a specific product in the Patchsieve Service.\n    * `params`:                 Params/Labels used to filter which release is fetched from Patchsieve Service.\n",
-        "operationId": "PutPatchV2InstallsByInstallId",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchInstallRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "install"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Register a new install",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}": {
-      "get": {
-        "operationId": "GetPatchV2InstallsByInstallIdComponentsByComponentId",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchComponent"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Returns the state of a component.",
-        "tags": [
-          "Plugins",
-          "Plugin patch",
-          "Subscribable"
-        ]
-      },
-      "put": {
-        "description": "\n**Data**\n* `installPath`:            The install location of the component. Absolute file path required.\n* `metadataPath`:           The location for the install .db and .manifest files. The extension will be directly appended to this path. Absolute file path required.\n* `seedPath`:               The location where updated chunks will be stored for this install when performing a seed operation, and the location where chunks will be sourced from when performing a patch operation. Absolute file path required.\n* `deleteForeignPaths`:     If set, extra paths that don't belong to the release will be deleted during the repair processes.\n* `excludedPaths`:          List of paths (relative to the install root) that are excluded from the update. Files under these paths won't be checked during the verification and repair processes.\n* `dependsOn`:              The id of the component it is depedent on. If set, will keep artifact version id's in lockstep while the primary component is running.\n* `tags`:                   Tags to filter which content gets patched. These are different from the params used to fetch the release from Patchsieve https://riotsdk.rpg.riotgames.com/docs/for-users/patching/onboarding/localization/.\n* `sieveProductId`:         The id used to fetch a product in the Patchsieve service. It can differ from the product-id.\n* `versionSet`:             The id used to fetch a version set of a specific product in the Patchsieve Service.\n* `params`:                 Params/Labels used to filter which release is fetched from Patchsieve Service.\n",
-        "operationId": "PutPatchV2InstallsByInstallIdComponentsByComponentId",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchComponentRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "component"
-        },
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Register a new component.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-full-repair": {
-      "post": {
-        "description": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n",
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartFullRepair",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchStartFullRepairRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a full repair operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-partial-repair": {
-      "post": {
-        "description": "\n**Notes**\n* Allows caller to perform a repair on a set of files without having to wait or game client to exit. Only use this if absolutely certain that the files are not currently in use.\n\n**Data**\n* `files`:                  A list of file paths for files that need to be repaired. File paths must be relative to the install root.\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n",
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPartialRepair",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchStartPartialRepairRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a partial repair operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-patching": {
-      "post": {
-        "description": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only patch up to the specified stage.\n* `tempPath`:               (Optional) Custom directory to use for working storage during patching.\n",
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPatching",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchStartPatchingOrSeedingRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a patching operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-preview": {
-      "post": {
-        "description": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only preview the specified stage.\n",
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartPreview",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchStartPreviewRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a preview operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-seeding": {
-      "post": {
-        "description": "\n**Data**\n* `headers`:                (Required on Mobile) Headers to send with every request. If the manifest url is behind SCD then a Cookie header is required.\n* `stage`:                  (Optional) Only patch up to the specified stage.\n* `tempPath`:               (Optional) Custom directory to use for working storage during patching.\n",
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartSeeding",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchStartPatchingOrSeedingRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "params"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a seed operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/start-verify": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStartVerify",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Schedules a verify operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-full-repair": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopFullRepair",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a full repair operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-partial-repair": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPartialRepair",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a partial operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-patching": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPatching",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a patching operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-preview": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopPreview",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a preview operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-seeding": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopSeeding",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a seed operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/installs/{install-id}/components/{component-id}/stop-verify": {
-      "post": {
-        "operationId": "PostPatchV2InstallsByInstallIdComponentsByComponentIdStopVerify",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "install-id",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "path",
-            "name": "component-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No content"
-          }
-        },
-        "summary": "Stop a verify operation.",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/patchsieve": {
-      "post": {
-        "operationId": "PostPatchV2Patchsieve",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PatchPatchsieveRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "request"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchPatchsieveReleases"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Fetch component state from info",
-        "tags": [
-          "Plugins",
-          "Plugin patch"
-        ]
-      }
-    },
-    "/patch/v2/requests/{request-id}": {
-      "get": {
-        "operationId": "GetPatchV2RequestsByRequestId",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "request-id",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PatchRequestStatus"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Returns the state of a component for a specific request.",
-        "tags": [
-          "Plugins",
-          "Plugin patch",
-          "Subscribable"
-        ]
-      }
-    },
     "/payments/v1/initialize-purchase": {
       "post": {
         "operationId": "PostPaymentsV1InitializePurchase",
@@ -29920,6 +30182,58 @@
           }
         },
         "summary": "Returns true if platform-ui is enabled",
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui"
+        ]
+      }
+    },
+    "/platform-ui/v1/fre": {
+      "delete": {
+        "operationId": "DeletePlatformUiV1Fre",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Disable FRE",
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui"
+        ]
+      },
+      "get": {
+        "operationId": "GetPlatformUiV1Fre",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformUiFREStatus"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get FRE status",
+        "tags": [
+          "Plugins",
+          "Plugin platform-ui",
+          "Subscribable"
+        ]
+      },
+      "post": {
+        "operationId": "PostPlatformUiV1Fre",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Enable FRE",
         "tags": [
           "Plugins",
           "Plugin platform-ui"
@@ -30093,6 +30407,41 @@
         ]
       }
     },
+    "/player-account-service/v1/login-history/history": {
+      "post": {
+        "description": "This endpoint retrieves location history records for given PUUIDs by making a call to the service. \nFor each PUUID there will be only one location history record - the most recent one. \nThe limit on the list of puuids is 200. If more than 200 PUUIDs are in the request body, the service will return a HTTP 400. \n",
+        "operationId": "PostPlayerAccountServiceV1LoginHistoryHistory",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountServiceV1RequestedPlayersLoginLocationHistory"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountServiceV1PlayersLoginLocationHistory"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin player-account-service"
+        ]
+      }
+    },
     "/player-account/aliases/v1/active": {
       "get": {
         "description": "Deprecated, please use v1/display-name to get the players game name and tag.",
@@ -30135,7 +30484,7 @@
             "description": "Successful response"
           }
         },
-        "summary": "Gets a list of all aliaes for the player.",
+        "summary": "Gets a list of all aliases for the player.",
         "tags": [
           "Plugins",
           "Plugin player-account",
@@ -30169,7 +30518,7 @@
             "description": "Successful response"
           }
         },
-        "summary": "Sets a new set of aliaes for the player.",
+        "summary": "Sets a new set of aliases for the player.",
         "tags": [
           "Plugins",
           "Plugin player-account"
@@ -30258,6 +30607,45 @@
         ]
       }
     },
+    "/player-account/aliases/v1/lookup": {
+      "get": {
+        "operationId": "GetPlayerAccountAliasesV1Lookup",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "gameName",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "tagLine",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/PlayerAccountAliasesV1AliasLookupResponse"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "summary": "Lookup a list of aliases with the provided gameName and optional tagLine.",
+        "tags": [
+          "Plugins",
+          "Plugin player-account"
+        ]
+      }
+    },
     "/player-account/aliases/v1/required": {
       "get": {
         "operationId": "GetPlayerAccountAliasesV1Required",
@@ -30335,6 +30723,98 @@
           }
         },
         "summary": "The current plugin configuration.",
+        "tags": [
+          "Plugins",
+          "Plugin player-account"
+        ]
+      }
+    },
+    "/player-account/login-history/v1/debug/cache": {
+      "get": {
+        "description": "This endpoint is used to get the conent of cache.\n",
+        "operationId": "GetPlayerAccountLoginHistoryV1DebugCache",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/PlayerAccountV1PlayerLoginLocationHistory"
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin player-account",
+          "Internal"
+        ]
+      },
+      "put": {
+        "description": "This endpoint is used to set the content of cache.\n",
+        "operationId": "PutPlayerAccountLoginHistoryV1DebugCache",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/PlayerAccountV1PlayerLoginLocationHistory"
+                },
+                "type": "object"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "newPlayersLoginLocationHistoryCache"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "tags": [
+          "Plugins",
+          "Plugin player-account",
+          "Internal"
+        ]
+      }
+    },
+    "/player-account/login-history/v1/history": {
+      "post": {
+        "description": "This endpoint returns login location history records for each requested PUUID. \nThe most recent login location is the record provided. \nIf the caching mechanism is enabled, it will retrieve as many PUUIDs' records as possible from the cache, \nfor the remaining PUUIDs, it will call the service to retrieve appropriate records. \nIn the opposite case, all records will be retrieved from the service. \n\n",
+        "operationId": "PostPlayerAccountLoginHistoryV1History",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerAccountV1RequestedPlayersLoginLocationHistory"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "request"
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerAccountV1PlayersLoginLocationHistory"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
         "tags": [
           "Plugins",
           "Plugin player-account"
@@ -31688,6 +32168,34 @@
         ]
       }
     },
+    "/player-session-lifecycle/v1/login-strategy": {
+      "put": {
+        "operationId": "PutPlayerSessionLifecycleV1LoginStrategy",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayerSessionLifecycleUpdateLoginStrategyRequest"
+              }
+            }
+          },
+          "description": "",
+          "required": true,
+          "x-param-name": "UpdateLoginStrategyRequest"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Set a Login Strategy for the current session.",
+        "tags": [
+          "Plugins",
+          "Plugin player-session-lifecycle"
+        ]
+      }
+    },
     "/player-session-lifecycle/v1/session": {
       "delete": {
         "operationId": "DeletePlayerSessionLifecycleV1Session",
@@ -31772,7 +32280,7 @@
             "description": "No content"
           }
         },
-        "summary": "Update a session used to retrieve common player authentication information.",
+        "summary": "Update a session used to retrieve common player authentication information. Remember to pass all of the session config values on update. Use `PUT /player-session-lifecycle/v1/login-strategy` when updating the login strategy.",
         "tags": [
           "Plugins",
           "Plugin player-session-lifecycle"
@@ -32735,42 +33243,6 @@
         ]
       }
     },
-    "/product-integration/v1/app-repair/immediate-repair": {
-      "put": {
-        "description": "\n**Notes**\n* Allows you to perform a partial repair on a set of files without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use by the client.\n* Immediate repair does not open Riot Client so the game is responsible for displaying repair progress.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root. Does not accept wildcard * symbols or ~ for home directory.\n",
-        "operationId": "PutProductIntegrationV1AppRepairImmediateRepair",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductIntegrationProductIntegrationAppImmediateRepairRequestBody"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "file_paths"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Starts a game repair and returns a repair status callback path.",
-        "tags": [
-          "Plugins",
-          "Plugin product-integration"
-        ]
-      }
-    },
     "/product-integration/v1/app-update/apply": {
       "put": {
         "description": "Applies a game update by opening Riot Client and patching the game (on Desktop) or exiting to the App Store (on Mobile).",
@@ -32864,43 +33336,6 @@
           }
         },
         "summary": "Debug endpoint to apply a repair by session id",
-        "tags": [
-          "Plugins",
-          "Plugin product-integration",
-          "Internal"
-        ]
-      }
-    },
-    "/product-integration/v1/debug/app-repair/immediate-repair": {
-      "put": {
-        "description": "\n**Notes**\n* Allows you to perform a partial repair on a set of files without having to wait or game client to exit. Only use this if you're\nabsolutely certain that the files are not currently in use by the client.\n* Immediate repair does not open Riot Client so the game is responsible for displaying repair progress.\n\n**Data**\n* `files`: a list of file paths for files that need to be repaired. If none specified then the patcher will perform a full repair. File paths must\nbe relative to the install root. Does not accept wildcard * symbols or ~ for home directory.\n",
-        "operationId": "PutProductIntegrationV1DebugAppRepairImmediateRepair",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProductIntegrationAppImmediateRepairRequest"
-              }
-            }
-          },
-          "description": "",
-          "required": true,
-          "x-param-name": "file_paths"
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProductIntegrationProductIntegrationAppImmediateRepairResponseBody"
-                }
-              }
-            },
-            "description": "Successful response"
-          }
-        },
-        "summary": "Starts a game repair and returns a repair status callback path.",
         "tags": [
           "Plugins",
           "Plugin product-integration",
@@ -39967,6 +40402,63 @@
           }
         },
         "summary": "Sends the event to the Analytics Pipeline CollectorV2 endpoint (https://data.riotgames.com). This backend differs from /v1/events as it requires schemas to be registered in the schema repository.",
+        "tags": [
+          "telemetry"
+        ]
+      }
+    },
+    "/telemetry/v2/legacy-metadata/{propertyName}": {
+      "delete": {
+        "operationId": "DeleteTelemetryV2LegacyMetadataByPropertyName",
+        "parameters": [
+          {
+            "description": "Name of a property to remove (i.e. rsoClient, region, locale)",
+            "in": "path",
+            "name": "propertyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Deletes a property intended to be shared across both the riotgamesapi__ and riotclient__ schemas.",
+        "tags": [
+          "telemetry"
+        ]
+      },
+      "post": {
+        "operationId": "PostTelemetryV2LegacyMetadataByPropertyName",
+        "parameters": [
+          {
+            "description": "Name of a property to set (i.e. rsoClient, region, locale)",
+            "in": "path",
+            "name": "propertyName",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object"
+              }
+            }
+          },
+          "description": "BindingProperty that contains the value to set in the metadata.",
+          "required": true,
+          "x-param-name": "value"
+        },
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        },
+        "summary": "Sets metadata intended to be shared across both the riotgamesapi__ and riotclient__ schemas.",
         "tags": [
           "telemetry"
         ]
